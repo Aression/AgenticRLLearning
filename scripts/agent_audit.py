@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Triage maintenance discoveries with DeepSeek; never publish claims directly."""
 from __future__ import annotations
-import argparse, datetime as dt, json, os, re, urllib.request
+import argparse, datetime as dt, json, os, re, urllib.error, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,11 +15,21 @@ def scrub(value: object, limit: int = 12000) -> str:
     return text[:limit]
 
 def call(api_key: str, payload: dict) -> dict:
-    body = json.dumps({"model":MODEL,"temperature":0.1,"max_tokens":5000,"response_format":{"type":"json_object"},"messages":[{"role":"system","content":SYSTEM},{"role":"user","content":json.dumps(payload, ensure_ascii=False)}]}).encode()
+    body = json.dumps({"model":MODEL,"temperature":0.1,"max_tokens":5000,"messages":[{"role":"system","content":SYSTEM},{"role":"user","content":json.dumps(payload, ensure_ascii=False)}]}).encode()
     request = urllib.request.Request("https://api.deepseek.com/chat/completions", data=body, headers={"Authorization": f"Bearer {api_key}", "Content-Type":"application/json", "User-Agent":"AgenticRLAtlas-maintenance/1.0"}, method="POST")
-    with urllib.request.urlopen(request, timeout=90) as response:
-        result = json.loads(response.read().decode())
-    text = result["choices"][0]["message"]["content"].strip()
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            result = json.loads(response.read().decode())
+    except urllib.error.HTTPError as exc:
+        raise SystemExit(f"DeepSeek API HTTP {exc.code}; check model name, endpoint, quota, and secret permissions") from None
+    except urllib.error.URLError as exc:
+        raise SystemExit(f"DeepSeek API network error: {exc.reason}") from None
+    except json.JSONDecodeError:
+        raise SystemExit("DeepSeek API returned a non-JSON response") from None
+    try:
+        text = result["choices"][0]["message"]["content"].strip()
+    except (KeyError, IndexError, TypeError):
+        raise SystemExit("DeepSeek API response missing choices.message.content") from None
     if text.startswith("```"):
         text = text.split("\n", 1)[1].rsplit("```", 1)[0].strip()
     start, end = text.find("{"), text.rfind("}")
