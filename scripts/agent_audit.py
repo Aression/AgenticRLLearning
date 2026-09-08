@@ -15,7 +15,7 @@ def scrub(value: object, limit: int = 12000) -> str:
     return text[:limit]
 
 def call(api_key: str, payload: dict) -> dict:
-    body = json.dumps({"model":MODEL,"temperature":0.1,"max_tokens":5000,"messages":[{"role":"system","content":SYSTEM},{"role":"user","content":json.dumps(payload, ensure_ascii=False)}]}).encode()
+    body = json.dumps({"model":MODEL,"temperature":0.1,"max_tokens":5000,"thinking":{"type":"enabled"},"response_format":{"type":"json_object"},"messages":[{"role":"system","content":SYSTEM},{"role":"user","content":json.dumps(payload, ensure_ascii=False)}]}).encode()
     request = urllib.request.Request("https://api.deepseek.com/chat/completions", data=body, headers={"Authorization": f"Bearer {api_key}", "Content-Type":"application/json", "User-Agent":"AgenticRLAtlas-maintenance/1.0"}, method="POST")
     try:
         with urllib.request.urlopen(request, timeout=90) as response:
