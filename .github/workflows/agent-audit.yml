@@ -23,7 +23,7 @@ jobs:
           python-version: "3.12"
       - name: Audit discoveries with DeepSeek
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_V4_FLASH_API_KEY: ${{ secrets.DEEPSEEK_V4_FLASH_API_KEY }}
         run: python scripts/agent_audit.py
       - name: Validate audit and content
         run: python scripts/harness.py check --json
