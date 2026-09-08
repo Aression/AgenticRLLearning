@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "harness": "python scripts/harness.py all",
+    "harness:check": "python scripts/harness.py check --json",
+    "harness:report": "python scripts/harness.py report --json",
+    "harness:refresh": "python scripts/harness.py refresh"
   },
   "dependencies": {
     "@types/node": "^22.10.2",

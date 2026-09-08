@@ -1,0 +1,21 @@
+{
+  "description": "Agentic RL Atlas maintenance policy",
+  "refresh": {
+    "sourceAudit": "research/source-audit.json",
+    "discovery": "research/discovery.json",
+    "networkWrites": "explicit-only",
+    "maxDiscoveryResults": 25
+  },
+  "checks": {
+    "requireSourceForPublishedNote": true,
+    "requireIsoUpdated": true,
+    "validateInternalNoteLinks": true,
+    "validateSourceIds": true,
+    "failOnBrokenExternalLinks": false
+  },
+  "reviewPolicy": {
+    "preprintStatuses": ["摘要核验 · 待精读"],
+    "neverAutoPublish": true,
+    "humanReviewRequiredFor": ["new-source", "new-claim", "source-replacement", "frontier-status-change"]
+  }
+}

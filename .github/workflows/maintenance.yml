@@ -1,0 +1,46 @@
+name: Knowledge maintenance
+on:
+  schedule:
+    - cron: "17 1 * * 1"
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: Fetch source metadata and arXiv discovery
+        required: false
+        default: true
+        type: boolean
+permissions:
+  contents: write
+  issues: write
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh sources
+        run: python scripts/harness.py refresh
+      - name: Run harness checks and report
+        run: python scripts/harness.py report --json | tee harness-result.json
+      - name: Build application
+        run: npm ci && npm run build
+      - name: Create maintenance issue when refresh changed evidence
+        if: github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = fs.readFileSync('harness-result.json', 'utf8');
+            const body = `Automated weekly maintenance completed.\n\n\`\`\`json\n${result}\n\`\`\``;
+            await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title: `Maintenance report ${new Date().toISOString().slice(0,10)}`, body, labels: ['maintenance'] });
+      - name: Upload audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-maintenance-report
+          path: |
+            research/source-audit.json
+            research/discovery.json
+            research/reports/
+            harness-result.json
