@@ -1,0 +1,39 @@
+name: Agent audit and archive
+on:
+  workflow_run:
+    workflows: ["Knowledge maintenance"]
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  audit:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch || github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit discoveries with DeepSeek
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/agent_audit.py
+      - name: Validate audit and content
+        run: python scripts/harness.py check --json
+      - name: Open an auditable pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch="agent-audit/$(date -u +%Y%m%d-%H%M%S)"
+          git config user.name "agentic-rl-maintenance[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add research/agent-audits
+          git commit -m "Archive DeepSeek maintenance audit" || exit 0
+          git push origin "$branch"
+          gh pr create --base master --head "$branch" --title "Maintenance audit $(date -u +%Y-%m-%d)" --body-file research/agent-audits/latest.md
