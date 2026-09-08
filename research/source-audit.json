@@ -48,7 +48,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2509.02547",
-    "checkedAt": "2026-09-08T15:45:49.904598+00:00",
+    "checkedAt": "2026-09-08T16:53:25.309700+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2509.02547",
     "title": "[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey",
@@ -111,7 +111,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2508.03680",
-    "checkedAt": "2026-09-08T15:45:43.215974+00:00",
+    "checkedAt": "2026-09-08T16:53:18.620045+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2508.03680",
     "title": "[2508.03680] Agent Lightning: Train ANY AI Agents with Reinforcement Learning",
@@ -157,7 +157,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2505.10978",
-    "checkedAt": "2026-09-08T15:45:36.474452+00:00",
+    "checkedAt": "2026-09-08T16:53:11.914988+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2505.10978",
     "title": "[2505.10978] Group-in-Group Policy Optimization for LLM Agent Training",
@@ -199,7 +199,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2501.12948",
-    "checkedAt": "2026-09-08T15:45:22.567365+00:00",
+    "checkedAt": "2026-09-08T16:52:58.238541+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2501.12948",
     "title": "[2501.12948] DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
@@ -440,7 +440,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2503.14476",
-    "checkedAt": "2026-09-08T15:45:29.330499+00:00",
+    "checkedAt": "2026-09-08T16:53:05.161902+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2503.14476",
     "title": "[2503.14476] DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
@@ -680,7 +680,7 @@
   },
   {
     "url": "http://incompleteideas.net/book/the-book-2nd.html",
-    "checkedAt": "2026-09-08T15:43:57.211727+00:00",
+    "checkedAt": "2026-09-08T16:51:34.177137+00:00",
     "status": 200,
     "finalUrl": "http://incompleteideas.net/book/the-book-2nd.html",
     "title": "Sutton & Barto Book: Reinforcement Learning: An\nIntroduction",
@@ -688,7 +688,7 @@
   },
   {
     "url": "https://www.davidsilver.uk/teaching/",
-    "checkedAt": "2026-09-08T15:43:59.602807+00:00",
+    "checkedAt": "2026-09-08T16:51:36.026652+00:00",
     "status": 200,
     "finalUrl": "https://davidstarsilver.wordpress.com/teaching/",
     "title": "Teaching – David Silver",
@@ -706,7 +706,7 @@
   },
   {
     "url": "https://arxiv.org/abs/1707.06347",
-    "checkedAt": "2026-09-08T15:44:20.593872+00:00",
+    "checkedAt": "2026-09-08T16:51:56.238775+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/1707.06347",
     "title": "[1707.06347] Proximal Policy Optimization Algorithms",
@@ -749,7 +749,7 @@
   },
   {
     "url": "https://arxiv.org/abs/1506.02438",
-    "checkedAt": "2026-09-08T15:44:27.291703+00:00",
+    "checkedAt": "2026-09-08T16:52:02.987990+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/1506.02438",
     "title": "[1506.02438] High-Dimensional Continuous Control Using Generalized Advantage Estimation",
@@ -792,7 +792,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2210.03629",
-    "checkedAt": "2026-09-08T15:44:34.007269+00:00",
+    "checkedAt": "2026-09-08T16:52:09.751596+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2210.03629",
     "title": "[2210.03629] ReAct: Synergizing Reasoning and Acting in Language Models",
@@ -837,7 +837,7 @@
   },
   {
     "url": "https://www.anthropic.com/research/building-effective-agents",
-    "checkedAt": "2026-09-08T15:44:40.708010+00:00",
+    "checkedAt": "2026-09-08T16:52:16.456629+00:00",
     "status": 200,
     "finalUrl": "https://www.anthropic.com/engineering/building-effective-agents",
     "title": "Building Effective AI Agents \\ Anthropic",
@@ -855,7 +855,7 @@
   },
   {
     "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
-    "checkedAt": "2026-09-08T15:44:53.087801+00:00",
+    "checkedAt": "2026-09-08T16:52:28.804902+00:00",
     "status": 200,
     "finalUrl": "https://lilianweng.github.io/posts/2023-06-23-agent/",
     "title": "LLM Powered Autonomous Agents | Lil'Log",
@@ -873,7 +873,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2203.02155",
-    "checkedAt": "2026-09-08T15:44:55.335871+00:00",
+    "checkedAt": "2026-09-08T16:52:31.368823+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2203.02155",
     "title": "[2203.02155] Training language models to follow instructions with human feedback",
@@ -931,7 +931,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2212.08073",
-    "checkedAt": "2026-09-08T15:45:02.007808+00:00",
+    "checkedAt": "2026-09-08T16:52:38.169046+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2212.08073",
     "title": "[2212.08073] Constitutional AI: Harmlessness from AI Feedback",
@@ -1020,7 +1020,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2305.18290",
-    "checkedAt": "2026-09-08T15:45:09.023096+00:00",
+    "checkedAt": "2026-09-08T16:52:44.804328+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2305.18290",
     "title": "[2305.18290] Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
@@ -1064,7 +1064,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2402.03300",
-    "checkedAt": "2026-09-08T15:45:15.744640+00:00",
+    "checkedAt": "2026-09-08T16:52:51.536867+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2402.03300",
     "title": "[2402.03300] DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
@@ -1113,7 +1113,7 @@
   },
   {
     "url": "https://github.com/volcengine/verl",
-    "checkedAt": "2026-09-08T15:45:56.542937+00:00",
+    "checkedAt": "2026-09-08T16:53:32.037514+00:00",
     "status": 200,
     "finalUrl": "https://github.com/verl-project/verl",
     "title": "GitHub - verl-project/verl: verl/HybridFlow: A Flexible and Efficient RL Post-Training Framework · GitHub",
@@ -1131,7 +1131,7 @@
   },
   {
     "url": "https://github.com/microsoft/agent-lightning",
-    "checkedAt": "2026-09-08T15:46:09.710660+00:00",
+    "checkedAt": "2026-09-08T16:53:45.080887+00:00",
     "status": 200,
     "finalUrl": "https://github.com/microsoft/agent-lightning",
     "title": "GitHub - microsoft/agent-lightning: The absolute trainer to light up AI agents. · GitHub",
@@ -1149,7 +1149,7 @@
   },
   {
     "url": "https://gymnasium.farama.org/",
-    "checkedAt": "2026-09-08T15:46:17.095457+00:00",
+    "checkedAt": "2026-09-08T16:53:52.541930+00:00",
     "status": 200,
     "finalUrl": "https://gymnasium.farama.org/",
     "title": "Gymnasium Documentation Contents Menu Expand Light mode Dark mode Auto light/dark mode",
@@ -1167,7 +1167,7 @@
   },
   {
     "url": "https://stable-baselines3.readthedocs.io/en/master/",
-    "checkedAt": "2026-09-08T15:46:19.215134+00:00",
+    "checkedAt": "2026-09-08T16:53:54.574281+00:00",
     "status": 200,
     "finalUrl": "https://stable-baselines3.readthedocs.io/en/master/",
     "title": "Stable-Baselines3 Docs - Reliable Reinforcement Learning Implementations — Stable Baselines3 2.9.1a1 documentation",
@@ -1175,7 +1175,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2405.15793",
-    "checkedAt": "2026-09-08T15:46:25.886528+00:00",
+    "checkedAt": "2026-09-08T16:54:01.245540+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2405.15793",
     "title": "[2405.15793] SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
@@ -1220,7 +1220,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2310.06770",
-    "checkedAt": "2026-09-08T15:46:32.530265+00:00",
+    "checkedAt": "2026-09-08T16:54:07.977480+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2310.06770",
     "title": "[2310.06770] SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
@@ -1265,7 +1265,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2307.13854",
-    "checkedAt": "2026-09-08T15:46:39.234344+00:00",
+    "checkedAt": "2026-09-08T16:54:14.661723+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2307.13854",
     "title": "[2307.13854] WebArena: A Realistic Web Environment for Building Autonomous Agents",
@@ -1315,7 +1315,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2311.12983",
-    "checkedAt": "2026-09-08T15:46:45.902999+00:00",
+    "checkedAt": "2026-09-08T16:54:21.349950+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2311.12983",
     "title": "[2311.12983] GAIA: a benchmark for General AI Assistants",
@@ -1359,7 +1359,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2406.12045",
-    "checkedAt": "2026-09-08T15:46:52.523779+00:00",
+    "checkedAt": "2026-09-08T16:54:28.274227+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2406.12045",
     "title": "[2406.12045] $τ$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
@@ -1401,7 +1401,7 @@
   },
   {
     "url": "https://www.marl-book.com/",
-    "checkedAt": "2026-09-08T15:46:59.224587+00:00",
+    "checkedAt": "2026-09-08T16:54:34.975443+00:00",
     "status": 200,
     "finalUrl": "https://www.marl-book.com/",
     "title": "Multi-Agent Reinforcement Learning: Foundations and Modern Approaches",
@@ -1419,7 +1419,7 @@
   },
   {
     "url": "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
-    "checkedAt": "2026-09-08T15:47:08.847354+00:00",
+    "checkedAt": "2026-09-08T16:54:38.886463+00:00",
     "status": 200,
     "finalUrl": "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
     "title": "Reward Hacking in Reinforcement Learning | Lil'Log",
@@ -1437,7 +1437,7 @@
   },
   {
     "url": "https://fortelabs.com/blog/para/",
-    "checkedAt": "2026-09-08T15:47:11.073400+00:00",
+    "checkedAt": "2026-09-08T16:54:41.096199+00:00",
     "status": 200,
     "finalUrl": "https://fortelabs.com/blog/para/",
     "title": "The PARA Method: The Simple System for Organizing Your Digital Life in Seconds",
@@ -1455,7 +1455,7 @@
   },
   {
     "url": "https://zettelkasten.de/introduction/",
-    "checkedAt": "2026-09-08T15:47:18.087550+00:00",
+    "checkedAt": "2026-09-08T16:54:47.991680+00:00",
     "status": 200,
     "finalUrl": "https://zettelkasten.de/introduction/",
     "title": "Introduction to the Zettelkasten Method • Zettelkasten Method",
@@ -1470,7 +1470,7 @@
   },
   {
     "url": "https://diataxis.fr/",
-    "checkedAt": "2026-09-08T15:47:21.940865+00:00",
+    "checkedAt": "2026-09-08T16:54:51.640437+00:00",
     "status": 200,
     "finalUrl": "https://diataxis.fr/",
     "title": "Diátaxis Contents Menu Expand Light mode Dark mode Auto light/dark, in light mode Auto light/dark, in dark mode",
@@ -1482,7 +1482,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2609.04865",
-    "checkedAt": "2026-09-08T15:47:28.380141+00:00",
+    "checkedAt": "2026-09-08T16:54:58.243937+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2609.04865",
     "title": "[2609.04865] CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution",
@@ -1527,7 +1527,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2609.04518",
-    "checkedAt": "2026-09-08T15:47:35.072199+00:00",
+    "checkedAt": "2026-09-08T16:55:05.044377+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2609.04518",
     "title": "[2609.04518] What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents",
@@ -1571,7 +1571,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2608.23318",
-    "checkedAt": "2026-09-08T15:47:41.730052+00:00",
+    "checkedAt": "2026-09-08T16:55:11.719269+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2608.23318",
     "title": "[2608.23318] Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning",
@@ -1618,7 +1618,7 @@
   },
   {
     "url": "https://arxiv.org/abs/2608.21946",
-    "checkedAt": "2026-09-08T15:47:48.379021+00:00",
+    "checkedAt": "2026-09-08T16:55:18.444502+00:00",
     "status": 200,
     "finalUrl": "https://arxiv.org/abs/2608.21946",
     "title": "[2608.21946] EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning",

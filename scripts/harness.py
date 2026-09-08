@@ -91,6 +91,9 @@ def check() -> dict[str, Any]:
     errors.extend(parse_errors)
     seen_note_ids: set[str] = set()
     catalog = load_catalog()
+    source_id_values = [str(item.get("id")) for item in catalog]
+    duplicate_source_ids = sorted({sid for sid in source_id_values if source_id_values.count(sid) > 1})
+    errors.extend(f"duplicate source id: {sid}" for sid in duplicate_source_ids)
     source_ids = {str(item.get("id")) for item in catalog}
     source_urls: dict[str, str] = {}
     note_ids: dict[str, str] = {str(note.get("id")): note["filename"] for note in notes if note.get("id")}
@@ -98,8 +101,6 @@ def check() -> dict[str, Any]:
         sid, url = source.get("id"), source.get("url")
         if not sid or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", str(sid)):
             errors.append(f"source has invalid id: {sid!r}")
-        if sid in source_ids and list(source_ids).count(sid) > 1:
-            errors.append(f"duplicate source id: {sid}")
         if not isinstance(url, str) or not url.startswith(("http://", "https://")):
             errors.append(f"source {sid}: invalid URL")
         elif url in source_urls:
@@ -155,7 +156,14 @@ def check() -> dict[str, Any]:
         for url in source_urls:
             if url not in audit_urls:
                 warnings.append(f"source has no audit record: {url}")
-    return {"ok": not errors, "errors": errors, "warnings": warnings, "notes": len(notes), "sources": len(catalog), "checkedAt": dt.datetime.now(dt.timezone.utc).isoformat()}
+    discovery_stats = {"entries": 0, "duplicate_ids": 0, "empty_titles": 0}
+    if DISCOVERY.exists():
+        discovery = json.loads(DISCOVERY.read_text(encoding="utf-8")); entries = discovery.get("entries", [])
+        ids = [str(entry.get("id")) for entry in entries]
+        discovery_stats = {"entries": len(entries), "duplicate_ids": len(ids) - len(set(ids)), "empty_titles": sum(not str(entry.get("title", "")).strip() for entry in entries)}
+        if discovery_stats["duplicate_ids"] or discovery_stats["empty_titles"]:
+            errors.append(f"discovery quality failure: {discovery_stats}")
+    return {"ok": not errors, "errors": errors, "warnings": warnings, "notes": len(notes), "sources": len(catalog), "discovery": discovery_stats, "checkedAt": dt.datetime.now(dt.timezone.utc).isoformat()}
 
 
 def run_script(name: str) -> None:
