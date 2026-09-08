@@ -1,0 +1,1665 @@
+[
+  {
+    "url": "https://arxiv.org/abs/2402.06411",
+    "checkedAt": "2026-09-08T15:40:10.156795+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2402.06411",
+    "title": "[2402.06411] Exploiting spatial diversity for increasing the robustness of sound source localization systems against reverberation",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2402.06411: Exploiting spatial diversity for increasing the robustness of sound source localization systems against reverberation"
+      ],
+      "og:title": [
+        "Exploiting spatial diversity for increasing the robustness of sound source localization systems against reverberation"
+      ],
+      "og:description": [
+        "Acoustic reverberation is one of the most relevant factors that hampers the localization of a sound source inside a room. To date, several approaches have been proposed to deal with it, but have not always been evaluated under realistic conditions. This paper proposes exploiting spatial diversity as an alternative approach to achieve robustness against reverberation. The theoretical arguments supporting this approach are first presented and later confirmed by means of simulation results and real measurements. Simulations are run for reverberation times up to 2 s, thus providing results with a wider range of validity than in other previous research works. It is concluded that the use of systems consisting of several, sufficiently separated, small arrays leads to the best results in reverberant environments. Some recommendations are given regarding the choice of the array sizes, the separation among them, and the way to combine SRP-PHAT maps obtained from diverse arrays."
+      ],
+      "citation_title": [
+        "Exploiting spatial diversity for increasing the robustness of sound source localization systems against reverberation"
+      ],
+      "citation_author": [
+        "Garcia-Barrios, Guillermo",
+        "Iglesias, Eduardo Latorre",
+        "Gutierrez-Arriola, Juana M.",
+        "Fraile, Ruben",
+        "Saenz-Lechon, Nicolas",
+        "Osma-Ruiz, Victor Jose"
+      ],
+      "citation_doi": [
+        "10.1016/j.apacoust.2022.109138"
+      ],
+      "citation_date": [
+        "2024/02/09"
+      ],
+      "citation_online_date": [
+        "2024/02/09"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2402.06411"
+      ],
+      "citation_arxiv_id": [
+        "2402.06411"
+      ],
+      "citation_abstract": [
+        "Acoustic reverberation is one of the most relevant factors that hampers the localization of a sound source inside a room. To date, several approaches have been proposed to deal with it, but have not always been evaluated under realistic conditions. This paper proposes exploiting spatial diversity as an alternative approach to achieve robustness against reverberation. The theoretical arguments supporting this approach are first presented and later confirmed by means of simulation results and real measurements. Simulations are run for reverberation times up to 2 s, thus providing results with a wider range of validity than in other previous research works. It is concluded that the use of systems consisting of several, sufficiently separated, small arrays leads to the best results in reverberant environments. Some recommendations are given regarding the choice of the array sizes, the separation among them, and the way to combine SRP-PHAT maps obtained from diverse arrays."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2509.02547",
+    "checkedAt": "2026-09-08T15:45:49.904598+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2509.02547",
+    "title": "[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2509.02547: The Landscape of Agentic Reinforcement Learning for LLMs: A Survey"
+      ],
+      "og:title": [
+        "The Landscape of Agentic Reinforcement Learning for LLMs: A Survey"
+      ],
+      "og:description": [
+        "The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into autonomous, decision-making agents embedded in complex, dynamic worlds. This survey formalizes this conceptual shift by contrasting the degenerate single-step Markov Decision Processes (MDPs) of LLM-RL with the temporally extended, partially observable Markov decision processes (POMDPs) that define Agentic RL. Building on this foundation, we propose a comprehensive twofold taxonomy: one organized around core agentic capabilities, including planning, tool use, memory, reasoning, self-improvement, and perception, and the other around their applications across diverse task domains. Central to our thesis is that reinforcement learning serves as the critical mechanism for transforming these capabilities from static, heuristic modules into adaptive, robust agentic behavior. To support and accelerate future research, we consolidate the landscape of open-source environments, benchmarks, and frameworks into a practical compendium. By synthesizing over five hundred recent works, this survey charts the contours of this rapidly evolving field and highlights the opportunities and challenges that will shape the development of scalable, general-purpose AI agents."
+      ],
+      "citation_title": [
+        "The Landscape of Agentic Reinforcement Learning for LLMs: A Survey"
+      ],
+      "citation_author": [
+        "Zhang, Guibin",
+        "Geng, Hejia",
+        "Yu, Xiaohang",
+        "Yin, Zhenfei",
+        "Zhang, Zaibin",
+        "Tan, Zelin",
+        "Zhou, Heng",
+        "Li, Zhongzhi",
+        "Xue, Xiangyuan",
+        "Li, Yijiang",
+        "Zhou, Yifan",
+        "Chen, Yang",
+        "Zhang, Chen",
+        "Fan, Yutao",
+        "Wang, Zihu",
+        "Huang, Songtao",
+        "Piedrahita-Velez, Francisco",
+        "Liao, Yue",
+        "Wang, Hongru",
+        "Yang, Mengyue",
+        "Ji, Heng",
+        "Wang, Jun",
+        "Yan, Shuicheng",
+        "Torr, Philip",
+        "Bai, Lei"
+      ],
+      "citation_date": [
+        "2025/09/02"
+      ],
+      "citation_online_date": [
+        "2026/04/17"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2509.02547"
+      ],
+      "citation_arxiv_id": [
+        "2509.02547"
+      ],
+      "citation_abstract": [
+        "The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into autonomous, decision-making agents embedded in complex, dynamic worlds. This survey formalizes this conceptual shift by contrasting the degenerate single-step Markov Decision Processes (MDPs) of LLM-RL with the temporally extended, partially observable Markov decision processes (POMDPs) that define Agentic RL. Building on this foundation, we propose a comprehensive twofold taxonomy: one organized around core agentic capabilities, including planning, tool use, memory, reasoning, self-improvement, and perception, and the other around their applications across diverse task domains. Central to our thesis is that reinforcement learning serves as the critical mechanism for transforming these capabilities from static, heuristic modules into adaptive, robust agentic behavior. To support and accelerate future research, we consolidate the landscape of open-source environments, benchmarks, and frameworks into a practical compendium. By synthesizing over five hundred recent works, this survey charts the contours of this rapidly evolving field and highlights the opportunities and challenges that will shape the development of scalable, general-purpose AI agents."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2508.03680",
+    "checkedAt": "2026-09-08T15:45:43.215974+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2508.03680",
+    "title": "[2508.03680] Agent Lightning: Train ANY AI Agents with Reinforcement Learning",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2508.03680: Agent Lightning: Train ANY AI Agents with Reinforcement Learning"
+      ],
+      "og:title": [
+        "Agent Lightning: Train ANY AI Agents with Reinforcement Learning"
+      ],
+      "og:description": [
+        "We present Agent Lightning, a flexible and extensible framework that enables Reinforcement Learning (RL)-based training of Large Language Models (LLMs) for any AI agent. Unlike existing methods that tightly couple RL training with agent or rely on sequence concatenation with masking, Agent Lightning achieves complete decoupling between agent execution and training, allowing seamless integration with existing agents developed via diverse ways (e.g., using frameworks like LangChain, OpenAI Agents SDK, AutoGen, and building from scratch) with almost ZERO code modifications. By formulating agent execution as Markov decision process, we define an unified data interface and propose a hierarchical RL algorithm, LightningRL, which contains a credit assignment module, allowing us to decompose trajectories generated by ANY agents into training transition. This enables RL to handle complex interaction logic, such as multi-agent scenarios and dynamic workflows. For the system design, we introduce a Training-Agent Disaggregation architecture, and brings agent observability frameworks into agent runtime, providing a standardized agent finetuning interface. Experiments across text-to-SQL, retrieval-augmented generation, and math tool-use tasks demonstrate stable, continuous improvements, showcasing the framework's potential for real-world agent training and deployment."
+      ],
+      "citation_title": [
+        "Agent Lightning: Train ANY AI Agents with Reinforcement Learning"
+      ],
+      "citation_author": [
+        "Luo, Xufang",
+        "Zhang, Yuge",
+        "He, Zhiyuan",
+        "Wang, Zilong",
+        "Zhao, Siyun",
+        "Li, Dongsheng",
+        "Qiu, Luna K.",
+        "Yang, Yuqing"
+      ],
+      "citation_date": [
+        "2025/08/05"
+      ],
+      "citation_online_date": [
+        "2025/08/05"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2508.03680"
+      ],
+      "citation_arxiv_id": [
+        "2508.03680"
+      ],
+      "citation_abstract": [
+        "We present Agent Lightning, a flexible and extensible framework that enables Reinforcement Learning (RL)-based training of Large Language Models (LLMs) for any AI agent. Unlike existing methods that tightly couple RL training with agent or rely on sequence concatenation with masking, Agent Lightning achieves complete decoupling between agent execution and training, allowing seamless integration with existing agents developed via diverse ways (e.g., using frameworks like LangChain, OpenAI Agents SDK, AutoGen, and building from scratch) with almost ZERO code modifications. By formulating agent execution as Markov decision process, we define an unified data interface and propose a hierarchical RL algorithm, LightningRL, which contains a credit assignment module, allowing us to decompose trajectories generated by ANY agents into training transition. This enables RL to handle complex interaction logic, such as multi-agent scenarios and dynamic workflows. For the system design, we introduce a Training-Agent Disaggregation architecture, and brings agent observability frameworks into agent runtime, providing a standardized agent finetuning interface. Experiments across text-to-SQL, retrieval-augmented generation, and math tool-use tasks demonstrate stable, continuous improvements, showcasing the framework's potential for real-world agent training and deployment."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2505.10978",
+    "checkedAt": "2026-09-08T15:45:36.474452+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2505.10978",
+    "title": "[2505.10978] Group-in-Group Policy Optimization for LLM Agent Training",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2505.10978: Group-in-Group Policy Optimization for LLM Agent Training"
+      ],
+      "og:title": [
+        "Group-in-Group Policy Optimization for LLM Agent Training"
+      ],
+      "og:description": [
+        "Recent advances in group-based reinforcement learning (RL) have driven frontier large language models (LLMs) in single-turn tasks like mathematical reasoning. However, their scalability to multi-turn LLM agent training remains limited. Unlike static tasks, agent-environment interactions unfold over many steps and often yield sparse or delayed rewards, making credit assignment across individual steps significantly more challenging. In this work, we propose Group-in-Group Policy Optimization (GiGPO), a novel RL algorithm that achieves fine-grained credit assignment for LLM agents while preserving the appealing properties of group-based RL: critic-free, low memory, and stable convergence. GiGPO introduces a two-level structure for estimating relative advantage: (i) At the episode-level, GiGPO computes macro relative advantages based on groups of complete trajectories; (ii) At the step-level, GiGPO introduces an anchor state grouping mechanism that retroactively constructs step-level groups by identifying repeated environment states across trajectories. Actions stemming from the same state are grouped together, enabling micro relative advantage estimation. This hierarchical structure effectively captures both global trajectory quality and local step effectiveness without relying on auxiliary models or additional rollouts. We evaluate GiGPO on challenging agent benchmarks, including ALFWorld and WebShop, as well as tool-integrated reasoning on search-augmented QA tasks, using Qwen2.5-1.5B/3B/7B-Instruct. Crucially, GiGPO delivers fine-grained per-step credit signals, achieves performance gains of > 12% on ALFWorld and > 9% on WebShop over GRPO, and obtains superior performance on QA tasks (42.1% on 3B and 47.2% on 7B): all while maintaining the same GPU memory overhead, identical LLM rollout, and incurring little to no additional time cost."
+      ],
+      "citation_title": [
+        "Group-in-Group Policy Optimization for LLM Agent Training"
+      ],
+      "citation_author": [
+        "Feng, Lang",
+        "Xue, Zhenghai",
+        "Liu, Tingcong",
+        "An, Bo"
+      ],
+      "citation_date": [
+        "2025/05/16"
+      ],
+      "citation_online_date": [
+        "2025/10/28"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2505.10978"
+      ],
+      "citation_arxiv_id": [
+        "2505.10978"
+      ],
+      "citation_abstract": [
+        "Recent advances in group-based reinforcement learning (RL) have driven frontier large language models (LLMs) in single-turn tasks like mathematical reasoning. However, their scalability to multi-turn LLM agent training remains limited. Unlike static tasks, agent-environment interactions unfold over many steps and often yield sparse or delayed rewards, making credit assignment across individual steps significantly more challenging. In this work, we propose Group-in-Group Policy Optimization (GiGPO), a novel RL algorithm that achieves fine-grained credit assignment for LLM agents while preserving the appealing properties of group-based RL: critic-free, low memory, and stable convergence. GiGPO introduces a two-level structure for estimating relative advantage: (i) At the episode-level, GiGPO computes macro relative advantages based on groups of complete trajectories; (ii) At the step-level, GiGPO introduces an anchor state grouping mechanism that retroactively constructs step-level groups by identifying repeated environment states across trajectories. Actions stemming from the same state are grouped together, enabling micro relative advantage estimation. This hierarchical structure effectively captures both global trajectory quality and local step effectiveness without relying on auxiliary models or additional rollouts. We evaluate GiGPO on challenging agent benchmarks, including ALFWorld and WebShop, as well as tool-integrated reasoning on search-augmented QA tasks, using Qwen2.5-1.5B/3B/7B-Instruct. Crucially, GiGPO delivers fine-grained per-step credit signals, achieves performance gains of > 12% on ALFWorld and > 9% on WebShop over GRPO, and obtains superior performance on QA tasks (42.1% on 3B and 47.2% on 7B): all while maintaining the same GPU memory overhead, identical LLM rollout, and incurring little to no additional time cost."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2501.12948",
+    "checkedAt": "2026-09-08T15:45:22.567365+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2501.12948",
+    "title": "[2501.12948] DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2501.12948: DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+      ],
+      "og:title": [
+        "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+      ],
+      "og:description": [
+        "General reasoning represents a long-standing and formidable challenge in artificial intelligence. Recent breakthroughs, exemplified by large language models (LLMs) and chain-of-thought prompting, have achieved considerable success on foundational reasoning tasks. However, this success is heavily contingent upon extensive human-annotated demonstrations, and models' capabilities are still insufficient for more complex problems. Here we show that the reasoning abilities of LLMs can be incentivized through pure reinforcement learning (RL), obviating the need for human-labeled reasoning trajectories. The proposed RL framework facilitates the emergent development of advanced reasoning patterns, such as self-reflection, verification, and dynamic strategy adaptation. Consequently, the trained model achieves superior performance on verifiable tasks such as mathematics, coding competitions, and STEM fields, surpassing its counterparts trained via conventional supervised learning on human demonstrations. Moreover, the emergent reasoning patterns exhibited by these large-scale models can be systematically harnessed to guide and enhance the reasoning capabilities of smaller models."
+      ],
+      "citation_title": [
+        "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+      ],
+      "citation_author": [
+        "DeepSeek-AI",
+        "Guo, Daya",
+        "Yang, Dejian",
+        "Zhang, Haowei",
+        "Song, Junxiao",
+        "Wang, Peiyi",
+        "Zhu, Qihao",
+        "Xu, Runxin",
+        "Zhang, Ruoyu",
+        "Ma, Shirong",
+        "Bi, Xiao",
+        "Zhang, Xiaokang",
+        "Yu, Xingkai",
+        "Wu, Yu",
+        "Wu, Z. F.",
+        "Gou, Zhibin",
+        "Shao, Zhihong",
+        "Li, Zhuoshu",
+        "Gao, Ziyi",
+        "Liu, Aixin",
+        "Xue, Bing",
+        "Wang, Bingxuan",
+        "Wu, Bochao",
+        "Feng, Bei",
+        "Lu, Chengda",
+        "Zhao, Chenggang",
+        "Deng, Chengqi",
+        "Zhang, Chenyu",
+        "Ruan, Chong",
+        "Dai, Damai",
+        "Chen, Deli",
+        "Ji, Dongjie",
+        "Li, Erhang",
+        "Lin, Fangyun",
+        "Dai, Fucong",
+        "Luo, Fuli",
+        "Hao, Guangbo",
+        "Chen, Guanting",
+        "Li, Guowei",
+        "Zhang, H.",
+        "Bao, Han",
+        "Xu, Hanwei",
+        "Wang, Haocheng",
+        "Ding, Honghui",
+        "Xin, Huajian",
+        "Gao, Huazuo",
+        "Qu, Hui",
+        "Li, Hui",
+        "Guo, Jianzhong",
+        "Li, Jiashi",
+        "Wang, Jiawei",
+        "Chen, Jingchang",
+        "Yuan, Jingyang",
+        "Qiu, Junjie",
+        "Li, Junlong",
+        "Cai, J. L.",
+        "Ni, Jiaqi",
+        "Liang, Jian",
+        "Chen, Jin",
+        "Dong, Kai",
+        "Hu, Kai",
+        "Gao, Kaige",
+        "Guan, Kang",
+        "Huang, Kexin",
+        "Yu, Kuai",
+        "Wang, Lean",
+        "Zhang, Lecong",
+        "Zhao, Liang",
+        "Wang, Litong",
+        "Zhang, Liyue",
+        "Xu, Lei",
+        "Xia, Leyi",
+        "Zhang, Mingchuan",
+        "Zhang, Minghua",
+        "Tang, Minghui",
+        "Li, Meng",
+        "Wang, Miaojun",
+        "Li, Mingming",
+        "Tian, Ning",
+        "Huang, Panpan",
+        "Zhang, Peng",
+        "Wang, Qiancheng",
+        "Chen, Qinyu",
+        "Du, Qiushi",
+        "Ge, Ruiqi",
+        "Zhang, Ruisong",
+        "Pan, Ruizhe",
+        "Wang, Runji",
+        "Chen, R. J.",
+        "Jin, R. L.",
+        "Chen, Ruyi",
+        "Lu, Shanghao",
+        "Zhou, Shangyan",
+        "Chen, Shanhuang",
+        "Ye, Shengfeng",
+        "Wang, Shiyu",
+        "Yu, Shuiping",
+        "Zhou, Shunfeng",
+        "Pan, Shuting",
+        "Li, S. S.",
+        "Zhou, Shuang",
+        "Wu, Shaoqing",
+        "Ye, Shengfeng",
+        "Yun, Tao",
+        "Pei, Tian",
+        "Sun, Tianyu",
+        "Wang, T.",
+        "Zeng, Wangding",
+        "Zhao, Wanjia",
+        "Liu, Wen",
+        "Liang, Wenfeng",
+        "Gao, Wenjun",
+        "Yu, Wenqin",
+        "Zhang, Wentao",
+        "Xiao, W. L.",
+        "An, Wei",
+        "Liu, Xiaodong",
+        "Wang, Xiaohan",
+        "Chen, Xiaokang",
+        "Nie, Xiaotao",
+        "Cheng, Xin",
+        "Liu, Xin",
+        "Xie, Xin",
+        "Liu, Xingchao",
+        "Yang, Xinyu",
+        "Li, Xinyuan",
+        "Su, Xuecheng",
+        "Lin, Xuheng",
+        "Li, X. Q.",
+        "Jin, Xiangyue",
+        "Shen, Xiaojin",
+        "Chen, Xiaosha",
+        "Sun, Xiaowen",
+        "Wang, Xiaoxiang",
+        "Song, Xinnan",
+        "Zhou, Xinyi",
+        "Wang, Xianzu",
+        "Shan, Xinxia",
+        "Li, Y. K.",
+        "Wang, Y. Q.",
+        "Wei, Y. X.",
+        "Zhang, Yang",
+        "Xu, Yanhong",
+        "Li, Yao",
+        "Zhao, Yao",
+        "Sun, Yaofeng",
+        "Wang, Yaohui",
+        "Yu, Yi",
+        "Zhang, Yichao",
+        "Shi, Yifan",
+        "Xiong, Yiliang",
+        "He, Ying",
+        "Piao, Yishi",
+        "Wang, Yisong",
+        "Tan, Yixuan",
+        "Ma, Yiyang",
+        "Liu, Yiyuan",
+        "Guo, Yongqiang",
+        "Ou, Yuan",
+        "Wang, Yuduan",
+        "Gong, Yue",
+        "Zou, Yuheng",
+        "He, Yujia",
+        "Xiong, Yunfan",
+        "Luo, Yuxiang",
+        "You, Yuxiang",
+        "Liu, Yuxuan",
+        "Zhou, Yuyang",
+        "Zhu, Y. X.",
+        "Xu, Yanhong",
+        "Huang, Yanping",
+        "Li, Yaohui",
+        "Zheng, Yi",
+        "Zhu, Yuchen",
+        "Ma, Yunxian",
+        "Tang, Ying",
+        "Zha, Yukun",
+        "Yan, Yuting",
+        "Ren, Z. Z.",
+        "Ren, Zehui",
+        "Sha, Zhangli",
+        "Fu, Zhe",
+        "Xu, Zhean",
+        "Xie, Zhenda",
+        "Zhang, Zhengyan",
+        "Hao, Zhewen",
+        "Ma, Zhicheng",
+        "Yan, Zhigang",
+        "Wu, Zhiyu",
+        "Gu, Zihui",
+        "Zhu, Zijia",
+        "Liu, Zijun",
+        "Li, Zilin",
+        "Xie, Ziwei",
+        "Song, Ziyang",
+        "Pan, Zizheng",
+        "Huang, Zhen",
+        "Xu, Zhipeng",
+        "Zhang, Zhongyu",
+        "Zhang, Zhen"
+      ],
+      "citation_doi": [
+        "10.1038/s41586-025-09422-z"
+      ],
+      "citation_date": [
+        "2025/01/22"
+      ],
+      "citation_online_date": [
+        "2026/01/04"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2501.12948"
+      ],
+      "citation_arxiv_id": [
+        "2501.12948"
+      ],
+      "citation_abstract": [
+        "General reasoning represents a long-standing and formidable challenge in artificial intelligence. Recent breakthroughs, exemplified by large language models (LLMs) and chain-of-thought prompting, have achieved considerable success on foundational reasoning tasks. However, this success is heavily contingent upon extensive human-annotated demonstrations, and models' capabilities are still insufficient for more complex problems. Here we show that the reasoning abilities of LLMs can be incentivized through pure reinforcement learning (RL), obviating the need for human-labeled reasoning trajectories. The proposed RL framework facilitates the emergent development of advanced reasoning patterns, such as self-reflection, verification, and dynamic strategy adaptation. Consequently, the trained model achieves superior performance on verifiable tasks such as mathematics, coding competitions, and STEM fields, surpassing its counterparts trained via conventional supervised learning on human demonstrations. Moreover, the emergent reasoning patterns exhibited by these large-scale models can be systematically harnessed to guide and enhance the reasoning capabilities of smaller models."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2503.14476",
+    "checkedAt": "2026-09-08T15:45:29.330499+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2503.14476",
+    "title": "[2503.14476] DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2503.14476: DAPO: An Open-Source LLM Reinforcement Learning System at Scale"
+      ],
+      "og:title": [
+        "DAPO: An Open-Source LLM Reinforcement Learning System at Scale"
+      ],
+      "og:description": [
+        "Inference scaling empowers LLMs with unprecedented reasoning ability, with reinforcement learning as the core technique to elicit complex reasoning. However, key technical details of state-of-the-art reasoning LLMs are concealed (such as in OpenAI o1 blog and DeepSeek R1 technical report), thus the community still struggles to reproduce their RL training results. We propose the $\\textbf{D}$ecoupled Clip and $\\textbf{D}$ynamic s$\\textbf{A}$mpling $\\textbf{P}$olicy $\\textbf{O}$ptimization ($\\textbf{DAPO}$) algorithm, and fully open-source a state-of-the-art large-scale RL system that achieves 50 points on AIME 2024 using Qwen2.5-32B base model. Unlike previous works that withhold training details, we introduce four key techniques of our algorithm that make large-scale LLM RL a success. In addition, we open-source our training code, which is built on the verl framework, along with a carefully curated and processed dataset. These components of our open-source system enhance reproducibility and support future research in large-scale LLM RL."
+      ],
+      "citation_title": [
+        "DAPO: An Open-Source LLM Reinforcement Learning System at Scale"
+      ],
+      "citation_author": [
+        "Yu, Qiying",
+        "Zhang, Zheng",
+        "Zhu, Ruofei",
+        "Yuan, Yufeng",
+        "Zuo, Xiaochen",
+        "Yue, Yu",
+        "Dai, Weinan",
+        "Fan, Tiantian",
+        "Liu, Gaohong",
+        "Liu, Lingjun",
+        "Liu, Xin",
+        "Lin, Haibin",
+        "Lin, Zhiqi",
+        "Ma, Bole",
+        "Sheng, Guangming",
+        "Tong, Yuxuan",
+        "Zhang, Chi",
+        "Zhang, Mofan",
+        "Zhang, Wang",
+        "Zhu, Hang",
+        "Zhu, Jinhua",
+        "Chen, Jiaze",
+        "Chen, Jiangjie",
+        "Wang, Chengyi",
+        "Yu, Hongli",
+        "Song, Yuxuan",
+        "Wei, Xiangpeng",
+        "Zhou, Hao",
+        "Liu, Jingjing",
+        "Ma, Wei-Ying",
+        "Zhang, Ya-Qin",
+        "Yan, Lin",
+        "Qiao, Mu",
+        "Wu, Yonghui",
+        "Wang, Mingxuan"
+      ],
+      "citation_date": [
+        "2025/03/18"
+      ],
+      "citation_online_date": [
+        "2025/05/20"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2503.14476"
+      ],
+      "citation_arxiv_id": [
+        "2503.14476"
+      ],
+      "citation_abstract": [
+        "Inference scaling empowers LLMs with unprecedented reasoning ability, with reinforcement learning as the core technique to elicit complex reasoning. However, key technical details of state-of-the-art reasoning LLMs are concealed (such as in OpenAI o1 blog and DeepSeek R1 technical report), thus the community still struggles to reproduce their RL training results. We propose the $\\textbf{D}$ecoupled Clip and $\\textbf{D}$ynamic s$\\textbf{A}$mpling $\\textbf{P}$olicy $\\textbf{O}$ptimization ($\\textbf{DAPO}$) algorithm, and fully open-source a state-of-the-art large-scale RL system that achieves 50 points on AIME 2024 using Qwen2.5-32B base model. Unlike previous works that withhold training details, we introduce four key techniques of our algorithm that make large-scale LLM RL a success. In addition, we open-source our training code, which is built on the verl framework, along with a carefully curated and processed dataset. These components of our open-source system enhance reproducibility and support future research in large-scale LLM RL."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2503.12712",
+    "checkedAt": "2026-09-08T15:40:51.128833+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2503.12712",
+    "title": "[2503.12712] Analytical modeling of time-varying and dispersive metasurfaces with surface susceptibility operators",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2503.12712: Analytical modeling of time-varying and dispersive metasurfaces with surface susceptibility operators"
+      ],
+      "og:title": [
+        "Analytical modeling of time-varying and dispersive metasurfaces with surface susceptibility operators"
+      ],
+      "og:description": [
+        "With the advent of new fabrication technologies, time-varying metasurfaces have emerged as novel platforms for exotic waveform shaping in microwaves and optics, providing an additional degree of freedom to design dynamically controllable and reconfigurable scatterers. Nevertheless, inherent structural properties and material dispersion significantly complicates the computational analysis of such time-varying structures, highlighting the importance of efficient and intuitive analytical approaches that are generalizable to a wide class of meta-atom topologies and temporal modulation profiles. In this work, surface susceptibilities under generalized sheet transition conditions (GSTCs), widely used to model metasurfaces, are extended to a compact and tractable operator form for the frequency-domain analysis of metasurfaces with arbitrary temporal modulation and material dispersion. By virtue of this formalism, we derive the time-variant versions of simple surface susceptibility formulas for periodic arrays of freestanding and substrated dipolar scatterers through the use of appropriate polarizabilities. The applicability of the proposed approach to the characterization of reflective and transmissive properties of pulsed and Floquet metasurfaces is demonstrated, and verified against full-wave simulations."
+      ],
+      "citation_title": [
+        "Analytical modeling of time-varying and dispersive metasurfaces with surface susceptibility operators"
+      ],
+      "citation_author": [
+        "İplikçioğlu, Suat Barış",
+        "Aksun, M. I."
+      ],
+      "citation_date": [
+        "2025/03/17"
+      ],
+      "citation_online_date": [
+        "2025/03/17"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2503.12712"
+      ],
+      "citation_arxiv_id": [
+        "2503.12712"
+      ],
+      "citation_abstract": [
+        "With the advent of new fabrication technologies, time-varying metasurfaces have emerged as novel platforms for exotic waveform shaping in microwaves and optics, providing an additional degree of freedom to design dynamically controllable and reconfigurable scatterers. Nevertheless, inherent structural properties and material dispersion significantly complicates the computational analysis of such time-varying structures, highlighting the importance of efficient and intuitive analytical approaches that are generalizable to a wide class of meta-atom topologies and temporal modulation profiles. In this work, surface susceptibilities under generalized sheet transition conditions (GSTCs), widely used to model metasurfaces, are extended to a compact and tractable operator form for the frequency-domain analysis of metasurfaces with arbitrary temporal modulation and material dispersion. By virtue of this formalism, we derive the time-variant versions of simple surface susceptibility formulas for periodic arrays of freestanding and substrated dipolar scatterers through the use of appropriate polarizabilities. The applicability of the proposed approach to the characterization of reflective and transmissive properties of pulsed and Floquet metasurfaces is demonstrated, and verified against full-wave simulations."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2506.14228",
+    "checkedAt": "2026-09-08T15:40:57.815621+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2506.14228",
+    "title": "[2506.14228] On the core and adjoint of the product of complete ideals in two-dimensional regular local rings",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2506.14228: On the core and adjoint of the product of complete ideals in two-dimensional regular local rings"
+      ],
+      "og:title": [
+        "On the core and adjoint of the product of complete ideals in two-dimensional regular local rings"
+      ],
+      "og:description": [
+        "Using joint reductions of complete ideals, we find expressions for the core and adjoints of the product of complete ideals in a two-dimensional regular local ring. We also compute their colengths. Our results strengthen a generalization of the Briançon-Skoda theorem due to D. Rees and J. D. Sally."
+      ],
+      "citation_title": [
+        "On the core and adjoint of the product of complete ideals in two-dimensional regular local rings"
+      ],
+      "citation_author": [
+        "D'Cruz, Clare",
+        "Dubey, Saipriya",
+        "Verma, Jugal K."
+      ],
+      "citation_date": [
+        "2025/06/17"
+      ],
+      "citation_online_date": [
+        "2025/06/17"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2506.14228"
+      ],
+      "citation_arxiv_id": [
+        "2506.14228"
+      ],
+      "citation_abstract": [
+        "Using joint reductions of complete ideals, we find expressions for the core and adjoints of the product of complete ideals in a two-dimensional regular local ring. We also compute their colengths. Our results strengthen a generalization of the Brian\\c{c}on-Skoda theorem due to D. Rees and J. D. Sally."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2504.01990",
+    "checkedAt": "2026-09-08T15:41:04.676479+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2504.01990",
+    "title": "[2504.01990] Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2504.01990: Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems"
+      ],
+      "og:title": [
+        "Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems"
+      ],
+      "og:description": [
+        "The advent of large language models (LLMs) has catalyzed a transformative shift in artificial intelligence, paving the way for advanced intelligent agents capable of sophisticated reasoning, robust perception, and versatile action across diverse domains. As these agents increasingly drive AI research and practical applications, their design, evaluation, and continuous improvement present intricate, multifaceted challenges. This book provides a comprehensive overview, framing intelligent agents within modular, brain-inspired architectures that integrate principles from cognitive science, neuroscience, and computational research. We structure our exploration into four interconnected parts. First, we systematically investigate the modular foundation of intelligent agents, systematically mapping their cognitive, perceptual, and operational modules onto analogous human brain functionalities and elucidating core components such as memory, world modeling, reward processing, goal, and emotion. Second, we discuss self-enhancement and adaptive evolution mechanisms, exploring how agents autonomously refine their capabilities, adapt to dynamic environments, and achieve continual learning through automated optimization paradigms. Third, we examine multi-agent systems, investigating the collective intelligence emerging from agent interactions, cooperation, and societal structures. Finally, we address the critical imperative of building safe and beneficial AI systems, emphasizing intrinsic and extrinsic security threats, ethical alignment, robustness, and practical mitigation strategies necessary for trustworthy real-world deployment. By synthesizing modular AI architectures with insights from different disciplines, this survey identifies key research challenges and opportunities, encouraging innovations that harmonize technological advancement with meaningful societal benefit."
+      ],
+      "citation_title": [
+        "Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems"
+      ],
+      "citation_author": [
+        "Liu, Bang",
+        "Li, Xinfeng",
+        "Zhang, Jiayi",
+        "Wang, Jinlin",
+        "He, Tanjin",
+        "Hong, Sirui",
+        "Liu, Hongzhang",
+        "Zhang, Shaokun",
+        "Song, Kaitao",
+        "Zhu, Kunlun",
+        "Cheng, Yuheng",
+        "Wang, Suyuchen",
+        "Wang, Xiaoqiang",
+        "Luo, Yuyu",
+        "Jin, Haibo",
+        "Zhang, Peiyan",
+        "Liu, Ollie",
+        "Chen, Jiaqi",
+        "Zhang, Huan",
+        "Yu, Zhaoyang",
+        "Shi, Haochen",
+        "Li, Boyan",
+        "Wu, Dekun",
+        "Teng, Fengwei",
+        "Jia, Xiaojun",
+        "Xu, Jiawei",
+        "Xiang, Jinyu",
+        "Lin, Yizhang",
+        "Liu, Tianming",
+        "Liu, Tongliang",
+        "Su, Yu",
+        "Sun, Huan",
+        "Berseth, Glen",
+        "Nie, Jianyun",
+        "Foster, Ian",
+        "Ward, Logan",
+        "Wu, Qingyun",
+        "Gu, Yu",
+        "Zhuge, Mingchen",
+        "Liang, Xinbing",
+        "Tang, Xiangru",
+        "Wang, Haohan",
+        "You, Jiaxuan",
+        "Wang, Chi",
+        "Pei, Jian",
+        "Yang, Qiang",
+        "Qi, Xiaoliang",
+        "Wu, Chenglin"
+      ],
+      "citation_date": [
+        "2025/03/31"
+      ],
+      "citation_online_date": [
+        "2025/08/02"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2504.01990"
+      ],
+      "citation_arxiv_id": [
+        "2504.01990"
+      ],
+      "citation_abstract": [
+        "The advent of large language models (LLMs) has catalyzed a transformative shift in artificial intelligence, paving the way for advanced intelligent agents capable of sophisticated reasoning, robust perception, and versatile action across diverse domains. As these agents increasingly drive AI research and practical applications, their design, evaluation, and continuous improvement present intricate, multifaceted challenges. This book provides a comprehensive overview, framing intelligent agents within modular, brain-inspired architectures that integrate principles from cognitive science, neuroscience, and computational research. We structure our exploration into four interconnected parts. First, we systematically investigate the modular foundation of intelligent agents, systematically mapping their cognitive, perceptual, and operational modules onto analogous human brain functionalities and elucidating core components such as memory, world modeling, reward processing, goal, and emotion. Second, we discuss self-enhancement and adaptive evolution mechanisms, exploring how agents autonomously refine their capabilities, adapt to dynamic environments, and achieve continual learning through automated optimization paradigms. Third, we examine multi-agent systems, investigating the collective intelligence emerging from agent interactions, cooperation, and societal structures. Finally, we address the critical imperative of building safe and beneficial AI systems, emphasizing intrinsic and extrinsic security threats, ethical alignment, robustness, and practical mitigation strategies necessary for trustworthy real-world deployment. By synthesizing modular AI architectures with insights from different disciplines, this survey identifies key research challenges and opportunities, encouraging innovations that harmonize technological advancement with meaningful societal benefit."
+      ]
+    }
+  },
+  {
+    "url": "http://incompleteideas.net/book/the-book-2nd.html",
+    "checkedAt": "2026-09-08T15:43:57.211727+00:00",
+    "status": 200,
+    "finalUrl": "http://incompleteideas.net/book/the-book-2nd.html",
+    "title": "Sutton & Barto Book: Reinforcement Learning: An\nIntroduction",
+    "metadata": {}
+  },
+  {
+    "url": "https://www.davidsilver.uk/teaching/",
+    "checkedAt": "2026-09-08T15:43:59.602807+00:00",
+    "status": 200,
+    "finalUrl": "https://davidstarsilver.wordpress.com/teaching/",
+    "title": "Teaching – David Silver",
+    "metadata": {
+      "og:title": [
+        "Teaching"
+      ],
+      "og:description": [
+        "Advanced Topics  2015 (COMPM050/COMPGI13) Reinforcement Learning Video-lectures available here Lecture 1: Introduction to Reinforcement Learning Lecture 2: Markov Decision Processes Lecture 3: Plan…"
+      ],
+      "description": [
+        "Advanced Topics  2015 (COMPM050/COMPGI13) Reinforcement Learning Video-lectures available here Lecture 1: Introduction to Reinforcement Learning Lecture 2: Markov Decision Processes Lecture 3: Planning by Dynamic Programming Lecture 4: Model-Free Prediction Lecture 5: Model-Free Control Lecture 6: Value Function Approximation Lecture 7: Policy Gradient Methods Lecture 8: Integrating Learning and Planning Lecture 9: Exploration and Exploitation Lecture 10: Case Study: RL in Classic Games Easy21 assignment Discussion and…"
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/1707.06347",
+    "checkedAt": "2026-09-08T15:44:20.593872+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/1707.06347",
+    "title": "[1707.06347] Proximal Policy Optimization Algorithms",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 1707.06347: Proximal Policy Optimization Algorithms"
+      ],
+      "og:title": [
+        "Proximal Policy Optimization Algorithms"
+      ],
+      "og:description": [
+        "We propose a new family of policy gradient methods for reinforcement learning, which alternate between sampling data through interaction with the environment, and optimizing a \"surrogate\" objective function using stochastic gradient ascent. Whereas standard policy gradient methods perform one gradient update per data sample, we propose a novel objective function that enables multiple epochs of minibatch updates. The new methods, which we call proximal policy optimization (PPO), have some of the benefits of trust region policy optimization (TRPO), but they are much simpler to implement, more general, and have better sample complexity (empirically). Our experiments test PPO on a collection of benchmark tasks, including simulated robotic locomotion and Atari game playing, and we show that PPO outperforms other online policy gradient methods, and overall strikes a favorable balance between sample complexity, simplicity, and wall-time."
+      ],
+      "citation_title": [
+        "Proximal Policy Optimization Algorithms"
+      ],
+      "citation_author": [
+        "Schulman, John",
+        "Wolski, Filip",
+        "Dhariwal, Prafulla",
+        "Radford, Alec",
+        "Klimov, Oleg"
+      ],
+      "citation_date": [
+        "2017/07/20"
+      ],
+      "citation_online_date": [
+        "2017/08/28"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/1707.06347"
+      ],
+      "citation_arxiv_id": [
+        "1707.06347"
+      ],
+      "citation_abstract": [
+        "We propose a new family of policy gradient methods for reinforcement learning, which alternate between sampling data through interaction with the environment, and optimizing a \"surrogate\" objective function using stochastic gradient ascent. Whereas standard policy gradient methods perform one gradient update per data sample, we propose a novel objective function that enables multiple epochs of minibatch updates. The new methods, which we call proximal policy optimization (PPO), have some of the benefits of trust region policy optimization (TRPO), but they are much simpler to implement, more general, and have better sample complexity (empirically). Our experiments test PPO on a collection of benchmark tasks, including simulated robotic locomotion and Atari game playing, and we show that PPO outperforms other online policy gradient methods, and overall strikes a favorable balance between sample complexity, simplicity, and wall-time."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/1506.02438",
+    "checkedAt": "2026-09-08T15:44:27.291703+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/1506.02438",
+    "title": "[1506.02438] High-Dimensional Continuous Control Using Generalized Advantage Estimation",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 1506.02438: High-Dimensional Continuous Control Using Generalized Advantage Estimation"
+      ],
+      "og:title": [
+        "High-Dimensional Continuous Control Using Generalized Advantage Estimation"
+      ],
+      "og:description": [
+        "Policy gradient methods are an appealing approach in reinforcement learning because they directly optimize the cumulative reward and can straightforwardly be used with nonlinear function approximators such as neural networks. The two main challenges are the large number of samples typically required, and the difficulty of obtaining stable and steady improvement despite the nonstationarity of the incoming data. We address the first challenge by using value functions to substantially reduce the variance of policy gradient estimates at the cost of some bias, with an exponentially-weighted estimator of the advantage function that is analogous to TD(lambda). We address the second challenge by using trust region optimization procedure for both the policy and the value function, which are represented by neural networks.\n  Our approach yields strong empirical results on highly challenging 3D locomotion tasks, learning running gaits for bipedal and quadrupedal simulated robots, and learning a policy for getting the biped to stand up from starting out lying on the ground. In contrast to a body of prior work that uses hand-crafted policy representations, our neural network policies map directly from raw kinematics to joint torques. Our algorithm is fully model-free, and the amount of simulated experience required for the learning tasks on 3D bipeds corresponds to 1-2 weeks of real time."
+      ],
+      "citation_title": [
+        "High-Dimensional Continuous Control Using Generalized Advantage Estimation"
+      ],
+      "citation_author": [
+        "Schulman, John",
+        "Moritz, Philipp",
+        "Levine, Sergey",
+        "Jordan, Michael",
+        "Abbeel, Pieter"
+      ],
+      "citation_date": [
+        "2015/06/08"
+      ],
+      "citation_online_date": [
+        "2018/10/20"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/1506.02438"
+      ],
+      "citation_arxiv_id": [
+        "1506.02438"
+      ],
+      "citation_abstract": [
+        "Policy gradient methods are an appealing approach in reinforcement learning because they directly optimize the cumulative reward and can straightforwardly be used with nonlinear function approximators such as neural networks. The two main challenges are the large number of samples typically required, and the difficulty of obtaining stable and steady improvement despite the nonstationarity of the incoming data. We address the first challenge by using value functions to substantially reduce the variance of policy gradient estimates at the cost of some bias, with an exponentially-weighted estimator of the advantage function that is analogous to TD(lambda). We address the second challenge by using trust region optimization procedure for both the policy and the value function, which are represented by neural networks. Our approach yields strong empirical results on highly challenging 3D locomotion tasks, learning running gaits for bipedal and quadrupedal simulated robots, and learning a policy for getting the biped to stand up from starting out lying on the ground. In contrast to a body of prior work that uses hand-crafted policy representations, our neural network policies map directly from raw kinematics to joint torques. Our algorithm is fully model-free, and the amount of simulated experience required for the learning tasks on 3D bipeds corresponds to 1-2 weeks of real time."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2210.03629",
+    "checkedAt": "2026-09-08T15:44:34.007269+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2210.03629",
+    "title": "[2210.03629] ReAct: Synergizing Reasoning and Acting in Language Models",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2210.03629: ReAct: Synergizing Reasoning and Acting in Language Models"
+      ],
+      "og:title": [
+        "ReAct: Synergizing Reasoning and Acting in Language Models"
+      ],
+      "og:description": [
+        "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples. Project site with code: https://react-lm.github.io"
+      ],
+      "citation_title": [
+        "ReAct: Synergizing Reasoning and Acting in Language Models"
+      ],
+      "citation_author": [
+        "Yao, Shunyu",
+        "Zhao, Jeffrey",
+        "Yu, Dian",
+        "Du, Nan",
+        "Shafran, Izhak",
+        "Narasimhan, Karthik",
+        "Cao, Yuan"
+      ],
+      "citation_date": [
+        "2022/10/06"
+      ],
+      "citation_online_date": [
+        "2023/03/10"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2210.03629"
+      ],
+      "citation_arxiv_id": [
+        "2210.03629"
+      ],
+      "citation_abstract": [
+        "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples. Project site with code: https://react-lm.github.io"
+      ]
+    }
+  },
+  {
+    "url": "https://www.anthropic.com/research/building-effective-agents",
+    "checkedAt": "2026-09-08T15:44:40.708010+00:00",
+    "status": 200,
+    "finalUrl": "https://www.anthropic.com/engineering/building-effective-agents",
+    "title": "Building Effective AI Agents \\ Anthropic",
+    "metadata": {
+      "description": [
+        "Discover how Anthropic approaches the development of reliable AI agents. Learn about our research on agent capabilities, safety considerations, and technical framework for building trustworthy AI."
+      ],
+      "og:title": [
+        "Building Effective AI Agents"
+      ],
+      "og:description": [
+        "Discover how Anthropic approaches the development of reliable AI agents. Learn about our research on agent capabilities, safety considerations, and technical framework for building trustworthy AI."
+      ]
+    }
+  },
+  {
+    "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+    "checkedAt": "2026-09-08T15:44:53.087801+00:00",
+    "status": 200,
+    "finalUrl": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+    "title": "LLM Powered Autonomous Agents | Lil'Log",
+    "metadata": {
+      "description": [
+        "Building agents with LLM (large language model) as its core controller is a cool concept. Several proof-of-concepts demos, such as AutoGPT, GPT-Engineer and BabyAGI, serve as inspiring examples. The potentiality of LLM extends beyond generating well-written copies, stories, essays and programs; it can be framed as a powerful general problem solver.\nAgent System Overview\nIn a LLM-powered autonomous agent system, LLM functions as the agent’s brain, complemented by several key components:\n\nPlanning\n\nSubgoal and decomposition: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.\nReflection and refinement: The agent can do self-criticism and self-reflection over past actions, learn from mistakes and refine them for future steps, thereby improving the quality of final results.\n\n\nMemory\n\nShort-term memory: I would consider all the in-context learning (See Prompt Engineering) as utilizing short-term memory of the model to learn.\nLong-term memory: This provides the agent with the capability to retain and recall (infinite) information over extended periods, often by leveraging an external vector store and fast retrieval.\n\n\nTool use\n\nThe agent learns to call external APIs for extra information that is missing from the model weights (often hard to change after pre-training), including current information, code execution capability, access to proprietary information sources and more.\n\n\n\n\n\t\n\tOverview of a LLM-powered autonomous agent system.\n\nComponent One: Planning\nA complicated task usually involves many steps. An agent needs to know what they are and plan ahead."
+      ],
+      "og:title": [
+        "LLM Powered Autonomous Agents"
+      ],
+      "og:description": [
+        "Building agents with LLM (large language model) as its core controller is a cool concept. Several proof-of-concepts demos, such as AutoGPT, GPT-Engineer and BabyAGI, serve as inspiring examples. The potentiality of LLM extends beyond generating well-written copies, stories, essays and programs; it can be framed as a powerful general problem solver.\nAgent System Overview\nIn a LLM-powered autonomous agent system, LLM functions as the agent’s brain, complemented by several key components:\n\nPlanning\n\nSubgoal and decomposition: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.\nReflection and refinement: The agent can do self-criticism and self-reflection over past actions, learn from mistakes and refine them for future steps, thereby improving the quality of final results.\n\n\nMemory\n\nShort-term memory: I would consider all the in-context learning (See Prompt Engineering) as utilizing short-term memory of the model to learn.\nLong-term memory: This provides the agent with the capability to retain and recall (infinite) information over extended periods, often by leveraging an external vector store and fast retrieval.\n\n\nTool use\n\nThe agent learns to call external APIs for extra information that is missing from the model weights (often hard to change after pre-training), including current information, code execution capability, access to proprietary information sources and more.\n\n\n\n\n\t\n\tOverview of a LLM-powered autonomous agent system.\n\nComponent One: Planning\nA complicated task usually involves many steps. An agent needs to know what they are and plan ahead."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2203.02155",
+    "checkedAt": "2026-09-08T15:44:55.335871+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2203.02155",
+    "title": "[2203.02155] Training language models to follow instructions with human feedback",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2203.02155: Training language models to follow instructions with human feedback"
+      ],
+      "og:title": [
+        "Training language models to follow instructions with human feedback"
+      ],
+      "og:description": [
+        "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent."
+      ],
+      "citation_title": [
+        "Training language models to follow instructions with human feedback"
+      ],
+      "citation_author": [
+        "Ouyang, Long",
+        "Wu, Jeff",
+        "Jiang, Xu",
+        "Almeida, Diogo",
+        "Wainwright, Carroll L.",
+        "Mishkin, Pamela",
+        "Zhang, Chong",
+        "Agarwal, Sandhini",
+        "Slama, Katarina",
+        "Ray, Alex",
+        "Schulman, John",
+        "Hilton, Jacob",
+        "Kelton, Fraser",
+        "Miller, Luke",
+        "Simens, Maddie",
+        "Askell, Amanda",
+        "Welinder, Peter",
+        "Christiano, Paul",
+        "Leike, Jan",
+        "Lowe, Ryan"
+      ],
+      "citation_date": [
+        "2022/03/04"
+      ],
+      "citation_online_date": [
+        "2022/03/04"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2203.02155"
+      ],
+      "citation_arxiv_id": [
+        "2203.02155"
+      ],
+      "citation_abstract": [
+        "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2212.08073",
+    "checkedAt": "2026-09-08T15:45:02.007808+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2212.08073",
+    "title": "[2212.08073] Constitutional AI: Harmlessness from AI Feedback",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2212.08073: Constitutional AI: Harmlessness from AI Feedback"
+      ],
+      "og:title": [
+        "Constitutional AI: Harmlessness from AI Feedback"
+      ],
+      "og:description": [
+        "As AI systems become more capable, we would like to enlist their help to supervise other AIs. We experiment with methods for training a harmless AI assistant through self-improvement, without any human labels identifying harmful outputs. The only human oversight is provided through a list of rules or principles, and so we refer to the method as 'Constitutional AI'. The process involves both a supervised learning and a reinforcement learning phase. In the supervised phase we sample from an initial model, then generate self-critiques and revisions, and then finetune the original model on revised responses. In the RL phase, we sample from the finetuned model, use a model to evaluate which of the two samples is better, and then train a preference model from this dataset of AI preferences. We then train with RL using the preference model as the reward signal, i.e. we use 'RL from AI Feedback' (RLAIF). As a result we are able to train a harmless but non-evasive AI assistant that engages with harmful queries by explaining its objections to them. Both the SL and RL methods can leverage chain-of-thought style reasoning to improve the human-judged performance and transparency of AI decision making. These methods make it possible to control AI behavior more precisely and with far fewer human labels."
+      ],
+      "citation_title": [
+        "Constitutional AI: Harmlessness from AI Feedback"
+      ],
+      "citation_author": [
+        "Bai, Yuntao",
+        "Kadavath, Saurav",
+        "Kundu, Sandipan",
+        "Askell, Amanda",
+        "Kernion, Jackson",
+        "Jones, Andy",
+        "Chen, Anna",
+        "Goldie, Anna",
+        "Mirhoseini, Azalia",
+        "McKinnon, Cameron",
+        "Chen, Carol",
+        "Olsson, Catherine",
+        "Olah, Christopher",
+        "Hernandez, Danny",
+        "Drain, Dawn",
+        "Ganguli, Deep",
+        "Li, Dustin",
+        "Tran-Johnson, Eli",
+        "Perez, Ethan",
+        "Kerr, Jamie",
+        "Mueller, Jared",
+        "Ladish, Jeffrey",
+        "Landau, Joshua",
+        "Ndousse, Kamal",
+        "Lukosuite, Kamile",
+        "Lovitt, Liane",
+        "Sellitto, Michael",
+        "Elhage, Nelson",
+        "Schiefer, Nicholas",
+        "Mercado, Noemi",
+        "DasSarma, Nova",
+        "Lasenby, Robert",
+        "Larson, Robin",
+        "Ringer, Sam",
+        "Johnston, Scott",
+        "Kravec, Shauna",
+        "Showk, Sheer El",
+        "Fort, Stanislav",
+        "Lanham, Tamera",
+        "Telleen-Lawton, Timothy",
+        "Conerly, Tom",
+        "Henighan, Tom",
+        "Hume, Tristan",
+        "Bowman, Samuel R.",
+        "Hatfield-Dodds, Zac",
+        "Mann, Ben",
+        "Amodei, Dario",
+        "Joseph, Nicholas",
+        "McCandlish, Sam",
+        "Brown, Tom",
+        "Kaplan, Jared"
+      ],
+      "citation_date": [
+        "2022/12/15"
+      ],
+      "citation_online_date": [
+        "2022/12/15"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2212.08073"
+      ],
+      "citation_arxiv_id": [
+        "2212.08073"
+      ],
+      "citation_abstract": [
+        "As AI systems become more capable, we would like to enlist their help to supervise other AIs. We experiment with methods for training a harmless AI assistant through self-improvement, without any human labels identifying harmful outputs. The only human oversight is provided through a list of rules or principles, and so we refer to the method as 'Constitutional AI'. The process involves both a supervised learning and a reinforcement learning phase. In the supervised phase we sample from an initial model, then generate self-critiques and revisions, and then finetune the original model on revised responses. In the RL phase, we sample from the finetuned model, use a model to evaluate which of the two samples is better, and then train a preference model from this dataset of AI preferences. We then train with RL using the preference model as the reward signal, i.e. we use 'RL from AI Feedback' (RLAIF). As a result we are able to train a harmless but non-evasive AI assistant that engages with harmful queries by explaining its objections to them. Both the SL and RL methods can leverage chain-of-thought style reasoning to improve the human-judged performance and transparency of AI decision making. These methods make it possible to control AI behavior more precisely and with far fewer human labels."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2305.18290",
+    "checkedAt": "2026-09-08T15:45:09.023096+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2305.18290",
+    "title": "[2305.18290] Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2305.18290: Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
+      ],
+      "og:title": [
+        "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
+      ],
+      "og:description": [
+        "While large-scale unsupervised language models (LMs) learn broad world knowledge and some reasoning skills, achieving precise control of their behavior is difficult due to the completely unsupervised nature of their training. Existing methods for gaining such steerability collect human labels of the relative quality of model generations and fine-tune the unsupervised LM to align with these preferences, often with reinforcement learning from human feedback (RLHF). However, RLHF is a complex and often unstable procedure, first fitting a reward model that reflects the human preferences, and then fine-tuning the large unsupervised LM using reinforcement learning to maximize this estimated reward without drifting too far from the original model. In this paper we introduce a new parameterization of the reward model in RLHF that enables extraction of the corresponding optimal policy in closed form, allowing us to solve the standard RLHF problem with only a simple classification loss. The resulting algorithm, which we call Direct Preference Optimization (DPO), is stable, performant, and computationally lightweight, eliminating the need for sampling from the LM during fine-tuning or performing significant hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align with human preferences as well as or better than existing methods. Notably, fine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of generations, and matches or improves response quality in summarization and single-turn dialogue while being substantially simpler to implement and train."
+      ],
+      "citation_title": [
+        "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
+      ],
+      "citation_author": [
+        "Rafailov, Rafael",
+        "Sharma, Archit",
+        "Mitchell, Eric",
+        "Ermon, Stefano",
+        "Manning, Christopher D.",
+        "Finn, Chelsea"
+      ],
+      "citation_date": [
+        "2023/05/29"
+      ],
+      "citation_online_date": [
+        "2024/07/29"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2305.18290"
+      ],
+      "citation_arxiv_id": [
+        "2305.18290"
+      ],
+      "citation_abstract": [
+        "While large-scale unsupervised language models (LMs) learn broad world knowledge and some reasoning skills, achieving precise control of their behavior is difficult due to the completely unsupervised nature of their training. Existing methods for gaining such steerability collect human labels of the relative quality of model generations and fine-tune the unsupervised LM to align with these preferences, often with reinforcement learning from human feedback (RLHF). However, RLHF is a complex and often unstable procedure, first fitting a reward model that reflects the human preferences, and then fine-tuning the large unsupervised LM using reinforcement learning to maximize this estimated reward without drifting too far from the original model. In this paper we introduce a new parameterization of the reward model in RLHF that enables extraction of the corresponding optimal policy in closed form, allowing us to solve the standard RLHF problem with only a simple classification loss. The resulting algorithm, which we call Direct Preference Optimization (DPO), is stable, performant, and computationally lightweight, eliminating the need for sampling from the LM during fine-tuning or performing significant hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align with human preferences as well as or better than existing methods. Notably, fine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of generations, and matches or improves response quality in summarization and single-turn dialogue while being substantially simpler to implement and train."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2402.03300",
+    "checkedAt": "2026-09-08T15:45:15.744640+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2402.03300",
+    "title": "[2402.03300] DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2402.03300: DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
+      ],
+      "og:title": [
+        "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
+      ],
+      "og:description": [
+        "Mathematical reasoning poses a significant challenge for language models due to its complex and structured nature. In this paper, we introduce DeepSeekMath 7B, which continues pre-training DeepSeek-Coder-Base-v1.5 7B with 120B math-related tokens sourced from Common Crawl, together with natural language and code data. DeepSeekMath 7B has achieved an impressive score of 51.7% on the competition-level MATH benchmark without relying on external toolkits and voting techniques, approaching the performance level of Gemini-Ultra and GPT-4. Self-consistency over 64 samples from DeepSeekMath 7B achieves 60.9% on MATH. The mathematical reasoning capability of DeepSeekMath is attributed to two key factors: First, we harness the significant potential of publicly available web data through a meticulously engineered data selection pipeline. Second, we introduce Group Relative Policy Optimization (GRPO), a variant of Proximal Policy Optimization (PPO), that enhances mathematical reasoning abilities while concurrently optimizing the memory usage of PPO."
+      ],
+      "citation_title": [
+        "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
+      ],
+      "citation_author": [
+        "Shao, Zhihong",
+        "Wang, Peiyi",
+        "Zhu, Qihao",
+        "Xu, Runxin",
+        "Song, Junxiao",
+        "Bi, Xiao",
+        "Zhang, Haowei",
+        "Zhang, Mingchuan",
+        "Li, Y. K.",
+        "Wu, Y.",
+        "Guo, Daya"
+      ],
+      "citation_date": [
+        "2024/02/05"
+      ],
+      "citation_online_date": [
+        "2024/04/27"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2402.03300"
+      ],
+      "citation_arxiv_id": [
+        "2402.03300"
+      ],
+      "citation_abstract": [
+        "Mathematical reasoning poses a significant challenge for language models due to its complex and structured nature. In this paper, we introduce DeepSeekMath 7B, which continues pre-training DeepSeek-Coder-Base-v1.5 7B with 120B math-related tokens sourced from Common Crawl, together with natural language and code data. DeepSeekMath 7B has achieved an impressive score of 51.7% on the competition-level MATH benchmark without relying on external toolkits and voting techniques, approaching the performance level of Gemini-Ultra and GPT-4. Self-consistency over 64 samples from DeepSeekMath 7B achieves 60.9% on MATH. The mathematical reasoning capability of DeepSeekMath is attributed to two key factors: First, we harness the significant potential of publicly available web data through a meticulously engineered data selection pipeline. Second, we introduce Group Relative Policy Optimization (GRPO), a variant of Proximal Policy Optimization (PPO), that enhances mathematical reasoning abilities while concurrently optimizing the memory usage of PPO."
+      ]
+    }
+  },
+  {
+    "url": "https://github.com/volcengine/verl",
+    "checkedAt": "2026-09-08T15:45:56.542937+00:00",
+    "status": 200,
+    "finalUrl": "https://github.com/verl-project/verl",
+    "title": "GitHub - verl-project/verl: verl/HybridFlow: A Flexible and Efficient RL Post-Training Framework · GitHub",
+    "metadata": {
+      "description": [
+        "verl/HybridFlow: A Flexible and Efficient RL Post-Training Framework  - GitHub - verl-project/verl: verl/HybridFlow: A Flexible and Efficient RL Post-Training Framework"
+      ],
+      "og:title": [
+        "GitHub - verl-project/verl: verl/HybridFlow: A Flexible and Efficient RL Post-Training Framework"
+      ],
+      "og:description": [
+        "verl/HybridFlow: A Flexible and Efficient RL Post-Training Framework  - verl-project/verl"
+      ]
+    }
+  },
+  {
+    "url": "https://github.com/microsoft/agent-lightning",
+    "checkedAt": "2026-09-08T15:46:09.710660+00:00",
+    "status": 200,
+    "finalUrl": "https://github.com/microsoft/agent-lightning",
+    "title": "GitHub - microsoft/agent-lightning: The absolute trainer to light up AI agents. · GitHub",
+    "metadata": {
+      "description": [
+        "The absolute trainer to light up AI agents. Contribute to microsoft/agent-lightning development by creating an account on GitHub."
+      ],
+      "og:title": [
+        "GitHub - microsoft/agent-lightning: The absolute trainer to light up AI agents."
+      ],
+      "og:description": [
+        "The absolute trainer to light up AI agents. Contribute to microsoft/agent-lightning development by creating an account on GitHub."
+      ]
+    }
+  },
+  {
+    "url": "https://gymnasium.farama.org/",
+    "checkedAt": "2026-09-08T15:46:17.095457+00:00",
+    "status": 200,
+    "finalUrl": "https://gymnasium.farama.org/",
+    "title": "Gymnasium Documentation Contents Menu Expand Light mode Dark mode Auto light/dark mode",
+    "metadata": {
+      "description": [
+        "A standard API for reinforcement learning and a diverse set of reference environments (formerly Gym)"
+      ],
+      "og:title": [
+        "Gymnasium Documentation"
+      ],
+      "og:description": [
+        "A standard API for reinforcement learning and a diverse set of reference environments (formerly Gym)"
+      ]
+    }
+  },
+  {
+    "url": "https://stable-baselines3.readthedocs.io/en/master/",
+    "checkedAt": "2026-09-08T15:46:19.215134+00:00",
+    "status": 200,
+    "finalUrl": "https://stable-baselines3.readthedocs.io/en/master/",
+    "title": "Stable-Baselines3 Docs - Reliable Reinforcement Learning Implementations — Stable Baselines3 2.9.1a1 documentation",
+    "metadata": {}
+  },
+  {
+    "url": "https://arxiv.org/abs/2405.15793",
+    "checkedAt": "2026-09-08T15:46:25.886528+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2405.15793",
+    "title": "[2405.15793] SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2405.15793: SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"
+      ],
+      "og:title": [
+        "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"
+      ],
+      "og:description": [
+        "Language model (LM) agents are increasingly being used to automate complicated tasks in digital environments. Just as humans benefit from powerful software applications, such as integrated development environments, for complex tasks like software engineering, we posit that LM agents represent a new category of end users with their own needs and abilities, and would benefit from specially-built interfaces to the software they use. We investigate how interface design affects the performance of language model agents. As a result of this exploration, we introduce SWE-agent: a system that facilitates LM agents to autonomously use computers to solve software engineering tasks. SWE-agent's custom agent-computer interface (ACI) significantly enhances an agent's ability to create and edit code files, navigate entire repositories, and execute tests and other programs. We evaluate SWE-agent on SWE-bench and HumanEvalFix, achieving state-of-the-art performance on both with a pass@1 rate of 12.5% and 87.7%, respectively, far exceeding the previous state-of-the-art achieved with non-interactive LMs. Finally, we provide insight on how the design of the ACI can impact agents' behavior and performance."
+      ],
+      "citation_title": [
+        "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"
+      ],
+      "citation_author": [
+        "Yang, John",
+        "Jimenez, Carlos E.",
+        "Wettig, Alexander",
+        "Lieret, Kilian",
+        "Yao, Shunyu",
+        "Narasimhan, Karthik",
+        "Press, Ofir"
+      ],
+      "citation_date": [
+        "2024/05/06"
+      ],
+      "citation_online_date": [
+        "2024/11/11"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2405.15793"
+      ],
+      "citation_arxiv_id": [
+        "2405.15793"
+      ],
+      "citation_abstract": [
+        "Language model (LM) agents are increasingly being used to automate complicated tasks in digital environments. Just as humans benefit from powerful software applications, such as integrated development environments, for complex tasks like software engineering, we posit that LM agents represent a new category of end users with their own needs and abilities, and would benefit from specially-built interfaces to the software they use. We investigate how interface design affects the performance of language model agents. As a result of this exploration, we introduce SWE-agent: a system that facilitates LM agents to autonomously use computers to solve software engineering tasks. SWE-agent's custom agent-computer interface (ACI) significantly enhances an agent's ability to create and edit code files, navigate entire repositories, and execute tests and other programs. We evaluate SWE-agent on SWE-bench and HumanEvalFix, achieving state-of-the-art performance on both with a pass@1 rate of 12.5% and 87.7%, respectively, far exceeding the previous state-of-the-art achieved with non-interactive LMs. Finally, we provide insight on how the design of the ACI can impact agents' behavior and performance."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2310.06770",
+    "checkedAt": "2026-09-08T15:46:32.530265+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2310.06770",
+    "title": "[2310.06770] SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2310.06770: SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"
+      ],
+      "og:title": [
+        "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"
+      ],
+      "og:description": [
+        "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous."
+      ],
+      "citation_title": [
+        "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"
+      ],
+      "citation_author": [
+        "Jimenez, Carlos E.",
+        "Yang, John",
+        "Wettig, Alexander",
+        "Yao, Shunyu",
+        "Pei, Kexin",
+        "Press, Ofir",
+        "Narasimhan, Karthik"
+      ],
+      "citation_date": [
+        "2023/10/10"
+      ],
+      "citation_online_date": [
+        "2024/11/11"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2310.06770"
+      ],
+      "citation_arxiv_id": [
+        "2310.06770"
+      ],
+      "citation_abstract": [
+        "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2307.13854",
+    "checkedAt": "2026-09-08T15:46:39.234344+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2307.13854",
+    "title": "[2307.13854] WebArena: A Realistic Web Environment for Building Autonomous Agents",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2307.13854: WebArena: A Realistic Web Environment for Building Autonomous Agents"
+      ],
+      "og:title": [
+        "WebArena: A Realistic Web Environment for Building Autonomous Agents"
+      ],
+      "og:description": [
+        "With advances in generative AI, there is now potential for autonomous agents to manage daily tasks via natural language commands. However, current agents are primarily created and tested in simplified synthetic environments, leading to a disconnect with real-world scenarios. In this paper, we build an environment for language-guided agents that is highly realistic and reproducible. Specifically, we focus on agents that perform tasks on the web, and create an environment with fully functional websites from four common domains: e-commerce, social forum discussions, collaborative software development, and content management. Our environment is enriched with tools (e.g., a map) and external knowledge bases (e.g., user manuals) to encourage human-like task-solving. Building upon our environment, we release a set of benchmark tasks focusing on evaluating the functional correctness of task completions. The tasks in our benchmark are diverse, long-horizon, and designed to emulate tasks that humans routinely perform on the internet. We experiment with several baseline agents, integrating recent techniques such as reasoning before acting. The results demonstrate that solving complex tasks is challenging: our best GPT-4-based agent only achieves an end-to-end task success rate of 14.41%, significantly lower than the human performance of 78.24%. These results highlight the need for further development of robust agents, that current state-of-the-art large language models are far from perfect performance in these real-life tasks, and that WebArena can be used to measure such progress."
+      ],
+      "citation_title": [
+        "WebArena: A Realistic Web Environment for Building Autonomous Agents"
+      ],
+      "citation_author": [
+        "Zhou, Shuyan",
+        "Xu, Frank F.",
+        "Zhu, Hao",
+        "Zhou, Xuhui",
+        "Lo, Robert",
+        "Sridhar, Abishek",
+        "Cheng, Xianyi",
+        "Ou, Tianyue",
+        "Bisk, Yonatan",
+        "Fried, Daniel",
+        "Alon, Uri",
+        "Neubig, Graham"
+      ],
+      "citation_date": [
+        "2023/07/25"
+      ],
+      "citation_online_date": [
+        "2024/04/16"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2307.13854"
+      ],
+      "citation_arxiv_id": [
+        "2307.13854"
+      ],
+      "citation_abstract": [
+        "With advances in generative AI, there is now potential for autonomous agents to manage daily tasks via natural language commands. However, current agents are primarily created and tested in simplified synthetic environments, leading to a disconnect with real-world scenarios. In this paper, we build an environment for language-guided agents that is highly realistic and reproducible. Specifically, we focus on agents that perform tasks on the web, and create an environment with fully functional websites from four common domains: e-commerce, social forum discussions, collaborative software development, and content management. Our environment is enriched with tools (e.g., a map) and external knowledge bases (e.g., user manuals) to encourage human-like task-solving. Building upon our environment, we release a set of benchmark tasks focusing on evaluating the functional correctness of task completions. The tasks in our benchmark are diverse, long-horizon, and designed to emulate tasks that humans routinely perform on the internet. We experiment with several baseline agents, integrating recent techniques such as reasoning before acting. The results demonstrate that solving complex tasks is challenging: our best GPT-4-based agent only achieves an end-to-end task success rate of 14.41%, significantly lower than the human performance of 78.24%. These results highlight the need for further development of robust agents, that current state-of-the-art large language models are far from perfect performance in these real-life tasks, and that WebArena can be used to measure such progress."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2311.12983",
+    "checkedAt": "2026-09-08T15:46:45.902999+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2311.12983",
+    "title": "[2311.12983] GAIA: a benchmark for General AI Assistants",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2311.12983: GAIA: a benchmark for General AI Assistants"
+      ],
+      "og:title": [
+        "GAIA: a benchmark for General AI Assistants"
+      ],
+      "og:description": [
+        "We introduce GAIA, a benchmark for General AI Assistants that, if solved, would represent a milestone in AI research. GAIA proposes real-world questions that require a set of fundamental abilities such as reasoning, multi-modality handling, web browsing, and generally tool-use proficiency. GAIA questions are conceptually simple for humans yet challenging for most advanced AIs: we show that human respondents obtain 92\\% vs. 15\\% for GPT-4 equipped with plugins. This notable performance disparity contrasts with the recent trend of LLMs outperforming humans on tasks requiring professional skills in e.g. law or chemistry. GAIA's philosophy departs from the current trend in AI benchmarks suggesting to target tasks that are ever more difficult for humans. We posit that the advent of Artificial General Intelligence (AGI) hinges on a system's capability to exhibit similar robustness as the average human does on such questions. Using GAIA's methodology, we devise 466 questions and their answer. We release our questions while retaining answers to 300 of them to power a leader-board available at https://huggingface.co/gaia-benchmark."
+      ],
+      "citation_title": [
+        "GAIA: a benchmark for General AI Assistants"
+      ],
+      "citation_author": [
+        "Mialon, Grégoire",
+        "Fourrier, Clémentine",
+        "Swift, Craig",
+        "Wolf, Thomas",
+        "LeCun, Yann",
+        "Scialom, Thomas"
+      ],
+      "citation_date": [
+        "2023/11/21"
+      ],
+      "citation_online_date": [
+        "2023/11/21"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2311.12983"
+      ],
+      "citation_arxiv_id": [
+        "2311.12983"
+      ],
+      "citation_abstract": [
+        "We introduce GAIA, a benchmark for General AI Assistants that, if solved, would represent a milestone in AI research. GAIA proposes real-world questions that require a set of fundamental abilities such as reasoning, multi-modality handling, web browsing, and generally tool-use proficiency. GAIA questions are conceptually simple for humans yet challenging for most advanced AIs: we show that human respondents obtain 92\\% vs. 15\\% for GPT-4 equipped with plugins. This notable performance disparity contrasts with the recent trend of LLMs outperforming humans on tasks requiring professional skills in e.g. law or chemistry. GAIA's philosophy departs from the current trend in AI benchmarks suggesting to target tasks that are ever more difficult for humans. We posit that the advent of Artificial General Intelligence (AGI) hinges on a system's capability to exhibit similar robustness as the average human does on such questions. Using GAIA's methodology, we devise 466 questions and their answer. We release our questions while retaining answers to 300 of them to power a leader-board available at https://huggingface.co/gaia-benchmark."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2406.12045",
+    "checkedAt": "2026-09-08T15:46:52.523779+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2406.12045",
+    "title": "[2406.12045] $τ$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2406.12045: $τ$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains"
+      ],
+      "og:title": [
+        "$τ$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains"
+      ],
+      "og:description": [
+        "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications. We propose $τ$-bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with the annotated goal state. We also propose a new metric (pass^k) to evaluate the reliability of agent behavior over multiple trials. Our experiments show that even state-of-the-art function calling agents (like gpt-4o) succeed on <50% of the tasks, and are quite inconsistent (pass^8 <25% in retail). Our findings point to the need for methods that can improve the ability of agents to act consistently and follow rules reliably."
+      ],
+      "citation_title": [
+        "$\\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains"
+      ],
+      "citation_author": [
+        "Yao, Shunyu",
+        "Shinn, Noah",
+        "Razavi, Pedram",
+        "Narasimhan, Karthik"
+      ],
+      "citation_date": [
+        "2024/06/17"
+      ],
+      "citation_online_date": [
+        "2024/06/17"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2406.12045"
+      ],
+      "citation_arxiv_id": [
+        "2406.12045"
+      ],
+      "citation_abstract": [
+        "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications. We propose $\\tau$-bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with the annotated goal state. We also propose a new metric (pass^k) to evaluate the reliability of agent behavior over multiple trials. Our experiments show that even state-of-the-art function calling agents (like gpt-4o) succeed on <50% of the tasks, and are quite inconsistent (pass^8 <25% in retail). Our findings point to the need for methods that can improve the ability of agents to act consistently and follow rules reliably."
+      ]
+    }
+  },
+  {
+    "url": "https://www.marl-book.com/",
+    "checkedAt": "2026-09-08T15:46:59.224587+00:00",
+    "status": 200,
+    "finalUrl": "https://www.marl-book.com/",
+    "title": "Multi-Agent Reinforcement Learning: Foundations and Modern Approaches",
+    "metadata": {
+      "description": [
+        "Textbook published by MIT Press (2024)"
+      ],
+      "og:description": [
+        "Textbook published by MIT Press (2024)"
+      ],
+      "og:title": [
+        "Multi-Agent Reinforcement Learning: Foundations and Modern Approaches"
+      ]
+    }
+  },
+  {
+    "url": "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
+    "checkedAt": "2026-09-08T15:47:08.847354+00:00",
+    "status": 200,
+    "finalUrl": "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
+    "title": "Reward Hacking in Reinforcement Learning | Lil'Log",
+    "metadata": {
+      "description": [
+        "Reward hacking occurs when a reinforcement learning (RL) agent exploits flaws or ambiguities in the reward function to achieve high rewards, without genuinely learning or completing the intended task. Reward hacking exists because RL environments are often imperfect, and it is fundamentally challenging to accurately specify a reward function.\nWith the rise of language models generalizing to a broad spectrum of tasks and RLHF becomes a de facto method for alignment training, reward hacking in RL training of language models has become a critical practical challenge. Instances where the model learns to modify unit tests to pass coding tasks, or where responses contain biases that mimic a user’s preference, are pretty concerning and are likely one of the major blockers for real-world deployment of more autonomous use cases of AI models."
+      ],
+      "og:title": [
+        "Reward Hacking in Reinforcement Learning"
+      ],
+      "og:description": [
+        "Reward hacking occurs when a reinforcement learning (RL) agent exploits flaws or ambiguities in the reward function to achieve high rewards, without genuinely learning or completing the intended task. Reward hacking exists because RL environments are often imperfect, and it is fundamentally challenging to accurately specify a reward function.\nWith the rise of language models generalizing to a broad spectrum of tasks and RLHF becomes a de facto method for alignment training, reward hacking in RL training of language models has become a critical practical challenge. Instances where the model learns to modify unit tests to pass coding tasks, or where responses contain biases that mimic a user’s preference, are pretty concerning and are likely one of the major blockers for real-world deployment of more autonomous use cases of AI models."
+      ]
+    }
+  },
+  {
+    "url": "https://fortelabs.com/blog/para/",
+    "checkedAt": "2026-09-08T15:47:11.073400+00:00",
+    "status": 200,
+    "finalUrl": "https://fortelabs.com/blog/para/",
+    "title": "The PARA Method: The Simple System for Organizing Your Digital Life in Seconds",
+    "metadata": {
+      "description": [
+        "Learn how to organize your digital life in seconds. Stop wasting time looking for information and gain greater focus on what matters most."
+      ],
+      "og:title": [
+        "The PARA Method: The Simple System for Organizing Your Digital Life in Seconds"
+      ],
+      "og:description": [
+        "Learn how to organize your digital life in seconds. Stop wasting time looking for information and gain greater focus on what matters most."
+      ]
+    }
+  },
+  {
+    "url": "https://zettelkasten.de/introduction/",
+    "checkedAt": "2026-09-08T15:47:18.087550+00:00",
+    "status": 200,
+    "finalUrl": "https://zettelkasten.de/introduction/",
+    "title": "Introduction to the Zettelkasten Method • Zettelkasten Method",
+    "metadata": {
+      "description": [
+        "Learn how the Zettelkasten works as a system, what a Zettel is made of, and how to grow an organic web of knowledge."
+      ],
+      "og:title": [
+        "Introduction to the Zettelkasten Method"
+      ]
+    }
+  },
+  {
+    "url": "https://diataxis.fr/",
+    "checkedAt": "2026-09-08T15:47:21.940865+00:00",
+    "status": 200,
+    "finalUrl": "https://diataxis.fr/",
+    "title": "Diátaxis Contents Menu Expand Light mode Dark mode Auto light/dark, in light mode Auto light/dark, in dark mode",
+    "metadata": {
+      "description": [
+        "Diátaxis is a widely-adopted, pragmatic and systematic approach to thinking about and creating documentation."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2609.04865",
+    "checkedAt": "2026-09-08T15:47:28.380141+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2609.04865",
+    "title": "[2609.04865] CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2609.04865: CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution"
+      ],
+      "og:title": [
+        "CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution"
+      ],
+      "og:description": [
+        "Skill libraries improve the sample efficiency of agentic reinforcement learning (RL) by enabling large language model (LLM) agents to reuse procedural knowledge. Yet existing paradigms exhibit structural shortcomings: they either decouple skill evolution from policy optimization or instantiate meta-skills as fixed workflows. Both treat skills as passive objects to be managed, limiting the flexible evolution of skills and their co-adaptation with the reasoning agent. To address the limitations, we propose CoSkill, a unified multi-agent RL framework that recasts the static meta-skill workflow as a learnable Meta-Skill Agent and jointly trains it with a Reasoning Agent over a hierarchical skill library. By modeling the Reasoning and Meta-Skill Agents as a cooperative team sharing a single backbone, CoSkill enables end-to-end co-adaptation: the Reasoning Agent conditions its actions on a retrieved task skill and step skills selected from its child set, while its task performance guides the Meta-Skill Agent in refining those step skills. Experiments on ALFWorld and WebShop show that CoSkill substantially outperforms prior skill-based and RL baselines, achieving success rates of 98.4% and 90.6%, respectively (+3.5 and +6.2 pp). As shown in Figure 1, CoSkill achieves superior early-stage sample efficiency, asymptotic performance, and wall-clock efficiency. Our code is available at https://github.com/jinyuan-cookie/CoSkill."
+      ],
+      "citation_title": [
+        "CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution"
+      ],
+      "citation_author": [
+        "Feng, Jinyuan",
+        "Li, Dongmin",
+        "Chen, Yiqun",
+        "Gao, Yang",
+        "Chen, Xing",
+        "Wang, Huimu",
+        "Pu, Zhiqiang"
+      ],
+      "citation_date": [
+        "2026/09/04"
+      ],
+      "citation_online_date": [
+        "2026/09/04"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2609.04865"
+      ],
+      "citation_arxiv_id": [
+        "2609.04865"
+      ],
+      "citation_abstract": [
+        "Skill libraries improve the sample efficiency of agentic reinforcement learning (RL) by enabling large language model (LLM) agents to reuse procedural knowledge. Yet existing paradigms exhibit structural shortcomings: they either decouple skill evolution from policy optimization or instantiate meta-skills as fixed workflows. Both treat skills as passive objects to be managed, limiting the flexible evolution of skills and their co-adaptation with the reasoning agent. To address the limitations, we propose CoSkill, a unified multi-agent RL framework that recasts the static meta-skill workflow as a learnable Meta-Skill Agent and jointly trains it with a Reasoning Agent over a hierarchical skill library. By modeling the Reasoning and Meta-Skill Agents as a cooperative team sharing a single backbone, CoSkill enables end-to-end co-adaptation: the Reasoning Agent conditions its actions on a retrieved task skill and step skills selected from its child set, while its task performance guides the Meta-Skill Agent in refining those step skills. Experiments on ALFWorld and WebShop show that CoSkill substantially outperforms prior skill-based and RL baselines, achieving success rates of 98.4% and 90.6%, respectively (+3.5 and +6.2 pp). As shown in Figure 1, CoSkill achieves superior early-stage sample efficiency, asymptotic performance, and wall-clock efficiency. Our code is available at https://github.com/jinyuan-cookie/CoSkill."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2609.04518",
+    "checkedAt": "2026-09-08T15:47:35.072199+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2609.04518",
+    "title": "[2609.04518] What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2609.04518: What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents"
+      ],
+      "og:title": [
+        "What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents"
+      ],
+      "og:description": [
+        "Agent reinforcement learning (RL) increasingly runs through full execution harnesses, and a multi-harness recipe mixes two choices: exposing the policy to several harnesses, and comparing their rewards inside one relative-advantage group. We isolate the second choice in repository-level coding. From one Qwen3-8B supervised warm start we replay the same frozen task-harness records from Aider, OpenHands, Qwen Code, and SWE-agent, with the same number of updates, under two rules for group-relative policy optimization (GRPO), Within (one group per task-harness pair) and Cross (harnesses pooled within a task), and score every checkpoint with a sealed SWE-bench Verified oracle on four source harnesses and a minimal harness held out of training. The evaluation harness is the dominant variable: across 24,000 sealed evaluations it moves the mean solve rate from 2.14\\% to 9.27\\%, a factor of 4.3, where the training recipe moves it by 1.16. The grouping rule is not. On the held-out harness, Cross minus Within is +0.25 pp, 95\\% confidence interval [-0.48, +1.02], at eight attempts per task, and +0.16 [-0.41, +0.72] pooled over three training seeds whose individual estimates change sign. Each rule's own seed range, 0.42 to 0.45 pp, exceeds the difference between them. Both rules place their largest gains on the same source harness. The pooled advantage carries the harness: an out-of-fold classifier recovers the generating harness from Cross's advantage +4.48 pp above the shuffled-label baseline and from Within's not at all, and the two rules still reach the same held-out score and action distribution inside each harness. Re-collecting half the training data on-policy does not change this. Cross-harness credit yields configuration adaptation and no more portable capability than within-harness credit. Multi-harness RL reports should state the grouping boundary and test under an unseen harness."
+      ],
+      "citation_title": [
+        "What Does Multi-Harness RL Learn? Credit Assignment and Portability in Coding Agents"
+      ],
+      "citation_author": [
+        "Le, Chenqian",
+        "Cheng, Jiayi",
+        "He, Qijia",
+        "Li, Runhao",
+        "Li, Yinghao",
+        "Chen, Xupeng"
+      ],
+      "citation_date": [
+        "2026/09/03"
+      ],
+      "citation_online_date": [
+        "2026/09/03"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2609.04518"
+      ],
+      "citation_arxiv_id": [
+        "2609.04518"
+      ],
+      "citation_abstract": [
+        "Agent reinforcement learning (RL) increasingly runs through full execution harnesses, and a multi-harness recipe mixes two choices: exposing the policy to several harnesses, and comparing their rewards inside one relative-advantage group. We isolate the second choice in repository-level coding. From one Qwen3-8B supervised warm start we replay the same frozen task-harness records from Aider, OpenHands, Qwen Code, and SWE-agent, with the same number of updates, under two rules for group-relative policy optimization (GRPO), Within (one group per task-harness pair) and Cross (harnesses pooled within a task), and score every checkpoint with a sealed SWE-bench Verified oracle on four source harnesses and a minimal harness held out of training. The evaluation harness is the dominant variable: across 24,000 sealed evaluations it moves the mean solve rate from 2.14\\% to 9.27\\%, a factor of 4.3, where the training recipe moves it by 1.16. The grouping rule is not. On the held-out harness, Cross minus Within is +0.25 pp, 95\\% confidence interval [-0.48, +1.02], at eight attempts per task, and +0.16 [-0.41, +0.72] pooled over three training seeds whose individual estimates change sign. Each rule's own seed range, 0.42 to 0.45 pp, exceeds the difference between them. Both rules place their largest gains on the same source harness. The pooled advantage carries the harness: an out-of-fold classifier recovers the generating harness from Cross's advantage +4.48 pp above the shuffled-label baseline and from Within's not at all, and the two rules still reach the same held-out score and action distribution inside each harness. Re-collecting half the training data on-policy does not change this. Cross-harness credit yields configuration adaptation and no more portable capability than within-harness credit. Multi-harness RL reports should state the grouping boundary and test under an unseen harness."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2608.23318",
+    "checkedAt": "2026-09-08T15:47:41.730052+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2608.23318",
+    "title": "[2608.23318] Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2608.23318: Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning"
+      ],
+      "og:title": [
+        "Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning"
+      ],
+      "og:description": [
+        "Hint-based reinforcement learning addresses reward sparsity in long-horizon agentic tasks by retaining a prefix of an expert trajectory before each rollout, letting the policy explore from a state closer to success. Its effectiveness hinges on the guidance depth: how much of the trajectory to keep. Existing methods treat this depth as a deterministic scalar. Scheduled approaches share one value across samples and ignore per-task heterogeneity; per-sample probing estimates it separately at the cost of extra rollouts. We find that useful guidance occupies a band of depths whose informativeness profile is approximately Gaussian around the band center, rather than concentrating at a single optimal point. We propose Agent-G$^2$, a Gaussian guidance framework that draws the depth per task from a Gaussian whose center and spread are estimated online from rollouts already collected for policy optimization, requiring no probe rollouts or learned depth predictor. The center combines a global baseline with per-cluster difficulty, and the spread tracks within-cluster variance. We evaluate Agent-G$^2$ on ALFWorld and WebShop on Qwen2.5-1.5B / 7B-Instruct. Agent-G$^2$ outperforms the strongest hint-based, hint-free, and Aux-RL baselines on ALFWorld by 2.3 / 3.9 / 7.4 points at under one-third the rollout cost of per-sample probing."
+      ],
+      "citation_title": [
+        "Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning"
+      ],
+      "citation_author": [
+        "Wang, Zixuan",
+        "Miao, Yanrui",
+        "Lu, Zhengxi",
+        "Pan, Teng",
+        "Qiu, Yiwen",
+        "Li, Hongxing",
+        "Qiu, Peng",
+        "Zhang, Ruiqing",
+        "Shen, Yongliang"
+      ],
+      "citation_date": [
+        "2026/08/24"
+      ],
+      "citation_online_date": [
+        "2026/08/24"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2608.23318"
+      ],
+      "citation_arxiv_id": [
+        "2608.23318"
+      ],
+      "citation_abstract": [
+        "Hint-based reinforcement learning addresses reward sparsity in long-horizon agentic tasks by retaining a prefix of an expert trajectory before each rollout, letting the policy explore from a state closer to success. Its effectiveness hinges on the guidance depth: how much of the trajectory to keep. Existing methods treat this depth as a deterministic scalar. Scheduled approaches share one value across samples and ignore per-task heterogeneity; per-sample probing estimates it separately at the cost of extra rollouts. We find that useful guidance occupies a band of depths whose informativeness profile is approximately Gaussian around the band center, rather than concentrating at a single optimal point. We propose Agent-G$^2$, a Gaussian guidance framework that draws the depth per task from a Gaussian whose center and spread are estimated online from rollouts already collected for policy optimization, requiring no probe rollouts or learned depth predictor. The center combines a global baseline with per-cluster difficulty, and the spread tracks within-cluster variance. We evaluate Agent-G$^2$ on ALFWorld and WebShop on Qwen2.5-1.5B / 7B-Instruct. Agent-G$^2$ outperforms the strongest hint-based, hint-free, and Aux-RL baselines on ALFWorld by 2.3 / 3.9 / 7.4 points at under one-third the rollout cost of per-sample probing."
+      ]
+    }
+  },
+  {
+    "url": "https://arxiv.org/abs/2608.21946",
+    "checkedAt": "2026-09-08T15:47:48.379021+00:00",
+    "status": 200,
+    "finalUrl": "https://arxiv.org/abs/2608.21946",
+    "title": "[2608.21946] EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning",
+    "metadata": {
+      "description": [
+        "Abstract page for arXiv paper 2608.21946: EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning"
+      ],
+      "og:title": [
+        "EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning"
+      ],
+      "og:description": [
+        "Reinforcement learning with outcome-based objectives such as GRPO enables LLM-based agents to solve complex, long-horizon tasks, yet the reusable exploration patterns embedded in interaction trajectories are largely discarded after a single policy update. Existing experience-augmented approaches retrieve historical guidance at inference time, but they apply experiences without accounting for the policy's evolving capability and create persistent dependencies on external retrieval. We propose EDGE (Experience-Distillation for Guided Exploration), a framework that treats retrieved experiences as temporary training-time scaffolds and progressively internalizes their benefits into the parametric policy. Concretely, EDGE partitions each rollout group into experience-conditioned and experience-free trajectories to estimate and admit only positive marginal gains without extra sampling, then distills the induced behavior into the base policy via a reverse-KL objective on its own empirical support. A co-evolutionary experience bank further synthesizes guidance from emerging failure modes and prunes obsolete entries as the policy evolves. Across embodied, web, and search-based QA tasks, EDGE improves over strong RL baselines by up to 12.5 points and remains effective without inference-time scaffolds or a proprietary reflector. The code is available at https://github.com/xvolcano02/EDGE."
+      ],
+      "citation_title": [
+        "EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning"
+      ],
+      "citation_author": [
+        "Xie, Can",
+        "Zhou, Yuyi",
+        "Yang, Wen",
+        "zhang, Ziyi",
+        "Song, Siyao",
+        "Deng, Yingzhuo",
+        "Ren, Shuo",
+        "Zhang, Jiajun"
+      ],
+      "citation_date": [
+        "2026/08/22"
+      ],
+      "citation_online_date": [
+        "2026/08/26"
+      ],
+      "citation_pdf_url": [
+        "https://arxiv.org/pdf/2608.21946"
+      ],
+      "citation_arxiv_id": [
+        "2608.21946"
+      ],
+      "citation_abstract": [
+        "Reinforcement learning with outcome-based objectives such as GRPO enables LLM-based agents to solve complex, long-horizon tasks, yet the reusable exploration patterns embedded in interaction trajectories are largely discarded after a single policy update. Existing experience-augmented approaches retrieve historical guidance at inference time, but they apply experiences without accounting for the policy's evolving capability and create persistent dependencies on external retrieval. We propose EDGE (Experience-Distillation for Guided Exploration), a framework that treats retrieved experiences as temporary training-time scaffolds and progressively internalizes their benefits into the parametric policy. Concretely, EDGE partitions each rollout group into experience-conditioned and experience-free trajectories to estimate and admit only positive marginal gains without extra sampling, then distills the induced behavior into the base policy via a reverse-KL objective on its own empirical support. A co-evolutionary experience bank further synthesizes guidance from emerging failure modes and prunes obsolete entries as the policy evolves. Across embodied, web, and search-based QA tasks, EDGE improves over strong RL baselines by up to 12.5 points and remains effective without inference-time scaffolds or a proprietary reflector. The code is available at https://github.com/xvolcano02/EDGE."
+      ]
+    }
+  }
+]

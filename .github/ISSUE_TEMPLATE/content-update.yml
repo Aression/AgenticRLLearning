@@ -1,0 +1,22 @@
+name: Content update
+description: Propose a source, concept, experiment, or correction.
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL
+      description: Prefer paper, official docs, or author-maintained code.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim and evidence
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limits, unknowns, or replication plan
+    validations:
+      required: true
