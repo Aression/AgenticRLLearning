@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_branch || github.ref_name }}
+          # Never checkout a PR/source branch in a privileged workflow_run job.
+          # The checked-out code owns the execution path and can access secrets.
+          ref: master
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
