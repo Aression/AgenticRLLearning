@@ -5,6 +5,7 @@ on:
     types: [completed]
   workflow_dispatch:
 permissions:
+  actions: read
   contents: write
   pull-requests: write
 jobs:
@@ -30,6 +31,17 @@ jobs:
           # The checked-out code owns the execution path and can access secrets.
           ref: master
           fetch-depth: 0
+      - name: Load fresh discovery from the maintenance run
+        if: github.event_name == 'workflow_run' && steps.credentials.outputs.configured == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download "${{ github.event.workflow_run.id }}" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name atlas-maintenance-report \
+            --dir maintenance-report
+          cp maintenance-report/research/discovery.json research/discovery.json
+          cp maintenance-report/research/source-audit.json research/source-audit.json
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
