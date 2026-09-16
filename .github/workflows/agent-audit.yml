@@ -58,11 +58,19 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          branch="agent-audit/$(date -u +%Y%m%d-%H%M%S)"
+          # Reuse a single branch so each run updates one PR instead of
+          # creating a new branch (and a new Vercel preview) every time.
+          branch="agent-audit/latest"
+          title="Maintenance audit $(date -u +%Y-%m-%d)"
           git config user.name "agentic-rl-maintenance[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
           git add research/agent-audits
           git commit -m "Archive DeepSeek maintenance audit" || exit 0
-          git push origin "$branch"
-          gh pr create --base master --head "$branch" --title "Maintenance audit $(date -u +%Y-%m-%d)" --body-file research/agent-audits/latest.md
+          git push --force origin "$branch"
+          state=$(gh pr view "$branch" --json state --jq '.state' 2>/dev/null || true)
+          if [ "$state" = "OPEN" ]; then
+            gh pr edit "$branch" --title "$title" --body-file research/agent-audits/latest.md
+          else
+            gh pr create --base master --head "$branch" --title "$title" --body-file research/agent-audits/latest.md
+          fi
