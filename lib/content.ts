@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Graph, Note, NoteMeta, Source } from "./types";
+import type { Graph, Note, NoteMeta, Radar, Source } from "./types";
 
 type RawSource = Omit<Source, "accessible" | "checkedAt">;
 type AuditRecord = { url: string; status?: number; checkedAt?: string; metadata?: { citation_author?: string[] } };
@@ -8,6 +8,7 @@ type AuditRecord = { url: string; status?: number; checkedAt?: string; metadata?
 let noteIndex: NoteMeta[] | null = null;
 let sourceList: Source[] | null = null;
 let graphData: Graph | null = null;
+let radarData: Radar | null | undefined;
 
 /** Metadata for every note, read from the generated database export. */
 export function getNotes(): NoteMeta[] {
@@ -47,4 +48,13 @@ export function getGraph(): Graph {
     graphData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data/generated/graph.json"), "utf8")) as Graph;
   }
   return graphData;
+}
+
+/** Latest HuggingFace discovery with DeepSeek triage; null before the first audit. */
+export function getRadar(): Radar | null {
+  if (radarData === undefined) {
+    const file = path.join(process.cwd(), "data/generated/radar.json");
+    radarData = fs.existsSync(file) ? (JSON.parse(fs.readFileSync(file, "utf8")) as Radar) : null;
+  }
+  return radarData;
 }

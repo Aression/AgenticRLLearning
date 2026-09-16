@@ -65,7 +65,7 @@ jobs:
           git config user.name "agentic-rl-maintenance[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add research/agent-audits
+          git add research/agent-audits data/generated/radar.json
           git commit -m "Archive DeepSeek maintenance audit" || exit 0
           git push --force origin "$branch"
           state=$(gh pr view "$branch" --json state --jq '.state' 2>/dev/null || true)

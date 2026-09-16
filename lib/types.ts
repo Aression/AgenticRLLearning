@@ -60,6 +60,36 @@ export type GraphEdge = {
 
 export type Graph = { generatedAt?: string; nodes: GraphNode[]; edges: GraphEdge[] };
 
+export type RadarPaper = {
+  id: string;
+  title: string;
+  summary: string;
+  published: string;
+  url: string;
+  arxivUrl: string;
+  upvotes: number;
+  authors: string[];
+  matchedKeywords: string[];
+  relevanceScore: number;
+  decision: "review" | "archive" | "skip" | string;
+  evidenceLevel: string;
+  reason: string;
+  suggestedNote: string;
+};
+
+export type Radar = {
+  generatedAt?: string;
+  source?: string;
+  searchedAt?: string;
+  considered?: number;
+  selected?: number;
+  model?: string | string[];
+  summary?: string;
+  risks?: string[];
+  nextActions?: string[];
+  papers: RadarPaper[];
+};
+
 export const stageMeta: Record<Stage, { label: string; index: string; color: string; hex: string }> = {
   FOUNDATION: { label: "基础层", index: "01", color: "cyan", hex: "#67ddcb" },
   SYSTEMS: { label: "系统层", index: "02", color: "amber", hex: "#f3c578" },

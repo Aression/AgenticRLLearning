@@ -15,6 +15,10 @@
 
 站点内置“知识图谱”视图：节点是知识笔记与概念标签，边来自先修顺序、显式相关、共享来源与共享概念。图谱由 `scripts/atlas_db.py` 从内容数据库生成，可开关关系类型并聚焦邻居。
 
+## 研究雷达
+
+“研究雷达”视图展示 HuggingFace Daily Papers 抓取、按知识库关键词过滤、再由 DeepSeek 分流的候选论文（review / archive / skip），附匹配关键词、热度、链接、审计理由与风险。数据写入 `data/generated/radar.json`，随每日审计 PR 更新；证据仅到摘要级，入库前需人工精读。
+
 ## 本地运行
 
 ```bash

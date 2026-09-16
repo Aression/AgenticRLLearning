@@ -21,6 +21,7 @@ python scripts/harness.py all --refresh
 - `data/generated/notes/<id>.json`：单篇笔记（含正文），只在服务端按需读取
 - `data/generated/graph.json`：知识图谱节点与边
 - `data/generated/sources.json`：来源目录
+- `data/generated/radar.json`：最近一次 HuggingFace Daily Papers 抓取与 DeepSeek 审计的合并结果，由 `scripts/agent_audit.py` 写入并随审计 PR 提交
 
 ```bash
 python scripts/atlas_db.py build   # 重新导入并导出

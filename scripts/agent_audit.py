@@ -98,11 +98,53 @@ def audit_batch(api_key: str, meta: dict, entries: list, catalog: list) -> dict:
     return call(api_key, payload)
 
 
+def build_radar(meta: dict, entries: list, audit: dict) -> dict:
+    """Merge discovery entries with DeepSeek decisions for the website radar."""
+    candidates = {str(item.get("arxiv_id") or "").strip(): item for item in audit.get("candidates", []) if isinstance(item, dict)}
+    order = {"review": 0, "archive": 1, "skip": 2}
+    papers = []
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        paper_id = str(entry.get("id") or "").strip()
+        candidate = candidates.get(paper_id, {})
+        papers.append({
+            "id": paper_id,
+            "title": entry.get("title", ""),
+            "summary": entry.get("summary", ""),
+            "published": entry.get("published", ""),
+            "url": entry.get("url", f"https://huggingface.co/papers/{paper_id}"),
+            "arxivUrl": entry.get("arxiv_url", f"https://arxiv.org/abs/{paper_id}"),
+            "upvotes": entry.get("upvotes", 0),
+            "authors": entry.get("authors", []),
+            "matchedKeywords": entry.get("matched_keywords", []),
+            "relevanceScore": entry.get("relevance_score", 0),
+            "decision": candidate.get("decision", "review"),
+            "evidenceLevel": candidate.get("evidence_level", "abstract-only"),
+            "reason": candidate.get("reason", ""),
+            "suggestedNote": candidate.get("suggested_note", ""),
+        })
+    papers.sort(key=lambda item: (order.get(item["decision"], 3), -int(item.get("relevanceScore") or 0), -int(item.get("upvotes") or 0)))
+    return {
+        "generatedAt": audit.get("generated_at"),
+        "source": meta.get("source", "huggingface-daily-papers"),
+        "searchedAt": meta.get("searchedAt"),
+        "considered": meta.get("considered"),
+        "selected": meta.get("selected", len(entries)),
+        "model": audit.get("response_model"),
+        "summary": audit.get("summary", ""),
+        "risks": audit.get("risks", []),
+        "nextActions": audit.get("next_actions", []),
+        "papers": papers,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--discovery", default="research/discovery.json")
     parser.add_argument("--catalog", default="data/sources.json")
     parser.add_argument("--output-dir", default="research/agent-audits")
+    parser.add_argument("--radar-output", default="data/generated/radar.json")
     args = parser.parse_args()
     api_key = os.environ.get("DEEPSEEK_V4_FLASH_API_KEY")
     if not api_key:
@@ -162,7 +204,11 @@ def main() -> int:
         lines += [f"### {str(item.get('decision', 'review')).upper()} · {item.get('title', item.get('arxiv_id', 'unknown'))}", f"- Evidence: `{item.get('evidence_level', 'abstract-only')}`", f"- Reason: {item.get('reason', '')}", f"- Suggested note: {item.get('suggested_note', '')}", ""]
     lines += ["## Risks", *[f"- {x}" for x in audit["risks"]], "", "## Next actions", *[f"- {x}" for x in audit["next_actions"]], ""]
     (target / "latest.md").write_text("\n".join(lines), encoding="utf-8")
-    print(json.dumps({"output": str(target.relative_to(ROOT)) if target.is_relative_to(ROOT) else str(target), "candidates": len(audit["candidates"]), "batches": len(batches), "review_required": True}, ensure_ascii=False))
+    radar = build_radar(meta, entries, audit)
+    radar_path = ROOT / args.radar_output
+    radar_path.parent.mkdir(parents=True, exist_ok=True)
+    radar_path.write_text(json.dumps(radar, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"output": str(target.relative_to(ROOT)) if target.is_relative_to(ROOT) else str(target), "radar": args.radar_output, "papers": len(radar["papers"]), "candidates": len(audit["candidates"]), "batches": len(batches), "review_required": True}, ensure_ascii=False))
     return 0
 
 
