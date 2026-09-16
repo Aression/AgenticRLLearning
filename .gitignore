@@ -5,6 +5,5 @@ out
 *.local
 .env*
 !.env.example
-
-.vercel
-.env*
+__pycache__/
+*.pyc
