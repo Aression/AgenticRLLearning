@@ -8,6 +8,7 @@ order: 1
 minutes: 12
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能判断一个系统是否属于 Agentic RL, 能区分工作流推理RL与多智能体编排]
 tags: [Agentic RL, POMDP, taxonomy]
 sources: [agentic-survey, react, anthropic-building, deepseek-r1]
 prerequisites: []

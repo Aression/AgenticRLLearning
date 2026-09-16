@@ -8,6 +8,7 @@ order: 16
 minutes: 18
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能区分编排与 MARL, 能解释 CTDE 的假设与代价]
 tags: [MARL, CTDE, coordination]
 sources: [marl-book, agentic-survey, coskill]
 prerequisites: [multi-turn-rl, evaluation]

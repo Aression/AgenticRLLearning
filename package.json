@@ -10,7 +10,9 @@
     "harness": "python scripts/harness.py all",
     "harness:check": "python scripts/harness.py check --json",
     "harness:report": "python scripts/harness.py report --json",
-    "harness:refresh": "python scripts/harness.py refresh"
+    "harness:refresh": "python scripts/harness.py refresh",
+    "content:build": "python scripts/atlas_db.py build",
+    "content:check": "python scripts/atlas_db.py check"
   },
   "dependencies": {
     "@types/node": "^22.10.2",

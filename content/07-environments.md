@@ -8,6 +8,7 @@ order: 8
 minutes: 18
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能设计可重放的环境接口, 能记录带掩码的轨迹数据]
 tags: [environment, trajectory, masking]
 sources: [gymnasium, swe-agent, webarena, agent-lightning]
 prerequisites: [agent-loop]

@@ -8,6 +8,7 @@ order: 14
 minutes: 20
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能设计最小评测报告, 能识别不公平对比与评测泄漏]
 tags: [SWE-bench, WebArena, GAIA, tau-bench]
 sources: [swe-bench, webarena, gaia, tau-bench, swe-agent]
 prerequisites: [environments, rewards]

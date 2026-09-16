@@ -8,6 +8,7 @@ order: 18
 minutes: 30
 updated: '2026-09-08'
 review: 实验指南
+objectives: [能用成熟库跑通 PPO 闭环, 能设计多种子的可复现实验]
 tags: [lab, PPO, CPU, reproducibility]
 sources: [gymnasium, sb3, ppo]
 prerequisites: [ppo]

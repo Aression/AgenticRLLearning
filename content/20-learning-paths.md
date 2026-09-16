@@ -8,6 +8,7 @@ order: 21
 minutes: 10
 updated: '2026-09-08'
 review: 学习路线
+objectives: [能选择适合自己的学习路线, 能用里程碑检查进度]
 tags: [roadmap, curriculum, milestones]
 sources: [sutton-barto, silver, agentic-survey, diataxis]
 prerequisites: [orientation]

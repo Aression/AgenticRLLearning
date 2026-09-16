@@ -8,6 +8,7 @@ order: 13
 minutes: 18
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能拆解一次 rollout 的预算, 能判断同步与异步的取舍]
 tags: [verl, Agent Lightning, rollout, asynchronous]
 sources: [verl, lightning-code, agent-lightning, dapo]
 prerequisites: [multi-turn-rl]

@@ -13,6 +13,23 @@ python scripts/harness.py all --refresh
 
 `check` 检查 Markdown frontmatter、唯一 ID、来源引用、内部 `/notes/...` 链接、日期和来源审计覆盖率。`refresh` 才会访问来源和 HuggingFace Daily Papers，并更新 `research/source-audit.json` 与 `research/discovery.json`。`report` 写入带时间戳的 JSON 报告和 `research/reports/latest.json`。
 
+## 内容数据库与知识图谱
+
+`content/*.md` 是人工编辑格式；`scripts/atlas_db.py` 把它和 `data/sources.json` 导入 SQLite 数据库 `data/atlas.db`，再导出站点使用的拆分数据：
+
+- `data/generated/notes.index.json`：笔记元数据（不含正文），供列表与客户端搜索
+- `data/generated/notes/<id>.json`：单篇笔记（含正文），只在服务端按需读取
+- `data/generated/graph.json`：知识图谱节点与边
+- `data/generated/sources.json`：来源目录
+
+```bash
+python scripts/atlas_db.py build   # 重新导入并导出
+python scripts/atlas_db.py check   # 校验导出与数据库、正文同步
+python scripts/atlas_db.py graph   # 打印图谱统计
+```
+
+图谱边来自先修关系、显式 `related`、共享来源与共享概念；概念标签从笔记 `tags` 归一化并单独建表。`npm run content:build` 与 `npm run content:check` 是同一入口；维护 workflow 在构建前运行 `atlas_db.py check`。
+
 `scripts/search-papers.py` 从 HuggingFace Daily Papers（`https://huggingface.co/api/daily_papers`）拉取当日论文，用 `STRONG_KEYWORDS` / `BROAD_KEYWORDS` 对标题与摘要做 grep，只保留与知识库主题相关的条目（上限取 `harness.config.json` 的 `refresh.maxDiscoveryResults`）。网络失败时保留上一次的 `research/discovery.json`，不会让维护任务失败。
 
 ## Agent 审核 workflow

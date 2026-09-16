@@ -8,6 +8,7 @@ order: 19
 minutes: 30
 updated: '2026-09-08'
 review: 实验指南
+objectives: [能在本地重放工具轨迹, 能独立验证任务结果]
 tags: [lab, trajectory, verifier, CPU]
 sources: [gymnasium, tau-bench, agent-lightning]
 prerequisites: [environments, evaluation, lab-rl]

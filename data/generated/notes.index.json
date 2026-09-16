@@ -1,0 +1,1379 @@
+{
+  "generatedAt": "2026-09-16T16:22:54.134221+00:00",
+  "notes": [
+    {
+      "id": "orientation",
+      "title": "Agentic RL：定义与边界",
+      "summary": "先回答谁在学习、何时更新、奖励来自哪里，再判断一个系统是否属于 Agentic RL。",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "order": 1,
+      "minutes": 12,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "00-orientation.md",
+      "tags": [
+        "Agentic RL",
+        "POMDP",
+        "taxonomy"
+      ],
+      "concepts": [
+        "Agentic RL",
+        "POMDP",
+        "taxonomy"
+      ],
+      "objectives": [
+        "能判断一个系统是否属于 Agentic RL",
+        "能区分工作流推理RL与多智能体编排"
+      ],
+      "keyPoints": [
+        "一个可操作的定义",
+        "四个概念不要混淆",
+        "最小判断清单",
+        "一个贯穿全库的例子",
+        "自测"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "一个可操作的定义",
+        "四个概念不要混淆",
+        "最小判断清单",
+        "一个贯穿全库的例子",
+        "自测"
+      ],
+      "related": [
+        "agent-loop",
+        "frontier-radar",
+        "glossary",
+        "grpo",
+        "learning-paths",
+        "mdp"
+      ],
+      "degree": 13,
+      "sources": [
+        "agentic-survey",
+        "react",
+        "anthropic-building",
+        "deepseek-r1"
+      ],
+      "prerequisites": [],
+      "search": "agentic rl：定义与边界 先回答谁在学习、何时更新、奖励来自哪里，再判断一个系统是否属于 agentic rl。 概念与基础 agentic rl pomdp taxonomy 能判断一个系统是否属于 agentic rl 能区分工作流推理rl与多智能体编排 一个可操作的定义 四个概念不要混淆 最小判断清单 一个贯穿全库的例子 自测"
+    },
+    {
+      "id": "prerequisites",
+      "title": "数学、机器学习与 LLM 先修",
+      "summary": "概率、梯度和自回归模型是理解策略优化的最短准备路径。",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "order": 2,
+      "minutes": 15,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "01-prerequisites.md",
+      "tags": [
+        "LLM",
+        "gradient",
+        "probability"
+      ],
+      "concepts": [
+        "LLM",
+        "gradient",
+        "probability"
+      ],
+      "objectives": [
+        "掌握策略优化所需的最短数学基础",
+        "能推导策略梯度与自举更新"
+      ],
+      "keyPoints": [
+        "最低起点",
+        "三个需要真正会算的式子",
+        "LLM 最小背景",
+        "纸笔练习",
+        "完成标准"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "最低起点",
+        "三个需要真正会算的式子",
+        "LLM 最小背景",
+        "纸笔练习",
+        "完成标准"
+      ],
+      "related": [
+        "learning-paths",
+        "mdp",
+        "value-learning",
+        "glossary",
+        "policy-gradient"
+      ],
+      "degree": 7,
+      "sources": [
+        "sutton-barto",
+        "silver"
+      ],
+      "prerequisites": [
+        "orientation"
+      ],
+      "search": "数学、机器学习与 llm 先修 概率、梯度和自回归模型是理解策略优化的最短准备路径。 概念与基础 llm gradient probability 掌握策略优化所需的最短数学基础 能推导策略梯度与自举更新 最低起点 三个需要真正会算的式子 llm 最小背景 纸笔练习 完成标准"
+    },
+    {
+      "id": "mdp",
+      "title": "MDP、POMDP 与 Bellman 方程",
+      "summary": "用状态、观测、动作、转移和回报，把 Agent 行为写成明确的学习问题。",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "order": 3,
+      "minutes": 20,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "02-mdp.md",
+      "tags": [
+        "Bellman",
+        "MDP",
+        "POMDP"
+      ],
+      "concepts": [
+        "Bellman",
+        "MDP",
+        "POMDP"
+      ],
+      "objectives": [
+        "能把 Agent 任务写成 MDP 或 POMDP",
+        "能解释 Bellman 递推与折扣因子"
+      ],
+      "keyPoints": [
+        "MDP 的组成",
+        "Bellman 递推",
+        "为什么 Agent 常是 POMDP",
+        "建模示例",
+        "常见错误与自测"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "MDP 的组成",
+        "Bellman 递推",
+        "为什么 Agent 常是 POMDP",
+        "建模示例",
+        "常见错误与自测"
+      ],
+      "related": [
+        "learning-paths",
+        "glossary",
+        "prerequisites",
+        "value-learning",
+        "frontier-radar",
+        "multi-agent"
+      ],
+      "degree": 13,
+      "sources": [
+        "sutton-barto",
+        "silver",
+        "agentic-survey"
+      ],
+      "prerequisites": [
+        "prerequisites"
+      ],
+      "search": "mdp、pomdp 与 bellman 方程 用状态、观测、动作、转移和回报，把 agent 行为写成明确的学习问题。 概念与基础 bellman mdp pomdp 能把 agent 任务写成 mdp 或 pomdp 能解释 bellman 递推与折扣因子 mdp 的组成 bellman 递推 为什么 agent 常是 pomdp 建模示例 常见错误与自测"
+    },
+    {
+      "id": "value-learning",
+      "title": "从 Bandit 到 TD 与 Q-learning",
+      "summary": "先理解探索和自举，再比较 on-policy、off-policy 与离线学习。",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "order": 4,
+      "minutes": 18,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "03-value-learning.md",
+      "tags": [
+        "Q-learning",
+        "TD",
+        "exploration"
+      ],
+      "concepts": [
+        "Q-learning",
+        "TD",
+        "exploration"
+      ],
+      "objectives": [
+        "能区分 on-policy 与 off-policy",
+        "能解释探索与自举的取舍"
+      ],
+      "keyPoints": [
+        "Bandit 是最小起点",
+        "Q-learning 的更新",
+        "三种数据关系",
+        "不要直接照搬",
+        "完成标准"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "Bandit 是最小起点",
+        "Q-learning 的更新",
+        "三种数据关系",
+        "不要直接照搬",
+        "完成标准"
+      ],
+      "related": [
+        "learning-paths",
+        "mdp",
+        "prerequisites",
+        "frontier-radar",
+        "glossary",
+        "policy-gradient"
+      ],
+      "degree": 8,
+      "sources": [
+        "sutton-barto",
+        "silver"
+      ],
+      "prerequisites": [
+        "mdp"
+      ],
+      "search": "从 bandit 到 td 与 q-learning 先理解探索和自举，再比较 on-policy、off-policy 与离线学习。 概念与基础 q-learning td exploration 能区分 on-policy 与 off-policy 能解释探索与自举的取舍 bandit 是最小起点 q-learning 的更新 三种数据关系 不要直接照搬 完成标准"
+    },
+    {
+      "id": "policy-gradient",
+      "title": "Policy Gradient、Actor-Critic 与 GAE",
+      "summary": "用回报加权动作概率，并用价值基线改善梯度估计。",
+      "stage": "FOUNDATION",
+      "track": "训练算法",
+      "order": 5,
+      "minutes": 22,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "04-policy-gradient.md",
+      "tags": [
+        "GAE",
+        "REINFORCE",
+        "actor-critic"
+      ],
+      "concepts": [
+        "GAE",
+        "REINFORCE",
+        "actor-critic"
+      ],
+      "objectives": [
+        "能推导 REINFORCE 与基线的作用",
+        "能解释 GAE 的偏差方差权衡"
+      ],
+      "keyPoints": [
+        "从采样到梯度",
+        "为什么要基线",
+        "GAE 的权衡",
+        "LLM 中的两个粒度",
+        "自测"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "从采样到梯度",
+        "为什么要基线",
+        "GAE 的权衡",
+        "LLM 中的两个粒度",
+        "自测"
+      ],
+      "related": [
+        "glossary",
+        "learning-paths",
+        "mdp",
+        "ppo",
+        "prerequisites",
+        "value-learning"
+      ],
+      "degree": 8,
+      "sources": [
+        "sutton-barto",
+        "gae"
+      ],
+      "prerequisites": [
+        "value-learning"
+      ],
+      "search": "policy gradient、actor-critic 与 gae 用回报加权动作概率，并用价值基线改善梯度估计。 训练算法 gae reinforce actor-critic 能推导 reinforce 与基线的作用 能解释 gae 的偏差方差权衡 从采样到梯度 为什么要基线 gae 的权衡 llm 中的两个粒度 自测"
+    },
+    {
+      "id": "ppo",
+      "title": "PPO：限制每次策略更新",
+      "summary": "看懂裁剪目标、旧策略、KL 与 critic，再理解 LLM RL 的工程变体。",
+      "stage": "FOUNDATION",
+      "track": "训练算法",
+      "order": 6,
+      "minutes": 22,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "05-ppo.md",
+      "tags": [
+        "KL",
+        "PPO",
+        "clipping"
+      ],
+      "concepts": [
+        "KL",
+        "PPO",
+        "clipping"
+      ],
+      "objectives": [
+        "能读懂 PPO 的裁剪目标",
+        "能诊断 KL 熵与 clip fraction"
+      ],
+      "keyPoints": [
+        "原始目标",
+        "三个分布不要混淆",
+        "实用诊断",
+        "入门建议",
+        "阅读问题"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "原始目标",
+        "三个分布不要混淆",
+        "实用诊断",
+        "入门建议",
+        "阅读问题"
+      ],
+      "related": [
+        "lab-rl",
+        "policy-gradient"
+      ],
+      "degree": 6,
+      "sources": [
+        "ppo",
+        "gae",
+        "sb3"
+      ],
+      "prerequisites": [
+        "policy-gradient"
+      ],
+      "search": "ppo：限制每次策略更新 看懂裁剪目标、旧策略、kl 与 critic，再理解 llm rl 的工程变体。 训练算法 kl ppo clipping 能读懂 ppo 的裁剪目标 能诊断 kl 熵与 clip fraction 原始目标 三个分布不要混淆 实用诊断 入门建议 阅读问题"
+    },
+    {
+      "id": "agent-loop",
+      "title": "Agent 闭环：推理、工具、规划与记忆",
+      "summary": "建立运行时结构，并区分工作流、ReAct 和参数学习。",
+      "stage": "FOUNDATION",
+      "track": "Agent 系统",
+      "order": 7,
+      "minutes": 15,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "06-agent-loop.md",
+      "tags": [
+        "ReAct",
+        "memory",
+        "planning",
+        "tools"
+      ],
+      "concepts": [
+        "ReAct",
+        "memory",
+        "planning",
+        "tools"
+      ],
+      "objectives": [
+        "能画出最小 Agent 运行循环",
+        "能区分工作流与参数学习"
+      ],
+      "keyPoints": [
+        "最小运行循环",
+        "工作流与自主性",
+        "组件和常见失败",
+        "为什么接口也重要",
+        "练习"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "最小运行循环",
+        "工作流与自主性",
+        "组件和常见失败",
+        "为什么接口也重要",
+        "练习"
+      ],
+      "related": [
+        "orientation",
+        "safety"
+      ],
+      "degree": 5,
+      "sources": [
+        "react",
+        "anthropic-building",
+        "lilian-agent"
+      ],
+      "prerequisites": [
+        "orientation",
+        "mdp"
+      ],
+      "search": "agent 闭环：推理、工具、规划与记忆 建立运行时结构，并区分工作流、react 和参数学习。 agent 系统 react memory planning tools 能画出最小 agent 运行循环 能区分工作流与参数学习 最小运行循环 工作流与自主性 组件和常见失败 为什么接口也重要 练习"
+    },
+    {
+      "id": "environments",
+      "title": "环境、工具协议与轨迹数据",
+      "summary": "让每一步动作可观测、可验证、可重放，是训练之前的基础设施。",
+      "stage": "SYSTEMS",
+      "track": "Agent 系统",
+      "order": 8,
+      "minutes": 18,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "07-environments.md",
+      "tags": [
+        "environment",
+        "masking",
+        "trajectory"
+      ],
+      "concepts": [
+        "environment",
+        "masking",
+        "trajectory"
+      ],
+      "objectives": [
+        "能设计可重放的环境接口",
+        "能记录带掩码的轨迹数据"
+      ],
+      "keyPoints": [
+        "环境接口",
+        "最小轨迹记录",
+        "动作与副作用",
+        "数据质量关卡",
+        "完成标准"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "环境接口",
+        "最小轨迹记录",
+        "动作与副作用",
+        "数据质量关卡",
+        "完成标准"
+      ],
+      "related": [
+        "evaluation",
+        "lab-agent",
+        "lab-rl",
+        "multi-turn-rl",
+        "training-systems"
+      ],
+      "degree": 10,
+      "sources": [
+        "gymnasium",
+        "swe-agent",
+        "webarena",
+        "agent-lightning"
+      ],
+      "prerequisites": [
+        "agent-loop"
+      ],
+      "search": "环境、工具协议与轨迹数据 让每一步动作可观测、可验证、可重放，是训练之前的基础设施。 agent 系统 environment masking trajectory 能设计可重放的环境接口 能记录带掩码的轨迹数据 环境接口 最小轨迹记录 动作与副作用 数据质量关卡 完成标准"
+    },
+    {
+      "id": "rewards",
+      "title": "奖励、验证器与信用分配",
+      "summary": "区分结果奖励和过程信号，避免把可优化的代理指标误当真实目标。",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "order": 9,
+      "minutes": 20,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "08-rewards.md",
+      "tags": [
+        "credit assignment",
+        "reward",
+        "verifier"
+      ],
+      "concepts": [
+        "credit assignment",
+        "reward",
+        "verifier"
+      ],
+      "objectives": [
+        "能区分结果奖励与过程信号",
+        "能识别奖励投机风险"
+      ],
+      "keyPoints": [
+        "奖励来源",
+        "多目标例子",
+        "稀疏奖励为什么难",
+        "Reward shaping 的边界",
+        "验证器测试",
+        "自测"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "奖励来源",
+        "多目标例子",
+        "稀疏奖励为什么难",
+        "Reward shaping 的边界",
+        "验证器测试",
+        "自测"
+      ],
+      "related": [
+        "lab-agent-rl",
+        "grpo",
+        "lab-agent",
+        "multi-turn-rl",
+        "safety"
+      ],
+      "degree": 10,
+      "sources": [
+        "deepseek-math",
+        "gigpo",
+        "lilian-reward"
+      ],
+      "prerequisites": [
+        "mdp",
+        "environments"
+      ],
+      "search": "奖励、验证器与信用分配 区分结果奖励和过程信号，避免把可优化的代理指标误当真实目标。 训练算法 credit assignment reward verifier 能区分结果奖励与过程信号 能识别奖励投机风险 奖励来源 多目标例子 稀疏奖励为什么难 reward shaping 的边界 验证器测试 自测"
+    },
+    {
+      "id": "preferences",
+      "title": "RLHF、RLAIF 与 DPO 的位置",
+      "summary": "偏好数据、奖励模型、KL 正则和离线优化，解决的问题并不完全相同。",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "order": 10,
+      "minutes": 18,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "09-preferences.md",
+      "tags": [
+        "DPO",
+        "RLAIF",
+        "RLHF",
+        "alignment"
+      ],
+      "concepts": [
+        "DPO",
+        "RLAIF",
+        "RLHF",
+        "alignment"
+      ],
+      "objectives": [
+        "能描述经典 RLHF 的完整流程",
+        "能判断何时用 DPO 而非在线 RL"
+      ],
+      "keyPoints": [
+        "经典 RLHF 流程",
+        "RLAIF 改变了监督来源",
+        "DPO 的边界",
+        "如何选择",
+        "自测"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "经典 RLHF 流程",
+        "RLAIF 改变了监督来源",
+        "DPO 的边界",
+        "如何选择",
+        "自测"
+      ],
+      "related": [],
+      "degree": 2,
+      "sources": [
+        "instructgpt",
+        "constitutional",
+        "dpo"
+      ],
+      "prerequisites": [
+        "ppo",
+        "rewards"
+      ],
+      "search": "rlhf、rlaif 与 dpo 的位置 偏好数据、奖励模型、kl 正则和离线优化，解决的问题并不完全相同。 训练算法 dpo rlaif rlhf alignment 能描述经典 rlhf 的完整流程 能判断何时用 dpo 而非在线 rl 经典 rlhf 流程 rlaif 改变了监督来源 dpo 的边界 如何选择 自测"
+    },
+    {
+      "id": "grpo",
+      "title": "GRPO、DeepSeek-R1 与可验证推理",
+      "summary": "组内相对优势减少 critic 依赖，但不自动解决长时程 Agent 学习。",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "order": 11,
+      "minutes": 22,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "10-grpo.md",
+      "tags": [
+        "DeepSeek-R1",
+        "GRPO",
+        "RLVR"
+      ],
+      "concepts": [
+        "DeepSeek-R1",
+        "GRPO",
+        "RLVR"
+      ],
+      "objectives": [
+        "能解释组内相对优势",
+        "能指出 GRPO 在长时程任务上的缺口"
+      ],
+      "keyPoints": [
+        "GRPO 的核心",
+        "三个失败模式",
+        "R1-Zero 和 R1",
+        "走向 Agentic RL 还缺什么",
+        "阅读顺序"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "GRPO 的核心",
+        "三个失败模式",
+        "R1-Zero 和 R1",
+        "走向 Agentic RL 还缺什么",
+        "阅读顺序"
+      ],
+      "related": [
+        "lab-agent-rl",
+        "orientation",
+        "rewards",
+        "training-systems"
+      ],
+      "degree": 7,
+      "sources": [
+        "deepseek-math",
+        "deepseek-r1",
+        "dapo"
+      ],
+      "prerequisites": [
+        "ppo",
+        "rewards"
+      ],
+      "search": "grpo、deepseek-r1 与可验证推理 组内相对优势减少 critic 依赖，但不自动解决长时程 agent 学习。 训练算法 deepseek-r1 grpo rlvr 能解释组内相对优势 能指出 grpo 在长时程任务上的缺口 grpo 的核心 三个失败模式 r1-zero 和 r1 走向 agentic rl 还缺什么 阅读顺序"
+    },
+    {
+      "id": "multi-turn-rl",
+      "title": "多轮 Agent RL：轨迹、步骤与层级",
+      "summary": "从完整任务优势走向更细的步骤归因，并处理部分可观测和长轨迹。",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "order": 12,
+      "minutes": 22,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "11-multi-turn-rl.md",
+      "tags": [
+        "GiGPO",
+        "hierarchical",
+        "long-horizon"
+      ],
+      "concepts": [
+        "GiGPO",
+        "hierarchical",
+        "long-horizon"
+      ],
+      "objectives": [
+        "能比较轨迹级与步骤级信用分配",
+        "能设计层级优势估计"
+      ],
+      "keyPoints": [
+        "三个时间尺度",
+        "GiGPO 的代表思路",
+        "Agent Lightning 的代表思路",
+        "训练前检查",
+        "完成标准"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "三个时间尺度",
+        "GiGPO 的代表思路",
+        "Agent Lightning 的代表思路",
+        "训练前检查",
+        "完成标准"
+      ],
+      "related": [
+        "environments",
+        "frontier-radar",
+        "glossary",
+        "lab-agent",
+        "lab-agent-rl",
+        "learning-paths"
+      ],
+      "degree": 15,
+      "sources": [
+        "agentic-survey",
+        "gigpo",
+        "agent-lightning"
+      ],
+      "prerequisites": [
+        "grpo",
+        "environments"
+      ],
+      "search": "多轮 agent rl：轨迹、步骤与层级 从完整任务优势走向更细的步骤归因，并处理部分可观测和长轨迹。 训练算法 gigpo hierarchical long-horizon 能比较轨迹级与步骤级信用分配 能设计层级优势估计 三个时间尺度 gigpo 的代表思路 agent lightning 的代表思路 训练前检查 完成标准"
+    },
+    {
+      "id": "training-systems",
+      "title": "Rollout、训练解耦与系统预算",
+      "summary": "模型更新只是一部分，环境吞吐、策略陈旧度和验证成本共同决定效率。",
+      "stage": "SYSTEMS",
+      "track": "Agent 系统",
+      "order": 13,
+      "minutes": 18,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "12-training-systems.md",
+      "tags": [
+        "Agent Lightning",
+        "asynchronous",
+        "rollout",
+        "verl"
+      ],
+      "concepts": [
+        "Agent Lightning",
+        "asynchronous",
+        "rollout",
+        "verl"
+      ],
+      "objectives": [
+        "能拆解一次 rollout 的预算",
+        "能判断同步与异步的取舍"
+      ],
+      "keyPoints": [
+        "一个训练批次的生命周期",
+        "同步与异步",
+        "预算分解",
+        "框架选择",
+        "最小实验记录"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "一个训练批次的生命周期",
+        "同步与异步",
+        "预算分解",
+        "框架选择",
+        "最小实验记录"
+      ],
+      "related": [
+        "lab-agent-rl",
+        "environments",
+        "grpo",
+        "lab-agent",
+        "multi-turn-rl"
+      ],
+      "degree": 8,
+      "sources": [
+        "verl",
+        "lightning-code",
+        "agent-lightning",
+        "dapo"
+      ],
+      "prerequisites": [
+        "multi-turn-rl"
+      ],
+      "search": "rollout、训练解耦与系统预算 模型更新只是一部分，环境吞吐、策略陈旧度和验证成本共同决定效率。 agent 系统 agent lightning asynchronous rollout verl 能拆解一次 rollout 的预算 能判断同步与异步的取舍 一个训练批次的生命周期 同步与异步 预算分解 框架选择 最小实验记录"
+    },
+    {
+      "id": "evaluation",
+      "title": "Agent 评测：成功、成本与可靠性",
+      "summary": "明确任务分布和执行协议，才能判断提升来自模型、训练还是 harness。",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "order": 14,
+      "minutes": 20,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "13-evaluation.md",
+      "tags": [
+        "GAIA",
+        "SWE-bench",
+        "WebArena",
+        "tau-bench"
+      ],
+      "concepts": [
+        "GAIA",
+        "SWE-bench",
+        "WebArena",
+        "tau-bench"
+      ],
+      "objectives": [
+        "能设计最小评测报告",
+        "能识别不公平对比与评测泄漏"
+      ],
+      "keyPoints": [
+        "基准覆盖不同能力",
+        "推荐最小报告",
+        "pass@k 与可靠性",
+        "公平对比",
+        "反例也要保留",
+        "实践入口"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "基准覆盖不同能力",
+        "推荐最小报告",
+        "pass@k 与可靠性",
+        "公平对比",
+        "反例也要保留",
+        "实践入口"
+      ],
+      "related": [
+        "environments",
+        "lab-agent",
+        "safety"
+      ],
+      "degree": 8,
+      "sources": [
+        "swe-bench",
+        "webarena",
+        "gaia",
+        "tau-bench",
+        "swe-agent"
+      ],
+      "prerequisites": [
+        "environments",
+        "rewards"
+      ],
+      "search": "agent 评测：成功、成本与可靠性 明确任务分布和执行协议，才能判断提升来自模型、训练还是 harness。 评估与安全 gaia swe-bench webarena tau-bench 能设计最小评测报告 能识别不公平对比与评测泄漏 基准覆盖不同能力 推荐最小报告 pass@k 与可靠性 公平对比 反例也要保留 实践入口"
+    },
+    {
+      "id": "safety",
+      "title": "奖励投机、提示注入与权限边界",
+      "summary": "高奖励不等于可信执行，训练验证器和运行时约束需要分别设计。",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "order": 15,
+      "minutes": 16,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "14-safety.md",
+      "tags": [
+        "prompt injection",
+        "reward hacking",
+        "sandbox"
+      ],
+      "concepts": [
+        "prompt injection",
+        "reward hacking",
+        "sandbox"
+      ],
+      "objectives": [
+        "能把权限约束放在执行层",
+        "能防止验证器被优化穿透"
+      ],
+      "keyPoints": [
+        "两类不同风险",
+        "把权限放在执行层",
+        "防止验证器被优化穿透",
+        "部署门槛",
+        "自测",
+        "开放问题"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "两类不同风险",
+        "把权限放在执行层",
+        "防止验证器被优化穿透",
+        "部署门槛",
+        "自测",
+        "开放问题"
+      ],
+      "related": [
+        "agent-loop",
+        "evaluation",
+        "lab-agent",
+        "orientation",
+        "rewards"
+      ],
+      "degree": 6,
+      "sources": [
+        "lilian-reward",
+        "tau-bench",
+        "anthropic-building"
+      ],
+      "prerequisites": [
+        "evaluation"
+      ],
+      "search": "奖励投机、提示注入与权限边界 高奖励不等于可信执行，训练验证器和运行时约束需要分别设计。 评估与安全 prompt injection reward hacking sandbox 能把权限约束放在执行层 能防止验证器被优化穿透 两类不同风险 把权限放在执行层 防止验证器被优化穿透 部署门槛 自测 开放问题"
+    },
+    {
+      "id": "multi-agent",
+      "title": "多智能体：编排、MARL 与 CTDE",
+      "summary": "多个角色聊天并不自动构成多智能体强化学习。",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "order": 16,
+      "minutes": 18,
+      "updated": "2026-09-08",
+      "review": "综合笔记",
+      "filename": "15-multi-agent.md",
+      "tags": [
+        "CTDE",
+        "MARL",
+        "coordination"
+      ],
+      "concepts": [
+        "CTDE",
+        "MARL",
+        "coordination"
+      ],
+      "objectives": [
+        "能区分编排与 MARL",
+        "能解释 CTDE 的假设与代价"
+      ],
+      "keyPoints": [
+        "从编排到学习",
+        "CTDE",
+        "三个困难",
+        "必需的基线",
+        "与技能演化的联系"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "从编排到学习",
+        "CTDE",
+        "三个困难",
+        "必需的基线",
+        "与技能演化的联系"
+      ],
+      "related": [
+        "frontier-radar",
+        "glossary",
+        "learning-paths",
+        "mdp",
+        "multi-turn-rl",
+        "orientation"
+      ],
+      "degree": 9,
+      "sources": [
+        "marl-book",
+        "agentic-survey",
+        "coskill"
+      ],
+      "prerequisites": [
+        "multi-turn-rl",
+        "evaluation"
+      ],
+      "search": "多智能体：编排、marl 与 ctde 多个角色聊天并不自动构成多智能体强化学习。 前沿专题 ctde marl coordination 能区分编排与 marl 能解释 ctde 的假设与代价 从编排到学习 ctde 三个困难 必需的基线 与技能演化的联系"
+    },
+    {
+      "id": "frontier-radar",
+      "title": "研究雷达：2026 年 8–9 月",
+      "summary": "技能共演化、经验蒸馏和跨 harness 泛化；所有近期条目均为摘要核验、待精读。",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "order": 17,
+      "minutes": 18,
+      "updated": "2026-09-08",
+      "review": "摘要核验 · 待精读",
+      "filename": "16-frontier-radar.md",
+      "tags": [
+        "2026",
+        "exploration",
+        "generalization",
+        "skills"
+      ],
+      "concepts": [
+        "2026",
+        "exploration",
+        "generalization",
+        "skills"
+      ],
+      "objectives": [
+        "能提出可证伪的前沿问题",
+        "能按证据边界阅读预印本"
+      ],
+      "keyPoints": [
+        "调研边界",
+        "四个值得追踪的问题",
+        "为什么不能只抄最高分",
+        "更长期的研究轴",
+        "晋级规则"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "调研边界",
+        "四个值得追踪的问题",
+        "为什么不能只抄最高分",
+        "更长期的研究轴",
+        "晋级规则"
+      ],
+      "related": [
+        "multi-agent",
+        "glossary",
+        "learning-paths",
+        "mdp",
+        "multi-turn-rl",
+        "orientation"
+      ],
+      "degree": 9,
+      "sources": [
+        "coskill",
+        "multi-harness",
+        "agent-g2",
+        "edge",
+        "agentic-survey"
+      ],
+      "prerequisites": [
+        "multi-agent",
+        "training-systems"
+      ],
+      "search": "研究雷达：2026 年 8–9 月 技能共演化、经验蒸馏和跨 harness 泛化；所有近期条目均为摘要核验、待精读。 前沿专题 2026 exploration generalization skills 能提出可证伪的前沿问题 能按证据边界阅读预印本 调研边界 四个值得追踪的问题 为什么不能只抄最高分 更长期的研究轴 晋级规则"
+    },
+    {
+      "id": "lab-rl",
+      "title": "实验 01：用成熟 PPO 库跑通闭环",
+      "summary": "用 FrozenLake 理解训练、评测、随机种子与日志，不需要 GPU 或 API Key。",
+      "stage": "FOUNDATION",
+      "track": "实验与维护",
+      "order": 18,
+      "minutes": 30,
+      "updated": "2026-09-08",
+      "review": "实验指南",
+      "filename": "17-lab-rl.md",
+      "tags": [
+        "CPU",
+        "PPO",
+        "lab",
+        "reproducibility"
+      ],
+      "concepts": [
+        "CPU",
+        "PPO",
+        "lab",
+        "reproducibility"
+      ],
+      "objectives": [
+        "能用成熟库跑通 PPO 闭环",
+        "能设计多种子的可复现实验"
+      ],
+      "keyPoints": [
+        "目标与限制",
+        "环境准备",
+        "应观察什么",
+        "可证伪的实验问题",
+        "完成标准"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "目标与限制",
+        "环境准备",
+        "应观察什么",
+        "可证伪的实验问题",
+        "完成标准"
+      ],
+      "related": [
+        "ppo",
+        "environments",
+        "lab-agent",
+        "lab-agent-rl"
+      ],
+      "degree": 6,
+      "sources": [
+        "gymnasium",
+        "sb3",
+        "ppo"
+      ],
+      "prerequisites": [
+        "ppo"
+      ],
+      "search": "实验 01：用成熟 ppo 库跑通闭环 用 frozenlake 理解训练、评测、随机种子与日志，不需要 gpu 或 api key。 实验与维护 cpu ppo lab reproducibility 能用成熟库跑通 ppo 闭环 能设计多种子的可复现实验 目标与限制 环境准备 应观察什么 可证伪的实验问题 完成标准"
+    },
+    {
+      "id": "lab-agent",
+      "title": "实验 02：工具轨迹与独立验证",
+      "summary": "在本地确定性任务中重放工具调用，先验证协议再接入语言模型。",
+      "stage": "SYSTEMS",
+      "track": "实验与维护",
+      "order": 19,
+      "minutes": 30,
+      "updated": "2026-09-08",
+      "review": "实验指南",
+      "filename": "18-lab-agent.md",
+      "tags": [
+        "CPU",
+        "lab",
+        "trajectory",
+        "verifier"
+      ],
+      "concepts": [
+        "CPU",
+        "lab",
+        "trajectory",
+        "verifier"
+      ],
+      "objectives": [
+        "能在本地重放工具轨迹",
+        "能独立验证任务结果"
+      ],
+      "keyPoints": [
+        "为什么先做无模型实验",
+        "任务",
+        "如何扩展成 Agent 实验",
+        "防止评测泄漏",
+        "完成标准"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "为什么先做无模型实验",
+        "任务",
+        "如何扩展成 Agent 实验",
+        "防止评测泄漏",
+        "完成标准"
+      ],
+      "related": [
+        "environments",
+        "evaluation",
+        "lab-agent-rl",
+        "lab-rl",
+        "multi-turn-rl",
+        "rewards"
+      ],
+      "degree": 12,
+      "sources": [
+        "gymnasium",
+        "tau-bench",
+        "agent-lightning"
+      ],
+      "prerequisites": [
+        "environments",
+        "evaluation",
+        "lab-rl"
+      ],
+      "search": "实验 02：工具轨迹与独立验证 在本地确定性任务中重放工具调用，先验证协议再接入语言模型。 实验与维护 cpu lab trajectory verifier 能在本地重放工具轨迹 能独立验证任务结果 为什么先做无模型实验 任务 如何扩展成 agent 实验 防止评测泄漏 完成标准"
+    },
+    {
+      "id": "lab-agent-rl",
+      "title": "实验 03：设计可复现的 Agent RL 小实验",
+      "summary": "在投入 GPU 之前冻结数据、预算、基线和成功判据。",
+      "stage": "SYSTEMS",
+      "track": "实验与维护",
+      "order": 20,
+      "minutes": 35,
+      "updated": "2026-09-08",
+      "review": "实验设计 · 未运行 GPU 训练",
+      "filename": "19-lab-agent-rl.md",
+      "tags": [
+        "GRPO",
+        "ablation",
+        "lab",
+        "verl"
+      ],
+      "concepts": [
+        "GRPO",
+        "ablation",
+        "lab",
+        "verl"
+      ],
+      "objectives": [
+        "能冻结可复现实验协议",
+        "能在投入 GPU 前设定停止条件"
+      ],
+      "keyPoints": [
+        "研究问题",
+        "最小设计",
+        "实施顺序",
+        "资源说明",
+        "停止条件"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "研究问题",
+        "最小设计",
+        "实施顺序",
+        "资源说明",
+        "停止条件"
+      ],
+      "related": [
+        "rewards",
+        "training-systems",
+        "grpo",
+        "lab-agent",
+        "lab-rl",
+        "multi-turn-rl"
+      ],
+      "degree": 8,
+      "sources": [
+        "verl",
+        "lightning-code",
+        "deepseek-math",
+        "gigpo"
+      ],
+      "prerequisites": [
+        "training-systems",
+        "lab-agent"
+      ],
+      "search": "实验 03：设计可复现的 agent rl 小实验 在投入 gpu 之前冻结数据、预算、基线和成功判据。 实验与维护 grpo ablation lab verl 能冻结可复现实验协议 能在投入 gpu 前设定停止条件 研究问题 最小设计 实施顺序 资源说明 停止条件"
+    },
+    {
+      "id": "learning-paths",
+      "title": "三条学习路线与里程碑",
+      "summary": "从概念入门、工程实践到论文复现，每一步都有可检查的产出。",
+      "stage": "FOUNDATION",
+      "track": "实验与维护",
+      "order": 21,
+      "minutes": 10,
+      "updated": "2026-09-08",
+      "review": "学习路线",
+      "filename": "20-learning-paths.md",
+      "tags": [
+        "curriculum",
+        "milestones",
+        "roadmap"
+      ],
+      "concepts": [
+        "curriculum",
+        "milestones",
+        "roadmap"
+      ],
+      "objectives": [
+        "能选择适合自己的学习路线",
+        "能用里程碑检查进度"
+      ],
+      "keyPoints": [
+        "路线 A：概念入门，建议 2 周",
+        "路线 B：工程实践，建议 4 周",
+        "路线 C：研究与复现，持续维护",
+        "进度含义"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "路线 A：概念入门，建议 2 周",
+        "路线 B：工程实践，建议 4 周",
+        "路线 C：研究与复现，持续维护",
+        "进度含义"
+      ],
+      "related": [
+        "mdp",
+        "glossary",
+        "prerequisites",
+        "value-learning",
+        "frontier-radar",
+        "maintenance"
+      ],
+      "degree": 11,
+      "sources": [
+        "sutton-barto",
+        "silver",
+        "agentic-survey",
+        "diataxis"
+      ],
+      "prerequisites": [
+        "orientation"
+      ],
+      "search": "三条学习路线与里程碑 从概念入门、工程实践到论文复现，每一步都有可检查的产出。 实验与维护 curriculum milestones roadmap 能选择适合自己的学习路线 能用里程碑检查进度 路线 a：概念入门，建议 2 周 路线 b：工程实践，建议 4 周 路线 c：研究与复现，持续维护 进度含义"
+    },
+    {
+      "id": "maintenance",
+      "title": "维护协议：PARA × Zettelkasten × Diataxis",
+      "summary": "用稳定概念链接组织知识，用项目推动行动，用证据控制更新质量。",
+      "stage": "FOUNDATION",
+      "track": "实验与维护",
+      "order": 22,
+      "minutes": 15,
+      "updated": "2026-09-08",
+      "review": "维护规范",
+      "filename": "21-maintenance.md",
+      "tags": [
+        "Diataxis",
+        "PARA",
+        "Zettelkasten",
+        "git"
+      ],
+      "concepts": [
+        "Diataxis",
+        "PARA",
+        "Zettelkasten",
+        "git"
+      ],
+      "objectives": [
+        "能用 PARA 与 Zettelkasten 组织知识",
+        "能用证据控制内容更新"
+      ],
+      "keyPoints": [
+        "采用混合架构的原因",
+        "目录职责",
+        "内容生命周期",
+        "每次提交前",
+        "维护节奏",
+        "Git 与个人隐私"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "采用混合架构的原因",
+        "目录职责",
+        "内容生命周期",
+        "每次提交前",
+        "维护节奏",
+        "Git 与个人隐私"
+      ],
+      "related": [
+        "learning-paths"
+      ],
+      "degree": 2,
+      "sources": [
+        "para",
+        "zettel",
+        "diataxis"
+      ],
+      "prerequisites": [
+        "orientation"
+      ],
+      "search": "维护协议：para × zettelkasten × diataxis 用稳定概念链接组织知识，用项目推动行动，用证据控制更新质量。 实验与维护 diataxis para zettelkasten git 能用 para 与 zettelkasten 组织知识 能用证据控制内容更新 采用混合架构的原因 目录职责 内容生命周期 每次提交前 维护节奏 git 与个人隐私"
+    },
+    {
+      "id": "glossary",
+      "title": "术语速查与容易混淆的缩写",
+      "summary": "中英对照，连接到概念正文，避免算法名和系统名混在一起。",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "order": 23,
+      "minutes": 8,
+      "updated": "2026-09-08",
+      "review": "参考索引",
+      "filename": "22-glossary.md",
+      "tags": [
+        "glossary",
+        "reference"
+      ],
+      "concepts": [
+        "glossary",
+        "reference"
+      ],
+      "objectives": [
+        "能快速查证易混缩写",
+        "能连接到对应概念正文"
+      ],
+      "keyPoints": [
+        "记忆与学习"
+      ],
+      "evidenceLevel": "",
+      "codeUrl": "",
+      "sections": [
+        "记忆与学习"
+      ],
+      "related": [
+        "learning-paths",
+        "mdp",
+        "frontier-radar",
+        "multi-agent",
+        "multi-turn-rl",
+        "orientation"
+      ],
+      "degree": 9,
+      "sources": [
+        "sutton-barto",
+        "agentic-survey"
+      ],
+      "prerequisites": [],
+      "search": "术语速查与容易混淆的缩写 中英对照，连接到概念正文，避免算法名和系统名混在一起。 概念与基础 glossary reference 能快速查证易混缩写 能连接到对应概念正文 记忆与学习"
+    }
+  ]
+}

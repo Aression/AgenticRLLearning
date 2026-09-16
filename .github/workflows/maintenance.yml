@@ -31,6 +31,8 @@ jobs:
         run: python scripts/harness.py refresh
       - name: Run harness checks and report
         run: python scripts/harness.py report --json | tee harness-result.json
+      - name: Validate content database and graph
+        run: python scripts/atlas_db.py check
       - name: Build application
         run: npm ci && npm run build
       - name: Create maintenance issue when refresh changed evidence

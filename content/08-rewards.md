@@ -8,6 +8,7 @@ order: 9
 minutes: 20
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能区分结果奖励与过程信号, 能识别奖励投机风险]
 tags: [reward, verifier, credit assignment]
 sources: [deepseek-math, gigpo, lilian-reward]
 prerequisites: [mdp, environments]

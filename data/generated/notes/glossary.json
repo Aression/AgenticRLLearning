@@ -1,0 +1,48 @@
+{
+  "id": "glossary",
+  "title": "术语速查与容易混淆的缩写",
+  "summary": "中英对照，连接到概念正文，避免算法名和系统名混在一起。",
+  "stage": "FOUNDATION",
+  "track": "概念与基础",
+  "order": 23,
+  "minutes": 8,
+  "updated": "2026-09-08",
+  "review": "参考索引",
+  "filename": "22-glossary.md",
+  "tags": [
+    "glossary",
+    "reference"
+  ],
+  "concepts": [
+    "glossary",
+    "reference"
+  ],
+  "objectives": [
+    "能快速查证易混缩写",
+    "能连接到对应概念正文"
+  ],
+  "keyPoints": [
+    "记忆与学习"
+  ],
+  "evidenceLevel": "",
+  "codeUrl": "",
+  "sections": [
+    "记忆与学习"
+  ],
+  "related": [
+    "learning-paths",
+    "mdp",
+    "frontier-radar",
+    "multi-agent",
+    "multi-turn-rl",
+    "orientation"
+  ],
+  "degree": 9,
+  "sources": [
+    "sutton-barto",
+    "agentic-survey"
+  ],
+  "prerequisites": [],
+  "search": "术语速查与容易混淆的缩写 中英对照，连接到概念正文，避免算法名和系统名混在一起。 概念与基础 glossary reference 能快速查证易混缩写 能连接到对应概念正文 记忆与学习",
+  "content": "| 术语 | 中文与含义 | 延伸 |\n| --- | --- | --- |\n| Policy | 策略，给定观测/历史的动作分布 | [MDP](/notes/mdp) |\n| Rollout | 当前策略在环境中采样的交互轨迹 | [系统](/notes/training-systems) |\n| Episode | 从任务初始化到结束的一次运行 | [环境](/notes/environments) |\n| Horizon | 决策时程，不等于 token 上限 | [多轮 RL](/notes/multi-turn-rl) |\n| Reward | 奖励，优化目标的反馈信号 | [奖励](/notes/rewards) |\n| Return | 回报，未来奖励的累积 | [MDP](/notes/mdp) |\n| Advantage | 优势，相对基线的价值差 | [策略梯度](/notes/policy-gradient) |\n| Critic | 价值估计器，不一定是 LLM 裁判 | [PPO](/notes/ppo) |\n| Verifier | 验证器，检查结果或过程 | [奖励](/notes/rewards) |\n| RLVR | 具有可验证奖励的 RL | [GRPO](/notes/grpo) |\n| Credit assignment | 信用分配，把结果归因给早期行为 | [多轮 RL](/notes/multi-turn-rl) |\n| Harness | 执行框架：工具、提示、调度与环境封装 | [评测](/notes/evaluation) |\n| On-policy | 从当前或近邻策略采样并学习 | [价值学习](/notes/value-learning) |\n| Off-policy | 数据行为策略不同于学习目标策略 | [价值学习](/notes/value-learning) |\n| Offline RL | 仅用固定数据训练，不能继续交互采样 | [价值学习](/notes/value-learning) |\n| SFT | 监督微调，模仿示范 | [偏好优化](/notes/preferences) |\n| KL | 分布差异；正则化不等于安全保证 | [PPO](/notes/ppo) |\n| CTDE | 集中训练、分散执行 | [多智能体](/notes/multi-agent) |\n| Ablation | 消融，移除组件以判断贡献 | [实验设计](/notes/lab-agent-rl) |\n| Reward hacking | 利用奖励实现与真实目标的差距 | [安全](/notes/safety) |\n\n## 记忆与学习\n\n上下文记忆、外部经验库、技能文件与模型参数不是同一种存储。记忆改善表现并不自动意味着 RL；要检查更新对象、目标和训练过程。精确命名能减少阅读不同论文时的错位比较。"
+}

@@ -8,6 +8,7 @@ order: 17
 minutes: 18
 updated: '2026-09-08'
 review: 摘要核验 · 待精读
+objectives: [能提出可证伪的前沿问题, 能按证据边界阅读预印本]
 tags: [2026, skills, generalization, exploration]
 sources: [coskill, multi-harness, agent-g2, edge, agentic-survey]
 prerequisites: [multi-agent, training-systems]

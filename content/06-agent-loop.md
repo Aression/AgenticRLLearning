@@ -8,6 +8,7 @@ order: 7
 minutes: 15
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能画出最小 Agent 运行循环, 能区分工作流与参数学习]
 tags: [ReAct, tools, memory, planning]
 sources: [react, anthropic-building, lilian-agent]
 prerequisites: [orientation, mdp]

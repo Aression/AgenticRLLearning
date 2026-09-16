@@ -8,6 +8,7 @@ order: 23
 minutes: 8
 updated: '2026-09-08'
 review: 参考索引
+objectives: [能快速查证易混缩写, 能连接到对应概念正文]
 tags: [glossary, reference]
 sources: [sutton-barto, agentic-survey]
 prerequisites: []

@@ -8,6 +8,7 @@ order: 22
 minutes: 15
 updated: '2026-09-08'
 review: 维护规范
+objectives: [能用 PARA 与 Zettelkasten 组织知识, 能用证据控制内容更新]
 tags: [PARA, Zettelkasten, Diataxis, git]
 sources: [para, zettel, diataxis]
 prerequisites: [orientation]

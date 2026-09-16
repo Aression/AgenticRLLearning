@@ -8,6 +8,7 @@ order: 4
 minutes: 18
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能区分 on-policy 与 off-policy, 能解释探索与自举的取舍]
 tags: [TD, Q-learning, exploration]
 sources: [sutton-barto, silver]
 prerequisites: [mdp]

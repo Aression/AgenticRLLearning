@@ -8,6 +8,7 @@ order: 20
 minutes: 35
 updated: '2026-09-08'
 review: 实验设计 · 未运行 GPU 训练
+objectives: [能冻结可复现实验协议, 能在投入 GPU 前设定停止条件]
 tags: [lab, verl, GRPO, ablation]
 sources: [verl, lightning-code, deepseek-math, gigpo]
 prerequisites: [training-systems, lab-agent]

@@ -4,9 +4,16 @@
 
 ## 内容模型
 
-- `data/knowledge.ts` 是唯一内容源，节点包含阶段、主题、难度、状态、标签和来源。
+- `content/*.md` 是人工编辑的原子笔记（frontmatter + 正文），一篇一个文件。
+- `data/atlas.db`（SQLite）是内容数据库：导入笔记与来源，保存标签/概念、先修、共享来源等关系。
+- `data/generated/` 是数据库导出给站点的拆分数据：`notes.index.json`（元数据）、`notes/<id>.json`（单篇正文）、`graph.json`（知识图谱）、`sources.json`。
+- 改动 Markdown 或来源后运行 `npm run content:build` 重新生成数据库与导出，用 `npm run content:check` 校验同步。
 - 来源优先级：原始论文 > 官方课程/文档 > 作者博客 > 可复现实验仓库。
 - 每条来源必须有稳定 URL、机构/作者、年份和一句“为什么读”。每季度复核链接与结论。
+
+## 知识图谱
+
+站点内置“知识图谱”视图：节点是知识笔记与概念标签，边来自先修顺序、显式相关、共享来源与共享概念。图谱由 `scripts/atlas_db.py` 从内容数据库生成，可开关关系类型并聚焦邻居。
 
 ## 本地运行
 

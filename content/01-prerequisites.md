@@ -8,6 +8,7 @@ order: 2
 minutes: 15
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [掌握策略优化所需的最短数学基础, 能推导策略梯度与自举更新]
 tags: [probability, gradient, LLM]
 sources: [sutton-barto, silver]
 prerequisites: [orientation]

@@ -8,6 +8,7 @@ order: 6
 minutes: 22
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能读懂 PPO 的裁剪目标, 能诊断 KL 熵与 clip fraction]
 tags: [PPO, clipping, KL]
 sources: [ppo, gae, sb3]
 prerequisites: [policy-gradient]

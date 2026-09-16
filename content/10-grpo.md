@@ -8,6 +8,7 @@ order: 11
 minutes: 22
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能解释组内相对优势, 能指出 GRPO 在长时程任务上的缺口]
 tags: [GRPO, RLVR, DeepSeek-R1]
 sources: [deepseek-math, deepseek-r1, dapo]
 prerequisites: [ppo, rewards]

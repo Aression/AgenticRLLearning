@@ -1,0 +1,1765 @@
+{
+  "generatedAt": "2026-09-16T16:22:54.137151+00:00",
+  "nodes": [
+    {
+      "id": "orientation",
+      "label": "Agentic RL：定义与边界",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "degree": 13
+    },
+    {
+      "id": "prerequisites",
+      "label": "数学、机器学习与 LLM 先修",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "degree": 7
+    },
+    {
+      "id": "mdp",
+      "label": "MDP、POMDP 与 Bellman 方程",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "degree": 13
+    },
+    {
+      "id": "value-learning",
+      "label": "从 Bandit 到 TD 与 Q-learning",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "degree": 8
+    },
+    {
+      "id": "policy-gradient",
+      "label": "Policy Gradient、Actor-Critic 与 GAE",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "训练算法",
+      "degree": 8
+    },
+    {
+      "id": "ppo",
+      "label": "PPO：限制每次策略更新",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "训练算法",
+      "degree": 6
+    },
+    {
+      "id": "agent-loop",
+      "label": "Agent 闭环：推理、工具、规划与记忆",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "Agent 系统",
+      "degree": 5
+    },
+    {
+      "id": "environments",
+      "label": "环境、工具协议与轨迹数据",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "Agent 系统",
+      "degree": 10
+    },
+    {
+      "id": "rewards",
+      "label": "奖励、验证器与信用分配",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "degree": 10
+    },
+    {
+      "id": "preferences",
+      "label": "RLHF、RLAIF 与 DPO 的位置",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "degree": 2
+    },
+    {
+      "id": "grpo",
+      "label": "GRPO、DeepSeek-R1 与可验证推理",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "degree": 7
+    },
+    {
+      "id": "multi-turn-rl",
+      "label": "多轮 Agent RL：轨迹、步骤与层级",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "degree": 15
+    },
+    {
+      "id": "training-systems",
+      "label": "Rollout、训练解耦与系统预算",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "Agent 系统",
+      "degree": 8
+    },
+    {
+      "id": "evaluation",
+      "label": "Agent 评测：成功、成本与可靠性",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "degree": 8
+    },
+    {
+      "id": "safety",
+      "label": "奖励投机、提示注入与权限边界",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "degree": 6
+    },
+    {
+      "id": "multi-agent",
+      "label": "多智能体：编排、MARL 与 CTDE",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "degree": 9
+    },
+    {
+      "id": "frontier-radar",
+      "label": "研究雷达：2026 年 8–9 月",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "degree": 9
+    },
+    {
+      "id": "lab-rl",
+      "label": "实验 01：用成熟 PPO 库跑通闭环",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "实验与维护",
+      "degree": 6
+    },
+    {
+      "id": "lab-agent",
+      "label": "实验 02：工具轨迹与独立验证",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "实验与维护",
+      "degree": 12
+    },
+    {
+      "id": "lab-agent-rl",
+      "label": "实验 03：设计可复现的 Agent RL 小实验",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "实验与维护",
+      "degree": 8
+    },
+    {
+      "id": "learning-paths",
+      "label": "三条学习路线与里程碑",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "实验与维护",
+      "degree": 11
+    },
+    {
+      "id": "maintenance",
+      "label": "维护协议：PARA × Zettelkasten × Diataxis",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "实验与维护",
+      "degree": 2
+    },
+    {
+      "id": "glossary",
+      "label": "术语速查与容易混淆的缩写",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "degree": 9
+    },
+    {
+      "id": "2026",
+      "label": "2026",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "ablation",
+      "label": "ablation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "actor-critic",
+      "label": "actor-critic",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-lightning",
+      "label": "Agent Lightning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "agentic-rl",
+      "label": "Agentic RL",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "alignment",
+      "label": "alignment",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "asynchronous",
+      "label": "asynchronous",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "bellman",
+      "label": "Bellman",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "clipping",
+      "label": "clipping",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "coordination",
+      "label": "coordination",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "cpu",
+      "label": "CPU",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "credit-assignment",
+      "label": "credit assignment",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "ctde",
+      "label": "CTDE",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "curriculum",
+      "label": "curriculum",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "deepseek-r1",
+      "label": "DeepSeek-R1",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "diataxis",
+      "label": "Diataxis",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "dpo",
+      "label": "DPO",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "environment",
+      "label": "environment",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "exploration",
+      "label": "exploration",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "gae",
+      "label": "GAE",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "gaia",
+      "label": "GAIA",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "generalization",
+      "label": "generalization",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "gigpo",
+      "label": "GiGPO",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "git",
+      "label": "git",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "glossary",
+      "label": "glossary",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "gradient",
+      "label": "gradient",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "grpo",
+      "label": "GRPO",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "hierarchical",
+      "label": "hierarchical",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "kl",
+      "label": "KL",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "lab",
+      "label": "lab",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "llm",
+      "label": "LLM",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "long-horizon",
+      "label": "long-horizon",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "marl",
+      "label": "MARL",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "masking",
+      "label": "masking",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "mdp",
+      "label": "MDP",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "memory",
+      "label": "memory",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "milestones",
+      "label": "milestones",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "para",
+      "label": "PARA",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "planning",
+      "label": "planning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "pomdp",
+      "label": "POMDP",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "ppo",
+      "label": "PPO",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "probability",
+      "label": "probability",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "prompt-injection",
+      "label": "prompt injection",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "q-learning",
+      "label": "Q-learning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "react",
+      "label": "ReAct",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reference",
+      "label": "reference",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reinforce",
+      "label": "REINFORCE",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reproducibility",
+      "label": "reproducibility",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reward",
+      "label": "reward",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reward-hacking",
+      "label": "reward hacking",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "rlaif",
+      "label": "RLAIF",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "rlhf",
+      "label": "RLHF",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "rlvr",
+      "label": "RLVR",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "roadmap",
+      "label": "roadmap",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "rollout",
+      "label": "rollout",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "sandbox",
+      "label": "sandbox",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "skills",
+      "label": "skills",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "swe-bench",
+      "label": "SWE-bench",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "tau-bench",
+      "label": "tau-bench",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "taxonomy",
+      "label": "taxonomy",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "td",
+      "label": "TD",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "tools",
+      "label": "tools",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "trajectory",
+      "label": "trajectory",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "verifier",
+      "label": "verifier",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "verl",
+      "label": "verl",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "webarena",
+      "label": "WebArena",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "zettelkasten",
+      "label": "Zettelkasten",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent-loop",
+      "target": "environments",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "evaluation",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "lab-agent",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "multi-turn-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "rewards",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "lab-agent",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "multi-agent",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "safety",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "multi-turn-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
+      "target": "lab-agent-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-rl",
+      "target": "lab-agent",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
+      "target": "agent-loop",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
+      "target": "rewards",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
+      "target": "value-learning",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-agent",
+      "target": "frontier-radar",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "multi-agent",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "training-systems",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "orientation",
+      "target": "agent-loop",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "orientation",
+      "target": "learning-paths",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "orientation",
+      "target": "maintenance",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "orientation",
+      "target": "prerequisites",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "ppo",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "ppo",
+      "target": "grpo",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "ppo",
+      "target": "lab-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "ppo",
+      "target": "preferences",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "prerequisites",
+      "target": "mdp",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
+      "target": "evaluation",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
+      "target": "grpo",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
+      "target": "preferences",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "training-systems",
+      "target": "frontier-radar",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "training-systems",
+      "target": "lab-agent-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "value-learning",
+      "target": "policy-gradient",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "value-learning",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
+      "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
+      "target": "rewards",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "lab-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "safety",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "evaluation",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "environments",
+      "target": "lab-agent",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "environments",
+      "target": "lab-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "training-systems",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "lab-agent",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "safety",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "glossary",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "learning-paths",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "mdp",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "multi-agent",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "glossary",
+      "target": "learning-paths",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "glossary",
+      "target": "mdp",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "glossary",
+      "target": "multi-agent",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "glossary",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "glossary",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "glossary",
+      "target": "policy-gradient",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "glossary",
+      "target": "prerequisites",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "glossary",
+      "target": "value-learning",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "lab-agent-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "rewards",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "training-systems",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
+      "target": "lab-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
+      "target": "safety",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
+      "target": "training-systems",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "rewards",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "training-systems",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "lab-rl",
+      "target": "ppo",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "maintenance",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "mdp",
+      "kind": "shared-source",
+      "weight": 3.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "multi-agent",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "policy-gradient",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "prerequisites",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "value-learning",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "mdp",
+      "target": "multi-agent",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
+      "target": "policy-gradient",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
+      "target": "prerequisites",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "mdp",
+      "target": "value-learning",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "multi-agent",
+      "target": "multi-turn-rl",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-agent",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "orientation",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "rewards",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "training-systems",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "orientation",
+      "target": "safety",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "ppo",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "prerequisites",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "value-learning",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "prerequisites",
+      "target": "value-learning",
+      "kind": "shared-source",
+      "weight": 2.0
+    },
+    {
+      "source": "rewards",
+      "target": "safety",
+      "kind": "shared-source",
+      "weight": 1.0
+    },
+    {
+      "source": "orientation",
+      "target": "agentic-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "orientation",
+      "target": "pomdp",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "orientation",
+      "target": "taxonomy",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "prerequisites",
+      "target": "probability",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "prerequisites",
+      "target": "gradient",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "prerequisites",
+      "target": "llm",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mdp",
+      "target": "mdp",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mdp",
+      "target": "pomdp",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mdp",
+      "target": "bellman",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-learning",
+      "target": "td",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-learning",
+      "target": "q-learning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-learning",
+      "target": "exploration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "policy-gradient",
+      "target": "reinforce",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "policy-gradient",
+      "target": "actor-critic",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "policy-gradient",
+      "target": "gae",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "ppo",
+      "target": "ppo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "ppo",
+      "target": "clipping",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "ppo",
+      "target": "kl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent-loop",
+      "target": "react",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent-loop",
+      "target": "tools",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent-loop",
+      "target": "memory",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent-loop",
+      "target": "planning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "environments",
+      "target": "environment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "environments",
+      "target": "trajectory",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "environments",
+      "target": "masking",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewards",
+      "target": "reward",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewards",
+      "target": "verifier",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewards",
+      "target": "credit-assignment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "preferences",
+      "target": "rlhf",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "preferences",
+      "target": "rlaif",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "preferences",
+      "target": "dpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "preferences",
+      "target": "alignment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "grpo",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "grpo",
+      "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "grpo",
+      "target": "deepseek-r1",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "gigpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "long-horizon",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "hierarchical",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "training-systems",
+      "target": "verl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "training-systems",
+      "target": "agent-lightning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "training-systems",
+      "target": "rollout",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "training-systems",
+      "target": "asynchronous",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evaluation",
+      "target": "swe-bench",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evaluation",
+      "target": "webarena",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evaluation",
+      "target": "gaia",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evaluation",
+      "target": "tau-bench",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "safety",
+      "target": "reward-hacking",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "safety",
+      "target": "prompt-injection",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "safety",
+      "target": "sandbox",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "multi-agent",
+      "target": "marl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "multi-agent",
+      "target": "ctde",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "multi-agent",
+      "target": "coordination",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "frontier-radar",
+      "target": "2026",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "frontier-radar",
+      "target": "skills",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "frontier-radar",
+      "target": "generalization",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "frontier-radar",
+      "target": "exploration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-rl",
+      "target": "lab",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-rl",
+      "target": "ppo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-rl",
+      "target": "cpu",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-rl",
+      "target": "reproducibility",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent",
+      "target": "lab",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent",
+      "target": "trajectory",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent",
+      "target": "verifier",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent",
+      "target": "cpu",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "lab",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "verl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "ablation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "learning-paths",
+      "target": "roadmap",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "learning-paths",
+      "target": "curriculum",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "learning-paths",
+      "target": "milestones",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "maintenance",
+      "target": "para",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "maintenance",
+      "target": "zettelkasten",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "maintenance",
+      "target": "diataxis",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "maintenance",
+      "target": "git",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "glossary",
+      "target": "glossary",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "glossary",
+      "target": "reference",
+      "kind": "concept",
+      "weight": 1
+    }
+  ]
+}

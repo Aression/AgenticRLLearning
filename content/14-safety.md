@@ -8,6 +8,7 @@ order: 15
 minutes: 16
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能把权限约束放在执行层, 能防止验证器被优化穿透]
 tags: [reward hacking, prompt injection, sandbox]
 sources: [lilian-reward, tau-bench, anthropic-building]
 prerequisites: [evaluation]

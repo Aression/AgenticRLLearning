@@ -8,6 +8,7 @@ order: 3
 minutes: 20
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能把 Agent 任务写成 MDP 或 POMDP, 能解释 Bellman 递推与折扣因子]
 tags: [MDP, POMDP, Bellman]
 sources: [sutton-barto, silver, agentic-survey]
 prerequisites: [prerequisites]

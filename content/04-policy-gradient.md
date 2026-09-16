@@ -8,6 +8,7 @@ order: 5
 minutes: 22
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能推导 REINFORCE 与基线的作用, 能解释 GAE 的偏差方差权衡]
 tags: [REINFORCE, actor-critic, GAE]
 sources: [sutton-barto, gae]
 prerequisites: [value-learning]

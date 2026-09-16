@@ -8,6 +8,7 @@ order: 12
 minutes: 22
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能比较轨迹级与步骤级信用分配, 能设计层级优势估计]
 tags: [GiGPO, long-horizon, hierarchical]
 sources: [agentic-survey, gigpo, agent-lightning]
 prerequisites: [grpo, environments]

@@ -8,6 +8,7 @@ order: 10
 minutes: 18
 updated: '2026-09-08'
 review: 综合笔记
+objectives: [能描述经典 RLHF 的完整流程, 能判断何时用 DPO 而非在线 RL]
 tags: [RLHF, RLAIF, DPO, alignment]
 sources: [instructgpt, constitutional, dpo]
 prerequisites: [ppo, rewards]
