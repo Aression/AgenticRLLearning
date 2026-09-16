@@ -1,0 +1,274 @@
+{
+  "schema": 1,
+  "generated_at": "2026-09-16T16:26:59.769359+00:00",
+  "requested_model": "deepseek-v4-flash",
+  "response_model": [
+    "deepseek-flash"
+  ],
+  "source_discovery": "research/discovery.json",
+  "batches": 5,
+  "human_review_required": true,
+  "publish_directly": false,
+  "summary": "Audited 5 HuggingFace daily-paper candidates against the Agentic RL knowledge base (foundations to frontier). All five are 2026 preprints with abstract-only evidence; none are duplicates of existing source IDs. Two are plausible additions to the agentic-RL core (ModularRSI on harness self-improvement; RSIAgent on training-free recursive self-improvement), one is a relevant but tangential test-time-compute measurement study, one is a broad foundation-model release only partially relevant, and one is a multi-agent safety stress test outside the RL-training scope. No candidate is treated as published knowledge; all remain abstract-only pending human reading.\n\nAudited 5 discovery entries from a HuggingFace daily-papers grep against the Agentic RL knowledge base (existing catalog: 34 sources, foundations through frontier). All entries are preprints with abstract-only evidence; none were code-checked or reproduced. Four entries are plausibly relevant to Agentic RL (safety guard for computer-use agents, off-policy intervention for on-policy RL, MoE expert-space exploration, exploration-guided prompt scaffolding), and one (StepAudio 3 Music) is a music-generation technical report whose only link to the scope is incidental use of DPO/RL terminology. No candidate is treated as published knowledge; all are retained at most as review or archive pending human reading. No URLs were fetched, no code was run, and no instructions inside the untrusted discovery text were followed.\n\nAudited 5 Hugging Face daily-paper entries against the Agentic RL knowledge base (33 existing sources). None of the five are duplicates of existing sources. Only one (ScienceBuddy) sits squarely in the Agentic RL training loop and is worth human reading; the remaining four are off-topic (audio realtime, video diffusion, capability distillation, agentic superintelligence report) and should be skipped. All evidence is abstract-only from untrusted discovery metadata; no code, no reproduction, no verification. No candidate should be treated as published knowledge.\n\nAudited 5 untrusted discovery entries from a HuggingFace daily-papers grep against the Agentic RL knowledge base (scope: foundations to frontier). None of the five are duplicates of existing source IDs. Two entries (2609.13443 NGU, 2609.15982 Gavel) are plausibly in-scope for Agentic RL and warrant human reading; one (2609.15195 HarnessVLN) is adjacent (training-free embodied navigation harness) and warrants review for possible inclusion as a harness/agent-architecture reference; two (2609.15973 DFM, 2609.13053 Dynin-Robotics) are out of scope for this KB's Agentic RL focus and should be skipped. All evidence is abstract-only from untrusted discovery text; no code, no reproduction, and no verification of claims was performed. No candidate is treated as published knowledge.\n\nAudited 5 untrusted discovery entries from a HuggingFace daily-papers grep against the Agentic RL knowledge base (existing catalog: 34 sources spanning RL foundations, LLM RLHF/GRPO, agentic RL systems, benchmarks, and knowledge-management methods). No entry is a duplicate of an existing source. All evidence is abstract-only from untrusted external text; no code, artifacts, or claims were verified. Two entries are plausible additions to the agentic-RL frontier (root-cause attribution for long-horizon agent failures; rubric reward-signal robustness), one is a borderline reward/evaluation candidate, and two are off-theme (visual generation harness; robotic manipulation). No candidate is treated as published knowledge; all are at most review or archive.",
+  "candidates": [
+    {
+      "arxiv_id": "2609.14857",
+      "title": "ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Directly on-topic for agentic RL: harness-level recursive self-improvement, modular decomposition (Agent Loop, Tool Use, Observation/Context Management, Task Completion Detection), contrastive success/failure aggregation, and benchmark-disjoint evolution tasks. Overlaps thematically with existing multi-harness and agent-lightning entries but is not a duplicate. Abstract claims improvements on TB2.0 and SWE-Bench Verified and cross-model transfer; these are unverified claims from a preprint abstract only.",
+      "suggested_note": "2026-09-14 preprint. Modular harness RSI with five evolvable modules and benchmark-disjoint evolution set (2,000 tasks). Claims gains on TB2.0 and SWE-Bench Verified plus cross-model transfer. Abstract-only; no code or reproduction checked. Read for: how 'benchmark-disjoint' is enforced, conflict resolution during module integration, and whether transfer claims hold under fixed harness versions."
+    },
+    {
+      "arxiv_id": "2609.15364",
+      "title": "RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Relevant to agentic RL memory/exploration: training-free multi-agent framework (curriculum/actor/verifier) building reusable environment memory, broad-then-deep exploration, frozen memory reused without parameter updates. Note it is explicitly training-free, so it is adjacent to rather than core RL training; still useful for the memory/exploration axis of the knowledge base. Abstract claims OSWorld-v2 and Agent's Last Exam results beating named frontier models; unverified.",
+      "suggested_note": "2026-09-14 preprint. Training-free recursive self-improvement via autonomous memory construction; frozen memory reused downstream. Claims OSWorld-v2 and Agent's Last Exam gains. Abstract-only. Read for: memory representation and reuse protocol, verifier reliability, and whether 'training-free' claims are reproducible without hidden fine-tuning."
+    },
+    {
+      "arxiv_id": "2609.15309",
+      "title": "When Agents Slow Down: Understanding LLM Agents' Test-Time Strategies via Elo-per-token Analysis",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Methodologically relevant to evaluating agentic RL: Elo-per-token analysis, scaling inflection point, and comparison against an independent-sampling reference. Useful for the evaluation/measurement layer of the knowledge base, though it is a measurement study rather than an RL algorithm. Abstract claims specific Elo deltas on FrontierCS Polyomino Packing; unverified.",
+      "suggested_note": "2026-09-14 preprint. Elo-per-token scaling analysis of test-time compute for LLM agents; defines a scaling inflection point vs independent sampling. Abstract-only. Read for: Bradley-Terry aggregation assumptions, benchmark selection bias, and whether the inflection-point budget recommendation generalizes beyond the reported tasks."
+    },
+    {
+      "arxiv_id": "2609.13356",
+      "title": "ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search",
+      "decision": "archive",
+      "evidence_level": "abstract-only",
+      "reason": "Broad foundation-model release (7B, 256K context, FP8 Muon, MDP mid-training, agentic search) with only partial overlap with the Agentic RL scope. The MDP reformulation of interaction traces and agentic co-training dynamics are the relevant parts; the bulk is pretraining/system efficiency. Retain as a candidate reference without publishing, pending human triage of the RL-relevant sections. Claims of competitiveness with much larger models are unverified abstract claims.",
+      "suggested_note": "2026-09-11 preprint. Open 7B model with MDP mid-training and agentic search co-training; claims ~4.2x pretraining efficiency and competitive math/agentic-search results. Abstract-only; weights/code claimed open but not verified. Archive for the MDP-trace reformulation and agentic co-training findings only; not a core Agentic RL algorithm source."
+    },
+    {
+      "arxiv_id": "2609.17320",
+      "title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Multi-agent safety/adversarial stress-testing (prompt injection, misinformation, memory exposure) over 16 days and 8 worlds. Relevant to agent safety and multi-agent dynamics but outside the Agentic RL training scope of this knowledge base; no RL algorithm, credit assignment, or policy optimization content. Not a duplicate, but low fit for the stated scope.",
+      "suggested_note": "2026-09-15 preprint. Long-horizon multi-agent adversarial stress test; reports non-compositional alignment failures and delayed containment failures. Abstract-only. Skipped as out of scope for Agentic RL training; may be revisited if a safety/robustness section is added."
+    },
+    {
+      "arxiv_id": "2609.15134",
+      "title": "HazardAuditor: From Executable Threats to Safer Computer-Use Agents",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Directly on-scope: execution-grounded safety supervision for computer-use agents across heterogeneous frameworks (Claude Code, Codex, Hermes, OpenClaw), plus a sequence-level guard optimization (GuardPO) that is a policy-optimization variant relevant to Agentic RL. Abstract claims up to 16.5pp accuracy gain over strongest prior guard, but no code, models, or artifacts were verified (page states they 'will be available'). Overlaps thematically with existing safety-adjacent sources (constitutional, lilian-reward) but is not a duplicate. Requires human reading before any catalog entry.",
+      "suggested_note": "2026-09-14 preprint: execution-grounded guard framework for computer-use agents; normalizes cross-framework events and uses sequence-level Guard Policy Optimization. Abstract-only; claimed gains unverified; artifacts not yet released. Read for safety/guard angle, not as established method."
+    },
+    {
+      "arxiv_id": "2609.12419",
+      "title": "MInTRL: Off-policy Intervention can boost On-policy RL",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "On-scope for RL methodology: sparse local judge interventions inside otherwise on-policy rollouts, with a sequence-level advantage-regression objective that avoids importance sampling. Relevant to exploration/coverage limits of on-policy RLVR, which connects to existing sources (dapo, deepseek-math, gigpo). Abstract-only; math/code benchmark claims and ablations unverified. Not a duplicate of any existing source.",
+      "suggested_note": "2026-09-11 preprint: minimal-intervention RL mixing sparse off-policy corrections into on-policy rollouts; sequence-level advantage regression, no importance sampling. Abstract-only; benchmark gains unverified. Candidate for the exploration/off-policy section."
+    },
+    {
+      "arxiv_id": "2609.13058",
+      "title": "Expert-Space Exploration in MoE Reinforcement Learning",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "On-scope RL methodology: architecture-aware exploration over MoE routing space with anchor experts, entropy-adaptive perturbation, and routing replay during policy optimization. Reports GRPO-relative gains on Qwen3-30B-A3B. Relevant to rollout diversity and policy optimization, adjacent to existing GRPO-family sources (deepseek-math, dapo, gigpo). Abstract-only; no code or reproduction verified.",
+      "suggested_note": "2026-09-11 preprint: ESRL explores MoE expert-routing space as a rollout-diversity source, with routing replay to fix train/rollout mismatch. Abstract-only; Pass@1/Pass@8 gains vs GRPO unverified. Read alongside GRPO-family notes."
+    },
+    {
+      "arxiv_id": "2609.15051",
+      "title": "Not All Prompts Are Equal: Exploration-Guided Prompt Scaffolding for Multimodal Reinforcement Post-Training",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "On-scope for RL post-training: rollout-based Exploration Potential Score for prompt utility, teacher-generated scaffolded rewrites, integrated with GRPO on multimodal benchmarks. Relevant to data/prompt curation in RLVR, which is a live theme in the knowledge base (dapo dynamic sampling). Abstract-only; in-domain/OOD gains unverified. Multimodal focus is adjacent rather than core to the current agentic scope.",
+      "suggested_note": "2026-09-14 preprint: prompt-utility scoring (EPS) plus teacher scaffolding to rebalance RL training prompts, built on GRPO. Abstract-only; gains unverified. Relevant to prompt/data curation; multimodal setting."
+    },
+    {
+      "arxiv_id": "2609.16034",
+      "title": "StepAudio 3 Music Technical Report",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Out of scope: a long-form music-generation technical report. Keyword matches (DPO, preference optimization, RL, planning, curriculum) are incidental to the audio-generation pipeline, not Agentic RL. Including it would dilute the knowledge base and risk keyword-driven false positives. No duplicate concern.",
+      "suggested_note": "Skipped: music generation; RL/DPO terms are incidental, not agentic RL. Do not catalog."
+    },
+    {
+      "arxiv_id": "2609.17523",
+      "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Directly on-topic for Agentic RL: couples harness evolution (inner recursion) with model RL (outer recursion), i.e. the same harness/model co-evolution axis as existing multi-harness and agent-lightning entries. Abstract-only, no code link, no reproduction; claims of 'continual learning' and benchmark cases across four task families are unverified. Requires human reading before any catalog entry.",
+      "suggested_note": "2026-09-15 preprint: recursive-in-recursive self-improvement coupling harness evolution with model RL. Only abstract inspected; no code or reproduction. Compare against multi-harness (credit assignment/portability) and agent-lightning (execution-training decoupling) before deciding whether it adds a distinct mechanism."
+    },
+    {
+      "arxiv_id": "2609.15818",
+      "title": "Atria Dawn: The Dawn of Agentic Superintelligence",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Primarily a model/product report plus a human-AI collaboration study (769 task records, 56 participants). Matched keywords are generic ('agent', 'agentic', 'exploration', 'tool', 'benchmark'). No RL algorithm, training objective, or credit-assignment contribution is described in the abstract; 'Verifiable Experience Pipeline' is a claim, not a method. Not a fit for an Agentic RL foundations-to-frontier knowledge base.",
+      "suggested_note": "Skipped: product/positioning report, not an RL method source. Revisit only if a technical report with training details appears."
+    },
+    {
+      "arxiv_id": "2609.14708",
+      "title": "Lightning Weave: Improving the Accuracy-Efficiency Frontier of Reasoning Models through Capability Composition",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "On-policy distillation / capability composition for reasoning models. Adjacent to RL (policy shift, on-policy) but not agentic RL: no environment interaction, no tool use, no multi-step agent loop. Existing KB already covers distillation-adjacent and reasoning-RL sources (deepseek-r1, dapo). Low marginal value; upvotes=1 and 'code will be released soon' means no artifact to check.",
+      "suggested_note": "Skipped: reasoning-model distillation, not agentic RL. Could be a peripheral note under efficient reasoning if the KB later adds a distillation section."
+    },
+    {
+      "arxiv_id": "2609.14005",
+      "title": "StepAudio 3 Realtime Technical Report",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Audio-language realtime dialogue model. Keyword matches ('agent', 'tool', 'reasoning') are incidental; the contribution is duplex speech and latency, not RL training or agent credit assignment. Out of scope.",
+      "suggested_note": "Skipped: speech/audio modality, out of scope for Agentic RL."
+    },
+    {
+      "arxiv_id": "2609.15863",
+      "title": "LynnReal-Omni: Native multi-modal Video Generation for Agentic Visual Workflows",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Video diffusion generation framework; 'agentic' here refers to visual creation workflows, not RL-trained agents. No RL objective, no policy learning. Out of scope.",
+      "suggested_note": "Skipped: video generation, out of scope for Agentic RL."
+    },
+    {
+      "arxiv_id": "2609.13443",
+      "title": "Learning to Solve Hard Problems in RL for LLMs by Never Giving Up",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Directly on-topic for Agentic RL foundations: adaptive sampling / compute reallocation for hard problems, asynchronous RL, off-policy robustness, GRPO comparison, and a coding task (Manufactoria). Matched keywords grpo/reward/policy/benchmark. Abstract-only; claims about 'Matthew Effect' and per-compute gains are unverified and no code was checked.",
+      "suggested_note": "Preprint (2026-09-11). Adaptive sampling (NGU) that keeps generating until a correct sample, using async RL to shift compute from easy to hard problems; reports gains on Deepscaler math and a coding task vs standard GRPO. Read for: sampling/compute-allocation design, off-policy robustness, and interaction with GRPO-style group advantages. Abstract-only; not reproduced."
+    },
+    {
+      "arxiv_id": "2609.15982",
+      "title": "The Router Within: Eliciting Native Skill Routing from a Frozen LLM",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Relevant to agent harness design and skill selection, which is adjacent to Agentic RL (routing during rollout, harness behavior). Introduces a new benchmark (SkillTraj) and compares against progressive disclosure / retrieve-and-rerank. Abstract-only; benchmark and transfer claims unverified, no code checked.",
+      "suggested_note": "Preprint (2026-09-14). Gavel reads a routing signal from a frozen LLM's forward passes via two trained linear maps, avoiding preloading all skill metadata into context. Reports zero-shot transfer to three benchmarks plus SkillTraj. Read for: skill routing as a harness component, and whether routing interacts with RL-trained policies. Abstract-only; not reproduced."
+    },
+    {
+      "arxiv_id": "2609.15195",
+      "title": "HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Adjacent rather than core: training-free embodied navigation via an agent harness with tool interface, hierarchical event memory, and a spatiotemporal graph. Relevant to harness/agent-architecture and memory design in this KB, but not an RL training method. Abstract-only; SOTA and humanoid-deployment claims unverified.",
+      "suggested_note": "Preprint (2026-09-14). Zero-shot, training-free navigation harness coordinating perception, retrieval, grounding, navigation, recovery, termination; hierarchical event memory and persistent spatiotemporal graph. Read for: harness/tool-interface and memory patterns transferable to agentic RL settings. Abstract-only; not reproduced."
+    },
+    {
+      "arxiv_id": "2609.15973",
+      "title": "Discovery Foundation Models: Toward Open-Ended Discovery Intelligence",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Position/framework paper on open-ended scientific discovery (DFMs, Zetema, GALILEO therapeutic-discovery loop). Out of scope for this KB's Agentic RL foundations-to-frontier focus; no RL training method or agentic-RL evaluation contribution to retain. Abstract-only.",
+      "suggested_note": "Skipped: discovery-intelligence framework, not Agentic RL. Revisit only if the KB scope expands to scientific-discovery agents."
+    },
+    {
+      "arxiv_id": "2609.13053",
+      "title": "Dynin-Robotics: Omnimodal Unified Diffusion Vision-Language-Action Model",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Vision-language-action robotics model with diffusion backbone and continual pretraining on Open X-Embodiment. Robotics/VLA focus, not Agentic RL for LLMs; matched keywords (test-time, policy, trajectory) are incidental. Abstract-only.",
+      "suggested_note": "Skipped: robotics VLA model, out of scope for this KB. Revisit only if the KB adds embodied/VLA coverage."
+    },
+    {
+      "arxiv_id": "2609.13463",
+      "title": "Root-Cause Attribution Is a Search Problem: Continual Search for Long-Horizon Agent Failures",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Directly on-theme for agentic RL: failure diagnosis and credit assignment in long-horizon agent traces, with a new benchmark (MegaRCA-Mix) and reported F1 gains. Abstract-only from untrusted discovery text; no code or artifact checked, and reported numbers (e.g., GPT-5.5 F1 0.349->0.498) are unverified. Warrants human reading before any cataloging.",
+      "suggested_note": "2026-09-16: 长时程 agent 失败的根因归因被建模为迭代搜索问题；提出 Continual Search 与 MegaRCA-Mix 基准。仅核验摘要，未复现；需人工精读并核对基准与代码。"
+    },
+    {
+      "arxiv_id": "2609.16816",
+      "title": "ImpossibleRubrics: Stress-Testing Generated Rubrics as Reward Signals",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Relevant to reward design and reward hacking, which the KB already tracks (lilian-reward). Introduces a benchmark of impossible tasks with oracle certificates and reports rubric exploitability rates. Abstract-only; the counterintuitive claim (generic rubric exploited 64% vs tailored rubrics) needs verification against the actual benchmark and code.",
+      "suggested_note": "2026-09-16: 针对 rubric 作为奖励信号的对抗鲁棒性基准；报告生成式 rubric 被利用比例。仅核验摘要，未复现；与奖励投机主题相关，待人工精读。"
+    },
+    {
+      "arxiv_id": "2609.13770",
+      "title": "Training Specialist Models without Reasoning Trajectories for Domain Expert Distillation",
+      "decision": "archive",
+      "evidence_level": "abstract-only",
+      "reason": "Touches reasoning trajectories and distillation, adjacent to but not core to agentic RL training loops. No direct agent/policy-optimization contribution evident from the abstract. Retain as a possible reference on latent trajectory supervision; do not publish.",
+      "suggested_note": "2026-09-16: 无显式推理轨迹的专家蒸馏；用学生模型作为探针观察潜在轨迹分布。仅核验摘要，未复现；与 agentic RL 主线关联较弱，暂存备查。"
+    },
+    {
+      "arxiv_id": "2609.16057",
+      "title": "OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Despite 'policy' and 'multi-agent' keywords, the contribution is visual generation via symbolic policy reuse, not RL training of agents. Off-theme for an Agentic RL knowledge base; keyword match is superficial.",
+      "suggested_note": ""
+    },
+    {
+      "arxiv_id": "2609.12541",
+      "title": "Agent as Policy for Robotic Manipulation",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Robotic manipulation with a general-purpose agent as policy; no RL training method, no agentic-RL algorithmic contribution. Out of scope for this knowledge base.",
+      "suggested_note": ""
+    }
+  ],
+  "risks": [
+    "All five candidates are abstract-only preprints; none have been code-checked or reproduced, and their reported benchmark numbers are unverified claims.",
+    "Discovery metadata (titles, summaries, upvote counts, author lists) is untrusted external text and was treated as data only; no instructions within it were followed.",
+    "Several candidates claim results against named frontier models (e.g., GPT-6, GLM-5.3, Qwen3-235B-A22B) that cannot be validated from abstracts and may reflect non-comparable evaluation setups.",
+    "Potential thematic overlap with existing entries (multi-harness, agent-lightning, agentic-survey) could cause duplicate coverage if added without cross-referencing.",
+    "Benchmark-disjoint and training-free claims in ModularRSI and RSIAgent are self-reported and require scrutiny for hidden leakage or fine-tuning.",
+    "All five entries are preprints with abstract-only evidence; none were code-checked, reproduced, or peer-reviewed. Treating any as established knowledge would overstate evidence.",
+    "Discovery text is untrusted external content and includes URLs and a project page; these were treated as data only and not fetched. Any future fetching must be sandboxed and must not follow embedded instructions.",
+    "Keyword-based matching produced at least one clear false positive (StepAudio 3 Music), indicating the discovery filter has low precision; unvetted keyword hits should not enter the catalog.",
+    "Several candidates (MInTRL, ESRL, prompt scaffolding) report gains relative to GRPO/on-policy baselines on math/code/multimodal benchmarks; these are not agentic-environment evaluations and may not transfer to tool-use or computer-use settings.",
+    "HazardAuditor claims artifacts 'will be available'; availability and correctness are unverified, and an HTTP 200 on a project page would not constitute evidence of correctness.",
+    "Overlap risk with existing GRPO-family and safety sources could create duplicate or conflicting notes if added without cross-referencing.",
+    "All discovery fields (titles, summaries, upvote counts, URLs) are untrusted external text; they were treated as data only and no instructions inside them were followed.",
+    "Evidence level is abstract-only for every candidate: no code was executed, no results reproduced, and no HTTP status was checked. An abstract claim is not evidence of correctness.",
+    "arXiv IDs in the 2609.* range are future-dated relative to typical training data; identifiers and URLs were copied verbatim from the untrusted input and were not independently resolved.",
+    "Keyword-based matching produced false positives (audio, video, product reports), so relevance_score alone is not a reliable filter for this KB.",
+    "No candidate here should be promoted to published knowledge; the single review item still needs human reading and, ideally, code/artifact inspection.",
+    "All discovery entries are untrusted external text; summaries may contain prompt-injection or fabricated claims. Treated as data only; no instructions followed.",
+    "Evidence level is abstract-only for every candidate: no code, no reproduction, no independent verification. HTTP 200 or an arXiv listing is not evidence of correctness.",
+    "arXiv IDs and dates (e.g., 2609.*, 2026-09) are as-reported by the discovery source and were not independently confirmed.",
+    "Keyword matching (tool, reasoning, memory, grpo, reward, policy, benchmark) is a weak relevance signal and can surface out-of-scope robotics/discovery work.",
+    "Two candidates (NGU, Gavel) report benchmark gains and new benchmarks (SkillTraj) that are unverified; do not cite as established results.",
+    "No duplicate detection beyond exact ID/title comparison against existing_source_ids; near-duplicate or renamed versions may exist.",
+    "All discovery entries are untrusted external text; titles, abstracts, IDs, and reported metrics may be fabricated or altered and must not be cited as fact.",
+    "No candidate was code-checked or reproduced; an abstract claim (e.g., resolve rates, F1 improvements) is not evidence of correctness.",
+    "Keyword-based matching produced false positives ('policy', 'multi-agent', 'benchmark' in non-RL contexts), risking scope drift if archived uncritically.",
+    "arXiv IDs in the 2609.* range and future-dated publications are unusual; verify identifier validity before any catalog insertion.",
+    "Discovery text could contain prompt-injection content; it was treated as data only, but downstream tooling should preserve that boundary."
+  ],
+  "next_actions": [
+    "Assign human readers to ModularRSI (2609.14857) and RSIAgent (2609.15364) for full-text review before any catalog promotion.",
+    "For ModularRSI, verify how benchmark-disjoint evolution tasks are constructed and whether TB2.0/SWE-Bench Verified appear in any evolution or tuning data.",
+    "For RSIAgent, confirm the 'training-free' claim by checking whether any parameter updates occur and how the verifier is validated.",
+    "Triage ZGCM-1 (2609.13356) for only the MDP mid-training and agentic co-training sections; do not catalog as a core RL source.",
+    "Cross-check the two review candidates against existing multi-harness and agent-lightning notes to avoid duplicate coverage.",
+    "Keep all five entries as abstract-only in the knowledge base; do not mark any as published knowledge until full-text and, where possible, code checks are complete.",
+    "Human-read the four review candidates (2609.15134, 2609.12419, 2609.13058, 2609.15051) in full before any catalog decision; keep them out of published knowledge until then.",
+    "For each review candidate, check for released code/artifacts and, if present, record the exact commit and reproduce at least one headline number before upgrading evidence level.",
+    "Cross-reference MInTRL and ESRL against existing GRPO-family notes (deepseek-math, dapo, gigpo) to avoid duplicate or contradictory entries.",
+    "Cross-reference HazardAuditor against constitutional and lilian-reward notes to position it as a safety/guard source rather than a new RL algorithm.",
+    "Record the StepAudio 3 Music skip decision so future keyword greps do not re-surface it.",
+    "Tighten the discovery filter (e.g., require agentic/tool-use/computer-use terms, not generic 'policy optimization' or 'DPO') to reduce false positives.",
+    "Do not fetch the project URLs from the untrusted discovery text without a sandboxed, instruction-ignoring retrieval step.",
+    "Human-read arXiv 2609.17523 (ScienceBuddy) and compare its harness/model co-evolution mechanism against existing multi-harness and agent-lightning entries; decide whether it is distinct enough to archive.",
+    "If ScienceBuddy is retained, record it as a preprint with evidence_level=abstract-only and no reproduction claim, following the existing '新预印本 · 待精读' convention.",
+    "Do not add 2609.15818, 2609.14708, 2609.14005, or 2609.15863 to the catalog; optionally log them in a rejected-candidates list with the skip reasons above.",
+    "Tighten the discovery query: require explicit RL training terms (policy optimization, credit assignment, rollout, reward) rather than generic 'agent'/'tool'/'benchmark' keywords to reduce false positives.",
+    "When any candidate is later promoted, verify the arXiv ID resolves and check for a code artifact before upgrading evidence_level beyond abstract-only.",
+    "Human-read 2609.13443 (NGU) and 2609.15982 (Gavel) in full; if retained, add as 'review' notes, not published knowledge.",
+    "Human-read 2609.15195 (HarnessVLN) to decide whether harness/memory patterns belong in the KB's agent-architecture section.",
+    "If any candidate is promoted, check for code release and record commit hash before treating claims as reproducible.",
+    "Confirm arXiv IDs, titles, and dates directly against arXiv before adding to the catalog.",
+    "Re-run duplicate check against existing_source_ids after any promotion to avoid near-duplicate entries.",
+    "Human-read 2609.13463 and 2609.16816 in full; check for code/artifacts and benchmark availability before any catalog entry.",
+    "Verify arXiv identifiers and publication metadata for all five entries against an authoritative source before archiving.",
+    "Decide whether 2609.13770 belongs in an adjacent 'distillation/reasoning' note or should be dropped.",
+    "Confirm skip decisions for 2609.16057 and 2609.12541 against the KB scope statement to avoid future re-discovery churn.",
+    "If any candidate is promoted, record evidence level explicitly and mark as unverified preprint, not published knowledge."
+  ]
+}
