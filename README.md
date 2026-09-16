@@ -21,7 +21,7 @@ npm run dev
 
 ## 维护 Harness
 
-统一入口为 `python scripts/harness.py`，详见 [`docs/HARNESS.md`](docs/HARNESS.md)。每周一 UTC 01:17 的 GitHub Actions 会刷新来源元数据、运行内容契约、构建站点并上传报告。定时任务只创建维护 issue，不自动提交或发布正文；来源和新主张必须人工审阅后再合并。
+统一入口为 `python scripts/harness.py`，详见 [`docs/HARNESS.md`](docs/HARNESS.md)。每天 UTC 00:00（北京时间 08:00）的 GitHub Actions 会从 HuggingFace Daily Papers 抓取当日论文、按知识库关键词过滤，刷新来源元数据、运行内容契约、构建站点并上传报告。定时任务只创建维护 issue，不自动提交或发布正文；来源和新主张必须人工审阅后再合并。
 
 ## 研究路线
 
