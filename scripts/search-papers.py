@@ -29,8 +29,6 @@ HEADERS = {
 ATTEMPTS = 3
 TIMEOUT_SECONDS = 60
 DEFAULT_MAX_RESULTS = 25
-# Keep discovery bounded so the whole batch fits the audit payload.
-SUMMARY_CHARS = 1500
 
 # Specific phrases and acronyms: one hit is enough to consider a paper relevant.
 # Keep this list aligned with the topics covered by content/ and data/sources.json.
@@ -201,8 +199,6 @@ def normalize(record: dict) -> dict | None:
     if not paper_id or not title:
         return None
     summary = str(paper.get("summary") or paper.get("abstract") or record.get("summary") or "").strip()
-    if len(summary) > SUMMARY_CHARS:
-        summary = summary[:SUMMARY_CHARS].rstrip() + " …"
     authors = paper.get("authors") or record.get("authors") or []
     author_names = [
         str(author.get("name"))
