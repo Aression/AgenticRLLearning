@@ -1,6 +1,9 @@
 name: Content check
 on:
   pull_request:
+    paths-ignore:
+      - "research/agent-audits/**"
+      - "data/generated/radar.json"
   push:
     branches: [master]
 jobs:
