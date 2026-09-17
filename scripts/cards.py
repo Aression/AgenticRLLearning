@@ -419,9 +419,9 @@ def write_card(card: dict[str, Any], paper: dict[str, Any], full: dict[str, Any]
     ]
     note_path = CONTENT / f"{order:02d}-{note_id}.md"
     note_path.write_text("\n".join(frontmatter) + "\n" + card["body"] + "\n", encoding="utf-8")
-    catalog = state["catalog"] + [source]
-    SOURCES.write_text("[\n" + ",\n".join("  " + json.dumps(item, ensure_ascii=False, separators=(",", ":")) for item in catalog) + "\n]\n", encoding="utf-8")
-    return {"note_id": note_id, "note_path": str(note_path.relative_to(ROOT)), "source_id": source_id, "title": card["title"], "stage": card["stage"], "minutes": card["minutes"]}
+    state["catalog"].append(source)
+    SOURCES.write_text("[\n" + ",\n".join("  " + json.dumps(item, ensure_ascii=False, separators=(",", ":")) for item in state["catalog"]) + "\n]\n", encoding="utf-8")
+    return {"note_id": note_id, "note_path": str(note_path.relative_to(ROOT)) if note_path.is_relative_to(ROOT) else str(note_path), "source_id": source_id, "title": card["title"], "stage": card["stage"], "minutes": card["minutes"]}
 
 
 def run(limit: int | None, only: str | None) -> int:
