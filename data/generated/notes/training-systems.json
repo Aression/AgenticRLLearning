@@ -34,6 +34,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "一个训练批次的生命周期",
     "同步与异步",

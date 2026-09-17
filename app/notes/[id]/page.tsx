@@ -44,6 +44,7 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
             <span>{note.track}</span>
             <span>{note.minutes} MIN</span>
             {note.evidenceLevel && <span>{note.evidenceLevel}</span>}
+            {note.origin === "llm-fulltext" && <span className="stage-label rose">LLM 全文精读草稿 · 待人工复核</span>}
           </div>
           <h1>{note.title}</h1>
           <p className="article-summary">{note.summary}</p>
@@ -78,6 +79,7 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
             </section>
           )}
           {note.codeUrl && <p className="article-code"><a href={note.codeUrl} target="_blank" rel="noreferrer">相关代码<ExternalLink size={13} /></a></p>}
+          {note.fullTextUrl && <p className="article-code"><a href={note.fullTextUrl} target="_blank" rel="noreferrer">论文全文（LLM 精读来源）<ExternalLink size={13} /></a></p>}
           <section className="article-sources" id="references">
             <h2>引用与延伸阅读</h2>
             {note.sources.map((sourceId) => {

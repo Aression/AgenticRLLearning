@@ -27,7 +27,7 @@ DISCOVERY = ROOT / "research" / "discovery.json"
 REPORT_DIR = ROOT / "research" / "reports"
 REQUIRED_NOTE = {"id", "title", "summary", "stage", "track", "order", "minutes", "updated", "review", "tags", "sources", "prerequisites"}
 STAGES = {"FOUNDATION", "SYSTEMS", "FRONTIER"}
-ALLOWED_REVIEW = {"综合笔记", "实验指南", "实验设计 · 未运行 GPU 训练", "摘要核验 · 待精读", "维护规范", "参考索引", "学习路线"}
+ALLOWED_REVIEW = {"综合笔记", "实验指南", "实验设计 · 未运行 GPU 训练", "摘要核验 · 待精读", "维护规范", "参考索引", "学习路线", "LLM 全文精读草稿 · 待人工复核"}
 SOURCE_URL_RE = re.compile(r"https?://[^)\s>]+")
 NOTE_LINK_RE = re.compile(r"/notes/([a-z0-9][a-z0-9-]*)(?:[)#?]|$)")
 
@@ -131,6 +131,10 @@ def check() -> dict[str, Any]:
             errors.append(f"{path}: updated must be ISO date")
         if not str(note.get("review", "")):
             errors.append(f"{path}: review is empty")
+        if note.get("origin") == "llm-fulltext":
+            for field in ("paper_id", "full_text_url", "evidence_level"):
+                if not str(note.get(field, "")).strip():
+                    errors.append(f"{path}: LLM card missing {field}")
         refs = note.get("sources") if isinstance(note.get("sources"), list) else []
         for sid in refs:
             if sid not in source_ids:
@@ -191,7 +195,7 @@ def report(result: dict[str, Any]) -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["check", "refresh", "report", "all"])
+    parser.add_argument("command", choices=["check", "refresh", "report", "all", "cards"])
     parser.add_argument("--refresh", action="store_true", help="for all: refresh source metadata and discovery first")
     parser.add_argument("--json", action="store_true", help="print JSON result")
     args = parser.parse_args()
@@ -199,6 +203,9 @@ def main() -> int:
         if args.command == "refresh" or (args.command == "all" and args.refresh):
             run_script("research.py")
             run_script("search-papers.py")
+        if args.command == "cards":
+            run_script("cards.py")
+            return 0
         result = check()
         if args.command == "report" or args.command == "all":
             path = report(result)

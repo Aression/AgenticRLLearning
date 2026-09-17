@@ -34,6 +34,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "为什么先做无模型实验",
     "任务",

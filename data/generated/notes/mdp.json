@@ -32,6 +32,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "MDP 的组成",
     "Bellman 递推",

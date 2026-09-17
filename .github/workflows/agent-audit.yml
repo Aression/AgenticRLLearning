@@ -12,7 +12,7 @@ jobs:
   audit:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Check DeepSeek credentials
         id: credentials
@@ -31,6 +31,21 @@ jobs:
           # The checked-out code owns the execution path and can access secrets.
           ref: master
           fetch-depth: 0
+      - name: Resume the open audit branch
+        if: steps.credentials.outputs.configured == 'true'
+        run: |
+          # Keep one branch for every run. Existing drafts are merged in so an
+          # unmerged pull request accumulates cards instead of losing them.
+          branch="agent-audit/latest"
+          git config user.name "agentic-rl-maintenance[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            git fetch origin "$branch"
+            git checkout -B "$branch" origin/master
+            git merge --no-edit -X theirs FETCH_HEAD
+          else
+            git checkout -b "$branch"
+          fi
       - name: Load fresh discovery from the maintenance run
         if: github.event_name == 'workflow_run' && steps.credentials.outputs.configured == 'true'
         env:
@@ -45,32 +60,57 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      - name: Merge upstream source catalog
+        if: steps.credentials.outputs.configured == 'true'
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          try:
+              master = json.loads(subprocess.check_output(["git", "show", "origin/master:data/sources.json"]).decode("utf-8"))
+          except Exception:
+              master = []
+          with open("data/sources.json", encoding="utf-8") as handle:
+              current = json.load(handle)
+          merged = {item["id"]: item for item in master}
+          merged.update({item["id"]: item for item in current})
+          with open("data/sources.json", "w", encoding="utf-8") as handle:
+              handle.write("[\n" + ",\n".join("  " + json.dumps(item, ensure_ascii=False, separators=(",", ":")) for item in merged.values()) + "\n]\n")
+          print(f"sources merged: {len(merged)}")
+          PY
       - name: Audit discoveries with DeepSeek
         if: steps.credentials.outputs.configured == 'true'
         env:
           DEEPSEEK_V4_FLASH_API_KEY: ${{ secrets.DEEPSEEK_V4_FLASH_API_KEY }}
         run: python scripts/agent_audit.py
-      - name: Validate audit and content
+      - name: Generate knowledge cards from full text
         if: steps.credentials.outputs.configured == 'true'
-        run: python scripts/harness.py check --json
+        env:
+          DEEPSEEK_V4_FLASH_API_KEY: ${{ secrets.DEEPSEEK_V4_FLASH_API_KEY }}
+        run: python scripts/cards.py run
+      - name: Validate cards, audit and content
+        if: steps.credentials.outputs.configured == 'true'
+        run: |
+          python scripts/cards.py check
+          python scripts/harness.py check --json
+      - name: Rebuild content database and graph
+        if: steps.credentials.outputs.configured == 'true'
+        run: |
+          python scripts/atlas_db.py build
+          python scripts/atlas_db.py check
       - name: Open an auditable pull request
         if: steps.credentials.outputs.configured == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Reuse a single branch so each run updates one PR instead of
-          # creating a new branch (and a new Vercel preview) every time.
           branch="agent-audit/latest"
           title="Maintenance audit $(date -u +%Y-%m-%d)"
-          git config user.name "agentic-rl-maintenance[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$branch"
-          git add research/agent-audits data/generated/radar.json
-          git commit -m "Archive DeepSeek maintenance audit" || exit 0
+          git add content data/sources.json data/atlas.db data/generated research/agent-audits research/cards
+          git commit -m "Archive DeepSeek audit and generated knowledge cards" || exit 0
           git push --force origin "$branch"
+          { cat research/agent-audits/latest.md; if [ -f research/cards/latest.md ]; then echo; cat research/cards/latest.md; fi; } > pr-body.md
           state=$(gh pr view "$branch" --json state --jq '.state' 2>/dev/null || true)
           if [ "$state" = "OPEN" ]; then
-            gh pr edit "$branch" --title "$title" --body-file research/agent-audits/latest.md
+            gh pr edit "$branch" --title "$title" --body-file pr-body.md
           else
-            gh pr create --base master --head "$branch" --title "$title" --body-file research/agent-audits/latest.md
+            gh pr create --base master --head "$branch" --title "$title" --body-file pr-body.md
           fi

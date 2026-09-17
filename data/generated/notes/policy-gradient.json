@@ -32,6 +32,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "从采样到梯度",
     "为什么要基线",

@@ -32,6 +32,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "三个时间尺度",
     "GiGPO 的代表思路",
@@ -47,7 +51,7 @@
     "lab-agent-rl",
     "learning-paths"
   ],
-  "degree": 15,
+  "degree": 16,
   "sources": [
     "agentic-survey",
     "gigpo",

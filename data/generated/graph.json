@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T16:22:54.137151+00:00",
+  "generatedAt": "2026-09-17T15:47:46.220023+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -31,7 +31,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "policy-gradient",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 10
+      "degree": 12
     },
     {
       "id": "preferences",
@@ -87,7 +87,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 7
+      "degree": 9
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 15
+      "degree": 16
     },
     {
       "id": "training-systems",
@@ -135,7 +135,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "前沿专题",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "lab-rl",
@@ -184,6 +184,14 @@
       "stage": "FOUNDATION",
       "track": "概念与基础",
       "degree": 9
+    },
+    {
+      "id": "mintrl-off-policy-intervention",
+      "label": "MInTRL：稀疏干预让离策略经验服务在策略 RL",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 7
     },
     {
       "id": "2026",
@@ -434,6 +442,14 @@
       "degree": 0
     },
     {
+      "id": "llm-rl",
+      "label": "LLM-RL",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "long-horizon",
       "label": "long-horizon",
       "kind": "concept",
@@ -476,6 +492,14 @@
     {
       "id": "milestones",
       "label": "milestones",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "off-policy",
+      "label": "off-policy",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -916,8 +940,38 @@
       "weight": 1.0
     },
     {
+      "source": "grpo",
+      "target": "mintrl-off-policy-intervention",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "rewards",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "mintrl-off-policy-intervention",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "frontier-radar",
       "target": "value-learning",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "mintrl-off-policy-intervention",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -936,6 +990,18 @@
     {
       "source": "lab-agent-rl",
       "target": "lab-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "rewards",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "value-learning",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -1758,6 +1824,36 @@
     {
       "source": "glossary",
       "target": "reference",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "off-policy",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "exploration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "credit-assignment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "llm-rl",
       "kind": "concept",
       "weight": 1
     }

@@ -32,6 +32,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "GRPO 的核心",
     "三个失败模式",
@@ -41,11 +45,12 @@
   ],
   "related": [
     "lab-agent-rl",
+    "mintrl-off-policy-intervention",
     "orientation",
     "rewards",
     "training-systems"
   ],
-  "degree": 7,
+  "degree": 9,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

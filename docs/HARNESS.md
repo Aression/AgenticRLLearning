@@ -31,6 +31,24 @@ python scripts/atlas_db.py graph   # 打印图谱统计
 
 图谱边来自先修关系、显式 `related`、共享来源与共享概念；概念标签从笔记 `tags` 归一化并单独建表。`npm run content:build` 与 `npm run content:check` 是同一入口；维护 workflow 在构建前运行 `atlas_db.py check`。
 
+## 知识卡生成
+
+审计 workflow 在 DeepSeek 分流后运行 `scripts/cards.py`：
+
+1. 从 `data/generated/radar.json` 选择 `decision=review` 且尚未入库的论文；
+2. 抓取 arXiv HTML 全文（失败时回退 ar5iv），抽取摘要与方法、实验、结论等章节；
+3. 让 DeepSeek 依据全文写一张克制的中文知识卡；
+4. 写入 `content/<order>-<id>.md` 与 `data/sources.json`，随后重建数据库与图谱。
+
+生成的卡片带 `origin: llm-fulltext`、`review: LLM 全文精读草稿 · 待人工复核`、`paper_id`、`full_text_url`，只会进入审计 PR，合并前必须人工复核；论文全文不会写入仓库。每轮最多 3 篇（`harness.config.json` 的 `cardGeneration.maxCards`），并复用 `agent-audit/latest` 分支累积未合并的草稿。
+
+```bash
+python scripts/cards.py run --limit 3
+python scripts/cards.py run --paper 2609.12419   # 单篇调试
+python scripts/cards.py check
+python scripts/harness.py cards                  # 等价于 cards.py run
+```
+
 `scripts/search-papers.py` 从 HuggingFace Daily Papers（`https://huggingface.co/api/daily_papers`）拉取当日论文，用 `STRONG_KEYWORDS` / `BROAD_KEYWORDS` 对标题与摘要做 grep，只保留与知识库主题相关的条目（上限取 `harness.config.json` 的 `refresh.maxDiscoveryResults`）。网络失败时保留上一次的 `research/discovery.json`，不会让维护任务失败。
 
 ## Agent 审核 workflow

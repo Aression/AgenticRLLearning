@@ -33,6 +33,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "奖励来源",
     "多目标例子",
@@ -45,10 +49,11 @@
     "lab-agent-rl",
     "grpo",
     "lab-agent",
+    "mintrl-off-policy-intervention",
     "multi-turn-rl",
     "safety"
   ],
-  "degree": 10,
+  "degree": 12,
   "sources": [
     "deepseek-math",
     "gigpo",

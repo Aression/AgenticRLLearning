@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T16:22:54.134221+00:00",
+  "generatedAt": "2026-09-17T15:47:46.216119+00:00",
   "notes": [
     {
       "id": "orientation",
@@ -35,6 +35,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "一个可操作的定义",
         "四个概念不要混淆",
@@ -94,6 +98,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "最低起点",
         "三个需要真正会算的式子",
@@ -152,6 +160,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "MDP 的组成",
         "Bellman 递推",
@@ -212,6 +224,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "Bandit 是最小起点",
         "Q-learning 的更新",
@@ -225,9 +241,9 @@
         "prerequisites",
         "frontier-radar",
         "glossary",
-        "policy-gradient"
+        "mintrl-off-policy-intervention"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "sutton-barto",
         "silver"
@@ -271,6 +287,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "从采样到梯度",
         "为什么要基线",
@@ -330,6 +350,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "原始目标",
         "三个分布不要混淆",
@@ -388,6 +412,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "最小运行循环",
         "工作流与自主性",
@@ -445,6 +473,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "环境接口",
         "最小轨迹记录",
@@ -506,6 +538,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "奖励来源",
         "多目标例子",
@@ -518,10 +554,11 @@
         "lab-agent-rl",
         "grpo",
         "lab-agent",
+        "mintrl-off-policy-intervention",
         "multi-turn-rl",
         "safety"
       ],
-      "degree": 10,
+      "degree": 12,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -569,6 +606,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "经典 RLHF 流程",
         "RLAIF 改变了监督来源",
@@ -623,6 +664,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "GRPO 的核心",
         "三个失败模式",
@@ -632,11 +677,12 @@
       ],
       "related": [
         "lab-agent-rl",
+        "mintrl-off-policy-intervention",
         "orientation",
         "rewards",
         "training-systems"
       ],
-      "degree": 7,
+      "degree": 9,
       "sources": [
         "deepseek-math",
         "deepseek-r1",
@@ -682,6 +728,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "三个时间尺度",
         "GiGPO 的代表思路",
@@ -697,7 +747,7 @@
         "lab-agent-rl",
         "learning-paths"
       ],
-      "degree": 15,
+      "degree": 16,
       "sources": [
         "agentic-survey",
         "gigpo",
@@ -745,6 +795,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "一个训练批次的生命周期",
         "同步与异步",
@@ -808,6 +862,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "基准覆盖不同能力",
         "推荐最小报告",
@@ -870,6 +928,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "两类不同风险",
         "把权限放在执行层",
@@ -930,6 +992,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "从编排到学习",
         "CTDE",
@@ -993,6 +1059,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "调研边界",
         "四个值得追踪的问题",
@@ -1005,10 +1075,10 @@
         "glossary",
         "learning-paths",
         "mdp",
-        "multi-turn-rl",
-        "orientation"
+        "mintrl-off-policy-intervention",
+        "multi-turn-rl"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "coskill",
         "multi-harness",
@@ -1058,6 +1128,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "目标与限制",
         "环境准备",
@@ -1118,6 +1192,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "为什么先做无模型实验",
         "任务",
@@ -1182,6 +1260,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "研究问题",
         "最小设计",
@@ -1243,6 +1325,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "路线 A：概念入门，建议 2 周",
         "路线 B：工程实践，建议 4 周",
@@ -1306,6 +1392,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "采用混合架构的原因",
         "目录职责",
@@ -1356,6 +1446,10 @@
       ],
       "evidenceLevel": "",
       "codeUrl": "",
+      "origin": "human",
+      "paperId": "",
+      "readingDepth": "",
+      "fullTextUrl": "",
       "sections": [
         "记忆与学习"
       ],
@@ -1374,6 +1468,72 @@
       ],
       "prerequisites": [],
       "search": "术语速查与容易混淆的缩写 中英对照，连接到概念正文，避免算法名和系统名混在一起。 概念与基础 glossary reference 能快速查证易混缩写 能连接到对应概念正文 记忆与学习"
+    },
+    {
+      "id": "mintrl-off-policy-intervention",
+      "title": "MInTRL：稀疏干预让离策略经验服务在策略 RL",
+      "summary": "用少量裁判干预把在策略 rollout 引向难以自发现的成功路径，并用回归式目标避免行为策略重要性加权。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 24,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "24-mintrl-off-policy-intervention.md",
+      "tags": [
+        "LLM-RL",
+        "RLVR",
+        "credit assignment",
+        "exploration",
+        "off-policy"
+      ],
+      "concepts": [
+        "LLM-RL",
+        "RLVR",
+        "credit assignment",
+        "exploration",
+        "off-policy"
+      ],
+      "objectives": [
+        "理解在策略 RLVR 的探索瓶颈与离策略信息引入的取舍",
+        "掌握 MInTRL 的两阶段流程与回归式序列级目标的设计动机",
+        "能说明覆盖度—可学习性权衡及其实验证据的边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.12419",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.12419",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "frontier-radar",
+        "grpo",
+        "multi-turn-rl",
+        "rewards",
+        "value-learning"
+      ],
+      "degree": 7,
+      "sources": [
+        "mintrl-off-policy-intervention-can-boost"
+      ],
+      "prerequisites": [],
+      "search": "mintrl：稀疏干预让离策略经验服务在策略 rl 用少量裁判干预把在策略 rollout 引向难以自发现的成功路径，并用回归式目标避免行为策略重要性加权。 训练算法 llm-rl rlvr credit assignment exploration off-policy 理解在策略 rlvr 的探索瓶颈与离策略信息引入的取舍 掌握 mintrl 的两阶段流程与回归式序列级目标的设计动机 能说明覆盖度—可学习性权衡及其实验证据的边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
     }
   ]
 }

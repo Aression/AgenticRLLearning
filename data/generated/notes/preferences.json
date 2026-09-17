@@ -34,6 +34,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "经典 RLHF 流程",
     "RLAIF 改变了监督来源",

@@ -53,7 +53,11 @@ CREATE TABLE IF NOT EXISTS notes (
   objectives TEXT NOT NULL DEFAULT '[]',
   key_points TEXT NOT NULL DEFAULT '[]',
   evidence_level TEXT NOT NULL DEFAULT '',
-  code_url TEXT NOT NULL DEFAULT ''
+  code_url TEXT NOT NULL DEFAULT '',
+  origin TEXT NOT NULL DEFAULT 'human',
+  paper_id TEXT NOT NULL DEFAULT '',
+  reading_depth TEXT NOT NULL DEFAULT '',
+  full_text_url TEXT NOT NULL DEFAULT ''
 );
 CREATE TABLE IF NOT EXISTS sources (
   id TEXT PRIMARY KEY,
@@ -151,6 +155,10 @@ def load_notes() -> list[dict[str, Any]]:
             key_points=section_points(body),
             evidence_level=str(data.get("evidence_level", "")),
             code_url=str(data.get("code_url", "")),
+            origin=str(data.get("origin", "human")),
+            paper_id=str(data.get("paper_id", "")),
+            reading_depth=str(data.get("reading_depth", "")),
+            full_text_url=str(data.get("full_text_url", "")),
         )
         notes.append(data)
     return notes
@@ -175,8 +183,8 @@ def build_tables(connection: sqlite3.Connection, notes: list[dict[str, Any]], so
     concepts: set[str] = set()
     for note in notes:
         connection.execute(
-            'INSERT INTO notes (id,title,summary,stage,track,"order",minutes,updated,review,content,filename,objectives,key_points,evidence_level,code_url) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-            (note["id"], note["title"], note["summary"], note["stage"], note["track"], note["order"], note["minutes"], note["updated"], note["review"], note["content"], note["filename"], json.dumps(note["objectives"], ensure_ascii=False), json.dumps(note["key_points"], ensure_ascii=False), note["evidence_level"], note["code_url"]),
+            'INSERT INTO notes (id,title,summary,stage,track,"order",minutes,updated,review,content,filename,objectives,key_points,evidence_level,code_url,origin,paper_id,reading_depth,full_text_url) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+            (note["id"], note["title"], note["summary"], note["stage"], note["track"], note["order"], note["minutes"], note["updated"], note["review"], note["content"], note["filename"], json.dumps(note["objectives"], ensure_ascii=False), json.dumps(note["key_points"], ensure_ascii=False), note["evidence_level"], note["code_url"], note["origin"], note["paper_id"], note["reading_depth"], note["full_text_url"]),
         )
         for position, source_id in enumerate(note.get("sources", [])):
             connection.execute("INSERT OR REPLACE INTO note_sources (note_id,source_id,position) VALUES (?,?,?)", (note["id"], source_id, position))
@@ -222,7 +230,7 @@ def export(connection: sqlite3.Connection) -> dict[str, int]:
     NOTES_DIR.mkdir(parents=True, exist_ok=True)
     for stale in NOTES_DIR.glob("*.json"):
         stale.unlink()
-    note_rows = connection.execute('SELECT id,title,summary,stage,track,"order",minutes,updated,review,content,filename,objectives,key_points,evidence_level,code_url FROM notes ORDER BY "order"').fetchall()
+    note_rows = connection.execute('SELECT id,title,summary,stage,track,"order",minutes,updated,review,content,filename,objectives,key_points,evidence_level,code_url,origin,paper_id,reading_depth,full_text_url FROM notes ORDER BY "order"').fetchall()
     node_rows = connection.execute("SELECT id,label FROM concepts ORDER BY id").fetchall()
     degree: dict[str, int] = {row[0]: 0 for row in note_rows}
     for source_id, target_id in connection.execute("SELECT source_id,target_id FROM relations"):
@@ -232,7 +240,7 @@ def export(connection: sqlite3.Connection) -> dict[str, int]:
             degree[target_id] += 1
     index_notes = []
     for row in note_rows:
-        (note_id, title, summary, stage, track, order, minutes, updated, review, content, filename, objectives, key_points, evidence_level, code_url) = row
+        (note_id, title, summary, stage, track, order, minutes, updated, review, content, filename, objectives, key_points, evidence_level, code_url, origin, paper_id, reading_depth, full_text_url) = row
         concepts = [label for (label,) in connection.execute("SELECT c.label FROM note_concepts nc JOIN concepts c ON c.id=nc.concept_id WHERE nc.note_id=? ORDER BY c.label", (note_id,))]
         neighbours = connection.execute("SELECT target_id, weight FROM relations WHERE source_id=? AND kind != 'prerequisite' UNION SELECT source_id, weight FROM relations WHERE target_id=? AND kind != 'prerequisite'", (note_id, note_id)).fetchall()
         related = [neighbour for neighbour, _ in sorted(neighbours, key=lambda row: (-row[1], row[0])) if neighbour != note_id][:6]
@@ -242,6 +250,7 @@ def export(connection: sqlite3.Connection) -> dict[str, int]:
             "filename": filename, "tags": concepts, "concepts": concepts,
             "objectives": json.loads(objectives), "keyPoints": json.loads(key_points),
             "evidenceLevel": evidence_level, "codeUrl": code_url,
+            "origin": origin, "paperId": paper_id, "readingDepth": reading_depth, "fullTextUrl": full_text_url,
             "sections": json.loads(key_points), "related": related, "degree": degree.get(note_id, 0),
         }
         meta["sources"] = [source_id for (source_id,) in connection.execute("SELECT source_id FROM note_sources WHERE note_id=? ORDER BY position", (note_id,))]
@@ -266,6 +275,8 @@ def export(connection: sqlite3.Connection) -> dict[str, int]:
 def build() -> dict[str, int]:
     notes, sources = load_notes(), load_sources()
     DB.parent.mkdir(parents=True, exist_ok=True)
+    if DB.exists():
+        DB.unlink()
     connection = sqlite3.connect(DB)
     try:
         build_tables(connection, notes, sources)

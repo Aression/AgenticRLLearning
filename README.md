@@ -19,6 +19,10 @@
 
 “研究雷达”视图展示 HuggingFace Daily Papers 抓取、按知识库关键词过滤、再由 DeepSeek 分流的候选论文（review / archive / skip），附匹配关键词、热度、链接、审计理由与风险。数据写入 `data/generated/radar.json`，随每日审计 PR 更新；证据仅到摘要级，入库前需人工精读。
 
+## 自动知识卡
+
+维护流水线每天从 HuggingFace Daily Papers 中选择最多 3 篇能找到全文的 `review` 论文，用 DeepSeek 精读 arXiv HTML 全文并生成知识卡，写入 `content/` 与 `data/sources.json`，随后重建数据库与图谱，随审计 PR 提交。卡片标记 `origin: llm-fulltext` 与 `review: LLM 全文精读草稿 · 待人工复核`，合并前必须人工复核；论文全文不写入仓库。未合并的草稿会在 `agent-audit/latest` 分支上累积。
+
 ## 本地运行
 
 ```bash

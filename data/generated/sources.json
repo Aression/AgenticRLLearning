@@ -338,5 +338,15 @@
     "url": "https://arxiv.org/abs/2608.21946",
     "evidence": "新预印本 · 待精读",
     "note": "2026-08-22：将经验引导蒸馏到策略；只核验摘要，未复现。"
+  },
+  {
+    "id": "mintrl-off-policy-intervention-can-boost",
+    "title": "MInTRL: Off-policy Intervention can boost On-policy RL",
+    "kind": "论文",
+    "author": "Mingyu Chen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.12419",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Addresses a core agentic-RL tension (exploration vs. on-policy learnability) via sparse judge interventions and a sequence-level advantage-regression objective."
   }
 ]

@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-09-17T15:47:11.399923+00:00",
+  "requested": 1,
+  "generated": [
+    {
+      "note_id": "mintrl-off-policy-intervention",
+      "note_path": "content\\01-mintrl-off-policy-intervention.md",
+      "source_id": "mintrl-off-policy-intervention-can-boost",
+      "title": "MInTRL：稀疏干预让离策略经验服务在策略 RL",
+      "stage": "FRONTIER",
+      "minutes": 18,
+      "arxiv_id": "2609.12419",
+      "full_text_url": "https://arxiv.org/html/2609.12419"
+    }
+  ],
+  "skipped": [],
+  "reviewStatus": "LLM 全文精读草稿 · 待人工复核",
+  "publishDirectly": false
+}

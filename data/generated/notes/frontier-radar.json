@@ -34,6 +34,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "调研边界",
     "四个值得追踪的问题",
@@ -46,10 +50,10 @@
     "glossary",
     "learning-paths",
     "mdp",
-    "multi-turn-rl",
-    "orientation"
+    "mintrl-off-policy-intervention",
+    "multi-turn-rl"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "coskill",
     "multi-harness",

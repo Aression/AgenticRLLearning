@@ -32,6 +32,10 @@
   ],
   "evidenceLevel": "",
   "codeUrl": "",
+  "origin": "human",
+  "paperId": "",
+  "readingDepth": "",
+  "fullTextUrl": "",
   "sections": [
     "Bandit 是最小起点",
     "Q-learning 的更新",
@@ -45,9 +49,9 @@
     "prerequisites",
     "frontier-radar",
     "glossary",
-    "policy-gradient"
+    "mintrl-off-policy-intervention"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "sutton-barto",
     "silver"

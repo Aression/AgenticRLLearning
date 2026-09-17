@@ -19,6 +19,10 @@ export type NoteMeta = {
   sections: string[];
   evidenceLevel: string;
   codeUrl: string;
+  origin: string;
+  paperId: string;
+  readingDepth: string;
+  fullTextUrl: string;
   related: string[];
   degree: number;
   sources: string[];
