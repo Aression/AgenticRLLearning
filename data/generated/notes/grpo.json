@@ -48,10 +48,10 @@
     "mintrl-off-policy-intervention",
     "orientation",
     "rewards",
-    "training-systems",
-    "value-flattening-ppo"
+    "scienceide-sci-envs",
+    "training-systems"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

@@ -47,13 +47,13 @@
   ],
   "related": [
     "lab-agent-rl",
+    "compo-zeroth-order-alignment",
     "grpo",
     "lab-agent",
     "mintrl-off-policy-intervention",
-    "modularrsi-harness",
-    "multi-turn-rl"
+    "modularrsi-harness"
   ],
-  "degree": 14,
+  "degree": 15,
   "sources": [
     "deepseek-math",
     "gigpo",

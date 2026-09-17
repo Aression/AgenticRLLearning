@@ -56,9 +56,9 @@
     "modularrsi-harness",
     "multi-turn-rl",
     "rewards",
-    "value-flattening-ppo"
+    "scienceide-sci-envs"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

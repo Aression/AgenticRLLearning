@@ -378,5 +378,35 @@
     "url": "https://arxiv.org/abs/2609.18708",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Core RL methodology relevant to the PPO/GAE foundations already in the KB. Introduces a named failure mode (Value Flattening) and a sparse-supervision mitigatio"
+  },
+  {
+    "id": "evolvetrade-experience-driven-policy-ref",
+    "title": "EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents",
+    "kind": "论文",
+    "author": "Sehee Kim et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.17632",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the knowledge base. Adjacent to the Agentic RL scope: treats a tool-using agent's system prompt as a text-parameterized policy refined from decision trac"
+  },
+  {
+    "id": "scienceide-turning-world-s-scientific-co",
+    "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+    "kind": "论文",
+    "author": "Hejia Geng et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.19134",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Plausibly on-topic: builds executable agent environments from scientific code and reports SFT/RL training of a model family with transfer claims. Directly relev"
+  },
+  {
+    "id": "a-zeroth-order-paradigm-for-llm-preferen",
+    "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
+    "kind": "论文",
+    "author": "Peter Chen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.19144",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Adjacent to existing DPO/RLHF sources (dpo, instructgpt, constitutional). Proposes ComPO, a zeroth-order comparison-oracle alignment method with convergence and"
   }
 ]

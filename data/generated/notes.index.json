@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T15:55:37.410359+00:00",
+  "generatedAt": "2026-09-17T15:58:43.171868+00:00",
   "notes": [
     {
       "id": "orientation",
@@ -426,10 +426,11 @@
       ],
       "related": [
         "orientation",
+        "evolvetrade-policy-refinement",
         "modularrsi-harness",
         "safety"
       ],
-      "degree": 6,
+      "degree": 7,
       "sources": [
         "react",
         "anthropic-building",
@@ -491,9 +492,10 @@
         "lab-agent",
         "lab-rl",
         "multi-turn-rl",
+        "scienceide-sci-envs",
         "training-systems"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "gymnasium",
         "swe-agent",
@@ -554,13 +556,13 @@
       ],
       "related": [
         "lab-agent-rl",
+        "compo-zeroth-order-alignment",
         "grpo",
         "lab-agent",
         "mintrl-off-policy-intervention",
-        "modularrsi-harness",
-        "multi-turn-rl"
+        "modularrsi-harness"
       ],
-      "degree": 14,
+      "degree": 15,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -619,8 +621,11 @@
         "如何选择",
         "自测"
       ],
-      "related": [],
-      "degree": 2,
+      "related": [
+        "compo-zeroth-order-alignment",
+        "compo-zeroth-order-alignment"
+      ],
+      "degree": 4,
       "sources": [
         "instructgpt",
         "constitutional",
@@ -682,10 +687,10 @@
         "mintrl-off-policy-intervention",
         "orientation",
         "rewards",
-        "training-systems",
-        "value-flattening-ppo"
+        "scienceide-sci-envs",
+        "training-systems"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "deepseek-math",
         "deepseek-r1",
@@ -814,9 +819,10 @@
         "environments",
         "grpo",
         "lab-agent",
-        "multi-turn-rl"
+        "multi-turn-rl",
+        "scienceide-sci-envs"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "verl",
         "lightning-code",
@@ -880,11 +886,12 @@
       "related": [
         "environments",
         "emergence-world-stress-test",
+        "evolvetrade-policy-refinement",
         "lab-agent",
         "modularrsi-harness",
         "safety"
       ],
-      "degree": 11,
+      "degree": 13,
       "sources": [
         "swe-bench",
         "webarena",
@@ -1078,13 +1085,13 @@
       ],
       "related": [
         "multi-agent",
+        "evolvetrade-policy-refinement",
         "glossary",
         "learning-paths",
         "mdp",
-        "mintrl-off-policy-intervention",
-        "modularrsi-harness"
+        "mintrl-off-policy-intervention"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "coskill",
         "multi-harness",
@@ -1534,9 +1541,9 @@
         "modularrsi-harness",
         "multi-turn-rl",
         "rewards",
-        "value-flattening-ppo"
+        "scienceide-sci-envs"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "mintrl-off-policy-intervention-can-boost"
       ],
@@ -1601,9 +1608,9 @@
         "frontier-radar",
         "mintrl-off-policy-intervention",
         "rewards",
-        "value-flattening-ppo"
+        "scienceide-sci-envs"
       ],
-      "degree": 7,
+      "degree": 8,
       "sources": [
         "modularrsi-modular-and-generalizable-rec"
       ],
@@ -1741,6 +1748,201 @@
       ],
       "prerequisites": [],
       "search": "ppo 评论家价值扁平化与稀疏监督 论文指出 ppo 评论家在长轨迹中预测的状态价值过于平坦，并归因于稠密 token 监督，提出稀疏监督缓解。 训练算法 ppo credit assignment critic sparse-supervision value-flattening 理解 value flattening 这一评论家失效模式的定义与诊断方式 掌握论文提出的两个成因假设：隐式方差惩罚与时间相关冗余更新 了解稀疏监督（sp³o）的设计思路及其在论文中的实验证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "evolvetrade-policy-refinement",
+      "title": "EvolveTrade：交易智能体的经验驱动策略自演化",
+      "summary": "把工具型 LLM 交易智能体的系统提示当作可演化的文本策略，用自身交易轨迹与组合反馈定期改写，而非更新模型参数。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 28,
+      "minutes": 15,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "28-evolvetrade-policy-refinement.md",
+      "tags": [
+        "frozen-llm",
+        "prompt-policy",
+        "self-evolution",
+        "tool-use",
+        "trading-agent"
+      ],
+      "concepts": [
+        "frozen-llm",
+        "prompt-policy",
+        "self-evolution",
+        "tool-use",
+        "trading-agent"
+      ],
+      "objectives": [
+        "理解把系统提示视为文本参数化策略、用经验迭代改写这一机制",
+        "区分该工作与基于梯度的 RL 训练在优化对象上的差异",
+        "评估其证据强度：仅摘要级结果、无代码复现、领域特定"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.17632",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.17632",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "agent-loop",
+        "evaluation",
+        "frontier-radar"
+      ],
+      "degree": 3,
+      "sources": [
+        "evolvetrade-experience-driven-policy-ref"
+      ],
+      "prerequisites": [],
+      "search": "evolvetrade：交易智能体的经验驱动策略自演化 把工具型 llm 交易智能体的系统提示当作可演化的文本策略，用自身交易轨迹与组合反馈定期改写，而非更新模型参数。 agent 系统 frozen-llm prompt-policy self-evolution tool-use trading-agent 理解把系统提示视为文本参数化策略、用经验迭代改写这一机制 区分该工作与基于梯度的 rl 训练在优化对象上的差异 评估其证据强度：仅摘要级结果、无代码复现、领域特定 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "scienceide-sci-envs",
+      "title": "ScienceIDE：把科学代码库变成可学习环境",
+      "summary": "将科学代码库的可执行测试与专家容差固化为环境契约，自动生成修复/实现/加速任务，供 Agent 训练与评估。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 29,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "29-scienceide-sci-envs.md",
+      "tags": [
+        "RLVR",
+        "agent-env",
+        "benchmark",
+        "harness",
+        "scientific-code"
+      ],
+      "concepts": [
+        "RLVR",
+        "agent-env",
+        "benchmark",
+        "harness",
+        "scientific-code"
+      ],
+      "objectives": [
+        "理解科学代码环境为何比通用代码环境更难构建",
+        "说明任务工厂如何把专家判断与任务生成解耦",
+        "识别该工作证据边界与未验证的迁移主张"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.19134",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.19134",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "environments",
+        "evaluation",
+        "grpo",
+        "mintrl-off-policy-intervention",
+        "modularrsi-harness",
+        "training-systems"
+      ],
+      "degree": 6,
+      "sources": [
+        "scienceide-turning-world-s-scientific-co"
+      ],
+      "prerequisites": [],
+      "search": "scienceide：把科学代码库变成可学习环境 将科学代码库的可执行测试与专家容差固化为环境契约，自动生成修复/实现/加速任务，供 agent 训练与评估。 agent 系统 rlvr agent-env benchmark harness scientific-code 理解科学代码环境为何比通用代码环境更难构建 说明任务工厂如何把专家判断与任务生成解耦 识别该工作证据边界与未验证的迁移主张 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "compo-zeroth-order-alignment",
+      "title": "ComPO：基于比较oracle的零阶偏好对齐",
+      "summary": "针对DPO类直接对齐中的似然位移问题，提出用零阶比较oracle从低边际噪声偏好对中提取更新方向。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 30,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "30-compo-zeroth-order-alignment.md",
+      "tags": [
+        "DPO",
+        "RLHF",
+        "likelihood-displacement",
+        "preference-optimization",
+        "zeroth-order"
+      ],
+      "concepts": [
+        "DPO",
+        "RLHF",
+        "likelihood-displacement",
+        "preference-optimization",
+        "zeroth-order"
+      ],
+      "objectives": [
+        "理解似然位移（likelihood displacement）为何在低边际偏好对上出现",
+        "说明ComPO如何用比较oracle替代可微偏好损失来利用噪声对",
+        "区分论文的理论主张（可行性/覆盖界）与启发式在线实现之间的差距"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.19144",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.19144",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "preferences",
+        "preferences",
+        "rewards"
+      ],
+      "degree": 3,
+      "sources": [
+        "a-zeroth-order-paradigm-for-llm-preferen"
+      ],
+      "prerequisites": [],
+      "search": "compo：基于比较oracle的零阶偏好对齐 针对dpo类直接对齐中的似然位移问题，提出用零阶比较oracle从低边际噪声偏好对中提取更新方向。 训练算法 dpo rlhf likelihood-displacement preference-optimization zeroth-order 理解似然位移（likelihood displacement）为何在低边际偏好对上出现 说明compo如何用比较oracle替代可微偏好损失来利用噪声对 区分论文的理论主张（可行性/覆盖界）与启发式在线实现之间的差距 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
     }
   ]
 }
