@@ -44,14 +44,14 @@
     "完成标准"
   ],
   "related": [
+    "emergence-world-stress-test",
     "environments",
     "frontier-radar",
     "glossary",
     "lab-agent",
-    "lab-agent-rl",
-    "learning-paths"
+    "lab-agent-rl"
   ],
-  "degree": 16,
+  "degree": 17,
   "sources": [
     "agentic-survey",
     "gigpo",

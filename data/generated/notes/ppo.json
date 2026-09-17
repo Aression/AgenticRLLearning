@@ -45,9 +45,10 @@
   ],
   "related": [
     "lab-rl",
-    "policy-gradient"
+    "policy-gradient",
+    "value-flattening-ppo"
   ],
-  "degree": 6,
+  "degree": 8,
   "sources": [
     "ppo",
     "gae",

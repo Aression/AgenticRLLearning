@@ -51,9 +51,9 @@
     "learning-paths",
     "mdp",
     "mintrl-off-policy-intervention",
-    "multi-turn-rl"
+    "modularrsi-harness"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "coskill",
     "multi-harness",

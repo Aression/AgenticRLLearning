@@ -45,13 +45,13 @@
   ],
   "related": [
     "frontier-radar",
+    "emergence-world-stress-test",
     "glossary",
     "learning-paths",
     "mdp",
-    "multi-turn-rl",
-    "orientation"
+    "multi-turn-rl"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "marl-book",
     "agentic-survey",

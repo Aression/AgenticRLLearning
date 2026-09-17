@@ -47,9 +47,10 @@
   ],
   "related": [
     "orientation",
+    "modularrsi-harness",
     "safety"
   ],
-  "degree": 5,
+  "degree": 6,
   "sources": [
     "react",
     "anthropic-building",

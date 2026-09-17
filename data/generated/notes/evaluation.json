@@ -49,10 +49,12 @@
   ],
   "related": [
     "environments",
+    "emergence-world-stress-test",
     "lab-agent",
+    "modularrsi-harness",
     "safety"
   ],
-  "degree": 8,
+  "degree": 11,
   "sources": [
     "swe-bench",
     "webarena",

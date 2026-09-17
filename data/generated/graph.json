@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T15:47:46.220023+00:00",
+  "generatedAt": "2026-09-17T15:55:37.411703+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -31,7 +31,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "policy-gradient",
@@ -47,7 +47,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "训练算法",
-      "degree": 6
+      "degree": 8
     },
     {
       "id": "agent-loop",
@@ -55,7 +55,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "Agent 系统",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "environments",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 12
+      "degree": 14
     },
     {
       "id": "preferences",
@@ -87,7 +87,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 16
+      "degree": 17
     },
     {
       "id": "training-systems",
@@ -111,7 +111,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 8
+      "degree": 11
     },
     {
       "id": "safety",
@@ -119,7 +119,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 6
+      "degree": 8
     },
     {
       "id": "multi-agent",
@@ -127,7 +127,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "前沿专题",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "frontier-radar",
@@ -135,7 +135,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "前沿专题",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "lab-rl",
@@ -143,7 +143,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "实验与维护",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "lab-agent",
@@ -191,7 +191,31 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
+      "degree": 9
+    },
+    {
+      "id": "modularrsi-harness",
+      "label": "ModularRSI：模块化可泛化的 Harness 自进化",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
       "degree": 7
+    },
+    {
+      "id": "emergence-world-stress-test",
+      "label": "长时程多智能体系统的对抗压力测试",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "degree": 5
+    },
+    {
+      "id": "value-flattening-ppo",
+      "label": "PPO 评论家价值扁平化与稀疏监督",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 8
     },
     {
       "id": "2026",
@@ -290,6 +314,14 @@
       "degree": 0
     },
     {
+      "id": "critic",
+      "label": "critic",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "ctde",
       "label": "CTDE",
       "kind": "concept",
@@ -332,6 +364,14 @@
     {
       "id": "environment",
       "label": "environment",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "evaluation",
+      "label": "evaluation",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -404,6 +444,14 @@
     {
       "id": "grpo",
       "label": "GRPO",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "harness",
+      "label": "harness",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -492,6 +540,14 @@
     {
       "id": "milestones",
       "label": "milestones",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "multi-agent",
+      "label": "multi-agent",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -650,6 +706,14 @@
       "degree": 0
     },
     {
+      "id": "safety",
+      "label": "safety",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "sandbox",
       "label": "sandbox",
       "kind": "concept",
@@ -658,8 +722,24 @@
       "degree": 0
     },
     {
+      "id": "self-improvement",
+      "label": "self-improvement",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "skills",
       "label": "skills",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "sparse-supervision",
+      "label": "sparse-supervision",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -698,6 +778,14 @@
       "degree": 0
     },
     {
+      "id": "terminal-agent",
+      "label": "terminal-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "tools",
       "label": "tools",
       "kind": "concept",
@@ -708,6 +796,14 @@
     {
       "id": "trajectory",
       "label": "trajectory",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "value-flattening",
+      "label": "value-flattening",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -940,8 +1036,50 @@
       "weight": 1.0
     },
     {
+      "source": "agent-loop",
+      "target": "modularrsi-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "evaluation",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "multi-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "safety",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "modularrsi-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "modularrsi-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "grpo",
       "target": "mintrl-off-policy-intervention",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "value-flattening-ppo",
       "kind": "related",
       "weight": 1.0
     },
@@ -955,6 +1093,36 @@
       "source": "mintrl-off-policy-intervention",
       "target": "rewards",
       "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "ppo",
+      "target": "value-flattening-ppo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "value-flattening-ppo",
+      "target": "value-learning",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "multi-turn-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "safety",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "modularrsi-harness",
+      "kind": "shared-concept",
       "weight": 1.0
     },
     {
@@ -994,6 +1162,18 @@
       "weight": 1.0
     },
     {
+      "source": "lab-rl",
+      "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "modularrsi-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "mintrl-off-policy-intervention",
       "target": "rewards",
       "kind": "shared-concept",
@@ -1001,7 +1181,37 @@
     },
     {
       "source": "mintrl-off-policy-intervention",
+      "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
       "target": "value-learning",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "rewards",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "ppo",
+      "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
+      "target": "value-flattening-ppo",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -1854,6 +2064,96 @@
     {
       "source": "mintrl-off-policy-intervention",
       "target": "llm-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "harness",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "self-improvement",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "credit-assignment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "terminal-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "swe-bench",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "multi-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "long-horizon",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "prompt-injection",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "evaluation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "safety",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-flattening-ppo",
+      "target": "ppo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-flattening-ppo",
+      "target": "critic",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-flattening-ppo",
+      "target": "value-flattening",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-flattening-ppo",
+      "target": "sparse-supervision",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "value-flattening-ppo",
+      "target": "credit-assignment",
       "kind": "concept",
       "weight": 1
     }

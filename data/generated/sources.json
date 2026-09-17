@@ -348,5 +348,35 @@
     "url": "https://arxiv.org/abs/2609.12419",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Addresses a core agentic-RL tension (exploration vs. on-policy learnability) via sparse judge interventions and a sequence-level advantage-regression objective."
+  },
+  {
+    "id": "modularrsi-modular-and-generalizable-rec",
+    "title": "ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement",
+    "kind": "论文",
+    "author": "Siwei Wu et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.14857",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly on-topic: harness self-improvement for long-horizon coding/terminal agents, benchmark-disjoint evolution tasks, and transfer across foundation models. "
+  },
+  {
+    "id": "emergence-world-adversarial-stress-testi",
+    "title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
+    "kind": "论文",
+    "author": "Deepak Akkil et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.17320",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Adjacent to the KB's multi-agent and safety interests (marl-book, lilian-reward). Relevant to long-horizon agent failure modes, prompt injection, and memory per"
+  },
+  {
+    "id": "rethinking-critic-learning-in-ppo-unders",
+    "title": "Rethinking Critic Learning in PPO: Understanding and Mitigating Value Flattening",
+    "kind": "论文",
+    "author": "Yizhuo Li et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.18708",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Core RL methodology relevant to the PPO/GAE foundations already in the KB. Introduces a named failure mode (Value Flattening) and a sparse-supervision mitigatio"
   }
 ]

@@ -53,11 +53,12 @@
   "related": [
     "frontier-radar",
     "grpo",
+    "modularrsi-harness",
     "multi-turn-rl",
     "rewards",
-    "value-learning"
+    "value-flattening-ppo"
   ],
-  "degree": 7,
+  "degree": 9,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

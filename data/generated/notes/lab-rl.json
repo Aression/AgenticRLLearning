@@ -49,9 +49,10 @@
     "ppo",
     "environments",
     "lab-agent",
-    "lab-agent-rl"
+    "lab-agent-rl",
+    "value-flattening-ppo"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "gymnasium",
     "sb3",
