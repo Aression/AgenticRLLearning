@@ -48,9 +48,10 @@
     "lab-agent",
     "lab-rl",
     "multi-turn-rl",
+    "scienceide-sci-envs",
     "training-systems"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "gymnasium",
     "swe-agent",

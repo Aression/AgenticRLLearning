@@ -50,9 +50,10 @@
     "environments",
     "grpo",
     "lab-agent",
-    "multi-turn-rl"
+    "multi-turn-rl",
+    "scienceide-sci-envs"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "verl",
     "lightning-code",

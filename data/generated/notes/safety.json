@@ -47,12 +47,13 @@
   ],
   "related": [
     "agent-loop",
+    "emergence-world-stress-test",
     "evaluation",
     "lab-agent",
     "orientation",
     "rewards"
   ],
-  "degree": 6,
+  "degree": 8,
   "sources": [
     "lilian-reward",
     "tau-bench",

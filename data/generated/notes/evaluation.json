@@ -49,10 +49,13 @@
   ],
   "related": [
     "environments",
+    "emergence-world-stress-test",
+    "evolvetrade-policy-refinement",
     "lab-agent",
+    "modularrsi-harness",
     "safety"
   ],
-  "degree": 8,
+  "degree": 13,
   "sources": [
     "swe-bench",
     "webarena",

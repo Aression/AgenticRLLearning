@@ -51,7 +51,7 @@
     "glossary",
     "mintrl-off-policy-intervention"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "sutton-barto",
     "silver"

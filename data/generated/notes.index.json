@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T15:47:46.216119+00:00",
+  "generatedAt": "2026-09-17T15:58:43.171868+00:00",
   "notes": [
     {
       "id": "orientation",
@@ -243,7 +243,7 @@
         "glossary",
         "mintrl-off-policy-intervention"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "sutton-barto",
         "silver"
@@ -363,9 +363,10 @@
       ],
       "related": [
         "lab-rl",
-        "policy-gradient"
+        "policy-gradient",
+        "value-flattening-ppo"
       ],
-      "degree": 6,
+      "degree": 8,
       "sources": [
         "ppo",
         "gae",
@@ -425,9 +426,11 @@
       ],
       "related": [
         "orientation",
+        "evolvetrade-policy-refinement",
+        "modularrsi-harness",
         "safety"
       ],
-      "degree": 5,
+      "degree": 7,
       "sources": [
         "react",
         "anthropic-building",
@@ -489,9 +492,10 @@
         "lab-agent",
         "lab-rl",
         "multi-turn-rl",
+        "scienceide-sci-envs",
         "training-systems"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "gymnasium",
         "swe-agent",
@@ -552,13 +556,13 @@
       ],
       "related": [
         "lab-agent-rl",
+        "compo-zeroth-order-alignment",
         "grpo",
         "lab-agent",
         "mintrl-off-policy-intervention",
-        "multi-turn-rl",
-        "safety"
+        "modularrsi-harness"
       ],
-      "degree": 12,
+      "degree": 15,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -617,8 +621,11 @@
         "如何选择",
         "自测"
       ],
-      "related": [],
-      "degree": 2,
+      "related": [
+        "compo-zeroth-order-alignment",
+        "compo-zeroth-order-alignment"
+      ],
+      "degree": 4,
       "sources": [
         "instructgpt",
         "constitutional",
@@ -680,9 +687,10 @@
         "mintrl-off-policy-intervention",
         "orientation",
         "rewards",
+        "scienceide-sci-envs",
         "training-systems"
       ],
-      "degree": 9,
+      "degree": 11,
       "sources": [
         "deepseek-math",
         "deepseek-r1",
@@ -740,14 +748,14 @@
         "完成标准"
       ],
       "related": [
+        "emergence-world-stress-test",
         "environments",
         "frontier-radar",
         "glossary",
         "lab-agent",
-        "lab-agent-rl",
-        "learning-paths"
+        "lab-agent-rl"
       ],
-      "degree": 16,
+      "degree": 17,
       "sources": [
         "agentic-survey",
         "gigpo",
@@ -811,9 +819,10 @@
         "environments",
         "grpo",
         "lab-agent",
-        "multi-turn-rl"
+        "multi-turn-rl",
+        "scienceide-sci-envs"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "verl",
         "lightning-code",
@@ -876,10 +885,13 @@
       ],
       "related": [
         "environments",
+        "emergence-world-stress-test",
+        "evolvetrade-policy-refinement",
         "lab-agent",
+        "modularrsi-harness",
         "safety"
       ],
-      "degree": 8,
+      "degree": 13,
       "sources": [
         "swe-bench",
         "webarena",
@@ -942,12 +954,13 @@
       ],
       "related": [
         "agent-loop",
+        "emergence-world-stress-test",
         "evaluation",
         "lab-agent",
         "orientation",
         "rewards"
       ],
-      "degree": 6,
+      "degree": 8,
       "sources": [
         "lilian-reward",
         "tau-bench",
@@ -1005,13 +1018,13 @@
       ],
       "related": [
         "frontier-radar",
+        "emergence-world-stress-test",
         "glossary",
         "learning-paths",
         "mdp",
-        "multi-turn-rl",
-        "orientation"
+        "multi-turn-rl"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "marl-book",
         "agentic-survey",
@@ -1072,13 +1085,13 @@
       ],
       "related": [
         "multi-agent",
+        "evolvetrade-policy-refinement",
         "glossary",
         "learning-paths",
         "mdp",
-        "mintrl-off-policy-intervention",
-        "multi-turn-rl"
+        "mintrl-off-policy-intervention"
       ],
-      "degree": 10,
+      "degree": 12,
       "sources": [
         "coskill",
         "multi-harness",
@@ -1143,9 +1156,10 @@
         "ppo",
         "environments",
         "lab-agent",
-        "lab-agent-rl"
+        "lab-agent-rl",
+        "value-flattening-ppo"
       ],
-      "degree": 6,
+      "degree": 7,
       "sources": [
         "gymnasium",
         "sb3",
@@ -1524,16 +1538,411 @@
       "related": [
         "frontier-radar",
         "grpo",
+        "modularrsi-harness",
         "multi-turn-rl",
         "rewards",
-        "value-learning"
+        "scienceide-sci-envs"
       ],
-      "degree": 7,
+      "degree": 10,
       "sources": [
         "mintrl-off-policy-intervention-can-boost"
       ],
       "prerequisites": [],
       "search": "mintrl：稀疏干预让离策略经验服务在策略 rl 用少量裁判干预把在策略 rollout 引向难以自发现的成功路径，并用回归式目标避免行为策略重要性加权。 训练算法 llm-rl rlvr credit assignment exploration off-policy 理解在策略 rlvr 的探索瓶颈与离策略信息引入的取舍 掌握 mintrl 的两阶段流程与回归式序列级目标的设计动机 能说明覆盖度—可学习性权衡及其实验证据的边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "modularrsi-harness",
+      "title": "ModularRSI：模块化可泛化的 Harness 自进化",
+      "summary": "把粗粒度任务成败转化为模块级修改信号，用对比轨迹与模块受限演化提升 CLI Agent 的 Harness 泛化性。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 25,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "25-modularrsi-harness.md",
+      "tags": [
+        "SWE-bench",
+        "credit assignment",
+        "harness",
+        "self-improvement",
+        "terminal-agent"
+      ],
+      "concepts": [
+        "SWE-bench",
+        "credit assignment",
+        "harness",
+        "self-improvement",
+        "terminal-agent"
+      ],
+      "objectives": [
+        "理解 Harness RSI 中数据、轨迹、机制三层信用分配难题",
+        "掌握对比轨迹分析与五模块分解的演化流程",
+        "能说明 benchmark-disjoint 协议为何影响结论可信度"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.14857",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.14857",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "agent-loop",
+        "evaluation",
+        "frontier-radar",
+        "mintrl-off-policy-intervention",
+        "rewards",
+        "scienceide-sci-envs"
+      ],
+      "degree": 8,
+      "sources": [
+        "modularrsi-modular-and-generalizable-rec"
+      ],
+      "prerequisites": [],
+      "search": "modularrsi：模块化可泛化的 harness 自进化 把粗粒度任务成败转化为模块级修改信号，用对比轨迹与模块受限演化提升 cli agent 的 harness 泛化性。 agent 系统 swe-bench credit assignment harness self-improvement terminal-agent 理解 harness rsi 中数据、轨迹、机制三层信用分配难题 掌握对比轨迹分析与五模块分解的演化流程 能说明 benchmark-disjoint 协议为何影响结论可信度 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "emergence-world-stress-test",
+      "title": "长时程多智能体系统的对抗压力测试",
+      "summary": "在持续运行的多智能体世界中注入钓鱼、虚假信息与记忆泄露三类压力事件，考察系统级而非单模型级的安全失效。",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "order": 26,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "26-emergence-world-stress-test.md",
+      "tags": [
+        "evaluation",
+        "long-horizon",
+        "multi-agent",
+        "prompt injection",
+        "safety"
+      ],
+      "concepts": [
+        "evaluation",
+        "long-horizon",
+        "multi-agent",
+        "prompt injection",
+        "safety"
+      ],
+      "objectives": [
+        "理解为何长时程多智能体安全不能还原为单模型安全",
+        "掌握三类压力事件的事件级评分标准（识别/克制/遏制/持久响应）",
+        "认识「社会性谄媚」这一系统级失效模式及其证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.17320",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.17320",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "evaluation",
+        "multi-agent",
+        "multi-turn-rl",
+        "safety"
+      ],
+      "degree": 5,
+      "sources": [
+        "emergence-world-adversarial-stress-testi"
+      ],
+      "prerequisites": [],
+      "search": "长时程多智能体系统的对抗压力测试 在持续运行的多智能体世界中注入钓鱼、虚假信息与记忆泄露三类压力事件，考察系统级而非单模型级的安全失效。 评估与安全 evaluation long-horizon multi-agent prompt injection safety 理解为何长时程多智能体安全不能还原为单模型安全 掌握三类压力事件的事件级评分标准（识别/克制/遏制/持久响应） 认识「社会性谄媚」这一系统级失效模式及其证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "value-flattening-ppo",
+      "title": "PPO 评论家价值扁平化与稀疏监督",
+      "summary": "论文指出 PPO 评论家在长轨迹中预测的状态价值过于平坦，并归因于稠密 token 监督，提出稀疏监督缓解。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 27,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "27-value-flattening-ppo.md",
+      "tags": [
+        "PPO",
+        "credit assignment",
+        "critic",
+        "sparse-supervision",
+        "value-flattening"
+      ],
+      "concepts": [
+        "PPO",
+        "credit assignment",
+        "critic",
+        "sparse-supervision",
+        "value-flattening"
+      ],
+      "objectives": [
+        "理解 Value Flattening 这一评论家失效模式的定义与诊断方式",
+        "掌握论文提出的两个成因假设：隐式方差惩罚与时间相关冗余更新",
+        "了解稀疏监督（SP³O）的设计思路及其在论文中的实验证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.18708",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.18708",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "grpo",
+        "lab-rl",
+        "mintrl-off-policy-intervention",
+        "modularrsi-harness",
+        "ppo",
+        "rewards"
+      ],
+      "degree": 8,
+      "sources": [
+        "rethinking-critic-learning-in-ppo-unders"
+      ],
+      "prerequisites": [],
+      "search": "ppo 评论家价值扁平化与稀疏监督 论文指出 ppo 评论家在长轨迹中预测的状态价值过于平坦，并归因于稠密 token 监督，提出稀疏监督缓解。 训练算法 ppo credit assignment critic sparse-supervision value-flattening 理解 value flattening 这一评论家失效模式的定义与诊断方式 掌握论文提出的两个成因假设：隐式方差惩罚与时间相关冗余更新 了解稀疏监督（sp³o）的设计思路及其在论文中的实验证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "evolvetrade-policy-refinement",
+      "title": "EvolveTrade：交易智能体的经验驱动策略自演化",
+      "summary": "把工具型 LLM 交易智能体的系统提示当作可演化的文本策略，用自身交易轨迹与组合反馈定期改写，而非更新模型参数。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 28,
+      "minutes": 15,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "28-evolvetrade-policy-refinement.md",
+      "tags": [
+        "frozen-llm",
+        "prompt-policy",
+        "self-evolution",
+        "tool-use",
+        "trading-agent"
+      ],
+      "concepts": [
+        "frozen-llm",
+        "prompt-policy",
+        "self-evolution",
+        "tool-use",
+        "trading-agent"
+      ],
+      "objectives": [
+        "理解把系统提示视为文本参数化策略、用经验迭代改写这一机制",
+        "区分该工作与基于梯度的 RL 训练在优化对象上的差异",
+        "评估其证据强度：仅摘要级结果、无代码复现、领域特定"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.17632",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.17632",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "agent-loop",
+        "evaluation",
+        "frontier-radar"
+      ],
+      "degree": 3,
+      "sources": [
+        "evolvetrade-experience-driven-policy-ref"
+      ],
+      "prerequisites": [],
+      "search": "evolvetrade：交易智能体的经验驱动策略自演化 把工具型 llm 交易智能体的系统提示当作可演化的文本策略，用自身交易轨迹与组合反馈定期改写，而非更新模型参数。 agent 系统 frozen-llm prompt-policy self-evolution tool-use trading-agent 理解把系统提示视为文本参数化策略、用经验迭代改写这一机制 区分该工作与基于梯度的 rl 训练在优化对象上的差异 评估其证据强度：仅摘要级结果、无代码复现、领域特定 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "scienceide-sci-envs",
+      "title": "ScienceIDE：把科学代码库变成可学习环境",
+      "summary": "将科学代码库的可执行测试与专家容差固化为环境契约，自动生成修复/实现/加速任务，供 Agent 训练与评估。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 29,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "29-scienceide-sci-envs.md",
+      "tags": [
+        "RLVR",
+        "agent-env",
+        "benchmark",
+        "harness",
+        "scientific-code"
+      ],
+      "concepts": [
+        "RLVR",
+        "agent-env",
+        "benchmark",
+        "harness",
+        "scientific-code"
+      ],
+      "objectives": [
+        "理解科学代码环境为何比通用代码环境更难构建",
+        "说明任务工厂如何把专家判断与任务生成解耦",
+        "识别该工作证据边界与未验证的迁移主张"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.19134",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.19134",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "environments",
+        "evaluation",
+        "grpo",
+        "mintrl-off-policy-intervention",
+        "modularrsi-harness",
+        "training-systems"
+      ],
+      "degree": 6,
+      "sources": [
+        "scienceide-turning-world-s-scientific-co"
+      ],
+      "prerequisites": [],
+      "search": "scienceide：把科学代码库变成可学习环境 将科学代码库的可执行测试与专家容差固化为环境契约，自动生成修复/实现/加速任务，供 agent 训练与评估。 agent 系统 rlvr agent-env benchmark harness scientific-code 理解科学代码环境为何比通用代码环境更难构建 说明任务工厂如何把专家判断与任务生成解耦 识别该工作证据边界与未验证的迁移主张 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "compo-zeroth-order-alignment",
+      "title": "ComPO：基于比较oracle的零阶偏好对齐",
+      "summary": "针对DPO类直接对齐中的似然位移问题，提出用零阶比较oracle从低边际噪声偏好对中提取更新方向。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 30,
+      "minutes": 18,
+      "updated": "2026-09-17",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "30-compo-zeroth-order-alignment.md",
+      "tags": [
+        "DPO",
+        "RLHF",
+        "likelihood-displacement",
+        "preference-optimization",
+        "zeroth-order"
+      ],
+      "concepts": [
+        "DPO",
+        "RLHF",
+        "likelihood-displacement",
+        "preference-optimization",
+        "zeroth-order"
+      ],
+      "objectives": [
+        "理解似然位移（likelihood displacement）为何在低边际偏好对上出现",
+        "说明ComPO如何用比较oracle替代可微偏好损失来利用噪声对",
+        "区分论文的理论主张（可行性/覆盖界）与启发式在线实现之间的差距"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.19144",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.19144",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "preferences",
+        "preferences",
+        "rewards"
+      ],
+      "degree": 3,
+      "sources": [
+        "a-zeroth-order-paradigm-for-llm-preferen"
+      ],
+      "prerequisites": [],
+      "search": "compo：基于比较oracle的零阶偏好对齐 针对dpo类直接对齐中的似然位移问题，提出用零阶比较oracle从低边际噪声偏好对中提取更新方向。 训练算法 dpo rlhf likelihood-displacement preference-optimization zeroth-order 理解似然位移（likelihood displacement）为何在低边际偏好对上出现 说明compo如何用比较oracle替代可微偏好损失来利用噪声对 区分论文的理论主张（可行性/覆盖界）与启发式在线实现之间的差距 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
     }
   ]
 }

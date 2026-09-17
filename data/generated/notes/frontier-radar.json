@@ -47,13 +47,13 @@
   ],
   "related": [
     "multi-agent",
+    "evolvetrade-policy-refinement",
     "glossary",
     "learning-paths",
     "mdp",
-    "mintrl-off-policy-intervention",
-    "multi-turn-rl"
+    "mintrl-off-policy-intervention"
   ],
-  "degree": 10,
+  "degree": 12,
   "sources": [
     "coskill",
     "multi-harness",

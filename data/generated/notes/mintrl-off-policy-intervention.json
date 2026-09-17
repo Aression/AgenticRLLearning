@@ -53,11 +53,12 @@
   "related": [
     "frontier-radar",
     "grpo",
+    "modularrsi-harness",
     "multi-turn-rl",
     "rewards",
-    "value-learning"
+    "scienceide-sci-envs"
   ],
-  "degree": 7,
+  "degree": 10,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

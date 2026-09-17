@@ -45,8 +45,11 @@
     "如何选择",
     "自测"
   ],
-  "related": [],
-  "degree": 2,
+  "related": [
+    "compo-zeroth-order-alignment",
+    "compo-zeroth-order-alignment"
+  ],
+  "degree": 4,
   "sources": [
     "instructgpt",
     "constitutional",

@@ -47,9 +47,11 @@
   ],
   "related": [
     "orientation",
+    "evolvetrade-policy-refinement",
+    "modularrsi-harness",
     "safety"
   ],
-  "degree": 5,
+  "degree": 7,
   "sources": [
     "react",
     "anthropic-building",
