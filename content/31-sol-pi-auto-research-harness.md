@@ -1,0 +1,46 @@
+---
+id: sol-pi-auto-research-harness
+title: SoL-Pi：递归扩展自动研究循环优化 Agent Harness
+summary: 用 AI 优化器自动搜索并组合 Agent Harness 机制，在保持任务表现的同时降低 token 流量与 API 成本。
+stage: FRONTIER
+track: Agent 系统
+order: 31
+minutes: 15
+updated: '2026-09-18'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.20519
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+full_text_url: https://arxiv.org/html/2609.20519
+objectives: [理解 harness 层优化与模型/基础设施层优化的区别, 掌握 SoL-Pi 的宽到深漏斗与独立验证设计原则, 判断其效率收益的证据强度与可迁移性边界]
+tags: [agent-harness, self-improvement, token-efficiency, auto-research, tool-use]
+sources: [sol-pi-recursively-scaling-auto-research]
+related: [modularrsi-harness, evaluation, environments]
+prerequisites: []
+---
+## 论文要解决的问题
+
+随着 Agent 处理更长时程的开放式任务，任务级 token 效率成为系统层面的首要问题。已有工作多从降低单 token 成本入手（更快的注意力内核、量化、更便宜的模型），而本文选择一条正交路径：通过模型与环境之间的 Agent Harness 来改善 token 使用，无需额外模型训练。作者指出，Harness 优化在实践中很难：工具调用、上下文管理、验证、委派、恢复与终止高度耦合，局部有益的改动可能把成本转移到执行后段，或引发下游失败；人工检查长执行轨迹、归纳失败模式再改写代码，成本高且难以跨任务扩展。
+
+## 方法
+
+作者采用受递归自我改进（RSI）启发的流程：一个研究型 AI 观察另一个运行基础 Harness 的 Agent 的执行轨迹，提出候选改动，并在准备好的研究环境中测试；能力与效率检查决定候选是否保留，开发结果指导后续迭代。SoL-Pi 把自动研究组织为「宽到深」的漏斗，将候选开发与留出验证分离，并通过相互隔离的搜索谱系扩展。三条设计原则是：广度与深度（广度扩大假设覆盖，深度反复实现、审查、加固有希望的候选）、独立验证（候选冻结后才在留出证据上评估，且验证结果不回流入搜索，防止把验证失败补丁成任务特定解）、可扩展编排（隔离且一次性的谱系让漏斗扩展到更多想法与环境而不耦合失败）。作者称搜索覆盖约 150 个方向、500 个可执行环境、3000 余次运行与 6 万余次 Agent–环境交互，最终得到四个机制构成 SoL-Pi。
+
+## 证据与实验
+
+在 EdgeBench 上，作者报告 SoL-Pi 在 GPT-5.6 Sol 与 Opus 5 上达到与 Pi 相当的表现，同时记录到的 token 流量降低 44.7–49.0%，API 成本约降三分之一；结论部分还称最佳候选将模型表现提升 5.3–12.8%、token 效率提升 9.8–18.2%。在 Terminal-Bench 4 的 63 个纯 CPU 任务上，Codex 与 Pi 各解出 18 题，SoL-Pi 解出 15 题，但总模型成本比 Pi 低 26.3%（$211.12 对 $286.45），每解出任务成本低 11.6%。在 IMO 2026 上用 GPT-5.6 Sol（xhigh）并要求 Lean 4 形式化验证，SoL-Pi 通过 6 题中的 3 题，总成本 $62.69，每通过题成本 $20.90，低于 Codex 的 $22.89 与 Pi 的 $25.32。
+
+## 边界与未解问题
+
+需要区分作者主张与已有共识。已有共识是：Harness 层改动可影响成本与可靠性，且演化出的 Harness 可能过拟合搜索任务——本文自己引用的留出任务研究即指出这一点。作者的主张（效率收益可跨模型、跨基准迁移）目前仅由上述基准上的报告支撑，且 Terminal-Bench 4 上 SoL-Pi 解出题数少于 Codex 与 Pi，说明「成本更低」与「能力不降」并非在所有设置下同时成立。摘录未给出统计显著性、重复次数、方差或消融细节（3.4 节仅被提及），因此 44.7–49.0% 等数字应视为单篇论文的初步报告，而非已确证结论。此外，搜索规模（约 150 方向、500 环境）本身的计算开销未在摘录中量化，RSI 的净收益是否为正仍待检验。
+
+## 与知识库的关系
+
+本文属于 Harness 层自我改进线索，与 modularrsi-harness 讨论的模块化 RSI Harness 直接相邻，可作为其效率侧案例；其留出验证与搜索反馈分离的做法，与 evaluation 中关于评估协议、防过拟合的讨论互补；其研究环境与谱系隔离设计可与 environments 对照。注意本文重心是单基准上的 token/成本效率，而非 RL 训练方法，与策略梯度类笔记关联较弱。
+
+## 自测
+
+1. Harness 层优化与模型压缩、更便宜模型这两类效率手段的区别是什么？
+2. 为什么作者要求验证结果「不回流入搜索」？这防止了哪种失败模式？
+3. 若 Terminal-Bench 4 上解出题数更少，你如何解读「成本更低」这一结论的适用范围？

@@ -54,11 +54,11 @@
     "environments",
     "evaluation",
     "grpo",
+    "harness-design-coding-agents",
     "mintrl-off-policy-intervention",
-    "modularrsi-harness",
-    "training-systems"
+    "modularrsi-harness"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "scienceide-turning-world-s-scientific-co"
   ],

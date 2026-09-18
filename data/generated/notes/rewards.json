@@ -53,7 +53,7 @@
     "mintrl-off-policy-intervention",
     "modularrsi-harness"
   ],
-  "degree": 15,
+  "degree": 16,
   "sources": [
     "deepseek-math",
     "gigpo",

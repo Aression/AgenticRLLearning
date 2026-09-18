@@ -49,9 +49,9 @@
     "lab-rl",
     "multi-turn-rl",
     "scienceide-sci-envs",
-    "training-systems"
+    "sol-pi-auto-research-harness"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "gymnasium",
     "swe-agent",

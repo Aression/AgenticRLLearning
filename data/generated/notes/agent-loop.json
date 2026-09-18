@@ -48,10 +48,11 @@
   "related": [
     "orientation",
     "evolvetrade-policy-refinement",
+    "harness-design-coding-agents",
     "modularrsi-harness",
     "safety"
   ],
-  "degree": 7,
+  "degree": 8,
   "sources": [
     "react",
     "anthropic-building",

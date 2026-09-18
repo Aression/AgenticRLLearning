@@ -49,11 +49,11 @@
     "rewards",
     "training-systems",
     "grpo",
+    "harness-design-coding-agents",
     "lab-agent",
-    "lab-rl",
-    "multi-turn-rl"
+    "lab-rl"
   ],
-  "degree": 8,
+  "degree": 10,
   "sources": [
     "verl",
     "lightning-code",

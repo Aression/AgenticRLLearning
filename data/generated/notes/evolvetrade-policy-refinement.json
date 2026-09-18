@@ -53,9 +53,10 @@
   "related": [
     "agent-loop",
     "evaluation",
-    "frontier-radar"
+    "frontier-radar",
+    "sol-pi-auto-research-harness"
   ],
-  "degree": 3,
+  "degree": 4,
   "sources": [
     "evolvetrade-experience-driven-policy-ref"
   ],

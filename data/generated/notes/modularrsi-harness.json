@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "harness-design-coding-agents",
     "agent-loop",
     "evaluation",
     "frontier-radar",
-    "mintrl-off-policy-intervention",
-    "rewards",
-    "scienceide-sci-envs"
+    "harness-design-coding-agents",
+    "mintrl-off-policy-intervention"
   ],
-  "degree": 8,
+  "degree": 12,
   "sources": [
     "modularrsi-modular-and-generalizable-rec"
   ],

@@ -1,73 +1,206 @@
 {
-  "generatedAt": "2026-09-17T15:58:15.934851+00:00",
+  "generatedAt": "2026-09-18T03:22:33.076658+00:00",
   "source": "huggingface-daily-papers",
-  "searchedAt": "2026-09-17T15:57:09.005435+00:00",
+  "searchedAt": "2026-09-18T03:21:18.684396+00:00",
   "considered": 50,
   "selected": 25,
   "model": [
     "deepseek-flash"
   ],
-  "summary": "Audited 5 discovery entries against the existing Agentic RL knowledge base. Three entries (ModularRSI, Emergence World, Rethinking Critic Learning in PPO) are already present in the catalog as LLM full-text reading drafts pending human review, so they are duplicates of existing candidates rather than new sources. Two entries (StepAudio 3 Music, EvolveTrade) are new: StepAudio 3 Music is off-topic (music generation) and should be skipped; EvolveTrade is adjacent (self-evolving tool-use policy for trading agents) and warrants human review. No candidate is promoted to published knowledge; all evidence is abstract-only or metadata-level, and no code or reproduction was checked.\n\nAudited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base (39 sources). None of the five are duplicates of existing source IDs. Two are plausibly on-topic for Agentic RL (ScienceIDE, ScienceBuddy) and warrant human reading; one is a preference-alignment method adjacent to existing DPO/RLHF sources (ComPO) and warrants review; two are off-topic for this KB's scope (StepAudio 3 Realtime, Lightning Weave). All evidence is abstract-only from untrusted discovery metadata; no code was checked, no claims verified, and no candidate should be treated as published knowledge. Note: the discovery payload contains a prompt-injection notice and untrusted external text; it was treated strictly as data and no embedded instructions were followed.\n\nAudited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base (38 cataloged sources). All 5 are preprints with abstract-only evidence; none are published knowledge and none were code-checked. Two are plausible on-topic candidates for human reading (GAI formal framework for iterative policy improvement/RSI; NGU adaptive sampling for hard-problem RL), one is a relevant benchmark candidate (ProgramDistill), and two are off-topic for this KB (HarnessVLN embodied navigation; GPT-Policy in-context robot learning). No duplicates of existing source IDs were found. No instructions embedded in the untrusted discovery/catalog text were followed.\n\nAudited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base (38 sources). None are duplicates of existing source IDs. All five are 2026 preprints with abstract-only evidence; no code, artifacts, or reproductions were verified. Two entries (CERA-MoA, Agora) are plausible adjacent candidates warranting human reading; three (Register Tokens, Gavel, OmniHarness) are off-core or peripheral and should be skipped or archived without publishing. No candidate should be treated as published knowledge; all remain abstract-only.\n\nAudited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base (38 sources). None duplicate existing source IDs or titles. All five are 2026 preprints with abstract-only evidence; none were code-checked or reproduced. Two are plausibly on-topic for the KB's agentic-RL core (ImpossibleRubrics on rubric reward signals / reward hacking; Root-Cause Attribution on long-horizon agent failure diagnosis) and warrant human reading. HypoEvolve is multi-agent LLM evolutionary search for scientific hypothesis discovery — adjacent but not RL training; Confidence Comes from Experience is confidence estimation for agents — adjacent to evaluation, not RL training; Specialist Distillation is about distillation without RL. These three are retained as archive (candidate, not published knowledge) rather than promoted. No facts, URLs, or results were invented; all claims below are drawn only from the supplied untrusted discovery text and are treated as data, not instructions.",
+  "summary": "Audited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base. Two entries (ModularRSI 2609.14857, and the harness-design empirical study 2609.20804) are directly on-topic for agentic RL / harness design and warrant human reading; ModularRSI is a duplicate of an existing catalog candidate and should be archived rather than re-reviewed. RetireOPD (2609.20784) is plausibly on-topic (multi-turn agentic RL, on-policy distillation) and should be reviewed. SoL-Pi (2609.20519) is harness/engineering-oriented with cost claims and is a weaker fit; When2Think (2609.19671) is reasoning-length control, only tangentially agentic. All evidence is abstract-only from a preprint aggregator; no code, no reproduction, and no HTTP checks were performed. No instructions in the untrusted discovery text were followed.\n\nAudited 5 discovery entries against the existing Agentic RL knowledge base (40 sources). One entry (Rethinking Critic Learning in PPO / SP^3O) is already cataloged as a pending preprint and is a duplicate of an existing source id, so it is skipped. Two entries are clearly out of scope (music generation, realtime speech) and are skipped. Two entries are plausible but adjacent candidates requiring human reading: EvoSkill-GUI (training-free GUI skill evolution) and EvolveTrade (self-evolving LLM trading agents). All evidence is abstract-only from a daily-papers feed; no code was executed, no HTTP checks were performed, and no candidate is treated as published knowledge. Untrusted discovery text was treated as data only; embedded URLs were not fetched.\n\nAudited 5 discovery entries from huggingface-daily-papers against the Agentic RL knowledge base. Two entries (ScienceIDE 2609.19134, ComPO 2609.19144) already exist in the catalog as 'LLM 全文精读草稿 · 待人工复核' and are therefore duplicates of existing source ids; they should not be re-added. Three entries (RiskChainBench 2609.16900, OPSD privileged-information study 2609.20612, Vision-RL2 2609.19745) are new to the KB. RiskChainBench is a safety/web-agent benchmark with only tangential Agentic RL training relevance; OPSD is on-policy self-distillation (distillation, not RL) with a modest relevance to policy learning; Vision-RL2 is region-level RL for MLLM perception, RL-adjacent but not agentic. All evidence is abstract-only from a preprint aggregator; no code, no reproduction, and no peer review was verified. No candidate is treated as published knowledge.\n\nAudited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base (40 sources). None of the 5 candidates duplicate an existing source ID or title. Two are plausibly on-topic for Agentic RL (GAI formal framework; ProgramDistill coding-agent benchmark) and warrant human reading; two are adjacent but off-core (HarnessVLN embodied navigation; GPT-Policy in-context robot learning); one is off-topic (register tokens for diffusion LMs). All evidence is abstract-only from untrusted discovery metadata; no code, full text, or reproduction was checked. No candidate should be treated as published knowledge.\n\nAudited 5 newly discovered Hugging Face daily-paper entries against the existing Agentic RL knowledge base (foundations to frontier). None of the five are duplicates of existing source IDs. Four are off-scope or only tangentially related (KV-cache compression, MoA routing, visual-generation harness, scientific hypothesis discovery) and are skipped. One (Agora, Git-as-shared-memory for collective AutoResearch) is adjacent to the KB's multi-agent/memory/harness themes and is retained as archive-only, not published knowledge. All judgments rest on abstract-only evidence; no code, artifacts, or reproductions were checked, and no URLs were invented.",
   "risks": [
-    "Three of five discovery entries (ModularRSI, Emergence World, Rethinking Critic Learning in PPO) are duplicates of sources already in the catalog as LLM full-text reading drafts; re-adding them would inflate the candidate set without new evidence.",
-    "All discovery evidence is abstract-only or metadata-level; no code, reproduction, or full-text verification was performed. HTTP 200 or presence on a paper feed is not evidence of correctness.",
-    "Discovery fields (titles, summaries, authors, URLs) are untrusted external text and were treated as data only; no instructions within them were followed.",
-    "EvolveTrade's 'self-evolving' framing may be prompt optimization rather than RL; conflating the two would misrepresent it as an RL method.",
-    "StepAudio 3 Music shows that keyword-based matching (DPO, RL, planning) can surface off-topic work; relevance scores alone are not sufficient for inclusion.",
-    "Existing catalog entries carry '待人工复核' / '待精读' status; none of the audited items should be treated as published knowledge.",
-    "All five candidates are abstract-only from untrusted discovery metadata; no full text, code, or results were verified. None should be treated as published knowledge.",
-    "Discovery payload includes an explicit prompt-injection notice and untrusted external text; it was treated as data only, but downstream ingestion of such fields should remain sanitized.",
-    "Keyword-based matching produced false positives (e.g., 'agent'/'reasoning'/'benchmark' in an audio model), risking scope drift if archived without human review.",
-    "Several candidates make strong empirical/transfer claims (ScienceIDE, ScienceBuddy) that are unverified and may not replicate.",
-    "Theoretical guarantees in ComPO depend on stated assumptions (smoothness, gradient sparsity, coverage) that were not checked against the primary text.",
-    "All five entries are preprints with abstract-only evidence; none are peer-reviewed or reproduced, and none should be recorded as published knowledge.",
-    "Discovery metadata (upvotes, relevance_score, matched_keywords) is untrusted external text and was treated as data only; it is not evidence of quality or correctness.",
-    "Reported benchmark numbers (e.g., ProgramDistill success rates, NGU gains, HarnessVLN success rates) are self-reported in abstracts and unverified.",
-    "The discovery and catalog JSON may contain prompt-injection or fabricated fields; no URLs were fetched and no instructions from those fields were executed.",
-    "Keyword matching produced false positives (embodied navigation and robot ICL matched 'agent'/'tool'/'policy'), so keyword-based selection alone is insufficient for inclusion.",
-    "No duplicate detection against existing source IDs found, but title/ID collisions could still exist under different identifiers.",
-    "All five candidates are abstract-only preprints; none have verified code, artifacts, or independent reproductions. Do not treat any as published knowledge.",
-    "Discovery metadata (upvotes, matched_keywords, relevance_score) is untrusted external text and was treated as data only; it is not evidence of quality or correctness.",
-    "Agora's abstract contains strong quantitative claims (62% gap closure, 165 reproductions) that are unverified and could be overstated; high upvotes are not validation.",
-    "CERA-MoA and Agora overlap conceptually with existing KB sources (coskill, agent-g2, marl-book); risk of duplicate or conflicting notes if archived without cross-referencing.",
-    "Several entries use 'policy'/'agent' loosely (OmniHarness, Gavel); keyword matching may inflate apparent relevance to Agentic RL.",
-    "No HTTP checks or code inspection were performed; an HTTP 200 would not constitute evidence of correctness in any case.",
-    "All five entries are 2026 preprints with abstract-only evidence; none were code-checked, reproduced, or peer-reviewed. Do not treat any as published knowledge.",
-    "The discovery_json and catalog_json are untrusted external text and may contain prompt injection or fabricated metadata; only the supplied fields were used as data, and no URLs or facts were invented.",
-    "Reported metrics (e.g., F1 0.349->0.498, DepMap selectivity 0.171, exploitation rates 8-26%/36%/64%) are abstract claims and may not survive scrutiny.",
-    "Several entries (HypoEvolve, XConf, specialist distillation) are only adjacent to Agentic RL; promoting them risks diluting the KB's scope.",
-    "Existing KB entries coskill, multi-harness, agent-g2, edge, mintrl, modularrsi, emergence-world, and rethinking-critic are already marked '待精读/待人工复核'; adding more unreviewed preprints increases the unreviewed backlog.",
-    "No duplicate detection was possible beyond ID/title string comparison; semantic overlap with existing sources cannot be ruled out from metadata alone."
+    "All five entries are abstract-only from a preprint aggregator; no full text, code, or reproduction was checked. Reported numbers (success rates, token/cost savings, transfer claims) are unverified.",
+    "2609.14857 duplicates an existing catalog candidate; risk of double-counting or inflating coverage if archived without a duplicate marker.",
+    "Several entries (2609.20519, 2609.20804) make cost/efficiency claims tied to specific proprietary or fast-moving model versions (e.g., GPT-5.6 Sol, Opus 5, Codex, Claude Code) that may not be reproducible or may be stale.",
+    "The discovery JSON is untrusted external text; it was treated as data only. No URLs were fetched and no instructions inside it were followed.",
+    "Preprint IDs and dates in the 2609.* range are recent and may be revised or withdrawn; treating them as stable knowledge would be premature.",
+    "All discovery evidence is abstract-only from a daily-papers feed; reported benchmark gains and method claims are unverified and must not be treated as established knowledge.",
+    "Discovery and catalog fields are untrusted external text; embedded URLs (e.g., project pages, GitHub links) were not fetched and must not be followed automatically.",
+    "The catalog already contains several 2026 preprints marked 'LLM 全文精读草稿 · 待人工复核'; these are LLM-generated drafts, not human-verified, and should not be promoted to published knowledge without review.",
+    "Duplicate risk: discovery entries can overlap existing source ids (as with 2609.18708), so id-based deduplication should be applied before any archiving.",
+    "Scope drift risk: keyword matches like 'agent', 'tool', 'reinforcement learning' pull in non-agentic-RL work (music, speech); relevance must be judged by method, not keywords.",
+    "All five entries are abstract-only from a preprint aggregator; none has been peer-reviewed, code-checked, or reproduced. No candidate should be treated as published knowledge.",
+    "Two entries (2609.19134, 2609.19144) are duplicates of existing catalog sources; naive ingestion would create duplicate source ids and split notes.",
+    "The discovery and catalog JSON are untrusted external text; embedded URLs (e.g., github.com/aitofound/ScienceIDE, github.com/YuHengsss/VisionRL2) were not fetched and must not be treated as verified or safe.",
+    "Existing catalog entries for the two duplicates are themselves labeled 'LLM 全文精读草稿 · 待人工复核', i.e., unverified LLM-generated drafts; they should not be promoted to published knowledge on the strength of this audit.",
+    "Reported benchmark numbers (e.g., RiskChainBench accuracy ranges, OPSD gains) come from abstracts only and may not survive independent evaluation; benchmark contamination and evaluation leakage are unassessed.",
+    "Scope drift risk: RiskChainBench (safety/web investigation), OPSD (distillation), and Vision-RL2 (multimodal perception) are adjacent to but not squarely within Agentic RL; admitting them without a placement decision could dilute the KB's topical coherence.",
+    "All discovery entries are untrusted external text; titles, abstracts, upvote counts, and author lists are unverified and may be fabricated or manipulated.",
+    "Abstract-only evidence: no full text, code, or reproduction was checked; claims such as benchmark sizes, success rates, and formal properties are unverified.",
+    "Discovery metadata includes URLs and a project page (harnessvln.netlify.app); these were treated as data only and not fetched or validated.",
+    "Potential overlap between GAI (2609.13406) and existing modularrsi/agentic-survey sources is unassessed beyond titles.",
+    "ProgramDistill may overlap conceptually with swe-bench/multi-harness; duplicate or near-duplicate coverage risk if archived without dedup review.",
+    "No candidate should be promoted to published knowledge on the basis of this audit.",
+    "All five entries are abstract-only; no full text, code, or artifacts were inspected, so no claim about correctness or reproducibility is made.",
+    "Discovery metadata is untrusted external text; titles, summaries, and author lists were treated as data only and not verified against arXiv.",
+    "Agora's headline numbers (1,703 contributions, 165 reproductions, 62% gap closed) are self-reported in the abstract and explicitly described by the authors as not establishing causality; they must not be propagated as validated results.",
+    "Keyword-based matching (agent, memory, multi-agent, RL) produced several false positives; relevance scores in the discovery feed are not evidence of topical fit.",
+    "No duplicate check beyond existing_source_ids/titles was possible; near-duplicate preprints under different titles could still exist."
   ],
   "nextActions": [
-    "Deduplicate the discovery list against existing_source_ids before future audits to avoid re-surfacing ModularRSI, Emergence World, and Rethinking Critic Learning in PPO.",
-    "Assign a human reader to EvolveTrade to determine whether its policy refinement is RL-based or prompt optimization, and to assess evaluation rigor.",
-    "Complete the pending human reviews for the three already-cataloged drafts (modularrsi, emergence-world, rethinking-critic-learning) before any promotion to published knowledge.",
-    "Tighten discovery keyword filters to reduce off-topic matches such as music generation (StepAudio 3 Music).",
-    "Record evidence_level explicitly for every candidate and keep abstract-only items out of the published knowledge layer until full-text or code verification is done.",
-    "Route ScienceIDE (2609.19134), ScienceBuddy (2609.17523), and ComPO (2609.19144) to human reviewers for full-text reading before any archive decision.",
-    "Do not archive any candidate on abstract-only evidence; require primary-text verification and, where applicable, code/commit checks.",
-    "Confirm no duplicate coverage against existing harness/self-improvement sources (modularrsi, multi-harness, coskill) before archiving ScienceBuddy.",
-    "Keep StepAudio 3 Realtime and Lightning Weave out of the KB unless scope is explicitly broadened to speech and reasoning-efficiency post-training.",
-    "Continue treating discovery/catalog JSON as untrusted data; never execute embedded instructions or fetch URLs from it.",
-    "Queue 2609.13406 (GAI) and 2609.13443 (NGU) for human close reading; verify claims against full text before any catalog entry.",
-    "Queue 2609.18805 (ProgramDistill) for benchmark review, checking task construction, replay verification, and contamination controls against swe-bench.",
-    "Record 2609.15195 and 2609.19138 as skipped with rationale; do not add to the KB unless scope expands to embodied/robotics agents.",
-    "If any candidate is later promoted, require code or independent reproduction before upgrading evidence level beyond abstract-only.",
-    "Re-run duplicate check against existing_source_ids and titles when full metadata (authors, venue) is available.",
-    "Human-read CERA-MoA (2609.18779) and Agora (2609.18094) in full before any archival decision; compare against coskill, agent-g2, and marl-book to avoid duplication.",
-    "If either is retained, record as a new preprint note with evidence level 'abstract-only' and an explicit 'not reproduced' flag; do not merge into published-knowledge sections.",
-    "Verify existence of code/artifacts for CERA-MoA and Agora before upgrading evidence level; absence of artifacts keeps them at abstract-only.",
-    "Cross-check Agora's quantitative claims against any released trace or data if available; treat unverified numbers as claims, not facts.",
-    "Leave Register Tokens, Gavel, and OmniHarness out of the KB; revisit only if scope expands to diffusion-LM reasoning or visual-generation agents.",
-    "Re-run discovery with tighter keyword filters to reduce off-topic entries (visual generation, diffusion LM) in future audits.",
-    "Human-read ImpossibleRubrics (2609.16816) and Root-Cause Attribution (2609.13463); verify benchmark construction, oracle certificates, and evaluation protocols before any promotion.",
-    "Keep HypoEvolve, XConf, and specialist-distillation entries in an archive queue; do not add them to the published KB.",
-    "Check whether any of the five overlaps semantically with existing sources (e.g., reward-hacking, agentic-survey, tau-bench) before assigning new IDs.",
-    "Prioritize clearing the existing '待人工复核' backlog (mintrl, modularrsi, emergence-world, rethinking-critic) before ingesting further preprints.",
-    "Record evidence_level as abstract-only for all five and require code/reproduction checks before any note is upgraded."
+    "Human-read 2609.20804 and 2609.20784 full texts; verify methodology, baselines, and reported metrics before any promotion to published knowledge.",
+    "Mark 2609.14857 as a duplicate of modularrsi-modular-and-generalizable-rec in the catalog to avoid double-counting.",
+    "Decide whether harness-efficiency work (2609.20519) belongs in scope; if yes, review full text, otherwise leave as archive/skip.",
+    "If any candidate is promoted, record evidence level explicitly (abstract-only vs code-checked) and note that no reproduction was performed.",
+    "Re-run discovery later to check for revisions or withdrawals of these preprints before relying on them.",
+    "Queue 2609.17653 (EvoSkill-GUI) and 2609.17632 (EvolveTrade) for human reading; decide archive vs. skip based on whether training-free/prompt-level self-evolution belongs in the KB.",
+    "Confirm 2609.18708 maps to existing source 'rethinking-critic-learning-in-ppo-unders' and do not create a duplicate entry.",
+    "Record the two skipped audio entries in an exclusion log to avoid re-surfacing on future keyword greps.",
+    "When reviewing the two candidates, verify claims against the actual papers (not abstracts) and check for code availability before any evidence-level upgrade.",
+    "Keep all new entries at '待精读/待复核' status; do not publish to the knowledge base until human review completes.",
+    "Do not re-ingest 2609.19134 or 2609.19144; instead reconcile the discovery entries against the existing catalog ids scienceide-turning-world-s-scientific-co and a-zeroth-order-paradigm-for-llm-preferen to confirm they are the same sources.",
+    "Queue 2609.16900, 2609.20612, and 2609.19745 for human reading; assign a reviewer to decide KB placement (benchmark/safety cluster vs. policy-learning cluster vs. out-of-scope).",
+    "For each reviewed candidate, verify the arXiv abstract page and, if a code repository is claimed, inspect the repository at a pinned commit before recording any implementation claim; record commit hashes in notes.",
+    "Keep all three new candidates in a 'review' holding area with evidence_level 'abstract-only' and do not link them into the main Agentic RL narrative until human review completes.",
+    "Re-check the two existing duplicate catalog entries (scienceide, a-zeroth-order) for whether their LLM full-text drafts have been human-verified; if not, retain their pending-review status.",
+    "Add a deduplication step to the discovery pipeline that matches incoming arXiv ids against existing source ids and titles before surfacing candidates.",
+    "Human-read 2609.13406 (GAI) and 2609.18805 (ProgramDistill) full texts; verify claims and check overlap with sutton-barto, modularrsi, agentic-survey, swe-bench, multi-harness.",
+    "If GAI is retained, draft a concept card distinguishing GPI vs RSI axes; do not publish until full-text verified.",
+    "If ProgramDistill is retained, record benchmark construction and leakage controls; compare against swe-bench and multi-harness before archiving.",
+    "Do not archive or publish any of the 5 candidates based on abstract-only evidence.",
+    "Re-run discovery with dedup against existing_source_ids/titles before next audit.",
+    "Human reviewer to read the Agora full text and decide whether it belongs in a multi-agent/memory section; keep archived until then.",
+    "If the KB adds an inference-efficiency or serving track, re-evaluate 2609.19969.",
+    "If the KB adds a multi-agent orchestration section, re-evaluate 2609.18779.",
+    "Verify arXiv IDs and author lists for any candidate promoted from archive before citing.",
+    "Tighten discovery keyword filters to reduce false positives from 'agent'/'memory' in non-RL contexts."
   ],
   "papers": [
+    {
+      "id": "2609.20519",
+      "title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
+      "summary": "As coding agents move from supervised code completion to unattended, around-the-clock exploration, their work expands from isolated predictions into long trajectories of reasoning, tool use, and feedback. Token efficiency therefore becomes important for scaling recursive self-improvement. We take an RSI-inspired approach at the harness layer, scaling auto-research loops across increasingly numerous and diverse environments for harness rollouts. At this scale, the process yields reusable improvements that transfer beyond their development setting, moving automated harness discovery toward production-level outcomes. Four mechanisms survive selection and form SoL-Pi, spanning action execution, context compaction, observation handling, and delegated reading. On the 51-task EdgeBench evaluation, SoL-Pi achieves performance comparable to Pi across GPT-5.6 Sol and Opus 5 while reducing recorded token traffic by 44.7-49.0% and API cost by about one third. In other words, estimated hourly savings are \\8.75-13.50 relative to native Codex and Claude Code harnesses, and \\4.36-5.71 relative to Pi.",
+      "published": "2026-09-17T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.20519",
+      "arxivUrl": "https://arxiv.org/abs/2609.20519",
+      "upvotes": 7,
+      "authors": [
+        "Haozhe Liu",
+        "Tian Ye",
+        "Sensen Gao",
+        "Qihang Cao",
+        "Yitong Li",
+        "Mingchen Zhuge",
+        "Duomin Wang",
+        "Ruihua Zhang"
+      ],
+      "matchedKeywords": [
+        "tool use",
+        "coding agent",
+        "self-improvement",
+        "agent",
+        "reasoning",
+        "exploration",
+        "tool",
+        "rollout",
+        "evaluation"
+      ],
+      "relevanceScore": 12,
+      "decision": "review",
+      "evidenceLevel": "abstract-only",
+      "reason": "Harness-layer self-improvement is adjacent to the KB's harness thread, but the abstract emphasizes token/cost efficiency on a single 51-task EdgeBench rather than RL methodology. Plausible but weaker fit; needs human reading to judge relevance and whether cost claims are substantiated.",
+      "suggestedNote": "Adjacent candidate. Abstract-only: claims 44.7-49.0% token reduction and ~1/3 API cost reduction at comparable performance on EdgeBench (51 tasks). Verify benchmark scope, baseline harnesses, and whether 'reusable improvements' are demonstrated beyond the development setting."
+    },
+    {
+      "id": "2609.20784",
+      "title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
+      "summary": "Multi-turn agents trained with reinforcement learning (RL) receive a single scalar reward per trajectory, which motivates self on-policy distillation (OPD) to supply dense token-level supervision from a self-teacher with privileged task skills, letting a skill-free student internalize them. This recipe, however, is undermined by two findings in agentic tasks: privileged information alone does not always make a teacher reliable, and the benefit of teacher supervision is stage-dependent. We therefore propose RetireOPD (Self-Retiring On-Policy Distillation), which first optimizes a decoupled, skill-conditioned teacher with environment rewards and then trains a skill-free student jointly with RL and OPD. Rather than following a predefined distillation schedule, RetireOPD adopts Adaptive Retirement: the student drops the teacher on its own once their discrepancy stops shrinking and it reaches a target fraction of the teacher's success rate, after which training proceeds with RL alone. Across Qwen2.5 models from 1.5B to 7B, RetireOPD improves ALFWorld success rate over RL baseline by 14.1% to 18.8% and WebShop accuracy by 11.8% to 19.0%, and surpasses its own skill-conditioned teacher in every setting.",
+      "published": "2026-09-17T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.20784",
+      "arxivUrl": "https://arxiv.org/abs/2609.20784",
+      "upvotes": 3,
+      "authors": [
+        "Yan Yu",
+        "Zhengxi Lu",
+        "Yizhou Liu",
+        "Yichen Pan",
+        "Aozhe Wang",
+        "Qipeng Chen",
+        "Hua Yang",
+        "Wenqi Zhang"
+      ],
+      "matchedKeywords": [
+        "agentic reinforcement learning",
+        "multi-turn",
+        "reinforcement learning",
+        "agent",
+        "agentic",
+        "reward",
+        "policy",
+        "trajectory",
+        "distillation"
+      ],
+      "relevanceScore": 11,
+      "decision": "review",
+      "evidenceLevel": "abstract-only",
+      "reason": "On-topic for agentic RL: multi-turn agents, on-policy distillation with a skill-conditioned teacher, adaptive retirement schedule. Plausible but abstract-only; reported ALFWorld/WebShop gains and the 'surpasses its own teacher' claim need human verification.",
+      "suggestedNote": "Candidate for agentic-RL training-method thread. Abstract-only: claims 14.1-18.8% ALFWorld and 11.8-19.0% WebShop improvement over RL baseline across Qwen2.5 1.5B-7B. Check teacher reliability argument, retirement criterion, and whether baselines are matched before publishing."
+    },
+    {
+      "id": "2609.20804",
+      "title": "An Empirical Study of Harness Design for Coding Agents",
+      "summary": "Coding harnesses shape how autonomous coding agents translate model capabilities into long-horizon software-engineering performance, yet existing work typically evaluates harnesses as monolithic systems, leaving the effectiveness of individual components unclear. To enable component-level comparisons, we study this question with a lightweight coding harness whose execution loop is fixed while three components are varied: planning, action space, and context management. Across four models evaluated on SWE-Bench Verified and Terminal-Bench 2.1, we evaluate 176 matched settings spanning five context-management strategies, four context-window budgets, and targeted ablations of planning and action space. We find that: (1) Context management becomes increasingly valuable as the context-window budget tightens, with most of its benefit coming from preventing context-overflow failures. (2) Staging rule-based elision before LLM-based summarization provides the strongest overall efficiency among the context-management strategies, whereas making elided content recoverable adds machinery that models rarely use and yields no accuracy gain. (3) Planning shifts from an accuracy scaffold for weaker models to a cost saver for stronger models, with little change in accuracy. (4) Predefined tools improve performance for models with weaker bash proficiency, whereas bash-capable models can operate effectively with a bash-only interface and achieve substantially lower cost, especially on command-line-centric tasks. Trajectory-level analysis explains these effects: context management extends execution trajectories without substantially altering agent behavior, planning changes where trajectories stop, and the action space changes the granularity at which code is written. These findings inform model- and budget-aware harness design and provide a modular framework for evaluating future harness components.",
+      "published": "2026-09-17T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.20804",
+      "arxivUrl": "https://arxiv.org/abs/2609.20804",
+      "upvotes": 20,
+      "authors": [
+        "Run-Ze Fan",
+        "Zihao Zhang",
+        "Simin Ma",
+        "Yebowen Hu",
+        "Shouju Wang",
+        "Kaiqiang Song",
+        "Fei Liu",
+        "Hamed Zamani"
+      ],
+      "matchedKeywords": [
+        "coding agent",
+        "swe-bench",
+        "long-horizon",
+        "agent",
+        "planning",
+        "tool",
+        "trajectory"
+      ],
+      "relevanceScore": 10,
+      "decision": "review",
+      "evidenceLevel": "abstract-only",
+      "reason": "Directly relevant to the KB's harness/coding-agent thread (swe-agent, swe-bench, multi-harness). Component-level ablation of planning, action space, and context management is a plausible empirical contribution. Abstract-only; 176 matched settings and reported effects are unverified and need human reading.",
+      "suggestedNote": "Candidate for the harness-design thread. Abstract-only: claims context management value scales with tighter budgets, rule-based elision before LLM summarization is strongest, planning shifts from accuracy scaffold to cost saver, and bash-only interfaces suffice for bash-capable models. Verify methodology, model set, and whether SWE-Bench Verified / Terminal-Bench 2.1 results are reproducible before publishing."
+    },
+    {
+      "id": "2609.17653",
+      "title": "Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents",
+      "summary": "GUI agents execute long-horizon tasks on dynamic graphical user interfaces, where pop-ups, delayed loads, and relocated widgets routinely invalidate plans fixed before execution. Recent agent-skill frameworks encapsulate reusable procedural knowledge to mitigate this, yet existing skill designs are largely developed without targeting GUI execution dynamics and treat skills as static artifacts produced before deployment rather than living procedural knowledge that improves through it. We argue that what GUI agents need is not better static skills, but skills that can be revised from execution feedback at deployment time, without additional training. We propose EvoSkill-GUI, a training-free framework in which each skill is a structured multi-file package containing retrieval metadata, executable plans, backup localization, failure-recovery rules, accessibility utilities, and failure cases. EvoSkill-GUI operates through a \\emph{reflect-revise-reuse} loop: the executor performs instant in-rollout revisions, an isolated critic diagnoses failed trajectories under strict information isolation, and the executor edits specific skill files through a restricted tool interface. Across MobileWorld, AndroidWorld, and OSWorld, three mainstream GUI benchmarks spanning mobile and desktop platforms, EvoSkill-GUI consistently improves multiple base models without any training, with maximum gains of +16.2%, +6.0%, and +10.5% respectively, and evolved skill libraries continue to benefit related tasks rather than being rebuilt from scratch. Our code is available at https://github.com/ZJU-REAL/EvoSkill-GUI.",
+      "published": "2026-09-15T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.17653",
+      "arxivUrl": "https://arxiv.org/abs/2609.17653",
+      "upvotes": 2,
+      "authors": [
+        "Bofan Chen",
+        "Boxuan Zhang",
+        "Fei Tang",
+        "Zhengxi Lu",
+        "Yong Du",
+        "Tongbo Chen",
+        "Weiming Lu",
+        "Jun Xiao"
+      ],
+      "matchedKeywords": [
+        "gui agent",
+        "long-horizon",
+        "agent",
+        "tool",
+        "rollout",
+        "benchmark"
+      ],
+      "relevanceScore": 8,
+      "decision": "review",
+      "evidenceLevel": "abstract-only",
+      "reason": "On-topic for agentic RL: long-horizon GUI agents, skill packages, reflect-revise-reuse loop, rollout-level revision, and benchmark gains on MobileWorld/AndroidWorld/OSWorld. However it is explicitly training-free (no RL objective), so it is adjacent rather than core, and the abstract-only claims (+16.2%/+6.0%/+10.5%) are unverified. Requires human reading to decide whether it belongs as a skill-evolution reference or is out of scope.",
+      "suggestedNote": "2026-09-18 审计：仅核验摘要，未复现。训练无关的技能演化框架（reflect-revise-reuse），与 GUI/长程 agent 相关但非 RL 训练方法；需人工判断是否纳入技能管理主题。"
+    },
     {
       "id": "2609.17632",
       "title": "EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents",
@@ -92,98 +225,95 @@
       "relevanceScore": 7,
       "decision": "review",
       "evidenceLevel": "abstract-only",
-      "reason": "New to the knowledge base. Adjacent to the Agentic RL scope: treats a tool-using agent's system prompt as a text-parameterized policy refined from decision traces and portfolio feedback, which touches tool-use policy adaptation and self-evolution. However, it is domain-specific (trading), the backbone LLM is frozen (so it is not gradient-based RL), and all claims are abstract-only with no code or reproduction checked. Requires human reading before any inclusion.",
-      "suggestedNote": "New candidate (2026-09-15). Self-evolving tool-use policy for LLM trading agents; system prompt treated as text-parameterized policy updated from traces and realized returns, backbone frozen. Relevant to tool-use policy adaptation but domain-specific and not gradient-based RL. Abstract-only; verify whether 'self-evolving' is RL or prompt optimization, and check evaluation rigor (market regimes, baselines) before considering inclusion."
+      "reason": "Adjacent to Agentic RL scope: treats a tool-using agent's system prompt as a text-parameterized policy refined from decision traces and portfolio feedback, with backbone LLM frozen. This is prompt-level self-evolution rather than gradient-based RL, and the domain (trading) is narrow. Abstract-only; Sharpe/Cumulative Return claims unverified. Human reading needed to judge relevance and whether it duplicates existing self-evolution themes.",
+      "suggestedNote": "2026-09-18 审计：仅核验摘要，未复现。将系统提示视为文本参数化策略、由决策轨迹与组合反馈迭代修订；属提示级自演化而非梯度 RL，需人工评估与现有自演化主题的重叠度。"
     },
     {
-      "id": "2609.19134",
-      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
-      "summary": "Scientific code repositories encode decades of human knowledge in executable models, methods, and tools. Yet fragmented toolchains, implicit domain conventions, and specialized correctness criteria make this knowledge difficult to convert into reliable learning experience-a challenge we call the scientific experience bottleneck. We introduce ScienceIDE, infrastructure for turning the world's scientific code into programmable environments for scientific agents. Guided by expert-defined scientific cases and acceptance criteria, agents transform repositories into executable environments that support task generation, execution, and scientific verification. These environments provide a shared foundation for supervised fine-tuning, reinforcement learning, and evaluation. Using verified interaction trajectories, we train PhAI-IDE-72B, PhAI-IDE-9B, and PhAI-IDE-4B. The model family shows gains in held-out scientific-code repair and across selected general-purpose benchmarks in code, reasoning, and knowledge, providing evidence of positive transfer from scientific experience to broader capabilities. ScienceIDE lays the foundation for an integrated workspace for agent learning and scientific practice, making humanity's scientific software a shared substrate for developing scientific intelligence. Code: https://github.com/aitofound/ScienceIDE",
-      "published": "2026-09-16T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.19134",
-      "arxivUrl": "https://arxiv.org/abs/2609.19134",
-      "upvotes": 68,
-      "authors": [
-        "Hejia Geng",
-        "Zesen Huang",
-        "Haoyang Li",
-        "Wenbin Li",
-        "Koutian Wu",
-        "Zihan Zhou",
-        "Yuanbo Pang",
-        "Weihao Liu"
-      ],
-      "matchedKeywords": [
-        "reinforcement learning",
-        "agent",
-        "reasoning",
-        "tool",
-        "benchmark",
-        "evaluation"
-      ],
-      "relevanceScore": 6,
-      "decision": "review",
-      "evidenceLevel": "abstract-only",
-      "reason": "Plausibly on-topic: builds executable agent environments from scientific code and reports SFT/RL training of a model family with transfer claims. Directly relevant to the KB's environment/harness and agent-training themes (cf. swe-bench, agent-lightning, verl). Abstract-only; no code or results verified. Requires human reading before any archival decision.",
-      "suggestedNote": "Candidate: scientific-code agent environments for SFT/RL/eval; verify environment construction, acceptance criteria, and transfer claims against primary text before archiving."
-    },
-    {
-      "id": "2609.19144",
-      "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
-      "summary": "Direct preference alignment methods are widely used to align large language models (LLMs) with human preferences because of their computational and memory efficiency. However, likelihood displacement motivates alternative ways to extract information from preference pairs with small likelihood margins. In this paper, we propose and analyze Comparison-based Preference Optimization (ComPO), a zeroth-order alignment method based on comparison oracles. ComPO extracts directional information from these pairs without directly optimizing a differentiable preference loss on them. We establish a convergence guarantee for its basic offline scheme under smoothness, gradient sparsity, and compatibility between the oracle and a latent objective. We further introduce online ComPO, which retains the offline comparison mechanism and uses unlabeled policy generations for reverse-KL control relative to a reference policy. Following the coverage perspective of preference fine-tuning, we establish a performance guarantee for a basic constrained scheme under local coverage and in-distribution pairwise reward accuracy. Experiments on Mistral, Llama, Gemma-2, Qwen3, and Gemma-3 models demonstrate improvements over existing direct alignment methods, including length-controlled win rates, with pair-level diagnostics providing evidence consistent with mitigating likelihood displacement.",
-      "published": "2026-09-16T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.19144",
-      "arxivUrl": "https://arxiv.org/abs/2609.19144",
-      "upvotes": 22,
-      "authors": [
-        "Peter Chen",
-        "Xi Chen",
-        "Wotao Yin",
-        "Tianyi Lin"
-      ],
-      "matchedKeywords": [
-        "preference optimization",
-        "reward",
-        "policy",
-        "alignment",
-        "memory"
-      ],
-      "relevanceScore": 6,
-      "decision": "review",
-      "evidenceLevel": "abstract-only",
-      "reason": "Adjacent to existing DPO/RLHF sources (dpo, instructgpt, constitutional). Proposes ComPO, a zeroth-order comparison-oracle alignment method with convergence and performance guarantees. Relevant to the KB's alignment foundations but not specifically agentic; abstract-only, theoretical claims unverified.",
-      "suggestedNote": "Candidate: zeroth-order preference alignment (ComPO); assess relation to DPO and whether guarantees hold under stated assumptions before archiving."
-    },
-    {
-      "id": "2609.17523",
-      "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
-      "summary": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution evidence into tasks and evaluation rubrics for continual learning. At its core is recursive-in-recursive self-improvement, a paradigm that couples harness evolution with model reinforcement learning: the inner recursion improves the harness with the model fixed, while the outer recursion trains the model under the improved harness. Harness evolution shapes training experience, and model learning creates new opportunities for harness adaptation. We present case studies of researcher interaction, harness refinement, and model learning, with the benchmark cases spanning four scientific task families. By releasing ScienceBuddy as a research product, we make this paradigm available to the scientific community and take a step toward discovery intelligence: scientific AI that advances through sustained collaboration with researchers and evolves alongside the research it supports. Website: http://science-buddy.io",
+      "id": "2609.16900",
+      "title": "RiskChainBench: A Benchmark for Obfuscated Platform Message Restoration and Evidence-Grounded Web Investigation",
+      "summary": "Platform abuse campaigns conceal redirection instructions with emojis, homophones, character decomposition, and redundant symbols, then route users through disguised links to services associated with pornography, fraud, gambling, or illicit transactions. Existing benchmarks evaluate obfuscated text and risky webpages separately, obscuring how target recovery affects downstream evidence acquisition. We introduce RiskChainBench, pairing 3,600 synthetic token-text restoration inputs from 600 source sessions with 600 corresponding human-labeled local web environments. A model first restores the message, operational intent, and destination; the same underlying model then acts as a VLM-driven web agent that investigates the correctly associated website and produces a frozen, evidence-cited risk report without message-side semantics or domain-reputation cues. We score restoration and correct-routing web investigation separately and compose them offline by applying the frozen primary-entry prediction as a gate to the same Task 2 result. Human labels determine task correctness, while a fixed multimodal evidence judge assesses faithfulness, sufficiency, completeness, and consistency. Across ten models, Entry Top-1 ranges from 35.2% to 95.2% and web decision accuracy from 26.3% to 62.8%; the leading systems differ across entry recovery, full reconstruction, website decisions, and fine-grained typing. Execution failures account for 31.9% of web runs, whereas post-decision type errors account for only 0.9%, identifying stable exploration and risk judgment as the principal bottlenecks. We release the benchmark, protocol, and resettable local sandbox.",
       "published": "2026-09-15T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.17523",
-      "arxivUrl": "https://arxiv.org/abs/2609.17523",
-      "upvotes": 20,
+      "url": "https://huggingface.co/papers/2609.16900",
+      "arxivUrl": "https://arxiv.org/abs/2609.16900",
+      "upvotes": 14,
       "authors": [
-        "Shuhan Xue",
-        "Jianyuan Zhong",
-        "Ziyuan Nan",
-        "Wenbin Li",
-        "Zhaochen Yu",
-        "Jinchao Ding",
-        "Qiang Gao",
-        "Pengyu Zhan"
+        "ZhuoXin Liu",
+        "Zhiming Ma",
+        "Ying Zhang",
+        "Mengzheng Yang",
+        "Yifan Wang",
+        "Zhengqi Huang",
+        "Yanhan Zhou",
+        "Zekun Lin"
       ],
       "matchedKeywords": [
-        "self-improvement",
-        "reinforcement learning",
+        "web agent",
         "agent",
+        "exploration",
+        "sandbox",
+        "benchmark"
+      ],
+      "relevanceScore": 6,
+      "decision": "review",
+      "evidenceLevel": "abstract-only",
+      "reason": "New to the KB. A benchmark for obfuscated-message restoration plus evidence-grounded web-agent investigation, with a resettable local sandbox and reported execution-failure rates. It is adjacent to existing web-agent/benchmark sources (webarena, gaia, tau-bench) and to safety interests (lilian-reward), but it is primarily an evaluation/safety benchmark rather than an Agentic RL training contribution. Abstract-only; no code or reproduction verified. Requires human reading to decide whether it belongs in the KB's benchmark or safety cluster.",
+      "suggestedNote": "Candidate benchmark for obfuscated platform-message restoration and evidence-grounded web investigation; reports Entry Top-1 35.2-95.2% and web decision accuracy 26.3-62.8% across ten models, with 31.9% execution failures. Abstract-only, unreproduced. Decide placement relative to webarena/gaia/tau-bench and lilian-reward; do not publish as established knowledge."
+    },
+    {
+      "id": "2609.20612",
+      "title": "What Does Privileged Information Add to On-Policy Self-Distillation?",
+      "summary": "On-policy self-distillation (OPSD) lets a language model learn from a frozen copy of itself that sees an answer or a worked solution. Giving the teacher this extra information seems to offer the student more to learn, but how much does it add beyond distillation itself? To isolate that contribution, we construct AMPLE-Math, a reusable suite of 5,319 mathematical problems with six reasoning views that share the same answer, and compare each view with matched reference-free distillation. With a thinking-enabled teacher supervising direct-response rollouts, reference-free distillation accounts for much of Qwen3-1.7B's improvement under thinking-enabled evaluation, both in domain and on external benchmarks. Evidence for an additional reference benefit is modest in Qwen, strongest for a polished solution, whereas complete traces add two percentage points in SmolLM3-3B at step 50. These benefits depend on the student being trained. At the same checkpoint, replacing short direct-response rollouts with long thinking-enabled rollouts turns gains into losses in both families while the problems, references, and evaluation stay fixed. Teacher profiles and matched loss interventions in Qwen further show that changing token-level supervision can leave student behavior largely unchanged. Together, these findings suggest that OPSD can improve access to existing reasoning capabilities through parameters shared by direct-response and thinking-enabled inference. The value of a privileged reference is what it adds to this cross-mode transfer, not how much of the solution it reveals.",
+      "published": "2026-09-17T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.20612",
+      "arxivUrl": "https://arxiv.org/abs/2609.20612",
+      "upvotes": 2,
+      "authors": [
+        "XiuYu Zhang",
+        "Wei Chow",
+        "Junfeng Fang",
+        "Zhenkai Liang",
+        "Tat-Seng Chua"
+      ],
+      "matchedKeywords": [
+        "policy",
+        "reasoning",
+        "rollout",
         "benchmark",
+        "distillation",
         "evaluation"
       ],
       "relevanceScore": 6,
       "decision": "review",
       "evidenceLevel": "abstract-only",
-      "reason": "Plausibly on-topic: couples harness evolution (inner recursion) with model RL (outer recursion) for interactive scientific agents. Overlaps thematically with existing harness/self-improvement sources (modularrsi, multi-harness, coskill). Abstract-only; case-study evidence, no reproduction. Requires human reading.",
-      "suggestedNote": "Candidate: recursive-in-recursive harness+model self-improvement; compare against modularrsi and multi-harness; verify benchmark scope and evidence quality."
+      "reason": "New to the KB. An empirical study of on-policy self-distillation (OPSD) with privileged references, introducing the AMPLE-Math suite and reporting that reference-free distillation accounts for much of the observed gains. Relevant to the KB's policy-learning and reasoning threads (deepseek-r1, dapo, gigpo) but it is a distillation study, not an RL algorithm; the abstract itself cautions that privileged-reference benefits are modest and can reverse under long thinking-enabled rollouts. Abstract-only; no code or reproduction verified.",
+      "suggestedNote": "Empirical OPSD study with AMPLE-Math (5,319 problems, six reasoning views); reports reference-free distillation explains much of Qwen3-1.7B gains and that privileged-reference benefit is modest and can turn negative with long thinking-enabled rollouts. Distillation, not RL. Abstract-only, unreproduced; read before any KB placement."
+    },
+    {
+      "id": "2609.19745",
+      "title": "Region-Level Policy Optimization for Fine-grained MLLM Perception",
+      "summary": "Fine-grained visual perception in MLLMs is commonly improved by raising the resolution, but the added visual tokens inflate vision-encoding and language-model prefilling costs. We show that the two operations underlying fine-grained perception, localizing the region of interest (RoI) and recognizing its content, have different resolution requirements. In a controlled diagnostic, localization tolerates roughly 3 to 4 times stronger token compression than recognition, which motivates localizing from a coarse view and concentrating resolution on the selected evidence. Decoding coordinates with the MLLM can be trained end-to-end from answers, but costs a full model pass per query and depends on grounding ability. A lightweight proposal network distilled from the model's attention is fast, but inherits the noise of its attention targets. The RoI from the proposal network reaches the answer through a discrete region choice, so its faithfulness to the answer cannot supervise the network. We therefore optimize the proposal network with region-level reinforcement learning, which we call Vision-RL2. It treats coherent regions as actions, and a frozen MLLM reader scores each one by how its removal changes the answer likelihood. Complementary subtractive and additive objectives suppress distracting proposals and recover missing evidence, updating only the predictor without region annotations, response sampling, or reasoning trajectories. The refined proposal further enables a sparse encoding that magnifies evidence and excludes background tokens. Across six fine-grained benchmarks and four MLLM backbones, Vision-RL2 improves accuracy over the base model at every token budget and surpasses its largest-budget accuracy with about 4 times fewer visual tokens. Code is available at https://github.com/YuHengsss/VisionRL2 .",
+      "published": "2026-09-17T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.19745",
+      "arxivUrl": "https://arxiv.org/abs/2609.19745",
+      "upvotes": 2,
+      "authors": [
+        "Yuheng Shi",
+        "Xiaohuan Pei",
+        "Minjing Dong",
+        "Chang Xu"
+      ],
+      "matchedKeywords": [
+        "policy optimization",
+        "reinforcement learning",
+        "policy",
+        "reasoning",
+        "benchmark"
+      ],
+      "relevanceScore": 6,
+      "decision": "review",
+      "evidenceLevel": "abstract-only",
+      "reason": "New to the KB. Applies region-level RL (Vision-RL2) to a proposal network for fine-grained MLLM perception, treating coherent regions as actions scored by a frozen reader. RL-adjacent and methodologically interesting, but the domain is multimodal perception rather than agentic RL; relevance to the KB's Agentic RL scope is indirect. Abstract-only; a code URL is mentioned in the abstract but was not fetched or verified, and an HTTP 200 would not establish correctness.",
+      "suggestedNote": "Region-level RL for fine-grained MLLM perception (Vision-RL2); treats regions as actions scored by a frozen reader, reports accuracy gains at every token budget across six benchmarks and four backbones. Peripheral to Agentic RL scope. Abstract-only, unreproduced; code URL unverified."
     },
     {
       "id": "2609.13406",
@@ -208,8 +338,8 @@
       "relevanceScore": 5,
       "decision": "review",
       "evidenceLevel": "abstract-only",
-      "reason": "Directly on-topic for the KB's foundations-to-frontier scope: proposes a formal framework (GAI) unifying generalized policy iteration and recursive self-improvement, with two axes (improving mechanism inside/outside agent; evaluation standard grounded outside or not). Complements existing foundations (sutton-barto, ppo) and the RSI-adjacent catalog entries (modularrsi, coskill). Abstract-only; no code or reproduction evidence; theoretical claims unverified.",
-      "suggestedNote": "Preprint 2026-09-11 (Tang, Ma, Li, Yuan). Abstract-only. Formal framework positioning GPI vs RSI via two dials (agent-internal improver; externally grounded standard) and polarity (anchored / goal drift / self-referential). Read for conceptual scaffolding; do not treat as established theory until peer review or independent analysis."
+      "reason": "Directly relevant to the KB's foundations-to-frontier scope: proposes a formal framework (GAI) unifying generalized policy iteration and recursive self-improvement, with two axes (improving mechanism inside/outside agent; evaluation standard grounded outside/not). Connects to existing sutton-barto (GPI), modularrsi (harness self-improvement), and agentic-survey. Abstract-only; no theory proofs, code, or reproduction verified. Requires human reading before any archival decision.",
+      "suggestedNote": "2026-09-11 preprint. Formal framework positioning GPI vs RSI as one paradigm; two dials: whether the improving mechanism is part of the agent, and whether the evaluation standard is externally grounded. Abstract-only; not reproduced. Read for: (a) whether the formalism is rigorous enough to anchor KB concept cards, (b) overlap with modularrsi and agentic-survey."
     },
     {
       "id": "2609.18805",
@@ -218,7 +348,7 @@
       "published": "2026-09-16T00:00:00.000Z",
       "url": "https://huggingface.co/papers/2609.18805",
       "arxivUrl": "https://arxiv.org/abs/2609.18805",
-      "upvotes": 43,
+      "upvotes": 44,
       "authors": [
         "Jeonghye Kim",
         "Minseon Kim",
@@ -238,143 +368,8 @@
       "relevanceScore": 5,
       "decision": "review",
       "evidenceLevel": "abstract-only",
-      "reason": "Relevant benchmark candidate for coding agents, adjacent to existing swe-bench and swe-agent entries. Introduces reference-guided feature reconstruction tasks with replay-verified behaviors (1,975 behaviors / 4,063 tasks across 26 apps) and reports frontier-agent success rates. Abstract-only; benchmark construction, leakage controls, and replay verification are unverified.",
-      "suggestedNote": "Preprint 2026-09-16 (Kim et al.). Abstract-only. Benchmark for inferring behavior from working reference apps and implementing in incomplete apps; reports GPT-6 Astra 49.2% / Claude Opus 5 28.8% on cumulative workflows. Check task construction, gold-patch replay validity, and contamination before adopting as an evaluation."
-    },
-    {
-      "id": "2609.13443",
-      "title": "Learning to Solve Hard Problems in RL for LLMs by Never Giving Up",
-      "summary": "We demonstrate that training LLMs with RL does not improve performance equally across a dataset. RL shows large improvements on easy problems that an LLM is already good at solving, but small improvements on hard problems. We call this the Matthew Effect in RL for LLMs, after the phenomenon of cumulative advantage from economics and network science summarized as \"the rich get richer\". The naive explanation is that hard problems require more compute to find a solution. We argue that modern RL methods are exacerbating the issue by wasting too much compute on easy problems and instead should dynamically reallocate how they use compute. We introduce Never Give Up (NGU), a simple adaptive sampling method that keeps generating samples for a problem until one is correct. By leveraging asynchronous RL, this naturally uses fewer samples to filter out easy problems and allocates more compute to solving harder problems. We investigate the design choices that affect NGU, such as off-policy robustness, and develop a set of best practices. On the math benchmark Deepscaler, NGU improves performance per compute, especially on harder problems. On a recent coding task, Manufactoria, standard GRPO with a per-test reward fails to fully solve problems that have a range of easy and difficult tests. NGU iteratively improves, solving harder and harder tests, until it learns to fully solve coding problems.",
-      "published": "2026-09-11T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.13443",
-      "arxivUrl": "https://arxiv.org/abs/2609.13443",
-      "upvotes": 9,
-      "authors": [
-        "Michael Noukhovitch",
-        "Hamish Ivison",
-        "Nathan Lambert",
-        "Aaron Courville"
-      ],
-      "matchedKeywords": [
-        "grpo",
-        "reward",
-        "policy",
-        "benchmark"
-      ],
-      "relevanceScore": 5,
-      "decision": "review",
-      "evidenceLevel": "abstract-only",
-      "reason": "On-topic methodology for LLM RL: names a 'Matthew Effect' (easy problems improve more than hard ones) and proposes NGU, an adaptive sampling method that keeps generating until a correct sample, leveraging asynchronous RL and off-policy robustness. Relates to existing dapo (dynamic sampling) and deepseek-math (GRPO) entries. Abstract-only; reported gains on DeepScaler and Manufactoria are unverified.",
-      "suggestedNote": "Preprint 2026-09-11 (Noukhovitch, Ivison, Lambert, Courville). Abstract-only. Adaptive sampling reallocating compute toward hard problems; claims per-compute gains on DeepScaler and iterative improvement on Manufactoria vs standard GRPO. Compare against DAPO dynamic sampling; verify off-policy robustness claims before citing."
-    },
-    {
-      "id": "2609.18779",
-      "title": "CERA-MoA: Co-Evolving Routing Mechanisms with Continually Learning LLM Agents",
-      "summary": "Current Mixture-of-Agents (MoA) paradigms generally treat query routing and agent fine-tuning as separate processes, limiting their ability to respond to evolving agent capabilities. This disconnect prevents routing strategies from adapting to evolving agent capabilities during post-training and prevents agents from achieving synergistic data-driven specialization. To resolve this, we introduce CERA-MoA (Co-Evolving Router with continually learning Agents for Mixture-of-Agents), an iterative reinforcement learning framework where the dynamic router and independent agent policies co-evolve. We design a predictive familiarity estimator that leverages mid-layer hidden states to evaluate semantic competence among agents, avoiding the overhead of full rollouts. Based on these familiarity scores, a cumulative-threshold adaptive routing mechanism dynamically activates a tailored minimal agent subset, achieving a trade-off between task performance and efficiency. By proactively allocating targeted training samples to agents based on their evolving competence, CERA-MoA promotes capability differentiation. Extensive experiments across various domains demonstrate that CERA-MoA outperforms state-of-the-art static-agent routing and fix-workflow fine-tuning baselines.",
-      "published": "2026-09-16T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.18779",
-      "arxivUrl": "https://arxiv.org/abs/2609.18779",
-      "upvotes": 3,
-      "authors": [
-        "Jiaxuan Jiang",
-        "Liyuan He",
-        "Zhixuan Fang"
-      ],
-      "matchedKeywords": [
-        "llm agent",
-        "reinforcement learning",
-        "agent",
-        "rollout"
-      ],
-      "relevanceScore": 5,
-      "decision": "review",
-      "evidenceLevel": "abstract-only",
-      "reason": "Directly on-topic for Agentic RL: co-evolving router and agent policies via iterative RL, predictive familiarity estimator from mid-layer hidden states, adaptive routing over agent subsets. Overlaps conceptually with existing routing/skill sources (coskill, agent-g2) but is not a duplicate. Abstract-only; no code, no reproduction, no comparison to KB baselines verified. Requires human reading before any archival as knowledge.",
-      "suggestedNote": "2026-09-17 发现：MoA 路由与 agent 策略协同进化的迭代 RL 框架；用中层隐状态做熟悉度估计以避免完整 rollout。仅核验摘要，未复现，未核对代码。与 coskill/agent-g2 的关联需人工判断。"
-    },
-    {
-      "id": "2609.18094",
-      "title": "Agora: Git as Shared Memory for Collective AutoResearch",
-      "summary": "Autonomous research loops such as AutoResearch show that one coding agent can improve a training setup unattended. Run several of them and each session starts from scratch, so more agents tend to mean more duplicated search rather than more discovery. Agora is a shared memory for such agents: research is recorded as an append-only directed acyclic graph (DAG) stored in Git, so that every claim is a commit anyone can check out and rerun. Each result, insight, hypothesis, verification, and report is an immutable commit whose parent edges say what it builds on; a derived index exposes the frontier, the neglected branches, and the verification status of each claim, and a diversity-aware selection rule keeps the community from collapsing onto one leader. We describe the system and report its first sustained use: a run of nearly 12 days in which 13 language-model workers, with no assigned tasks and no central planner, worked on a weight-transfer problem. Given 141 pretrained donor models and a frozen 119.6M-parameter attention-SSM hybrid whose dimensions match no donor, the workers had to initialize the target without training data or gradient updates. They published 1,703 contributions and drove the evaluator from 3.39 to 1.899 bits per byte, closing 62% of the gap to a trained GPT-2 124M. The winning recipe compresses donor next-token statistics into the target's embedding and output head, then adds a short-range context signal through sparse edits to attention, feed-forward, and state-space blocks. Its 145-commit ancestry spans 15 accounts, and 165 independent reproductions were posted, none of which failed. We describe the single mid-run human intervention that pulled the community out of a monoculture, what the trace does and does not establish, and the controlled comparison that would settle whether shared research state improves discovery per unit of compute.",
-      "published": "2026-09-16T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.18094",
-      "arxivUrl": "https://arxiv.org/abs/2609.18094",
-      "upvotes": 35,
-      "authors": [
-        "Yifan Zhang",
-        "Yunheng Zou",
-        "Shaokun Zhang",
-        "Jian Hu",
-        "Hao Zhang",
-        "Binfeng Xu",
-        "Jan Kautz",
-        "Yi Dong"
-      ],
-      "matchedKeywords": [
-        "coding agent",
-        "agent",
-        "memory"
-      ],
-      "relevanceScore": 4,
-      "decision": "review",
-      "evidenceLevel": "abstract-only",
-      "reason": "Relevant to multi-agent coordination, shared memory, and long-horizon autonomous research loops; touches the KB's multi-agent (marl-book) and agent-memory interests. However it is a systems/coordination paper rather than a core RL algorithm contribution, and the abstract makes strong empirical claims (1,703 contributions, 165 reproductions, 62% gap closure) that are unverified. High upvote count is not evidence of correctness. Human reading needed to assess methodology and whether it belongs in an Agentic RL KB.",
-      "suggestedNote": "2026-09-17 发现：以 Git DAG 作为多 agent 共享研究记忆，含多样性感知选择规则；报告约 12 天、13 个 worker 的持续运行。仅核验摘要，未复现，未核对代码或数据。属多智能体/记忆方向，非核心 RL 算法。"
-    },
-    {
-      "id": "2609.13463",
-      "title": "Root-Cause Attribution Is a Search Problem: Continual Search for Long-Horizon Agent Failures",
-      "summary": "The increasing deployment of AI agents in long-horizon tasks yields massive execution logs. Diagnosing failures within these records is crucial for reliability, as it transforms outcome-level signals into actionable interventions. The sheer scale of the data renders human review impractical, driving the need for automated root-cause attribution (RCA). However, automated RCA methods using LLMs suffer from low diagnostic accuracy, especially as execution traces grow larger. They struggle because relevant information is often sparse, distributed across distant actions, and disconnected from the visible failure, reducing root-cause attribution to a massive search problem. Existing RCA methods typically rely on one-shot LLM judgments to diagnose failures from execution traces. While effective for shorter trajectories, these judges tend to settle on a plausible diagnosis early, leaving critical evidence in longer traces unexamined. We introduce Continual Search, an iterative framework that nudges the judge, over successive turns, to keep searching for unresolved diagnostic evidence. We evaluate Continual Search across four existing RCA benchmarks. Recognizing the lack of massive execution traces in current benchmarks, we introduce MegaRCA-Mix to evaluate RCA at scale. MegaRCA-Mix provides a challenging testbed of 50 human-annotated failure trials spanning long-horizon, execution-heavy tasks. Across multiple benchmark suites and model families, Continual Search consistently improves attribution performance. On MegaRCA-Mix, for example, it improves GPT-5.5's F1 score by more than 40\\%, from 0.349 to 0.498. More interestingly, within the same model family, lower-tier models can even surpass their higher-tier counterparts, demonstrating that effective search supersedes raw model scale.",
-      "published": "2026-09-11T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.13463",
-      "arxivUrl": "https://arxiv.org/abs/2609.13463",
-      "upvotes": 3,
-      "authors": [
-        "Harsh Raj",
-        "David Lee",
-        "Anas Mahmoud",
-        "Renxiong Wang",
-        "Razvan-Gabriel Dumitru",
-        "Chenguang Wang",
-        "Tong Zhao",
-        "Yunzhong He"
-      ],
-      "matchedKeywords": [
-        "long-horizon",
-        "agent",
-        "benchmark"
-      ],
-      "relevanceScore": 4,
-      "decision": "review",
-      "evidenceLevel": "abstract-only",
-      "reason": "On-topic for the KB's long-horizon agent reliability and evaluation interests (agentic-survey, swe-agent, tau-bench, gaia). Abstract claims an iterative 'Continual Search' RCA framework and a new MegaRCA-Mix benchmark (50 human-annotated failure trials), with reported F1 improvements. Abstract-only; benchmark construction and annotation quality require human reading.",
-      "suggestedNote": "Candidate for the agent-failure-diagnosis / evaluation thread. Abstract-only: frames RCA as a search problem over long execution traces and introduces MegaRCA-Mix. Verify benchmark size, annotation protocol, and whether gains hold across model families before treating as knowledge."
-    },
-    {
-      "id": "2609.16816",
-      "title": "ImpossibleRubrics: Stress-Testing Generated Rubrics as Reward Signals",
-      "summary": "Language model-generated rubrics are increasingly used as reward signals for rubric-based reinforcement learning, LLM-as-a-judge evaluation, and automated grading. Such rubrics are reliable only if they reward honest answers over adversarial answers optimized to exploit them. Yet their robustness to such optimization remains poorly understood. We isolate the hardest regime: impossible tasks, where the prompt pressures the model toward an unsupported conclusion, so the only honest response is to acknowledge the impossibility. We introduce ImpossibleRubrics, a benchmark of 169 impossible tasks spanning six impossibility categories, each paired with a verifiable oracle certificate specifying what an honest answer may and may not claim, together with 48 answerable controls. Rather than providing fixed rubrics, ImpossibleRubrics provides task environments and certificates, allowing rubrics to be generated downstream and then adversarially tested for whether they reward certificate-violating answers. Eleven generators are exploited 8--26% of the time on the unbiased 150-of-169 environment cut; on a deliberately selected stress cut the strongest generator we measured is still exploited 36% while a certificate-faithful rubric is exploited 0%, so what we measure is a rubric-quality gap, not task impossibility. One result runs against intuition. A single generic rubric (\"be decisive, penalize hedging\") used unchanged for every task is exploited 64% of the time, and seven of the eleven generators are exploited more often than that while writing a rubric tailored to each one. The tailored criteria appear to tell an attacker which claim to fabricate. The problem is not that rubrics are vague; it is that they are specific about the wrong things.",
-      "published": "2026-09-15T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.16816",
-      "arxivUrl": "https://arxiv.org/abs/2609.16816",
-      "upvotes": 2,
-      "authors": [
-        "Bowen Qin",
-        "Yi Xie",
-        "Yesheng Liu",
-        "Xi Yang"
-      ],
-      "matchedKeywords": [
-        "reinforcement learning",
-        "reward",
-        "benchmark",
-        "evaluation"
-      ],
-      "relevanceScore": 4,
-      "decision": "review",
-      "evidenceLevel": "abstract-only",
-      "reason": "Directly relevant to the KB's reward-hacking and reward-signal interests (lilian-reward, dpo, instructgpt). Abstract claims a benchmark of 169 impossible tasks with verifiable oracle certificates and reports rubric exploitation rates (8-26% on an unbiased cut; 36% on a stress cut; 64% for a single generic rubric). These are abstract-only claims, not reproduced; the benchmark and certificates would need human verification before any KB note is treated as established.",
-      "suggestedNote": "Candidate for the reward-signal / reward-hacking thread. Abstract-only: proposes ImpossibleRubrics, a benchmark of impossible tasks with oracle certificates, and reports that generated rubrics are exploited by adversarial answers. Do NOT cite numbers as verified; read the paper and check the certificate design and evaluation protocol before promoting."
+      "reason": "Plausibly on-topic: a coding-agent benchmark with replay-verified behaviors and controlled difficulty, adjacent to existing swe-bench, swe-agent, and multi-harness sources. Claims 1,975 replay-verified behaviors across 26 applications and 4,063 tasks. Abstract-only; benchmark validity, leakage controls, and reproducibility unverified. Human reading needed before any archival decision.",
+      "suggestedNote": "2026-09-16 preprint. Benchmark for coding agents inferring behavior from working reference apps; mine-craft-patch pipeline; reports frontier-agent success rates and difficulty scaling. Abstract-only; not reproduced. Read for: task construction validity, replay verification, and relation to swe-bench/multi-harness."
     },
     {
       "id": "2609.14857",
@@ -409,156 +404,65 @@
       "relevanceScore": 14,
       "decision": "archive",
       "evidenceLevel": "abstract-only",
-      "reason": "Already cataloged as 'modularrsi-modular-and-generalizable-rec' with an LLM full-text reading draft pending human review. This discovery entry is a duplicate of an existing candidate, not a new source; retain without publishing.",
-      "suggestedNote": "Duplicate of existing catalog entry modularrsi-modular-and-generalizable-rec. No new evidence added by this discovery pass; keep the existing '待人工复核' status and do not promote to published knowledge until a human reads the full text."
+      "reason": "Duplicate of existing catalog candidate 'modularrsi-modular-and-generalizable-rec' (same arXiv id, same title). Already retained as an LLM full-text draft pending human review; re-adding would duplicate. Keep as archive, do not publish.",
+      "suggestedNote": "Duplicate of existing candidate modularrsi-modular-and-generalizable-rec. Abstract-only; claims benchmark-disjoint evolution tasks and transfer across foundation models are unverified. Do not treat as published knowledge."
     },
     {
-      "id": "2609.17320",
-      "title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
-      "summary": "As AI agents move from bounded tasks to persistent deployments, failures can propagate through memory, tools, other agents, and environmental state long after their interactions. This creates a safety regime that cannot be characterized by evaluating model responses in isolation. Emergence World, is a continuously running multi-agent environment for adversarial stress testing of long horizon autonomous systems. We ran eight parallel worlds of ten agents from identical starting conditions: seven homogeneous worlds powered by distinct frontier models and one mixed-model world. Across 16 days, the agents generated more than 850,000 LLM calls and nearly 50 billion tokens while pursuing goals, using/creating tools, maintaining persistent memory, and governing shared institutions. After operational state had accumulated, we delivered three controlled stress events through ordinary interaction surfaces: indirect prompt injection, misinformation, and exposure of private agent memories. No evaluated world achieved full resilience across all three events. Detection did not ensure containment: systems could recognize threats while still interacting with adversarial content, writing it into their own persistent memory, and acting on it up to 46 hours later. Persistent operation also exposed recurring tool errors, goal drift, language opacity, conformity despite private disagreement, and coordinated refusal of assigned work. The same model-persona pairing behaved substantially different in mixed and homogeneous populations. Our results suggest that model-level alignment is not compositional: individually capable and apparently safe agents can form systems with qualitatively different failure modes. As AI becomes persistent and interconnected, the frontier of safety therefore shifts from aligning models to engineering resilient autonomous systems.",
-      "published": "2026-09-15T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.17320",
-      "arxivUrl": "https://arxiv.org/abs/2609.17320",
-      "upvotes": 2,
-      "authors": [
-        "Deepak Akkil",
-        "Tamer Abuelsaad",
-        "Karthik Vikram",
-        "Matthew Pace",
-        "Aditya Vempaty",
-        "Saahir Beotra",
-        "Ravi Kokku",
-        "Satya Nitta"
-      ],
-      "matchedKeywords": [
-        "multi-agent",
-        "long-horizon",
-        "long horizon",
-        "prompt injection",
-        "agent",
-        "alignment",
-        "memory",
-        "tool"
-      ],
-      "relevanceScore": 12,
-      "decision": "archive",
-      "evidenceLevel": "abstract-only",
-      "reason": "Already cataloged as 'emergence-world-adversarial-stress-testi' with an LLM full-text reading draft pending human review. Duplicate discovery entry; retain without publishing.",
-      "suggestedNote": "Duplicate of existing catalog entry emergence-world-adversarial-stress-testi. Adjacent to marl-book and lilian-reward interests (long-horizon multi-agent failure modes, prompt injection, persistent memory). Keep '待人工复核'; abstract claims about 16-day runs and 850k LLM calls are unverified."
-    },
-    {
-      "id": "2609.18708",
-      "title": "Rethinking Critic Learning in PPO: Understanding and Mitigating Value Flattening",
-      "summary": "In reinforcement learning for large language models, Proximal Policy Optimization (PPO) commonly uses a critic to estimate state values and reduce the variance of policy updates. However, we uncover a systematic failure mode in PPO critics, which we call Value Flattening: state values, estimated from multiple Monte Carlo continuations, change sharply across intermediate states while critic predictions remain comparatively flat. We further observe this phenomenon in a controlled FrozenLake environment and find that it becomes more pronounced as the state space grows. Our theoretical and empirical analyses relate Value Flattening to an implicit variance penalty in the critic loss and redundant updates from temporally correlated states with similar gradients. Motivated by these findings, we introduce SParse Proximal Policy Optimization (SP^3O), which applies the value loss to only a few well-separated states in each response to mitigate both effects. Experiments on Qwen3-Base show that SP^3O with only three states supervised per response can mitigate Value Flattening and consistently improve the learned policy across model sizes and evaluation suites. Together, our results identify Value Flattening as an important yet overlooked failure mode of critic learning in standard PPO and show that a simple sparse supervision strategy can mitigate it.",
+      "id": "2609.18094",
+      "title": "Agora: Git as Shared Memory for Collective AutoResearch",
+      "summary": "Autonomous research loops such as AutoResearch show that one coding agent can improve a training setup unattended. Run several of them and each session starts from scratch, so more agents tend to mean more duplicated search rather than more discovery. Agora is a shared memory for such agents: research is recorded as an append-only directed acyclic graph (DAG) stored in Git, so that every claim is a commit anyone can check out and rerun. Each result, insight, hypothesis, verification, and report is an immutable commit whose parent edges say what it builds on; a derived index exposes the frontier, the neglected branches, and the verification status of each claim, and a diversity-aware selection rule keeps the community from collapsing onto one leader. We describe the system and report its first sustained use: a run of nearly 12 days in which 13 language-model workers, with no assigned tasks and no central planner, worked on a weight-transfer problem. Given 141 pretrained donor models and a frozen 119.6M-parameter attention-SSM hybrid whose dimensions match no donor, the workers had to initialize the target without training data or gradient updates. They published 1,703 contributions and drove the evaluator from 3.39 to 1.899 bits per byte, closing 62% of the gap to a trained GPT-2 124M. The winning recipe compresses donor next-token statistics into the target's embedding and output head, then adds a short-range context signal through sparse edits to attention, feed-forward, and state-space blocks. Its 145-commit ancestry spans 15 accounts, and 165 independent reproductions were posted, none of which failed. We describe the single mid-run human intervention that pulled the community out of a monoculture, what the trace does and does not establish, and the controlled comparison that would settle whether shared research state improves discovery per unit of compute.",
       "published": "2026-09-16T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.18708",
-      "arxivUrl": "https://arxiv.org/abs/2609.18708",
-      "upvotes": 55,
+      "url": "https://huggingface.co/papers/2609.18094",
+      "arxivUrl": "https://arxiv.org/abs/2609.18094",
+      "upvotes": 39,
       "authors": [
-        "Yizhuo Li",
-        "Jianhao Yan",
-        "Yun Luo",
-        "Zhi Wang",
-        "Futing Wang",
-        "Rong-Xi Tan",
-        "Kanghui Tian",
-        "Ganqu Cui"
+        "Yifan Zhang",
+        "Yunheng Zou",
+        "Shaokun Zhang",
+        "Jian Hu",
+        "Hao Zhang",
+        "Binfeng Xu",
+        "Jan Kautz",
+        "Yi Dong"
       ],
       "matchedKeywords": [
-        "proximal policy optimization",
-        "policy optimization",
-        "reinforcement learning",
-        "policy",
-        "evaluation"
-      ],
-      "relevanceScore": 7,
-      "decision": "archive",
-      "evidenceLevel": "abstract-only",
-      "reason": "Already cataloged as 'rethinking-critic-learning-in-ppo-unders' with an LLM full-text reading draft pending human review. Duplicate discovery entry; retain without publishing.",
-      "suggestedNote": "Duplicate of existing catalog entry rethinking-critic-learning-in-ppo-unders. Core PPO/GAE methodology relevant to existing foundations; the named failure mode 'Value Flattening' and SP^3O mitigation are abstract-level claims only. Keep '待人工复核'."
-    },
-    {
-      "id": "2609.15938",
-      "title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
-      "summary": "Scientific agents contribute to hypothesis discovery by synthesizing evidence, assessing proposals, and developing new explanations. Recent systems combine scientific agents with evolutionary search through critique, comparison, and revision. However, how different forms of agent collaboration affect hypothesis quality remains an open question. Answering this question requires separating the effects of agents' scientific capabilities from those of their collaboration. A framework must therefore preserve agents' scientific roles and support rules for combining, revising, and retaining hypotheses. Building on this view, we introduce HypoEvolve, which makes collaboration explicit through successive updates to a hypothesis population. Specifically, we propose a generational genetic algorithm to coordinate specialized large language model (LLM) agents that integrate mechanistic arguments, reconsider assumptions, and assess evidence and testability. Each generation specifies how scientific judgments and new proposals reshape the population, making collaboration effects on hypothesis quality directly testable. Moreover, we design our evaluation around scientifically meaningful hypotheses that explain how a proposed intervention could work. Drug repurposing links these explanations to target-level biological claims assessed against external evidence. Specifically, we adapt DepMap and Open Targets into complementary external measures grounded in experimental, genetic, and clinical evidence. Across 34 cancer types, HypoEvolve achieves the highest scores against six baselines on both measures. DepMap selectivity reaches 0.171, versus 0.115 for the strongest baseline. Gains over single-pass generation also generalize to held-out cancer types. HypoEvolve advances a vision of autonomous science in which AI research teams achieve a capacity for discovery beyond that of individual models.",
-      "published": "2026-09-14T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.15938",
-      "arxivUrl": "https://arxiv.org/abs/2609.15938",
-      "upvotes": 24,
-      "authors": [
-        "Jieyuan Liu",
-        "Mengzhou Hu",
-        "Jefferson Chen",
-        "JungHo Kong",
-        "Pratibha Jagannatha",
-        "Yiming Gao",
-        "Dexter Pratt",
-        "Hsin-Yuan Lee"
-      ],
-      "matchedKeywords": [
-        "multi-agent",
+        "coding agent",
         "agent",
-        "evaluation"
+        "memory"
       ],
       "relevanceScore": 4,
       "decision": "archive",
       "evidenceLevel": "abstract-only",
-      "reason": "Multi-agent LLM evolutionary search for scientific hypothesis discovery. Adjacent to the KB's multi-agent interests (marl-book) but not an RL-training method; no policy optimization or reward-learning contribution described. Retain as a candidate without publishing.",
-      "suggestedNote": "Archive: multi-agent LLM + genetic algorithm for hypothesis discovery. Not core Agentic RL; keep for multi-agent/autonomous-science context only. Abstract-only, no reproduction."
+      "reason": "Adjacent to KB themes: multi-agent coordination, shared memory, coding agents, and long-horizon autonomous loops. However, it is a systems/coordination paper with a single reported run and self-reported reproduction counts; the abstract itself flags that the trace does not establish the causal claim and that a controlled comparison is still needed. Retain for reference without treating as published knowledge.",
+      "suggestedNote": "Archive: Git-DAG shared memory for collective coding agents; relevant to multi-agent memory and long-horizon coordination. Abstract-only; single-run evidence; authors note causal claim unproven. Do not cite as established result."
     },
     {
-      "id": "2609.13770",
-      "title": "Training Specialist Models without Reasoning Trajectories for Domain Expert Distillation",
-      "summary": "Specialist distillation effectively transfers domain expertise to student models via teacher-generated reasoning trajectories. However, when these specialists are trained solely on question--answer pairs without explicit reasoning supervision, what governs the trajectories they generate? In this work, we show that specialist optimization implicitly selects from this latent trajectory space. To isolate and observe this latent distribution, we leverage student distillation not as a downstream goal, but as an agnostic probe---since students inherit no parameterization or optimization constraints from the specialist, inheriting only the sampled trajectories themselves. Through this probe, our empirical analysis unveils a tight governing relationship: across 27 specialist--student pairings, their specialization--generalization profiles correlate exceptionally strongly. Crucially, explicitly controlling the specialist's distributional drift systematically shifts both the teacher and its distilled student along a controllable trade-off between domain precision and general-capability retention. Across chemistry, physics, and multilingual settings, distilled students systematically reflect these specialist-induced profiles, even across divergent model families. Our findings establish a new view of specialist training: when gold reasoning is absent, tuning choices directly control the latent supervision passed to downstream models.",
-      "published": "2026-09-12T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.13770",
-      "arxivUrl": "https://arxiv.org/abs/2609.13770",
+      "id": "2609.19671",
+      "title": "When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models",
+      "summary": "Large Reasoning Models (LRMs) achieve strong performance on complex tasks but exhibit systematic inefficiency: they often overthink easy problems and underthink hard ones. Existing approaches based on uniform length penalties or rigid routing incur an efficiency tax, trading reduced computation on easy instances for accuracy loss on hard instances. We formulate efficient reasoning as an instance-adaptive computation allocation problem and propose When2Think, a post-training framework for hybrid reasoning that dynamically allocates computation based on problem difficulty. Our method introduces Instance-level Difficulty-Aware Control (IDAC), a reward-shaping mechanism that leverages pre-computed reference statistics (accuracy and token usage) to regulate reasoning depth. Combined with verifier-based rewards and batch-wise standardized advantages, IDAC enables stable critic-free optimization without learned reward models or online reference-model queries. When2Think encourages direct answering on easy instances while preserving extended reasoning on hard instances, thereby learning when to use System 1 (NoThink) versus System 2 (Think). Experiments on mathematical benchmarks demonstrate improved accuracy-efficiency trade-offs: on AIME24, Pass@3 increases by 10.0% while token usage is reduced by 27.9% relative to the base model, and on AIME25, When2Think achieves 40.0% Pass@3, outperforming compression and routing-only baselines.",
+      "published": "2026-09-17T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.19671",
+      "arxivUrl": "https://arxiv.org/abs/2609.19671",
       "upvotes": 2,
       "authors": [
-        "Yilei Tu",
-        "Zihao Li",
-        "Shaoxiong Ji",
-        "Jörg Tiedemann",
-        "Fei Yuan"
+        "Jaejun Shim",
+        "HyunJin Kim",
+        "Young Jin Kim",
+        "JinYeong Bak"
       ],
       "matchedKeywords": [
+        "reward model",
+        "reasoning model",
+        "reward",
         "reasoning",
-        "trajectory",
-        "generalization",
-        "distillation"
+        "benchmark",
+        "verifier"
       ],
-      "relevanceScore": 4,
-      "decision": "archive",
+      "relevanceScore": 8,
+      "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "Distillation study of specialist-to-student trajectory transfer; no RL loop or agentic-RL method described. Adjacent to reasoning/distillation but off the KB's core. Retain as a candidate without publishing.",
-      "suggestedNote": "Archive: specialist distillation without reasoning trajectories. Off-core for Agentic RL; keep only as background on latent supervision. Abstract-only."
-    },
-    {
-      "id": "2609.17708",
-      "title": "Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents",
-      "summary": "Reliable confidence estimation is increasingly central to the trustworthy deployment of language models: a calibrated estimate of the probability that an output is correct decides what to ship, what to escalate, and what to retry. Existing confidence estimators, however, share one design premise: they only read the current inference process, either by introspecting on it, scoring its token probabilities, or resampling it. We argue that the current inference is not a sufficient basis for confidence. We propose XConf (eXperiential Confidence): estimating confidence together with the model's accumulated experience. The experience is stored as a record of the model's own graded past episodes, each holding the task, the model's reflection, its stated confidence, the outcome, and a lesson written once the grade arrived. Given a new task, XConf's Recall stage retrieves past episodes on similar tasks met with a similar stated confidence, and reads off their historical success rate; its Reflect stage shows the model this record, has it name its recurring failure mode, and restate a confidence now informed by its own track records. Our estimator is format-general, requiring no logit access or weight updates, and costs only one answer generation. Across nine benchmarks spanning reasoning, coding, multimodal QA, and interactive agents, and four models from three families, XConf beats or matches ten-sample self-consistency in discrimination (AUROC) on 23 of 24 comparisons, with much lower calibration error (ECE), at a tenth of the generation cost. Used for selective prediction, abstaining on the 10% least-confident episodes raises the delivered success rate by up to 8.7 points on agent tasks. We therefore see experiential confidence estimation as a new paradigm for future general-purpose confidence estimation.",
-      "published": "2026-09-15T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.17708",
-      "arxivUrl": "https://arxiv.org/abs/2609.17708",
-      "upvotes": 46,
-      "authors": [
-        "Caiqi Zhang",
-        "Xiaochen Zhu",
-        "Chengzu Li",
-        "Yulong Chen",
-        "Dharshan Kumaran",
-        "Nigel Collier"
-      ],
-      "matchedKeywords": [
-        "agent",
-        "reasoning",
-        "benchmark"
-      ],
-      "relevanceScore": 3,
-      "decision": "archive",
-      "evidenceLevel": "abstract-only",
-      "reason": "Confidence estimation for LLM/agent outputs via retrieval of past graded episodes. Adjacent to agent evaluation and selective prediction, but not an RL-training contribution. Retain as a candidate without publishing.",
-      "suggestedNote": "Archive: experiential confidence estimation (XConf) for reasoning and agent tasks. Relevant to evaluation/abstention, not to RL training. Abstract-only; reported AUROC/ECE comparisons unverified."
+      "reason": "Reasoning-length control / difficulty-aware computation allocation for LRMs. Tangential to Agentic RL scope (no agent, tool, or environment interaction); overlaps only loosely with reasoning-RL sources already in the KB. Not a priority for this knowledge base.",
+      "suggestedNote": "Out of primary scope: instance-adaptive reasoning-length control, not agentic RL. Abstract-only; AIME24/AIME25 numbers unverified. Skip unless the KB later adds a reasoning-efficiency thread."
     },
     {
       "id": "2609.16034",
@@ -587,9 +491,40 @@
       ],
       "relevanceScore": 7,
       "decision": "skip",
-      "evidenceLevel": "metadata",
-      "reason": "Off-topic for an Agentic RL knowledge base. It is a long-form music generation model; the only overlap is incidental keyword matches on 'reinforcement learning', 'direct preference optimization', 'planning', and 'curriculum'. No agentic RL contribution.",
-      "suggestedNote": "Skip: music generation, not Agentic RL. Keyword overlap (DPO, RL, planning, curriculum) is incidental."
+      "evidenceLevel": "abstract-only",
+      "reason": "Out of scope: long-form music generation model (tokenizer, flow-matching DiT, ABC-CoT planning). DPO is mentioned only as a final-stage preference optimization for audio quality; this is not agentic RL and does not fit the knowledge base's foundations-to-frontier agentic RL scope.",
+      "suggestedNote": "不相关：音乐生成技术报告，DPO 仅用于音频质量偏好优化，与 Agentic RL 主题无关。"
+    },
+    {
+      "id": "2609.18708",
+      "title": "Rethinking Critic Learning in PPO: Understanding and Mitigating Value Flattening",
+      "summary": "In reinforcement learning for large language models, Proximal Policy Optimization (PPO) commonly uses a critic to estimate state values and reduce the variance of policy updates. However, we uncover a systematic failure mode in PPO critics, which we call Value Flattening: state values, estimated from multiple Monte Carlo continuations, change sharply across intermediate states while critic predictions remain comparatively flat. We further observe this phenomenon in a controlled FrozenLake environment and find that it becomes more pronounced as the state space grows. Our theoretical and empirical analyses relate Value Flattening to an implicit variance penalty in the critic loss and redundant updates from temporally correlated states with similar gradients. Motivated by these findings, we introduce SParse Proximal Policy Optimization (SP^3O), which applies the value loss to only a few well-separated states in each response to mitigate both effects. Experiments on Qwen3-Base show that SP^3O with only three states supervised per response can mitigate Value Flattening and consistently improve the learned policy across model sizes and evaluation suites. Together, our results identify Value Flattening as an important yet overlooked failure mode of critic learning in standard PPO and show that a simple sparse supervision strategy can mitigate it.",
+      "published": "2026-09-16T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.18708",
+      "arxivUrl": "https://arxiv.org/abs/2609.18708",
+      "upvotes": 60,
+      "authors": [
+        "Yizhuo Li",
+        "Jianhao Yan",
+        "Yun Luo",
+        "Zhi Wang",
+        "Futing Wang",
+        "Rong-Xi Tan",
+        "Kanghui Tian",
+        "Ganqu Cui"
+      ],
+      "matchedKeywords": [
+        "proximal policy optimization",
+        "policy optimization",
+        "reinforcement learning",
+        "policy",
+        "evaluation"
+      ],
+      "relevanceScore": 7,
+      "decision": "skip",
+      "evidenceLevel": "abstract-only",
+      "reason": "Duplicate: already present in the knowledge base as source id 'rethinking-critic-learning-in-ppo-unders' (LLM full-text draft, pending human review). Re-adding would create a duplicate entry. No new information in the discovery record beyond the existing catalog note.",
+      "suggestedNote": "重复来源：已存在于知识库（rethinking-critic-learning-in-ppo-unders）。本次不新增，沿用既有待复核条目。"
     },
     {
       "id": "2609.14005",
@@ -598,7 +533,7 @@
       "published": "2026-09-12T00:00:00.000Z",
       "url": "https://huggingface.co/papers/2609.14005",
       "arxivUrl": "https://arxiv.org/abs/2609.14005",
-      "upvotes": 101,
+      "upvotes": 102,
       "authors": [
         "Bin Lin",
         "Bo Zhao",
@@ -619,34 +554,67 @@
       "relevanceScore": 6,
       "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "Realtime audio-language / duplex speech model with a voice agent. Matched keywords (reasoning, agent, tool, benchmark) are generic; the core contribution is speech interaction and latency, not Agentic RL training methodology. Out of scope for this KB.",
-      "suggestedNote": "Out of scope: realtime spoken-dialogue foundation model; not an Agentic RL training contribution."
+      "reason": "Out of scope: realtime spoken-dialogue audio-language foundation model (duplex speech, think-while-speaking, voice agent tool execution). Despite 'agent' and 'tool' keywords, it is a speech/audio systems report, not agentic RL methodology or training.",
+      "suggestedNote": "不相关：实时语音对话基础模型报告，虽含 agent/tool 关键词但属语音系统方向，与 Agentic RL 主题无关。"
     },
     {
-      "id": "2609.14708",
-      "title": "Lightning Weave: Improving the Accuracy-Efficiency Frontier of Reasoning Models through Capability Composition",
-      "summary": "A core goal of efficient reasoning is to improve the accuracy-efficiency frontier. However, jointly improving reasoning accuracy and inference efficiency can be challenging, as the two objectives can favor different reasoning behaviors. Independently post-trained models already offer distinct strengths in accuracy and efficiency. We introduce Lightning Weave, a post-training framework that extracts and composes these independently learned capabilities in a single student through on-policy distillation. Each acquired capability is represented by the policy shift from the model before post-training to the resulting specialist. Lightning Weave combines aligned log-ratio shifts at shared student token states and uses Tilted-Target DOPD to convert the cached signals into a stable learning target. Each anchor pair scores the cached trajectories once, enabling subsequent student training without serving multiple live anchor models concurrently. Across diverse student models and benchmarks in mathematics and code, Lightning Weave substantially improves upon the base students and achieves a state-of-the-art accuracy-efficiency frontier. On Qwen3.5-4B, it raises HMMT 2025 accuracy from 59.2% to 64.0% with 10.7% fewer response tokens, and LiveCodeBench v5 accuracy from 41.7% to 54.2% with 9.6% fewer response tokens. Adjusting the relative strengths of the anchor signals yields a strong empirical accuracy-efficiency Pareto frontier. These results establish Lightning Weave as a new practical route to efficient reasoning through capability composition. Code will be released soon.",
-      "published": "2026-09-13T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.14708",
-      "arxivUrl": "https://arxiv.org/abs/2609.14708",
-      "upvotes": 2,
+      "id": "2609.19134",
+      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+      "summary": "Scientific code repositories encode decades of human knowledge in executable models, methods, and tools. Yet fragmented toolchains, implicit domain conventions, and specialized correctness criteria make this knowledge difficult to convert into reliable learning experience-a challenge we call the scientific experience bottleneck. We introduce ScienceIDE, infrastructure for turning the world's scientific code into programmable environments for scientific agents. Guided by expert-defined scientific cases and acceptance criteria, agents transform repositories into executable environments that support task generation, execution, and scientific verification. These environments provide a shared foundation for supervised fine-tuning, reinforcement learning, and evaluation. Using verified interaction trajectories, we train PhAI-IDE-72B, PhAI-IDE-9B, and PhAI-IDE-4B. The model family shows gains in held-out scientific-code repair and across selected general-purpose benchmarks in code, reasoning, and knowledge, providing evidence of positive transfer from scientific experience to broader capabilities. ScienceIDE lays the foundation for an integrated workspace for agent learning and scientific practice, making humanity's scientific software a shared substrate for developing scientific intelligence. Code: https://github.com/aitofound/ScienceIDE",
+      "published": "2026-09-16T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.19134",
+      "arxivUrl": "https://arxiv.org/abs/2609.19134",
+      "upvotes": 70,
       "authors": [
-        "Yecheng Wu",
-        "Song Han",
-        "Han Cai"
+        "Hejia Geng",
+        "Zesen Huang",
+        "Haoyang Li",
+        "Wenbin Li",
+        "Koutian Wu",
+        "Zihan Zhou",
+        "Yuanbo Pang",
+        "Weihao Liu"
       ],
       "matchedKeywords": [
-        "reasoning model",
-        "policy",
+        "reinforcement learning",
+        "agent",
         "reasoning",
+        "tool",
         "benchmark",
-        "distillation"
+        "evaluation"
       ],
       "relevanceScore": 6,
       "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "On-policy distillation / capability composition for reasoning-model accuracy-efficiency. Related to reasoning but not to Agentic RL training, environments, or credit assignment. Out of scope for this KB.",
-      "suggestedNote": "Out of scope: post-training distillation for reasoning efficiency; not an Agentic RL contribution."
+      "reason": "Duplicate: already present in the catalog as source id 'scienceide-turning-world-s-scientific-co' with an existing LLM full-text draft note. Re-adding would create a duplicate source. No new information in the discovery entry beyond the existing catalog record.",
+      "suggestedNote": "Duplicate of existing catalog entry scienceide-turning-world-s-scientific-co; do not re-ingest. Existing note already flags it as an unverified LLM full-text draft pending human review."
+    },
+    {
+      "id": "2609.19144",
+      "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
+      "summary": "Direct preference alignment methods are widely used to align large language models (LLMs) with human preferences because of their computational and memory efficiency. However, likelihood displacement motivates alternative ways to extract information from preference pairs with small likelihood margins. In this paper, we propose and analyze Comparison-based Preference Optimization (ComPO), a zeroth-order alignment method based on comparison oracles. ComPO extracts directional information from these pairs without directly optimizing a differentiable preference loss on them. We establish a convergence guarantee for its basic offline scheme under smoothness, gradient sparsity, and compatibility between the oracle and a latent objective. We further introduce online ComPO, which retains the offline comparison mechanism and uses unlabeled policy generations for reverse-KL control relative to a reference policy. Following the coverage perspective of preference fine-tuning, we establish a performance guarantee for a basic constrained scheme under local coverage and in-distribution pairwise reward accuracy. Experiments on Mistral, Llama, Gemma-2, Qwen3, and Gemma-3 models demonstrate improvements over existing direct alignment methods, including length-controlled win rates, with pair-level diagnostics providing evidence consistent with mitigating likelihood displacement.",
+      "published": "2026-09-16T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.19144",
+      "arxivUrl": "https://arxiv.org/abs/2609.19144",
+      "upvotes": 22,
+      "authors": [
+        "Peter Chen",
+        "Xi Chen",
+        "Wotao Yin",
+        "Tianyi Lin"
+      ],
+      "matchedKeywords": [
+        "preference optimization",
+        "reward",
+        "policy",
+        "alignment",
+        "memory"
+      ],
+      "relevanceScore": 6,
+      "decision": "skip",
+      "evidenceLevel": "abstract-only",
+      "reason": "Duplicate: already present in the catalog as source id 'a-zeroth-order-paradigm-for-llm-preferen' with an existing LLM full-text draft note. Re-adding would create a duplicate source.",
+      "suggestedNote": "Duplicate of existing catalog entry a-zeroth-order-paradigm-for-llm-preferen; do not re-ingest. Existing note already flags it as an unverified LLM full-text draft pending human review."
     },
     {
       "id": "2609.15195",
@@ -676,8 +644,8 @@
       "relevanceScore": 5,
       "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "Off-topic for an Agentic RL knowledge base: zero-shot, training-free embodied navigation harness for MLLMs, with no RL training component. Matched keywords (agent, memory, tool, hierarchical) are incidental. Not a duplicate of any existing source.",
-      "suggestedNote": "Skipped: training-free embodied navigation; no RL training contribution. Retain only if the KB later expands to embodied/robotics agents."
+      "reason": "Embodied navigation with a training-free MLLM harness. Adjacent to agent-harness themes but outside the KB's Agentic RL training scope (no RL training; zero-shot). Low marginal value relative to existing harness sources. Abstract-only.",
+      "suggestedNote": "2026-09-14 preprint. Training-free embodied navigation harness; reports R2R/RxR/HM3D success rates. Off-core for Agentic RL training; skipped."
     },
     {
       "id": "2609.19138",
@@ -686,7 +654,7 @@
       "published": "2026-09-16T00:00:00.000Z",
       "url": "https://huggingface.co/papers/2609.19138",
       "arxivUrl": "https://arxiv.org/abs/2609.19138",
-      "upvotes": 13,
+      "upvotes": 15,
       "authors": [
         "Dongzhou Cheng",
         "Taoran Yi",
@@ -707,8 +675,8 @@
       "relevanceScore": 5,
       "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "Off-topic: in-context robot learning with VLM agents explicitly without gradient updates or persistent parameter changes, i.e., no RL training loop. Adjacent to embodied AI rather than Agentic RL. Not a duplicate of any existing source.",
-      "suggestedNote": "Skipped: in-context robot learning without gradient updates; outside the KB's RL-training scope. Revisit only if the KB adds a robotics/embodied track."
+      "reason": "In-context robot learning with VLM agents and no gradient updates. Adjacent to agentic themes but explicitly outside RL training (no parameter updates), so marginal for this KB. Abstract-only.",
+      "suggestedNote": "2026-09-16 preprint. GPT-Policy framework for in-context robot learning; no gradient updates. Off-core for Agentic RL training; skipped."
     },
     {
       "id": "2609.16372",
@@ -717,7 +685,7 @@
       "published": "2026-09-14T00:00:00.000Z",
       "url": "https://huggingface.co/papers/2609.16372",
       "arxivUrl": "https://arxiv.org/abs/2609.16372",
-      "upvotes": 3,
+      "upvotes": 5,
       "authors": [
         "Albert Ge",
         "Chandan Singh",
@@ -735,35 +703,63 @@
       "relevanceScore": 5,
       "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "Focus is masked diffusion language model architecture (register tokens for bounded-state carry across generation chunks). RL appears only as a final refinement step. Not core to Agentic RL foundations or frontier; peripheral to the KB scope. No action needed.",
-      "suggestedNote": "2026-09-17 发现：扩散语言模型的定长状态推理，RL 仅作末端微调。与 Agentic RL 主题相关性低，跳过。"
+      "reason": "Masked diffusion LM reasoning with register tokens; RL mentioned only as a refinement step. Not about agentic RL or agents. Irrelevant to KB scope. Abstract-only.",
+      "suggestedNote": "2026-09-14 preprint. Register tokens for bounded-state reasoning in dLLMs. Off-topic for Agentic RL; skipped."
     },
     {
-      "id": "2609.15982",
-      "title": "The Router Within: Eliciting Native Skill Routing from a Frozen LLM",
-      "summary": "Skills extend an LLM agent beyond its parametric knowledge, and the gain they promise rests on picking the right one. Deployed harnesses route by preloading every skill's metadata into the context, which disperses the agent's attention and caps the library size. Retrieval pipelines move the selection out of the context, but also out of the agent's capability. We show that the frozen agent LLM already carries the routing signal in its own forward passes, and that two linear maps suffice to read it out with no skill text in the context. Gavel (Glance And Verdict from a frozen LLM) reads it in two steps. A glance projects the task's and each skill's mid-layer states through the two maps, the only parameters trained, and scores the full library against compact per-skill banks that one forward pass builds at installation. A verdict then resumes the shortlisted skills' forward passes and reads the model's own likelihood and yes/no judgment, fused with the glance as a product of experts. Trained once, Gavel transfers zero-shot to three public benchmarks and SkillTraj, our new benchmark of 372 simulated agent trajectories. On Qwen3-32B it outperforms progressive disclosure and retrieve-and-rerank pipelines that add 1.2B to 16B external parameters, by up to 13.4 points on written tasks and up to 21.9 when the need for a skill arises mid-rollout. Routing accuracy improves as the backbone does, and in a bash-agent harness the same 32B triggers the correct skill on Skill-Use more often than far larger frontier models running in Codex.",
-      "published": "2026-09-14T00:00:00.000Z",
-      "url": "https://huggingface.co/papers/2609.15982",
-      "arxivUrl": "https://arxiv.org/abs/2609.15982",
-      "upvotes": 3,
+      "id": "2609.19969",
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+      "summary": "The widespread adoption of long-horizon agents has made model workloads increasingly input-heavy. Although prior work has substantially reduced the cost of long-context computation, prefill remains computationally expensive, and large KV caches continue to strain HBM and SSD capacity and data-transfer bandwidth. Together, these compute, storage, and bandwidth demands constitute the primary bottleneck to further lowering deployment costs. To address this challenge, we introduce DeepSeek-V4.1-Flash, a multimodal Mixture-of-Experts (MoE) model with 552B backbone parameters and support for contexts of up to one million tokens. With its Causal Encoder-Decoder (CED) architecture, the model activates 16B parameters per token during decode but only 8B parameters during prefill, substantially improving cost efficiency for agentic workloads. To push the limits of KV cache compression, DeepSeek-V4.1-Flash combines cross-layer KV cache reuse in Compressed Sparse Attention 2 (CSA2) with FP4 KV caching. These designs reduce its global KV cache footprint (always in HBM) to 890 bytes per token, roughly 1/4 of the corresponding footprint of DeepSeek-V4-Flash. Further, through a dedicated deployment optimization known as SWA Bounded Replay, DeepSeek-V4.1-Flash reduces its persistent KV cache footprint (always on SSD or in host memory) to roughly 1/8 of that of DeepSeek-V4-Flash. Despite its much smaller KV cache footprint, the model delivers substantially better performance than the baseline. In addition, we streamline the DeepSeek-V4 architecture and introduce several efficient architectural extensions. We pretrain DeepSeek-V4.1-Flash on a multimodal corpus comprising 45T tokens and conduct comprehensive post-training, yielding strong performance across diverse text-based and multimodal agentic scenarios. Model checkpoints are available at https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash.",
+      "published": "2026-09-17T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.19969",
+      "arxivUrl": "https://arxiv.org/abs/2609.19969",
+      "upvotes": 4,
       "authors": [
-        "Ruishuo Chen",
-        "Xun Wang",
-        "Yu Chen",
-        "Zhuoran Li",
-        "Longbo Huang"
+        "DeepSeek-AI",
+        "Anyi Xu",
+        "B. Li",
+        "Bangcai Lin",
+        "Bing Xue",
+        "BingCheng Xian",
+        "Bingzheng Xu",
+        "Bochao Wu"
       ],
       "matchedKeywords": [
-        "llm agent",
+        "long-horizon",
         "agent",
-        "rollout",
-        "benchmark"
+        "agentic",
+        "memory"
       ],
       "relevanceScore": 5,
       "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "Skill routing from a frozen LLM via two trained linear maps; no RL training loop, no policy optimization. Adjacent to agent skill-selection topics (coskill) but methodologically outside Agentic RL. Abstract-only and not a core contribution for this KB.",
-      "suggestedNote": "2026-09-17 发现：冻结 LLM 的原生技能路由，仅训练两个线性映射，无 RL 训练。与 Agentic RL 核心相关性不足，跳过。"
+      "reason": "Model/infrastructure paper on KV-cache compression and MoE serving efficiency. Matched keywords (long-horizon, agentic, memory) are incidental; it contributes no RL algorithm, environment, benchmark, or training methodology for Agentic RL. Out of scope for this KB.",
+      "suggestedNote": "Skip: serving/inference-efficiency work, not Agentic RL. Revisit only if the KB adds an inference-cost track."
+    },
+    {
+      "id": "2609.18779",
+      "title": "CERA-MoA: Co-Evolving Routing Mechanisms with Continually Learning LLM Agents",
+      "summary": "Current Mixture-of-Agents (MoA) paradigms generally treat query routing and agent fine-tuning as separate processes, limiting their ability to respond to evolving agent capabilities. This disconnect prevents routing strategies from adapting to evolving agent capabilities during post-training and prevents agents from achieving synergistic data-driven specialization. To resolve this, we introduce CERA-MoA (Co-Evolving Router with continually learning Agents for Mixture-of-Agents), an iterative reinforcement learning framework where the dynamic router and independent agent policies co-evolve. We design a predictive familiarity estimator that leverages mid-layer hidden states to evaluate semantic competence among agents, avoiding the overhead of full rollouts. Based on these familiarity scores, a cumulative-threshold adaptive routing mechanism dynamically activates a tailored minimal agent subset, achieving a trade-off between task performance and efficiency. By proactively allocating targeted training samples to agents based on their evolving competence, CERA-MoA promotes capability differentiation. Extensive experiments across various domains demonstrate that CERA-MoA outperforms state-of-the-art static-agent routing and fix-workflow fine-tuning baselines.",
+      "published": "2026-09-16T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.18779",
+      "arxivUrl": "https://arxiv.org/abs/2609.18779",
+      "upvotes": 4,
+      "authors": [
+        "Jiaxuan Jiang",
+        "Liyuan He",
+        "Zhixuan Fang"
+      ],
+      "matchedKeywords": [
+        "llm agent",
+        "reinforcement learning",
+        "agent",
+        "rollout"
+      ],
+      "relevanceScore": 5,
+      "decision": "skip",
+      "evidenceLevel": "abstract-only",
+      "reason": "Mixture-of-Agents routing plus per-agent fine-tuning. It is a multi-agent orchestration/continual-learning paper, not RL training of a single agentic policy; the 'reinforcement learning' keyword is used loosely and no RL objective, environment, or credit-assignment method is described in the abstract. Marginal for this KB.",
+      "suggestedNote": "Skip for now: MoA routing/continual fine-tuning, not core Agentic RL. Could be reconsidered if the KB adds a multi-agent orchestration section."
     },
     {
       "id": "2609.16057",
@@ -792,8 +788,37 @@
       "relevanceScore": 5,
       "decision": "skip",
       "evidenceLevel": "abstract-only",
-      "reason": "Symbolic policy learning for visual generation task families; 'policy' here is symbolic procedure abstraction, not RL policy optimization. Domain (visual generation) is outside the Agentic RL KB scope. Abstract-only; no RL training evidence.",
-      "suggestedNote": "2026-09-17 发现：面向视觉生成的符号策略学习，'策略' 指符号化流程而非 RL 策略。领域与 Agentic RL 不符，跳过。"
+      "reason": "Visual-generation harness with symbolic policies and frozen model parameters. Despite 'harness' and 'policy' terminology, it is not RL training (parameters remain fixed) and targets image generation, not agentic decision-making. Off-scope.",
+      "suggestedNote": "Skip: visual-generation symbolic-policy framework, not Agentic RL. Terminology overlap with 'harness' is superficial."
+    },
+    {
+      "id": "2609.15938",
+      "title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
+      "summary": "Scientific agents contribute to hypothesis discovery by synthesizing evidence, assessing proposals, and developing new explanations. Recent systems combine scientific agents with evolutionary search through critique, comparison, and revision. However, how different forms of agent collaboration affect hypothesis quality remains an open question. Answering this question requires separating the effects of agents' scientific capabilities from those of their collaboration. A framework must therefore preserve agents' scientific roles and support rules for combining, revising, and retaining hypotheses. Building on this view, we introduce HypoEvolve, which makes collaboration explicit through successive updates to a hypothesis population. Specifically, we propose a generational genetic algorithm to coordinate specialized large language model (LLM) agents that integrate mechanistic arguments, reconsider assumptions, and assess evidence and testability. Each generation specifies how scientific judgments and new proposals reshape the population, making collaboration effects on hypothesis quality directly testable. Moreover, we design our evaluation around scientifically meaningful hypotheses that explain how a proposed intervention could work. Drug repurposing links these explanations to target-level biological claims assessed against external evidence. Specifically, we adapt DepMap and Open Targets into complementary external measures grounded in experimental, genetic, and clinical evidence. Across 34 cancer types, HypoEvolve achieves the highest scores against six baselines on both measures. DepMap selectivity reaches 0.171, versus 0.115 for the strongest baseline. Gains over single-pass generation also generalize to held-out cancer types. HypoEvolve advances a vision of autonomous science in which AI research teams achieve a capacity for discovery beyond that of individual models.",
+      "published": "2026-09-14T00:00:00.000Z",
+      "url": "https://huggingface.co/papers/2609.15938",
+      "arxivUrl": "https://arxiv.org/abs/2609.15938",
+      "upvotes": 25,
+      "authors": [
+        "Jieyuan Liu",
+        "Mengzhou Hu",
+        "Jefferson Chen",
+        "JungHo Kong",
+        "Pratibha Jagannatha",
+        "Yiming Gao",
+        "Dexter Pratt",
+        "Hsin-Yuan Lee"
+      ],
+      "matchedKeywords": [
+        "multi-agent",
+        "agent",
+        "evaluation"
+      ],
+      "relevanceScore": 4,
+      "decision": "skip",
+      "evidenceLevel": "abstract-only",
+      "reason": "Scientific hypothesis discovery via genetic-algorithm coordination of LLM agents. Multi-agent and evaluation keywords match, but the domain (drug repurposing, DepMap/Open Targets) and method (evolutionary search over hypotheses) are outside the Agentic RL scope of this KB.",
+      "suggestedNote": "Skip: scientific-discovery multi-agent system, not Agentic RL. Domain-specific evaluation (cancer biology) is out of scope."
     }
   ]
 }
