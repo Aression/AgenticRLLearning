@@ -438,5 +438,35 @@
     "url": "https://arxiv.org/abs/2609.20804",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Directly relevant to the KB's harness/coding-agent thread (swe-agent, swe-bench, multi-harness). Component-level ablation of planning, action space, and context"
+  },
+  {
+    "id": "reflect-revise-reuse-training-free-skill",
+    "title": "Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents",
+    "kind": "论文",
+    "author": "Bofan Chen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.17653",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the KB and plausibly relevant to Agentic RL: long-horizon GUI agents, execution-feedback-driven skill revision, and a reflect-revise-reuse loop. However,"
+  },
+  {
+    "id": "when2think-learning-difficulty-aware-len",
+    "title": "When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models",
+    "kind": "论文",
+    "author": "Jaejun Shim et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.19671",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the KB and plausibly relevant to the reasoning-RL branch (reward shaping, critic-free optimization, verifier-based rewards, accuracy-efficiency trade-off"
+  },
+  {
+    "id": "don-t-mask-the-environment-observation-s",
+    "title": "Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL",
+    "kind": "论文",
+    "author": "Juzheng Zhang et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.20715",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the knowledge base and directly on-topic for Agentic RL: studies SFT initialization for subsequent GRPO, observation-token supervision, exploration entro"
   }
 ]

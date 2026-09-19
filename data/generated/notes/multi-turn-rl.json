@@ -44,14 +44,14 @@
     "完成标准"
   ],
   "related": [
+    "actobs-observation-supervision",
     "emergence-world-stress-test",
     "environments",
+    "evoskill-gui-training-free",
     "frontier-radar",
-    "glossary",
-    "lab-agent",
-    "lab-agent-rl"
+    "glossary"
   ],
-  "degree": 18,
+  "degree": 20,
   "sources": [
     "agentic-survey",
     "gigpo",

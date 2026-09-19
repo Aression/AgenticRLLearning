@@ -51,13 +51,14 @@
     "自测"
   ],
   "related": [
+    "actobs-observation-supervision",
     "grpo",
     "lab-agent-rl",
     "multi-turn-rl",
     "orientation",
     "rewards"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "retireopd-self-retiring-on-policy-distil"
   ],

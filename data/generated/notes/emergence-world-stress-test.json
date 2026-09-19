@@ -52,11 +52,12 @@
   ],
   "related": [
     "evaluation",
+    "evoskill-gui-training-free",
     "multi-agent",
     "multi-turn-rl",
     "safety"
   ],
-  "degree": 5,
+  "degree": 6,
   "sources": [
     "emergence-world-adversarial-stress-testi"
   ],

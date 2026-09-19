@@ -48,12 +48,12 @@
   "related": [
     "rewards",
     "training-systems",
+    "actobs-observation-supervision",
     "grpo",
     "harness-design-coding-agents",
-    "lab-agent",
-    "lab-rl"
+    "lab-agent"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "verl",
     "lightning-code",

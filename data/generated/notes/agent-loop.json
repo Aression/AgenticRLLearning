@@ -47,12 +47,13 @@
   ],
   "related": [
     "orientation",
+    "actobs-observation-supervision",
     "evolvetrade-policy-refinement",
+    "evoskill-gui-training-free",
     "harness-design-coding-agents",
-    "modularrsi-harness",
-    "safety"
+    "modularrsi-harness"
   ],
-  "degree": 8,
+  "degree": 10,
   "sources": [
     "react",
     "anthropic-building",

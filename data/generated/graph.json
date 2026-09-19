@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T03:23:01.776444+00:00",
+  "generatedAt": "2026-09-19T03:19:16.703239+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -31,7 +31,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "policy-gradient",
@@ -55,7 +55,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "Agent 系统",
-      "degree": 8
+      "degree": 10
     },
     {
       "id": "environments",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 16
+      "degree": 17
     },
     {
       "id": "preferences",
@@ -87,7 +87,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 13
+      "degree": 17
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 18
+      "degree": 20
     },
     {
       "id": "training-systems",
@@ -111,7 +111,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 16
+      "degree": 17
     },
     {
       "id": "safety",
@@ -135,7 +135,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "前沿专题",
-      "degree": 12
+      "degree": 14
     },
     {
       "id": "lab-rl",
@@ -159,7 +159,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "learning-paths",
@@ -191,7 +191,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 10
+      "degree": 12
     },
     {
       "id": "modularrsi-harness",
@@ -207,7 +207,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "value-flattening-ppo",
@@ -231,7 +231,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "compo-zeroth-order-alignment",
@@ -255,7 +255,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "harness-design-coding-agents",
@@ -263,7 +263,31 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 7
+      "degree": 8
+    },
+    {
+      "id": "evoskill-gui-training-free",
+      "label": "EvoSkill-GUI：免训练的技能自演化",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 5
+    },
+    {
+      "id": "when2think-length-control",
+      "label": "When2Think：难度感知的推理长度控制",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 6
+    },
+    {
+      "id": "actobs-observation-supervision",
+      "label": "观测监督如何改变 RL 下的 Agent 探索",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 9
     },
     {
       "id": "2026",
@@ -284,6 +308,14 @@
     {
       "id": "actor-critic",
       "label": "actor-critic",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "agent",
+      "label": "agent",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -458,6 +490,14 @@
       "degree": 0
     },
     {
+      "id": "entropy",
+      "label": "entropy",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "environment",
       "label": "environment",
       "kind": "concept",
@@ -554,6 +594,14 @@
       "degree": 0
     },
     {
+      "id": "gui-agent",
+      "label": "gui-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "harness",
       "label": "harness",
       "kind": "concept",
@@ -570,6 +618,14 @@
       "degree": 0
     },
     {
+      "id": "hybrid-reasoning",
+      "label": "hybrid-reasoning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "kl",
       "label": "KL",
       "kind": "concept",
@@ -580,6 +636,14 @@
     {
       "id": "lab",
       "label": "lab",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "length-control",
+      "label": "length-control",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -778,8 +842,24 @@
       "degree": 0
     },
     {
+      "id": "reasoning-efficiency",
+      "label": "reasoning-efficiency",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "reference",
       "label": "reference",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reflection",
+      "label": "reflection",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -812,6 +892,14 @@
     {
       "id": "reward-hacking",
       "label": "reward hacking",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reward-shaping",
+      "label": "reward-shaping",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -892,6 +980,22 @@
     {
       "id": "self-improvement",
       "label": "self-improvement",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "sft",
+      "label": "SFT",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "skill-evolution",
+      "label": "skill-evolution",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -980,6 +1084,14 @@
     {
       "id": "trading-agent",
       "label": "trading-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "training-free",
+      "label": "training-free",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1236,8 +1348,32 @@
       "weight": 1.0
     },
     {
+      "source": "actobs-observation-supervision",
+      "target": "agent-loop",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "agent-loop",
       "target": "evolvetrade-policy-refinement",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "evoskill-gui-training-free",
       "kind": "related",
       "weight": 1.0
     },
@@ -1326,8 +1462,26 @@
       "weight": 1.0
     },
     {
+      "source": "evaluation",
+      "target": "when2think-length-control",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "evolvetrade-policy-refinement",
       "target": "frontier-radar",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "frontier-radar",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "harness-design-coding-agents",
       "kind": "related",
       "weight": 1.0
     },
@@ -1352,6 +1506,12 @@
     {
       "source": "grpo",
       "target": "value-flattening-ppo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "when2think-length-control",
       "kind": "related",
       "weight": 1.0
     },
@@ -1398,6 +1558,12 @@
       "weight": 1.0
     },
     {
+      "source": "rewards",
+      "target": "when2think-length-control",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "scienceide-sci-envs",
       "target": "training-systems",
       "kind": "related",
@@ -1410,10 +1576,52 @@
       "weight": 1.0
     },
     {
+      "source": "actobs-observation-supervision",
+      "target": "frontier-radar",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "grpo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "mintrl-off-policy-intervention",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "value-learning",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "compo-zeroth-order-alignment",
       "target": "preferences",
       "kind": "shared-concept",
       "weight": 2.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "evoskill-gui-training-free",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "emergence-world-stress-test",
@@ -1446,6 +1654,12 @@
       "weight": 1.0
     },
     {
+      "source": "evoskill-gui-training-free",
+      "target": "multi-turn-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "frontier-radar",
       "target": "mintrl-off-policy-intervention",
       "kind": "shared-concept",
@@ -1472,6 +1686,12 @@
     {
       "source": "grpo",
       "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "when2think-length-control",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -1554,6 +1774,12 @@
       "weight": 1.0
     },
     {
+      "source": "mintrl-off-policy-intervention",
+      "target": "when2think-length-control",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "modularrsi-harness",
       "target": "rewards",
       "kind": "shared-concept",
@@ -1592,6 +1818,12 @@
     {
       "source": "rewards",
       "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "scienceide-sci-envs",
+      "target": "when2think-length-control",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2714,6 +2946,96 @@
     {
       "source": "harness-design-coding-agents",
       "target": "ablation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "gui-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "skill-evolution",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "training-free",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "long-horizon",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "reflection",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "when2think-length-control",
+      "target": "reasoning-efficiency",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "when2think-length-control",
+      "target": "reward-shaping",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "when2think-length-control",
+      "target": "hybrid-reasoning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "when2think-length-control",
+      "target": "length-control",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "when2think-length-control",
+      "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "sft",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "exploration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "entropy",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "agent",
       "kind": "concept",
       "weight": 1
     }

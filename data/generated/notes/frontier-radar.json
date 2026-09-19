@@ -47,13 +47,13 @@
   ],
   "related": [
     "multi-agent",
+    "actobs-observation-supervision",
     "evolvetrade-policy-refinement",
+    "evoskill-gui-training-free",
     "glossary",
-    "learning-paths",
-    "mdp",
-    "mintrl-off-policy-intervention"
+    "learning-paths"
   ],
-  "degree": 12,
+  "degree": 14,
   "sources": [
     "coskill",
     "multi-harness",

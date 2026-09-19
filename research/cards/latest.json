@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-18T03:23:01.520318+00:00",
+  "generatedAt": "2026-09-19T03:19:16.303726+00:00",
   "requested": 3,
   "generated": [
     {
-      "note_id": "sol-pi-auto-research-harness",
-      "note_path": "content/31-sol-pi-auto-research-harness.md",
-      "source_id": "sol-pi-recursively-scaling-auto-research",
-      "title": "SoL-Pi：递归扩展自动研究循环优化 Agent Harness",
+      "note_id": "evoskill-gui-training-free",
+      "note_path": "content/34-evoskill-gui-training-free.md",
+      "source_id": "reflect-revise-reuse-training-free-skill",
+      "title": "EvoSkill-GUI：免训练的技能自演化",
       "stage": "FRONTIER",
       "minutes": 15,
-      "arxiv_id": "2609.20519",
-      "full_text_url": "https://arxiv.org/html/2609.20519"
+      "arxiv_id": "2609.17653",
+      "full_text_url": "https://arxiv.org/html/2609.17653"
     },
     {
-      "note_id": "retireopd-self-retiring-opd",
-      "note_path": "content/32-retireopd-self-retiring-opd.md",
-      "source_id": "retireopd-self-retiring-on-policy-distil",
-      "title": "RetireOPD：可自适应退场的在线策略蒸馏",
+      "note_id": "when2think-length-control",
+      "note_path": "content/35-when2think-length-control.md",
+      "source_id": "when2think-learning-difficulty-aware-len",
+      "title": "When2Think：难度感知的推理长度控制",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.20784",
-      "full_text_url": "https://arxiv.org/html/2609.20784"
+      "arxiv_id": "2609.19671",
+      "full_text_url": "https://arxiv.org/html/2609.19671"
     },
     {
-      "note_id": "harness-design-coding-agents",
-      "note_path": "content/33-harness-design-coding-agents.md",
-      "source_id": "an-empirical-study-of-harness-design-for",
-      "title": "编码智能体 Harness 组件消融实证研究",
-      "stage": "SYSTEMS",
-      "minutes": 18,
-      "arxiv_id": "2609.20804",
-      "full_text_url": "https://arxiv.org/html/2609.20804"
+      "note_id": "actobs-observation-supervision",
+      "note_path": "content/36-actobs-observation-supervision.md",
+      "source_id": "don-t-mask-the-environment-observation-s",
+      "title": "观测监督如何改变 RL 下的 Agent 探索",
+      "stage": "FRONTIER",
+      "minutes": 15,
+      "arxiv_id": "2609.20715",
+      "full_text_url": "https://arxiv.org/html/2609.20715"
     }
   ],
   "skipped": [],

@@ -47,11 +47,11 @@
     "learning-paths",
     "mdp",
     "prerequisites",
+    "actobs-observation-supervision",
     "frontier-radar",
-    "glossary",
-    "mintrl-off-policy-intervention"
+    "glossary"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "sutton-barto",
     "silver"

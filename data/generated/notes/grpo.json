@@ -44,14 +44,14 @@
     "阅读顺序"
   ],
   "related": [
+    "actobs-observation-supervision",
     "lab-agent-rl",
     "mintrl-off-policy-intervention",
     "orientation",
     "retireopd-self-retiring-opd",
-    "rewards",
-    "scienceide-sci-envs"
+    "rewards"
   ],
-  "degree": 13,
+  "degree": 17,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

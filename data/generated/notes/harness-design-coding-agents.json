@@ -54,11 +54,11 @@
     "modularrsi-harness",
     "agent-loop",
     "evaluation",
+    "evoskill-gui-training-free",
     "lab-agent-rl",
-    "modularrsi-harness",
-    "scienceide-sci-envs"
+    "modularrsi-harness"
   ],
-  "degree": 7,
+  "degree": 8,
   "sources": [
     "an-empirical-study-of-harness-design-for"
   ],
