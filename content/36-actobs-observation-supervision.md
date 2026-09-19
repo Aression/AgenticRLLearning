@@ -1,0 +1,48 @@
+---
+id: actobs-observation-supervision
+title: 观测监督如何改变 RL 下的 Agent 探索
+summary: 论文提出 ActObs：在 SFT 阶段不掩蔽环境观测 token，让策略同时学习动作与动作后果，从而改变后续 GRPO 的探索行为。
+stage: FRONTIER
+track: 训练算法
+order: 36
+minutes: 15
+updated: '2026-09-19'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.20715
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+full_text_url: https://arxiv.org/html/2609.20715
+objectives: [理解标准轨迹 SFT 只监督动作、掩蔽观测这一惯例及其隐含假设, 说清 ActObs 如何在不增加数据与参数的前提下把观测变为预测目标, 区分 SFT 阶段表现相近与 GRPO 后 pass@ 分化之间的证据关系]
+tags: [GRPO, SFT, exploration, entropy, agent]
+sources: [don-t-mask-the-environment-observation-s]
+related: [grpo, multi-turn-rl, agent-loop]
+prerequisites: []
+---
+## 论文要解决的问题
+
+语言 Agent 的一条轨迹同时包含两类 token：Agent 自己发出的动作，以及环境返回的观测。作者指出，标准轨迹 SFT 的惯例是只在动作 token 上计算损失，观测虽留在上下文中却不作为预测目标。这一惯例背后的假设是：读取环境反馈有用，但学习预测它没有用。论文要检验的正是这个很少被直接测试的假设，尤其是在 SFT 只是后续 RL 初始化的场景下。
+
+## 方法
+
+ActObs 的改动很小：把轨迹中已有的观测 token 取消掩蔽，让语言建模损失同时作用于动作与观测。在观测位置，模型被训练去预测「前一个动作对当前环境做了什么」，于是每条轨迹既是模仿样本，也是状态转移样本。作者用两个对照来定位效果：ActionSFT 是标准的仅动作目标；ObsAct 是先做仅观测 SFT、再做仅动作 SFT 的时序控制，用来区分「接触观测」与「联合监督」。作者强调该方法不增加数据、参数、序列长度、前向次数，也不改动 RL 算法本身。
+
+## 证据与实验
+
+作者报告：三种 SFT 检查点在 Terminal-Bench 2.0 上表现相近，但在同一套 GRPO 流程后出现分化。4B 规模下，ActObs 初始化在作者评估的每个采样预算上都给出更强的策略，pass@1 相对 ActionSFT 有 29% 的相对优势；8B 下牺牲部分单次可靠性，pass@16 提升 14%，解出 24 个任务而非 21 个。跨域迁移到 aider-polyglot 的 225 个多语言代码编辑任务时，4B ActObs 的 GRPO 策略在 pass@1 上超出 43%、pass@4 上超出 24%，尽管其 RL 前的代码编辑检查点更弱。
+
+机制层面，作者观察到 GRPO 期间 ActObs 维持更高的训练熵，最终自熵也更高，同时离 SFT 初始化更近；动作与观测梯度初期对齐、随后近乎正交，仅动作 SFT 会留下较大的观测梯度残差并削弱环境预测能力。作者还报告提高观测损失权重会以 pass@1 可靠性换取重复采样成功率，而单纯提高 ActionSFT 的推理温度并不能弥合 pass@ 差距。
+
+## 边界与未解问题
+
+需要明确：以上数字与机制解释均来自论文作者的主张，本卡片仅基于摘要与正文摘录，未复现实验、未核对代码。证据集中在 Terminal-Bench 2.0 与 aider-polyglot 两个基准、4B 与 8B 两个规模，跨模型族与跨任务类型的普适性未知。熵与 pass@ 的关系被作者自己指出并非单调决定（ECHO 轨迹熵高但任务数不占优），因此「保留熵导致更强重复采样」更像相关性的机制叙事，而非已确证的因果链。观测监督的权重、观测 token 的噪声与不可预测性如何处理，摘录中未给出完整方案。
+
+## 与知识库的关系
+
+本卡与 grpo 笔记直接相关：它讨论的是 GRPO 之前的 SFT 初始化如何改变同一 RL 目标的训练动力学。与 multi-turn-rl 相关之处在于，它把多轮交互中的环境反馈纳入监督信号；与 agent-loop 相关之处在于，它把「动作—观测」循环中的观测侧从上下文变成学习目标。它不改变 RL 算法，而是改变初始化，因此可作为训练算法轨道中「数据与损失设计影响探索」的一个案例。
+
+## 自测
+
+1. ActObs 与 ObsAct 的关键区别是什么？为什么作者要用 ObsAct 作为对照？
+2. 作者用什么证据支持「SFT 阶段表现相近但 RL 后分化」这一说法？
+3. 如果你要复现，哪些量需要在线记录才能检验熵与 pass@ 的关系？

@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-17T15:58:42.905777+00:00",
+  "generatedAt": "2026-09-19T03:19:16.303726+00:00",
   "requested": 3,
   "generated": [
     {
-      "note_id": "evolvetrade-policy-refinement",
-      "note_path": "content/28-evolvetrade-policy-refinement.md",
-      "source_id": "evolvetrade-experience-driven-policy-ref",
-      "title": "EvolveTrade：交易智能体的经验驱动策略自演化",
+      "note_id": "evoskill-gui-training-free",
+      "note_path": "content/34-evoskill-gui-training-free.md",
+      "source_id": "reflect-revise-reuse-training-free-skill",
+      "title": "EvoSkill-GUI：免训练的技能自演化",
       "stage": "FRONTIER",
       "minutes": 15,
-      "arxiv_id": "2609.17632",
-      "full_text_url": "https://arxiv.org/html/2609.17632"
+      "arxiv_id": "2609.17653",
+      "full_text_url": "https://arxiv.org/html/2609.17653"
     },
     {
-      "note_id": "scienceide-sci-envs",
-      "note_path": "content/29-scienceide-sci-envs.md",
-      "source_id": "scienceide-turning-world-s-scientific-co",
-      "title": "ScienceIDE：把科学代码库变成可学习环境",
+      "note_id": "when2think-length-control",
+      "note_path": "content/35-when2think-length-control.md",
+      "source_id": "when2think-learning-difficulty-aware-len",
+      "title": "When2Think：难度感知的推理长度控制",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.19134",
-      "full_text_url": "https://arxiv.org/html/2609.19134"
+      "arxiv_id": "2609.19671",
+      "full_text_url": "https://arxiv.org/html/2609.19671"
     },
     {
-      "note_id": "compo-zeroth-order-alignment",
-      "note_path": "content/30-compo-zeroth-order-alignment.md",
-      "source_id": "a-zeroth-order-paradigm-for-llm-preferen",
-      "title": "ComPO：基于比较oracle的零阶偏好对齐",
+      "note_id": "actobs-observation-supervision",
+      "note_path": "content/36-actobs-observation-supervision.md",
+      "source_id": "don-t-mask-the-environment-observation-s",
+      "title": "观测监督如何改变 RL 下的 Agent 探索",
       "stage": "FRONTIER",
-      "minutes": 18,
-      "arxiv_id": "2609.19144",
-      "full_text_url": "https://arxiv.org/html/2609.19144"
+      "minutes": 15,
+      "arxiv_id": "2609.20715",
+      "full_text_url": "https://arxiv.org/html/2609.20715"
     }
   ],
   "skipped": [],

@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "generated_at": "2026-09-18T03:22:33.076658+00:00",
+  "requested_model": "deepseek-v4-flash",
+  "response_model": [
+    "deepseek-flash"
+  ],
+  "source_discovery": "research/discovery.json",
+  "batches": 5,
+  "human_review_required": true,
+  "publish_directly": false,
+  "summary": "Audited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base. Two entries (ModularRSI 2609.14857, and the harness-design empirical study 2609.20804) are directly on-topic for agentic RL / harness design and warrant human reading; ModularRSI is a duplicate of an existing catalog candidate and should be archived rather than re-reviewed. RetireOPD (2609.20784) is plausibly on-topic (multi-turn agentic RL, on-policy distillation) and should be reviewed. SoL-Pi (2609.20519) is harness/engineering-oriented with cost claims and is a weaker fit; When2Think (2609.19671) is reasoning-length control, only tangentially agentic. All evidence is abstract-only from a preprint aggregator; no code, no reproduction, and no HTTP checks were performed. No instructions in the untrusted discovery text were followed.\n\nAudited 5 discovery entries against the existing Agentic RL knowledge base (40 sources). One entry (Rethinking Critic Learning in PPO / SP^3O) is already cataloged as a pending preprint and is a duplicate of an existing source id, so it is skipped. Two entries are clearly out of scope (music generation, realtime speech) and are skipped. Two entries are plausible but adjacent candidates requiring human reading: EvoSkill-GUI (training-free GUI skill evolution) and EvolveTrade (self-evolving LLM trading agents). All evidence is abstract-only from a daily-papers feed; no code was executed, no HTTP checks were performed, and no candidate is treated as published knowledge. Untrusted discovery text was treated as data only; embedded URLs were not fetched.\n\nAudited 5 discovery entries from huggingface-daily-papers against the Agentic RL knowledge base. Two entries (ScienceIDE 2609.19134, ComPO 2609.19144) already exist in the catalog as 'LLM 全文精读草稿 · 待人工复核' and are therefore duplicates of existing source ids; they should not be re-added. Three entries (RiskChainBench 2609.16900, OPSD privileged-information study 2609.20612, Vision-RL2 2609.19745) are new to the KB. RiskChainBench is a safety/web-agent benchmark with only tangential Agentic RL training relevance; OPSD is on-policy self-distillation (distillation, not RL) with a modest relevance to policy learning; Vision-RL2 is region-level RL for MLLM perception, RL-adjacent but not agentic. All evidence is abstract-only from a preprint aggregator; no code, no reproduction, and no peer review was verified. No candidate is treated as published knowledge.\n\nAudited 5 newly discovered HuggingFace daily-paper entries against the existing Agentic RL knowledge base (40 sources). None of the 5 candidates duplicate an existing source ID or title. Two are plausibly on-topic for Agentic RL (GAI formal framework; ProgramDistill coding-agent benchmark) and warrant human reading; two are adjacent but off-core (HarnessVLN embodied navigation; GPT-Policy in-context robot learning); one is off-topic (register tokens for diffusion LMs). All evidence is abstract-only from untrusted discovery metadata; no code, full text, or reproduction was checked. No candidate should be treated as published knowledge.\n\nAudited 5 newly discovered Hugging Face daily-paper entries against the existing Agentic RL knowledge base (foundations to frontier). None of the five are duplicates of existing source IDs. Four are off-scope or only tangentially related (KV-cache compression, MoA routing, visual-generation harness, scientific hypothesis discovery) and are skipped. One (Agora, Git-as-shared-memory for collective AutoResearch) is adjacent to the KB's multi-agent/memory/harness themes and is retained as archive-only, not published knowledge. All judgments rest on abstract-only evidence; no code, artifacts, or reproductions were checked, and no URLs were invented.",
+  "candidates": [
+    {
+      "arxiv_id": "2609.14857",
+      "title": "ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement",
+      "decision": "archive",
+      "evidence_level": "abstract-only",
+      "reason": "Duplicate of existing catalog candidate 'modularrsi-modular-and-generalizable-rec' (same arXiv id, same title). Already retained as an LLM full-text draft pending human review; re-adding would duplicate. Keep as archive, do not publish.",
+      "suggested_note": "Duplicate of existing candidate modularrsi-modular-and-generalizable-rec. Abstract-only; claims benchmark-disjoint evolution tasks and transfer across foundation models are unverified. Do not treat as published knowledge."
+    },
+    {
+      "arxiv_id": "2609.20804",
+      "title": "An Empirical Study of Harness Design for Coding Agents",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Directly relevant to the KB's harness/coding-agent thread (swe-agent, swe-bench, multi-harness). Component-level ablation of planning, action space, and context management is a plausible empirical contribution. Abstract-only; 176 matched settings and reported effects are unverified and need human reading.",
+      "suggested_note": "Candidate for the harness-design thread. Abstract-only: claims context management value scales with tighter budgets, rule-based elision before LLM summarization is strongest, planning shifts from accuracy scaffold to cost saver, and bash-only interfaces suffice for bash-capable models. Verify methodology, model set, and whether SWE-Bench Verified / Terminal-Bench 2.1 results are reproducible before publishing."
+    },
+    {
+      "arxiv_id": "2609.20784",
+      "title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "On-topic for agentic RL: multi-turn agents, on-policy distillation with a skill-conditioned teacher, adaptive retirement schedule. Plausible but abstract-only; reported ALFWorld/WebShop gains and the 'surpasses its own teacher' claim need human verification.",
+      "suggested_note": "Candidate for agentic-RL training-method thread. Abstract-only: claims 14.1-18.8% ALFWorld and 11.8-19.0% WebShop improvement over RL baseline across Qwen2.5 1.5B-7B. Check teacher reliability argument, retirement criterion, and whether baselines are matched before publishing."
+    },
+    {
+      "arxiv_id": "2609.20519",
+      "title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Harness-layer self-improvement is adjacent to the KB's harness thread, but the abstract emphasizes token/cost efficiency on a single 51-task EdgeBench rather than RL methodology. Plausible but weaker fit; needs human reading to judge relevance and whether cost claims are substantiated.",
+      "suggested_note": "Adjacent candidate. Abstract-only: claims 44.7-49.0% token reduction and ~1/3 API cost reduction at comparable performance on EdgeBench (51 tasks). Verify benchmark scope, baseline harnesses, and whether 'reusable improvements' are demonstrated beyond the development setting."
+    },
+    {
+      "arxiv_id": "2609.19671",
+      "title": "When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Reasoning-length control / difficulty-aware computation allocation for LRMs. Tangential to Agentic RL scope (no agent, tool, or environment interaction); overlaps only loosely with reasoning-RL sources already in the KB. Not a priority for this knowledge base.",
+      "suggested_note": "Out of primary scope: instance-adaptive reasoning-length control, not agentic RL. Abstract-only; AIME24/AIME25 numbers unverified. Skip unless the KB later adds a reasoning-efficiency thread."
+    },
+    {
+      "arxiv_id": "2609.17653",
+      "title": "Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "On-topic for agentic RL: long-horizon GUI agents, skill packages, reflect-revise-reuse loop, rollout-level revision, and benchmark gains on MobileWorld/AndroidWorld/OSWorld. However it is explicitly training-free (no RL objective), so it is adjacent rather than core, and the abstract-only claims (+16.2%/+6.0%/+10.5%) are unverified. Requires human reading to decide whether it belongs as a skill-evolution reference or is out of scope.",
+      "suggested_note": "2026-09-18 审计：仅核验摘要，未复现。训练无关的技能演化框架（reflect-revise-reuse），与 GUI/长程 agent 相关但非 RL 训练方法；需人工判断是否纳入技能管理主题。"
+    },
+    {
+      "arxiv_id": "2609.17632",
+      "title": "EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Adjacent to Agentic RL scope: treats a tool-using agent's system prompt as a text-parameterized policy refined from decision traces and portfolio feedback, with backbone LLM frozen. This is prompt-level self-evolution rather than gradient-based RL, and the domain (trading) is narrow. Abstract-only; Sharpe/Cumulative Return claims unverified. Human reading needed to judge relevance and whether it duplicates existing self-evolution themes.",
+      "suggested_note": "2026-09-18 审计：仅核验摘要，未复现。将系统提示视为文本参数化策略、由决策轨迹与组合反馈迭代修订；属提示级自演化而非梯度 RL，需人工评估与现有自演化主题的重叠度。"
+    },
+    {
+      "arxiv_id": "2609.18708",
+      "title": "Rethinking Critic Learning in PPO: Understanding and Mitigating Value Flattening",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Duplicate: already present in the knowledge base as source id 'rethinking-critic-learning-in-ppo-unders' (LLM full-text draft, pending human review). Re-adding would create a duplicate entry. No new information in the discovery record beyond the existing catalog note.",
+      "suggested_note": "重复来源：已存在于知识库（rethinking-critic-learning-in-ppo-unders）。本次不新增，沿用既有待复核条目。"
+    },
+    {
+      "arxiv_id": "2609.16034",
+      "title": "StepAudio 3 Music Technical Report",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Out of scope: long-form music generation model (tokenizer, flow-matching DiT, ABC-CoT planning). DPO is mentioned only as a final-stage preference optimization for audio quality; this is not agentic RL and does not fit the knowledge base's foundations-to-frontier agentic RL scope.",
+      "suggested_note": "不相关：音乐生成技术报告，DPO 仅用于音频质量偏好优化，与 Agentic RL 主题无关。"
+    },
+    {
+      "arxiv_id": "2609.14005",
+      "title": "StepAudio 3 Realtime Technical Report",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Out of scope: realtime spoken-dialogue audio-language foundation model (duplex speech, think-while-speaking, voice agent tool execution). Despite 'agent' and 'tool' keywords, it is a speech/audio systems report, not agentic RL methodology or training.",
+      "suggested_note": "不相关：实时语音对话基础模型报告，虽含 agent/tool 关键词但属语音系统方向，与 Agentic RL 主题无关。"
+    },
+    {
+      "arxiv_id": "2609.19134",
+      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Duplicate: already present in the catalog as source id 'scienceide-turning-world-s-scientific-co' with an existing LLM full-text draft note. Re-adding would create a duplicate source. No new information in the discovery entry beyond the existing catalog record.",
+      "suggested_note": "Duplicate of existing catalog entry scienceide-turning-world-s-scientific-co; do not re-ingest. Existing note already flags it as an unverified LLM full-text draft pending human review."
+    },
+    {
+      "arxiv_id": "2609.19144",
+      "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Duplicate: already present in the catalog as source id 'a-zeroth-order-paradigm-for-llm-preferen' with an existing LLM full-text draft note. Re-adding would create a duplicate source.",
+      "suggested_note": "Duplicate of existing catalog entry a-zeroth-order-paradigm-for-llm-preferen; do not re-ingest. Existing note already flags it as an unverified LLM full-text draft pending human review."
+    },
+    {
+      "arxiv_id": "2609.16900",
+      "title": "RiskChainBench: A Benchmark for Obfuscated Platform Message Restoration and Evidence-Grounded Web Investigation",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "New to the KB. A benchmark for obfuscated-message restoration plus evidence-grounded web-agent investigation, with a resettable local sandbox and reported execution-failure rates. It is adjacent to existing web-agent/benchmark sources (webarena, gaia, tau-bench) and to safety interests (lilian-reward), but it is primarily an evaluation/safety benchmark rather than an Agentic RL training contribution. Abstract-only; no code or reproduction verified. Requires human reading to decide whether it belongs in the KB's benchmark or safety cluster.",
+      "suggested_note": "Candidate benchmark for obfuscated platform-message restoration and evidence-grounded web investigation; reports Entry Top-1 35.2-95.2% and web decision accuracy 26.3-62.8% across ten models, with 31.9% execution failures. Abstract-only, unreproduced. Decide placement relative to webarena/gaia/tau-bench and lilian-reward; do not publish as established knowledge."
+    },
+    {
+      "arxiv_id": "2609.20612",
+      "title": "What Does Privileged Information Add to On-Policy Self-Distillation?",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "New to the KB. An empirical study of on-policy self-distillation (OPSD) with privileged references, introducing the AMPLE-Math suite and reporting that reference-free distillation accounts for much of the observed gains. Relevant to the KB's policy-learning and reasoning threads (deepseek-r1, dapo, gigpo) but it is a distillation study, not an RL algorithm; the abstract itself cautions that privileged-reference benefits are modest and can reverse under long thinking-enabled rollouts. Abstract-only; no code or reproduction verified.",
+      "suggested_note": "Empirical OPSD study with AMPLE-Math (5,319 problems, six reasoning views); reports reference-free distillation explains much of Qwen3-1.7B gains and that privileged-reference benefit is modest and can turn negative with long thinking-enabled rollouts. Distillation, not RL. Abstract-only, unreproduced; read before any KB placement."
+    },
+    {
+      "arxiv_id": "2609.19745",
+      "title": "Region-Level Policy Optimization for Fine-grained MLLM Perception",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "New to the KB. Applies region-level RL (Vision-RL2) to a proposal network for fine-grained MLLM perception, treating coherent regions as actions scored by a frozen reader. RL-adjacent and methodologically interesting, but the domain is multimodal perception rather than agentic RL; relevance to the KB's Agentic RL scope is indirect. Abstract-only; a code URL is mentioned in the abstract but was not fetched or verified, and an HTTP 200 would not establish correctness.",
+      "suggested_note": "Region-level RL for fine-grained MLLM perception (Vision-RL2); treats regions as actions scored by a frozen reader, reports accuracy gains at every token budget across six benchmarks and four backbones. Peripheral to Agentic RL scope. Abstract-only, unreproduced; code URL unverified."
+    },
+    {
+      "arxiv_id": "2609.13406",
+      "title": "Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Directly relevant to the KB's foundations-to-frontier scope: proposes a formal framework (GAI) unifying generalized policy iteration and recursive self-improvement, with two axes (improving mechanism inside/outside agent; evaluation standard grounded outside/not). Connects to existing sutton-barto (GPI), modularrsi (harness self-improvement), and agentic-survey. Abstract-only; no theory proofs, code, or reproduction verified. Requires human reading before any archival decision.",
+      "suggested_note": "2026-09-11 preprint. Formal framework positioning GPI vs RSI as one paradigm; two dials: whether the improving mechanism is part of the agent, and whether the evaluation standard is externally grounded. Abstract-only; not reproduced. Read for: (a) whether the formalism is rigorous enough to anchor KB concept cards, (b) overlap with modularrsi and agentic-survey."
+    },
+    {
+      "arxiv_id": "2609.18805",
+      "title": "ProgramDistill: From Interactive Web Apps to Verifiable Reference-Guided SWE Tasks",
+      "decision": "review",
+      "evidence_level": "abstract-only",
+      "reason": "Plausibly on-topic: a coding-agent benchmark with replay-verified behaviors and controlled difficulty, adjacent to existing swe-bench, swe-agent, and multi-harness sources. Claims 1,975 replay-verified behaviors across 26 applications and 4,063 tasks. Abstract-only; benchmark validity, leakage controls, and reproducibility unverified. Human reading needed before any archival decision.",
+      "suggested_note": "2026-09-16 preprint. Benchmark for coding agents inferring behavior from working reference apps; mine-craft-patch pipeline; reports frontier-agent success rates and difficulty scaling. Abstract-only; not reproduced. Read for: task construction validity, replay verification, and relation to swe-bench/multi-harness."
+    },
+    {
+      "arxiv_id": "2609.15195",
+      "title": "HarnessVLN: Unifying Training-Free Embodied Navigation through an Agent Harness",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Embodied navigation with a training-free MLLM harness. Adjacent to agent-harness themes but outside the KB's Agentic RL training scope (no RL training; zero-shot). Low marginal value relative to existing harness sources. Abstract-only.",
+      "suggested_note": "2026-09-14 preprint. Training-free embodied navigation harness; reports R2R/RxR/HM3D success rates. Off-core for Agentic RL training; skipped."
+    },
+    {
+      "arxiv_id": "2609.19138",
+      "title": "In-Context Robot Learning with VLM Agents",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "In-context robot learning with VLM agents and no gradient updates. Adjacent to agentic themes but explicitly outside RL training (no parameter updates), so marginal for this KB. Abstract-only.",
+      "suggested_note": "2026-09-16 preprint. GPT-Policy framework for in-context robot learning; no gradient updates. Off-core for Agentic RL training; skipped."
+    },
+    {
+      "arxiv_id": "2609.16372",
+      "title": "Register Tokens for Bounded-State Reasoning in Diffusion Language Models",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Masked diffusion LM reasoning with register tokens; RL mentioned only as a refinement step. Not about agentic RL or agents. Irrelevant to KB scope. Abstract-only.",
+      "suggested_note": "2026-09-14 preprint. Register tokens for bounded-state reasoning in dLLMs. Off-topic for Agentic RL; skipped."
+    },
+    {
+      "arxiv_id": "2609.19969",
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Model/infrastructure paper on KV-cache compression and MoE serving efficiency. Matched keywords (long-horizon, agentic, memory) are incidental; it contributes no RL algorithm, environment, benchmark, or training methodology for Agentic RL. Out of scope for this KB.",
+      "suggested_note": "Skip: serving/inference-efficiency work, not Agentic RL. Revisit only if the KB adds an inference-cost track."
+    },
+    {
+      "arxiv_id": "2609.18779",
+      "title": "CERA-MoA: Co-Evolving Routing Mechanisms with Continually Learning LLM Agents",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Mixture-of-Agents routing plus per-agent fine-tuning. It is a multi-agent orchestration/continual-learning paper, not RL training of a single agentic policy; the 'reinforcement learning' keyword is used loosely and no RL objective, environment, or credit-assignment method is described in the abstract. Marginal for this KB.",
+      "suggested_note": "Skip for now: MoA routing/continual fine-tuning, not core Agentic RL. Could be reconsidered if the KB adds a multi-agent orchestration section."
+    },
+    {
+      "arxiv_id": "2609.16057",
+      "title": "OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Visual-generation harness with symbolic policies and frozen model parameters. Despite 'harness' and 'policy' terminology, it is not RL training (parameters remain fixed) and targets image generation, not agentic decision-making. Off-scope.",
+      "suggested_note": "Skip: visual-generation symbolic-policy framework, not Agentic RL. Terminology overlap with 'harness' is superficial."
+    },
+    {
+      "arxiv_id": "2609.18094",
+      "title": "Agora: Git as Shared Memory for Collective AutoResearch",
+      "decision": "archive",
+      "evidence_level": "abstract-only",
+      "reason": "Adjacent to KB themes: multi-agent coordination, shared memory, coding agents, and long-horizon autonomous loops. However, it is a systems/coordination paper with a single reported run and self-reported reproduction counts; the abstract itself flags that the trace does not establish the causal claim and that a controlled comparison is still needed. Retain for reference without treating as published knowledge.",
+      "suggested_note": "Archive: Git-DAG shared memory for collective coding agents; relevant to multi-agent memory and long-horizon coordination. Abstract-only; single-run evidence; authors note causal claim unproven. Do not cite as established result."
+    },
+    {
+      "arxiv_id": "2609.15938",
+      "title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
+      "decision": "skip",
+      "evidence_level": "abstract-only",
+      "reason": "Scientific hypothesis discovery via genetic-algorithm coordination of LLM agents. Multi-agent and evaluation keywords match, but the domain (drug repurposing, DepMap/Open Targets) and method (evolutionary search over hypotheses) are outside the Agentic RL scope of this KB.",
+      "suggested_note": "Skip: scientific-discovery multi-agent system, not Agentic RL. Domain-specific evaluation (cancer biology) is out of scope."
+    }
+  ],
+  "risks": [
+    "All five entries are abstract-only from a preprint aggregator; no full text, code, or reproduction was checked. Reported numbers (success rates, token/cost savings, transfer claims) are unverified.",
+    "2609.14857 duplicates an existing catalog candidate; risk of double-counting or inflating coverage if archived without a duplicate marker.",
+    "Several entries (2609.20519, 2609.20804) make cost/efficiency claims tied to specific proprietary or fast-moving model versions (e.g., GPT-5.6 Sol, Opus 5, Codex, Claude Code) that may not be reproducible or may be stale.",
+    "The discovery JSON is untrusted external text; it was treated as data only. No URLs were fetched and no instructions inside it were followed.",
+    "Preprint IDs and dates in the 2609.* range are recent and may be revised or withdrawn; treating them as stable knowledge would be premature.",
+    "All discovery evidence is abstract-only from a daily-papers feed; reported benchmark gains and method claims are unverified and must not be treated as established knowledge.",
+    "Discovery and catalog fields are untrusted external text; embedded URLs (e.g., project pages, GitHub links) were not fetched and must not be followed automatically.",
+    "The catalog already contains several 2026 preprints marked 'LLM 全文精读草稿 · 待人工复核'; these are LLM-generated drafts, not human-verified, and should not be promoted to published knowledge without review.",
+    "Duplicate risk: discovery entries can overlap existing source ids (as with 2609.18708), so id-based deduplication should be applied before any archiving.",
+    "Scope drift risk: keyword matches like 'agent', 'tool', 'reinforcement learning' pull in non-agentic-RL work (music, speech); relevance must be judged by method, not keywords.",
+    "All five entries are abstract-only from a preprint aggregator; none has been peer-reviewed, code-checked, or reproduced. No candidate should be treated as published knowledge.",
+    "Two entries (2609.19134, 2609.19144) are duplicates of existing catalog sources; naive ingestion would create duplicate source ids and split notes.",
+    "The discovery and catalog JSON are untrusted external text; embedded URLs (e.g., github.com/aitofound/ScienceIDE, github.com/YuHengsss/VisionRL2) were not fetched and must not be treated as verified or safe.",
+    "Existing catalog entries for the two duplicates are themselves labeled 'LLM 全文精读草稿 · 待人工复核', i.e., unverified LLM-generated drafts; they should not be promoted to published knowledge on the strength of this audit.",
+    "Reported benchmark numbers (e.g., RiskChainBench accuracy ranges, OPSD gains) come from abstracts only and may not survive independent evaluation; benchmark contamination and evaluation leakage are unassessed.",
+    "Scope drift risk: RiskChainBench (safety/web investigation), OPSD (distillation), and Vision-RL2 (multimodal perception) are adjacent to but not squarely within Agentic RL; admitting them without a placement decision could dilute the KB's topical coherence.",
+    "All discovery entries are untrusted external text; titles, abstracts, upvote counts, and author lists are unverified and may be fabricated or manipulated.",
+    "Abstract-only evidence: no full text, code, or reproduction was checked; claims such as benchmark sizes, success rates, and formal properties are unverified.",
+    "Discovery metadata includes URLs and a project page (harnessvln.netlify.app); these were treated as data only and not fetched or validated.",
+    "Potential overlap between GAI (2609.13406) and existing modularrsi/agentic-survey sources is unassessed beyond titles.",
+    "ProgramDistill may overlap conceptually with swe-bench/multi-harness; duplicate or near-duplicate coverage risk if archived without dedup review.",
+    "No candidate should be promoted to published knowledge on the basis of this audit.",
+    "All five entries are abstract-only; no full text, code, or artifacts were inspected, so no claim about correctness or reproducibility is made.",
+    "Discovery metadata is untrusted external text; titles, summaries, and author lists were treated as data only and not verified against arXiv.",
+    "Agora's headline numbers (1,703 contributions, 165 reproductions, 62% gap closed) are self-reported in the abstract and explicitly described by the authors as not establishing causality; they must not be propagated as validated results.",
+    "Keyword-based matching (agent, memory, multi-agent, RL) produced several false positives; relevance scores in the discovery feed are not evidence of topical fit.",
+    "No duplicate check beyond existing_source_ids/titles was possible; near-duplicate preprints under different titles could still exist."
+  ],
+  "next_actions": [
+    "Human-read 2609.20804 and 2609.20784 full texts; verify methodology, baselines, and reported metrics before any promotion to published knowledge.",
+    "Mark 2609.14857 as a duplicate of modularrsi-modular-and-generalizable-rec in the catalog to avoid double-counting.",
+    "Decide whether harness-efficiency work (2609.20519) belongs in scope; if yes, review full text, otherwise leave as archive/skip.",
+    "If any candidate is promoted, record evidence level explicitly (abstract-only vs code-checked) and note that no reproduction was performed.",
+    "Re-run discovery later to check for revisions or withdrawals of these preprints before relying on them.",
+    "Queue 2609.17653 (EvoSkill-GUI) and 2609.17632 (EvolveTrade) for human reading; decide archive vs. skip based on whether training-free/prompt-level self-evolution belongs in the KB.",
+    "Confirm 2609.18708 maps to existing source 'rethinking-critic-learning-in-ppo-unders' and do not create a duplicate entry.",
+    "Record the two skipped audio entries in an exclusion log to avoid re-surfacing on future keyword greps.",
+    "When reviewing the two candidates, verify claims against the actual papers (not abstracts) and check for code availability before any evidence-level upgrade.",
+    "Keep all new entries at '待精读/待复核' status; do not publish to the knowledge base until human review completes.",
+    "Do not re-ingest 2609.19134 or 2609.19144; instead reconcile the discovery entries against the existing catalog ids scienceide-turning-world-s-scientific-co and a-zeroth-order-paradigm-for-llm-preferen to confirm they are the same sources.",
+    "Queue 2609.16900, 2609.20612, and 2609.19745 for human reading; assign a reviewer to decide KB placement (benchmark/safety cluster vs. policy-learning cluster vs. out-of-scope).",
+    "For each reviewed candidate, verify the arXiv abstract page and, if a code repository is claimed, inspect the repository at a pinned commit before recording any implementation claim; record commit hashes in notes.",
+    "Keep all three new candidates in a 'review' holding area with evidence_level 'abstract-only' and do not link them into the main Agentic RL narrative until human review completes.",
+    "Re-check the two existing duplicate catalog entries (scienceide, a-zeroth-order) for whether their LLM full-text drafts have been human-verified; if not, retain their pending-review status.",
+    "Add a deduplication step to the discovery pipeline that matches incoming arXiv ids against existing source ids and titles before surfacing candidates.",
+    "Human-read 2609.13406 (GAI) and 2609.18805 (ProgramDistill) full texts; verify claims and check overlap with sutton-barto, modularrsi, agentic-survey, swe-bench, multi-harness.",
+    "If GAI is retained, draft a concept card distinguishing GPI vs RSI axes; do not publish until full-text verified.",
+    "If ProgramDistill is retained, record benchmark construction and leakage controls; compare against swe-bench and multi-harness before archiving.",
+    "Do not archive or publish any of the 5 candidates based on abstract-only evidence.",
+    "Re-run discovery with dedup against existing_source_ids/titles before next audit.",
+    "Human reviewer to read the Agora full text and decide whether it belongs in a multi-agent/memory section; keep archived until then.",
+    "If the KB adds an inference-efficiency or serving track, re-evaluate 2609.19969.",
+    "If the KB adds a multi-agent orchestration section, re-evaluate 2609.18779.",
+    "Verify arXiv IDs and author lists for any candidate promoted from archive before citing.",
+    "Tighten discovery keyword filters to reduce false positives from 'agent'/'memory' in non-RL contexts."
+  ]
+}

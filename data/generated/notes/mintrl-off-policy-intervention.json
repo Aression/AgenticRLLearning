@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "actobs-observation-supervision",
     "frontier-radar",
     "grpo",
     "modularrsi-harness",
     "multi-turn-rl",
-    "rewards",
-    "scienceide-sci-envs"
+    "rewards"
   ],
-  "degree": 10,
+  "degree": 12,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

@@ -408,5 +408,65 @@
     "url": "https://arxiv.org/abs/2609.19144",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Adjacent to existing DPO/RLHF sources (dpo, instructgpt, constitutional). Proposes ComPO, a zeroth-order comparison-oracle alignment method with convergence and"
+  },
+  {
+    "id": "sol-pi-recursively-scaling-auto-research",
+    "title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
+    "kind": "论文",
+    "author": "Haozhe Liu et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.20519",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Harness-layer self-improvement is adjacent to the KB's harness thread, but the abstract emphasizes token/cost efficiency on a single 51-task EdgeBench rather th"
+  },
+  {
+    "id": "retireopd-self-retiring-on-policy-distil",
+    "title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
+    "kind": "论文",
+    "author": "Yan Yu et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.20784",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：On-topic for agentic RL: multi-turn agents, on-policy distillation with a skill-conditioned teacher, adaptive retirement schedule. Plausible but abstract-only; "
+  },
+  {
+    "id": "an-empirical-study-of-harness-design-for",
+    "title": "An Empirical Study of Harness Design for Coding Agents",
+    "kind": "论文",
+    "author": "Run-Ze Fan et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.20804",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly relevant to the KB's harness/coding-agent thread (swe-agent, swe-bench, multi-harness). Component-level ablation of planning, action space, and context"
+  },
+  {
+    "id": "reflect-revise-reuse-training-free-skill",
+    "title": "Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents",
+    "kind": "论文",
+    "author": "Bofan Chen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.17653",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the KB and plausibly relevant to Agentic RL: long-horizon GUI agents, execution-feedback-driven skill revision, and a reflect-revise-reuse loop. However,"
+  },
+  {
+    "id": "when2think-learning-difficulty-aware-len",
+    "title": "When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models",
+    "kind": "论文",
+    "author": "Jaejun Shim et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.19671",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the KB and plausibly relevant to the reasoning-RL branch (reward shaping, critic-free optimization, verifier-based rewards, accuracy-efficiency trade-off"
+  },
+  {
+    "id": "don-t-mask-the-environment-observation-s",
+    "title": "Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL",
+    "kind": "论文",
+    "author": "Juzheng Zhang et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.20715",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the knowledge base and directly on-topic for Agentic RL: studies SFT initialization for subsequent GRPO, observation-token supervision, exploration entro"
   }
 ]
