@@ -1,0 +1,56 @@
+---
+id: programdistill-ref-guided-swe
+title: ProgramDistill：从交互式网页应用生成可验证 SWE 任务
+summary: 把可运行的交互式网页应用自动拆解为可重放验证的 SWE 任务，并按前置依赖构成由浅到深的修复难度轴。
+stage: FRONTIER
+track: 评估与安全
+order: 39
+minutes: 18
+updated: '2026-09-20'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.18805
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+full_text_url: https://arxiv.org/html/2609.18805
+objectives: [理解 application-to-task factorization 与 reference-to-current distillation 两个概念, 说明 mine–craft–patch 流水线如何用同一交互轨迹同时充当任务与验证器, 识别 restoration depth 作为评估与课程构造轴的潜在价值与证据局限]
+tags: [coding-agent, benchmark, swe-tasks, curriculum, web-apps]
+sources: [programdistill-from-interactive-web-apps]
+related: [harness-design-coding-agents, evaluation, prerequisites]
+prerequisites: []
+---
+## 论文要解决的问题
+
+已有编码 agent 基准（如 SWE-bench 类工作）通常假设目标行为已被文字说明清楚：issue、指令或测试给出了要做什么。作者指出，真实网页开发中更常见的情形是——需求只存在于一个可运行的参照物里，比如旧版本、交互原型、同类应用或演示视频。agent 必须自己与参照物交互，推断出应有的行为，再改当前实现，并验证改完是否与参照物一致。
+
+论文把这类问题形式化为「reference-to-current distillation」：给定可运行参照与不完整的当前实现，agent 需从参照中推断行为并用源码改动实现它，成功与否由可重放的交互轨迹是否在打补丁后表现一致来判定。配套的「application-to-task factorization」则把整个应用拆成不同粒度的功能单元，每个单元对应一个任务、一段可重放交互和一份 gold patch。
+
+## 方法
+
+作者提出全自动的 mine–craft–patch 流水线，由多个 LLM agent 编排：
+
+- **mine**：把可复现的行为挖成可重放的浏览器交互轨迹；
+- **craft**：遮蔽（mask）实现该行为的源码，制造缺口；
+- **patch**：让编码 agent 依据参照应用恢复缺失功能。
+
+关键设计是同一段轨迹身兼两职：在完整应用上通过、在遮蔽后失败、在修复后再次通过，因此它既是任务单元也是行为验证器。任务还可沿「前置依赖谱系」（prerequisite lineage）组合成累积式修复，形成从原子修复到整应用重建的 restoration depth 轴。作者称该轴既可用于评估，也可作为课程构造的自然顺序。
+
+## 证据与实验
+
+据摘录，流水线在 26 个网页应用上挖出 1,975 条经重放验证的行为，构造 4,063 个任务，构建模型为 GPT-5.6 Sol。作者评估了九个前沿编码 agent：整应用重建中 GPT-6 Astra 与 Claude Opus 5 分别恢复 49.2% 与 28.8% 的工作流；部分重建中，随 restoration depth 从 1 增至 8，两者成功率分别从 100% 降到 64.0%、从 96% 降到 32%。轨迹分析称重建负担与 agent 投入之间的错配随深度加剧，观察投入相对所需行为数下降；Astra 修复表现最强，同时观察活动最多、编辑/写入步数最少。
+
+按 mask scope 划分，Astra 在 logic-only 任务上二值成功率 92.9%，logic-and-UI 为 76.9%（差 16.0 点）；chain score 下为 96.2% 与 84.9%（差 11.3 点）。chain score 给累积任务中首次失败前已恢复的行为部分计分。
+
+## 边界与未解问题
+
+以上数字均来自论文自述，本卡片未核查代码、数据集或重放验证产物，也未复现任何结果，应视为作者主张而非已确证结论。摘录未给出任务难度分布、遮蔽粒度统计、参照与当前实现差异的构造方式，也未说明重放验证对时序、随机性与环境依赖的鲁棒性。此外，评估只覆盖少数前沿模型，成本按 LiteLLM 价格表折算，跨模型比较的可比性存疑。restoration depth 作为课程是否真能提升训练效果，摘录只给出动机，没有训练实验证据。
+
+## 与知识库的关系
+
+该工作属于编码 agent 与基准簇，与 harness 设计、评估方法论、前置依赖/课程构造三条线直接相关：它把「环境即规格」的思路从整程序重建推进到有状态 UI 行为，并把依赖结构显式用作难度轴。对关注 agent 观察—验证—编辑投入分配的研究者，其轨迹分析维度值得对照。
+
+## 自测
+
+1. 为什么同一段交互轨迹能同时充当任务与验证器？这依赖哪些隐含假设？
+2. restoration depth 从 1 增到 8 时成功率下降，可能来自任务本身变难，还是来自上下文与状态管理负担？如何区分？
+3. 若把该基准用于 RL 训练，chain score 与二值奖励各自会带来什么激励偏差？

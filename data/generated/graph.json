@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T03:19:16.703239+00:00",
+  "generatedAt": "2026-09-20T03:36:21.458540+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -15,7 +15,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "mdp",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 20
+      "degree": 21
     },
     {
       "id": "training-systems",
@@ -111,7 +111,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 17
+      "degree": 19
     },
     {
       "id": "safety",
@@ -119,7 +119,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "multi-agent",
@@ -159,7 +159,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "learning-paths",
@@ -167,7 +167,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "实验与维护",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "maintenance",
@@ -191,7 +191,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "modularrsi-harness",
@@ -207,7 +207,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "value-flattening-ppo",
@@ -231,7 +231,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 8
+      "degree": 10
     },
     {
       "id": "compo-zeroth-order-alignment",
@@ -255,7 +255,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 7
+      "degree": 9
     },
     {
       "id": "harness-design-coding-agents",
@@ -263,7 +263,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 8
+      "degree": 11
     },
     {
       "id": "evoskill-gui-training-free",
@@ -279,7 +279,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "actobs-observation-supervision",
@@ -288,6 +288,30 @@
       "stage": "FRONTIER",
       "track": "训练算法",
       "degree": 9
+    },
+    {
+      "id": "pact-enterprise-compliance-pressure",
+      "label": "PACT：企业助手在压力下的合规基准",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "degree": 7
+    },
+    {
+      "id": "privileged-info-opsd-ample-math",
+      "label": "特权信息在在线自蒸馏中到底加了什么",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 5
+    },
+    {
+      "id": "programdistill-ref-guided-swe",
+      "label": "ProgramDistill：从交互式网页应用生成可验证 SWE 任务",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "degree": 7
     },
     {
       "id": "2026",
@@ -340,6 +364,14 @@
     {
       "id": "agent-lightning",
       "label": "Agent Lightning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-safety",
+      "label": "agent-safety",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -404,6 +436,14 @@
     {
       "id": "coding-agent",
       "label": "coding-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "compliance",
+      "label": "compliance",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -476,6 +516,14 @@
     {
       "id": "diataxis",
       "label": "Diataxis",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "distillation",
+      "label": "distillation",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -754,6 +802,14 @@
       "degree": 0
     },
     {
+      "id": "opsd",
+      "label": "OPSD",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "para",
       "label": "PARA",
       "kind": "concept",
@@ -802,6 +858,14 @@
       "degree": 0
     },
     {
+      "id": "privileged-information",
+      "label": "privileged-information",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "probability",
       "label": "probability",
       "kind": "concept",
@@ -836,6 +900,14 @@
     {
       "id": "react",
       "label": "ReAct",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reasoning",
+      "label": "reasoning",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1026,6 +1098,14 @@
       "degree": 0
     },
     {
+      "id": "swe-tasks",
+      "label": "swe-tasks",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "tau-bench",
       "label": "tau-bench",
       "kind": "concept",
@@ -1124,6 +1204,14 @@
     {
       "id": "verl",
       "label": "verl",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "web-apps",
+      "label": "web-apps",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1451,6 +1539,18 @@
     },
     {
       "source": "evaluation",
+      "target": "pact-enterprise-compliance-pressure",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
       "target": "scienceide-sci-envs",
       "kind": "related",
       "weight": 1.0
@@ -1522,8 +1622,20 @@
       "weight": 1.0
     },
     {
+      "source": "harness-design-coding-agents",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "mintrl-off-policy-intervention",
       "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "privileged-info-opsd-ample-math",
       "kind": "related",
       "weight": 1.0
     },
@@ -1541,13 +1653,43 @@
     },
     {
       "source": "multi-turn-rl",
+      "target": "pact-enterprise-compliance-pressure",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
       "target": "retireopd-self-retiring-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "safety",
       "kind": "related",
       "weight": 1.0
     },
     {
       "source": "ppo",
       "target": "value-flattening-ppo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "prerequisites",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "when2think-length-control",
       "kind": "related",
       "weight": 1.0
     },
@@ -1631,6 +1773,12 @@
     },
     {
       "source": "emergence-world-stress-test",
+      "target": "pact-enterprise-compliance-pressure",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
       "target": "safety",
       "kind": "shared-concept",
       "weight": 1.0
@@ -1709,6 +1857,18 @@
     },
     {
       "source": "harness-design-coding-agents",
+      "target": "privileged-info-opsd-ample-math",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "harness-design-coding-agents",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "harness-design-coding-agents",
       "target": "scienceide-sci-envs",
       "kind": "shared-concept",
       "weight": 1.0
@@ -1733,6 +1893,12 @@
     },
     {
       "source": "lab-agent-rl",
+      "target": "privileged-info-opsd-ample-math",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
       "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
       "weight": 1.0
@@ -1740,6 +1906,12 @@
     {
       "source": "lab-rl",
       "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "programdistill-ref-guided-swe",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -1810,8 +1982,32 @@
       "weight": 1.0
     },
     {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "ppo",
       "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
+      "target": "scienceide-sci-envs",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -3036,6 +3232,96 @@
     {
       "source": "actobs-observation-supervision",
       "target": "agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "compliance",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "multi-turn",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "agent-safety",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "evaluation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "opsd",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "privileged-information",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "distillation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "reasoning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "ablation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
+      "target": "coding-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
+      "target": "swe-tasks",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
+      "target": "curriculum",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
+      "target": "web-apps",
       "kind": "concept",
       "weight": 1
     }

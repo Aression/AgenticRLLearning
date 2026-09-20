@@ -1,0 +1,67 @@
+{
+  "id": "privileged-info-opsd-ample-math",
+  "title": "特权信息在在线自蒸馏中到底加了什么",
+  "summary": "用答案匹配的六档解释视图，分离在线自蒸馏中「蒸馏本身」与「特权参考」各自的贡献，并检验学生训练轨迹如何反转迁移。",
+  "stage": "FRONTIER",
+  "track": "训练算法",
+  "order": 38,
+  "minutes": 18,
+  "updated": "2026-09-20",
+  "review": "LLM 全文精读草稿 · 待人工复核",
+  "filename": "38-privileged-info-opsd-ample-math.md",
+  "tags": [
+    "OPSD",
+    "ablation",
+    "distillation",
+    "privileged-information",
+    "reasoning"
+  ],
+  "concepts": [
+    "OPSD",
+    "ablation",
+    "distillation",
+    "privileged-information",
+    "reasoning"
+  ],
+  "objectives": [
+    "理解在线自蒸馏中特权参考与蒸馏本身贡献为何需要分开度量",
+    "说出 AMPLE-Math 六视图设计如何固定答案信息、只变推理表示",
+    "说明学生 rollout 模式变化为何能反转同一参考的迁移效果"
+  ],
+  "keyPoints": [
+    "论文要解决的问题",
+    "方法",
+    "证据与实验",
+    "边界与未解问题",
+    "与知识库的关系",
+    "自测"
+  ],
+  "evidenceLevel": "full-text-llm-draft",
+  "codeUrl": "",
+  "origin": "llm-fulltext",
+  "paperId": "2609.20612",
+  "readingDepth": "full-text",
+  "fullTextUrl": "https://arxiv.org/html/2609.20612",
+  "sections": [
+    "论文要解决的问题",
+    "方法",
+    "证据与实验",
+    "边界与未解问题",
+    "与知识库的关系",
+    "自测"
+  ],
+  "related": [
+    "harness-design-coding-agents",
+    "lab-agent-rl",
+    "mintrl-off-policy-intervention",
+    "retireopd-self-retiring-opd",
+    "when2think-length-control"
+  ],
+  "degree": 5,
+  "sources": [
+    "what-does-privileged-information-add-to"
+  ],
+  "prerequisites": [],
+  "search": "特权信息在在线自蒸馏中到底加了什么 用答案匹配的六档解释视图，分离在线自蒸馏中「蒸馏本身」与「特权参考」各自的贡献，并检验学生训练轨迹如何反转迁移。 训练算法 opsd ablation distillation privileged-information reasoning 理解在线自蒸馏中特权参考与蒸馏本身贡献为何需要分开度量 说出 ample-math 六视图设计如何固定答案信息、只变推理表示 说明学生 rollout 模式变化为何能反转同一参考的迁移效果 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测",
+  "content": "## 论文要解决的问题\n\n在线自蒸馏（OPSD）让一个冻结的、开启思考的教师模型看到参考答案，去给学生（只看题目）自己生成的 rollout 打分。直觉上，参考越完整，学生越有东西可学。但作者指出：仅凭「比基座模型好」无法回答参考到底贡献了什么，因为蒸馏本身（尤其是思考教师监督直接回答学生这一模式不对称）可能已经带来大部分收益。已有共识是：无参考或错参考也能提供有用监督，结构化提示有时优于完整解答；因此必须把「参考的增量」从「蒸馏的既有收益」中剥离出来。\n\n## 方法\n\n作者构建 AMPLE-Math（Answer-Matched Privileged Levels of Explanation），从 OpenThoughts-114k 派生，每个问题有六个视图，从 Answer Only 到 Full Trace，共享同一个已验证答案，只改变推理表示。每个视图都与同配置下的无参考对照比较。主配置是：思考教师监督直接回答 rollout，评估时学生开启思考。实验在 Qwen3-1.7B（LoRA，100 步）与 SmolLM3-3B 两个模型族上做跨族检验，并在步 50/100 跟踪参考贡献。作者还做了教师画像与匹配干预：放宽修正标记处的损失、比较不同损失窗口，以区分「监督信号变了」与「学生行为变了」。\n\n## 证据与实验\n\n作者报告：Qwen 上大部分提升在无参考时已经出现，Clean Solution 只有小幅额外收益；SmolLM3 上 Full Trace 在步 50 比无参考训练多约两点。关键发现是：同一教师与参考，在直接回答 rollout 下带来增益，在长思考 rollout 下却变成损失，两个模型族都如此，且该惩罚跨检查点持续。教师画像显示正确性对齐随被评分的响应变化，采样到的修正标记受到负向压力；放宽这些标记的损失几乎不改变其使用。作者还称，更宽损失覆盖带来的表面收益，在匹配检查点后主要归因于更早停止。这些均为论文作者主张，来自短程 LoRA 数学训练，未见代码或独立复现。\n\n## 边界与未解问题\n\n证据限于两个模型族、数学域、短程 LoRA 训练，外部评测仅 AIME 2024/2025 与 HMMT 2025。作者自己承认：无参考增益不等于参考内容无关（换成无关参考会掉分）；「跨模式迁移」的解释（思考教师监督直接回答学生，使已有推理能力更易被调用）是推测性解释，作者用「与基座已能解的问题上收益集中」作为一致性证据，但并非确证。修正标记干预效果微弱，说明改变训练信号未必产生预期学生行为变化。参考内容是否应随学生演化而自适应，仍是开放问题。\n\n## 与知识库的关系\n\n本卡与 mintrl-off-policy-intervention 同属「干预式训练信号分析」脉络：都关心训练信号改动是否真正改变学生行为。与 retireopd-self-retiring-opd 共享 OPSD 教师-学生框架，但本文焦点是参考信息的消融而非教师退场。与 when2think-length-control 相关，因为训练 rollout 长度/模式是本文反转迁移的核心变量。\n\n## 自测\n\n1. 为什么「比基座好」不能证明参考有用？本文用什么设计来分离？\n2. 同一参考为何在直接回答与思考 rollout 下产生相反迁移？作者给出的解释是确证还是推测？\n3. 作者如何排除「更宽损失覆盖」的表面收益？这对你设计消融有何启示？"
+}

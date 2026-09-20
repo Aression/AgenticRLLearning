@@ -55,9 +55,10 @@
     "evoskill-gui-training-free",
     "multi-agent",
     "multi-turn-rl",
+    "pact-enterprise-compliance-pressure",
     "safety"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "emergence-world-adversarial-stress-testi"
   ],

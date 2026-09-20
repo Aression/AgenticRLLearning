@@ -55,7 +55,7 @@
     "lab-agent",
     "modularrsi-harness"
   ],
-  "degree": 17,
+  "degree": 19,
   "sources": [
     "swe-bench",
     "webarena",

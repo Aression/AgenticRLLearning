@@ -56,9 +56,9 @@
     "grpo",
     "modularrsi-harness",
     "multi-turn-rl",
-    "rewards"
+    "privileged-info-opsd-ample-math"
   ],
-  "degree": 12,
+  "degree": 13,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

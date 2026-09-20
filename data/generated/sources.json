@@ -468,5 +468,35 @@
     "url": "https://arxiv.org/abs/2609.20715",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：New to the knowledge base and directly on-topic for Agentic RL: studies SFT initialization for subsequent GRPO, observation-token supervision, exploration entro"
+  },
+  {
+    "id": "pact-can-enterprise-ai-assistants-be-tru",
+    "title": "PACT: Can Enterprise AI Assistants Be Trusted Under Pressure?",
+    "kind": "论文",
+    "author": "Mika Okamoto et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.18605",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New, not in existing source_ids. Relevant to the KB's safety/compliance and evaluation interests (cf. tau-bench, lilian-reward). It is a benchmark/evaluation pa"
+  },
+  {
+    "id": "what-does-privileged-information-add-to",
+    "title": "What Does Privileged Information Add to On-Policy Self-Distillation?",
+    "kind": "论文",
+    "author": "XiuYu Zhang et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.20612",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：On-topic for the KB's RL/distillation and on-policy learning thread (adjacent to dpo, deepseek-r1, mintrl-off-policy-intervention). Abstract reports a controlle"
+  },
+  {
+    "id": "programdistill-from-interactive-web-apps",
+    "title": "ProgramDistill: From Interactive Web Apps to Verifiable Reference-Guided SWE Tasks",
+    "kind": "论文",
+    "author": "Jeonghye Kim et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.18805",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly relevant to the KB's coding-agent and benchmark cluster (swe-bench, swe-agent, webarena). Abstract claims a scalable, replay-verified benchmark (1,975 "
   }
 ]

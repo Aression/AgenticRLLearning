@@ -56,9 +56,9 @@
     "lab-agent-rl",
     "multi-turn-rl",
     "orientation",
-    "rewards"
+    "pact-enterprise-compliance-pressure"
   ],
-  "degree": 7,
+  "degree": 9,
   "sources": [
     "retireopd-self-retiring-on-policy-distil"
   ],

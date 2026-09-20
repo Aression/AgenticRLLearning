@@ -54,10 +54,11 @@
     "evaluation",
     "grpo",
     "mintrl-off-policy-intervention",
+    "privileged-info-opsd-ample-math",
     "rewards",
     "scienceide-sci-envs"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "when2think-learning-difficulty-aware-len"
   ],

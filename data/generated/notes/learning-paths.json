@@ -49,7 +49,7 @@
     "frontier-radar",
     "maintenance"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "sutton-barto",
     "silver",
