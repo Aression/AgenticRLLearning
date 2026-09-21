@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "codemidas-code-rl-envs",
     "evaluation",
     "harness-design-coding-agents",
     "learning-paths",
     "pact-enterprise-compliance-pressure",
-    "prerequisites",
-    "scienceide-sci-envs"
+    "prerequisites"
   ],
-  "degree": 7,
+  "degree": 9,
   "sources": [
     "programdistill-from-interactive-web-apps"
   ],

@@ -54,9 +54,10 @@
     "agent-loop",
     "evaluation",
     "frontier-radar",
+    "mintact-unified-visual-agent",
     "sol-pi-auto-research-harness"
   ],
-  "degree": 4,
+  "degree": 5,
   "sources": [
     "evolvetrade-experience-driven-policy-ref"
   ],

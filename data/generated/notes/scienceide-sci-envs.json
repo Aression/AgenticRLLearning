@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "recreationworld-hybrid-cua",
     "environments",
     "evaluation",
     "grpo",
     "harness-design-coding-agents",
-    "mintrl-off-policy-intervention",
-    "modularrsi-harness"
+    "mintrl-off-policy-intervention"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "scienceide-turning-world-s-scientific-co"
   ],

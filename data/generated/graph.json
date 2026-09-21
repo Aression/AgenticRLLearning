@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T03:36:21.458540+00:00",
+  "generatedAt": "2026-09-21T03:31:15.572592+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -63,7 +63,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 12
+      "degree": 16
     },
     {
       "id": "rewards",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 17
+      "degree": 19
     },
     {
       "id": "preferences",
@@ -87,7 +87,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 17
+      "degree": 19
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 21
+      "degree": 22
     },
     {
       "id": "training-systems",
@@ -103,7 +103,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "evaluation",
@@ -111,7 +111,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 19
+      "degree": 20
     },
     {
       "id": "safety",
@@ -151,7 +151,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 12
+      "degree": 14
     },
     {
       "id": "lab-agent-rl",
@@ -159,7 +159,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "learning-paths",
@@ -223,7 +223,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "scienceide-sci-envs",
@@ -231,7 +231,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "compo-zeroth-order-alignment",
@@ -247,7 +247,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "retireopd-self-retiring-opd",
@@ -255,7 +255,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "harness-design-coding-agents",
@@ -263,7 +263,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 11
+      "degree": 13
     },
     {
       "id": "evoskill-gui-training-free",
@@ -287,7 +287,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "pact-enterprise-compliance-pressure",
@@ -295,7 +295,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "privileged-info-opsd-ample-math",
@@ -311,7 +311,31 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 7
+      "degree": 9
+    },
+    {
+      "id": "codemidas-code-rl-envs",
+      "label": "CodeMidas：从源码自动构造编码 RL 环境",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 11
+    },
+    {
+      "id": "recreationworld-hybrid-cua",
+      "label": "RecreationWorld：可验证的混合计算机使用环境",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 8
+    },
+    {
+      "id": "mintact-unified-visual-agent",
+      "label": "MintAct：统一数字环境的视觉智能体",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 5
     },
     {
       "id": "2026",
@@ -402,6 +426,14 @@
       "degree": 0
     },
     {
+      "id": "asynchronous-rl",
+      "label": "asynchronous-RL",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "auto-research",
       "label": "auto-research",
       "kind": "concept",
@@ -450,6 +482,14 @@
       "degree": 0
     },
     {
+      "id": "computer-use",
+      "label": "computer-use",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "context-management",
       "label": "context-management",
       "kind": "concept",
@@ -484,6 +524,14 @@
     {
       "id": "critic",
       "label": "critic",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "cross-domain",
+      "label": "cross-domain",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -644,6 +692,14 @@
     {
       "id": "gui-agent",
       "label": "gui-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "gui-grounding",
+      "label": "GUI-grounding",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -978,6 +1034,22 @@
       "degree": 0
     },
     {
+      "id": "reward-verification",
+      "label": "reward-verification",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "rl-environment",
+      "label": "RL-environment",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "rlaif",
       "label": "RLAIF",
       "kind": "concept",
@@ -1084,6 +1156,14 @@
     {
       "id": "sparse-supervision",
       "label": "sparse-supervision",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "swe",
+      "label": "SWE",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1204,6 +1284,14 @@
     {
       "id": "verl",
       "label": "verl",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "visual-agent",
+      "label": "visual-agent",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1478,6 +1566,24 @@
       "weight": 1.0
     },
     {
+      "source": "codemidas-code-rl-envs",
+      "target": "environments",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "harness-design-coding-agents",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "compo-zeroth-order-alignment",
       "target": "preferences",
       "kind": "related",
@@ -1504,6 +1610,18 @@
     {
       "source": "emergence-world-stress-test",
       "target": "safety",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "mintact-unified-visual-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "environments",
+      "target": "recreationworld-hybrid-cua",
       "kind": "related",
       "weight": 1.0
     },
@@ -1546,6 +1664,12 @@
     {
       "source": "evaluation",
       "target": "programdistill-ref-guided-swe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "recreationworld-hybrid-cua",
       "kind": "related",
       "weight": 1.0
     },
@@ -1624,6 +1748,18 @@
     {
       "source": "harness-design-coding-agents",
       "target": "programdistill-ref-guided-swe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "training-systems",
       "kind": "related",
       "weight": 1.0
     },
@@ -1694,6 +1830,12 @@
       "weight": 1.0
     },
     {
+      "source": "recreationworld-hybrid-cua",
+      "target": "rewards",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "retireopd-self-retiring-opd",
       "target": "rewards",
       "kind": "related",
@@ -1715,6 +1857,12 @@
       "source": "value-flattening-ppo",
       "target": "value-learning",
       "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "codemidas-code-rl-envs",
+      "kind": "shared-concept",
       "weight": 1.0
     },
     {
@@ -1754,6 +1902,48 @@
       "weight": 1.0
     },
     {
+      "source": "codemidas-code-rl-envs",
+      "target": "grpo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "harness-design-coding-agents",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "lab-agent",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "rewards",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "compo-zeroth-order-alignment",
       "target": "preferences",
       "kind": "shared-concept",
@@ -1784,6 +1974,12 @@
       "weight": 1.0
     },
     {
+      "source": "environments",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "evaluation",
       "target": "harness-design-coding-agents",
       "kind": "shared-concept",
@@ -1792,6 +1988,12 @@
     {
       "source": "evaluation",
       "target": "modularrsi-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "evolvetrade-policy-refinement",
+      "target": "mintact-unified-visual-agent",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -1881,6 +2083,12 @@
     },
     {
       "source": "lab-agent",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent",
       "target": "rewards",
       "kind": "shared-concept",
       "weight": 1.0
@@ -1912,6 +2120,12 @@
     {
       "source": "learning-paths",
       "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "sol-pi-auto-research-harness",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -1989,6 +2203,12 @@
     },
     {
       "source": "pact-enterprise-compliance-pressure",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
       "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2007,9 +2227,21 @@
     },
     {
       "source": "programdistill-ref-guided-swe",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
       "target": "scienceide-sci-envs",
       "kind": "shared-concept",
       "weight": 1.0
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 2.0
     },
     {
       "source": "rewards",
@@ -3322,6 +3554,96 @@
     {
       "source": "programdistill-ref-guided-swe",
       "target": "web-apps",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "coding-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "rl-environment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "verifier",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "swe",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "computer-use",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "agent-env",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "reward-verification",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "trajectory",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "visual-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "asynchronous-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "cross-domain",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "gui-grounding",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "tool-use",
       "kind": "concept",
       "weight": 1
     }

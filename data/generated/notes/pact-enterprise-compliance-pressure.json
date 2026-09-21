@@ -55,10 +55,10 @@
     "evaluation",
     "multi-turn-rl",
     "programdistill-ref-guided-swe",
-    "retireopd-self-retiring-opd",
-    "safety"
+    "recreationworld-hybrid-cua",
+    "retireopd-self-retiring-opd"
   ],
-  "degree": 7,
+  "degree": 8,
   "sources": [
     "pact-can-enterprise-ai-assistants-be-tru"
   ],

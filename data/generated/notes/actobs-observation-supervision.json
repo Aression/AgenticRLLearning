@@ -52,13 +52,13 @@
   ],
   "related": [
     "agent-loop",
+    "codemidas-code-rl-envs",
     "frontier-radar",
     "grpo",
     "lab-agent-rl",
-    "mintrl-off-policy-intervention",
-    "multi-turn-rl"
+    "mintrl-off-policy-intervention"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "don-t-mask-the-environment-observation-s"
   ],

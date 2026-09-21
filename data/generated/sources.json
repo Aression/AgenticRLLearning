@@ -498,5 +498,35 @@
     "url": "https://arxiv.org/abs/2609.18805",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Directly relevant to the KB's coding-agent and benchmark cluster (swe-bench, swe-agent, webarena). Abstract claims a scalable, replay-verified benchmark (1,975 "
+  },
+  {
+    "id": "codemidas-scaling-agentic-coding-rl-envi",
+    "title": "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+    "kind": "论文",
+    "author": "Bowen Ye et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.22068",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：New to the knowledge base and plausibly on-topic: builds executable RL environments from source code alone, reports GRPO training of MiMo-V2.5 with gains on Dee"
+  },
+  {
+    "id": "recreationworld-scalable-and-verifiable",
+    "title": "RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents",
+    "kind": "论文",
+    "author": "Shuai Bai et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.22000",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Plausibly on-topic for Agentic RL: hybrid computer-use agents, execution-grounded rewards from a running reference, trajectory generation, and a held-out benchm"
+  },
+  {
+    "id": "mintact-a-unified-visual-agent-for-digit",
+    "title": "MintAct: A Unified Visual Agent for Digital Environments",
+    "kind": "论文",
+    "author": "Mingfei Gao et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.22083",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Plausibly on-topic: unified visual agent across mobile/desktop/web with an asynchronous RL training framework and cross-domain distribution control. Relevant to"
   }
 ]

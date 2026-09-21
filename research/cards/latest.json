@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-20T03:36:21.245215+00:00",
+  "generatedAt": "2026-09-21T03:31:15.208209+00:00",
   "requested": 3,
   "generated": [
     {
-      "note_id": "pact-enterprise-compliance-pressure",
-      "note_path": "content/37-pact-enterprise-compliance-pressure.md",
-      "source_id": "pact-can-enterprise-ai-assistants-be-tru",
-      "title": "PACT：企业助手在压力下的合规基准",
-      "stage": "SYSTEMS",
-      "minutes": 18,
-      "arxiv_id": "2609.18605",
-      "full_text_url": "https://arxiv.org/html/2609.18605"
-    },
-    {
-      "note_id": "privileged-info-opsd-ample-math",
-      "note_path": "content/38-privileged-info-opsd-ample-math.md",
-      "source_id": "what-does-privileged-information-add-to",
-      "title": "特权信息在在线自蒸馏中到底加了什么",
+      "note_id": "codemidas-code-rl-envs",
+      "note_path": "content/40-codemidas-code-rl-envs.md",
+      "source_id": "codemidas-scaling-agentic-coding-rl-envi",
+      "title": "CodeMidas：从源码自动构造编码 RL 环境",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.20612",
-      "full_text_url": "https://arxiv.org/html/2609.20612"
+      "arxiv_id": "2609.22068",
+      "full_text_url": "https://arxiv.org/html/2609.22068"
     },
     {
-      "note_id": "programdistill-ref-guided-swe",
-      "note_path": "content/39-programdistill-ref-guided-swe.md",
-      "source_id": "programdistill-from-interactive-web-apps",
-      "title": "ProgramDistill：从交互式网页应用生成可验证 SWE 任务",
+      "note_id": "recreationworld-hybrid-cua",
+      "note_path": "content/41-recreationworld-hybrid-cua.md",
+      "source_id": "recreationworld-scalable-and-verifiable",
+      "title": "RecreationWorld：可验证的混合计算机使用环境",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.18805",
-      "full_text_url": "https://arxiv.org/html/2609.18805"
+      "arxiv_id": "2609.22000",
+      "full_text_url": "https://arxiv.org/html/2609.22000"
+    },
+    {
+      "note_id": "mintact-unified-visual-agent",
+      "note_path": "content/42-mintact-unified-visual-agent.md",
+      "source_id": "mintact-a-unified-visual-agent-for-digit",
+      "title": "MintAct：统一数字环境的视觉智能体",
+      "stage": "FRONTIER",
+      "minutes": 18,
+      "arxiv_id": "2609.22083",
+      "full_text_url": "https://arxiv.org/html/2609.22083"
     }
   ],
   "skipped": [],

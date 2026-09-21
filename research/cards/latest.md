@@ -3,17 +3,17 @@
 
 > LLM 全文精读草稿，需人工复核后才算已审核知识。本次生成 3 张。
 
-### PACT：企业助手在压力下的合规基准
-- 笔记：`content/37-pact-enterprise-compliance-pressure.md`
-- 来源：`pact-can-enterprise-ai-assistants-be-tru` · arXiv `2609.18605`
-- 全文：https://arxiv.org/html/2609.18605
+### CodeMidas：从源码自动构造编码 RL 环境
+- 笔记：`content/40-codemidas-code-rl-envs.md`
+- 来源：`codemidas-scaling-agentic-coding-rl-envi` · arXiv `2609.22068`
+- 全文：https://arxiv.org/html/2609.22068
 
-### 特权信息在在线自蒸馏中到底加了什么
-- 笔记：`content/38-privileged-info-opsd-ample-math.md`
-- 来源：`what-does-privileged-information-add-to` · arXiv `2609.20612`
-- 全文：https://arxiv.org/html/2609.20612
+### RecreationWorld：可验证的混合计算机使用环境
+- 笔记：`content/41-recreationworld-hybrid-cua.md`
+- 来源：`recreationworld-scalable-and-verifiable` · arXiv `2609.22000`
+- 全文：https://arxiv.org/html/2609.22000
 
-### ProgramDistill：从交互式网页应用生成可验证 SWE 任务
-- 笔记：`content/39-programdistill-ref-guided-swe.md`
-- 来源：`programdistill-from-interactive-web-apps` · arXiv `2609.18805`
-- 全文：https://arxiv.org/html/2609.18805
+### MintAct：统一数字环境的视觉智能体
+- 笔记：`content/42-mintact-unified-visual-agent.md`
+- 来源：`mintact-a-unified-visual-agent-for-digit` · arXiv `2609.22083`
+- 全文：https://arxiv.org/html/2609.22083

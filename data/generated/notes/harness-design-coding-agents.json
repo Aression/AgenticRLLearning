@@ -53,12 +53,12 @@
   "related": [
     "modularrsi-harness",
     "agent-loop",
+    "codemidas-code-rl-envs",
     "evaluation",
     "evoskill-gui-training-free",
-    "lab-agent-rl",
-    "modularrsi-harness"
+    "lab-agent-rl"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "an-empirical-study-of-harness-design-for"
   ],

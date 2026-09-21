@@ -45,13 +45,13 @@
   ],
   "related": [
     "actobs-observation-supervision",
+    "codemidas-code-rl-envs",
     "lab-agent-rl",
     "mintrl-off-policy-intervention",
     "orientation",
-    "retireopd-self-retiring-opd",
-    "rewards"
+    "retireopd-self-retiring-opd"
   ],
-  "degree": 17,
+  "degree": 19,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

@@ -50,10 +50,10 @@
     "environments",
     "grpo",
     "lab-agent",
-    "multi-turn-rl",
-    "scienceide-sci-envs"
+    "mintact-unified-visual-agent",
+    "multi-turn-rl"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "verl",
     "lightning-code",
