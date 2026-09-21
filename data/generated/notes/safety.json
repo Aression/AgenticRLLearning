@@ -51,9 +51,9 @@
     "evaluation",
     "lab-agent",
     "orientation",
-    "rewards"
+    "pact-enterprise-compliance-pressure"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "lilian-reward",
     "tau-bench",

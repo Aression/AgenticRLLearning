@@ -47,13 +47,13 @@
   ],
   "related": [
     "lab-agent-rl",
+    "codemidas-code-rl-envs",
     "compo-zeroth-order-alignment",
     "grpo",
     "lab-agent",
-    "mintrl-off-policy-intervention",
-    "modularrsi-harness"
+    "mintrl-off-policy-intervention"
   ],
-  "degree": 17,
+  "degree": 19,
   "sources": [
     "deepseek-math",
     "gigpo",

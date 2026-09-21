@@ -3,17 +3,17 @@
 
 > LLM 全文精读草稿，需人工复核后才算已审核知识。本次生成 3 张。
 
-### EvoSkill-GUI：免训练的技能自演化
-- 笔记：`content/34-evoskill-gui-training-free.md`
-- 来源：`reflect-revise-reuse-training-free-skill` · arXiv `2609.17653`
-- 全文：https://arxiv.org/html/2609.17653
+### CodeMidas：从源码自动构造编码 RL 环境
+- 笔记：`content/40-codemidas-code-rl-envs.md`
+- 来源：`codemidas-scaling-agentic-coding-rl-envi` · arXiv `2609.22068`
+- 全文：https://arxiv.org/html/2609.22068
 
-### When2Think：难度感知的推理长度控制
-- 笔记：`content/35-when2think-length-control.md`
-- 来源：`when2think-learning-difficulty-aware-len` · arXiv `2609.19671`
-- 全文：https://arxiv.org/html/2609.19671
+### RecreationWorld：可验证的混合计算机使用环境
+- 笔记：`content/41-recreationworld-hybrid-cua.md`
+- 来源：`recreationworld-scalable-and-verifiable` · arXiv `2609.22000`
+- 全文：https://arxiv.org/html/2609.22000
 
-### 观测监督如何改变 RL 下的 Agent 探索
-- 笔记：`content/36-actobs-observation-supervision.md`
-- 来源：`don-t-mask-the-environment-observation-s` · arXiv `2609.20715`
-- 全文：https://arxiv.org/html/2609.20715
+### MintAct：统一数字环境的视觉智能体
+- 笔记：`content/42-mintact-unified-visual-agent.md`
+- 来源：`mintact-a-unified-visual-agent-for-digit` · arXiv `2609.22083`
+- 全文：https://arxiv.org/html/2609.22083

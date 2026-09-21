@@ -49,11 +49,11 @@
     "rewards",
     "training-systems",
     "actobs-observation-supervision",
+    "codemidas-code-rl-envs",
     "grpo",
-    "harness-design-coding-agents",
-    "lab-agent"
+    "harness-design-coding-agents"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "verl",
     "lightning-code",

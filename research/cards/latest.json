@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-19T03:19:16.303726+00:00",
+  "generatedAt": "2026-09-21T03:31:15.208209+00:00",
   "requested": 3,
   "generated": [
     {
-      "note_id": "evoskill-gui-training-free",
-      "note_path": "content/34-evoskill-gui-training-free.md",
-      "source_id": "reflect-revise-reuse-training-free-skill",
-      "title": "EvoSkill-GUI：免训练的技能自演化",
-      "stage": "FRONTIER",
-      "minutes": 15,
-      "arxiv_id": "2609.17653",
-      "full_text_url": "https://arxiv.org/html/2609.17653"
-    },
-    {
-      "note_id": "when2think-length-control",
-      "note_path": "content/35-when2think-length-control.md",
-      "source_id": "when2think-learning-difficulty-aware-len",
-      "title": "When2Think：难度感知的推理长度控制",
+      "note_id": "codemidas-code-rl-envs",
+      "note_path": "content/40-codemidas-code-rl-envs.md",
+      "source_id": "codemidas-scaling-agentic-coding-rl-envi",
+      "title": "CodeMidas：从源码自动构造编码 RL 环境",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.19671",
-      "full_text_url": "https://arxiv.org/html/2609.19671"
+      "arxiv_id": "2609.22068",
+      "full_text_url": "https://arxiv.org/html/2609.22068"
     },
     {
-      "note_id": "actobs-observation-supervision",
-      "note_path": "content/36-actobs-observation-supervision.md",
-      "source_id": "don-t-mask-the-environment-observation-s",
-      "title": "观测监督如何改变 RL 下的 Agent 探索",
+      "note_id": "recreationworld-hybrid-cua",
+      "note_path": "content/41-recreationworld-hybrid-cua.md",
+      "source_id": "recreationworld-scalable-and-verifiable",
+      "title": "RecreationWorld：可验证的混合计算机使用环境",
       "stage": "FRONTIER",
-      "minutes": 15,
-      "arxiv_id": "2609.20715",
-      "full_text_url": "https://arxiv.org/html/2609.20715"
+      "minutes": 18,
+      "arxiv_id": "2609.22000",
+      "full_text_url": "https://arxiv.org/html/2609.22000"
+    },
+    {
+      "note_id": "mintact-unified-visual-agent",
+      "note_path": "content/42-mintact-unified-visual-agent.md",
+      "source_id": "mintact-a-unified-visual-agent-for-digit",
+      "title": "MintAct：统一数字环境的视觉智能体",
+      "stage": "FRONTIER",
+      "minutes": 18,
+      "arxiv_id": "2609.22083",
+      "full_text_url": "https://arxiv.org/html/2609.22083"
     }
   ],
   "skipped": [],

@@ -47,13 +47,13 @@
   ],
   "related": [
     "environments",
+    "codemidas-code-rl-envs",
     "evaluation",
     "lab-agent-rl",
     "lab-rl",
-    "multi-turn-rl",
-    "rewards"
+    "multi-turn-rl"
   ],
-  "degree": 12,
+  "degree": 14,
   "sources": [
     "gymnasium",
     "tau-bench",

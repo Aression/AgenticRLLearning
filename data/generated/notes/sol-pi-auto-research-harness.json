@@ -54,9 +54,10 @@
     "environments",
     "evaluation",
     "evolvetrade-policy-refinement",
+    "mintact-unified-visual-agent",
     "modularrsi-harness"
   ],
-  "degree": 5,
+  "degree": 6,
   "sources": [
     "sol-pi-recursively-scaling-auto-research"
   ],
