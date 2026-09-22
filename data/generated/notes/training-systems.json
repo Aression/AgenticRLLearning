@@ -53,7 +53,7 @@
     "mintact-unified-visual-agent",
     "multi-turn-rl"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "verl",
     "lightning-code",

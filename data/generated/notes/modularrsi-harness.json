@@ -53,12 +53,12 @@
   "related": [
     "harness-design-coding-agents",
     "agent-loop",
+    "category-expert-swe-agents",
     "evaluation",
     "frontier-radar",
-    "harness-design-coding-agents",
-    "mintrl-off-policy-intervention"
+    "harness-design-coding-agents"
   ],
-  "degree": 12,
+  "degree": 15,
   "sources": [
     "modularrsi-modular-and-generalizable-rec"
   ],

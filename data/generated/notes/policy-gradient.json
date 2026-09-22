@@ -47,11 +47,11 @@
     "glossary",
     "learning-paths",
     "mdp",
+    "parts-subtask-rl-manipulation",
     "ppo",
-    "prerequisites",
-    "value-learning"
+    "prerequisites"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "sutton-barto",
     "gae"

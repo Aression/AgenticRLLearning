@@ -49,13 +49,13 @@
   ],
   "related": [
     "environments",
+    "category-expert-swe-agents",
     "emergence-world-stress-test",
     "evolvetrade-policy-refinement",
     "harness-design-coding-agents",
-    "lab-agent",
-    "modularrsi-harness"
+    "lab-agent"
   ],
-  "degree": 20,
+  "degree": 21,
   "sources": [
     "swe-bench",
     "webarena",

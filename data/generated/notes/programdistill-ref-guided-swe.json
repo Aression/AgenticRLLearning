@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "category-expert-swe-agents",
     "codemidas-code-rl-envs",
     "evaluation",
     "harness-design-coding-agents",
     "learning-paths",
-    "pact-enterprise-compliance-pressure",
-    "prerequisites"
+    "pact-enterprise-compliance-pressure"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "programdistill-from-interactive-web-apps"
   ],
