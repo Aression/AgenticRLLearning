@@ -56,9 +56,9 @@
     "multi-agent",
     "multi-turn-rl",
     "pact-enterprise-compliance-pressure",
-    "safety"
+    "parts-subtask-rl-manipulation"
   ],
-  "degree": 7,
+  "degree": 8,
   "sources": [
     "emergence-world-adversarial-stress-testi"
   ],

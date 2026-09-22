@@ -45,13 +45,13 @@
   ],
   "related": [
     "agent-loop",
+    "category-expert-swe-agents",
     "frontier-radar",
     "glossary",
     "grpo",
-    "learning-paths",
-    "mdp"
+    "learning-paths"
   ],
-  "degree": 14,
+  "degree": 15,
   "sources": [
     "agentic-survey",
     "react",

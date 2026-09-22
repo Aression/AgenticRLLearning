@@ -55,9 +55,10 @@
     "evaluation",
     "evolvetrade-policy-refinement",
     "mintact-unified-visual-agent",
-    "modularrsi-harness"
+    "modularrsi-harness",
+    "rrsi-regularized-harness-rsi"
   ],
-  "degree": 6,
+  "degree": 8,
   "sources": [
     "sol-pi-recursively-scaling-auto-research"
   ],

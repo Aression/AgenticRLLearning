@@ -45,13 +45,13 @@
   ],
   "related": [
     "actobs-observation-supervision",
+    "category-expert-swe-agents",
     "codemidas-code-rl-envs",
     "lab-agent-rl",
     "mintrl-off-policy-intervention",
-    "orientation",
-    "retireopd-self-retiring-opd"
+    "orientation"
   ],
-  "degree": 19,
+  "degree": 20,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

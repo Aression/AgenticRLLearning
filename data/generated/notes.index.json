@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T03:31:15.569015+00:00",
+  "generatedAt": "2026-09-22T03:30:28.704355+00:00",
   "notes": [
     {
       "id": "orientation",
@@ -48,13 +48,13 @@
       ],
       "related": [
         "agent-loop",
+        "category-expert-swe-agents",
         "frontier-radar",
         "glossary",
         "grpo",
-        "learning-paths",
-        "mdp"
+        "learning-paths"
       ],
-      "degree": 14,
+      "degree": 15,
       "sources": [
         "agentic-survey",
         "react",
@@ -303,11 +303,11 @@
         "glossary",
         "learning-paths",
         "mdp",
+        "parts-subtask-rl-manipulation",
         "ppo",
-        "prerequisites",
-        "value-learning"
+        "prerequisites"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "sutton-barto",
         "gae"
@@ -565,7 +565,7 @@
         "lab-agent",
         "mintrl-off-policy-intervention"
       ],
-      "degree": 19,
+      "degree": 20,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -687,13 +687,13 @@
       ],
       "related": [
         "actobs-observation-supervision",
+        "category-expert-swe-agents",
         "codemidas-code-rl-envs",
         "lab-agent-rl",
         "mintrl-off-policy-intervention",
-        "orientation",
-        "retireopd-self-retiring-opd"
+        "orientation"
       ],
-      "degree": 19,
+      "degree": 20,
       "sources": [
         "deepseek-math",
         "deepseek-r1",
@@ -758,7 +758,7 @@
         "frontier-radar",
         "glossary"
       ],
-      "degree": 22,
+      "degree": 23,
       "sources": [
         "agentic-survey",
         "gigpo",
@@ -825,7 +825,7 @@
         "mintact-unified-visual-agent",
         "multi-turn-rl"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "verl",
         "lightning-code",
@@ -888,13 +888,13 @@
       ],
       "related": [
         "environments",
+        "category-expert-swe-agents",
         "emergence-world-stress-test",
         "evolvetrade-policy-refinement",
         "harness-design-coding-agents",
-        "lab-agent",
-        "modularrsi-harness"
+        "lab-agent"
       ],
-      "degree": 20,
+      "degree": 21,
       "sources": [
         "swe-bench",
         "webarena",
@@ -1094,7 +1094,7 @@
         "glossary",
         "learning-paths"
       ],
-      "degree": 14,
+      "degree": 15,
       "sources": [
         "coskill",
         "multi-harness",
@@ -1608,12 +1608,12 @@
       "related": [
         "harness-design-coding-agents",
         "agent-loop",
+        "category-expert-swe-agents",
         "evaluation",
         "frontier-radar",
-        "harness-design-coding-agents",
-        "mintrl-off-policy-intervention"
+        "harness-design-coding-agents"
       ],
-      "degree": 12,
+      "degree": 15,
       "sources": [
         "modularrsi-modular-and-generalizable-rec"
       ],
@@ -1678,9 +1678,9 @@
         "multi-agent",
         "multi-turn-rl",
         "pact-enterprise-compliance-pressure",
-        "safety"
+        "parts-subtask-rl-manipulation"
       ],
-      "degree": 7,
+      "degree": 8,
       "sources": [
         "emergence-world-adversarial-stress-testi"
       ],
@@ -2008,9 +2008,10 @@
         "evaluation",
         "evolvetrade-policy-refinement",
         "mintact-unified-visual-agent",
-        "modularrsi-harness"
+        "modularrsi-harness",
+        "rrsi-regularized-harness-rsi"
       ],
-      "degree": 6,
+      "degree": 8,
       "sources": [
         "sol-pi-recursively-scaling-auto-research"
       ],
@@ -2070,14 +2071,14 @@
         "自测"
       ],
       "related": [
+        "category-expert-swe-agents",
         "actobs-observation-supervision",
         "codemidas-code-rl-envs",
         "grpo",
         "lab-agent-rl",
-        "multi-turn-rl",
-        "orientation"
+        "multi-turn-rl"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "retireopd-self-retiring-on-policy-distil"
       ],
@@ -2139,12 +2140,12 @@
       "related": [
         "modularrsi-harness",
         "agent-loop",
+        "category-expert-swe-agents",
         "codemidas-code-rl-envs",
         "evaluation",
-        "evoskill-gui-training-free",
-        "lab-agent-rl"
+        "evoskill-gui-training-free"
       ],
-      "degree": 13,
+      "degree": 16,
       "sources": [
         "an-empirical-study-of-harness-design-for"
       ],
@@ -2208,9 +2209,10 @@
         "emergence-world-stress-test",
         "frontier-radar",
         "harness-design-coding-agents",
-        "multi-turn-rl"
+        "multi-turn-rl",
+        "parts-subtask-rl-manipulation"
       ],
-      "degree": 5,
+      "degree": 6,
       "sources": [
         "reflect-revise-reuse-training-free-skill"
       ],
@@ -2537,14 +2539,14 @@
         "自测"
       ],
       "related": [
+        "category-expert-swe-agents",
         "codemidas-code-rl-envs",
         "evaluation",
         "harness-design-coding-agents",
         "learning-paths",
-        "pact-enterprise-compliance-pressure",
-        "prerequisites"
+        "pact-enterprise-compliance-pressure"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "programdistill-from-interactive-web-apps"
       ],
@@ -2750,6 +2752,203 @@
       ],
       "prerequisites": [],
       "search": "mintact：统一数字环境的视觉智能体 用多阶段训练与异步 rl 框架，把 ui 定位、移动/桌面/网页导航与视觉工具调用统一进单个 2b–8b 模型。 agent 系统 gui-grounding asynchronous-rl cross-domain tool-use visual-agent 理解统一视觉智能体在数据、环境与训练三方面的难点 说出 mintact 多阶段训练配方各阶段的作用 识别异步 rl 中跨域训练分布漂移问题及其控制思路 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "category-expert-swe-agents",
+      "title": "类别感知专家迭代训练与策略整合",
+      "summary": "针对仓库级软件工程任务异质性，用类别专家分训加标签路由的在线蒸馏，把多个专家整合成单一策略。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 43,
+      "minutes": 18,
+      "updated": "2026-09-22",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "43-category-expert-swe-agents.md",
+      "tags": [
+        "Agentic RL",
+        "SWE-bench",
+        "expert-routing",
+        "on-policy-distillation"
+      ],
+      "concepts": [
+        "Agentic RL",
+        "SWE-bench",
+        "expert-routing",
+        "on-policy-distillation"
+      ],
+      "objectives": [
+        "理解为何按任务类别拆分专家训练，以及 RRE 循环如何协同进化策略与训练前沿",
+        "掌握标签路由多教师在线蒸馏（MOPD）把同源专家整合为单一学生策略的思路",
+        "能指出该框架在证据层面的边界：结果来自作者自建基准与单次运行，组件贡献未被隔离"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.23377",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.23377",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "retireopd-self-retiring-opd",
+        "evaluation",
+        "grpo",
+        "harness-design-coding-agents",
+        "modularrsi-harness",
+        "orientation"
+      ],
+      "degree": 8,
+      "sources": [
+        "one-to-more-more-to-one-category-aware-i"
+      ],
+      "prerequisites": [],
+      "search": "类别感知专家迭代训练与策略整合 针对仓库级软件工程任务异质性，用类别专家分训加标签路由的在线蒸馏，把多个专家整合成单一策略。 训练算法 agentic rl swe-bench expert-routing on-policy-distillation 理解为何按任务类别拆分专家训练，以及 rre 循环如何协同进化策略与训练前沿 掌握标签路由多教师在线蒸馏（mopd）把同源专家整合为单一学生策略的思路 能指出该框架在证据层面的边界：结果来自作者自建基准与单次运行，组件贡献未被隔离 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "parts-subtask-rl-manipulation",
+      "title": "PARTS：瓶颈子任务残差RL适配长程操作",
+      "summary": "用编码智能体构造子任务选择器与成功验证器，在瓶颈子任务上做残差RL，以稀疏局部奖励适配预训练机器人策略。",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "order": 44,
+      "minutes": 15,
+      "updated": "2026-09-22",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "44-parts-subtask-rl-manipulation.md",
+      "tags": [
+        "long-horizon",
+        "residual-policy",
+        "robot-manipulation",
+        "sparse-reward",
+        "subtask-rl"
+      ],
+      "concepts": [
+        "long-horizon",
+        "residual-policy",
+        "robot-manipulation",
+        "sparse-reward",
+        "subtask-rl"
+      ],
+      "objectives": [
+        "理解为何全任务稀疏奖励在长程任务中难以提供有效学习信号",
+        "掌握 PARTS 中残差策略、子任务验证器与成功重加权重训练的分工",
+        "能区分作者主张与摘要级未复现结果，判断该工作的证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.21788",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.21788",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "emergence-world-stress-test",
+        "evoskill-gui-training-free",
+        "multi-turn-rl",
+        "policy-gradient",
+        "rewards",
+        "training-systems"
+      ],
+      "degree": 6,
+      "sources": [
+        "from-pretraining-to-proficiency-real-wor"
+      ],
+      "prerequisites": [],
+      "search": "parts：瓶颈子任务残差rl适配长程操作 用编码智能体构造子任务选择器与成功验证器，在瓶颈子任务上做残差rl，以稀疏局部奖励适配预训练机器人策略。 训练算法 long-horizon residual-policy robot-manipulation sparse-reward subtask-rl 理解为何全任务稀疏奖励在长程任务中难以提供有效学习信号 掌握 parts 中残差策略、子任务验证器与成功重加权重训练的分工 能区分作者主张与摘要级未复现结果，判断该工作的证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "rrsi-regularized-harness-rsi",
+      "title": "RRSI：正则化 Agent Harness 的递归自改进",
+      "summary": "针对 harness 演化在有限 evolve 集上反复搜索导致的过拟合，提出在提案与选择两侧加正则，使改进可迁移到未见基准。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 45,
+      "minutes": 18,
+      "updated": "2026-09-22",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "45-rrsi-regularized-harness-rsi.md",
+      "tags": [
+        "agent-system",
+        "generalization",
+        "harness-evolution",
+        "overfitting",
+        "self-improvement"
+      ],
+      "concepts": [
+        "agent-system",
+        "generalization",
+        "harness-evolution",
+        "overfitting",
+        "self-improvement"
+      ],
+      "objectives": [
+        "理解 harness 级递归自改进中 evolve-to-transfer 差距的成因分类",
+        "掌握 RRSI 在提案侧与接受侧分别施加的正则化思路",
+        "能判断该文结论的证据强度与未验证边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.24972",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.24972",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "frontier-radar",
+        "harness-design-coding-agents",
+        "modularrsi-harness",
+        "sol-pi-auto-research-harness"
+      ],
+      "degree": 6,
+      "sources": [
+        "rrsi-regularized-recursive-self-improvem"
+      ],
+      "prerequisites": [],
+      "search": "rrsi：正则化 agent harness 的递归自改进 针对 harness 演化在有限 evolve 集上反复搜索导致的过拟合，提出在提案与选择两侧加正则，使改进可迁移到未见基准。 agent 系统 agent-system generalization harness-evolution overfitting self-improvement 理解 harness 级递归自改进中 evolve-to-transfer 差距的成因分类 掌握 rrsi 在提案侧与接受侧分别施加的正则化思路 能判断该文结论的证据强度与未验证边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
     }
   ]
 }

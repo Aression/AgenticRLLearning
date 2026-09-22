@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T03:31:15.572592+00:00",
+  "generatedAt": "2026-09-22T03:30:28.708155+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -7,7 +7,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 14
+      "degree": 15
     },
     {
       "id": "prerequisites",
@@ -39,7 +39,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "训练算法",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "ppo",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 19
+      "degree": 20
     },
     {
       "id": "preferences",
@@ -87,7 +87,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 19
+      "degree": 20
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 22
+      "degree": 23
     },
     {
       "id": "training-systems",
@@ -103,7 +103,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "evaluation",
@@ -111,7 +111,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 20
+      "degree": 21
     },
     {
       "id": "safety",
@@ -135,7 +135,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "前沿专题",
-      "degree": 14
+      "degree": 15
     },
     {
       "id": "lab-rl",
@@ -199,7 +199,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 12
+      "degree": 15
     },
     {
       "id": "emergence-world-stress-test",
@@ -207,7 +207,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "value-flattening-ppo",
@@ -247,7 +247,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 6
+      "degree": 8
     },
     {
       "id": "retireopd-self-retiring-opd",
@@ -255,7 +255,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "harness-design-coding-agents",
@@ -263,7 +263,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 13
+      "degree": 16
     },
     {
       "id": "evoskill-gui-training-free",
@@ -271,7 +271,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "when2think-length-control",
@@ -311,7 +311,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "codemidas-code-rl-envs",
@@ -336,6 +336,30 @@
       "stage": "FRONTIER",
       "track": "Agent 系统",
       "degree": 5
+    },
+    {
+      "id": "category-expert-swe-agents",
+      "label": "类别感知专家迭代训练与策略整合",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 8
+    },
+    {
+      "id": "parts-subtask-rl-manipulation",
+      "label": "PARTS：瓶颈子任务残差RL适配长程操作",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "训练算法",
+      "degree": 6
+    },
+    {
+      "id": "rrsi-regularized-harness-rsi",
+      "label": "RRSI：正则化 Agent Harness 的递归自改进",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 6
     },
     {
       "id": "2026",
@@ -396,6 +420,14 @@
     {
       "id": "agent-safety",
       "label": "agent-safety",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-system",
+      "label": "agent-system",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -610,6 +642,14 @@
       "degree": 0
     },
     {
+      "id": "expert-routing",
+      "label": "expert-routing",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "exploration",
       "label": "exploration",
       "kind": "concept",
@@ -708,6 +748,14 @@
     {
       "id": "harness",
       "label": "harness",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "harness-evolution",
+      "label": "harness-evolution",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -866,6 +914,14 @@
       "degree": 0
     },
     {
+      "id": "overfitting",
+      "label": "overfitting",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "para",
       "label": "PARA",
       "kind": "concept",
@@ -1010,6 +1066,14 @@
       "degree": 0
     },
     {
+      "id": "residual-policy",
+      "label": "residual-policy",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "reward",
       "label": "reward",
       "kind": "concept",
@@ -1076,6 +1140,14 @@
     {
       "id": "roadmap",
       "label": "roadmap",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "robot-manipulation",
+      "label": "robot-manipulation",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1154,8 +1226,24 @@
       "degree": 0
     },
     {
+      "id": "sparse-reward",
+      "label": "sparse-reward",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "sparse-supervision",
       "label": "sparse-supervision",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "subtask-rl",
+      "label": "subtask-rl",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1566,6 +1654,24 @@
       "weight": 1.0
     },
     {
+      "source": "category-expert-swe-agents",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "harness-design-coding-agents",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "codemidas-code-rl-envs",
       "target": "environments",
       "kind": "related",
@@ -1752,6 +1858,12 @@
       "weight": 1.0
     },
     {
+      "source": "harness-design-coding-agents",
+      "target": "rrsi-regularized-harness-rsi",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "mintact-unified-visual-agent",
       "target": "multi-turn-rl",
       "kind": "related",
@@ -1783,6 +1895,12 @@
     },
     {
       "source": "modularrsi-harness",
+      "target": "rrsi-regularized-harness-rsi",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
       "target": "sol-pi-auto-research-harness",
       "kind": "related",
       "weight": 1.0
@@ -1802,6 +1920,24 @@
     {
       "source": "pact-enterprise-compliance-pressure",
       "target": "safety",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "policy-gradient",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "rewards",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "training-systems",
       "kind": "related",
       "weight": 1.0
     },
@@ -1844,6 +1980,12 @@
     {
       "source": "rewards",
       "target": "when2think-length-control",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "sol-pi-auto-research-harness",
       "kind": "related",
       "weight": 1.0
     },
@@ -1900,6 +2042,36 @@
       "target": "value-learning",
       "kind": "shared-concept",
       "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "evaluation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "harness-design-coding-agents",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "modularrsi-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "orientation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 2.0
     },
     {
       "source": "codemidas-code-rl-envs",
@@ -1969,6 +2141,12 @@
     },
     {
       "source": "emergence-world-stress-test",
+      "target": "parts-subtask-rl-manipulation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
       "target": "safety",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2010,8 +2188,20 @@
       "weight": 1.0
     },
     {
+      "source": "evoskill-gui-training-free",
+      "target": "parts-subtask-rl-manipulation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "frontier-radar",
       "target": "mintrl-off-policy-intervention",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "frontier-radar",
+      "target": "rrsi-regularized-harness-rsi",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2173,6 +2363,12 @@
     },
     {
       "source": "modularrsi-harness",
+      "target": "rrsi-regularized-harness-rsi",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
       "target": "scienceide-sci-envs",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2186,6 +2382,12 @@
     {
       "source": "modularrsi-harness",
       "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "parts-subtask-rl-manipulation",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2246,6 +2448,12 @@
     {
       "source": "rewards",
       "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "sol-pi-auto-research-harness",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -3644,6 +3852,90 @@
     {
       "source": "mintact-unified-visual-agent",
       "target": "tool-use",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "agentic-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "swe-bench",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "on-policy-distillation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "expert-routing",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "subtask-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "residual-policy",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "sparse-reward",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "long-horizon",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "robot-manipulation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "harness-evolution",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "self-improvement",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "generalization",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "overfitting",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "agent-system",
       "kind": "concept",
       "weight": 1
     }

@@ -528,5 +528,35 @@
     "url": "https://arxiv.org/abs/2609.22083",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Plausibly on-topic: unified visual agent across mobile/desktop/web with an asynchronous RL training framework and cross-domain distribution control. Relevant to"
+  },
+  {
+    "id": "one-to-more-more-to-one-category-aware-i",
+    "title": "One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents",
+    "kind": "论文",
+    "author": "Jie Zhao et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.23377",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：On-topic for Agentic RL: category-aware expert training, long-horizon agentic RL, on-policy distillation (MOPD), and SWE-bench Multilingual evaluation. Not a du"
+  },
+  {
+    "id": "from-pretraining-to-proficiency-real-wor",
+    "title": "From Pretraining to Proficiency: Real-World Subtask RL for Long-Horizon Manipulation with Minimal Human Intervention",
+    "kind": "论文",
+    "author": "Sichang Su et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.21788",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Plausibly relevant to Agentic RL foundations: subtask-targeted RL, sparse/outcome rewards, residual policy corrections, and success verifiers for long-horizon t"
+  },
+  {
+    "id": "rrsi-regularized-recursive-self-improvem",
+    "title": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+    "kind": "论文",
+    "author": "Peng Xia et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.24972",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly on-topic for the harness self-improvement thread already represented by modularrsi-modular-and-generalizable-rec and sol-pi-recursively-scaling-auto-re"
   }
 ]

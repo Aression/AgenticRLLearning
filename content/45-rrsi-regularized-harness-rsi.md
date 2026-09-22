@@ -1,0 +1,46 @@
+---
+id: rrsi-regularized-harness-rsi
+title: RRSI：正则化 Agent Harness 的递归自改进
+summary: 针对 harness 演化在有限 evolve 集上反复搜索导致的过拟合，提出在提案与选择两侧加正则，使改进可迁移到未见基准。
+stage: FRONTIER
+track: Agent 系统
+order: 45
+minutes: 18
+updated: '2026-09-22'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.24972
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+full_text_url: https://arxiv.org/html/2609.24972
+objectives: [理解 harness 级递归自改进中 evolve-to-transfer 差距的成因分类, 掌握 RRSI 在提案侧与接受侧分别施加的正则化思路, 能判断该文结论的证据强度与未验证边界]
+tags: [harness-evolution, self-improvement, generalization, overfitting, agent-system]
+sources: [rrsi-regularized-recursive-self-improvem]
+related: [modularrsi-harness, sol-pi-auto-research-harness, harness-design-coding-agents]
+prerequisites: []
+---
+## 论文要解决的问题
+
+论文把 LLM Agent 视为「冻结骨干模型 + harness（提示、控制流、工具接口、记忆与上下文管理）」的系统，并指出近期 Agent 产品进步多来自 harness 工程而非新权重。已有共识是这类工程高度依赖人工读失败轨迹、手改脚手架，因此受限于工程师能读多少轨迹。作者的主张是：用 LLM 自动迭代改进 harness 构成一种 Agent 系统级的递归自改进（RSI），但若反复用同一个有限 evolve 集的反馈来提案与选择编辑，会产生「自适应过拟合」——evolve 集分数上升，却未必迁移到未见任务。作者进一步把过拟合拆成三类耦合行为：编码基准特定模式、追逐评估噪声、累积无益复杂度。
+
+## 方法
+
+RRSI 的核心主张是：不限制 harness 哪些组件可改（保持开放编辑空间），而是正则化「有限且有噪声的反馈如何被转化为持久改动」。它同时约束演化回路两侧：提案侧鼓励更简单、更可复用的编辑，并过滤任务特定逻辑；接受侧用噪声调整后的基线做稳健选择，避免保留由基准特定信号、评估噪声或不必要复杂度驱动的改进。附录说明文中借用的 Lasso/Ridge 等术语仅表示复杂度控制的类比角色，并不真的优化对应范数惩罚目标，异构 harness 组件也不被当作共享连续参数向量的坐标。
+
+## 证据与实验
+
+实验覆盖三个领域八个基准：编码（Terminal-Bench 2.1、SWE-bench Verified）、Agent 工作区（Harvey LAB、JobBench、GDPval、APEX-Agents）、工程设计（EngDesign、Frontier-Eng）。每个领域只在单一 suite 上演化，再原样跑到 held-out 基准。作者报告：evolve 集最多提升 14.1 分，六个 held-out split 全部提升，OOD 最多提升 4.7 分，且策略 token 消耗低于未正则化演化；相对先前基线平均最多提升 22.9%。消融显示去掉接受侧约束会抬高 evolve 分但降低迁移并增加约一半 token；去掉提案侧约束在 evolve 上仅损失 0.2 分、OOD 损失 1.7 分。作者还用 Gemini 3.5 Flash 与 Claude Opus 4.8 分别演化，并把 Gemini 演化出的 harness 原样用于更小的 Gemini 3.1 Flash Lite，报告 Terminal-Bench 2.1 从 11.2 升到 14.6。工程设计任务由确定性模拟器评分，作者以此论证增益不是 judge 评分或共享任务格式的产物。
+
+## 边界与未解问题
+
+以上数字均来自论文自述，本卡片未做复现或代码核验，应视为作者主张而非已确证结论。作者自列局限：只研究冻结骨干下的 harness 级 RSI，不涉及演化中更新权重；仍依赖有限 evolve 集与若干正则超参，效果可能取决于反馈信号质量与搜索预算；跨架构、工具生态与更长自改进过程的泛化仍需更广验证。此外，基线对比中「evolve 分最高者 OOD 反而最差」的排序反转，是单次实验设置下的观察，样本量与统计显著性在摘录中未给出。
+
+## 与知识库的关系
+
+本文与 ModularRSI 一类「模块化、可泛化的 harness 递归自改进」工作同属一条线索，但切入点不同：ModularRSI 关注改什么与如何模块化，RRSI 关注搜索动力学本身的正则化，作者自称与这些方法正交。它也与自动研究型 harness（如 sol-pi 类）共享「用反馈驱动脚手架演化」的框架，可作为 harness 设计笔记中「演化 vs 手工」权衡的补充。
+
+## 自测
+
+1. 为什么「evolve 集分数上升」不能直接当作自改进成功的证据？
+2. RRSI 的提案侧与接受侧正则分别针对哪类过拟合行为？
+3. 若要质疑本文结论，你会优先检查哪些实验设计环节？

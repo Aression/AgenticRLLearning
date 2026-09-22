@@ -55,9 +55,10 @@
     "emergence-world-stress-test",
     "frontier-radar",
     "harness-design-coding-agents",
-    "multi-turn-rl"
+    "multi-turn-rl",
+    "parts-subtask-rl-manipulation"
   ],
-  "degree": 5,
+  "degree": 6,
   "sources": [
     "reflect-revise-reuse-training-free-skill"
   ],

@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "category-expert-swe-agents",
     "actobs-observation-supervision",
     "codemidas-code-rl-envs",
     "grpo",
     "lab-agent-rl",
-    "multi-turn-rl",
-    "orientation"
+    "multi-turn-rl"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "retireopd-self-retiring-on-policy-distil"
   ],
