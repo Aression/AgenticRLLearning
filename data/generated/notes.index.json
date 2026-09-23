@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T03:30:28.704355+00:00",
+  "generatedAt": "2026-09-23T03:31:26.214084+00:00",
   "notes": [
     {
       "id": "orientation",
@@ -54,7 +54,7 @@
         "grpo",
         "learning-paths"
       ],
-      "degree": 15,
+      "degree": 16,
       "sources": [
         "agentic-survey",
         "react",
@@ -433,7 +433,7 @@
         "harness-design-coding-agents",
         "modularrsi-harness"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "react",
         "anthropic-building",
@@ -565,7 +565,7 @@
         "lab-agent",
         "mintrl-off-policy-intervention"
       ],
-      "degree": 20,
+      "degree": 21,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -758,7 +758,7 @@
         "frontier-radar",
         "glossary"
       ],
-      "degree": 23,
+      "degree": 24,
       "sources": [
         "agentic-survey",
         "gigpo",
@@ -963,7 +963,7 @@
         "orientation",
         "pact-enterprise-compliance-pressure"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "lilian-reward",
         "tau-bench",
@@ -1609,11 +1609,11 @@
         "harness-design-coding-agents",
         "agent-loop",
         "category-expert-swe-agents",
+        "designer-rsi-procedural-memory",
         "evaluation",
-        "frontier-radar",
-        "harness-design-coding-agents"
+        "frontier-radar"
       ],
-      "degree": 15,
+      "degree": 18,
       "sources": [
         "modularrsi-modular-and-generalizable-rec"
       ],
@@ -1811,9 +1811,10 @@
         "evaluation",
         "frontier-radar",
         "mintact-unified-visual-agent",
-        "sol-pi-auto-research-harness"
+        "sol-pi-auto-research-harness",
+        "videogen-agent-tool-rl"
       ],
-      "degree": 5,
+      "degree": 6,
       "sources": [
         "evolvetrade-experience-driven-policy-ref"
       ],
@@ -1874,13 +1875,13 @@
       ],
       "related": [
         "recreationworld-hybrid-cua",
+        "rsi-harness-two-loop",
         "environments",
         "evaluation",
         "grpo",
-        "harness-design-coding-agents",
-        "mintrl-off-policy-intervention"
+        "harness-design-coding-agents"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "scienceide-turning-world-s-scientific-co"
       ],
@@ -2011,7 +2012,7 @@
         "modularrsi-harness",
         "rrsi-regularized-harness-rsi"
       ],
-      "degree": 8,
+      "degree": 10,
       "sources": [
         "sol-pi-recursively-scaling-auto-research"
       ],
@@ -2078,7 +2079,7 @@
         "lab-agent-rl",
         "multi-turn-rl"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "retireopd-self-retiring-on-policy-distil"
       ],
@@ -2145,7 +2146,7 @@
         "evaluation",
         "evoskill-gui-training-free"
       ],
-      "degree": 16,
+      "degree": 17,
       "sources": [
         "an-empirical-study-of-harness-design-for"
       ],
@@ -2206,13 +2207,13 @@
       ],
       "related": [
         "agent-loop",
+        "designer-rsi-procedural-memory",
         "emergence-world-stress-test",
         "frontier-radar",
         "harness-design-coding-agents",
-        "multi-turn-rl",
-        "parts-subtask-rl-manipulation"
+        "multi-turn-rl"
       ],
-      "degree": 6,
+      "degree": 8,
       "sources": [
         "reflect-revise-reuse-training-free-skill"
       ],
@@ -2346,7 +2347,7 @@
         "lab-agent-rl",
         "mintrl-off-policy-intervention"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "don-t-mask-the-environment-observation-s"
       ],
@@ -2413,7 +2414,7 @@
         "recreationworld-hybrid-cua",
         "retireopd-self-retiring-opd"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "pact-can-enterprise-ai-assistants-be-tru"
       ],
@@ -2546,7 +2547,7 @@
         "learning-paths",
         "pact-enterprise-compliance-pressure"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "programdistill-from-interactive-web-apps"
       ],
@@ -2680,7 +2681,7 @@
         "pact-enterprise-compliance-pressure",
         "programdistill-ref-guided-swe"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "recreationworld-scalable-and-verifiable"
       ],
@@ -2744,9 +2745,10 @@
         "evolvetrade-policy-refinement",
         "multi-turn-rl",
         "sol-pi-auto-research-harness",
-        "training-systems"
+        "training-systems",
+        "videogen-agent-tool-rl"
       ],
-      "degree": 5,
+      "degree": 6,
       "sources": [
         "mintact-a-unified-visual-agent-for-digit"
       ],
@@ -2811,7 +2813,7 @@
         "modularrsi-harness",
         "orientation"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "one-to-more-more-to-one-category-aware-i"
       ],
@@ -2941,14 +2943,213 @@
         "frontier-radar",
         "harness-design-coding-agents",
         "modularrsi-harness",
+        "rsi-harness-two-loop",
         "sol-pi-auto-research-harness"
       ],
-      "degree": 6,
+      "degree": 7,
       "sources": [
         "rrsi-regularized-recursive-self-improvem"
       ],
       "prerequisites": [],
       "search": "rrsi：正则化 agent harness 的递归自改进 针对 harness 演化在有限 evolve 集上反复搜索导致的过拟合，提出在提案与选择两侧加正则，使改进可迁移到未见基准。 agent 系统 agent-system generalization harness-evolution overfitting self-improvement 理解 harness 级递归自改进中 evolve-to-transfer 差距的成因分类 掌握 rrsi 在提案侧与接受侧分别施加的正则化思路 能判断该文结论的证据强度与未验证边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "videogen-agent-tool-rl",
+      "title": "VideoGen-Agent：多任务智能体强化学习驱动视频生成",
+      "summary": "用SFT加多任务智能体强化学习训练一个多模态智能体，在六类视频生成任务中协调检索、模拟与验证工具。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 46,
+      "minutes": 15,
+      "updated": "2026-09-23",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "46-videogen-agent-tool-rl.md",
+      "tags": [
+        "Agentic RL",
+        "multitask",
+        "reward-design",
+        "tool-use",
+        "video-generation"
+      ],
+      "concepts": [
+        "Agentic RL",
+        "multitask",
+        "reward-design",
+        "tool-use",
+        "video-generation"
+      ],
+      "objectives": [
+        "理解多任务智能体强化学习如何统一协调异构工具链",
+        "看清混合奖励与任务优势归一化在跨类别训练中的作用",
+        "识别该工作证据链的缺口（仅摘要级、无复现）"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.24997",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.24997",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "agent-loop",
+        "category-expert-swe-agents",
+        "evolvetrade-policy-refinement",
+        "mintact-unified-visual-agent",
+        "multi-turn-rl",
+        "orientation"
+      ],
+      "degree": 9,
+      "sources": [
+        "videogen-agent-reinforcing-video-generat"
+      ],
+      "prerequisites": [],
+      "search": "videogen-agent：多任务智能体强化学习驱动视频生成 用sft加多任务智能体强化学习训练一个多模态智能体，在六类视频生成任务中协调检索、模拟与验证工具。 agent 系统 agentic rl multitask reward-design tool-use video-generation 理解多任务智能体强化学习如何统一协调异构工具链 看清混合奖励与任务优势归一化在跨类别训练中的作用 识别该工作证据链的缺口（仅摘要级、无复现） 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "rsi-harness-two-loop",
+      "title": "双层循环的 harness 递归自我改进",
+      "summary": "论文提出内外双层循环的递归自我改进系统，让研究 agent 改写自身 harness 代码，并在留出基准上检验改进是否可迁移。",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "order": 47,
+      "minutes": 18,
+      "updated": "2026-09-23",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "47-rsi-harness-two-loop.md",
+      "tags": [
+        "RSI",
+        "agent",
+        "benchmark",
+        "harness",
+        "reward hacking"
+      ],
+      "concepts": [
+        "RSI",
+        "agent",
+        "benchmark",
+        "harness",
+        "reward hacking"
+      ],
+      "objectives": [
+        "理解双层（inner/outer loop）递归自我改进的优化结构与其与普通 harness 搜索的区别",
+        "说清论文如何用固定评估预算与留出基准来区分真实能力提升与额外算力",
+        "识别该工作证据链的薄弱环节：噪声、成本、可解释性与未复现性"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.26457",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.26457",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "scienceide-sci-envs",
+        "actobs-observation-supervision",
+        "designer-rsi-procedural-memory",
+        "harness-design-coding-agents",
+        "modularrsi-harness",
+        "pact-enterprise-compliance-pressure"
+      ],
+      "degree": 12,
+      "sources": [
+        "recursive-self-improvement-of-ai-researc"
+      ],
+      "prerequisites": [],
+      "search": "双层循环的 harness 递归自我改进 论文提出内外双层循环的递归自我改进系统，让研究 agent 改写自身 harness 代码，并在留出基准上检验改进是否可迁移。 前沿专题 rsi agent benchmark harness reward hacking 理解双层（inner/outer loop）递归自我改进的优化结构与其与普通 harness 搜索的区别 说清论文如何用固定评估预算与留出基准来区分真实能力提升与额外算力 识别该工作证据链的薄弱环节：噪声、成本、可解释性与未复现性 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "designer-rsi-procedural-memory",
+      "title": "Designer-RSI：从用户流量演化程序性记忆",
+      "summary": "在冻结模型上，用可编辑的自然语言技能库替代权重更新，通过拓宽与深化两轴演化，并以匹配回放门控准入。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 48,
+      "minutes": 18,
+      "updated": "2026-09-23",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "48-designer-rsi-procedural-memory.md",
+      "tags": [
+        "agentic-design",
+        "continual-adaptation",
+        "procedural-memory",
+        "replay-gate",
+        "skill-evolution"
+      ],
+      "concepts": [
+        "agentic-design",
+        "continual-adaptation",
+        "procedural-memory",
+        "replay-gate",
+        "skill-evolution"
+      ],
+      "objectives": [
+        "理解把「程序性记忆」而非模型权重当作学习对象的动机与代价",
+        "说清拓宽/深化两轴与匹配回放门控如何分离提议与准入",
+        "识别该工作在奖励不可验证、门控局部性上的证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.22086",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.22086",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "evoskill-gui-training-free",
+        "modularrsi-harness",
+        "rsi-harness-two-loop"
+      ],
+      "degree": 4,
+      "sources": [
+        "designer-rsi-evolving-procedural-memory"
+      ],
+      "prerequisites": [],
+      "search": "designer-rsi：从用户流量演化程序性记忆 在冻结模型上，用可编辑的自然语言技能库替代权重更新，通过拓宽与深化两轴演化，并以匹配回放门控准入。 agent 系统 agentic-design continual-adaptation procedural-memory replay-gate skill-evolution 理解把「程序性记忆」而非模型权重当作学习对象的动机与代价 说清拓宽/深化两轴与匹配回放门控如何分离提议与准入 识别该工作在奖励不可验证、门控局部性上的证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
     }
   ]
 }

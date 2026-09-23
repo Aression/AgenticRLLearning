@@ -53,7 +53,7 @@
     "harness-design-coding-agents",
     "modularrsi-harness"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "react",
     "anthropic-building",

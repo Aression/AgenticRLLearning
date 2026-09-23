@@ -53,7 +53,7 @@
     "orientation",
     "pact-enterprise-compliance-pressure"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "lilian-reward",
     "tau-bench",

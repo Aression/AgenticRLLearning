@@ -58,7 +58,7 @@
     "lab-agent-rl",
     "mintrl-off-policy-intervention"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "don-t-mask-the-environment-observation-s"
   ],

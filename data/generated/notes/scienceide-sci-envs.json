@@ -52,13 +52,13 @@
   ],
   "related": [
     "recreationworld-hybrid-cua",
+    "rsi-harness-two-loop",
     "environments",
     "evaluation",
     "grpo",
-    "harness-design-coding-agents",
-    "mintrl-off-policy-intervention"
+    "harness-design-coding-agents"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "scienceide-turning-world-s-scientific-co"
   ],

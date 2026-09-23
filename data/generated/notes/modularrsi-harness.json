@@ -54,11 +54,11 @@
     "harness-design-coding-agents",
     "agent-loop",
     "category-expert-swe-agents",
+    "designer-rsi-procedural-memory",
     "evaluation",
-    "frontier-radar",
-    "harness-design-coding-agents"
+    "frontier-radar"
   ],
-  "degree": 15,
+  "degree": 18,
   "sources": [
     "modularrsi-modular-and-generalizable-rec"
   ],

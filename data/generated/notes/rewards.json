@@ -53,7 +53,7 @@
     "lab-agent",
     "mintrl-off-policy-intervention"
   ],
-  "degree": 20,
+  "degree": 21,
   "sources": [
     "deepseek-math",
     "gigpo",

@@ -55,9 +55,10 @@
     "evaluation",
     "frontier-radar",
     "mintact-unified-visual-agent",
-    "sol-pi-auto-research-harness"
+    "sol-pi-auto-research-harness",
+    "videogen-agent-tool-rl"
   ],
-  "degree": 5,
+  "degree": 6,
   "sources": [
     "evolvetrade-experience-driven-policy-ref"
   ],

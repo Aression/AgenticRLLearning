@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T03:30:28.708155+00:00",
+  "generatedAt": "2026-09-23T03:31:26.217799+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -7,7 +7,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 15
+      "degree": 16
     },
     {
       "id": "prerequisites",
@@ -55,7 +55,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "Agent 系统",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "environments",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 20
+      "degree": 21
     },
     {
       "id": "preferences",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 23
+      "degree": 24
     },
     {
       "id": "training-systems",
@@ -119,7 +119,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "multi-agent",
@@ -199,7 +199,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 15
+      "degree": 18
     },
     {
       "id": "emergence-world-stress-test",
@@ -223,7 +223,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "scienceide-sci-envs",
@@ -231,7 +231,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "compo-zeroth-order-alignment",
@@ -247,7 +247,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 8
+      "degree": 10
     },
     {
       "id": "retireopd-self-retiring-opd",
@@ -255,7 +255,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "harness-design-coding-agents",
@@ -263,7 +263,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 16
+      "degree": 17
     },
     {
       "id": "evoskill-gui-training-free",
@@ -271,7 +271,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 6
+      "degree": 8
     },
     {
       "id": "when2think-length-control",
@@ -287,7 +287,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "pact-enterprise-compliance-pressure",
@@ -295,7 +295,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "privileged-info-opsd-ample-math",
@@ -311,7 +311,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "codemidas-code-rl-envs",
@@ -327,7 +327,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "mintact-unified-visual-agent",
@@ -335,7 +335,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "category-expert-swe-agents",
@@ -343,7 +343,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "parts-subtask-rl-manipulation",
@@ -359,7 +359,31 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 6
+      "degree": 7
+    },
+    {
+      "id": "videogen-agent-tool-rl",
+      "label": "VideoGen-Agent：多任务智能体强化学习驱动视频生成",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 9
+    },
+    {
+      "id": "rsi-harness-two-loop",
+      "label": "双层循环的 harness 递归自我改进",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "degree": 12
+    },
+    {
+      "id": "designer-rsi-procedural-memory",
+      "label": "Designer-RSI：从用户流量演化程序性记忆",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 4
     },
     {
       "id": "2026",
@@ -428,6 +452,14 @@
     {
       "id": "agent-system",
       "label": "agent-system",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "agentic-design",
+      "label": "agentic-design",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -524,6 +556,14 @@
     {
       "id": "context-management",
       "label": "context-management",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "continual-adaptation",
+      "label": "continual-adaptation",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -890,6 +930,14 @@
       "degree": 0
     },
     {
+      "id": "multitask",
+      "label": "multitask",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "off-policy",
       "label": "off-policy",
       "kind": "concept",
@@ -986,6 +1034,14 @@
       "degree": 0
     },
     {
+      "id": "procedural-memory",
+      "label": "procedural-memory",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "prompt-injection",
       "label": "prompt injection",
       "kind": "concept",
@@ -1058,6 +1114,14 @@
       "degree": 0
     },
     {
+      "id": "replay-gate",
+      "label": "replay-gate",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "reproducibility",
       "label": "reproducibility",
       "kind": "concept",
@@ -1076,6 +1140,14 @@
     {
       "id": "reward",
       "label": "reward",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "reward-design",
+      "label": "reward-design",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1156,6 +1228,14 @@
     {
       "id": "rollout",
       "label": "rollout",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "rsi",
+      "label": "RSI",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1372,6 +1452,14 @@
     {
       "id": "verl",
       "label": "verl",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "video-generation",
+      "label": "video-generation",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1654,6 +1742,12 @@
       "weight": 1.0
     },
     {
+      "source": "agent-loop",
+      "target": "videogen-agent-tool-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "category-expert-swe-agents",
       "target": "grpo",
       "kind": "related",
@@ -1698,6 +1792,24 @@
     {
       "source": "compo-zeroth-order-alignment",
       "target": "rewards",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "evoskill-gui-training-free",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "modularrsi-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "rsi-harness-two-loop",
       "kind": "related",
       "weight": 1.0
     },
@@ -1901,6 +2013,12 @@
     },
     {
       "source": "modularrsi-harness",
+      "target": "rsi-harness-two-loop",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
       "target": "sol-pi-auto-research-harness",
       "kind": "related",
       "weight": 1.0
@@ -1914,6 +2032,12 @@
     {
       "source": "multi-turn-rl",
       "target": "retireopd-self-retiring-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "videogen-agent-tool-rl",
       "kind": "related",
       "weight": 1.0
     },
@@ -1979,12 +2103,30 @@
     },
     {
       "source": "rewards",
+      "target": "videogen-agent-tool-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
       "target": "when2think-length-control",
       "kind": "related",
       "weight": 1.0
     },
     {
       "source": "rrsi-regularized-harness-rsi",
+      "target": "rsi-harness-two-loop",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "sol-pi-auto-research-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "rsi-harness-two-loop",
       "target": "sol-pi-auto-research-harness",
       "kind": "related",
       "weight": 1.0
@@ -2039,6 +2181,12 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "rsi-harness-two-loop",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "value-learning",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2072,6 +2220,12 @@
       "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
       "weight": 2.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "videogen-agent-tool-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "codemidas-code-rl-envs",
@@ -2120,6 +2274,12 @@
       "target": "preferences",
       "kind": "shared-concept",
       "weight": 2.0
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "evoskill-gui-training-free",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "emergence-world-stress-test",
@@ -2178,6 +2338,12 @@
     {
       "source": "evolvetrade-policy-refinement",
       "target": "sol-pi-auto-research-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "evolvetrade-policy-refinement",
+      "target": "videogen-agent-tool-rl",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2256,6 +2422,12 @@
     {
       "source": "harness-design-coding-agents",
       "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "harness-design-coding-agents",
+      "target": "rsi-harness-two-loop",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2320,6 +2492,12 @@
       "weight": 1.0
     },
     {
+      "source": "mintact-unified-visual-agent",
+      "target": "videogen-agent-tool-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "mintrl-off-policy-intervention",
       "target": "modularrsi-harness",
       "kind": "shared-concept",
@@ -2369,6 +2547,12 @@
     },
     {
       "source": "modularrsi-harness",
+      "target": "rsi-harness-two-loop",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
       "target": "scienceide-sci-envs",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2398,6 +2582,12 @@
       "weight": 1.0
     },
     {
+      "source": "orientation",
+      "target": "videogen-agent-tool-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "pact-enterprise-compliance-pressure",
       "target": "programdistill-ref-guided-swe",
       "kind": "shared-concept",
@@ -2412,6 +2602,12 @@
     {
       "source": "pact-enterprise-compliance-pressure",
       "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "rsi-harness-two-loop",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2435,7 +2631,19 @@
     },
     {
       "source": "programdistill-ref-guided-swe",
+      "target": "rsi-harness-two-loop",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
       "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "rsi-harness-two-loop",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2444,6 +2652,12 @@
       "target": "scienceide-sci-envs",
       "kind": "shared-concept",
       "weight": 2.0
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "videogen-agent-tool-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "rewards",
@@ -2458,8 +2672,26 @@
       "weight": 1.0
     },
     {
+      "source": "rsi-harness-two-loop",
+      "target": "safety",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "rsi-harness-two-loop",
+      "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
       "source": "scienceide-sci-envs",
       "target": "when2think-length-control",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "sol-pi-auto-research-harness",
+      "target": "videogen-agent-tool-rl",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -3936,6 +4168,96 @@
     {
       "source": "rrsi-regularized-harness-rsi",
       "target": "agent-system",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "videogen-agent-tool-rl",
+      "target": "agentic-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "videogen-agent-tool-rl",
+      "target": "tool-use",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "videogen-agent-tool-rl",
+      "target": "video-generation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "videogen-agent-tool-rl",
+      "target": "multitask",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "videogen-agent-tool-rl",
+      "target": "reward-design",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rsi-harness-two-loop",
+      "target": "rsi",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rsi-harness-two-loop",
+      "target": "harness",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rsi-harness-two-loop",
+      "target": "reward-hacking",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rsi-harness-two-loop",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rsi-harness-two-loop",
+      "target": "agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "procedural-memory",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "skill-evolution",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "replay-gate",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "agentic-design",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "designer-rsi-procedural-memory",
+      "target": "continual-adaptation",
       "kind": "concept",
       "weight": 1
     }

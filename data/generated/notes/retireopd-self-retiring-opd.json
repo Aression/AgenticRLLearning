@@ -58,7 +58,7 @@
     "lab-agent-rl",
     "multi-turn-rl"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "retireopd-self-retiring-on-policy-distil"
   ],

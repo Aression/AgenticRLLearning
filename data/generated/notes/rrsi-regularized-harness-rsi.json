@@ -54,9 +54,10 @@
     "frontier-radar",
     "harness-design-coding-agents",
     "modularrsi-harness",
+    "rsi-harness-two-loop",
     "sol-pi-auto-research-harness"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "rrsi-regularized-recursive-self-improvem"
   ],

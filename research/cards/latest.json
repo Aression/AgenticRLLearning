@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-22T03:30:28.403710+00:00",
+  "generatedAt": "2026-09-23T03:31:25.911057+00:00",
   "requested": 3,
   "generated": [
     {
-      "note_id": "category-expert-swe-agents",
-      "note_path": "content/43-category-expert-swe-agents.md",
-      "source_id": "one-to-more-more-to-one-category-aware-i",
-      "title": "类别感知专家迭代训练与策略整合",
+      "note_id": "videogen-agent-tool-rl",
+      "note_path": "content/46-videogen-agent-tool-rl.md",
+      "source_id": "videogen-agent-reinforcing-video-generat",
+      "title": "VideoGen-Agent：多任务智能体强化学习驱动视频生成",
       "stage": "FRONTIER",
-      "minutes": 18,
-      "arxiv_id": "2609.23377",
-      "full_text_url": "https://arxiv.org/html/2609.23377"
-    },
-    {
-      "note_id": "parts-subtask-rl-manipulation",
-      "note_path": "content/44-parts-subtask-rl-manipulation.md",
-      "source_id": "from-pretraining-to-proficiency-real-wor",
-      "title": "PARTS：瓶颈子任务残差RL适配长程操作",
-      "stage": "SYSTEMS",
       "minutes": 15,
-      "arxiv_id": "2609.21788",
-      "full_text_url": "https://arxiv.org/html/2609.21788"
+      "arxiv_id": "2609.24997",
+      "full_text_url": "https://arxiv.org/html/2609.24997"
     },
     {
-      "note_id": "rrsi-regularized-harness-rsi",
-      "note_path": "content/45-rrsi-regularized-harness-rsi.md",
-      "source_id": "rrsi-regularized-recursive-self-improvem",
-      "title": "RRSI：正则化 Agent Harness 的递归自改进",
+      "note_id": "rsi-harness-two-loop",
+      "note_path": "content/47-rsi-harness-two-loop.md",
+      "source_id": "recursive-self-improvement-of-ai-researc",
+      "title": "双层循环的 harness 递归自我改进",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.24972",
-      "full_text_url": "https://arxiv.org/html/2609.24972"
+      "arxiv_id": "2609.26457",
+      "full_text_url": "https://arxiv.org/html/2609.26457"
+    },
+    {
+      "note_id": "designer-rsi-procedural-memory",
+      "note_path": "content/48-designer-rsi-procedural-memory.md",
+      "source_id": "designer-rsi-evolving-procedural-memory",
+      "title": "Designer-RSI：从用户流量演化程序性记忆",
+      "stage": "FRONTIER",
+      "minutes": 18,
+      "arxiv_id": "2609.22086",
+      "full_text_url": "https://arxiv.org/html/2609.22086"
     }
   ],
   "skipped": [],

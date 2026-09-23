@@ -55,9 +55,10 @@
     "evolvetrade-policy-refinement",
     "multi-turn-rl",
     "sol-pi-auto-research-harness",
-    "training-systems"
+    "training-systems",
+    "videogen-agent-tool-rl"
   ],
-  "degree": 5,
+  "degree": 6,
   "sources": [
     "mintact-a-unified-visual-agent-for-digit"
   ],

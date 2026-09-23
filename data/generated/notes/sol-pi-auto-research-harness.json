@@ -58,7 +58,7 @@
     "modularrsi-harness",
     "rrsi-regularized-harness-rsi"
   ],
-  "degree": 8,
+  "degree": 10,
   "sources": [
     "sol-pi-recursively-scaling-auto-research"
   ],
