@@ -49,9 +49,9 @@
     "bpo-bellman-policy-optimization",
     "category-expert-swe-agents",
     "codemidas-code-rl-envs",
-    "lab-agent-rl"
+    "jitmem-read-time-curation"
   ],
-  "degree": 25,
+  "degree": 27,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

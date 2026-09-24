@@ -52,13 +52,13 @@
   ],
   "related": [
     "grpo",
+    "jitmem-read-time-curation",
     "lab-rl",
     "mintrl-off-policy-intervention",
     "modularrsi-harness",
-    "pact-credit-critic-alignment",
-    "ppo"
+    "pact-credit-critic-alignment"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "rethinking-critic-learning-in-ppo-unders"
   ],

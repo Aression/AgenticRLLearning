@@ -618,5 +618,35 @@
     "url": "https://arxiv.org/abs/2609.15987",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Critic-free RLVR method derived from Policy Mirror Descent, using Bellman equations to reformulate PMD as a trajectory-level objective for autoregressive genera"
+  },
+  {
+    "id": "just-in-time-memory-learning-to-curate-t",
+    "title": "Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents",
+    "kind": "论文",
+    "author": "Yefan Zhou et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.27334",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly on-topic for Agentic RL: addresses long-horizon credit assignment in agentic memory curation, defers curation to read time, and reports gains on ALFWor"
+  },
+  {
+    "id": "schr-dinger-s-code-repository-have-llms",
+    "title": "Schrödinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+    "kind": "论文",
+    "author": "Silin Chen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.27891",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Relevant to existing SWE-bench and coding-agent sources (swe-bench, swe-agent, multi-harness). Proposes dynamic repository instantiation to test memorization vs"
+  },
+  {
+    "id": "emergent-collusion-in-long-horizon-llm-a",
+    "title": "Emergent Collusion in Long-Horizon LLM Agent Interaction",
+    "kind": "论文",
+    "author": "Xinrui Shi et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.24967",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Relevant to the KB's multi-agent and safety interests (marl-book, lilian-reward, emergence-world). Studies collusion emergence in long-horizon multi-agent inter"
   }
 ]

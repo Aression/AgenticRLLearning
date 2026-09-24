@@ -55,7 +55,7 @@
     "harness-design-coding-agents",
     "lab-agent"
   ],
-  "degree": 22,
+  "degree": 24,
   "sources": [
     "swe-bench",
     "webarena",

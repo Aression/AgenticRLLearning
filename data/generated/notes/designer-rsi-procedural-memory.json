@@ -52,10 +52,11 @@
   ],
   "related": [
     "evoskill-gui-training-free",
+    "jitmem-read-time-curation",
     "modularrsi-harness",
     "rsi-harness-two-loop"
   ],
-  "degree": 4,
+  "degree": 5,
   "sources": [
     "designer-rsi-evolving-procedural-memory"
   ],

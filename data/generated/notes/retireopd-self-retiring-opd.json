@@ -56,9 +56,9 @@
     "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
     "grpo",
-    "lab-agent-rl"
+    "jitmem-read-time-curation"
   ],
-  "degree": 15,
+  "degree": 16,
   "sources": [
     "retireopd-self-retiring-on-policy-distil"
   ],

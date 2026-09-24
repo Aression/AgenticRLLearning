@@ -54,11 +54,11 @@
     "videogen-agent-tool-rl",
     "category-expert-swe-agents",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "environments",
-    "evolvetrade-policy-refinement",
-    "evoskill-gui-training-free"
+    "evolvetrade-policy-refinement"
   ],
-  "degree": 14,
+  "degree": 16,
   "sources": [
     "verifiable-hidden-dynamics-play-generati"
   ],

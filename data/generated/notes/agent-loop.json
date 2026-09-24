@@ -51,9 +51,9 @@
     "evolvetrade-policy-refinement",
     "evoskill-gui-training-free",
     "harness-design-coding-agents",
-    "modularrsi-harness"
+    "jitmem-read-time-curation"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "react",
     "anthropic-building",

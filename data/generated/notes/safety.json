@@ -48,12 +48,12 @@
   "related": [
     "agent-loop",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "evaluation",
     "lab-agent",
-    "orientation",
-    "pact-enterprise-compliance-pressure"
+    "orientation"
   ],
-  "degree": 10,
+  "degree": 12,
   "sources": [
     "lilian-reward",
     "tau-bench",

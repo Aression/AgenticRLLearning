@@ -55,10 +55,10 @@
     "bpo-bellman-policy-optimization",
     "frontier-radar",
     "grpo",
-    "modularrsi-harness",
-    "multi-turn-rl"
+    "jitmem-read-time-curation",
+    "modularrsi-harness"
   ],
-  "degree": 15,
+  "degree": 16,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

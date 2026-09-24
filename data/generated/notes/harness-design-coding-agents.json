@@ -52,13 +52,13 @@
   ],
   "related": [
     "modularrsi-harness",
+    "schrodinger-repo-representation",
     "agent-loop",
     "category-expert-swe-agents",
     "codemidas-code-rl-envs",
-    "evaluation",
-    "evoskill-gui-training-free"
+    "evaluation"
   ],
-  "degree": 18,
+  "degree": 20,
   "sources": [
     "an-empirical-study-of-harness-design-for"
   ],

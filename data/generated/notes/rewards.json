@@ -50,10 +50,10 @@
     "codemidas-code-rl-envs",
     "compo-zeroth-order-alignment",
     "grpo",
-    "lab-agent",
-    "mintrl-off-policy-intervention"
+    "jitmem-read-time-curation",
+    "lab-agent"
   ],
-  "degree": 23,
+  "degree": 24,
   "sources": [
     "deepseek-math",
     "gigpo",

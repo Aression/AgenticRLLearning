@@ -53,7 +53,7 @@
     "codemidas-code-rl-envs",
     "grpo"
   ],
-  "degree": 15,
+  "degree": 16,
   "sources": [
     "verl",
     "lightning-code",

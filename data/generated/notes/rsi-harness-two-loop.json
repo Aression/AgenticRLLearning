@@ -54,11 +54,11 @@
     "scienceide-sci-envs",
     "actobs-observation-supervision",
     "designer-rsi-procedural-memory",
+    "emergent-collusion-long-horizon",
     "harness-design-coding-agents",
-    "modularrsi-harness",
-    "pact-enterprise-compliance-pressure"
+    "jitmem-read-time-curation"
   ],
-  "degree": 12,
+  "degree": 14,
   "sources": [
     "recursive-self-improvement-of-ai-researc"
   ],

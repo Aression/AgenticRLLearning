@@ -46,12 +46,12 @@
   "related": [
     "actobs-observation-supervision",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "environments",
     "evoskill-gui-training-free",
-    "frontier-radar",
-    "glossary"
+    "frontier-radar"
   ],
-  "degree": 25,
+  "degree": 27,
   "sources": [
     "agentic-survey",
     "gigpo",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T03:21:03.162902+00:00",
+  "generatedAt": "2026-09-24T17:29:13.790280+00:00",
   "notes": [
     {
       "id": "orientation",
@@ -433,9 +433,9 @@
         "evolvetrade-policy-refinement",
         "evoskill-gui-training-free",
         "harness-design-coding-agents",
-        "modularrsi-harness"
+        "jitmem-read-time-curation"
       ],
-      "degree": 11,
+      "degree": 13,
       "sources": [
         "react",
         "anthropic-building",
@@ -564,10 +564,10 @@
         "codemidas-code-rl-envs",
         "compo-zeroth-order-alignment",
         "grpo",
-        "lab-agent",
-        "mintrl-off-policy-intervention"
+        "jitmem-read-time-curation",
+        "lab-agent"
       ],
-      "degree": 23,
+      "degree": 24,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -693,9 +693,9 @@
         "bpo-bellman-policy-optimization",
         "category-expert-swe-agents",
         "codemidas-code-rl-envs",
-        "lab-agent-rl"
+        "jitmem-read-time-curation"
       ],
-      "degree": 25,
+      "degree": 27,
       "sources": [
         "deepseek-math",
         "deepseek-r1",
@@ -755,12 +755,12 @@
       "related": [
         "actobs-observation-supervision",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "environments",
         "evoskill-gui-training-free",
-        "frontier-radar",
-        "glossary"
+        "frontier-radar"
       ],
-      "degree": 25,
+      "degree": 27,
       "sources": [
         "agentic-survey",
         "gigpo",
@@ -896,7 +896,7 @@
         "harness-design-coding-agents",
         "lab-agent"
       ],
-      "degree": 22,
+      "degree": 24,
       "sources": [
         "swe-bench",
         "webarena",
@@ -960,12 +960,12 @@
       "related": [
         "agent-loop",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "evaluation",
         "lab-agent",
-        "orientation",
-        "pact-enterprise-compliance-pressure"
+        "orientation"
       ],
-      "degree": 10,
+      "degree": 12,
       "sources": [
         "lilian-reward",
         "tau-bench",
@@ -1024,12 +1024,12 @@
       "related": [
         "frontier-radar",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "glossary",
         "learning-paths",
-        "mdp",
-        "multi-turn-rl"
+        "mdp"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "marl-book",
         "agentic-survey",
@@ -1298,7 +1298,7 @@
         "codemidas-code-rl-envs",
         "grpo"
       ],
-      "degree": 15,
+      "degree": 16,
       "sources": [
         "verl",
         "lightning-code",
@@ -1545,10 +1545,10 @@
         "bpo-bellman-policy-optimization",
         "frontier-radar",
         "grpo",
-        "modularrsi-harness",
-        "multi-turn-rl"
+        "jitmem-read-time-curation",
+        "modularrsi-harness"
       ],
-      "degree": 15,
+      "degree": 16,
       "sources": [
         "mintrl-off-policy-intervention-can-boost"
       ],
@@ -1615,7 +1615,7 @@
         "designer-rsi-procedural-memory",
         "evaluation"
       ],
-      "degree": 19,
+      "degree": 21,
       "sources": [
         "modularrsi-modular-and-generalizable-rec"
       ],
@@ -1675,14 +1675,14 @@
         "自测"
       ],
       "related": [
+        "emergent-collusion-long-horizon",
+        "emergent-collusion-long-horizon",
         "evaluation",
         "evoskill-gui-training-free",
-        "multi-agent",
-        "multi-turn-rl",
-        "pact-enterprise-compliance-pressure",
-        "parts-subtask-rl-manipulation"
+        "jitmem-read-time-curation",
+        "multi-agent"
       ],
-      "degree": 9,
+      "degree": 13,
       "sources": [
         "emergence-world-adversarial-stress-testi"
       ],
@@ -1743,13 +1743,13 @@
       ],
       "related": [
         "grpo",
+        "jitmem-read-time-curation",
         "lab-rl",
         "mintrl-off-policy-intervention",
         "modularrsi-harness",
-        "pact-credit-critic-alignment",
-        "ppo"
+        "pact-credit-critic-alignment"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "rethinking-critic-learning-in-ppo-unders"
       ],
@@ -2079,9 +2079,9 @@
         "bpo-bellman-policy-optimization",
         "codemidas-code-rl-envs",
         "grpo",
-        "lab-agent-rl"
+        "jitmem-read-time-curation"
       ],
-      "degree": 15,
+      "degree": 16,
       "sources": [
         "retireopd-self-retiring-on-policy-distil"
       ],
@@ -2142,13 +2142,13 @@
       ],
       "related": [
         "modularrsi-harness",
+        "schrodinger-repo-representation",
         "agent-loop",
         "category-expert-swe-agents",
         "codemidas-code-rl-envs",
-        "evaluation",
-        "evoskill-gui-training-free"
+        "evaluation"
       ],
-      "degree": 18,
+      "degree": 20,
       "sources": [
         "an-empirical-study-of-harness-design-for"
       ],
@@ -2211,11 +2211,11 @@
         "agent-loop",
         "designer-rsi-procedural-memory",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "frontier-radar",
-        "harness-design-coding-agents",
-        "multi-turn-rl"
+        "harness-design-coding-agents"
       ],
-      "degree": 9,
+      "degree": 11,
       "sources": [
         "reflect-revise-reuse-training-free-skill"
       ],
@@ -2342,14 +2342,14 @@
         "自测"
       ],
       "related": [
+        "jitmem-read-time-curation",
         "agent-loop",
         "bpo-bellman-policy-optimization",
         "codemidas-code-rl-envs",
         "frontier-radar",
-        "grpo",
-        "lab-agent-rl"
+        "grpo"
       ],
-      "degree": 13,
+      "degree": 14,
       "sources": [
         "don-t-mask-the-environment-observation-s"
       ],
@@ -2416,7 +2416,7 @@
         "recreationworld-hybrid-cua",
         "retireopd-self-retiring-opd"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "pact-can-enterprise-ai-assistants-be-tru"
       ],
@@ -2549,7 +2549,7 @@
         "learning-paths",
         "pact-enterprise-compliance-pressure"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "programdistill-from-interactive-web-apps"
       ],
@@ -2614,9 +2614,9 @@
         "environments",
         "grpo",
         "harness-design-coding-agents",
-        "lab-agent"
+        "jitmem-read-time-curation"
       ],
-      "degree": 13,
+      "degree": 15,
       "sources": [
         "codemidas-scaling-agentic-coding-rl-envi"
       ],
@@ -2815,7 +2815,7 @@
         "modularrsi-harness",
         "orientation"
       ],
-      "degree": 11,
+      "degree": 13,
       "sources": [
         "one-to-more-more-to-one-category-aware-i"
       ],
@@ -2876,13 +2876,13 @@
       ],
       "related": [
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "evoskill-gui-training-free",
+        "jitmem-read-time-curation",
         "multi-turn-rl",
-        "policy-gradient",
-        "rewards",
-        "training-systems"
+        "policy-gradient"
       ],
-      "degree": 7,
+      "degree": 9,
       "sources": [
         "from-pretraining-to-proficiency-real-wor"
       ],
@@ -3078,11 +3078,11 @@
         "scienceide-sci-envs",
         "actobs-observation-supervision",
         "designer-rsi-procedural-memory",
+        "emergent-collusion-long-horizon",
         "harness-design-coding-agents",
-        "modularrsi-harness",
-        "pact-enterprise-compliance-pressure"
+        "jitmem-read-time-curation"
       ],
-      "degree": 12,
+      "degree": 14,
       "sources": [
         "recursive-self-improvement-of-ai-researc"
       ],
@@ -3143,10 +3143,11 @@
       ],
       "related": [
         "evoskill-gui-training-free",
+        "jitmem-read-time-curation",
         "modularrsi-harness",
         "rsi-harness-two-loop"
       ],
-      "degree": 4,
+      "degree": 5,
       "sources": [
         "designer-rsi-evolving-procedural-memory"
       ],
@@ -3206,14 +3207,14 @@
         "自测"
       ],
       "related": [
+        "jitmem-read-time-curation",
         "modularrsi-harness",
         "policy-gradient",
         "actobs-observation-supervision",
         "bpo-bellman-policy-optimization",
-        "category-expert-swe-agents",
-        "codemidas-code-rl-envs"
+        "category-expert-swe-agents"
       ],
-      "degree": 17,
+      "degree": 19,
       "sources": [
         "pact-from-credit-assignment-to-critic-al"
       ],
@@ -3276,11 +3277,11 @@
         "videogen-agent-tool-rl",
         "category-expert-swe-agents",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "environments",
-        "evolvetrade-policy-refinement",
-        "evoskill-gui-training-free"
+        "evolvetrade-policy-refinement"
       ],
-      "degree": 14,
+      "degree": 16,
       "sources": [
         "verifiable-hidden-dynamics-play-generati"
       ],
@@ -3344,15 +3345,216 @@
         "actobs-observation-supervision",
         "codemidas-code-rl-envs",
         "grpo",
-        "lab-agent-rl",
-        "mintrl-off-policy-intervention"
+        "jitmem-read-time-curation",
+        "lab-agent-rl"
       ],
-      "degree": 12,
+      "degree": 13,
       "sources": [
         "bellman-policy-optimization"
       ],
       "prerequisites": [],
       "search": "bpo：从镜像下降推导的无 critic 策略优化 论文从策略镜像下降出发，用贝尔曼方程把带终端奖励的自回归生成改写为轨迹级目标，得到无需价值模型、以失配修正权重替代重要性比值的 bpo 损失。 训练算法 grpo pmd rlvr critic-free policy-optimization 理解 bpo 如何用贝尔曼方程的望远镜求和消去中间状态价值估计 说清 bpo 损失与 grpo 裁剪代理目标在权重项上的差别 判断该方法的证据强度与可复现边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "jitmem-read-time-curation",
+      "title": "JitMem：读时策展的任务自适应记忆",
+      "summary": "把记忆策展从写时推迟到读时，让策展器看到当前任务再蒸馏原始轨迹，并用 GRPO 直接优化同任务成功率。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 52,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "52-jitmem-read-time-curation.md",
+      "tags": [
+        "GRPO",
+        "agent",
+        "credit assignment",
+        "long-horizon",
+        "memory"
+      ],
+      "concepts": [
+        "GRPO",
+        "agent",
+        "credit assignment",
+        "long-horizon",
+        "memory"
+      ],
+      "objectives": [
+        "说清写时策展的两个结构性代价，以及读时策展如何规避",
+        "理解为何读时策展把信用分配压缩为单步，从而省去任务分组",
+        "知道该方法的证据强度与未复现边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.27334",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.27334",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "actobs-observation-supervision",
+        "pact-credit-critic-alignment",
+        "agent-loop",
+        "bpo-bellman-policy-optimization",
+        "codemidas-code-rl-envs",
+        "designer-rsi-procedural-memory"
+      ],
+      "degree": 22,
+      "sources": [
+        "just-in-time-memory-learning-to-curate-t"
+      ],
+      "prerequisites": [],
+      "search": "jitmem：读时策展的任务自适应记忆 把记忆策展从写时推迟到读时，让策展器看到当前任务再蒸馏原始轨迹，并用 grpo 直接优化同任务成功率。 agent 系统 grpo agent credit assignment long-horizon memory 说清写时策展的两个结构性代价，以及读时策展如何规避 理解为何读时策展把信用分配压缩为单步，从而省去任务分组 知道该方法的证据强度与未复现边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "schrodinger-repo-representation",
+      "title": "仓库表示作为评测变量：SWE-bench 是学会还是记住",
+      "summary": "提出在评测时动态生成语义等价的仓库视图，检验编码智能体是否依赖熟悉的仓库线索而非真实推理。",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "order": 53,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "53-schrodinger-repo-representation.md",
+      "tags": [
+        "SWE-bench",
+        "benchmark-validity",
+        "coding-agent",
+        "data-leakage",
+        "evaluation"
+      ],
+      "concepts": [
+        "SWE-bench",
+        "benchmark-validity",
+        "coding-agent",
+        "data-leakage",
+        "evaluation"
+      ],
+      "objectives": [
+        "理解静态基准表示为何会混淆记忆与推理能力",
+        "掌握 SchrodingerRepo 的四级语义保持变换设计",
+        "能区分作者主张与已有共识，并识别该研究的证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.27891",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.27891",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "harness-design-coding-agents",
+        "category-expert-swe-agents",
+        "codemidas-code-rl-envs",
+        "emergence-world-stress-test",
+        "evaluation",
+        "harness-design-coding-agents"
+      ],
+      "degree": 12,
+      "sources": [
+        "schr-dinger-s-code-repository-have-llms"
+      ],
+      "prerequisites": [],
+      "search": "仓库表示作为评测变量：swe-bench 是学会还是记住 提出在评测时动态生成语义等价的仓库视图，检验编码智能体是否依赖熟悉的仓库线索而非真实推理。 评估与安全 swe-bench benchmark-validity coding-agent data-leakage evaluation 理解静态基准表示为何会混淆记忆与推理能力 掌握 schrodingerrepo 的四级语义保持变换设计 能区分作者主张与已有共识，并识别该研究的证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "emergent-collusion-long-horizon",
+      "title": "长时程 LLM 智能体交互中的自发串谋",
+      "summary": "在受控多轮双智能体环境中，无任何恶意指令时智能体仍会为最大化共享奖励而跳过验证协议、形成稳定串谋。",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "order": 54,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "54-emergent-collusion-long-horizon.md",
+      "tags": [
+        "collusion",
+        "long-horizon",
+        "multi-agent",
+        "reward hacking",
+        "safety"
+      ],
+      "concepts": [
+        "collusion",
+        "long-horizon",
+        "multi-agent",
+        "reward hacking",
+        "safety"
+      ],
+      "objectives": [
+        "理解串谋在长时程多智能体交互中如何自发涌现并稳定",
+        "识别记忆、反馈与奖励设计对串谋出现的影响",
+        "区分本文的受控抽象设定与真实部署场景的差距"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.24967",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.24967",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "emergence-world-stress-test",
+        "emergence-world-stress-test",
+        "evoskill-gui-training-free",
+        "jitmem-read-time-curation",
+        "multi-agent",
+        "multi-turn-rl"
+      ],
+      "degree": 11,
+      "sources": [
+        "emergent-collusion-in-long-horizon-llm-a"
+      ],
+      "prerequisites": [],
+      "search": "长时程 llm 智能体交互中的自发串谋 在受控多轮双智能体环境中，无任何恶意指令时智能体仍会为最大化共享奖励而跳过验证协议、形成稳定串谋。 评估与安全 collusion long-horizon multi-agent reward hacking safety 理解串谋在长时程多智能体交互中如何自发涌现并稳定 识别记忆、反馈与奖励设计对串谋出现的影响 区分本文的受控抽象设定与真实部署场景的差距 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
     }
   ]
 }

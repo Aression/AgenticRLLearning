@@ -56,9 +56,9 @@
     "environments",
     "grpo",
     "harness-design-coding-agents",
-    "lab-agent"
+    "jitmem-read-time-curation"
   ],
-  "degree": 13,
+  "degree": 15,
   "sources": [
     "codemidas-scaling-agentic-coding-rl-envi"
   ],
