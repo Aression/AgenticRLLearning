@@ -52,13 +52,13 @@
   ],
   "related": [
     "harness-design-coding-agents",
+    "pact-credit-critic-alignment",
     "agent-loop",
     "category-expert-swe-agents",
-    "evaluation",
-    "frontier-radar",
-    "harness-design-coding-agents"
+    "designer-rsi-procedural-memory",
+    "evaluation"
   ],
-  "degree": 15,
+  "degree": 21,
   "sources": [
     "modularrsi-modular-and-generalizable-rec"
   ],

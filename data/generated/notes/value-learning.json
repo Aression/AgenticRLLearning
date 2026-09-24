@@ -48,10 +48,10 @@
     "mdp",
     "prerequisites",
     "actobs-observation-supervision",
-    "frontier-radar",
-    "glossary"
+    "bpo-bellman-policy-optimization",
+    "frontier-radar"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "sutton-barto",
     "silver"

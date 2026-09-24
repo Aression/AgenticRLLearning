@@ -46,12 +46,12 @@
   "related": [
     "frontier-radar",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "glossary",
     "learning-paths",
-    "mdp",
-    "multi-turn-rl"
+    "mdp"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "marl-book",
     "agentic-survey",

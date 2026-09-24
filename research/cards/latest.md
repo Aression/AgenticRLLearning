@@ -3,17 +3,17 @@
 
 > LLM 全文精读草稿，需人工复核后才算已审核知识。本次生成 3 张。
 
-### 类别感知专家迭代训练与策略整合
-- 笔记：`content/43-category-expert-swe-agents.md`
-- 来源：`one-to-more-more-to-one-category-aware-i` · arXiv `2609.23377`
-- 全文：https://arxiv.org/html/2609.23377
+### JitMem：读时策展的任务自适应记忆
+- 笔记：`content/52-jitmem-read-time-curation.md`
+- 来源：`just-in-time-memory-learning-to-curate-t` · arXiv `2609.27334`
+- 全文：https://arxiv.org/html/2609.27334
 
-### PARTS：瓶颈子任务残差RL适配长程操作
-- 笔记：`content/44-parts-subtask-rl-manipulation.md`
-- 来源：`from-pretraining-to-proficiency-real-wor` · arXiv `2609.21788`
-- 全文：https://arxiv.org/html/2609.21788
+### 仓库表示作为评测变量：SWE-bench 是学会还是记住
+- 笔记：`content/53-schrodinger-repo-representation.md`
+- 来源：`schr-dinger-s-code-repository-have-llms` · arXiv `2609.27891`
+- 全文：https://arxiv.org/html/2609.27891
 
-### RRSI：正则化 Agent Harness 的递归自改进
-- 笔记：`content/45-rrsi-regularized-harness-rsi.md`
-- 来源：`rrsi-regularized-recursive-self-improvem` · arXiv `2609.24972`
-- 全文：https://arxiv.org/html/2609.24972
+### 长时程 LLM 智能体交互中的自发串谋
+- 笔记：`content/54-emergent-collusion-long-horizon.md`
+- 来源：`emergent-collusion-in-long-horizon-llm-a` · arXiv `2609.24967`
+- 全文：https://arxiv.org/html/2609.24967

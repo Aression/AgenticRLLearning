@@ -53,12 +53,12 @@
   "related": [
     "category-expert-swe-agents",
     "actobs-observation-supervision",
+    "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
     "grpo",
-    "lab-agent-rl",
-    "multi-turn-rl"
+    "jitmem-read-time-curation"
   ],
-  "degree": 11,
+  "degree": 16,
   "sources": [
     "retireopd-self-retiring-on-policy-distil"
   ],

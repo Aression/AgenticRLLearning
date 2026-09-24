@@ -52,13 +52,13 @@
   ],
   "related": [
     "agent-loop",
+    "designer-rsi-procedural-memory",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "frontier-radar",
-    "harness-design-coding-agents",
-    "multi-turn-rl",
-    "parts-subtask-rl-manipulation"
+    "harness-design-coding-agents"
   ],
-  "degree": 6,
+  "degree": 11,
   "sources": [
     "reflect-revise-reuse-training-free-skill"
   ],

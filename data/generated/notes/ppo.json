@@ -45,10 +45,12 @@
   ],
   "related": [
     "lab-rl",
+    "bpo-bellman-policy-optimization",
+    "pact-credit-critic-alignment",
     "policy-gradient",
     "value-flattening-ppo"
   ],
-  "degree": 8,
+  "degree": 10,
   "sources": [
     "ppo",
     "gae",

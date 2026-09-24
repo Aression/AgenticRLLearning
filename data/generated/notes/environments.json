@@ -51,7 +51,7 @@
     "mintact-unified-visual-agent",
     "multi-turn-rl"
   ],
-  "degree": 16,
+  "degree": 17,
   "sources": [
     "gymnasium",
     "swe-agent",

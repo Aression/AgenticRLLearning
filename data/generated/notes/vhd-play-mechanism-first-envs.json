@@ -1,0 +1,68 @@
+{
+  "id": "vhd-play-mechanism-first-envs",
+  "title": "先解数学机制再生成可验证 Agent 环境",
+  "summary": "提出机制优先构造：先采样并求解数学决策问题，再据此生成有状态工具环境，使动力学与评分共享同一可计算参照。",
+  "stage": "FRONTIER",
+  "track": "Agent 系统",
+  "order": 50,
+  "minutes": 18,
+  "updated": "2026-09-24",
+  "review": "LLM 全文精读草稿 · 待人工复核",
+  "filename": "50-vhd-play-mechanism-first-envs.md",
+  "tags": [
+    "Agentic RL",
+    "environment-generation",
+    "long-horizon",
+    "tool-use",
+    "verifiable-reward"
+  ],
+  "concepts": [
+    "Agentic RL",
+    "environment-generation",
+    "long-horizon",
+    "tool-use",
+    "verifiable-reward"
+  ],
+  "objectives": [
+    "理解机制优先（先求解、后生成环境）与常见环境优先生成流程的差别",
+    "掌握该框架如何用求解器给出的最优值与默认策略值构造 episode 级奖励",
+    "评估其迁移证据的强度与证据边界"
+  ],
+  "keyPoints": [
+    "论文要解决的问题",
+    "方法",
+    "证据与实验",
+    "边界与未解问题",
+    "与知识库的关系",
+    "自测"
+  ],
+  "evidenceLevel": "full-text-llm-draft",
+  "codeUrl": "",
+  "origin": "llm-fulltext",
+  "paperId": "2609.27321",
+  "readingDepth": "full-text",
+  "fullTextUrl": "https://arxiv.org/html/2609.27321",
+  "sections": [
+    "论文要解决的问题",
+    "方法",
+    "证据与实验",
+    "边界与未解问题",
+    "与知识库的关系",
+    "自测"
+  ],
+  "related": [
+    "videogen-agent-tool-rl",
+    "category-expert-swe-agents",
+    "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
+    "environments",
+    "evolvetrade-policy-refinement"
+  ],
+  "degree": 16,
+  "sources": [
+    "verifiable-hidden-dynamics-play-generati"
+  ],
+  "prerequisites": [],
+  "search": "先解数学机制再生成可验证 agent 环境 提出机制优先构造：先采样并求解数学决策问题，再据此生成有状态工具环境，使动力学与评分共享同一可计算参照。 agent 系统 agentic rl environment-generation long-horizon tool-use verifiable-reward 理解机制优先（先求解、后生成环境）与常见环境优先生成流程的差别 掌握该框架如何用求解器给出的最优值与默认策略值构造 episode 级奖励 评估其迁移证据的强度与证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测",
+  "content": "## 论文要解决的问题\n\nAgentic RL 面临一个联合构造问题：每个训练或评估实例既需要可执行环境，又需要与结果绑定的可靠信号。已有共识是，书面数学题与检索问答能提供廉价精确的奖励，但把信息直接写进 prompt，不要求模型在变化状态中主动获取；手工模拟器能恢复交互与精确结果，却需要专家为每个新领域实现动力学与评估器；学习型评判器与 rubric 降低了标注成本，但其有效性本身需要被验证。作者的主张是：现有生成式流水线通常先造任务或环境、事后再对齐奖励规则，导致动力学与评估的一致性只能事后建立。\n\n## 方法\n\nVHD-Play 反转构造顺序。先从数学/运筹学机制族中采样一个多期决策问题并求解，得到最优值 V* 与固定默认策略值 V0；再由一个冻结的 setter 模型，用真实文档语料种子把该机制实现为有状态工具接口。环境包含状态空间、转移函数、效用函数，以及观测映射、动作集与回合预算。接口默认不暴露完整参数与解，策略只能通过探测动作获取隐藏状态的指定视图，通过决策动作改变状态，二者共享同一回合预算。评分是 episode 级标量：把默认策略映射到 0、全信息最优映射到 1，并对结果做裁剪；两端参照由闭式算术、枚举或数值求解器给出，评分路径中不含语言模型评判。作者强调，同一机制可分别以书面形式与有状态 agentic 形式呈现，从而把「信息暴露程度」作为可控变量。\n\n## 证据与实验\n\n作者报告：流水线产出 3,300 个通过准入的环境（2,200 训练、300 训练族留出、800 八个未见族评估）；用 GRPO 训练 Qwen3.6-35B-A3B，在十一个族上均有提升，并迁移到 BFCL V4 的多轮/agentic 单元、TravelBench 与 365 天店铺经营基准。作者还称起始 checkpoint 本身即可充当 setter 生成有效环境，更强 setter 主要提升产出率与接口质量。需要明确：以上均为论文自述，摘录中多处具体数值被省略，无法核对；外部基准结果按各自原生协议单独测量，与生成族不共享实例与接口。\n\n## 边界与未解问题\n\n作者自陈：所有报告族都有可计算参照，其中序贯停止与序贯搜索用的是事后上界，在线策略未必可达；训练只覆盖三个族，且只使用终端结果奖励，没有中间监督；生成族结果来自单次训练运行与单一评估种子；消融刻画了呈现方式、工具使用与规模，但训练使用完整构造，未把增益分别归因于结果规则与接口。作者也明确不主张策略显式重建了底层模型，也不主张运筹学是唯一或充分的基座。此外，摘录未提供环境质量审计细节、重放校验的完整结果与代码数据，verifiability 与迁移结论仍需人工阅读与复现检验。\n\n## 与知识库的关系\n\n本工作属于「环境生成 + 可验证奖励」交叉点：与 environments 笔记关注的环境构造问题直接相关，其奖励设计可与 rewards 对照，训练侧使用 GRPO 与 grpo 笔记呼应。它提供的可迁移思路是：把奖励参照前移到环境生成之前，用同一形式化对象同时定义动力学与评分。\n\n## 自测\n\n1. 机制优先构造中，V* 与 V0 分别扮演什么角色？为什么评分不需要学习型评判器？\n2. 为什么作者说「书面形式与 agentic 形式共享同一机制」对诊断能力缺口很重要？\n3. 论文的迁移证据有哪些已知限制？哪些结论目前只能视为作者主张？"
+}

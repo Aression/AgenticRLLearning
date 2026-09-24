@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "emergent-collusion-long-horizon",
+    "emergent-collusion-long-horizon",
     "evaluation",
     "evoskill-gui-training-free",
-    "multi-agent",
-    "multi-turn-rl",
-    "pact-enterprise-compliance-pressure",
-    "parts-subtask-rl-manipulation"
+    "jitmem-read-time-curation",
+    "multi-agent"
   ],
-  "degree": 8,
+  "degree": 13,
   "sources": [
     "emergence-world-adversarial-stress-testi"
   ],

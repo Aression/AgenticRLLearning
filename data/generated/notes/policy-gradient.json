@@ -44,14 +44,14 @@
     "自测"
   ],
   "related": [
+    "pact-credit-critic-alignment",
     "glossary",
     "learning-paths",
     "mdp",
     "parts-subtask-rl-manipulation",
-    "ppo",
-    "prerequisites"
+    "ppo"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "sutton-barto",
     "gae"

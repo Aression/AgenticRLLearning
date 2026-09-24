@@ -49,11 +49,11 @@
     "rewards",
     "training-systems",
     "actobs-observation-supervision",
+    "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
-    "grpo",
-    "harness-design-coding-agents"
+    "grpo"
   ],
-  "degree": 13,
+  "degree": 16,
   "sources": [
     "verl",
     "lightning-code",
