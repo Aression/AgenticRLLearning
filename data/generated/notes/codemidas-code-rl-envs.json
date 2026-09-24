@@ -52,13 +52,13 @@
   ],
   "related": [
     "actobs-observation-supervision",
+    "bpo-bellman-policy-optimization",
     "environments",
     "grpo",
     "harness-design-coding-agents",
-    "lab-agent",
-    "lab-agent-rl"
+    "lab-agent"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "codemidas-scaling-agentic-coding-rl-envi"
   ],

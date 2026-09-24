@@ -44,14 +44,14 @@
     "阅读顺序"
   ],
   "related": [
+    "bpo-bellman-policy-optimization",
     "actobs-observation-supervision",
+    "bpo-bellman-policy-optimization",
     "category-expert-swe-agents",
     "codemidas-code-rl-envs",
-    "lab-agent-rl",
-    "mintrl-off-policy-intervention",
-    "orientation"
+    "lab-agent-rl"
   ],
-  "degree": 20,
+  "degree": 25,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

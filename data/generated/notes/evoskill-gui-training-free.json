@@ -58,7 +58,7 @@
     "harness-design-coding-agents",
     "multi-turn-rl"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "reflect-revise-reuse-training-free-skill"
   ],

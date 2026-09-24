@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-23T03:31:25.911057+00:00",
+  "generatedAt": "2026-09-24T03:21:02.847182+00:00",
   "requested": 3,
   "generated": [
     {
-      "note_id": "videogen-agent-tool-rl",
-      "note_path": "content/46-videogen-agent-tool-rl.md",
-      "source_id": "videogen-agent-reinforcing-video-generat",
-      "title": "VideoGen-Agent：多任务智能体强化学习驱动视频生成",
-      "stage": "FRONTIER",
-      "minutes": 15,
-      "arxiv_id": "2609.24997",
-      "full_text_url": "https://arxiv.org/html/2609.24997"
-    },
-    {
-      "note_id": "rsi-harness-two-loop",
-      "note_path": "content/47-rsi-harness-two-loop.md",
-      "source_id": "recursive-self-improvement-of-ai-researc",
-      "title": "双层循环的 harness 递归自我改进",
+      "note_id": "pact-credit-critic-alignment",
+      "note_path": "content/49-pact-credit-critic-alignment.md",
+      "source_id": "pact-from-credit-assignment-to-critic-al",
+      "title": "PACT：信用分配的公理化刻画与评论家对齐",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.26457",
-      "full_text_url": "https://arxiv.org/html/2609.26457"
+      "arxiv_id": "2609.26355",
+      "full_text_url": "https://arxiv.org/html/2609.26355"
     },
     {
-      "note_id": "designer-rsi-procedural-memory",
-      "note_path": "content/48-designer-rsi-procedural-memory.md",
-      "source_id": "designer-rsi-evolving-procedural-memory",
-      "title": "Designer-RSI：从用户流量演化程序性记忆",
+      "note_id": "vhd-play-mechanism-first-envs",
+      "note_path": "content/50-vhd-play-mechanism-first-envs.md",
+      "source_id": "verifiable-hidden-dynamics-play-generati",
+      "title": "先解数学机制再生成可验证 Agent 环境",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.22086",
-      "full_text_url": "https://arxiv.org/html/2609.22086"
+      "arxiv_id": "2609.27321",
+      "full_text_url": "https://arxiv.org/html/2609.27321"
+    },
+    {
+      "note_id": "bpo-bellman-policy-optimization",
+      "note_path": "content/51-bpo-bellman-policy-optimization.md",
+      "source_id": "bellman-policy-optimization",
+      "title": "BPO：从镜像下降推导的无 Critic 策略优化",
+      "stage": "FOUNDATION",
+      "minutes": 18,
+      "arxiv_id": "2609.15987",
+      "full_text_url": "https://arxiv.org/html/2609.15987"
     }
   ],
   "skipped": [],

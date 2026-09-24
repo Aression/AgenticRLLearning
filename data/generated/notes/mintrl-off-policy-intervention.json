@@ -52,13 +52,13 @@
   ],
   "related": [
     "actobs-observation-supervision",
+    "bpo-bellman-policy-optimization",
     "frontier-radar",
     "grpo",
     "modularrsi-harness",
-    "multi-turn-rl",
-    "privileged-info-opsd-ample-math"
+    "multi-turn-rl"
   ],
-  "degree": 13,
+  "degree": 15,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

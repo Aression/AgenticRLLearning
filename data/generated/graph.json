@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T03:31:26.217799+00:00",
+  "generatedAt": "2026-09-24T03:21:03.167644+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -7,7 +7,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 16
+      "degree": 17
     },
     {
       "id": "prerequisites",
@@ -31,7 +31,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 11
+      "degree": 13
     },
     {
       "id": "policy-gradient",
@@ -39,7 +39,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "训练算法",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "ppo",
@@ -47,7 +47,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "训练算法",
-      "degree": 8
+      "degree": 10
     },
     {
       "id": "agent-loop",
@@ -63,7 +63,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 16
+      "degree": 17
     },
     {
       "id": "rewards",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 21
+      "degree": 23
     },
     {
       "id": "preferences",
@@ -87,7 +87,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 20
+      "degree": 25
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 24
+      "degree": 25
     },
     {
       "id": "training-systems",
@@ -111,7 +111,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 21
+      "degree": 22
     },
     {
       "id": "safety",
@@ -159,7 +159,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 13
+      "degree": 15
     },
     {
       "id": "learning-paths",
@@ -191,7 +191,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 13
+      "degree": 15
     },
     {
       "id": "modularrsi-harness",
@@ -199,7 +199,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 18
+      "degree": 19
     },
     {
       "id": "emergence-world-stress-test",
@@ -207,7 +207,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "value-flattening-ppo",
@@ -215,7 +215,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "evolvetrade-policy-refinement",
@@ -223,7 +223,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "scienceide-sci-envs",
@@ -231,7 +231,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "compo-zeroth-order-alignment",
@@ -247,7 +247,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "retireopd-self-retiring-opd",
@@ -255,7 +255,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 12
+      "degree": 15
     },
     {
       "id": "harness-design-coding-agents",
@@ -263,7 +263,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 17
+      "degree": 18
     },
     {
       "id": "evoskill-gui-training-free",
@@ -271,7 +271,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "when2think-length-control",
@@ -279,7 +279,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "actobs-observation-supervision",
@@ -287,7 +287,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 11
+      "degree": 13
     },
     {
       "id": "pact-enterprise-compliance-pressure",
@@ -319,7 +319,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 11
+      "degree": 13
     },
     {
       "id": "recreationworld-hybrid-cua",
@@ -335,7 +335,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "category-expert-swe-agents",
@@ -343,7 +343,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 9
+      "degree": 11
     },
     {
       "id": "parts-subtask-rl-manipulation",
@@ -351,7 +351,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "rrsi-regularized-harness-rsi",
@@ -367,7 +367,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "rsi-harness-two-loop",
@@ -384,6 +384,30 @@
       "stage": "FRONTIER",
       "track": "Agent 系统",
       "degree": 4
+    },
+    {
+      "id": "pact-credit-critic-alignment",
+      "label": "PACT：信用分配的公理化刻画与评论家对齐",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 17
+    },
+    {
+      "id": "vhd-play-mechanism-first-envs",
+      "label": "先解数学机制再生成可验证 Agent 环境",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "degree": 14
+    },
+    {
+      "id": "bpo-bellman-policy-optimization",
+      "label": "BPO：从镜像下降推导的无 Critic 策略优化",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "训练算法",
+      "degree": 12
     },
     {
       "id": "2026",
@@ -602,6 +626,14 @@
       "degree": 0
     },
     {
+      "id": "critic-free",
+      "label": "critic-free",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "cross-domain",
       "label": "cross-domain",
       "kind": "concept",
@@ -668,6 +700,14 @@
     {
       "id": "environment",
       "label": "environment",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "environment-generation",
+      "label": "environment-generation",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -980,6 +1020,22 @@
     {
       "id": "planning",
       "label": "planning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "pmd",
+      "label": "PMD",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "policy-optimization",
+      "label": "policy-optimization",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1442,6 +1498,14 @@
       "degree": 0
     },
     {
+      "id": "verifiable-reward",
+      "label": "verifiable-reward",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "verifier",
       "label": "verifier",
       "kind": "concept",
@@ -1748,6 +1812,24 @@
       "weight": 1.0
     },
     {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "ppo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "value-learning",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "category-expert-swe-agents",
       "target": "grpo",
       "kind": "related",
@@ -1856,6 +1938,12 @@
       "weight": 1.0
     },
     {
+      "source": "environments",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "evaluation",
       "target": "evolvetrade-policy-refinement",
       "kind": "related",
@@ -1941,6 +2029,12 @@
     },
     {
       "source": "grpo",
+      "target": "pact-credit-critic-alignment",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
       "target": "retireopd-self-retiring-opd",
       "kind": "related",
       "weight": 1.0
@@ -1948,6 +2042,12 @@
     {
       "source": "grpo",
       "target": "value-flattening-ppo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "vhd-play-mechanism-first-envs",
       "kind": "related",
       "weight": 1.0
     },
@@ -2038,6 +2138,18 @@
     {
       "source": "multi-turn-rl",
       "target": "videogen-agent-tool-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "ppo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "value-learning",
       "kind": "related",
       "weight": 1.0
     },
@@ -2103,6 +2215,12 @@
     },
     {
       "source": "rewards",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
       "target": "videogen-agent-tool-rl",
       "kind": "related",
       "weight": 1.0
@@ -2145,6 +2263,12 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "bpo-bellman-policy-optimization",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "codemidas-code-rl-envs",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2175,6 +2299,12 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "pact-credit-critic-alignment",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2188,6 +2318,54 @@
     {
       "source": "actobs-observation-supervision",
       "target": "value-learning",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "codemidas-code-rl-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "grpo",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "mintrl-off-policy-intervention",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "pact-credit-critic-alignment",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "when2think-length-control",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2217,9 +2395,21 @@
     },
     {
       "source": "category-expert-swe-agents",
+      "target": "pact-credit-critic-alignment",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
       "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
       "weight": 2.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "category-expert-swe-agents",
@@ -2248,6 +2438,12 @@
     {
       "source": "codemidas-code-rl-envs",
       "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "pact-credit-critic-alignment",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2312,6 +2508,12 @@
       "weight": 1.0
     },
     {
+      "source": "emergence-world-stress-test",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "environments",
       "target": "recreationworld-hybrid-cua",
       "kind": "shared-concept",
@@ -2330,6 +2532,12 @@
       "weight": 1.0
     },
     {
+      "source": "evaluation",
+      "target": "pact-credit-critic-alignment",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "evolvetrade-policy-refinement",
       "target": "mintact-unified-visual-agent",
       "kind": "shared-concept",
@@ -2338,6 +2546,12 @@
     {
       "source": "evolvetrade-policy-refinement",
       "target": "sol-pi-auto-research-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "evolvetrade-policy-refinement",
+      "target": "vhd-play-mechanism-first-envs",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2356,6 +2570,12 @@
     {
       "source": "evoskill-gui-training-free",
       "target": "parts-subtask-rl-manipulation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "vhd-play-mechanism-first-envs",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2380,6 +2600,12 @@
     {
       "source": "grpo",
       "target": "mintrl-off-policy-intervention",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "pact-credit-critic-alignment",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2412,6 +2638,12 @@
       "target": "modularrsi-harness",
       "kind": "shared-concept",
       "weight": 2.0
+    },
+    {
+      "source": "harness-design-coding-agents",
+      "target": "pact-credit-critic-alignment",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "harness-design-coding-agents",
@@ -2463,6 +2695,12 @@
     },
     {
       "source": "lab-agent-rl",
+      "target": "pact-credit-critic-alignment",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
       "target": "privileged-info-opsd-ample-math",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2493,6 +2731,12 @@
     },
     {
       "source": "mintact-unified-visual-agent",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "mintact-unified-visual-agent",
       "target": "videogen-agent-tool-rl",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2500,6 +2744,12 @@
     {
       "source": "mintrl-off-policy-intervention",
       "target": "modularrsi-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "pact-credit-critic-alignment",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2532,6 +2782,12 @@
       "target": "when2think-length-control",
       "kind": "shared-concept",
       "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "pact-credit-critic-alignment",
+      "kind": "shared-concept",
+      "weight": 2.0
     },
     {
       "source": "modularrsi-harness",
@@ -2576,6 +2832,12 @@
       "weight": 1.0
     },
     {
+      "source": "multi-turn-rl",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "orientation",
       "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
@@ -2583,7 +2845,37 @@
     },
     {
       "source": "orientation",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "orientation",
       "target": "videogen-agent-tool-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "policy-gradient",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "rewards",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "value-flattening-ppo",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2614,6 +2906,12 @@
     {
       "source": "pact-enterprise-compliance-pressure",
       "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "vhd-play-mechanism-first-envs",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2655,6 +2953,12 @@
     },
     {
       "source": "retireopd-self-retiring-opd",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
       "target": "videogen-agent-tool-rl",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2691,9 +2995,21 @@
     },
     {
       "source": "sol-pi-auto-research-harness",
+      "target": "vhd-play-mechanism-first-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "sol-pi-auto-research-harness",
       "target": "videogen-agent-tool-rl",
       "kind": "shared-concept",
       "weight": 1.0
+    },
+    {
+      "source": "vhd-play-mechanism-first-envs",
+      "target": "videogen-agent-tool-rl",
+      "kind": "shared-concept",
+      "weight": 2.0
     },
     {
       "source": "agent-loop",
@@ -4258,6 +4574,96 @@
     {
       "source": "designer-rsi-procedural-memory",
       "target": "continual-adaptation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "credit-assignment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "actor-critic",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "gae",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "swe-bench",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "vhd-play-mechanism-first-envs",
+      "target": "agentic-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "vhd-play-mechanism-first-envs",
+      "target": "environment-generation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "vhd-play-mechanism-first-envs",
+      "target": "verifiable-reward",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "vhd-play-mechanism-first-envs",
+      "target": "long-horizon",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "vhd-play-mechanism-first-envs",
+      "target": "tool-use",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "policy-optimization",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "critic-free",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "pmd",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "grpo",
       "kind": "concept",
       "weight": 1
     }

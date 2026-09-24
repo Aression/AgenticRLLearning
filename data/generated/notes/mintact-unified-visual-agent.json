@@ -56,9 +56,9 @@
     "multi-turn-rl",
     "sol-pi-auto-research-harness",
     "training-systems",
-    "videogen-agent-tool-rl"
+    "vhd-play-mechanism-first-envs"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "mintact-a-unified-visual-agent-for-digit"
   ],

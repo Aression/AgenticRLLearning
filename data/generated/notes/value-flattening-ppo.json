@@ -55,10 +55,10 @@
     "lab-rl",
     "mintrl-off-policy-intervention",
     "modularrsi-harness",
-    "ppo",
-    "rewards"
+    "pact-credit-critic-alignment",
+    "ppo"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "rethinking-critic-learning-in-ppo-unders"
   ],

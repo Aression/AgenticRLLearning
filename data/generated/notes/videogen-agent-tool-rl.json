@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "vhd-play-mechanism-first-envs",
     "agent-loop",
     "category-expert-swe-agents",
     "evolvetrade-policy-refinement",
     "mintact-unified-visual-agent",
-    "multi-turn-rl",
-    "orientation"
+    "multi-turn-rl"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "videogen-agent-reinforcing-video-generat"
   ],

@@ -588,5 +588,35 @@
     "url": "https://arxiv.org/abs/2609.22086",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Adjacent to Agentic RL scope: long-horizon agentic task with external procedural memory, continual adaptation under noisy/unverifiable feedback, and matched-rep"
+  },
+  {
+    "id": "pact-from-credit-assignment-to-critic-al",
+    "title": "PACT: From Credit Assignment to Critic Alignment",
+    "kind": "论文",
+    "author": "Jiayan Fu et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.26355",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly addresses token-level credit assignment and critic alignment, which are core to the KB's PPO/GAE/GRPO and agentic-RL credit-assignment threads (ppo, ga"
+  },
+  {
+    "id": "verifiable-hidden-dynamics-play-generati",
+    "title": "Verifiable Hidden Dynamics Play: Generating Agentic RL Environments from Solved Mechanisms",
+    "kind": "论文",
+    "author": "Xinjie Shen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.27321",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：On-topic for the KB's environment-generation and verifiable-reward interests (swe-bench, webarena, tau-bench, agentic-survey). Proposes generating agentic RL en"
+  },
+  {
+    "id": "bellman-policy-optimization",
+    "title": "Bellman Policy Optimization",
+    "kind": "论文",
+    "author": "Zhuoqing Song et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.15987",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Critic-free RLVR method derived from Policy Mirror Descent, using Bellman equations to reformulate PMD as a trajectory-level objective for autoregressive genera"
   }
 ]

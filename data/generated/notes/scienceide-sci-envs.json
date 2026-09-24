@@ -53,12 +53,12 @@
   "related": [
     "recreationworld-hybrid-cua",
     "rsi-harness-two-loop",
+    "bpo-bellman-policy-optimization",
     "environments",
     "evaluation",
-    "grpo",
-    "harness-design-coding-agents"
+    "grpo"
   ],
-  "degree": 12,
+  "degree": 13,
   "sources": [
     "scienceide-turning-world-s-scientific-co"
   ],

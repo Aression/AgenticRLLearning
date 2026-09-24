@@ -56,9 +56,9 @@
     "frontier-radar",
     "mintact-unified-visual-agent",
     "sol-pi-auto-research-harness",
-    "videogen-agent-tool-rl"
+    "vhd-play-mechanism-first-envs"
   ],
-  "degree": 6,
+  "degree": 7,
   "sources": [
     "evolvetrade-experience-driven-policy-ref"
   ],

@@ -52,13 +52,13 @@
   ],
   "related": [
     "agent-loop",
+    "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
     "frontier-radar",
     "grpo",
-    "lab-agent-rl",
-    "mintrl-off-policy-intervention"
+    "lab-agent-rl"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "don-t-mask-the-environment-observation-s"
   ],

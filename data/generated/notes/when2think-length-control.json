@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "bpo-bellman-policy-optimization",
     "evaluation",
     "grpo",
     "mintrl-off-policy-intervention",
     "privileged-info-opsd-ample-math",
-    "rewards",
-    "scienceide-sci-envs"
+    "rewards"
   ],
-  "degree": 7,
+  "degree": 8,
   "sources": [
     "when2think-learning-difficulty-aware-len"
   ],
