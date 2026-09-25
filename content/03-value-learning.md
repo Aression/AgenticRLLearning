@@ -4,6 +4,9 @@ title: 从 Bandit 到 TD 与 Q-learning
 summary: 先理解探索和自举，再比较 on-policy、off-policy 与离线学习。
 stage: FOUNDATION
 track: 概念与基础
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 4
 minutes: 18
 updated: '2026-09-08'

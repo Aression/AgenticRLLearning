@@ -36,6 +36,23 @@
   "paperId": "",
   "readingDepth": "",
   "fullTextUrl": "",
+  "kind": "concept",
+  "kindLabel": "概念",
+  "depth": "overview",
+  "depthLabel": "概览",
+  "depthRank": 0,
+  "evidenceGrade": "C",
+  "claims": [],
+  "claimCount": 0,
+  "sectionSizes": {
+    "GRPO 的核心": 280,
+    "三个失败模式": 127,
+    "R1-Zero 和 R1": 112,
+    "走向 Agentic RL 还缺什么": 88,
+    "阅读顺序": 93
+  },
+  "bodyChars": 781,
+  "deep": false,
   "sections": [
     "GRPO 的核心",
     "三个失败模式",
@@ -44,14 +61,14 @@
     "阅读顺序"
   ],
   "related": [
+    "never-give-up-rl",
+    "retireopd-self-retiring-opd",
     "actobs-observation-supervision",
-    "category-expert-swe-agents",
-    "codemidas-code-rl-envs",
-    "lab-agent-rl",
-    "mintrl-off-policy-intervention",
-    "orientation"
+    "bi-agent-bi-bench",
+    "card",
+    "card-2"
   ],
-  "degree": 20,
+  "degree": 37,
   "sources": [
     "deepseek-math",
     "deepseek-r1",
@@ -61,6 +78,6 @@
     "ppo",
     "rewards"
   ],
-  "search": "grpo、deepseek-r1 与可验证推理 组内相对优势减少 critic 依赖，但不自动解决长时程 agent 学习。 训练算法 deepseek-r1 grpo rlvr 能解释组内相对优势 能指出 grpo 在长时程任务上的缺口 grpo 的核心 三个失败模式 r1-zero 和 r1 走向 agentic rl 还缺什么 阅读顺序",
+  "search": "grpo、deepseek-r1 与可验证推理 组内相对优势减少 critic 依赖，但不自动解决长时程 agent 学习。 训练算法 concept overview c grpo deepseek-r1 grpo rlvr 能解释组内相对优势 能指出 grpo 在长时程任务上的缺口 grpo 的核心 三个失败模式 r1-zero 和 r1 走向 agentic rl 还缺什么 阅读顺序 ",
   "content": "## GRPO 的核心\n\nDeepSeekMath 引入 Group Relative Policy Optimization。对同一问题采样一组回答，用组内回报构建相对优势，减少对单独价值模型的依赖。常见形式为：\n\n$$\n\\hat A_i=\\frac{r_i-\\operatorname{mean}(r_1,\\ldots,r_G)}{\\operatorname{std}(r_1,\\ldots,r_G)+\\varepsilon}.\n$$\n\n再以这个信号优化生成 token 的概率，配合裁剪及可能的 KL 正则。不同代码库在标准化、长度归一化和 KL 处理上可能不同，不能只看算法名。\n\n## 三个失败模式\n\n1. **组内全同分**：优势接近零，难以提供区分信号。更可靠的任务难度分布与采样策略很重要。\n2. **长度偏差**：按序列平均还是 token 平均会改变长短回答的贡献。\n3. **验证器漏洞**：可验证不等于无法作弊，解析器和公开测试都可能被利用。\n\n## R1-Zero 和 R1\n\n原始技术报告区分直接从基础模型进行 RL 的 R1-Zero 与包含冷启动等阶段的 R1。不能把 R1 的所有结果概括为“完全不需要监督数据”。本库不复述未经复现的性能排名；重点是可验证回报、推理行为和多阶段训练之间的关系。\n\n## 走向 Agentic RL 还缺什么\n\n数学问题的最终答案奖励通常不涉及持续变化的外部环境。真实 agent 还需要工具观测遮罩、多轮终止逻辑、稀疏信用分配、状态重置和成本控制。对长轨迹直接套用组内终局优势可能过粗。\n\n## 阅读顺序\n\n先读 DeepSeekMath 算法章节，再读 R1 的训练阶段，最后看 DAPO 的动态采样与系统细节。下一步 [多轮 Agent RL](/notes/multi-turn-rl)。"
 }

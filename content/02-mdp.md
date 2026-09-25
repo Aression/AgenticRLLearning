@@ -4,6 +4,9 @@ title: MDP、POMDP 与 Bellman 方程
 summary: 用状态、观测、动作、转移和回报，把 Agent 行为写成明确的学习问题。
 stage: FOUNDATION
 track: 概念与基础
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 3
 minutes: 20
 updated: '2026-09-08'

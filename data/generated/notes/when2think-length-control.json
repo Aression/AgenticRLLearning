@@ -1,39 +1,47 @@
 {
   "id": "when2think-length-control",
   "title": "When2Think：难度感知的推理长度控制",
-  "summary": "把高效推理重述为实例级算力分配问题，用难度感知奖励塑形控制模型何时思考、思考多少。",
+  "summary": "大型推理模型（LRM）存在推理低效问题：在简单题上过度思考、生成冗余推理 token 却无准确率收益，在难题上又思考不足、过早终止推理。静态的 token 压缩策略会带来“效率税”——抑制简单题过度思考的同时系统性地损害难题性能。",
   "stage": "FRONTIER",
   "track": "训练算法",
   "order": 35,
-  "minutes": 18,
-  "updated": "2026-09-19",
+  "minutes": 57,
+  "updated": "2026-09-24",
   "review": "LLM 全文精读草稿 · 待人工复核",
   "filename": "35-when2think-length-control.md",
   "tags": [
     "RLVR",
+    "adaptive-reasoning",
+    "efficiency-tax",
     "hybrid-reasoning",
     "length-control",
-    "reasoning-efficiency",
     "reward-shaping"
   ],
   "concepts": [
     "RLVR",
+    "adaptive-reasoning",
+    "efficiency-tax",
     "hybrid-reasoning",
     "length-control",
-    "reasoning-efficiency",
     "reward-shaping"
   ],
   "objectives": [
-    "理解论文提出的“效率税”概念及其与静态压缩策略的区别",
-    "说明 IDAC、BWS、IS 三个组件在无 critic 优化中各自承担的角色",
-    "判断该方法在可验证奖励之外的适用边界"
+    "理解静态 token 压缩带来的效率税问题及其成因",
+    "掌握 When2Think 的 IDAC 奖励塑形与 BWS 无 critic 优化机制",
+    "了解难度感知的实例级计算分配如何兼顾简单题效率与难题准确率",
+    "评估该方法在数学推理基准上的准确率–token 权衡表现"
   ],
   "keyPoints": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "evidenceLevel": "full-text-llm-draft",
@@ -42,27 +50,80 @@
   "paperId": "2609.19671",
   "readingDepth": "full-text",
   "fullTextUrl": "https://arxiv.org/html/2609.19671",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "deep",
+  "depthLabel": "深读",
+  "depthRank": 2,
+  "evidenceGrade": "C",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "静态 token 压缩会带来效率税：减少简单题过度思考，但导致难题思考不足",
+      "evidence": "§1 引言、§7.1；表 1 中 LC-R1 在 AIME24 准确率下降 10.0",
+      "status": "作者主张"
+    },
+    {
+      "id": "C2",
+      "claim": "When2Think 在简单题上达到 LLM 级效率，在难题上保持 LRM 级准确率",
+      "evidence": "图 1；表 1；表 10 按难度分层的 MATH-500 结果",
+      "status": "作者主张"
+    },
+    {
+      "id": "C3",
+      "claim": "IDAC 奖励塑形使策略对简单实例分配更少计算、对困难实例保留更深推理",
+      "evidence": "§4.2 奖励公式；§6.2 RQ2；表 4–表 8 各基准 Think/NoThink 选择比例",
+      "status": "作者主张"
+    },
+    {
+      "id": "C4",
+      "claim": "BWS 与重要性采样支持无 critic 的稳定 PPO 式优化，提升准确率–效率权衡",
+      "evidence": "§4.3 公式 (7)(8)；§6.3 RQ3；附录 D.2、D.3 训练动态与消融",
+      "status": "作者主张"
+    }
+  ],
+  "claimCount": 4,
+  "sectionSizes": {
+    "问题与语境": 727,
+    "核心主张": 1113,
+    "机制与方法": 1550,
+    "实验设置": 1709,
+    "证据与结果": 2248,
+    "证据强度评估": 1234,
+    "边界与反例": 920,
+    "与知识库的关系": 1016,
+    "复现与验证计划": 1115,
+    "术语与记号": 1138,
+    "自测": 1871
+  },
+  "bodyChars": 14771,
+  "deep": true,
   "sections": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "related": [
-    "evaluation",
     "grpo",
+    "impossiblerubrics",
     "mintrl-off-policy-intervention",
-    "privileged-info-opsd-ample-math",
-    "rewards",
-    "scienceide-sci-envs"
+    "never-give-up-rl",
+    "ppo",
+    "retireopd-self-retiring-opd"
   ],
-  "degree": 7,
+  "degree": 8,
   "sources": [
     "when2think-learning-difficulty-aware-len"
   ],
   "prerequisites": [],
-  "search": "when2think：难度感知的推理长度控制 把高效推理重述为实例级算力分配问题，用难度感知奖励塑形控制模型何时思考、思考多少。 训练算法 rlvr hybrid-reasoning length-control reasoning-efficiency reward-shaping 理解论文提出的“效率税”概念及其与静态压缩策略的区别 说明 idac、bws、is 三个组件在无 critic 优化中各自承担的角色 判断该方法在可验证奖励之外的适用边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测",
-  "content": "## 论文要解决的问题\n\n论文关注大型推理模型（LRM）的推理低效：模型在简单题上生成大量冗余 token 却无准确率收益（overthinking），在难题上又过早终止或链条破碎（underthinking）。作者主张，问题的根源不是“推理太多”，而是推理深度在实例间被错误分配；他们称之为“效率税”（efficiency tax）——用静态 token 压缩去抑制简单题的过度思考，会系统性地损害难题表现。\n\n需要区分：LRM 存在过度推理与长度偏置，这在已有文献中已是较普遍的观察；而“效率税”这一命名与因果解释是本文作者的主张，摘录中仅以 Table 1 与 Figure 1 作为支撑，未给出可复核的数值。\n\n## 方法\n\n作者借用双过程理论作为概念框架：System 1 对应直接作答，System 2 对应显式推理。方法名为 When2Think，是一个后训练框架，把高效推理重述为实例级自适应控制问题，让单一混合策略同时决定“是否思考”和“思考多少”。\n\n核心组件是 Instance-level Difficulty-Aware Control（IDAC）奖励塑形，配合 Batch-Wise Standardization（BWS）与 Importance Sampling（IS）。作者称 BWS 使深度感知策略的优化在无 critic 条件下保持稳定，IS 则维持 Think/NoThink 的探索平衡。难度估计依赖离线参考统计量。\n\n训练设置：基座为 R1-distill-1.5B（由 DeepSeek-R1 蒸馏、基于 Qwen2.5-Math-1.5B），训练数据为约 40k 竞赛级数学题的 DeepScaleR。\n\n## 证据与实验\n\n评估覆盖 GSM-Plus、OlympiadBench、AIME I/II（2024–2025）、Minerva、MATH-500，指标为 pass@k 准确率与每实例平均生成 token 数，答案用 Math-Verify 与 MARIO Eval 双验证器判定。作者围绕三个问题组织实验：准确率—效率权衡、System 1/2 的难度感知分配、以及 IDAC/BWS/IS 的机制消融（含去掉 IS、去掉 IDAC 两个变体）。附录还报告了 token 分布、BWS 与 IS/IDAC 的训练动态，以及 Olmo-3 7B/32B 上的规模与监督方式对比。\n\n证据边界：以上均为论文自述，本卡片未接触代码、未复现任何结果；AIME 等基准上的具体数字在摘录中缺失，不应视为已确证结论。\n\n## 边界与未解问题\n\n作者自陈两点局限：方法依赖可验证奖励，因此最直接适用于数学推理，开放任务需要额外奖励建模或人工评估；难度估计依赖离线参考统计，当题目难度本身模糊时可靠性下降。此外，1.5B 基座上的结论能否外推到更大模型，摘录未给出结论性证据。\n\n## 与知识库的关系\n\n本文属于 RLVR 分支的奖励塑形与长度控制方向，与 rewards 中关于可验证奖励与奖励设计的讨论直接相关；其无 critic 的稳定化优化与 grpo 一类方法的问题动机相近；评估协议（pass@k + token 成本 + 双验证器）可对照 evaluation 中的评测设计笔记。它本身不是 agentic RL 工作，与 Agent 系统类笔记关联较弱。\n\n## 自测\n\n1. 用一句话解释“效率税”，并说明它与单纯减少 token 的区别。\n2. IDAC、BWS、IS 各自解决什么问题？去掉其中一个会怎样（按作者说法）？\n3. 该方法在什么条件下最可能失效？为什么？"
+  "search": "when2think：难度感知的推理长度控制 大型推理模型（lrm）存在推理低效问题：在简单题上过度思考、生成冗余推理 token 却无准确率收益，在难题上又思考不足、过早终止推理。静态的 token 压缩策略会带来“效率税”——抑制简单题过度思考的同时系统性地损害难题性能。 训练算法 paper deep c when2think-length-control rlvr adaptive-reasoning efficiency-tax hybrid-reasoning length-control reward-shaping 理解静态 token 压缩带来的效率税问题及其成因 掌握 when2think 的 idac 奖励塑形与 bws 无 critic 优化机制 了解难度感知的实例级计算分配如何兼顾简单题效率与难题准确率 评估该方法在数学推理基准上的准确率–token 权衡表现 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 静态 token 压缩会带来效率税：减少简单题过度思考，但导致难题思考不足 作者主张 when2think 在简单题上达到 llm 级效率，在难题上保持 lrm 级准确率 作者主张 idac 奖励塑形使策略对简单实例分配更少计算、对困难实例保留更深推理 作者主张 bws 与重要性采样支持无 critic 的稳定 ppo 式优化，提升准确率–效率权衡 作者主张",
+  "content": "## 问题与语境\n\n大型推理模型（LRM）通过 SFT/RFT 内化多步推理能力，在困难基准上表现强劲，但代价是推理效率的系统性失衡：在简单实例上生成冗余推理 token 而无准确率收益（过度思考），在困难实例上又过早终止推理或产生碎片化推理链（思考不足）。论文将这一现象归因于推理深度在实例间的错配，而非「推理本身过多」。\n\n已有做法主要沿两条路线。其一是推理压缩：LC-R1、ThinkPrune、LASER 等通过全局或启发式长度约束缩短推理轨迹。其二是混合推理：AdaptThink、ThinkLess 等通过在较简单实例上离散地跳过显式推理来降低成本。论文指出，这两类方法共享同一失效模式——静态或启发式的长度约束在抑制简单题过度思考的同时，会系统性地损害难题性能，即「效率税」（Efficiency Tax）。表 1 中 LC-R1 在 AIME24 上相对 R1-Distill-Qwen 的 Pass@3 下降 10.0，而 token 减少 6,223，被作者作为效率税的典型证据（§1、§7.1）。\n\n论文的定位不是提出又一种压缩算子，而是把高效推理重新表述为实例级自适应控制问题：模型需要同时决定「是否思考」（Think vs. NoThink）与「思考多深」，并按实例难度分配计算。作者据此提出 When2Think，一个基于 RLVR 的后训练奖励塑形框架，用离线参考统计估计实例难度 $\\alpha_i$ 与期望推理成本 $\\tau_i$，通过 IDAC 奖励塑形统一控制思考模式与推理长度（§4）。其核心论断是：高效推理本质上是分配问题而非压缩问题（§8）。需要说明的是，该论断目前为作者主张，其普适性受限于可验证奖励与数学推理域（§7.4）。\n\n## 核心主张\n\n论文的核心主张可归纳为四条，其证据定位与状态如下。状态判定依据本次提供的证据表与全文摘录：所有实验数字均来自作者自报的 Table 1 与附录表，未提供第三方复现，故除与既有文献共识重合者外，一律标为「作者主张」。\n\n| # | 主张 | 证据 | 状态 |\n|---|---|---|---|\n| C1 | 静态 token 压缩会带来效率税：减少简单题过度思考，但导致难题思考不足 | §1 引言、§7.1；表 1 中 LC-R1 在 AIME24 准确率下降 10.0 | 作者主张 |\n| C2 | When2Think 在简单题上达到 LLM 级效率，在难题上保持 LRM 级准确率 | 图 1；表 1；表 10 按难度分层的 MATH-500 结果 | 作者主张 |\n| C3 | IDAC 奖励塑形使策略对简单实例分配更少计算、对困难实例保留更深推理 | §4.2 奖励公式；§6.2 RQ2；表 4–表 8 各基准 Think/NoThink 选择比例 | 作者主张 |\n| C4 | BWS 与重要性采样支持无 critic 的稳定 PPO 式优化，提升准确率–效率权衡 | §4.3 公式 (7)(8)；§6.3 RQ3；附录 D.2、D.3 训练动态与消融 | 作者主张 |\n\n最强的是 C2，因为它有跨基准、跨规模的多点支撑：1.5B 上 AIME24 Pass@3 为 56.0 ± 2.8（基线 46.0 ± 2.8），token 为 10,236 ± 438.0（基线 14,195 ± 1,026.7）；GSM-Plus 为 85.7 ± 0.3；7B 上 AIME24 为 68.7（基线 60.0），token 7,855（基线 7,266）。这些数字方向一致，且 1.5B 与 7B 均成立，说明结论不依赖单一规模。但需注意 7B 的 token 反而高于基线，与「普遍省 token」的直觉不符，作者以「效率税在小模型最明显」解释（§7.3）。\n\n最弱的是 C4。BWS 与 IS 的贡献主要靠消融间接支持，且现有摘录中的消融结果并不单向支持该组件：w/o IS（IDAC+BWS）在 GSM-Plus 上 Pass@3 为 86.8、token 1,652，即去掉重要性采样后准确率更高但 token 更多，说明 IS 的作用是省 token 而非提准确率，其「提升准确率–效率权衡」的表述需要更细的分解才能成立。此外，C1 依赖 LC-R1 单一基线的单点对比，C3 依赖 Think/NoThink 选择比例这类行为指标而非因果干预，二者均为作者主张，迁移到非数学域时需重新验证。\n\n## 机制与方法\n\nWhen2Think 是一个后训练奖励塑形框架，目标是在混合推理中实现实例级自适应计算分配：对每个输入同时决定「是否显式推理」（Think vs. NoThink）与「推理多深」。其核心主张是把高效推理重述为分配问题而非压缩问题——原文表述为 \"efficient reasoning is fundamentally a problem of allocation rather than compression\"。\n\n**两阶段结构。** 训练前先做参考统计预计算：用参考策略 $\\pi_{\\mathrm{ref}}$ 对每个输入 $x_i$ 采样 $K$ 条轨迹 $o'_{i,k}\\sim\\pi_{\\mathrm{ref}}(\\cdot\\mid x_i)$，用答案抽取函数 $g(\\cdot)$ 与验证函数\n$$\\mathcal{V}(x_i,o'_{i,k})=\\mathbb{I}\\!\\left[\\,g(o'_{i,k})=y_i\\,\\right]$$\n估计实例难度 $\\alpha_i$（由参考策略准确率刻画）与期望推理成本 $\\tau_i$，并离线缓存。符号表中 $K$ 在参考采样与重要性采样中均取 16。由于统计量在每轮训练前预计算，策略更新阶段无需在线查询参考模型。\n\n**在线奖励。** 轨迹级标量奖励 $r_{i,k}$ 由三部分组成：(1) IDAC（Instance-level Difficulty-Aware Control），按参考统计 $\\alpha_i$、$\\tau_i$ 调节推理成本，即用轨迹长度与参考统计调制一个「正确性门控的效率奖励」；(2) 混合奖励，把 System 1/2 行为选择与长度控制连接起来，系数 $\\delta=0.05$；(3) 正确性奖励，按参考表现 $\\alpha_i$ 归一化。参考缩放系数 $\\gamma=0.9$。正确性信号来自可验证奖励（RLVR），因此不需要学习奖励模型。\n\n**探索与优势估计。** 轨迹通过重要性采样获得：探索分布 $\\pi_{\\mathrm{IS}}$ 对初始模式 token 均匀采样以平衡 Think/NoThink 探索，后续 token 由待优化策略 $\\pi_\\theta$ 生成。优势用批内标准化（BWS）计算，借鉴 REINFORCE++ 的稳定性思路。给定 mini-batch 内 $M$ 个实例、每实例 $K$ 条轨迹，对每个轨迹索引 $k$ 在实例维度上计算\n$$\\mu_k=\\frac{1}{M}\\sum_{i=1}^{M}r_{i,k},\\qquad \\sigma_k=\\sqrt{\\frac{1}{M}\\sum_{i=1}^{M}(r_{i,k}-\\mu_k)^2}$$\n$$A_{i,k}=\\frac{r_{i,k}-\\mu_k}{\\sigma_k+\\varepsilon}$$\n其中 $\\varepsilon>0$ 为数值稳定项。同一轨迹内所有 token 共享该优势，从而在 PPO 式裁剪代理优化下实现低方差的轨迹级信用分配，且无需学习 critic。\n\n**设计取舍与前提。** 关键取舍是「无 critic、无在线参考查询」换取训练稳定性与工程简洁：代价是优势依赖批内统计，batch 组成会影响标准化基准；同时难度估计完全依赖离线参考统计，属于一次性估计而非在线自适应。适用前提有三点（作者在限制中列出）：依赖可验证奖励，主要适用于数学推理；依赖离线参考统计估计难度，难度模糊时不可靠；效率税效应在小模型（1.5B）最明显。此外，初始模式 token 的均匀采样意味着探索成本与 Think/NoThink 两模式都被实际执行，训练开销高于纯压缩式方法。\n\n## 实验设置\n\n训练在 R1-distill-1.5B 上进行，该模型由 DeepSeek-R1 蒸馏、基于 Qwen2.5-Math-1.5B，蒸馏使用约 800k 条筛选样本做 SFT；训练数据为 DeepScaleR 数据集，约 40k 道竞赛级数学题（含已验证解答），聚合 AIME (1984–2023)、AMC (pre-2023)、Omni-MATH、Still 等公开来源，覆盖代数、几何、数论与组合。评测覆盖 GSM-Plus、OlympiadBench、AIME I/II (2024–2025)、Minerva、MATH-500，沿准确率与 token 用量两个维度评估；准确率用采样式 pass@k，效率用每实例平均生成 token 数（独立于 pass@k 采样预算计算）。答案判定采用双验证器策略：Math-Verify 或 MARIO Eval 任一接受即判正确。基线分三类：基础 LLM（Qwen2.5-Instruct、Qwen2.5-Math-Instruct）、SFT/RFT 训练的 LRM（R1-Distill-Qwen、DeepScaleR-Preview）、效率导向推理模型（长度压缩类 LC-R1、ThinkPrune、LASER；混合推理类 AdaptThink、ThinkLess）。所有方法共享同一基座模型并在可比条件下训练。\n\n| 基准 | 模型/规模 | 基线 | 预算 | 指标 |\n| --- | --- | --- | --- | --- |\n| GSM-Plus / OlympiadBench-Math / AIME24 / AIME25 | When2Think（R1-distill-1.5B） | R1-Distill-Qwen、DeepScaleR-Preview、LC-R1、ThinkPrune-iter3k、Laser-DE-L4096、AdaptThink-delta0.05、Thinkless-RL | Pass@3，5 次独立运行 | Pass@3 准确率、平均 token 数 |\n| GSM-Plus / Minerva / OlympiadBench-Math / AIME24 / AIME25 | When2Think 1.5B | R1-Distill-Qwen（含 Qwen2.5-Instruct、Qwen2.5-Math-Instruct 等） | Pass@3，5 次运行 | Pass@3、token 数、ACE |\n| MATH-500 Levels 1–5 | When2Think 1.5B | R1-Distill-Qwen | Pass@1，5 次运行 | Pass@1、token 数、ACE |\n| GSM-Plus / Minerva / OlympiadBench-Math / AIME24 / AIME25 | When2Think 7B | R1-Distill-Qwen 7B（含 Laser-DE-L4096、AdaptThink-delta0.05） | Pass@3，5 次运行 | Pass@3、token 数、ACE |\n| MATH-500 Levels 1–5 | When2Think 7B | R1-Distill-Qwen 7B（含 Laser-DE-L4096、AdaptThink-delta0.05） | Pass@1，5 次运行 | Pass@1、token 数、ACE |\n\n消融方面，表 1 报告了 w/o IS（保留 IDAC+BWS）变体：GSM-Plus 86.8、tokens 1,652（token 更多）；附录 D.3 另设 w/o IDAC（保留 IS+BWS）变体以隔离 IS 与 IDAC 的贡献，附录 D.2 与图 8 分析 BWS 训练动态。需注意：证据表未给出 7B 设置下 MATH-500 分层的基线完整清单，上表按全文摘录中实际出现的对比项填写；未在摘录中明确写出的字段（如部分实验的采样温度、max token 上限）标注为未说明。\n\n## 证据与结果\n\n以下数字全部照抄自摘录中的 Table 1、Table 9、Table 10 与图 1 说明；未在摘录中出现的数值一律标注「摘录未给出」。\n\n主结果（Table 1，Pass@3，5 次独立运行，均值 ± 标准差）：\n\n| 指标 | 数值 | 设置 | 出处 |\n| --- | --- | --- | --- |\n| AIME24 Pass@3 | 56.0 ± 2.8 (+10.0) | When2Think 1.5B | Table 1 |\n| AIME24 tokens | 10,236 ± 438.0 (-3,959) | When2Think 1.5B | Table 1 |\n| AIME24 Pass@3 | 46.0 ± 2.8 | R1-Distill-Qwen (Base) | Table 1 |\n| AIME24 tokens | 14,195 ± 1,026.7 | R1-Distill-Qwen (Base) | Table 1 |\n| GSM-Plus Pass@3 | 85.7 ± 0.3 (+6.3) | When2Think 1.5B | Table 1 |\n| GSM-Plus tokens | 1,052 ± 17.9 (+462) | When2Think 1.5B | Table 1 |\n| OlympiadBench-Math Pass@3 | 62.4 ± 0.9 (+3.6) | When2Think 1.5B | Table 1 |\n| OlympiadBench-Math tokens | 5,909 ± 56.4 (-2,725) | When2Think 1.5B | Table 1 |\n| AIME25 Pass@3 | 40.0 ± 0.0 (+8.0) | When2Think 1.5B | Table 1 |\n| AIME25 tokens | 9,549 ± 719.4 (-3,067) | When2Think 1.5B | Table 1 |\n| AIME24 Pass@3 | 68.7 ± 4.5 (+8.7) | When2Think 7B | Table 9 |\n| AIME24 tokens | 7,855 ± 397.9 (+589) | When2Think 7B | Table 9 |\n| AIME24 Pass@3 | 60.0 ± 8.5 | R1-Distill-Qwen 7B | Table 9 |\n| AIME24 tokens | 7,266 ± 554.0 | R1-Distill-Qwen 7B | Table 9 |\n\n难度分层（Table 10，MATH-500，Pass@1，5 次运行）：\n\n| 指标 | 数值 | 设置 | 出处 |\n| --- | --- | --- | --- |\n| Level 1 Pass@1 | 95.8 ± 1.9 (+3.7) | When2Think 1.5B | Table 10 |\n| Level 1 tokens | 619 ± 11.0 | When2Think 1.5B | Table 10 |\n| Level 1 Pass@1 | 92.1 ± 2.7 | R1-Distill-Qwen (Base) | Table 10 |\n| Level 1 tokens | 1,199 ± 150.9 | R1-Distill-Qwen (Base) | Table 10 |\n| Level 5 Pass@1 | 70.7 ± 2.9 | When2Think 1.5B | Table 10 |\n| Level 5 tokens | 4,554 ± 177.5 | When2Think 1.5B | Table 10 |\n| Level 5 Pass@1 | 71.0 ± 2.3 | R1-Distill-Qwen (Base) | Table 10 |\n| Level 5 tokens | 6,830 ± 203.3 | R1-Distill-Qwen (Base) | Table 10 |\n\n对照与消融。效率税的直接对照是 LC-R1：AIME24 Pass@3 为 36.0 ± 4.9，相对基线标注为 (-10.0)，tokens 7,972 ± 1,024.3 (-6,223)（Table 1）。消融方面，摘录给出「w/o IS (IDAC + BWS)」一行：GSM-Plus 86.8 ± 0.1 (+7.4)、tokens 1,652 ± 13.2 (+1,062)；AIME24 57.3 ± 8.3 (+11.3)、tokens 10,046 ± 487.9 (-4,149)（Table 1）。该变体在 GSM-Plus 与 AIME24 上准确率不低于完整模型，但 GSM-Plus token 数明显更高，与「IS 用于平衡 Think/NoThink 探索」的机制解释方向一致。摘录另提及「w/o IDAC (IS + BWS)」变体用于隔离 IS 与 IDAC 贡献（§D.3），但该变体的具体数值摘录未给出。BWS 训练动态见图 8（§D.2），曲线数值摘录未给出。ACE 指标在 Table 9/Table 10 中给出，但本档案未逐项抄录，故不列具体数字。\n\n## 证据强度评估\n\n证据分级：B（中等偏强，但存在若干未消除的威胁）。\n\n理由：结论建立在多个数学推理基准（GSM-Plus、Minerva、OlympiadBench-Math、AIME24/25、MATH-500）上，报告了 5 次独立运行的均值 ± 标准差，并给出 token 数与 ACE 两类效率度量，同时包含 1.5B 与 7B 两个规模，属于「多基准 + 多规模 + 有方差报告」的配置，强于单点结果。但所有数字均来自作者自报，档案中没有任何第三方复现或独立评测记录；消融只完整给出「w/o IS」一行，「w/o IDAC」的数值缺失，机制归因链条不完整。因此定为 B 而非 A。\n\n主要威胁：\n\n1. 构造效度（机制归因不完整）。论文把收益归因于 IDAC 奖励塑形 + BWS + IS 三者协同，但摘录中可核对的消融只有「w/o IS」：该变体在 GSM-Plus（86.8 vs 85.7）与 AIME24（57.3 vs 56.0）上准确率反而更高，仅 token 更多。这削弱了「IS 提升准确率–效率权衡」的表述，也说明完整模型的准确率增益可能并非来自 IS。缺少「w/o IDAC」数值，无法判断 IDAC 是否为准确率提升的主因。\n\n2. 统计显著性。AIME24 上 When2Think 1.5B 为 56.0 ± 2.8，基线 46.0 ± 2.8，差值 10.0 大于两倍标准差，方向较稳；但 7B 上为 68.7 ± 4.5 vs 60.0 ± 8.5，基线方差很大，差值 8.7 与基线标准差同量级，显著性存疑。AIME25 的 40.0 ± 0.0 零方差也提示样本量或评测协议可能受限。摘录未给出任何显著性检验。\n\n3. 基线选择与外部效度。效率类基线中，Thinkless-RL 在 GSM-Plus（85.8）、OlympiadBench（63.4）、AIME24（46.7）上准确率与 When2Think 接近或更高，仅在 token 上更贵；AdaptThink 在 MATH-500 Level 1–4 的 Pass@1 上普遍高于 When2Think（如 Level 1 94.4 vs 95.8 除外，Level 4 92.0 vs 84.5）。这说明「When2Think 全面占优」的结论依赖于以 token 数为代价轴的取舍，而非准确率绝对领先。此外全部评测限于数学推理，作者在 §7.4 自述依赖可验证奖励、依赖离线参考统计估计难度，难度模糊时不可靠，迁移到开放式任务的外部效度未验证。\n\n4. 评测污染。训练集 DeepScaleR 聚合了 AIME (1984–2023)、AMC (pre-2023)、Omni-MATH、Still 等公开来源，而评测含 AIME24/25。摘录未说明是否做了去污染或时间切分核查，AIME24/25 与训练数据的时间边界虽可能不重叠，但同源题目风格与来源重叠风险未被排除。\n\n## 边界与反例\n\n**会推翻结论的观察。** 论文的核心主张是「效率税来自计算错配而非压缩本身」（§7.1、§8），其经验支柱是表1中 LC-R1 在 AIME24 上 Pass@3 相对 R1-Distill-Qwen 下降 10.0、同时 token 减少 6,223。若把压缩类基线（LC-R1、ThinkPrune、LASER）的 token 预算调到与 When2Think 在 AIME24 上的 10,236 相当，而难题准确率仍系统性低于 56.0，则「压缩必然带来效率税」的因果解释会被削弱，结论更可能退化为「这些基线训练不充分」。同理，若在 7B 上复现不出 1.5B 的分配行为，则 IDAC 的机制解释只在小模型成立。\n\n**最可能失效的条件。** 作者在 §7.4 明确列出两条：依赖可验证奖励，因此主要适用于数学推理；依赖离线参考统计估计难度，难度模糊时不可靠。§7.3 补充第三条：效率税效应在小模型（1.5B）最明显，更大模型本身推理效率更强，效应「substantially less pronounced」。这意味着读者若把 When2Think 迁移到开放式任务、或迁移到难度无法由参考准确率刻画的场景（如主观写作、多轮 agent 任务），IDAC 的 $\\alpha_i$ 与 $\\tau_i$ 估计会失去意义。此外，参考统计按 epoch 预计算并缓存，训练分布漂移时 $\\alpha_i$ 可能过时——论文未报告这一敏感性。\n\n**作者未验证、读者易误推的方向。** 第一，表1 中 w/o IS 变体在 GSM-Plus 上 Pass@3 为 86.8、token 1,652，均高于完整模型的 85.7 / 1,052，说明 IS 主要买的是效率而非准确率；不应把 When2Think 的整体增益全部归因于难度感知分配。第二，AIME24/AIME25 上 NoThink 选择比例为 0.0，即难题上模型几乎不跳过推理，这与「自适应分配」的叙事一致，但也意味着该机制在难题上未被真正检验其「选择」能力。第三，论文未给出跨模型规模（如 32B 以上）或跨领域的失败案例，读者不应据此外推为通用推理效率方案。\n\n## 与知识库的关系\n\n**新增。** 相对「推理效率/过度思考」这条线索，本文的增量是把效率问题从「压缩多少 token」重述为「实例级分配」：提出效率税概念，并用 IDAC 奖励塑形统一控制是否思考（Think/NoThink）与思考多深。这提供了一个可操作的中间层——既不是纯长度惩罚，也不是纯模式切换。相对「混合推理（Think/NoThink）」线索，增量在于用同一套奖励同时决定模式与深度，而非离散地跳过推理；表4–表8 的 Think/NoThink 选择比例（如 GSM-Plus 上 NoThink 占 40.3%、AIME24 上为 0.0%）可作为该统一控制的行为证据。\n\n**印证。** 本文与「静态压缩有代价」的既有观察一致：表1 中 LC-R1 在 AIME24 上 Pass@3 下降 10.0、token 减少 6,223，ThinkPrune 在 AIME24 上 Pass@3 与基线持平（46.0）但 token 减少 7,959。这印证了「压缩换效率、难题不涨点」的模式。同时，BWS 借鉴 REINFORCE++ 的稳定化思路（§4.3），与「无 critic 的 PPO 式优化可行」这一结论相互印证。\n\n**张力。** 第一，表1 中 w/o IS 变体在 GSM-Plus 上 Pass@3 86.8、token 1,652，优于完整模型的 85.7 / 1,052，说明 IS 的收益是效率侧的，与「IS 提升准确率–效率权衡」的笼统表述存在张力，需按指标分开读。第二，§7.3 指出效率税在小模型最明显、大模型「substantially less pronounced」，这与「效率税是 LRM 的普遍病理」的强读法存在张力：它更像小模型的诊断现象。第三，AIME24/AIME25 上 NoThink 比例为 0.0，与「混合推理在难题上仍会跳过推理」的直觉相反，提示分配机制在难题上退化为纯 Think。\n\n**可链接笔记 id。** `note/reasoning-efficiency-overthinking`、`note/hybrid-reasoning-think-nothink`、`note/rlvr-reward-shaping`、`note/critic-free-policy-optimization`、`note/length-compression-baselines`。\n\n## 复现与验证计划\n\n最小可执行验证的目标是：在 1.5B 规模上复现「简单题省 token、难题不掉点」这一核心现象，而非复现全部基准。\n\n环境与数据。训练框架 verl（Apache-2.0），推理用 vLLM；硬件按论文为 2 × NVIDIA H100 80GB（1.5B 训练约 70 GPU-hours），评测约 20 GPU-hours on 2 × A100 80GB。基座为 R1-distill-1.5B（MIT），训练集为 DeepScaleR（约 40k 竞赛级数学题，MIT）。关键超参：Total Episodes 40,315、Total Epochs 1、Total Steps 314、Batch Size 128、Learning Rate 3e-6、Max Prompt Length 1,024、Max Think Response Length 16,384、Max NoThink Response Length 4,096、Reference/Importance Sampling K = 16、Temperature 0.6、Top-p 0.95、Random Seed 42、γ = 0.9、NoThink Ratio 0.5、δ = 0.05。\n\n任务与基线。评测集取 GSM-Plus、OlympiadBench-Math、AIME24/25、Minerva、MATH-500；主基线为 R1-Distill-Qwen，效率类基线为 LC-R1、ThinkPrune、LASER、AdaptThink、ThinkLess。答案判定用双验证器（Math-Verify 或 MARIO Eval 任一接受即算对）。\n\n预算与判据。按 Pass@3、5 次独立运行报告 mean ± std，token 为每实例平均生成量。可判定的最小判据：(1) AIME24 Pass@3 相对基线提升且 token 下降（论文报告 56.0 ± 2.8 vs 46.0，10,236 ± 438.0 vs 14,195）；(2) GSM-Plus Pass@3 不低于基线（论文 85.7 ± 0.3）；(3) MATH-500 分层中 L1 达到约 95.8%/619 tok 对 92.1%/1,199 tok 的方向性差异。\n\n预期失败模式。难度估计依赖离线参考统计，难度模糊时 α_i 不可靠；去掉 IS 后 token 上升（论文消融：GSM-Plus 86.8、1,652 tok）；效率税效应在 1.5B 最明显，放大到 7B 后差异可能被模型固有高效性掩盖。以上均为作者主张，尚无第三方复现记录。\n\n## 术语与记号\n\n| 术语 | 含义 |\n| --- | --- |\n| LRM | Large Reasoning Model，经 SFT/RFT 内化多步推理、生成连贯推理轨迹的模型 |\n| Efficiency Tax | 效率税：静态压缩在减少简单题冗余推理的同时系统性损害难题性能 |\n| Overthinking | 过度思考：简单题上生成冗余推理 token 却无准确率收益 |\n| Underthinking | 思考不足：难题上过早终止推理或产生碎片化推理链 |\n| System 1 / System 2 | 双过程理论中的快直觉式回答与慢审慎式推理两种模式 |\n| Hybrid Reasoning | 混合推理：同一模型内动态平衡直接回答与显式推理 |\n| IDAC | Instance-level Difficulty-Aware Control，按参考统计调节推理成本的奖励塑形 |\n| BWS | Batch-Wise Standardization，在 mini-batch 内标准化奖励以得到低方差轨迹级优势 |\n| IS | Importance Sampling，用探索分布均匀采样初始模式 token 以平衡 Think/NoThink |\n| RLVR | 可验证奖励强化学习，用可验证正确性信号做策略优化 |\n| Pass@k | 采样 k 个输出中至少一个正确的概率 |\n| ACE | Accuracy-Cost Efficiency，衡量生成 token 转化为正确答案的效率 |\n| Dual Math Verifier | 结合 Math-Verify 与 MARIO Eval 的符号与数值等价性检查 |\n\n关键符号：$\\pi_{\\mathrm{ref}}$ 为参考策略，用于离线估计难度与推理成本；$\\pi_{\\theta}$ 为待优化策略；$\\pi_{\\mathrm{IS}}$ 为探索分布，均匀采样初始模式 token；$\\alpha_i$ 为实例 $i$ 的难度（由参考策略准确率估计）；$\\tau_i$ 为实例 $i$ 的期望推理成本；$K$ 为每实例采样轨迹数（参考与重要性采样均为 16）；$\\mathcal{V}(x_i, o'_{i,k})$ 为答案验证函数，提取答案与真值匹配则为 1；$r_{i,k}$ 为轨迹级自适应标量奖励；$A_{i,k}$ 为批内标准化后的轨迹级优势，$A_{i,k} = (r_{i,k} - \\mu_k)/(\\sigma_k + \\varepsilon)$，同一轨迹所有 token 共享该优势；$\\gamma$ 为参考缩放系数（0.9）；$\\delta$ 为混合奖励系数（0.05）。\n\n## 自测\n\n以下问题用于检验你是否真正读懂了本档案的证据链，而非记住了几个数字。答案折叠在 `<details>` 中，建议先自行作答。\n\n**Q1（数字核对）** 表 1 中 When2Think 1.5B 在 AIME24 上的 Pass@3 与平均 token 数分别是多少？相对 R1-Distill-Qwen 基线的括号内差值是多少？\n\n<details><summary>答案</summary>\nPass@3 为 56.0 ± 2.8，括号内为 (+10.0)；平均 token 为 10,236 ± 438.0，括号内为 (-3,959)。基线 R1-Distill-Qwen 对应值为 46.0 ± 2.8 与 14,195 ± 1,026.7。注意：这些是作者在表 1 中报告的均值 ± 五次独立运行标准差，属于「作者主张」，本档案未提供独立复现。\n</details>\n\n**Q2（机制理解）** IDAC、BWS、IS 三者各自解决什么问题？去掉 IS 后表 1 中 GSM-Plus 的准确率与 token 如何变化？\n\n<details><summary>答案</summary>\nIDAC（实例级难度感知控制）按离线参考统计 α_i、τ_i 调节推理成本，使简单实例少算、困难实例保留深度推理；BWS（批内标准化）在 mini-batch 内按轨迹索引 k 标准化奖励，得到低方差轨迹级优势，从而无需学习 critic 即可做 PPO 式裁剪优化；IS（重要性采样）用探索分布 π_IS 均匀采样初始模式 token，平衡 Think/NoThink 探索。消融 w/o IS (IDAC+BWS) 在 GSM-Plus 上为 86.8、tokens 1,652，即准确率略升但 token 明显增加（相对完整模型 85.7 / 1,052）。\n</details>\n\n**Q3（跨小节推理：主张 vs 证据）** 论文的核心论断「高效推理本质上是分配问题而非压缩问题」在证据表里被标为哪一类？表 1 中哪一行数据被用来支持「效率税」这一概念？\n\n<details><summary>答案</summary>\n该论断以引文形式出现（\"efficient reasoning is fundamentally a problem of allocation rather than compression\"），属于作者主张（C1/C2 均为「作者主张」状态），本档案未列出独立复现或共识来源。支持效率税的数据是 LC-R1 行：AIME24 Pass@3 为 36.0 ± 4.9，括号内相对基线为 (-10.0)，即准确率下降 10.0，同时 token 从 14,195 降至 7,972（括号内 -6,223）。这正是「压缩换来难题性能损失」的例证。\n</details>\n\n**Q4（跨小节推理：规模与适用边界）** 为什么作者把分析重点放在 1.5B 而非 7B？这与 §7.4 列出的局限是否一致？\n\n<details><summary>答案</summary>\n§7.3 指出小模型倾向生成更长但更无效的推理轨迹，系统性过度思考，因此效率税在小尺度最可见（表 9、表 10），IDAC 等自适应控制机制影响最大；大模型本身推理效率更强，效应不显著。这与 §7.4 的局限一致：方法依赖可验证奖励（主要适用于数学推理）、依赖离线参考统计估计难度（难度模糊时不可靠），且效率税效应在小模型（1.5B）最明显。因此把 1.5B 作为主战场既是诊断需要，也意味着结论向大模型与开放任务的迁移性尚未被充分证明。\n</details>\n\n**Q5（方法细节与不确定性）** 参考统计与重要性采样各采样多少条轨迹？BWS 的优势公式是什么？训练是否需要在线查询参考模型？\n\n<details><summary>答案</summary>\n参考采样 K = 16，重要性采样 K = 16（表 2）。BWS 先按轨迹索引 k 在 M 个实例上计算 μ_k 与 σ_k，再取 A_{i,k} = (r_{i,k} − μ_k)/(σ_k + ε)，同一轨迹所有 token 共享该优势。参考统计在每个训练 epoch 前离线预计算并缓存，因此策略更新时不需要学习奖励模型、学习 critic 或在线查询参考模型。不确定处：ε 的具体取值、以及 M（mini-batch 实例数）在摘录中未给出，本档案不作推断。\n</details>"
 }

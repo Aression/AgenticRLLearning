@@ -4,6 +4,9 @@ title: GRPO、DeepSeek-R1 与可验证推理
 summary: 组内相对优势减少 critic 依赖，但不自动解决长时程 Agent 学习。
 stage: SYSTEMS
 track: 训练算法
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 11
 minutes: 22
 updated: '2026-09-08'

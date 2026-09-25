@@ -1,0 +1,229 @@
+---
+id: never-give-up-rl
+title: Never Give Up：RL 难题动态采样
+summary: 论文指出 RL 后训练 LLM 时存在“马太效应”：模型在初始能力强的简单问题上提升远大于困难问题，导致困难问题长期无法解决。作者认为原因之一是计算分配不均——GRPO 等对每个 prompt 分配相同采样数，困难 prompt 常因全零奖励而无梯度。
+stage: FRONTIER
+track: 训练算法
+kind: paper
+depth: deep
+evidenceGrade: C
+order: 50
+minutes: 60
+updated: '2026-09-24'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.13443
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+claim_count: 6
+full_text_url: https://arxiv.org/html/2609.13443
+objectives: [理解 RL 后训练中的马太效应及其计算分配成因, 掌握 NGU 迭代采样与概率放弃机制, 了解异步 RL 下 off-policy 过滤与正样本锚定重缩放, 评估 NGU 在数学与编码任务上的适用边界]
+tags: [RLVR, dynamic-sampling, GRPO, asynchronous-RL, LLM-post-training]
+sources: [learning-to-solve-hard-problems-in-rl-fo]
+related: [grpo, lab-agent-rl, multi-turn-rl]
+prerequisites: [grpo, policy-gradient]
+---
+## 问题与语境
+
+RL 后训练被普遍假设为「在从易到难的分布上训练，模型就能学会整个分布」。论文用三个开源 RL 模型（Olmo 3.1 RL-Zero 数学、DeepCoder 代码补全、DeepSWE-Preview 智能体编码）的评测反驳了这一假设：按初始 pass@1（AIME、LCBv5）或 SWEBenchVerified 的人工时间难度分桶后，RL 带来的提升与模型初始能力成正比，简单问题获益远大于困难问题。作者将此命名为 RL for LLMs 的 Matthew Effect，并把它与网络科学中的累积优势（Merton, 1968）类比，同时指出它不同于以往关注网络可塑性损失的 primacy bias——Matthew Effect 需要预训练模型已有的强先验才会出现。
+
+已有做法为何失效，论文给出两条线索。其一是机制层面：GRPO 及其变体对每个 prompt 采样固定 $K$ 个 completion，优势为 $A_i = r_i - \frac{1}{K}\sum_i r_i$；若 $K$ 个 completion 全部失败得零奖励，该 prompt 不贡献任何梯度（signal loss）。常规补救是整体增大 $K$，但这会给简单问题引入伪失败带来的噪声，且计算被均匀分摊而非按难度分配。其二是分布层面：显式课程类方法（如 An et al., 2025 的 No-Positive Resampling）通过不再重采样已解出的简单 prompt 来改变数据分布，论文的 Figure 14 显示这会让简单子集性能在训练早期就开始退化。
+
+论文的定位因此不是「再提一个课程学习变体」，而是把问题重新表述为计算分配（signal efficiency）而非信号损失（signal loss）：在异步 RL 下对未解 prompt 迭代采样，让简单 prompt 快速退出、困难 prompt 获得更多采样，从而在不显式改变 prompt 分布的前提下把计算从易题搬到难题。作者明确将 NGU 与显式课程方法（GRESO、No-Positive Resampling）视为正交且互补，并指出与最相似的 Reinforce-Ada-Seq-Positive 的差别正源于后者使用同步 RL，无法获得计算效率收益。
+
+## 核心主张
+
+论文的核心主张可归纳为：RL 对 LLM 的提升与初始能力成正比（Matthew Effect）；等量采样的 GRPO 因全零奖励组无梯度而加剧该效应；NGU 通过「迭代采样直到找到正确答案或以概率 $p$ 放弃」实现按难度动态分配计算；该机制在数学与代码任务上优于强基线。需要区分的是，前两条属于现象描述与机制归因，第三条是方法设计，第四条是经验结论，其证据强度依次递减。
+
+| # | 主张 | 证据 | 状态 |
+|---|---|---|---|
+| C1 | RL 提升与模型初始能力成正比，简单任务提升大、困难任务提升小 | §2 图 1，跨数学（AIME pass@1）、代码（LCBv5 pass@1）、智能体编码（SWEBenchVerified 人工时间分桶）三个域 | 作者主张 |
+| C2 | GRPO 对每个 prompt 等量采样 $K$ 个 completion，全零奖励组不贡献梯度，是 Matthew Effect 的原因之一 | §3 优势公式 $A_i = r_i - \frac{1}{K}\sum_i r_i$ 及 signal loss 假设 | 与共识一致 |
+| C3 | NGU 对未解 prompt 迭代采样，以概率 $p$ 继续、否则放弃，实现按难度动态分配计算 | §4 方法描述与附录 E 算法 1 | 作者主张 |
+| C4 | NGU 在数学与代码任务上优于强 RL 基线，能通过最难的编码测试 | §5 数学扩展实验、§6 Manufactoria 编码实验 | 存疑 |
+| C5 | NGU 必须过滤过旧的 rollout 不参与损失，但把过滤后的 completion 纳入 GRPO 基线计算可提升性能 | 附录 C.2 图 11、图 12、图 13 | 作者主张 |
+| C6 | 不重采样简单 prompt 会不可逆地改变数据分布，导致简单问题性能退化 | 附录 C.2 图 14（GSM8k，16/16 全对不再重采样） | 作者主张 |
+
+最强的是 C2：它是对 GRPO 组基线机制的数学陈述，与既有文献（Xiong et al., 2025 的 signal loss 讨论）一致，不依赖本文实验即可验证，因此可作为迁移到自有场景的可靠出发点。C1 次之，其证据是跨三个域、多个模型与数据集的评测趋势，但难度分桶依赖初始 pass@1 或人工时间标注，属于相关性证据而非因果识别，且论文未给出效应量的统一量化。
+
+最弱的是 C4。证据表中该主张对应的实验条目（Deepscaler Math、Manufactoria）只记录了预算与「复现了 Li et al. (2025) 的 Math RLVR 设置并取得更好的基线结果」这类描述，没有可核对的指标数值；同时论文自述 Deepscaler 10k 数据集中「a significant amount of data has pass@32 = 0」（图 16），说明训练分布本身偏向困难样本，而附录 B 又指出若任务更偏向困难问题，NGU 很可能无效——这使 C4 的外部效度受限。C5、C6 的消融结论同样只有图级描述，缺少可引用的数字，读者在迁移前应自行复现。
+
+## 机制与方法
+
+NGU（Never Give Up）是一种面向异步 RL 的动态采样策略，其目标是把计算从「模型已经会做」的简单 prompt 重新分配到「尚未解出」的困难 prompt 上，从而缓解作者所称的 RL for LLMs 中的马太效应。
+
+**问题背景与动机。** 论文指出，GRPO 及其变体使用经验组基线：对 $N$ 个 prompt 各采样 $K$ 个 completion，优势为
+
+$$A_{i}=r_{i}-\frac{1}{K}\sum_{i}r_{i}$$
+
+其中 $r_i$ 是第 $i$ 个 completion 的奖励。其直接后果是：若全部 $K$ 个 completion 都失败并得到零奖励，则该 prompt 不贡献任何梯度（即 signal loss）。作者认为，对所有 prompt 等量分配计算是马太效应的原因之一——困难 prompt 需要更多样本才可能采到正确解，却与简单 prompt 拿到同样的 $K$。
+
+**NGU 机制。** NGU 对每个 prompt 迭代采样：每次采样 $K$ 个 completion，若组内出现正确答案则停止并进入训练；若全错，则以概率 $p$ 把该 prompt 放回队列继续采样，否则放弃（give up）。$p$ 的作用是避免对「不可能解出」的 prompt 无限采样。这样，简单 prompt 很快完成、消耗少量样本，困难 prompt 获得更多采样机会，计算被隐式地按难度重新分配。作者强调 NGU 并不显式改变数据分布，而是隐式地适配分布以提升 performance-for-compute。
+
+**异步性与 off-policy 取舍。** NGU 依赖异步 RL（采样与训练解耦、允许 in-flight 更新）才能获得计算效率收益；论文明确指出这是它与最相似的 Reinforce-Ada-Seq-Positive 的关键差异——后者使用同步 RL，因而无法获得 NGU 的计算效率收益。代价是：NGU 的迭代采样使一个 completion 组整体完成得更晚，因此这些组通常更异步、更 off-policy，训练信号更差（尤其对负样本）。为此 NGU 过滤过旧的 rollout 不参与损失，但可将其纳入 GRPO 基线计算，并对正样本做锚定重缩放（Anchor Pos rescaling）。消融显示：过滤过旧 completion 是必要的（越陈旧性能越低）；把过滤后的 completion 纳入基线计算有益；在三种使用陈旧 completion 的方法中，downsampling 弱于另两种，锚定正样本在训练末期表现最好。
+
+**适用前提。** 该方法的直觉假设训练分布存在难度跨度，且有足够多的简单任务可供过滤。若任务整体偏向困难，NGU 可能无效——因为其迭代采样完成整组的时间可能长于一开始就显式采样更大的 $K$，从而带来更严重的 off-policy。作者也不建议设 $K=1$ 并用 $p_{NGU}$ 完全控制 batch size，因为这会加剧 off-policy。此外，当前 RL for LLM 设置是简单的 contextual bandit 而非 MDP，作者认为 NGU 在此设定下已足够，并把多步、agentic 环境留作未来工作。
+
+## 实验设置
+
+论文在三个实验块上验证 NGU：GSM8k（小模型数学）、Deepscaler Math（放大规模的数学 RLVR）、Manufactoria（编码任务）。所有实验使用异步 RL 框架并利用 in-flight 更新以尽量保持 on-policy，训练用 Deepspeed，推理用 vllm。Deepscaler 使用 Deepscaler 数据集的随机 10k 子集，作者检查了与评测集的重叠并称其极小；难度评估用初始模型在 Qwen 3 推荐温度 0.7、top-p 0.8 下进行，而评测 RL 训练后的模型时最优温度与 top-p 均为 1。Manufactoria 沿用 Sun et al. (2025) 的原始设置，作者注明真实设置与已发表的论文/代码细节略有不同（系与原作者沟通后得知）。
+
+| 基准 | 模型/规模 | 基线 | 预算 | 指标 |
+| --- | --- | --- | --- | --- |
+| GSM8k | Qwen2.5-0.5B-Instruct | 未说明 | 2000 steps，4xL40s GPUs，约 10 小时 | 未说明 |
+| Deepscaler Math | Qwen3-4B-Base | Math RLVR setup of (Li et al., 2025) | 1000 steps，8xH100 GPUs，约 15 小时 | 未说明 |
+| Manufactoria | Qwen3-4B-Instruct-2507 | 未说明 | 3000 steps，2 nodes of 8xH100 GPUs，约 28 小时 | 未说明 |
+
+关键超参数（Table 4/5/6）：三组实验的 Completions Per Prompt 均为 16，Temperature 均为 1.0，Prompt length 均为 2048，Advantage normalization 均为 centered，Non-stop penalty 与 Mask truncated completions 均为 False。其余差异为：GSM8k 的 Prompts per Batch 为 32、Learning rate $1\times10^{-6}$、Total Steps 2000、Async steps 1、Response length 4096、Clip higher 0.28、KL beta 0.0；Deepscaler 的 Prompts per Batch 为 8、Learning rate $1\times10^{-6}$、Total Steps 1000、Async steps 4、Response length 8192、Clip higher 0.272、KL beta 0.0；Manufactoria 的 Prompts per Batch 为 32、Learning rate $5\times10^{-7}$、Total Steps 1500、Async steps 1、Response length 12000、Clip higher 0.28、KL beta 0.01。注意 Manufactoria 的实验块预算写为 3000 steps，而 Table 6 的 Total Steps 为 1500，二者不一致，此处按原文分别照录。
+
+难度分布方面，Figure 16 显示 Deepscaler 10k 数据集对 Qwen 3 4B base 存在相当比例 pass@32 = 0 的样本（32 samples per prompt），说明该任务整体偏难但仍含一定量的简单与中等 prompt。GSM8k 上的消融（Figure 11–14）覆盖陈旧 completion 的最大年龄、陈旧 completion 的基线使用方式、奖励重缩放方法，以及「不重采样 16/16 全对的简单 prompt」的对照设置。
+
+## 证据与结果
+
+本节的数字全部来自附录 D 的超参数表与图注，正文（§5、§6）未给出可核对的定量结果，因此下表只呈现「设置」而非「效果」。
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| Completions Per Prompt $K$ | 16 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Prompts per Batch $N$ | 32 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Learning rate | $1\times10^{-6}$ | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Total Steps | 2000 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Temperature | 1.0 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Async steps | 1 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Prompt length | 2048 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Response length | 4096 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Clip higher | 0.28 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| KL beta | 0.0 | GSM8K, Qwen2.5-0.5B-Instruct | Table 4 |
+| Completions Per Prompt | 16 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Prompts per Batch | 8 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Learning rate | $1\times10^{-6}$ | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Total Steps | 1000 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Temperature | 1.0 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Async steps | 4 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Prompt length | 2048 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Response length | 8192 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Clip higher | 0.272 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| KL beta | 0.0 | Deepscaler Math, Qwen3-4B-Base | Table 5 |
+| Completions Per Prompt | 16 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Prompts per Batch | 32 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Learning rate | $5\times10^{-7}$ | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Total Steps | 1500 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Temperature | 1.0 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Async steps | 1 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Prompt length | 2048 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Response length | 12000 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| Clip higher | 0.28 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| KL beta | 0.01 | Manufactoria, Qwen3-4B-Instruct-2507 | Table 6 |
+| pass@32 | 0 | Deepscaler 10k dataset for Qwen 3 4B base, 32 samples per prompt | Figure 16 |
+
+注意两处内部不一致：Manufactoria 的正文预算写作「3000 steps」，而 Table 6 的 Total Steps 为 1500；摘录未说明二者差异。计算预算为 GSM8K 2000 步 / 4×L40s / 约 10 小时；Deepscaler 最快 1000 步 / 8×H100 / 约 15 小时；Manufactoria 3000 步 / 2 节点 ×8×H100 / 约 28 小时。
+
+消融与对照（均为图注级证据，无具体数值）：Figure 11 显示使用更陈旧（更 off-policy）的 completion 会降低 NGU 表现，故必须过滤；Figure 12 显示把过滤后的旧 completion 纳入 GRPO 基线（配合 Anchor Pos 重缩放）优于不使用；Figure 13 比较三种利用旧 completion 的方式，downsampling 弱于另两者，anchoring the positives 在训练末期最好；Figure 14 显示按 An et al. (2025) 不再重采样 16/16 全对的简单 prompt 会使简单子集性能退化。基线方面，作者称复现了 Li et al. (2025) 的 Math RLVR 设置并「achieve better baseline results」，但摘录未给出任何基线数值或 NGU 相对增益。
+
+## 证据强度评估
+
+证据分级：C（方法可信、方向性结论有支撑，但关键定量主张未被可核对的数据支持）。
+
+理由：本档案中所有可核对的数字都是超参数与计算预算（Table 4/5/6、Figure 16 的 pass@32=0），没有任何一条是 NGU 相对基线的性能数值。核心主张 C4（「NGU 在数学与代码任务上优于强 RL 基线，能通过最难的编码测试」）在证据表中被作者自己标为「存疑」，且全文摘录中 §5、§6 只有一句话式断言（"outperforms strong RL baselines in solving the hardest problems"、"pass all tests"），没有表格、没有置信区间、没有多种子。消融证据（Figure 11–14）同样只有图注文字，无数字。因此这属于「机制清晰、方向可信、幅度不可验证」的一类工作，不能按 A/B 级对待。
+
+主要威胁：
+
+1. 构造效度（construct validity）。「马太效应」的度量依赖按初始 pass@1 分桶后比较提升幅度，这天然受回归到均值与天花板/地板效应影响：初始准确率接近 0 的桶在评测噪声下更易被低估增益，接近 1 的桶则受上限约束。§2 用三个开源模型（Olmo 3.1 RL-Zero、DeepCoder、DeepSWE-Preview）跨域展示同一模式，这削弱了单一模型的偶然性，但摘录未给出任何分桶的样本量与误差棒，无法排除分桶伪影。
+
+2. 外部效度（external validity）。作者在 Limitations 中明确承认 NGU 依赖训练分布中存在「足够多需要被过滤的简单任务」；若任务偏向困难，NGU 的迭代采样反而比一开始就取更大 $K$ 更慢，且完成的组更异步、更 off-policy，训练信号更差（尤其对负样本）。同时作者不建议 $K=1$ 并用 $p_{NGU}$ 控制 batch size。这意味着方法收益高度依赖难度分布形状与异步框架（Piché et al., 2025 的 in-flight updates），迁移到同步 RL 或难度分布偏斜的场景时，收益可能消失甚至为负——这也正是作者用来区分 NGU 与 Reinforce-Ada 的论据。
+
+3. 基线选择与统计显著性。数学侧基线是作者自行复现的 Li et al. (2025) 设置，作者称复现结果「better」但未给数字，无法判断 NGU 的增益是来自方法本身还是来自更强的复现基线；Manufactoria 侧作者还指出原始论文与代码的设置在沟通后发现有出入，说明该环境的可复现性本身存在不确定性。所有实验均为单次运行（摘录未提及种子数或重复次数），无法评估方差。
+
+4. 评测污染与数据重叠。作者称已检查 Deepscaler 训练子集与评测集的重叠并「find them to be minimal」，但未给出重叠率数字或检查方法；GSM8K 与 Manufactoria 未见同类声明。此外 Deepscaler 10k 中「a significant amount of data has pass@32 = 0」，说明相当比例 prompt 对初始模型完全不可解，这部分 prompt 在 NGU 下会持续消耗采样预算直至按概率 $p$ 放弃，其对总计算开销的影响未被量化。
+
+## 边界与反例
+
+**什么观察会推翻结论。** 论文的核心因果链是：GRPO 等量采样 → 全零奖励组无梯度（信号损失）→ 计算分配不均 → 马太效应；NGU 通过迭代采样把计算从易题搬到难题。若出现以下观察，该链条即被削弱：(1) 在**已消除信号损失**的设置下（例如把 $K$ 提到足够大、使难题几乎总能采到至少一个正确解），难题提升仍显著小于易题——这说明信号损失不是主因，马太效应另有来源（如优化动力学、数据分布、评测饱和）。(2) NGU 的收益被证明主要来自**异步 off-policy 带来的等效更大 batch/更多步数**，而非难度自适应分配本身；论文未给出与「同等总采样量、固定 $K$ 的同步基线」的严格等算力对照（证据表中 GSM8K 的 async steps=1，Deepscaler 为 4，Manufactoria 为 1，异步程度本身不一致）。(3) 在难题占比极高的分布上 NGU 仍有效——这与作者自述的失效条件直接冲突。
+
+**最可能失效的条件（作者已声明）。** 附录 B 明确：NGU 假设训练分布有足够多「需要被过滤的简单题」；「If a task leans more heavily towards difficult problems, Never Give Up will likely not be effective」，原因是迭代采样凑齐一整组 completion 更慢，导致「finished groups of NGU completions are generally more asynchronously off-policy and therefore provide a worse training signal」，对负样本尤甚。作者因此明确不建议 $K=1$ 并用 $p_{NGU}$ 完全控制 batch size。此外，论文自述当前 RL for LLM 设置是「simple contextual bandits, not MDPs」，并把多步 agentic 环境列为 future work——即结论**未在长程、多步、稀疏奖励的 agentic 场景验证**。
+
+**读者可能误推的方向。** 其一，把 NGU 当作「提升绝对难题能力」的通用手段；论文的难题证据集中在 Deepscaler 与 Manufactoria，且 C4 在证据表中标注为「存疑」，不宜外推。其二，把 $p$ 当作可自由调小的旋钮以无限榨取难题算力——作者已警告这会加剧 off-policy。其三，把 Figure 14（不重采样 16/16 简单题导致简单题退化）误读为「任何课程学习都有害」；该反例针对的是**显式且不可逆地改变 prompt 分布**，作者对 GRESO 等在线课程的评价是「orthogonal and complementary」，而非否定。其四，忽略 stale rollout 过滤的必要性：Figure 11 显示使用更多陈旧 completion（更浅的线）会降低 NGU 性能，Figure 13 显示三种 stale 用法中 downsampling 最差、anchoring positives 在训练末期最好——这些是 NGU 生效的前提条件，而非可选细节。
+
+## 与知识库的关系
+
+**dapo（dynamic sampling）——新增。** 知识库中 DAPO 的动态采样以「过滤全对/全错组、显式改变参与训练的数据分布」为核心。本文新增的差异点是：NGU **不显式改变数据分布**，而是通过「迭代采样直到找到正确答案或以概率 $p$ 放弃」隐式重分配计算，并依赖异步 RL 才能兑现效率收益。可链接笔记：`rl/dapo-dynamic-sampling`、`rl/grpo-group-baseline`。
+
+**deepseek-math（GRPO）——印证并延伸。** 知识库已有 GRPO 组相对基线 $A_i = r_i - \frac{1}{K}\sum_i r_i$ 的公式与「全对/全错组无梯度」的常识。本文印证了该机制（证据表将 C2 标为「与共识一致」），并把它**延伸为对马太效应的因果解释**：全零奖励组不贡献梯度 → 难题长期无学习信号。新增的是「信号损失 → 计算分配不均 → 马太效应」这条解释链，以及 Figure 1 跨数学/代码/agentic coding 三域的经验证据（C1 为作者主张）。可链接笔记：`rl/grpo-group-baseline`、`rl/matthew-effect`（若不存在，建议新建）。
+
+**Reinforce-Ada（Xiong et al., 2025）——张力与澄清。** 知识库若记录 Reinforce-Ada-Seq-Pos 为「解决难题欠采样」的方法，本文给出的差异是**目标不同**：Reinforce-Ada 针对 signal loss（信号损失），NGU 针对 signal efficiency（信号效率/计算重分配）；作者称差异源于 Reinforce-Ada 使用**同步 RL**，因而无法获得 NGU 的计算效率收益。这是一条需要标注为「作者主张」的对比，因为论文未给出两者的等算力实验对照。可链接笔记：`rl/reinforce-ada`。
+
+**GRESO（Zheng et al., 2025）——张力。** 知识库若把 GRESO 记为「性能-计算权衡」的代表，本文的张力在于：作者认为 GRESO 显式减少难题采样以避免全零组，**可能无法提升最难样本**，且需要更多超参数；NGU 则声称不显式改变分布。注意这是作者的定性判断，非复现结论。可链接笔记：`rl/greso`。
+
+**No-Positive Resampling（An et al., 2025）——新增反例。** 本文用 Figure 14 新增一条经验反例：不重采样 16/16 全对的简单 prompt 会「fundamentally shifts the data distribution」，导致简单子集早期即退化，最终除最难子集外全部退化。这为知识库中「课程学习/难度过滤」类笔记提供了一个**边界条件**：显式且不可逆地移除简单题有代价。可链接笔记：`rl/curriculum-learning`、`rl/no-positive-resampling`。
+
+**总体定位。** 本文相对知识库的新增贡献是「马太效应」这一诊断框架 + NGU 这一动态采样机制；印证的是 GRPO 全零组无梯度；张力集中在与 Reinforce-Ada、GRESO 的动机与适用性对比上，且这些对比均为作者主张，尚无第三方复现。
+
+## 复现与验证计划
+
+目标：在最小成本下判断 NGU 的「按难度重分配计算」是否真的带来困难样本上的增益，而非仅仅复现作者的基线。
+
+环境与任务。作者使用异步 RL 框架（in-flight updates，Piché et al., 2025），训练用 Deepspeed，推理用 vllm。最小验证建议从 GSM8k 起步：Qwen2.5-0.5B-Instruct，2000 steps，4xL40s，约 10 小时（Table 4）。若资源允许，再上 Deepscaler 10k 子集 + Qwen3-4B-Base，1000 steps，8xH100，约 15 小时（Table 5）。Manufactoria 成本最高（3000 steps，2 节点 8xH100，约 28 小时，Table 6），不建议作为首轮验证。
+
+关键超参（照抄 Table 4/5）：$K=16$，$N=32$（GSM8k）/ $N=8$（Deepscaler），lr $1\times10^{-6}$，temperature 1.0，KL beta 0.0，clip higher 0.28 / 0.272，prompt length 2048，response length 4096 / 8192，advantage normalization centered。注意 Deepscaler 的 async steps 为 4，GSM8k 为 1。
+
+基线。GRPO 等量采样（同 $K$、同 $N$）；可选对照：No-Positive Resampling（An et al., 2025，Figure 14 显示会快速损害简单子集）与 Reinforce-Ada-Seq-Pos（作者称最相似，但用同步 RL）。
+
+判据。按难度分桶报告 pass@1，而非只看总体均值——这是论文的核心论点（Figure 1）。同时记录：全零奖励组比例、被过滤的 stale rollout 比例、以及 NGU 组的平均 off-policy 程度。
+
+预期失败模式（作者自陈的限制）。其一，若训练分布偏向难题、缺少可过滤的简单题，NGU 的迭代采样可能比一开始就取大 $K$ 更慢，且完成组更异步、更 off-policy，负样本信号更差；作者明确不建议 $K=1$ 并用 $p_{NGU}$ 控制 batch size。其二，若过滤过旧 rollout 的阈值过松，性能下降（Figure 11）。其三，stale completion 的处理方式影响结果：downsampling 弱于 anchoring positives（Figure 13）。以上均为作者主张，尚无独立复现，标注为存疑。
+
+## 术语与记号
+
+| 术语 | 含义 |
+| --- | --- |
+| Matthew Effect | 马太效应：RL 提升与模型初始能力成正比，简单任务更易、困难任务常停滞 |
+| Never Give Up (NGU) | 本文方法：对未解 prompt 迭代采样，直到找到正确答案或以概率 $p$ 放弃 |
+| GRPO | 组相对策略优化，用组内均值作基线 |
+| signal loss | 信号损失：全零奖励组不产生梯度，困难 prompt 无学习信号 |
+| asynchronous RL | 异步 RL：采样与训练解耦，允许 in-flight updates |
+| off-policy | 离策略：训练数据由旧策略生成，与当前策略不一致 |
+| stale rollout | 过旧的 rollout，NGU 中需过滤出损失 |
+| pass@1 / pass@32 | 一次 / 32 次采样的通过率，用于刻画问题难度 |
+| rollout | 模型生成的完整回答轨迹 |
+| Anchor Pos rescaling | 对正样本优势做锚定重缩放，用于利用被过滤的 completion |
+| No-Positive Resampling | 不再重采样已解出的简单 prompt（An et al., 2025） |
+
+记号。$K$：每个 prompt 每次采样的 completion 数（实验中为 16）。$N$：每批 prompt 数（GSM8k 32，Deepscaler 8，Manufactoria 32）。$p$（文中亦写作 $p_{NGU}$）：全错后继续采样的概率，否则放弃。$r_i$：第 $i$ 个 completion 的奖励。$A_i$：第 $i$ 个 completion 的 GRPO 优势，定义为
+
+$$A_{i}=r_{i}-\frac{1}{K}\sum_{i}r_{i}$$
+
+当全部 $K$ 个 completion 奖励为零时，$A_i$ 恒为零，该 prompt 不贡献梯度——这是论文对马太效应的机制解释，属与共识一致的部分。注意 $p$ 的具体取值未在给定摘录中给出，此处不填。
+
+## 自测
+
+以下问题用于检验读者是否真正掌握了 NGU 的机制、适用边界与证据强度。答案中标注「作者主张」处表示该结论仅有论文自述支撑，尚无独立复现。
+
+**Q1.** NGU 对单个 prompt 的采样终止条件是什么？概率 $p$ 在其中扮演什么角色？
+
+<details><summary>答案</summary>
+对每个 prompt 迭代采样 $K$ 个 completion：若组内出现正确答案则停止并进入训练；若全错，则以概率 $p$ 把 prompt 放回队列继续采样，否则放弃。$p$ 的作用是避免对「不可能」的 prompt 无限采样，同时把计算按难度重新分配——简单 prompt 快速完成，困难 prompt 获得更多采样。注意论文明确不推荐 $K=1$ 并用 $p_{NGU}$ 完全控制 batch size，因为这会加剧 off-policy 程度（作者主张）。
+</details>
+
+**Q2.** 论文把马太效应归因于 GRPO 的什么机制？请写出优势公式并说明「信号损失」如何产生。
+
+<details><summary>答案</summary>
+GRPO 使用经验组基线：$A_{i}=r_{i}-\frac{1}{K}\sum_{i}r_{i}$。若全部 $K$ 个 completion 都失败且奖励为零，则组内均值也为零，该 prompt 不贡献任何梯度，即信号损失。论文认为这是马太效应的原因之一（此点与既有共识一致，非本文首创）。标准补救是增大 $K$，但论文主张应改为动态分配计算。
+</details>
+
+**Q3.**（跨小节）NGU 与 Reinforce-Ada-Seq-Pos 都针对难题采样不足，为什么论文认为二者收益来源不同？这一差异对复现实验的硬件/框架有何隐含要求？
+
+<details><summary>答案</summary>
+论文称 Reinforce-Ada-Seq-Pos 解决的是难题欠采样（信号损失），而 NGU 关注重新分配计算（信号效率）；差异根源在于 Reinforce-Ada 使用同步 RL，无法获得 NGU 的计算效率收益。隐含要求：NGU 依赖异步 RL（in-flight updates）才能让「迭代采样直到解出」转化为 wall-clock 收益；若在同步框架下复现，采样等待会串行化，效率优势可能消失。此外论文的局限节指出，NGU 完成的组通常更异步、更 off-policy，训练信号更差（尤其负样本），因此必须配合过滤过旧 rollout。
+</details>
+
+**Q4.**（跨小节）论文在 GSM8k 上做了「不重采样简单 prompt」的消融（Figure 14），结论是什么？它如何反过来支持 NGU 的设计选择？
+
+<details><summary>答案</summary>
+Figure 14 显示：不重采样任何 16/16 全对的 prompt 会根本性改变数据分布，训练早期最简单的子集就开始退化，最终除最难子集外全部退化。论文的结论是不重采样简单 prompt 会损害其性能，应避免显式且不可逆地改变 prompt 分布。这支持 NGU 的设计：NGU 不显式改变数据分布，而是隐式适配分布以提升 performance-for-compute，因此与课程式方法（如 GRESO、No-Positive Resampling）正交且互补。
+</details>
+
+**Q5.**（跨小节）在什么任务分布下 NGU 可能失效？请结合论文给出的 Deepscaler 难度统计与异步性代价说明。
+
+<details><summary>答案</summary>
+论文局限节指出：NGU 的直觉假设训练分布存在足够多需要被过滤的简单任务。若任务偏向困难问题，NGU 可能无效——因为迭代采样完成一整组 completion 比一开始就显式采更大的 $K$ 更慢，导致完成的组更异步、更 off-policy，训练信号更差（尤其负样本）。Deepscaler 10k 上对 Qwen3-4B-Base 采 32 样本，论文发现相当多数据 pass@32 = 0，但整体仍偏向困难的同时保有合理数量的简单/中等 prompt，因此 NGU 在该任务上仍可运作。注意：NGU 在数学与代码上优于强基线的结论（C4）在证据表中被标为「存疑」，尚无独立复现。
+</details>

@@ -1,46 +1,211 @@
 ---
 id: rrsi-regularized-harness-rsi
 title: RRSI：正则化 Agent Harness 的递归自改进
-summary: 针对 harness 演化在有限 evolve 集上反复搜索导致的过拟合，提出在提案与选择两侧加正则，使改进可迁移到未见基准。
+summary: 论文研究 Agent Harness 的递归自改进（RSI）中的泛化问题：在有限 evolve set 上反复提出并选择编辑会导致自适应过拟合，evolve 分数上升而未见任务无增益。
 stage: FRONTIER
 track: Agent 系统
+kind: paper
+depth: deep
+evidenceGrade: C
 order: 45
-minutes: 18
-updated: '2026-09-22'
+minutes: 58
+updated: '2026-09-24'
 review: LLM 全文精读草稿 · 待人工复核
 origin: llm-fulltext
 paper_id: 2609.24972
 reading_depth: full-text
 evidence_level: full-text-llm-draft
+claim_count: 5
 full_text_url: https://arxiv.org/html/2609.24972
-objectives: [理解 harness 级递归自改进中 evolve-to-transfer 差距的成因分类, 掌握 RRSI 在提案侧与接受侧分别施加的正则化思路, 能判断该文结论的证据强度与未验证边界]
-tags: [harness-evolution, self-improvement, generalization, overfitting, agent-system]
+objectives: [理解 harness evolution 中自适应过拟合的成因与三种归因, 掌握 RRSI 提案侧与选择侧的正则化机制及其 L0/L1/L2 类比, 能解读 evolve-to-transfer 差距的消融证据与 token 成本权衡, 评估 harness 可迁移性对替代模型规模的工程意义]
+tags: [harness-evolution, recursive-self-improvement, adaptive-overfitting, regularization, ood-generalization, agent-harness]
 sources: [rrsi-regularized-recursive-self-improvem]
-related: [modularrsi-harness, sol-pi-auto-research-harness, harness-design-coding-agents]
+related: [modularrsi-harness, harness-design-coding-agents, sol-pi-auto-research-harness]
 prerequisites: []
 ---
-## 论文要解决的问题
+## 问题与语境
 
-论文把 LLM Agent 视为「冻结骨干模型 + harness（提示、控制流、工具接口、记忆与上下文管理）」的系统，并指出近期 Agent 产品进步多来自 harness 工程而非新权重。已有共识是这类工程高度依赖人工读失败轨迹、手改脚手架，因此受限于工程师能读多少轨迹。作者的主张是：用 LLM 自动迭代改进 harness 构成一种 Agent 系统级的递归自改进（RSI），但若反复用同一个有限 evolve 集的反馈来提案与选择编辑，会产生「自适应过拟合」——evolve 集分数上升，却未必迁移到未见任务。作者进一步把过拟合拆成三类耦合行为：编码基准特定模式、追逐评估噪声、累积无益复杂度。
+Agent 的能力不只由权重决定：冻结骨干之外的一切——系统与任务提示、控制流、工具接口、记忆与技能文件、上下文管理——共同构成 harness，并直接决定长程任务能否完成（Rajasekaran, 2026; Lopopolo, 2026）。近期 agent 产品的进展大量来自 harness 工程而非新权重（Weng, 2026; Zhang and Khattab, 2026; Karten et al., 2026a），但这一工程仍以人工为主：工程师阅读失败轨迹、手工调整 scaffold，进度受限于人能读多少条轨迹。
 
-## 方法
+已有自动化路线让 LLM 依据任务反馈迭代改写 harness（Lou et al., 2026; Lee et al., 2026b; Lin et al., 2026a; Nie et al., 2026; Chen et al., 2026 等），构成 agent 系统层面的递归自改进（RSI）。其失效点在于搜索动力学本身：测试时的 harness 演化反复用同一个有限 evolve set 提出并选择编辑，形成自适应过拟合——evolve 分数上升而未见任务无增益。论文将成因归为三类耦合行为：编码基准特定模式、追逐评估噪声、累积不改善底层机制的复杂度。已有研究报告演化与 held-out 表现之间存在显著差距，且表面提升可能来自任务特定拟合或测试时算力增加而非可复用机制（Wang et al., 2026b; Ding et al., 2026; Lin et al., 2026b），因此近期工作开始显式分离演化集与评测集（Huang et al., 2026d; Ke et al., 2026; Zhang et al., 2026d）。
 
-RRSI 的核心主张是：不限制 harness 哪些组件可改（保持开放编辑空间），而是正则化「有限且有噪声的反馈如何被转化为持久改动」。它同时约束演化回路两侧：提案侧鼓励更简单、更可复用的编辑，并过滤任务特定逻辑；接受侧用噪声调整后的基线做稳健选择，避免保留由基准特定信号、评估噪声或不必要复杂度驱动的改进。附录说明文中借用的 Lasso/Ridge 等术语仅表示复杂度控制的类比角色，并不真的优化对应范数惩罚目标，异构 harness 组件也不被当作共享连续参数向量的坐标。
+论文的定位不是提出新的编辑对象或更强的 proposer，而是把正则化思想搬到搜索轨迹上：保持 harness 编辑空间 $\Omega(H)$ 完全开放，只约束有限且有噪声的反馈如何被转化为持久改动。这与并发工作（如把泛化作为显式搜索目标，或用多样性归档替代贪心选择）正交。
 
-## 证据与实验
+## 核心主张
 
-实验覆盖三个领域八个基准：编码（Terminal-Bench 2.1、SWE-bench Verified）、Agent 工作区（Harvey LAB、JobBench、GDPval、APEX-Agents）、工程设计（EngDesign、Frontier-Eng）。每个领域只在单一 suite 上演化，再原样跑到 held-out 基准。作者报告：evolve 集最多提升 14.1 分，六个 held-out split 全部提升，OOD 最多提升 4.7 分，且策略 token 消耗低于未正则化演化；相对先前基线平均最多提升 22.9%。消融显示去掉接受侧约束会抬高 evolve 分但降低迁移并增加约一半 token；去掉提案侧约束在 evolve 上仅损失 0.2 分、OOD 损失 1.7 分。作者还用 Gemini 3.5 Flash 与 Claude Opus 4.8 分别演化，并把 Gemini 演化出的 harness 原样用于更小的 Gemini 3.1 Flash Lite，报告 Terminal-Bench 2.1 从 11.2 升到 14.6。工程设计任务由确定性模拟器评分，作者以此论证增益不是 judge 评分或共享任务格式的产物。
+论文的核心主张可归纳为四条，均出自作者自述与自建实验，尚无第三方复现。
 
-## 边界与未解问题
+| # | 主张 | 证据 | 状态 |
+|---|---|---|---|
+| C1 | RRSI 在全部六个 held-out 划分上均提升，最高 OOD +4.7 分；evolve 增益最高 14.1 分 | §4.2 图3 与表1；引文 "gains up to 14.1 points on the evolving split and improves all six held-out splits, by up to 4.7 points out of distribution" | 作者主张 |
+| C2 | 去掉任一侧正则化都会提高 evolve 分数但降低迁移 | §4.3 表2 消融：去接受约束 evolve 90.5→91.5、OOD 43.6→41.0、token 增半；去提议约束 evolve 仅降 0.2、OOD 降 1.7；两者皆去 evolve 92.8 最高、OOD 40.3、3.80M tokens | 作者主张 |
+| C3 | RRSI 是各演化 harness 中 token 成本最低的，2.42M/试 | §4.3 图4(a) 与表2；对比 AHE "3.82 million tokens per trial, 58% more than ours, for 4.4 points less" | 作者主张 |
+| C4 | 用 Gemini 3.5 Flash 演化的 harness 在未见过的 Gemini 3.1 Flash Lite 上仍提升 3.4 分 | §4.3 表4 跨模型迁移：11.2→14.6 | 作者主张 |
+| C5 | 相对先前的平均基线，OOD 上最多领先 22.9% | §1 引文 "outperforming the average prior baseline by up to 22.9%" | 作者主张 |
 
-以上数字均来自论文自述，本卡片未做复现或代码核验，应视为作者主张而非已确证结论。作者自列局限：只研究冻结骨干下的 harness 级 RSI，不涉及演化中更新权重；仍依赖有限 evolve 集与若干正则超参，效果可能取决于反馈信号质量与搜索预算；跨架构、工具生态与更长自改进过程的泛化仍需更广验证。此外，基线对比中「evolve 分最高者 OOD 反而最差」的排序反转，是单次实验设置下的观察，样本量与统计显著性在摘录中未给出。
+最强的是 C2。它是唯一直接检验机制而非结果的证据：消融显示 evolve 分数与 OOD 迁移方向相反，且"两者皆去"这一臂拿到全场最高的 evolve 分数 92.8 却把 OOD 压到 40.3（距未演化 harness 的 39.7 不到一分），同时 token 从 2.42M 涨到 3.80M。这组数字与论文的因果叙事（evolve 分数本身不是可靠信号）自洽，且不依赖任何外部基线实现。
+
+最弱的是 C5 与 C4。C5 的 22.9% 是相对"平均先前基线"的相对值，论文未在证据表中给出该均值的绝对数与计算口径，无法核验。C4 只有单点、单基准（Terminal-Bench 2.1）、单模型对的结果，且基座分数仅 11.2，绝对增益 3.4 分落在小样本波动可能覆盖的范围内，论文也未报告重复次数或置信区间。C1 与 C3 依赖作者自建的演化流程与超参配置，属于"作者主张"而非共识；C3 的 token 优势还受 harness 与工具环境实现细节影响，跨实现迁移性未知。
+
+## 机制与方法
+
+RRSI 的问题设定是：harness 演化在有限的 evolve set $\mathcal{D}_{\mathrm{evolve}}$ 上反复提出并选择编辑，形成自适应经验优化，从而产生 evolve-to-transfer 差距。作者把差距归因于三类耦合行为：基准特定拟合、追逐评估噪声、复杂度累积。RRSI 的取舍是**不限制编辑空间**，只正则化搜索轨迹。
+
+形式化上，agent 记为 $A=(\pi,H)$，$\pi$ 为冻结策略，$H$ 为 harness（提示、控制流、工具接口、记忆与技能文件、上下文管理）。$\Omega(H)$ 表示由 $H$ 经任意源码编辑可达的 harness 集合，RRSI 刻意保持其开放。任务集 $\mathcal{D}$ 上的期望验证分数与策略 token 成本为
+
+$$S(H;\mathcal{D})=\mathbb{E}_{x\sim\mathcal{D}}\mathbb{E}_{\tau\sim A(\cdot\mid x)}[r(x,\tau)],\qquad C(H;\mathcal{D})=\mathbb{E}_{x\sim\mathcal{D}}\mathbb{E}_{\tau\sim A(\cdot\mid x)}[c(\tau)]$$
+
+其中 $r(x,\tau)\in[0,1]$ 由验证器给出（单元测试或 LLM-as-a-judge），$c(\tau)$ 为轨迹消耗的策略 token 数。未正则化的演化循环为
+
+$$\mathcal{H}_{t}=\{H_{t}^{(1)},\ldots,H_{t}^{(m_{t})}\}\sim P_{0}(\cdot\mid H_{t},\mathcal{F}_{t}),\qquad H_{t+1}=\arg\max_{H^{\prime}\in\mathcal{H}_{t}\cup\{H_{t}\}}\hat{S}(H^{\prime};\mathcal{D}_{\mathrm{evolve}})$$
+
+$\mathcal{F}_t$ 为第 $t$ 轮反馈，$\hat{S}$ 为 $k$ 次随机运行下的经验分数。关键在于 $\mathcal{D}_{\mathrm{evolve}}$ 被跨轮自适应复用：第 $t$ 轮的候选依赖同一批任务早先轮次的测量。
+
+RRSI 在两侧施加正则化。**提案侧**：退火编辑预算 $b_t$ 限制单轮可激活的独立编辑数（类比 $L_0$ 基数约束）；基于整轮编辑历史 $L_t$ 做证据感知的信用分配，避免重复投入已被证伪的假设；结构剪枝移除长期无产出的组件（窗口 $n_{\mathrm{prune}}$，类比 Lasso/$L_1$ 稀疏化）；停滞时给出探索指令。**选择侧**：候选须通过非补偿性准则才可替换现任——排除显式泄漏（leakage critic）、要求增益超过由基座 harness 重复评估校准的经验噪声容限 $\delta$、并按基础成本允许量 $\beta_0$ 与随增益变化的成本允许量 $\beta_1$ 检查复杂度增长是否被增益偿付（类比 Ridge/$L_2$ 收缩）。若无可接受候选则保持现任不变。作者明确说明 $L_0$/$L_1$/$L_2$ 仅表示复杂度控制中的类比角色，过程并不优化相应的范数惩罚目标，异构 harness 组件也不被视为共享连续参数向量的坐标。
+
+适用前提：骨干策略冻结、不更新权重；依赖有限 evolve set 与多个正则超参；跨架构、工具生态与更长自改进过程的验证不足（作者自述局限）。因此该机制的可迁移性取决于反馈信号质量与搜索预算的匹配。
+
+## 实验设置
+
+实验覆盖三个域、八个基准：编码（Terminal-Bench 2.1、SWE-bench Verified）、agentic workspace（Harvey LAB、JobBench、GDPval、APEX-Agents）、工程设计（EngDesign、Frontier-Eng）。每个域在单一 suite 上演化 harness，随后原样迁移到 held-out 基准。Terminal-Bench 2.1 为 89 个容器化终端任务，由任务自带单元测试判定；Harvey LAB 划分为 120 个任务的固定 evolve set 与 40 个任务的 in-distribution held-out set；EngDesign 含 61 个设计任务，各由冻结模拟器评分而非 judge 模型。OOD held-out 包括 SWE-bench Verified、JobBench、GDPval、APEX-Agents 与 Frontier-Eng。
+
+基线为未演化的基座 harness $H_0$ 与四种近期 harness 演化方法：Meta-Harness、AHE、TTHE、HarnessX。所有基线从同一 $H_0$ 出发，共享冻结策略、evolve set 与候选预算。策略全程冻结为 Claude Opus 4.8；proposer、跨轮失败反馈的 analyst 与 leakage critic 均为 Claude Opus 4.8。基座 harness 为 Terminus-2（编码）、MCP 工具网关上的 ReAct 循环、dynamic toolbelt，以及 ReSum 式上下文管理（Harvey LAB 与 EngDesign）。harness 与其基线始终在同一窗口、同一工具环境、同一 judge 与相同 trial 数下评估。
+
+| 基准 | 模型/规模 | 基线 | 预算 | 指标 |
+| --- | --- | --- | --- | --- |
+| Terminal-Bench 2.1 | Claude Opus 4.8 | H0 74.2 | 20轮 | accuracy |
+| SWE-bench Verified | Claude Opus 4.8 | H0 82.0 | OOD | resolve rate |
+| Harvey LAB OOD 均值 | Claude Opus 4.8 | H0 39.7 | 20轮 | OOD Avg. |
+| Terminal-Bench 2.1 | Gemini 3.5 Flash | 未说明（$H_0$ 64.6） | 未说明 | accuracy |
+| Terminal-Bench 2.1（跨模型迁移） | Gemini 3.1 Flash Lite（未参与搜索） | 未说明（$H_0$ 11.2） | 未说明 | accuracy |
+
+消融在 agentic workspace 实例上进行，共享基座 harness、策略、evolve split、轮数与候选预算，仅改变所研究的因子。成本以 evolve split 上的每 trial 策略 token 数衡量：$H_0$ 为 1.56M、RRSI 为 2.42M、无接受约束为 3.59M、无提案约束为 2.69M、两者皆去为 3.80M；AHE 为 3.82M。
+
+## 证据与结果
+
+RRSI 的实验覆盖三个域、八个基准，演化在单一 suite 上进行，最终 harness 原样迁移到 held-out 与 OOD 基准。以下数字均照抄自摘录，未在摘录中出现的量一律标注「摘录未给出」。
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| Terminal-Bench 2.1 (Evolve) | 74.2 → 80.2 (+6.0) | Claude Opus 4.8 | 表3 |
+| SWE-bench Verified (OOD) | 82.0 → 83.8 (+1.8) | Claude Opus 4.8 | 表3 |
+| Terminal-Bench 2.1 (Evolve) | 64.6 → 78.7 (+14.1) | Gemini 3.5 Flash | 表3 |
+| SWE-bench Verified (OOD) | 76.8 → 79.0 (+2.2) | Gemini 3.5 Flash | 表3 |
+| Terminal-Bench 2.1 | 11.2 → 14.6 (+3.4) | Gemini 3.1 Flash Lite（未参与搜索） | 表4 |
+| Harvey LAB (Evolve) | 89.4 → 90.5 | RRSI | 表1/表2 |
+| Harvey LAB (ID Held-out) | 86.9 → 89.2 | RRSI | 表1/表2 |
+| JobBench | 36.0 → 40.7 | RRSI | 表1 |
+| GDPval | 48.8 → 52.3 | RRSI | 表1 |
+| APEX-Agents | 34.2 → 37.9 | RRSI | 表1 |
+| OOD Avg. | 39.7 → 43.6 | RRSI，JobBench/GDPval/APEX-Agents 均值 | 表1/表2 |
+| Tokens/trial (m) | 2.42 | RRSI | 表2 |
+| Tokens/trial (m) | 1.56 | $H_0$ | 表2 |
+| Tokens/trial (m) | 3.80 | 无正则演化 | 表2 |
+| Tokens/trial (m) | 3.82 | AHE | §4.3 |
+| Steps/trial | 26.3 | RRSI | §4.3 |
+| Steps/trial | 21.2 | $H_0$ | §4.3 |
+
+消融（表2，agentic workspace 实例）：去接受约束使 evolve 90.5→91.5、OOD 43.6→41.0、token 增半；去提议约束 evolve 仅降 0.2、OOD 降 1.7；两者皆去 evolve 达 92.8（各臂最高）、OOD 40.3、3.80M tokens。对照方面，四个基线（Meta-Harness、AHE、TTHE、HarnessX）在 evolve 上均有效，ID held-out 相近，但 OOD 排序反转：Meta-Harness 仅 +0.9，HarnessX 回到基线，AHE 与 TTHE 低于 $H_0$（TTHE 低 1.7）。RRSI 的 evolve 增益是各演化 harness 中最小者，却是唯一 OOD 均值超过 $H_0$ 一点以上的。EngDesign 与 Frontier-Eng 由确定性模拟器/测试台评分，摘录称增益在此不变，但具体数值摘录未给出（仅给出 Frontier-Eng +4.3 Medal points、相对提升 24.3%）。
+
+## 证据强度评估
+
+证据分级：B（内部一致、消融与多基线对照齐备，但缺统计不确定性与独立复现）。
+
+理由：正面证据链较完整——同一 $H_0$、同一冻结策略、同一 evolve set 与候选预算下对比四个近期方法（表1），消融直接检验了两组正则化各自的贡献（表2），跨策略（Claude Opus 4.8 / Gemini 3.5 Flash，表3）与跨模型（Gemini 3.1 Flash Lite，表4）迁移均有数字，且确定性评分的 EngDesign/Frontier-Eng 排除了 judge 中介这一替代解释。但所有结果均为作者自报，摘录中未见任何独立复现或第三方评测，故不能升级为 A。
+
+主要威胁：
+
+1. 统计显著性与噪声。摘录未给出任何置信区间、方差或多次运行的分布。RRSI 的 OOD 增益（如 SWE-bench +1.8、Harvey ID held-out +2.3）量级接近其自身定义的噪声容限 $\delta$ 所针对的尺度；论文用 $\delta$ 做接受门槛，却未报告 $\delta$ 的数值与 held-out 上的误差棒，因此无法判断这些增益是否超出评测噪声。这是最实质的威胁。
+
+2. 构造效度（OOD 的「分布外」程度）。OOD 基准与 evolve 集虽在任务描述/工具/验证器上不同，但同属编码或 agentic workspace 家族，且部分由同一 judge 模型（Gemini-3.5-Flash）评分。Harvey LAB、JobBench、GDPval 均为 judge 评分，作者自己也承认存在「按 judge 偏好写作」的替代路径，仅靠 EngDesign/Frontier-Eng 的确定性评分部分封堵，而该域的逐项数字摘录未给出。
+
+3. 外部效度。局限节明确：仅冻结骨干、不更新权重；依赖有限 evolve 集与多个正则超参；跨架构、工具生态与更长自改进过程的验证不足。因此结论目前只能迁移到「冻结骨干 + 有限 evolve 集 + 20 轮量级」的 harness 演化场景，不能外推到权重更新的 RSI。
+
+4. 基线选择与评测污染。基线为四个近期方法，均从同一 $H_0$ 出发，选择合理；但 RRSI 的 evolve 增益最小（90.5），而基线在 evolve 上更高（Meta-Harness 93.0），说明「evolve 分数高」与「迁移好」在本设置下确实解耦，这削弱了「基线被调弱」的质疑。残余风险在于：所有方法共享同一 evolve set 与候选预算，若该 evolve set 对 RRSI 的提议先验更友好，则比较仍可能偏向 RRSI；摘录未提供 evolve set 的构造细节或敏感性分析。
+
+## 边界与反例
+
+**什么观察会推翻结论。** 核心结论是「正则化提议侧与选择侧能缩小 evolve-to-transfer 差距」。若在相同 $H_0$、相同冻结策略、相同候选预算下，去掉正则化后 OOD 均值不降反升（即出现 evolve 与 OOD 同向上升的臂），则「正则化换迁移」的因果解释被推翻。表 2 中 Unregularized 的 evolve 最高（92.8）而 OOD 最低（40.3），是支持性证据；但这是单一 agentic workspace 实例、单一 evolve split 的结果，作者未报告跨 split 的方差或重复种子，因此该反例尚未被系统性排除。
+
+**最可能失效的条件。** 其一，反馈信号质量差时：Limitations 明确「effectiveness may depend on the quality of the feedback signal and the chosen search budget」，若验证器噪声大或 rubric 稀疏，$\delta$ 的校准会失真，非补偿性接受准则可能退化为随机拒绝。其二，evolve set 过小或与目标分布差距过大时，提议侧的退火预算 $b_t$ 与剪枝窗口 $n_{\text{prune}}$ 缺乏足够轮次收敛。其三，跨架构迁移：作者只验证了同族更弱骨干（Gemini 3.5 Flash → Gemini 3.1 Flash Lite，+3.4），未验证跨厂商、跨工具生态（Limitations 自认「broader validation is needed」）。
+
+**读者可能误推的方向。** 第一，把「harness 可替代规模」外推为「harness 演化可替代权重更新」——本文全程冻结骨干，不涉及权重更新，Limitations 首条即划清此界。第二，把 +4.7 OOD 当作普适增益：该数字是六个 held-out 划分中的最高值，且不同域增益差异大（Harvey LAB ID held-out 仅 +2.3，Frontier-Eng +4.3 Medal）。第三，把 token 更低（2.42M vs AHE 3.82M）误读为「演化本身省算力」——作者自己指出 $H_0$ 仅 1.56M/21.2 步，「evolution does buy part of its gain with test-time compute」，RRSI 只是把这份开销压得更低。第四，把 Medal Score 与 accuracy 直接横向比较。
 
 ## 与知识库的关系
 
-本文与 ModularRSI 一类「模块化、可泛化的 harness 递归自改进」工作同属一条线索，但切入点不同：ModularRSI 关注改什么与如何模块化，RRSI 关注搜索动力学本身的正则化，作者自称与这些方法正交。它也与自动研究型 harness（如 sol-pi 类）共享「用反馈驱动脚手架演化」的框架，可作为 harness 设计笔记中「演化 vs 手工」权衡的补充。
+**新增（此前笔记未覆盖）。** 本笔记首次把「harness 演化的自适应过拟合」形式化为可正则化的搜索问题，并给出三组类比映射：编辑预算 $b_t$ ↔ $L_0$ 基数约束、结构剪枝 ↔ Lasso/$L_1$ 稀疏化、复杂度感知接受 ↔ Ridge/$L_2$ 收缩。此前关于 RSI 的笔记多停留在「自我改进是否有效」，缺少「如何约束反馈到持久状态的转换」这一层。可链接：`note:rsi-agent-system-level`、`note:harness-engineering-survey`。
+
+**印证。** 与既有结论一致的有两点：(1) harness 工程可迁移且可部分替代规模——本文用 Gemini 3.5 Flash 演化的 harness 在未见过的 Gemini 3.1 Flash Lite 上仍 +3.4，且 Related Work 引 Yang et al. 2026a 的「harness 替代规模」；(2) 报告增益常不跨 suite 存活——本文引 Wang et al. 2026b、Huang et al. 2026d，并用表 1 复现了该现象（TTHE 在 OOD 上比 $H_0$ 低 1.7）。可链接：`note:harness-transferability`、`note:benchmark-overfitting-in-agent-eval`。
+
+**张力。** 与「多样性保持的候选归档」路线存在方法论张力：Luo et al. 2026 用 diversity-preserving archive 直接对抗过拟合，而 RRSI 走的是「非补偿性接受 + 噪声容限 $\delta$」的单 incumbent 路线，两者是否可叠加、是否互斥，作者未做对比实验，属未决。另与「把泛化作为显式搜索目标」（Zhang et al. 2026d）存在目标函数层面的张力：RRSI 不改目标，只改搜索动力学，作者自称「orthogonal」，但正交性未经联合实验验证。可链接：`note:diversity-preserving-harness-search`、`note:generalization-as-explicit-objective`。
+
+**待补。** 本笔记尚无「正则超参敏感性」条目（$\beta_0,\beta_1,n_{\text{prune}},\delta$ 的取值与鲁棒性在 Appendix D.1，未纳入本次摘录），建议后续补 `note:rrsi-hyperparameter-sensitivity`。
+
+## 复现与验证计划
+
+最小验证目标：确认「正则化选择侧」而非「更多搜索」带来 OOD 迁移。建议按以下顺序执行。
+
+环境与任务。取 agentic workspace 实例：Harvey LAB 的固定 evolve set（120 任务）与 pristine ID held-out（40 任务），OOD 用 JobBench、GDPval、APEX-Agents 三者均值（OOD Avg.）。骨干冻结为 Claude Opus 4.8，proposer、跨轮失败反馈 analyst 与 leakage critic 同为 Claude Opus 4.8；基座 harness 为 MCP 工具网关上的 ReAct 循环 + dynamic toolbelt + ReSum 式上下文管理。评估须与基线同窗口、同工具环境、同 judge、同 trial 数（附录 A）。
+
+基线与预算。基线为未演化 $H_0$ 与四个方法（Meta-Harness、AHE、TTHE、HarnessX），全部从同一 $H_0$ 出发、共享冻结策略、evolve set 与候选预算。主实验轮数为 20 轮。
+
+判据（可证伪）。第一，RRSI 的 evolve 增益应小于基线而 OOD Avg. 应超过 $H_0$ 一点以上：表 1/表 2 给出 $H_0$ 39.7、RRSI 43.6、Meta-Harness 仅 +0.9、AHE 与 TTHE 低于 $H_0$（TTHE 低 1.7）。第二，消融应复现「去任一侧正则化都提高 evolve 分数但降低迁移」：去接受约束 90.5→91.5、OOD 43.6→41.0、token 增半；去提议约束 evolve 仅降 0.2、OOD 降 1.7；两者皆去 evolve 92.8 最高、OOD 40.3、3.80M tokens。第三，成本判据：RRSI 2.42M tokens/试，AHE 3.82M、多 58% 而 OOD 低 4.4 分。
+
+预期失败模式。若你的复现中 evolve 与 OOD 同向上升，说明噪声容限 $\delta$ 校准过松或 evolve set 过大；若 OOD 全面低于 $H_0$，优先检查 leakage critic 是否失效与 judge 是否被 harness 风格迎合（可用 EngDesign/Frontier-Eng 的确定性评分交叉验证）。注意本计划仅覆盖冻结骨干、不更新权重的情形，跨架构与更长自改进未经验证。
+
+## 术语与记号
+
+| 术语 | 含义 |
+| --- | --- |
+| Agent Harness | 包裹冻结骨干模型的一切非权重部分：系统与任务提示、控制流、工具接口、记忆与技能文件、上下文管理 |
+| Recursive Self-Improvement (RSI) | 用当前系统的反馈改进塑造其后续行为的 harness，在 agent 系统层面实现的递归自我改进 |
+| Harness Evolution | 把 harness 当作优化变量、保持骨干策略冻结的迭代搜索过程 |
+| Evolve Set ($\mathcal{D}_{\mathrm{evolve}}$) | 用于生成反馈与选择候选的有限任务集，被跨轮自适应复用 |
+| Adaptive Overfitting | 因反复复用同一 evolve set 做自适应选择，evolve 分数上升而未见任务无增益的现象 |
+| Edit Budget ($b_t$) | 单轮允许激活的独立编辑数量上限，随轮次退火，类比 $L_0$ 基数约束 |
+| Structural Pruning ($n_{\mathrm{prune}}$) | 移除长期无产出的 harness 组件，产生更稀疏结构，类比 Lasso/$L_1$ 稀疏化 |
+| Complexity-aware Acceptance ($\beta_0,\beta_1$) | 抑制未受增益偿付的资源占用增长的选择准则，类比 Ridge/$L_2$ 收缩 |
+| Noise Tolerance ($\delta$) | 由基座 harness 重复评估得到的经验噪声带，增益须超过它才可被接受 |
+| Leakage Critic | 检测候选是否利用显式泄漏（如基准特定信号）的评审组件 |
+| Medal Score | Frontier-Eng 的评分方式：按金/银/铜阈值给 1、0.67、0.33 分，取任务平均 |
+| OOD Held-out | 搜索过程从未见过、任务描述或工具接口或验证器不同的分布外基准 |
+
+关键记号：agent 记为 $A=(\pi,H)$，$\pi$ 为冻结策略，$H$ 为 harness；$\Omega(H)$ 为 $H$ 经任意源码编辑可达的 harness 集合，RRSI 不限制它。任务集 $\mathcal{D}$ 上的期望验证分数与策略 token 消耗为
+
+$$S(H;\mathcal{D})=\mathbb{E}_{x\sim\mathcal{D}}\mathbb{E}_{\tau\sim A(\cdot\mid x)}[r(x,\tau)],\quad C(H;\mathcal{D})=\mathbb{E}_{x\sim\mathcal{D}}\mathbb{E}_{\tau\sim A(\cdot\mid x)}[c(\tau)]$$
+
+其中 $r(x,\tau)\in[0,1]$ 为 verifier 打分，$c(\tau)$ 为轨迹消耗的策略 token 数。有限 $k$ 次采样的经验量为 $\hat{S}(H)$、$\hat{C}(H)$。第 $t$ 轮候选集 $\mathcal{H}_t\sim P_0(\cdot\mid H_t,\mathcal{F}_t)$，$P_0$ 为无约束提议过程，$\mathcal{F}_t$ 为该轮反馈，$H_{t+1}$ 由 $\hat{S}$ 在 $\mathcal{H}_t\cup\{H_t\}$ 上选出。注意 $L_0$/$L_1$/$L_2$ 仅表示复杂度控制中的类比角色，过程并不优化相应的范数惩罚目标，异构 harness 组件也不视为共享连续参数向量的坐标。
 
 ## 自测
 
-1. 为什么「evolve 集分数上升」不能直接当作自改进成功的证据？
-2. RRSI 的提案侧与接受侧正则分别针对哪类过拟合行为？
-3. 若要质疑本文结论，你会优先检查哪些实验设计环节？
+以下问题用于检验你是否真正读懂了 RRSI 的「正则化搜索轨迹」而非「限制编辑空间」这一核心主张，以及证据链的强度边界。
+
+**Q1.** RRSI 声称保持 $\Omega(H)$ 完全开放，却仍能抑制过拟合。请说明它在提案侧与选择侧分别施加了什么约束，并解释为什么这些约束不构成对可达 harness 集合的限制。
+
+<details><summary>答案</summary>
+提案侧：退火编辑预算 $b_t$ 限制单轮可激活的独立编辑数（类比 $L_0$ 基数约束）；基于整轮编辑历史 $L_t$ 的证据感知信用分配；结构剪枝移除长期无产出组件（类比 $L_1$）；停滞时给出探索指令。选择侧：候选须通过非补偿性准则——排除显式泄漏、增益须超过由基座 harness 重复评估校准的噪声容限 $\delta$、按 $\beta_0,\beta_1$ 限制未被增益偿付的复杂度增长（类比 $L_2$）。这些约束作用于「搜索如何移动」与「哪些测量改进可成为永久状态」，而非定义 $\Omega(H)$ 本身；任意源码编辑仍可达，只是未必被接受为下一任 incumbent。
+</details>
+
+**Q2.** 表 2 中「两者皆去」的 evolve 分数为 92.8，是全部臂中最高的，但 OOD Avg. 仅 40.3。结合表 1 中 Meta-Harness 的表现，说明为什么「evolve 分数最高」不能作为方法优劣的判据。
+
+<details><summary>答案</summary>
+表 2 显示去掉两侧正则化后 evolve 升至 92.8（最高），OOD 却降到 40.3，接近未演化 harness 的 39.7，且 token 成本 3.80M/试（RRSI 为 2.42M）。表 1 中 Meta-Harness 是 evolve 上最强的基线（93.0），但 OOD 平均仅比 $H_0$ 高 0.9 分；AHE 与 TTHE 甚至低于起点，TTHE 低 1.7 分。这说明 evolve 分数上升可来自基准特定拟合、追逐评估噪声或复杂度累积，而非可迁移机制，因此必须看 held-out/OOD 才能判断。
+</details>
+
+**Q3.** 论文用 EngDesign 与 Frontier-Eng 的确定性评分来排除「judge 中介评分造成的假迁移」。这一论证解决了什么替代解释，又没有解决什么？
+
+<details><summary>答案</summary>
+解决的是：Harvey LAB、JobBench、GDPval 均由评判模型打分，harness 可能通过「按评判者偏好写作」而非真正改善工作来提分；EngDesign/Frontier-Eng 由各自冻结模拟器或测试台确定性评分，设计要么满足约束要么不满足，因此该路径被关闭，且确定性评分也移除了评判方差。未解决的是：迁移仍限于论文覆盖的三个领域与有限基准，作者在 Limitations 中明确跨架构、工具生态与更长自改进过程的验证不足；此外骨干权重始终冻结。
+</details>
+
+**Q4.**（跨小节）表 3 与表 4 共同支持「harness 是可迁移程序而非策略附属物」这一说法。请指出两表各自控制了哪个变量，以及它们合起来仍无法排除的混淆因素。
+
+<details><summary>答案</summary>
+表 3 控制的是搜索所用策略族：分别用 Claude Opus 4.8 与 Gemini 3.5 Flash 独立演化，均在未见过的 SWE-bench Verified 上迁移（+1.8 与 +2.2），说明收益不绑定单一策略族。表 4 控制的是评估策略能力：用 Gemini 3.5 Flash 演化的 harness 原样跑在从未参与搜索的 Gemini 3.1 Flash Lite 上，Terminal-Bench 2.1 从 11.2 升到 14.6（+3.4）。仍无法排除的混淆：两表都在 coding 域、同一 Terminal-Bench→SWE-bench 迁移路径上，未验证跨架构（如非 Gemini/Claude 系）与跨工具生态；且表 4 的绝对增益较小，作者归因于弱骨干可及任务更少，这本身也提示收益幅度依赖骨干能力。
+</details>
+
+**Q5.**（跨小节）若你要把 RRSI 迁移到自己的场景，根据方法描述与 Limitations，至少需要预先确定哪些量，且哪些量最可能成为失败点？
+
+<details><summary>答案</summary>
+需预先确定：噪声容限 $\delta$（须由基座 harness 重复评估校准）、退火编辑预算 $b_t$、成本允许量 $\beta_0,\beta_1$、剪枝窗口 $n_prune$，以及有限的 evolve set $\mathcal{D}_{evolve}$ 与轮数 $T$。最可能的失败点：Limitations 指出 RRSI 依赖有限 evolve set 与多个正则超参，效果可能取决于反馈信号质量与所选搜索预算；若 evolve set 太小或反馈噪声大，$\delta$ 校准与信用分配都会失真。此外方法仅适用于冻结骨干、不更新权重的设定，且跨架构/工具生态与更长自改进过程尚未充分验证。
+</details>

@@ -4,6 +4,9 @@ title: Agent 闭环：推理、工具、规划与记忆
 summary: 建立运行时结构，并区分工作流、ReAct 和参数学习。
 stage: FOUNDATION
 track: Agent 系统
+kind: system
+depth: overview
+evidenceGrade: C
 order: 7
 minutes: 15
 updated: '2026-09-08'

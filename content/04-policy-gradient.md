@@ -4,6 +4,9 @@ title: Policy Gradient、Actor-Critic 与 GAE
 summary: 用回报加权动作概率，并用价值基线改善梯度估计。
 stage: FOUNDATION
 track: 训练算法
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 5
 minutes: 22
 updated: '2026-09-08'

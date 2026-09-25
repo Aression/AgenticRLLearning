@@ -4,6 +4,9 @@ title: 多智能体：编排、MARL 与 CTDE
 summary: 多个角色聊天并不自动构成多智能体强化学习。
 stage: FRONTIER
 track: 前沿专题
+kind: synthesis
+depth: overview
+evidenceGrade: C
 order: 16
 minutes: 18
 updated: '2026-09-08'

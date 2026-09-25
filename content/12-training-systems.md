@@ -4,6 +4,9 @@ title: Rollout、训练解耦与系统预算
 summary: 模型更新只是一部分，环境吞吐、策略陈旧度和验证成本共同决定效率。
 stage: SYSTEMS
 track: Agent 系统
+kind: system
+depth: overview
+evidenceGrade: C
 order: 13
 minutes: 18
 updated: '2026-09-08'

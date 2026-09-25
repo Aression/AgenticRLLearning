@@ -1,0 +1,132 @@
+{
+  "id": "bi-agent-bi-bench",
+  "title": "BI-Agent与BI-Bench：端到端商业智能自动化",
+  "summary": "现有 BI 平台（Power BI、Tableau）要求用户完成选表、数据变换、定义连接、再分析的固定多阶段流程，对非技术企业用户构成痛点。已有 NL2SQL 等基准只覆盖最后的分析步骤，缺少针对真实端到端 BI 工作流的评测，也缺少能自动完成选表、变换、连接与分析的智能体方法。",
+  "stage": "SYSTEMS",
+  "track": "Agent 系统",
+  "order": 62,
+  "minutes": 53,
+  "updated": "2026-09-24",
+  "review": "LLM 全文精读草稿 · 待人工复核",
+  "filename": "62-bi-agent-bi-bench.md",
+  "tags": [
+    "agent-tools",
+    "benchmark",
+    "business-intelligence",
+    "data-management",
+    "nl2sql",
+    "reinforcement-learning"
+  ],
+  "concepts": [
+    "agent-tools",
+    "benchmark",
+    "business-intelligence",
+    "data-management",
+    "nl2sql",
+    "reinforcement-learning"
+  ],
+  "objectives": [
+    "理解端到端 BI 工作流（选表、变换、连接、分析）为何比 NL2SQL 更难",
+    "掌握 BI-Agent 如何把数据管理算法封装为智能体工具并嵌入推理-工具调用循环",
+    "了解如何从真实 Power BI 项目构建 BI-Bench 及合成训练任务与可验证奖励",
+    "评估工具增强与 SFT+RL 后训练对准确率和成本的影响"
+  ],
+  "keyPoints": [
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
+    "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
+    "自测"
+  ],
+  "evidenceLevel": "full-text-llm-draft",
+  "codeUrl": "",
+  "origin": "llm-fulltext",
+  "paperId": "2609.20886",
+  "readingDepth": "full-text",
+  "fullTextUrl": "https://arxiv.org/html/2609.20886",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "deep",
+  "depthLabel": "深读",
+  "depthRank": 2,
+  "evidenceGrade": "C",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "BI-Agent 的数据管理工具在 SQL 设置下平均提升前沿模型准确率约 14 个百分点（Python 约 11 个百分点），20 个对比中 19 个显著",
+      "evidence": "§6.2 表 3；§1 图 1",
+      "status": "作者主张"
+    },
+    {
+      "id": "C2",
+      "claim": "SFT+RL 后训练使 Qwen3-8B 在 SQL 工具设置下达到 35.0%，相对基座提升 29.8 个百分点",
+      "evidence": "§6.2 表 4",
+      "status": "作者主张"
+    },
+    {
+      "id": "C3",
+      "claim": "后训练 Qwen3-8B-RL 跑完整个 BI-Bench 仅约 $0.19，比大模型便宜约 54 倍",
+      "evidence": "§6.2 表 4 及成本讨论",
+      "status": "作者主张"
+    },
+    {
+      "id": "C4",
+      "claim": "BIRD 上准确率超 70% 的顶级 NL2SQL 模型在 BI-Bench 上仅 6.0–17.3%",
+      "evidence": "§4 Benchmark Analysis；§6.2 表 4",
+      "status": "作者主张"
+    }
+  ],
+  "claimCount": 4,
+  "sectionSizes": {
+    "问题与语境": 884,
+    "核心主张": 1187,
+    "机制与方法": 1817,
+    "实验设置": 1144,
+    "证据与结果": 1672,
+    "证据强度评估": 1038,
+    "边界与反例": 1129,
+    "与知识库的关系": 1077,
+    "复现与验证计划": 943,
+    "术语与记号": 1032,
+    "自测": 1845
+  },
+  "bodyChars": 13898,
+  "deep": true,
+  "sections": [
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
+    "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
+    "自测"
+  ],
+  "related": [
+    "agent-loop",
+    "aport-vault",
+    "cadworld-cad",
+    "cera-moa",
+    "environments",
+    "evoskill-gui-training-free"
+  ],
+  "degree": 14,
+  "sources": [
+    "bi-agent-and-bi-bench-towards-automating"
+  ],
+  "prerequisites": [
+    "agent",
+    "grpo"
+  ],
+  "search": "bi-agent与bi-bench：端到端商业智能自动化 现有 bi 平台（power bi、tableau）要求用户完成选表、数据变换、定义连接、再分析的固定多阶段流程，对非技术企业用户构成痛点。已有 nl2sql 等基准只覆盖最后的分析步骤，缺少针对真实端到端 bi 工作流的评测，也缺少能自动完成选表、变换、连接与分析的智能体方法。 agent 系统 paper deep c bi-agent-bi-bench agent-tools benchmark business-intelligence data-management nl2sql reinforcement-learning 理解端到端 bi 工作流（选表、变换、连接、分析）为何比 nl2sql 更难 掌握 bi-agent 如何把数据管理算法封装为智能体工具并嵌入推理-工具调用循环 了解如何从真实 power bi 项目构建 bi-bench 及合成训练任务与可验证奖励 评估工具增强与 sft+rl 后训练对准确率和成本的影响 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 bi-agent 的数据管理工具在 sql 设置下平均提升前沿模型准确率约 14 个百分点（python 约 11 个百分点），20 个对比中 19 个显著 作者主张 sft+rl 后训练使 qwen3-8b 在 sql 工具设置下达到 35.0%，相对基座提升 29.8 个百分点 作者主张 后训练 qwen3-8b-rl 跑完整个 bi-bench 仅约 $0.19，比大模型便宜约 54 倍 作者主张 bird 上准确率超 70% 的顶级 nl2sql 模型在 bi-bench 上仅 6.0–17.3% 作者主张",
+  "content": "## 问题与语境\n\n商业智能（BI）是企业数据驱动决策的基础设施，Power BI 与 Tableau 合计服务全球超过 100K 组织。但论文指出，这些平台要求用户走完一条固定的多阶段流程：先浏览并挑选相关表（S1），再做数据变换（S2），再定义表间连接关系（S3），最后才能进入真正的分析（S4）。论文用 Figure 2 的真实 .pbix 项目说明这一流程的负担：该项目采用 BI 中常见的「multi-snowflake」模式，含 2 张事实表与 7 张维度表，仅完成 S3 就需要用户逐表检查并手工定义连接边，而 S2 往往要用厂商私有 DSL 或 GUI 编程。对缺乏数据库与编程背景的非技术企业用户，这构成核心痛点。\n\n已有做法的失效点在于评测与方法的双重错位。评测侧，BIRD、Spider 等 NL2SQL 基准只覆盖最后的分析步骤，其表已清洗、结构化、可直接分析，不反映真实 BI 中「messy and semi-structured raw data」所需的结构重塑，也不反映 star/snowflake/constellation 这类复杂模式；DSBench、DA-Code 取自 Jupyter notebook，KramaBench、LEAP、REPRO-Bench 取自科学论文，均非 BI 域；InfiAgent-DABench、SQaLe 等则依赖 LLM 合成查询，而非真实用户问题。方法侧，数据管理社区虽长期研究 join、transform 等单项算法，但缺少把它们与 LLM 编排结合、面向端到端 BI 的智能体方案。\n\n论文的定位因此不是「再做一个 NL2SQL 模型」，而是同时补齐基准与智能体两端：用真实 .pbix 项目人工构建首个端到端 BI 基准 BI-Bench，并提出把数据管理算法封装为智能体工具的 BI-Agent，外加面向 BI 域的轨迹合成后训练框架。其核心研究问题是：给定原始表集合 $\\mathcal{T}$ 与即席业务问题 $Q$，LLM 能否自动完成选表、变换、连接与分析，直接产出正确答案 $A(Q)$。\n\n## 核心主张\n\n论文的主张可归纳为四条，均以 BI-Bench 上的准确率与成本为证据。需要强调：以下全部为作者在论文中报告的结果，本档案未做独立复现；显著性标注（paired $t$-test, $n{=}100$，paired bootstrap 95% CI）亦为作者报告。\n\n| # | 主张 | 证据 | 状态 |\n|---|---|---|---|\n| C1 | BI-Agent 的数据管理工具在 SQL 设置下平均提升前沿模型准确率约 14 个百分点（Python 约 11 个百分点），20 个对比中 19 个显著 | §6.2 表 3；§1 图 1 | 作者主张 |\n| C2 | SFT+RL 后训练使 Qwen3-8B 在 SQL 工具设置下达到 35.0%，相对基座提升 29.8 个百分点 | §6.2 表 4 | 作者主张 |\n| C3 | 后训练 Qwen3-8B-RL 跑完整个 BI-Bench 仅约 $0.19，比大模型便宜约 54 倍 | §6.2 表 4 及成本讨论 | 作者主张 |\n| C4 | BIRD 上准确率超 70% 的顶级 NL2SQL 模型在 BI-Bench 上仅 6.0–17.3% | §4 Benchmark Analysis；§6.2 表 4 | 作者主张 |\n\n最强的是 C1。它不依赖任何后训练，在 10 个模型 × 2 种语言设置上方向一致，且论文给出了逐模型的点估计与置信区间：o4-mini 由 48.2 升至 61.9（+13.7，***，[+7.7,+19.7]），GPT-OSS-120B 由 5.3 升至 45.3（+40.0，***，[+33.3,+46.8]）。论文还报告了两项稳健性检查：以 82 个唯一项目为单位重做检验后显著性不变；用 Benjamini–Hochberg 在两表全部 36 个成对比较上控制 FDR 至 $q{=}0.05$ 后显著集合不变。这些细节使 C1 的可信度高于其余三条。\n\n最弱的是 C3。成本数字依赖具体定价与推理配置，论文只给出「$0.19 跑完整个 BI-Bench」与「$54\\times$」的结论性表述，未在摘录中给出逐项成本分解；同时「便宜 54 倍」的比较基准（o4-mini 与 GPT-4o「can cost over $10」）是区间式表述而非精确值，迁移到自建场景时需重新核算。C2 与 C4 居中：C2 的 35.0% 与 +29.8 有表 4 的置信区间支撑，但仅针对 Qwen3-8B 单一基座；C4 的 6.0–17.3% 区间与表 4 中 Kwai-AutoSQL-32B 17.3、Infly-RL-SQL-32B 6.0 等条目可对应，但「超 70% BIRD 准确率」这一前提来自论文对 BIRD 榜单的转述，本档案无法核验。\n\n## 机制与方法\n\nBI-Agent 的核心主张是：端到端 BI 的瓶颈不在语言推理，而在选表、重塑、连接这类数据管理操作，因此把数据管理算法封装为「智能体工具」，与通用代码工具一起放进 LLM 的推理–工具调用循环。形式化地，给定原始输入表集合 $\\mathcal{T}$ 与业务问题 $Q$，目标是产出基准答案表 $A(Q)$（亦称 $R$）。智能体按需调用四类工具：\n\n- **search**：用 LLM 保守筛选与查询相关的表，缓解 $\\mathcal{T}$ 中表数量大（BI-Bench 中单查询最多需推理 38 张表）带来的选择困难；\n- **transform**：用表重塑预测算法判断并执行 transpose/pivot/unpivot 等表级重塑变换，把非关系表转为关系表；\n- **join**：用面向雪花模式的连接预测算法输出候选连接，替代 LLM 直接预测复杂模式上的 join；\n- **代码工具**：执行 Python/SQL 并返回结果或报错，形成迭代反馈。\n\n后训练部分解决「vanilla 模型不会按需用工具、不会在表上写复杂代码」的问题。训练任务由真实 BI 项目自动合成：从项目程序化抽取表与成对连接关系构造连接图，从随机表出发沿连接边采样连通子模式，按已知连接物化出单张宽表 $W$；再由 LLM 合成自然语言查询 $q$ 与在 $W$ 上回答 $q$ 的代码 $c$，执行得 $R=c(W)$，仅当 $R\\neq\\emptyset$ 时保留 $q$（共合成 7,985 条查询）。随后混入子模式外的无关表，并以小概率施加逆重塑算子，得到含搜索与变换挑战的训练任务 $t=(q,\\mathcal{T},R)$。\n\nSFT 阶段用 GPT-4o 作为教师模型 $M_T$，在看不到合成代码 $c$ 与目标结果 $R$ 的条件下生成端到端轨迹 $J$，仅保留能在 $\\mathcal{T}$ 上精确复现 $R$ 的轨迹，并按 assistant 轮级切分为 SFT 样本。RL 阶段用 RLVR + GRPO：对同一任务采样 $K$ 条轨迹 $J_1,\\dots,J_K$，奖励为\n\n$$r(J_i\\mid t)=\\begin{cases}+1-0.1n, & \\hat{R}=R\\\\ -0.5-0.1n, & \\hat{R}\\neq\\emptyset \\text{ 且 } \\hat{R}\\neq R\\\\ -1-0.1n, & \\text{otherwise}\\end{cases}$$\n\n其中 $\\hat{R}=J_i(\\mathcal{T})$ 为轨迹产出的结果表，$n$ 为产生语法错误的代码生成迭代次数。设计取舍有三点：$-0.1n$ 是格式惩罚，鼓励小模型关注代码语法有效性；第二行的 $-0.5$ 部分分在稀疏奖励下提供稠密信号（早期 rollout 大多直接失败）；完全无结果表则给 $-1$。奖励在同批内做 z-score 归一化得优势 $A_i=\\frac{r_i-\\mu}{\\sigma}$，再按 GRPO 目标 $\\mathcal{L}(\\theta)=\\mathbb{E}\\big[\\min(r(\\theta)A,\\ \\mathrm{clip}(r(\\theta),1-\\epsilon,1+\\epsilon)A)\\big]$ 更新，其中 $r(\\theta)=\\pi_\\theta(y\\mid x)/\\pi_{\\text{old}}(y\\mid x)$。一个关键取舍是：rollout 时给模型完整对话上下文（含中间推理），但计算策略梯度时只对工具调用块（coding、transform、join 等）优化，使 RL 聚焦工具调用与编码技能而非模仿自然语言。此外，RL 任务只取 SFT 阶段 GPT-4o 能生成正确轨迹的合成任务，以保证正负样本兼有。\n\n**适用前提**：方法假设输入是真实 BI 项目中的原始表集合，且存在可程序化抽取的连接关系与用户编写的变换步骤；训练数据合成依赖真实 .pbix 项目语料，并需项目级、表级（≥5 行内容重叠即排除）去重以防泄漏。工具收益依赖底层数据管理算法在雪花模式上的可用性；作者报告训练/测试在查询与变换层面高度分离（$\\rho=99.72\\%$、变换层面仅 $0.73\\%$ 训练变换更相似），但这是作者自报的度量，非独立复现结论。\n\n## 实验设置\n\n实验围绕两个基准展开：自建的 BI-Bench（100 个从真实 Power BI 项目人工验证的端到端用例，构建耗时超 400 人时）与域外 NL2SQL 基准 Spider 2.0-lite。评测覆盖 24 个模型与系统，主指标为结果表准确率（accuracy），并报告成本。工具设置分为 {tool, no-tool} × {Python, SQL} 四种组合，训练数据规模见原文 Table 1（如 SQL Tool 设置下 42,686 条 SFT 轮级样本、3,426 个 RL 任务）。消融针对 RL 奖励项：移除 $-0.5$ 部分分、$-0.1n$ 语法罚或两者，分别为 20.7/19.1/20.6%，均低于完整的 25.1%。\n\n| 基准 | 模型/规模 | 基线 | 预算 | 指标 |\n| --- | --- | --- | --- | --- |\n| BI-Bench | o4-mini | no-tools | SQL | accuracy |\n| BI-Bench | GPT-OSS-120B | no-tools | SQL | accuracy |\n| BI-Bench | Qwen3-8B-RL-Tool | 未说明（对照为 base Qwen3-8B 及 no-tool 设置） | SQL | accuracy |\n| BI-Bench | Qwen3-8B-RL | 未说明 | 全 BI-Bench（成本口径） | cost |\n| Spider 2.0-lite | Qwen3-8B-RL | base Qwen3-8B | 122 local queries | accuracy |\n\n关键数值（原文照抄）：o4-mini 在 SQL no-tools 下 48.2%，加工具后 61.9%（+13.7）；GPT-OSS-120B 从 5.3% 升至 45.3%（+40.0）；Qwen3-8B-RL-Tool 在 SQL 下达 35.0%；Qwen3-8B-RL 跑完整 BI-Bench 成本约 $0.19；Spider 2.0-lite 上 Qwen3-8B-RL 相对 base 为 20.5× 提升。作者另称 BIRD 上超 70% 的顶级 NL2SQL 模型在 BI-Bench 上仅 6.0–17.3%，以及数据管理工具平均提升 SQL 约 14 个百分点、后训练使 Qwen3-8B 在 SQL 工具设置下提升 29.8 个百分点、成本低约 54 倍——这些均为作者主张，未在给定证据中给出独立复现。需注意 BI-Bench 仅 100 例，且「缺失信息错误」仍是最常见错误类型，限制了结论的统计外推与难度覆盖。\n\n## 证据与结果\n\n以下数字均直接取自给定摘录与证据表，未做任何换算或补全。\n\n| 指标 | 数值 | 设置 | 出处 |\n|---|---|---|---|\n| accuracy | 48.2% | o4-mini，SQL，no-tools | Table 3 |\n| accuracy | 61.9%（↑+13.7，95% CI [+7.7,+19.7]，p<0.001） | o4-mini，SQL，with-tools | Table 3 |\n| accuracy | 5.3% | GPT-OSS-120B，SQL，no-tools | Table 3 |\n| accuracy | 45.3%（↑+40.0，95% CI [+33.3,+46.8]，p<0.001） | GPT-OSS-120B，SQL，with-tools | Table 3 |\n| accuracy | 35.0%（↑+29.8，95% CI [+22.7,+37.1]，p<0.001） | Qwen3-8B-RL-Tool，SQL | Table 4 |\n| accuracy | 23.5%（↑+18.3） | Qwen3-8B-RL，SQL，no-tools | Table 4 |\n| accuracy | 27.2%（↑+22.0） | Qwen3-8B-SFT-Tool，SQL | Table 4 |\n| accuracy | 22.6%（↑+17.4） | Qwen3-8B-SFT，SQL，no-tools | Table 4 |\n| accuracy | 19.8%（↑+14.6） | Qwen3-8B，SQL，with-tools | Table 3 |\n| accuracy | 5.2% | Qwen3-8B，SQL，no-tools | Table 3 |\n| cost | $0.19（表中记 0.19，单位 $0.01） | Qwen3-8B-RL，SQL，全 BI-Bench | §6.2 / Table 4 |\n| cost | $0.31（表中记 0.31） | Qwen3-8B-RL-Tool，SQL | Table 4 |\n| accuracy | 6.0–17.3% | BIRD 榜前四开源 NL2SQL 模型，SQL | §4 / Table 4 |\n| accuracy | 23.8–26.3% | Spider 2.0-lite 榜前二开源 agent，SQL | §4 |\n| accuracy | 20.5× improvement | Qwen3-8B-RL，Spider 2.0-lite，122 local queries，相对 base Qwen3-8B | 证据表 experiments |\n\n对照与消融。工具增益的对照是同一模型的 no-tools vs. with-tools（Table 3），例如 o4-mini 48.2→61.9、GPT-OSS-120B 5.3→45.3；后训练增益的对照是 base Qwen3-8B（5.2%）→ SFT（22.6%）→ RL（23.5%）→ RL-Tool（35.0%），Table 4 进一步把 RL-Tool 的 +29.8 拆为 Tool 增益与 Train 增益（摘录在 ↑Tool/↑Train 处被截断，具体分解数值摘录未完整给出）。奖励设计消融：移除 −0.5 部分分、−0.1n 语法罚或两者，分别为 20.7/19.1/20.6%，均低于完整的 25.1%（该 25.1% 对应何种设置，摘录未明确给出）。跨基准对照：Spider 2.0-lite 上 Qwen3-8B-RL 相对 base 为 20.5× 提升，但摘录未给出绝对准确率数值。\n\n需注意：Table 3 中 o4-mini 的 no-tools 成本为 10.3、with-tools 为 7.64（单位 $0.01），即工具设置下成本反而下降，摘录未解释原因。\n\n## 证据强度评估\n\n证据分级：B（中等偏强，方向可信、幅度需谨慎引用）。\n\n理由：结论有明确的对照设计（同模型 no-tools vs. with-tools、base vs. SFT vs. RL）、100 个任务上的配对 t 检验与 10,000 次配对 bootstrap 置信区间、10 次重复运行取均值，且工具增益在 9 个前沿模型上方向一致（Table 3），这属于较强的内部证据。但全部结果来自单一论文、单一基准，且核心数字（如 +13.7、+40.0、35.0%）均为作者自报，未见第三方复现，故不能升到 A。证据表中 C1–C4 均标注为「作者主张」，与之一致。\n\n主要威胁：\n\n1. 构造效度：BI-Bench 的 (q, R) 由作者从真实 .pbix 项目的可视化反推，答案表经「Export data」导出。虽然作者报告了 LLM 辅助验证（23.1% 触发复核、14.4% 修复、5.2% 丢弃、3.5% 保留）与多份语义等价 ground truth 增强，但「查询是否忠实反映用户意图」仍由作者判定，且评测要求表形状一致（标量除外），可能对语义正确但粒度不同的输出判错。\n\n2. 外部效度：BI-Bench 仅 100 例、人工标注超 400 小时，规模限制了任务与领域的覆盖；作者自述缺失信息错误仍为最常见错误类型，说明剩余失败可能来自信息不足而非能力不足。跨基准迁移证据只有 Spider 2.0-lite 的「20.5× improvement」这一相对值，摘录未给绝对准确率，无法判断绝对水平。\n\n3. 统计显著性与多重比较：Table 3/4 中多数增益标 p<0.001，但 Llama-4-Maverick 的 SQL 工具增益 +3.7（CI [−4.7,+11.9]）不显著，说明工具增益并非对所有模型稳健。论文在 24 个模型/系统 × 多设置上做大量配对检验，摘录未说明是否做多重比较校正，个别显著性可能被高估。\n\n4. 基线选择与评测污染：NL2SQL 对照取 BIRD 榜前四与 Spider 2.0-lite 榜前二（截至 2026-08-24 的快照），这些系统并非为端到端 BI 设计，6.0–17.3% 的低分部分反映任务不匹配而非方法劣势。作者声明后训练数据与 BI-Bench 完全分离以防泄漏，但训练任务由真实 BI 项目合成，与 BI-Bench 同源（同为 .pbix 生态），存在分布重叠风险，摘录未给出量化去重证据。\n\n## 边界与反例\n\n**会推翻结论的观察。** 若在 BI-Bench 上做配对 t 检验（论文术语表列出该检验，但摘录未给出任何 p 值或置信区间），发现「工具开启 vs 关闭」的逐任务成功率差异不显著，则 C1「平均提升约 14 个百分点」应降级为点估计而非稳定效应。同理，若把 Qwen3-8B-RL 的 $0.19 成本按相同 token 计价口径重算后与大模型差距远小于 54×，C3 失效。摘录中成本只出现「$0.19」与「up to 50× cheaper」两处表述，二者口径是否一致未在给定证据中说明，属未验证项。\n\n**最可能失效的条件。**\n- 任务复杂度外推：Figure 8/9 的增益随表数、连接数、变换数上升而增大，说明结论建立在「复杂任务」子集上；若目标场景是单表、无重塑变换的简单查询，工具增益可能退化到接近噪声（摘录给出 SQL 单工具平均增益仅 1.8 个百分点）。\n- 数据形态：BI-Bench 的痛点被明确归因于「messy and semi-structured raw data」与 star/snowflake/constellation 模式。若输入表已是 NL2SQL 基准那种「well cleaned, structured」状态，则 BI-Agent 的 transform/join 工具无事可做，C4 的 6.0–17.3% 落差不再可迁移。\n- 奖励设计依赖：消融显示移除部分分或语法罚后（20.7/19.1/20.6%）均低于 SFT 初始化 22.6%，即 RL 阶段在弱奖励下会净损害模型。若复现者无法获得可验证的结果表奖励，C2 的 +29.8 不成立。\n\n**作者未验证、读者易误推的方向。**\n1. 把「工具平均提升 14 个百分点」误推为「任何模型加工具都涨 14 点」——证据表只给出 o4-mini 48.2→61.9（+13.7）与 GPT-OSS-120B 5.3→45.3（+40.0），离散度极大，均值不具代表性。\n2. 把 Spider 2.0-lite 上 Qwen3-8B-RL 的「20.5× improvement」误推为跨域泛化已解决——该数字无绝对基线值，且预算为「122 local queries」，与 BI-Bench 设置不可比。\n3. 把「missing information 仍为最常见错误」当作可忽略的尾部问题；作者自己将其列为未来工作，说明该失败模式未被工具或后训练消除。\n4. 由 100 例、400+ 人时推断基准已足够——作者以 REPRO-Bench(112)、KramaBench(104) 等作规模辩护，但这是同类可比性论证，不是统计功效证明。\n\n## 与知识库的关系\n\n**新增（此前笔记未覆盖）。** 本工作把「端到端 BI」形式化为从原始表集合 $\\mathcal{T}$ 与问题 $Q$ 直接产出答案表 $A(Q)$ 的单轮任务，并给出首个从真实 .pbix 项目反向抽取的基准 BI-Bench（100 例，400+ 人时）。相对既有 NL2SQL 笔记（BIRD / Spider 系列），新增的是「选表—变换—连接—分析」四阶段联合评测，以及把数据管理算法（表重塑预测、雪花模式连接预测、LLM 保守选表）封装为 agentic tool 的系统级协同设计。可链接：`note:nl2sql-benchmarks`、`note:table-reshaping`、`note:snowflake-schema`。\n\n**印证。** 与「工具增强智能体」笔记一致：工具带来的是结构性增益而非均匀增益——Figure 8 显示 SQL 下 1/2/3 工具的边际增益为 1.8→3.7→5.1 个百分点，呈递增而非独立叠加，支持「工具互补」而非「工具冗余」的既有判断。可链接：`note:tool-augmented-agents`。与「智能体 RL 后训练」笔记一致：SFT 打底、RLVR 精调的两段式在可验证奖励任务上有效，且小模型可逼近大模型。可链接：`note:agentic-rl-posttraining`、`note:rlvr`。\n\n**张力。** 其一，本工作主张「SFT+RL 使 Qwen3-8B 达 35.0%，成本低 54×」，但消融同时显示 RL 在弱奖励下（20.7/19.1/20.6%）反而低于 SFT 的 22.6%——这与笔记中「RL 阶段总是正向」的默认假设冲突，提示 RLVR 的收益高度依赖奖励稠密度，应作为反例补入 `note:rlvr`。其二，C4 称 BIRD 上超 70% 顶级 NL2SQL 模型在 BI-Bench 仅 6.0–17.3%，与 `note:nl2sql-benchmarks` 中「SOTA 已接近饱和」的叙述形成张力：饱和只发生在清洗后的分析步骤，而非端到端流程。其三，成本口径（$0.19 与 54×、50× 混用）在给定摘录中未对齐，链接 `note:llm-cost-accounting` 时应标注为待核。\n\n**待补笔记。** 建议新建 `note:bi-bench`（100 例、400+ 人时、missing information 为首要错误）与 `note:end-to-end-bi`（四阶段定义与 .pbix 抽取流程）。\n\n## 复现与验证计划\n\n目标：在最小成本下验证两条核心可迁移结论——(a) 数据管理工具对前沿模型的增益，(b) 工具+后训练对小模型的增益与成本优势。\n\n环境与数据。任务侧需 BI-Bench 的 100 个 $(Q, A(Q))$ 用例；论文未给出公开下载地址，需先确认可获取性（不确定）。训练侧需真实 .pbix 项目集合以合成训练任务，论文报告合成 7,985 条查询，SFT 轮数按 {tool, no-tool} × {Python, SQL} 分别为 42,686 / 23,100 / 28,698 / 19,563，RL 任务数 3,426 / 2,049 / 4,586 / 2,975（Table 1）。若无法复现合成管线，可退化为只验证 (a)。\n\n最小验证步骤。\n1. 基线：同一模型在 no-tools 与 with-tools（search/transform/join + 通用代码工具）两种设置下各跑一遍，语言固定为 SQL。\n2. 判据：按论文口径——表形状一致 + 逐单元格匹配（允许行列置换），数值用 $\\texttt{np.isclose}(a,b,\\texttt{rtol}=10^{-2},\\texttt{atol}=0.5)$，缺失值规范化；每条件重复 10 次取均值，用配对 $t$ 检验（100 个任务上的逐任务成功率差）与 10,000 次配对 bootstrap 的 95% CI。\n3. 预算：先只跑 o4-mini 与 GPT-OSS-120B 两个模型，对应论文中 48.2→61.9 与 5.3→45.3 的 SQL 设置；成本侧可对照 Qwen3-8B-RL 全量 BI-Bench 约 $0.19（§6.2）。\n4. 可选：若算力允许，复现 Qwen3-8B 的 SFT+RL-Tool(SQL)，对照 35.0%（Table 4）。\n\n预期失败模式。缺失信息错误是论文报告的最常见错误类型，若你的数据源更脏，工具增益可能被该错误吞掉；此外 BI-Bench 仅 100 例，单任务波动会显著影响配对检验的显著性，需保留 10 次重复。注意论文的 54×/50× 成本倍数依赖 2026-08 的公开定价，迁移到自有部署时该数字不可直接引用。\n\n## 术语与记号\n\n| 术语 | 含义 |\n| --- | --- |\n| End-to-end BI | 从原始表出发，经选表、变换、连接直至产出分析结果的完整商业智能流程 |\n| BI-Bench | 从真实 Power BI 项目人工构建的 100 个端到端 BI 测试用例基准 |\n| BI-Agent | 把数据管理算法封装为工具、与通用代码工具一起放入 LLM 推理-工具调用循环的智能体 |\n| Table-reshaping transformation | 表级重塑变换，如 pivot、unpivot、transpose、wide-to-long，用于把非关系表转为关系表 |\n| Row-to-row transformation | 逐行变换，如过滤、字符串操作、算术计算 |\n| Snowflake schema | 雪花模式，事实表通过维度表再连接子维度表的多层 BI 模式 |\n| Wide table | 把子模式中多表按已知连接物化成的单张宽表 |\n| SFT | 监督微调，用教师模型生成的正确轨迹训练学生模型 |\n| RLVR | 带可验证奖励的强化学习，用结果表是否匹配作为奖励信号 |\n| GRPO | 组相对策略优化，按批内奖励 z-score 计算优势并裁剪更新 |\n| Paired t-test | 配对 t 检验，用于判断两种设置下逐任务成功率差异是否显著 |\n\n关键符号：$\\mathcal{T}$ 为原始输入表集合；$Q$ 为业务问题/分析查询；$A(Q)$ 或 $R$ 为查询的基准答案表；$W$ 为由子模式连接物化得到的宽表；$c$ 为在宽表 $W$ 上回答 $q$ 的合成代码；$J$ 为智能体轨迹（工具调用与代码序列）；$n$ 为产生语法错误的代码生成迭代次数；$A_i$ 为 GRPO 中第 $i$ 条轨迹的归一化优势值。\n\n奖励函数（式 1）：$r(J_i\\mid t)=+1-0.1n$ 若 $\\hat{R}=R$；$-0.5-0.1n$ 若 $\\hat{R}\\neq\\emptyset$ 且 $\\hat{R}\\neq R$；否则 $-1-0.1n$。优势 $A_i=\\frac{r_i-\\mu}{\\sigma}$，$\\mu,\\sigma$ 为同批奖励的均值与标准差。评测容差为 $\\texttt{np.isclose}(a,b,\\texttt{rtol}=10^{-2},\\texttt{atol}=0.5)$。\n\n## 自测\n\n以下问题用于检验读者是否真正掌握了本档案中「方法—评测—结论」三者的耦合关系。答案仅依据给定证据表与摘录，凡证据未覆盖处均标注为不确定。\n\n**Q1（工具增益的量级与口径）** 证据表称「数据管理工具平均提升 SQL 14 个百分点」，而 §1 图 1 的表述是「over 10 percentage points on average」。这两个数字是否矛盾？在引用时应如何措辞？\n\n<details><summary>答案</summary>\n不矛盾，但口径不同。§1 图 1 的「over 10 percentage points」是对 frontier models 的总体描述；证据表 relations 中的「平均提升 SQL 14 个百分点」对应 C1（§6.2 表 3）。两者都是作者主张，未经第三方复现。稳妥写法是引用具体模型的具体数字，例如 o4-mini 的 48.2→61.9（+13.7）与 GPT-OSS-120B 的 5.3→45.3（+40.0），并注明「平均」的样本集合在摘录中未完整给出，属不确定项。\n</details>\n\n**Q2（跨小节：后训练增益的分解）** C2 称 SFT+RL 使 Qwen3-8B 在 SQL 工具设置下提升 29.8 个百分点。结合表 4 中 Qwen3-8B-RL-Tool SQL = 35.0%，推算其基线，并说明这个基线是「无工具」还是「有工具」。\n\n<details><summary>答案</summary>\n35.0 − 29.8 = 5.2%，即基线约为 5.2%。证据表未直接给出该基线对应的设置名称，因此无法确认它是 Qwen3-8B 的 no-tools 还是 with-tools 结果，属不确定项。注意不要把它与 GPT-OSS-120B 的 no-tools 5.3% 混为一谈——数值接近但模型不同。若需引用，应写「由 35.0% 与 +29.8 反推基线约 5.2%（设置未在摘录中明确）」。\n</details>\n\n**Q3（跨小节：成本主张的可迁移性）** C3 称 Qwen3-8B-RL 跑完整个 BI-Bench 约 $0.19，比大模型便宜约 54 倍。这个结论迁移到自己的场景时需要哪些前提？\n\n<details><summary>答案</summary>\n至少三点：(1) 成本按 token 数与 2026-08 抓取的公开定价计算（§6.1 脚注 8），定价变动会直接改变倍数；(2) $0.19 是「执行每个查询一次的平均成本」，而准确率是 10 次重复运行的平均，两者口径不同；(3) 54× 是相对某个未在摘录中点名的大模型，比较对象不确定。此外 §1 图 1 写的是「up to 50× cheaper」，与 54× 存在措辞差异，引用时应保留原文数字并注明出处不同。\n</details>\n\n**Q4（评测可靠性）** BI-Bench 的准确率判定包含哪些容差？这些容差对「48.2% 已是最佳」这一结论有何影响？\n\n<details><summary>答案</summary>\n判定要求表形状一致（强制正确聚合粒度）且逐单元格匹配，允许行列置换；数值比较用 np.isclose(rtol=1e-2, atol=0.5)，缺失值做规范化，标量真值可用匹配标量通过。容差相对宽松（atol=0.5 对小数结果影响可观），因此 48.2% 不应被解读为「严格精确匹配下的上限」。同时 BI-Bench 仅 100 例、人工标注超 400 小时，规模限制了细粒度分层结论的统计功效。\n</details>\n\n**Q5（消融与奖励设计）** 消融显示移除 −0.5 部分分、−0.1n 语法罚或两者后分别为 20.7/19.1/20.6%，均低于完整设置的 25.1%。这说明了什么？又有什么不能说明？\n\n<details><summary>答案</summary>\n说明奖励中的部分分与语法惩罚对最终准确率有实质贡献，且两者同时移除（19.1%）比单独移除更差，提示存在叠加效应。不能说明的是：(1) 25.1% 与 35.0% 的关系——前者是消融实验的设置，后者是 Qwen3-8B-RL-Tool SQL 在表 4 的结果，两者是否同一配置在摘录中未明确，属不确定项；(2) 各消融项的统计显著性，摘录未给出对应的配对 t 检验结果。\n</details>"
+}

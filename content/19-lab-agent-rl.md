@@ -4,6 +4,9 @@ title: 实验 03：设计可复现的 Agent RL 小实验
 summary: 在投入 GPU 之前冻结数据、预算、基线和成功判据。
 stage: SYSTEMS
 track: 实验与维护
+kind: lab
+depth: overview
+evidenceGrade: D
 order: 20
 minutes: 35
 updated: '2026-09-08'

@@ -1,60 +1,233 @@
 ---
 id: harness-design-coding-agents
 title: 编码智能体 Harness 组件消融实证研究
-summary: 在固定执行循环下消融规划、动作空间与上下文管理三组件，考察其对长程编码任务成功率的条件性影响。
+summary: 编码智能体（coding harness）常被作为整体系统评估，导致性能差异无法归因到具体组件。论文在固定模型、任务与执行循环的前提下，消融规划、动作空间与上下文管理三个组件，考察其效果是否随模型能力、任务类型与上下文预算变化。
 stage: SYSTEMS
 track: Agent 系统
+kind: paper
+depth: deep
+evidenceGrade: C
 order: 33
-minutes: 18
-updated: '2026-09-18'
+minutes: 60
+updated: '2026-09-24'
 review: LLM 全文精读草稿 · 待人工复核
 origin: llm-fulltext
 paper_id: 2609.20804
 reading_depth: full-text
 evidence_level: full-text-llm-draft
+claim_count: 4
 full_text_url: https://arxiv.org/html/2609.20804
-objectives: [理解 harness 三组件（规划/动作空间/上下文管理）各自解决的行为瓶颈, 掌握 T0–T4 上下文策略的差异与取舍逻辑, 能说明为何 harness 设计是条件性系统问题而非默认最优]
-tags: [coding-agent, harness, context-management, swe-bench, ablation]
+objectives: [理解 planning、action space、context management 三类 harness 组件在长程编码任务中的条件效应, 掌握 T0–T4 五档上下文管理策略的设计与 32k–128k 预算下的表现差异, 认识 planning 从弱模型 accuracy scaffold 到强模型 efficiency aid 的交叉点, 了解 bash-only 接口与预定义工具在不同模型能力下的取舍]
+tags: [coding-agents, harness-design, context-management, ablation-study, swe-bench, terminal-bench]
 sources: [an-empirical-study-of-harness-design-for]
-related: [modularrsi-harness, agent-loop, evaluation]
+related: [modularrsi-harness, rrsi-regularized-harness-rsi, agent-loop]
 prerequisites: []
 ---
-## 论文要解决的问题
+## 问题与语境
 
-已有共识是：在模型固定的前提下，更换编码 harness 会显著改变性能（论文引用的既有工作支持这一点）。但作者指出，现有研究多把 harness 当作完整系统来比较，例如跨 harness 评测显示不同模型偏好不同 harness。这类比较把规划、工具设计、上下文管理等多个机制混在一起，无法回答一个更细的问题：某个组件的收益究竟来自哪里，以及它是否在不同模型能力、任务类型和资源预算下都成立。论文因此提出把执行循环固定，只变动三个组件，估计各组件在具体实现下的条件效应。
+编码智能体的性能由「模型 + harness」共同决定，而 harness 本身是一个多组件软件层：控制循环、工具接口、上下文管理策略。已有研究反复观察到，固定模型只改 harness 就能显著改变成绩（Yang et al., 2024; Wang et al., 2024; Lewis, 2026），跨 harness 评测也显示 harness 偏好随模型变化——Cao et al. (2026) 报告 Claude-Opus-4.5 在 OpenHands 上最佳，而 Claude-Sonnet-4.5 在 SWE-Agent 上最佳。问题在于，这类比较把多个机制捆绑在一起：两个完整 harness 之间的分差，无法归因到规划、工具设计、上下文管理，还是它们与底层模型的交互。于是实践者面对一个无法回答的问题：某个组件是普遍有用，还是只在特定模型能力、任务类型与资源预算下有用？
 
-## 方法
+已有做法分两类，各有失效点。其一是系统级消融：Agentless（Xia et al., 2024）、AutoCodeRover（Zhang et al., 2024）等受限流水线证明无需复杂 agent 架构也能取得强性能，但它们优化的是捆绑设计，不做组件级归因。其二是更细粒度的研究：AgentArch（Bogavelli et al., 2025）报告 model-specific architecture preferences，Mehtiyev 与 Assunção (2026) 发现框架间行为差异随模型代际变化；最接近本文的 Liu (2026) 用全因子设计研究 prompt-level scaffolding，但任务偏短程推理，未显式考察 context-window pressure。而长程编码任务恰恰是上下文窗口成为硬约束的场景。
 
-作者构建了一个模块化 harness，固定权限处理、编辑后诊断、卡死检测等外围机制，只消融三处：
+本文的定位因此不是「再报一个 harness 分数」，而是把 harness 设计当作条件性系统问题来测量：固定模型、任务、执行循环与权限/编辑后诊断/卡死检测等支撑组件，只变化规划、动作空间、上下文管理三个实现级组件，并在 32k/64k/96k/128k 四个窗口预算下扫描，共 176 个实验设置（§1）。它要回答的是条件效应，而非普适最优配置。
 
-- **规划**：维护一份模型可在轨迹中持续更新的显式任务计划。
-- **动作空间**：暴露预定义工作区工具集，或仅提供 bash 接口。
-- **上下文管理**：定义五种策略。T0 不做跨轮压缩、超窗即终止；T1 省略过期工具观测；T2 在省略基础上加外部存储与 recall_event 使观测可恢复；T3 用 LLM 摘要但不省略；T4 分阶段组合省略、可恢复存储与摘要，先省略再摘要。
+## 核心主张
 
-模型侧用 Nemotron-3 的 30B/120B/550B 作为同族能力轴，另加 Mistral-Medium-3.5-128B 作跨族对照。任务侧用 SWE-Bench Verified 与 Terminal-Bench 2.1。上下文策略在 32k/64k/96k/128k 四档预算下比较；规划与动作空间只在默认 T4/128k 下消融。作者称共 176 个实验设置，并做轨迹级标注分析。
+论文的四条主结论均以「组件效果随条件变化」为形式，而非「某组件更好」。其证据主要来自 SWE-Bench Verified 与 Terminal-Bench 2.1 上的成功率（SR, %）与每任务平均成本（$），显著性由双侧精确 McNemar 检验加 Benjamini–Hochberg 校正 $q<0.05$ 判定（表 3、表 4 表注）。
 
-## 证据与实验
+| # | 主张 | 证据 | 状态 |
+|---|---|---|---|
+| C1 | 上下文管理在窗口预算紧张时收益最大：它避免溢出导致的提前终止，使轨迹能推进到改码与验证；窗口扩大后准确率收益递减 | §3.2 表 3、表 4；图 3（T0 溢出曲线 vs. 受管档位零溢出）；§1 结论条目 | 作者主张 |
+| C2 | T4（先省略后摘要）在成功率与其他受管策略相近时效率最高；使省略可逆的 recall 机制很少被调用，且相对仅省略不提升准确率 | §3.2 表 3、表 4；§9.6 表 13（如 Nemotron-3 30B T2/32k 在 SWE-Bench 上 mean recall_event calls per task = 0.146，Terminal-Bench 上 4.326）；§1 结论条目 | 作者主张 |
+| C3 | 规划随模型能力增强从「准确率支架」转为「效率手段」：弱模型上以额外成本换成功率，强模型上主要削减冗余的编辑后验证、准确率仅小幅变化 | §3.2 表 3、表 4 的 T4 w/o plan 行（Nemotron-3 30B SWE-Bench 25.20→13.60*、Terminal-Bench 13.48→08.99；Nemotron-3 120B 44.00→46.60；Nemotron-3 550B 65.80*→67.80；Mistral 68.60→69.00） | 作者主张 |
+| C4 | 预定义工具提升 bash 弱模型的成功率，bash-only 为 bash 强模型降本 | §3.2 表 3、表 4 的 T4 bash only 行（Nemotron-3 30B SWE-Bench 25.20→10.20*、Terminal-Bench 13.48→03.37*；Mistral SWE-Bench 68.60→45.40*；Nemotron-3 550B SWE-Bench 65.80*→69.40*，成本 2.33→1.11） | 作者主张 |
 
-作者的主要主张（摘要与结论级，尚未经复现验证）包括：
+四条主张中，C1 最强：它有两类独立支撑——受管档位在每个预算下溢出任务数恰为零，而 T0 会因窗口溢出丢任务（图 3），且该模式在四个模型、两个基准、四个预算上方向一致，属于机制清晰、跨条件稳健的结论。C2 的「T4 效率最高」部分依赖成本而非成功率，且 recall 的负面证据（调用稀疏、不提升准确率）在 SWE-Bench 与 Terminal-Bench 之间量级差异很大（0.146 vs. 4.326），说明「很少被调用」本身是任务类型依赖的，需谨慎外推。C3 与 C4 最弱：二者只在默认 T4/128k 配置下消融，作者明确说明受算力限制未做全因子研究（Limitations）；且动作空间干预是捆绑式接口变更，同时改变工具可用性、接口提示、文件状态跟踪与自动诊断，因此不能归因到工具数量或动作粒度本身。此外 Terminal-Bench 仅 89 个任务、每个设置每任务只跑一次，许多对比未达显著，作者自述该基准上的结论依赖跨模型与跨预算的一致方向而非单个显著单元。所有四条均为作者主张，本文未报告独立复现。
 
-1. 上下文管理在预算紧张时最重要，主要作用是避免溢出导致的提前终止，使智能体推进到改码与验证阶段；预算放宽后其准确率收益递减。
-2. T4 在效率上最强：成功率与其他受管策略相近，但峰值上下文受控、摘要调用更少；而让省略可逆的 recall 机制很少被触发，也未带来超过单纯省略的准确率提升。
-3. 规划的作用随模型能力变化：弱模型上它维持轨迹存活、提升成功率但增加成本；强模型上它主要降低成本，成功率略有下降。
-4. 动作空间上，预定义工具对 bash 控制弱的模型提升成功率；bash-only 对 bash 能力强的模型以更低成本取得更高成功率，在偏 shell 的任务类型上最明显。
+## 机制与方法
 
-轨迹分析把每个效应归因到具体行为变化：上下文管理延长执行轨迹但不显著改变行为；规划挽救过早放弃的模型、削减过度验证模型的重复验证；结构化工具支持 shell 能力有限的模型，而 bash-only 让强模型在一次调用中合并多处改码。
+论文构建了一个轻量 ReAct 循环 harness，每轮包含推理步骤、动作与观察。执行循环、权限控制、编辑后诊断、卡死检测等支撑组件在所有消融中固定不变，仅变化三个组件：规划、动作空间、上下文管理。这一「固定基底、单组件变化」的设计是为了让性能差异可归因，而非比较完整 harness。
 
-## 边界与未解问题
+**规划（Planning）。** 启用时，系统指令定义协议，首轮提醒模型在行动前给出初始计划；模型通过 `update_plan` 工具维护该计划。后续每轮把计划追加到模型输入，但不写入对话历史 $H$。禁用时移除规划指令、提醒、计划注入与工具本身。因此论文估计的是「持久规划支架」的效果，而非规划作为一般推理策略的效果。
 
-作者自陈的局限值得重视：规划只用一个提示与更新机制实例化，上下文管理只用一套阈值策略；动作空间是打包式接口变更，同时改变工具可用性、接口提示、文件状态跟踪与编辑后诊断，因此无法把工具数量或动作粒度的影响单独分离。规划与动作空间仅在 T4/128k 下消融，完整因子设计才能判断其效应是否在其他组合下持续。每个设置每任务只跑一次，Terminal-Bench 仅 89 个任务，许多对比未通过配对 McNemar 检验，相关结论依赖跨模型、跨预算的方向一致性而非单格显著性。外部效度受限于所测模型与任务，SWE-Bench Verified 仅含 Python；模型规模只是能力的不完美代理，训练差异、工具接口先验与原生 shell 熟练度都可能贡献趋势。作者明确表示，报告的交汇点在被迁移到其他模型族、harness 实现或软件工程之外任务前应先验证。
+**动作空间（Action space）。** 预定义工具集包含 `read_file`、`write_file`、`edit_file`、`list_files`、`glob_files`、`grep_text`、`web_fetch`、`bash`，每个工具有类型化参数 schema 与描述协议、错误与副作用的说明。排除 web search 是因为 SWE-Bench 任务源自公开 GitHub issue，搜索可能泄露对应 PR 与真值补丁。bash-only 设置移除预定义文件、搜索与 web 工具，仅留 bash；由其他组件控制的辅助工具（如启用规划时的 `update_plan`、T4 下的 `recall_event`）保持不变。该干预同时改变工作区修改的追踪与校验方式：预定义文件工具强制 read-before-write 检查、更新 harness 文件状态、并在支持的编辑后触发自动诊断。因此应把它理解为「完整动作接口」的效果，而非工具数量或动作粒度的孤立效果。
+
+**上下文管理（Context management）。** 三个可组合机制：省略 M1 用短桩替换陈旧工具观察正文；召回 M2 把被省略的观察存入文件系统并通过 `recall_event` 按 id 取回，使省略可逆；摘要 M3 把较旧消息折叠为运行中的自然语言摘要，由同模型的一次无工具调用生成。两个 token 阈值：软阈值 $B_1$ 与硬阈值 $B_2$。前导（系统提示与初始任务描述）与至少两轮的近期窗口保持原文，仅中间区域被压缩。历史超过 $B_1$ 时省略中间区域臃肿的工具观察并外存（M1+M2）；若仍超过 $B_2$，把最旧的中间事件摘要进运行摘要（M3）。`recall_event` 每轮可用。
+
+五档策略由机制子集定义：T0 无 M1/M2/M3，窗口溢出即以错误终止；T1 仅 M1；T2 为 M1+M2；T3 仅 M3；T4 为 M1+M2+M3，先省略后摘要。由于 T1–T3 各只有一个动作，它们在硬阈值 $B_2$ 处操作，而 T4 在 $B_1$ 省略、在 $B_2$ 摘要。
+
+**适用前提。** 论文明确其结果是「所研究的具体组件与实现」的条件效应，而非普适最优 harness：规划仅由一套提示与更新机制实例化，上下文管理仅遵循一套阈值策略与固定压缩设置；规划与动作空间仅在默认 T4/128k 下消融，未做全因子组合；结论受限于所评测的模型与任务（Nemotron-3 三档规模与 Mistral-Medium-3.5-128B，SWE-Bench Verified 仅 Python）。作者主张的交叉点迁移到其他模型族、harness 实现或软件工程之外的任务类型前需先验证。
+
+## 实验设置
+
+论文在固定模型、任务与执行循环的前提下，扫描上下文管理策略与窗口预算，并在默认配置下单独消融规划与动作空间。上下文管理比较 T0–T4 五档策略，覆盖 32k、64k、96k、128k 四个窗口预算；规划与动作空间在 128k 预算、T4 策略下消融，合计 176 个实验设置。模型为 Nemotron-3 的 30B、120B、550B 三档（族内能力轴）与 Mistral-Medium-3.5-128B（跨族对照）。基准为 SWE-Bench Verified（仓库级 issue 解决）与 Terminal-Bench 2.1（端到端终端任务）。指标为成功率 SR（%）与每任务平均成本（$）。显著性用双侧精确 McNemar 检验，Benjamini–Hochberg 校正后 $q<0.05$，表中以 * 标注。轨迹级行为由 LLM 判官按附录分类法逐轮标注。
+
+| 基准 | 模型/规模 | 基线 | 预算 | 指标 |
+|---|---|---|---|---|
+| SWE-Bench Verified | Nemotron-3 30B | T0（无上下文管理） | 32K | SR (%) |
+| SWE-Bench Verified | Nemotron-3 120B | T0（无上下文管理） | 32K | SR (%) |
+| SWE-Bench Verified | Nemotron-3 550B | T0（无上下文管理） | 32K | SR (%) |
+| SWE-Bench Verified | Mistral-3.5-128B | T0（无上下文管理） | 32K | SR (%) |
+| SWE-Bench Verified | Nemotron-3 30B | T4（128k） | 128K | SR (%) |
+| SWE-Bench Verified | Nemotron-3 120B | T4（128k） | 128K | SR (%) |
+| SWE-Bench Verified | Nemotron-3 550B | T4（128k） | 128K | SR (%) |
+| SWE-Bench Verified | Mistral-3.5-128B | T4（128k） | 128K | SR (%) |
+| Terminal-Bench 2.1 | Nemotron-3 30B | T0（无上下文管理） | 32K | SR (%) |
+| Terminal-Bench 2.1 | Nemotron-3 120B | T0（无上下文管理） | 32K | SR (%) |
+| Terminal-Bench 2.1 | Nemotron-3 550B | T0（无上下文管理） | 32K | SR (%) |
+| Terminal-Bench 2.1 | Mistral-3.5-128B | T0（无上下文管理） | 32K | SR (%) |
+| Terminal-Bench 2.1 | Nemotron-3 30B | T4（128k） | 128K | SR (%) |
+| Terminal-Bench 2.1 | Nemotron-3 120B | T4（128k） | 128K | SR (%) |
+| Terminal-Bench 2.1 | Nemotron-3 550B | T4（128k） | 128K | SR (%) |
+| Terminal-Bench 2.1 | Mistral-3.5-128B | T4（128k） | 128K | SR (%) |
+
+**统计功效与复现注意。** 每个设置对每个任务只运行一次；Terminal-Bench 仅含 89 个任务，因此许多 Terminal-Bench 对比在配对 McNemar 检验下不显著，作者称其结论依赖跨模型与跨预算的一致方向，而非单个显著单元。LLM 判官与人工标注的一致性为：跨三个 split 聚合的原始一致率 94.2%，加权平均 Cohen's kappa 0.929，人工验证共标注 15,610 个单元。上述一致性数字来自 §9.2，属作者报告，本档案未独立复现。
+
+## 证据与结果
+
+本小节汇总摘录中可直接核对的数字。所有数值均照抄原文，未做换算；带 `*` 者为原文标注的显著性标记（双侧精确 McNemar 检验，Benjamini–Hochberg 校正后 $q<0.05$）。
+
+| 指标 | 数值 | 设置 | 出处 |
+| --- | --- | --- | --- |
+| SR (%) | 09.40 | SWE-Bench Verified, Nemotron-3 30B, 32K, T0 | Table 3 |
+| SR (%) | 20.60* / 20.80* / 23.80* / 21.20* | SWE-Bench Verified, Nemotron-3 30B, 32K, T1/T2/T3/T4 | Table 3 |
+| SR (%) | 11.40 | SWE-Bench Verified, Nemotron-3 120B, 32K, T0 | Table 3 |
+| SR (%) | 43.00* / 42.20* / 39.60* / 42.20* | SWE-Bench Verified, Nemotron-3 120B, 32K, T1/T2/T3/T4 | Table 3 |
+| SR (%) | 06.40 | SWE-Bench Verified, Nemotron-3 550B, 32K, T0 | Table 3 |
+| SR (%) | 51.40* / 53.60* / 58.40* / 55.60* | SWE-Bench Verified, Nemotron-3 550B, 32K, T1/T2/T3/T4 | Table 3 |
+| SR (%) | 12.60 | SWE-Bench Verified, Mistral-3.5-128B, 32K, T0 | Table 3 |
+| SR (%) | 64.40* / 66.20* / 63.20* / 63.80* | SWE-Bench Verified, Mistral-3.5-128B, 32K, T1/T2/T3/T4 | Table 3 |
+| SR (%) | 25.20 / 13.60* / 10.20* | SWE-Bench Verified, Nemotron-3 30B, 128K, T4 / T4 w/o plan / T4 bash only | Table 3 |
+| SR (%) | 44.00 / 46.60 / 42.40 | SWE-Bench Verified, Nemotron-3 120B, 128K, T4 / w/o plan / bash only | Table 3 |
+| SR (%) | 65.80* / 67.80 / 69.40* | SWE-Bench Verified, Nemotron-3 550B, 128K, T4 / w/o plan / bash only | Table 3 |
+| SR (%) | 68.60 / 69.00 / 45.40* | SWE-Bench Verified, Mistral-3.5-128B, 128K, T4 / w/o plan / bash only | Table 3 |
+| SR (%) | 06.74 / 17.98* | Terminal-Bench 2.1, Nemotron-3 30B, 32K, T0 / T4 | Table 4 |
+| SR (%) | 19.10 / 33.71* | Terminal-Bench 2.1, Nemotron-3 120B, 32K, T0 / T1 | Table 4 |
+| SR (%) | 28.09 / 38.20* | Terminal-Bench 2.1, Nemotron-3 550B, 32K, T0 / T3 | Table 4 |
+| SR (%) | 21.35 / 42.70* / 42.70* | Terminal-Bench 2.1, Mistral-3.5-128B, 32K, T0 / T3 / T4 | Table 4 |
+| SR (%) | 13.48 / 08.99 / 03.37* | Terminal-Bench 2.1, Nemotron-3 30B, 128K, T4 / w/o plan / bash only | Table 4 |
+| SR (%) | 28.09 / 28.09 / 23.56 | Terminal-Bench 2.1, Nemotron-3 120B, 128K, T4 / w/o plan / bash only | Table 4 |
+| SR (%) | 44.94* / 46.07 / 50.56 | Terminal-Bench 2.1, Nemotron-3 550B, 128K, T4 / w/o plan / bash only | Table 4 |
+| SR (%) | 37.08 / 39.33 / 43.82 | Terminal-Bench 2.1, Mistral-3.5-128B, 128K, T4 / w/o plan / bash only | Table 4 |
+| mean recall_event calls per task | 0.146 | SWE-Bench Verified, Nemotron-3 30B, T2, 32k | Table 13 |
+| mean recall_event calls per task | 4.326 | Terminal-Bench, Nemotron-3 30B, T2, 32k | Table 13 |
+| mean recall_event calls per task | 2.708 | Terminal-Bench, Nemotron-3 30B, T4, 32k | Table 13 |
+| mean recall_event calls per task | 0.472 | SWE-Bench Verified, Nemotron-3 30B, T4, 32k | Table 13 |
+| Cohen's kappa (weighted mean) | 0.929 | LLM judge vs human annotators, 三个 split 聚合 | §9.2 |
+| raw agreement | 94.2% | LLM judge vs human annotators, 三个 split 聚合 | §9.2 |
+| labeled units | 15,610 | human validation total | §9.2 |
+| experimental settings | 176 | overall study | §1 |
+
+**消融与对照结构。** 上下文管理为 T0–T4 五档（T0 无管理、T1 仅省略 M1、T2 省略+召回 M2、T3 仅摘要 M3、T4 三者全开），在 32k/64k/96k/128k 四个预算下扫描；规划与动作空间仅在 128k/T4 下单独消融（`T4 w/o plan`、`T4 bash only`）。摘录给出的 32K 与 128K 行如上表；64K、96K 的完整 SR 与成本列在摘录中亦有给出，但本档案未逐条列出。成本（Cost, $）列摘录中普遍存在，本表未收录，需要时须回原文核对。T0 的溢出率与成功率随预算变化的曲线见 Figure 3，摘录仅给出定性描述「Every managed tier overflows on exactly zero tasks at every budget」，未给出具体溢出率数字。
+
+**关键对照读数。** 规划消融在弱模型上方向一致且幅度大（Nemotron-3 30B：SWE-Bench 25.20→13.60*，Terminal-Bench 13.48→08.99），在强模型上方向相反或持平（Nemotron-3 550B：65.80*→67.80；Mistral：68.60→69.00）。动作空间消融同样分化：bash-only 使 Nemotron-3 30B 与 Mistral 在 SWE-Bench 上大幅下降（25.20→10.20*；68.60→45.40*），却使 Nemotron-3 550B 上升（65.80*→69.40*）。召回机制的使用率极低（SWE-Bench 上 0.146 与 0.472 次/任务），作者据此主张其不提升准确率。
+
+## 证据强度评估
+
+**证据分级：B（中等偏强，条件性结论可采信，普适性结论不可采信）。**
+
+理由：该研究在方法上具备消融研究的关键要素——固定执行循环与权限、编辑后诊断、卡死检测等支撑组件，仅变化规划、动作空间、上下文管理三个组件；覆盖 4 个模型（Nemotron-3 30B/120B/550B 与 Mistral-3.5-128B）、2 个基准、4 个窗口预算，共 176 个实验设置；使用配对 McNemar 检验并做 Benjamini–Hochberg 校正，显著性标记可追溯；轨迹级行为标注有 LLM 判官与人工标注的一致性验证（raw agreement 94.2%，weighted mean Cohen's kappa 0.929，15,610 个标注单元）。这些使「组件效果随模型能力与预算变化」这一核心结论在本文设定内可信。但降级为 B 而非 A 的原因在于：规划与动作空间仅在单一配置（128k/T4）下消融，无法排除组件间交互；动作空间是捆绑式接口变更；每个设置每任务只跑一次；Terminal-Bench 仅 89 题。
+
+**主要威胁（按严重程度排序）：**
+
+1. **构造效度（最严重）。** 动作空间干预是捆绑变更，同时改变工具可用性、接口专用提示、文件状态跟踪与自动编辑后诊断，因此无法把效应归因于「工具数量」或「动作粒度」。规划同样只是「一个提示 + 一套更新机制」的实例化，作者自陈估计的是该持久规划支架的效果，而非「规划作为通用推理策略」的效果。上下文管理也只采用一套固定阈值的压缩策略。
+
+2. **统计显著性与功效。** 每个设置每任务仅运行一次，无重复种子；Terminal-Bench 仅 89 题，作者明确承认许多 Terminal-Bench 对比在配对 McNemar 检验下不显著，其结论「rest on consistent directions across models and budgets rather than on individually significant cells」。上表中 Terminal-Bench 的多数单元格确实未带 `*`，包括若干方向反转的对比（如 Nemotron-3 550B 的 44.94*→46.07→50.56）。
+
+3. **外部效度。** 模型侧仅 Nemotron-3 三个规模加 Mistral-Medium-3.5-128B，任务侧仅两个编码基准且 SWE-Bench Verified 为 Python-only。作者指出模型规模只是能力的不完美代理，训练差异、对工具接口的先验暴露、原生 shell 熟练度都可能贡献观测趋势（Mistral 的基准依赖型接口偏好即为佐证），并明确要求交叉点在迁移到其他模型族、harness 实现或非软件工程任务前先做验证。
+
+4. **基线选择与评测污染。** T0 基线是「无上下文管理且窗口溢出即终止」，这使上下文管理的收益部分来自「避免提前终止」而非「提升推理质量」，作者对此有明示（收益随窗口扩大而衰减）。此外，作者主动排除了 web search 工具，理由是 SWE-Bench 任务源自公开 GitHub issue，搜索可能暴露对应 PR 与 ground-truth patch——这一处理降低了污染风险，但也意味着动作空间结论不覆盖带检索的 harness 形态。
+
+**未复现声明。** 本档案中的数字全部来自原文表格与正文摘录，未做独立复现；带 `*` 的显著性标记为作者报告值。跨模型、跨基准的「交叉点」属于作者主张，尚未见独立验证。
+
+## 边界与反例
+
+**什么观察会推翻结论。** 四条主张（C1–C4）都是条件性陈述，因此反例的形式是「在某个 (模型, 任务, 预算) 单元上方向反转」。证据表中已存在若干这样的单元，作者也承认其存在：
+
+- C3（规划对弱模型是准确率支架、对强模型是效率工具）在 SWE-Bench 128K/T4 上对 Nemotron-3 120B 反向：T4 44.00 → T4 w/o plan 46.60，即去掉规划反而更高；Nemotron-3 550B 65.80* → 67.80 同向。若在更多强模型上「去规划更高」成为常态而非小幅波动，C3 的「效率工具」表述就退化为「规划对强模型基本无效甚至有害」。
+- C4（预定义工具帮 bash 弱模型、bash-only 为 bash 强模型降本）在 Nemotron-3 550B 上出现「既提分又降本」：SWE-Bench 65.80* → 69.40*，成本 2.33 → 1.11；Terminal-Bench 44.94* → 50.56。这超出「降本」的预测，说明 bash-only 的收益不能仅用成本解释。
+- C2（recall 很少被调用且不提升准确率）的反例是调用率本身：Terminal-Bench 上 Nemotron-3 30B T2 的 mean recall_event calls per task 为 4.326，远高于 SWE-Bench 的 0.146。若在长程 shell 任务上 recall 调用频繁且 T2 优于 T1，则「recall 无用」不成立。
+
+**最可能失效的条件。** 作者列出的边界中最关键的三条：(i) 规划与动作空间只在默认 T4/128k 下消融，未做全因子，因此无法判断这些效应在 32k 等紧预算下是否仍成立——而 C1 恰恰说明紧预算才是上下文管理的主场，两者叠加的交互完全未测；(ii) 动作空间是捆绑干预，同时改变工具可用性、接口提示、文件状态跟踪与编辑后诊断，因此「预定义工具 vs bash」的差异不能归因到工具数量或动作粒度；(iii) Terminal-Bench 仅 89 题、每设置每题只跑一次，多数对比在配对 McNemar 检验下不显著，作者自述结论依赖「跨模型与预算的一致方向」而非单个显著单元。此外 SWE-Bench Verified 仅 Python，模型规模只是能力的粗糙代理（Mistral 的接口偏好随基准变化即为佐证）。
+
+**读者可能误推但作者未验证的方向。** 其一，把 T4 的「效率最高」读成「T4 准确率最高」——证据表显示 T4 在多个单元并非最高（如 32K 下 Nemotron-3 550B T3 58.40* > T4 55.60*，Mistral T2 66.20* > T4 63.80*）。其二，把「每个受管档位溢出为零」外推到未测预算或更长轨迹。其三，把 crossover 点当作可迁移常数——作者明确要求在其他模型族、harness 实现或非软件工程任务上先验证。其四，把「规划无效」推广为「不需要显式任务表示」，但本文的规划只是单一 prompt 与 update_plan 机制，未覆盖其他规划实现。
 
 ## 与知识库的关系
 
-本卡片与 harness 相关笔记（如 modularrsi-harness）互补：后者关注 harness 作为可组合系统，本文提供组件级消融的实证视角。与 agent-loop 相关，因为规划与上下文管理直接作用于循环内的状态维护与终止行为；与 evaluation 相关，因为其结论受统计功效与基准覆盖限制，是评估设计讨论的实例。
+**新增（此前笔记未覆盖）。** 本文把消融从 prompt-level 推进到 implementation-level，并首次把 context-window budget 作为显式自变量扫描（32k/64k/96k/128k），共 176 个实验设置。相对 `note:liu2026-prompt-scaffolding-factorial`，新增的是「上下文压力」这一维度：Liu (2026) 在短程推理任务上做全因子但未操纵窗口预算，因而无法观察到 C1 所述的「收益随窗口扩大而衰减」。相对 `note:context-management-static-methods`（elision/truncation、外部存储检索、summarization 三类静态方法），新增的是把三类机制组合成 T0–T4 五档并跨模型规模与预算扫描，且给出 recall 调用率的直接计数（SWE-Bench 0.146 vs Terminal-Bench 4.326 calls/task）。
+
+**印证。** 与 `note:cao2026-cross-harness-eval`（Claude-Opus-4.5 在 OpenHands 最佳、Claude-Sonnet-4.5 在 SWE-Agent 最佳）一致：harness 偏好随模型变化。本文进一步指出完整 harness 对比会混淆多种机制，故固定执行循环、单独变化组件——这是对 Cao 结论的方法论补强而非否定。与 `note:agentarch2025-model-specific-arch`（model-specific architecture preferences）一致，本文以更细粒度证据支持「无普适最优架构」。与 `note:agentless2024` / `note:autocoderover2024` 一致：无需高度复杂 agent 架构也能取得强性能；本文补充的是「组件效果是条件性的」。
+
+**张力。** 与 `note:context-management-as-default`（把上下文管理当作默认开启的通用增益）存在直接张力：本文显示其准确率收益随窗口扩大而衰减，且 recall 机制「很少被调用、不提升准确率」，即并非所有上下文管理子机制都值得默认启用。与 `note:planning-always-helps` 张力更明显：C3 在 Nemotron-3 120B/550B 的 SWE-Bench 128K 上出现去规划后 SR 上升（44.00→46.60；65.80*→67.80），说明「规划普遍提分」在强模型上不成立。与 `note:bash-only-cheaper-weaker` 部分张力：bash-only 在 Nemotron-3 550B 上同时提分并降本（65.80*→69.40*，2.33→1.11），超出「仅降本」的预期。
+
+**可链接笔记 id 建议**：`note:liu2026-prompt-scaffolding-factorial`、`note:cao2026-cross-harness-eval`、`note:agentarch2025-model-specific-arch`、`note:context-management-static-methods`、`note:agentless2024`、`note:autocoderover2024`、`note:context-management-as-default`、`note:planning-always-helps`、`note:bash-only-cheaper-weaker`。
+
+## 复现与验证计划
+
+目标：在自有 harness 上复现「上下文管理收益随窗口预算收紧而放大」这一条件效应，并检验 T4 的效率优势是否可迁移。
+
+环境与任务。按 §2 构建轻量 ReAct 循环：每轮组装输入（系统提示、任务描述、注入计划、经压缩的历史 $H$）、在任务容器执行工具调用、把观察追加到 $H$。固定权限控制、编辑后诊断、卡死检测。任务用 SWE-Bench Verified（Python-only）与 Terminal-Bench 2.1（89 题，注意统计功效弱）。
+
+最小实验矩阵。先只做上下文管理轴：T0–T4 五档 × 32k/64k/96k/128k 四个预算，单模型起步（建议先取一个中等规模模型）。T0 为基线（无跨轮压缩，窗口溢出即报错终止）。判据：(a) 每个受管档位在任意预算下窗口溢出任务数应为 0（原文：Every managed tier overflows on exactly zero tasks at every budget）；(b) T0 的成功率应随预算增大而上升，受管档位相对 T0 的增益应随预算增大而收窄；(c) T4 在成功率与其他受管档位相近时，峰值上下文与摘要调用次数更低。
+
+第二阶段（可选）。在 128k/T4 下单独消融规划（去掉规划指令、提醒、计划注入与 update_plan）与动作空间（bash-only，保留 update_plan 与 recall_event）。注意动作空间是捆绑式接口变更，同时改变工具可用性、接口提示、文件状态跟踪与自动诊断，不能归因为工具数量。
+
+预期失败模式。recall_event 调用稀疏（原文示例：SWE-Bench 上 Nemotron-3 30B T2/32k 为 0.146 次/任务，Terminal-Bench 为 4.326），若你的实现中召回频繁触发，说明省略策略或阈值 $B_1$ 设置偏离原文。Terminal-Bench 上多数对比在配对 McNemar 检验下不显著，不要以单格显著性下结论。规划与动作空间仅在 T4/128k 下消融，其他组合的效果未知，需全因子研究才能外推。
+
+## 术语与记号
+
+| 术语 | 含义 |
+| --- | --- |
+| coding harness | 编码智能体外壳，把 LLM 变成可操作代码库的软件层，含控制循环、工具接口与上下文管理 |
+| ReAct loop | 推理—行动—观察循环，每轮包含推理步骤、动作与观察 |
+| $H$ | 交互历史（对话轨迹） |
+| planning scaffold | 规划支架，模型维护的显式持久任务计划，经 update_plan 更新并每轮注入而不写入历史 |
+| action space | 动作空间，智能体与环境交互的接口，如预定义工具集或仅 bash |
+| context management | 上下文管理，在有限窗口内决定历史如何表示与压缩 |
+| $B_1$ | 软阈值，历史超过后触发省略 |
+| $B_2$ | 硬阈值，历史超过后触发摘要 |
+| M1（elision） | 省略，用短桩替换中间区域陈旧工具观察正文以省 token |
+| M2（recall） | 召回，被省略内容外存，经 recall_event 按事件 id 取回原文，使省略可逆 |
+| M3（summarization） | 摘要，把最旧中间事件折叠为运行中的自然语言摘要（同模型无工具调用） |
+| T0–T4 | 五档上下文管理策略：T0 无管理（溢出即终止）；T1 仅 M1；T2 M1+M2；T3 仅 M3；T4 M1+M2+M3，先省略后摘要 |
+| window overflow | 窗口溢出，历史超出上下文窗口导致轨迹以错误终止 |
+| stuck detection | 卡死检测，识别同名同参数的重复工具调用并提醒或终止 |
+| SR (%) | 成功率，主指标 |
+| McNemar test | 配对显著性检验，用于比较设置间成功率差异；原文用双侧精确检验加 Benjamini–Hochberg 校正，$q<0.05$ 记 * |
+| LLM judge | 轨迹级行为标注用的模型判官；与人工标注的一致度为加权平均 Cohen's kappa 0.929、原始一致率 94.2%（§9.2） |
+
+补充：T1–T3 各只有一个动作，故在硬阈值 $B_2$ 处操作；T4 在 $B_1$ 处省略、$B_2$ 处摘要。前导（系统提示与初始任务描述）与至少两轮的最近窗口保持原文，仅中间区域被压缩。recall_event 每轮可用，但仅在 T2 与 T4 中暴露。
 
 ## 自测
 
-1. 为什么作者认为比较完整 harness 无法回答组件收益来源？
-2. T4 相对 T1/T2/T3 的取舍逻辑是什么，recall 机制为何被认为价值有限？
-3. 规划对弱模型与强模型的作用方向为何相反？
-4. 若要把本文结论迁移到你的模型与任务，哪些边界条件必须先验证？
+以下问题用于检验读者是否真正掌握了本文的条件性结论，而非记住单个数字。答案中标注了「作者主张」与「已复现/共识」的区分。
+
+**Q1.** 在 SWE-Bench Verified、32K 预算下，T0 到 T1 的成功率跃升幅度在四个模型上分别是多少？这一跃升说明了什么机制？
+
+<details><summary>答案</summary>
+Nemotron-3 30B：09.40 → 20.60*；120B：11.40 → 43.00*；550B：06.40 → 51.40*；Mistral-3.5-128B：12.60 → 64.40*（Table 3，* 表示相对匹配基线在双侧精确 McNemar 检验、BH 校正 q<0.05 下显著）。作者主张：这一跃升主要来自上下文管理避免窗口溢出导致的提前终止，而非改变智能体的行为模式；图 3 显示所有受管层级在每个预算下溢出任务数恰为零，而 T0 会因溢出丢任务。
+</details>
+
+**Q2.** 规划消融在 128K/T4 下对四个模型的效果方向是否一致？请给出具体数字并解释「准确率支架 → 效率辅助」的交叉点。
+
+<details><summary>答案</summary>
+不一致。Nemotron-3 30B：25.20 → 13.60*（去掉规划大幅下降）；120B：44.00 → 46.60；550B：65.80* → 67.80；Mistral：68.60 → 69.00。作者主张：对弱模型规划是准确率支架（增本提分），对强模型主要降本、准确率略升或基本不变。注意 120B/550B/Mistral 的差异未标注显著性，且规划仅在默认 T4/128k 下消融（Limitations），因此交叉点位置属作者主张、需外部验证。
+</details>
+
+**Q3.** 动作空间消融中，bash-only 在哪些模型上提升、哪些模型上下降？这与「bash 弱/强」的假设是否自洽？
+
+<details><summary>答案</summary>
+SWE-Bench 128K/T4：30B 25.20 → 10.20*（降），120B 44.00 → 42.40（降），550B 65.80* → 69.40*（升，成本 2.33→1.11），Mistral 68.60 → 45.40*（降）。Terminal-Bench：30B 13.48 → 03.37*（降），120B 28.09 → 23.56（降），550B 44.94* → 50.56（升），Mistral 37.08 → 43.82（升）。作者主张：预定义工具提升 bash 弱模型，bash-only 为 bash 强模型降本。但 Mistral 在两个基准上方向相反（SWE-Bench 大降、Terminal-Bench 升），作者以「benchmark-dependent interface preference」解释，说明该假设并非普遍成立。
+</details>
+
+**Q4.（跨小节）** 若把 T2 的 recall 机制视为「无损」方案，为什么作者仍推荐 T4 而非 T2？请结合 recall 调用频率与效率证据回答。
+
+<details><summary>答案</summary>
+作者主张：recall_event 很少被调用（Nemotron-3 30B T2 在 SWE-Bench 32k 上平均 0.146 次/任务，Terminal-Bench 上 4.326 次/任务；T4 在 SWE-Bench 32k 上 0.472、Terminal-Bench 上 2.708，Table 13），且不提升准确率（相对仅省略）。T4 先省略后摘要，在成功率与其他受管策略相近时控制峰值上下文、减少对摘要调用的依赖，因而效率最高。因此 T2 的可恢复性在实践中未被有效利用，T4 的「省略优先」分阶段策略更划算。
+</details>
+
+**Q5.（跨小节）** 本文的结论在什么条件下不能直接迁移到你的场景？请至少列出三条来自 Limitations 的边界。
+
+<details><summary>答案</summary>
+（1）结果估计的是特定组件实现的条件效应，规划仅一种提示与更新机制、上下文管理仅一种阈值策略与固定压缩设置，动作空间是捆绑式接口变更，未隔离工具数量或动作粒度。（2）规划与动作空间仅在默认 T4/128k 下消融，需全因子研究才能判断其效应在其他组合下是否持续。（3）每个设置每任务只跑一次，Terminal-Bench 仅 89 个任务，许多对比在配对 McNemar 检验下不显著，结论依赖跨模型与预算的一致方向。（4）外部效度受限于三个 Nemotron-3 规模与 Mistral-Medium-3.5-128B、两个基准，其中 SWE-Bench Verified 仅 Python；模型规模只是能力的不完美代理。作者明确要求交叉点在迁移到其他模型族、harness 实现或非软件工程任务前先做验证。
+</details>

@@ -1,0 +1,238 @@
+---
+id: agora-git
+title: Agora：以 Git 为共享记忆的集体自动研究
+summary: AI 智能体可独立运行实验，但发现散落在会话记录或临时工作区中，后续会话难以复用；现有多智能体框架组织对话或角色工作流，缺少跨会话持久、可审计、可读的共享研究记录。论文提出 Agora，用 Git DAG 作为共享记忆，让异步人机参与者发布贡献、读取前沿视图并协作推进研究。
+stage: SYSTEMS
+track: Agent 系统
+kind: paper
+depth: deep
+evidenceGrade: C
+order: 55
+minutes: 60
+updated: '2026-09-24'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.18094
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+claim_count: 4
+full_text_url: https://arxiv.org/html/2609.18094
+objectives: [理解如何用 Git DAG 作为跨会话持久、可审计的多智能体共享研究记忆, 掌握多样性感知 UCB 与嵌入聚类如何引导探索-利用平衡, 了解 13 个 worker 近 12 天将模型从 3.39 bpb 降至 1.899 bpb 的实验设置与证据强度, 认识该案例在发现效率、复现验证与协调动态上的局限]
+tags: [multi-agent, auto-research, git-dag, shared-memory, ucb, harness]
+sources: [agora-git-as-shared-memory-for-collectiv]
+related: [sol-pi-auto-research-harness, multi-agent, lab-agent]
+prerequisites: [agent-loop, multi-agent]
+---
+## 问题与语境
+
+AI 智能体已能独立运行实验、读论文、写代码，但发现本身散落在会话记录或临时工作区里，后续会话难以复用。论文把这一失效点归结为「研究前沿不可读」：一个项目真正需要被继承的不只是排行榜上的最好分数，还包括失败路径、未决假设、待验证主张，以及某个数字究竟由哪份代码与哪条血缘产生。作者在 §1 与 §3.1 用四个问题刻画这一需求——试过什么（含失败）、哪些主张有独立支持或冲突、当前前沿在哪（含被忽视的替代方向）、哪个确切工件与血缘产生了报告结果。
+
+已有做法被指为不足：现有多智能体框架组织对话或编码角色工作流（Li et al., 2023; Wu et al., 2023; Hong et al., 2023），而独立调度的 worker 需要一个比任何单次会话更长寿、并能告诉它下一步做什么的记录。仅靠排行榜也不行——它不显示失败尝试、无人核验的主张或无人涉足的方向（§3.3）。Table 1 把失效点逐条列出：无共享制度时，会话内的发现与负结果消失、worker 猜测什么还开放并重复同一分支、投票奖励流行度而自引与重复背书成本极低、排行榜把所有 worker 集中到一个局部盆地、标量分数丢失产生它的配置与代码。
+
+论文的定位因此不是「又一个多智能体编排框架」，而是把 Git DAG 当作共享研究记忆的制度设计：每条贡献是一次 Git 提交，父边表示「基于」，服务端只追加历史，SQLite 索引与 analyze 视图均可从 Git 历史重建（§3.2、§3.5）。参与者通过读写贡献协调，不共享文件系统、模型或对话，也没有中心规划者派活（§3.2、Figure 1）。作者用一次近 12 天的权重迁移实验来检验该设计，并明确其贡献是「让研究跨参与者、跨会话累积的基础」，而非已证实的效率提升（§5）。
+
+## 核心主张
+
+论文的核心主张可归为四条，均出自作者自述，证据定位如下。
+
+| # | 主张 | 证据 | 状态 |
+|---|---|---|---|
+| C1 | 13 个智能体 worker 在近 12 天内把目标模型从 3.39 bpb 降至 1.899 bpb，且不使用训练数据、不对目标模型做梯度更新 | §1 Introduction；§4.1 Task and evaluator；§4.5 Figure 3；§5 Conclusion | 作者主张 |
+| C2 | 1,703 条贡献中包含 165 次独立复现，复现记录报告跨硬件一致 | §4.3 Research loop；§4.8 How we verified the record；§5 Conclusion | 作者主张 |
+| C3 | 前 8 次改进贡献约 70% 的总降幅，前 18 条评分贡献约 98% | §4.6 Coordination dynamics 第 1 点 | 作者主张 |
+| C4 | 部署聚类与多样性感知 UCB 视图后，worker 次日开始探索状态空间编辑并达到 1.8995 bpb | §4.7 Human intervention；§4.5 Figure 3 | 作者主张 |
+
+最强的是 C1 的「无训练数据、无梯度更新」部分：§4.8 说明作者核对了报告分数与记录的 loss、token 数、字节数，并沿获胜提交的 import 从最终编辑回溯到基础模块逐模块阅读，确认没有任何步骤访问评估数据或用梯度下降更新参数；同时 §4.1 的评估器契约（FineWeb-Edu 加载器在 transfer() 内调用即报错、禁止预训练/微调/改评估器）使这一约束可被外部检查。但需注意作者自陈「We did not rerun the winning method」，主结果是归档的评估器输出，仅由 agent 的跨硬件复现佐证，且跨 GPU 类型分数可在第三位小数不同（§4.1、§4.8）。
+
+最弱的是 C4 的因果解读。§4.7 只给出时间相邻：5 月 2 日部署视图，5 月 3 日 00:13 UTC 出现首个 SSM 编辑得 1.9028 bpb，5 月 5 日达到 1.8995 bpb；论文没有做匹配对照，作者自己在 §5 承认「establishing its effect on discovery efficiency requires matched comparisons across tasks」。C3 属于对自身日志的描述性统计，可信度取决于图构建口径，但同样未经独立复算。C2 的「独立」程度也需保留：§4.6 报告 696 对来自不同账户的相同分数中 63% 在一小时内、80% 在六小时内出现，说明复现与并行重复发现高度混杂，且 §4.8 指出「A verdict without these artifacts is a coordination hint rather than strong validation evidence」。
+
+## 机制与方法
+
+Agora 的核心主张是：把「共享研究记忆」从会话记录或临时工作区搬到 Git DAG 上，使异步参与者无需共享对话、文件系统或模型即可协作。项目状态被定义为一个有向无环图 $G=(V,E)$，其中边 $(u,v)\in E$ 表示 $v$ 构建于 $u$ 之上（Git 语义下 $u$ 是 $v$ 的父提交）。每个节点存储
+
+$$v=(h,a,T,d,x,m,P,\tau),$$
+
+即规范提交哈希 $h$、发布账户 $a$、标签集合 $T$、描述 $d$、结构化元数据 $x$、可选项目指标 $m$、父集合 $P$ 与服务端时间戳 $\tau$。含代码的贡献携带完整仓库状态；服务端保留所有被接受的贡献，历史只追加，SQLite 贡献索引与 analyze 视图均可从 Git 历史重建（作者注明：项目元数据与认证状态仍需常规数据库备份）。
+
+读取前沿由 `analyze`（CLI 命令与 HTTP 端点）承担，它回答四类问题：已尝试过什么（近期活动、在用标签、贡献者）、哪些主张成立（未验证结果、有争议的验证、开放假设）、前沿在哪（指标领先者、按后代数最被构建的节点、后代数 ≤2 的欠探索结果、无后续工作的叶子）、以及哪个确切产物与谱系产生了某结果。`analyze` 是每个 worker 会话的第一件事与发布前最后一件事，因此成为无对话协调的主通道。
+
+针对「所有 worker 都挑最高分父节点、图被单一想法填满」的集中化问题，作者引入多样性感知注意力分配。贡献发布时用 Arctic-Embed 2.0（568M 参数，1024 维向量）嵌入其描述；当至少 50% 的贡献有嵌入后，`analyze` 以余弦相似度 >0.90（默认）做单链聚类，并将成对分析上限设为最近 5,000 条贡献。集中度用 top-cluster share $\max_i p_i$ 与有效簇数 $k_{\mathrm{eff}}=\exp(-\sum_i p_i\log p_i)$ 度量，后者可读作「真正在被追求的想法有多少个」，均匀度为 $k_{\mathrm{eff}}/k$。
+
+候选排序使用多样性感知上置信界：
+
+$$U(v)=100\,Q(v)+C\sqrt{\frac{\log(N+1)}{n(v)+1}}+\frac{100D}{\sqrt{1+\rho(v)}},$$
+
+其中 $Q(v)$ 为质量百分位，$n(v)$ 为 $v$ 的后代贡献数，$N$ 为项目中后续贡献总数，$\rho(v)$ 为描述嵌入与 $v$ 余弦相似度在 0.95 以内（比聚类阈值更严）的其他贡献数。多样性权重 $D$ 默认 0.5，嵌入覆盖率低于 50% 时置零；探索常数 $C$ 默认 15，当指标分布紧挤在最优附近时最多增至三倍。候选分三个槽位展示：exploit（复现或改进领先者）、explore known（扩展薄簇中的有希望工作）、explore novel（检查单例或极小簇中未被触及的节点）。
+
+设计取舍上，作者把「细化」与「探索」显式拆成不同槽位，而非让单一标量分数决定选择；证据质量上依赖独立后续工作、可替换的验证裁决与自引排除，而非投票。适用前提：项目需自带 brief、评估器与产物策略；评估器须可复现（同硬件同代码两次运行逐位一致）；参与者通过 CLI/HTTP 发布，写操作需 bearer 认证并受速率限制。原型为 Go 服务 + CLI + Next.js 界面，服务端暴露 26 条 HTTP 路由与 15 个 CLI 命令组，SQLite 含八张表（agents、projects、contributions、parents、tags、跨项目引用、embeddings、rate limits）。
+
+## 实验设置
+
+论文只报告了一个应用实例：在无训练数据、无梯度更新的条件下，用预训练 donor 的权重与前向传播初始化一个冻结的混合架构语言模型（权重迁移任务）。任务、评估器与产物策略由项目 brief 提供，Agora 本身不绑定任何研究任务。评估器以种子 42 初始化所有随机数生成器，运行参与者提交的 `transfer(model, config)`，在 GPT-2 tokenizer 下对 200 篇 FineWeb-Edu 文本按不重叠 512-token 分块评分，报告下一词损失之和除以 UTF-8 字节数。规则禁止预训练、微调以及修改评估器或目标配置；FineWeb-Edu 加载器若在 `transfer()` 内被调用会报错。同硬件同代码两次运行逐位一致，跨 GPU 类型分数可能在第三位小数上不同。项目 brief 设定的期望目标为低于 2.5。
+
+| 基准 | 模型/规模 | 基线 | 预算 | 指标 |
+| --- | --- | --- | --- | --- |
+| FineWeb-Edu 200 texts, non-overlapping 512-token chunks, GPT-2 tokenizer, summed next-token loss divided by UTF-8 byte count | 14-layer hybrid target（交替 multi-head attention 与简化 Mamba-style SSM 块），hidden size 672，七个注意力头，untied embeddings，119,572,320 参数 | Random initialization 3.3923 bpb；conventionally trained GPT-2 124M about 1.0 bpb | 13 coding-agent workers，11 days and 19 hours of server time，每 worker 一块 80 GB GPU | bits per byte (bpb) |
+
+补充设置：donor zoo 含 141 个开放权重模型（534 GB），来自 32 个架构家族（含 GPT-2、LLaMA、Mistral、Qwen、Gemma、Pythia、RWKV、Mamba）；目标维度被刻意选为不与任何 donor 匹配。Worker 为运行前沿语言模型的编码智能体会话：Claude Code 配 Claude Opus 4.7，Codex 配 GPT-5.5；启动器在带 GPU 的容器中以 headless 模式运行，挂载一个 Agora 账户凭证，提示词仅要求读 program.md 并运行 `agora analyze`。13 个 worker 账户贡献了 1,703 条中的 1,699 条：五个（worker1–worker5）自 4 月 27 日起在 A100 节点，八个（slurm_worker_1–8）自 4 月 28 日起在 H100 节点直至 cutoff；其余四条为 setup commit 与作者自己的三条发布，图中合计 17 个账户。每个 worker 拥有 Agora CLI、Git、含 PyTorch 与 Transformers 的 Python 环境、对象存储中 donor zoo 的读权限、项目评估器与一块 80 GB GPU。主窗口为 4 月 26 日 setup commit 至 5 月 8 日 cutoff，共 11 天 19 小时服务器时间；全部 13 个 worker 运行后约每天 170 条贡献。作者明确说明未重跑获胜方法，主结果是归档的评估器输出，由智能体的跨硬件复现佐证；并指出要确立 Agora 对发现效率的影响需要跨任务的匹配对照实验。
+
+## 证据与结果
+
+本小节汇总摘录中可核对的量化结果。所有数字均照抄原文，未在摘录中出现的数字一律标注「摘录未给出」。
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| bpb | 1.899 | 分析截止时的最佳结果，权重迁移任务 | §1 Introduction; §5 Conclusion |
+| bpb | 3.39 | 随机基线 | §1 Introduction; §5 Conclusion |
+| bpb | 3.3923 | 随机初始化 | §4.1 Task and evaluator |
+| bpb | about 1.0 | 常规训练的 GPT-2 124M 参考 | §4.1 Task and evaluator |
+| bpb | 1.904 | 供体集成与更好的 SVD sketch，截至 5 月 1 日 | Figure 3 |
+| bpb | 1.9028 | 首个 SSM 编辑，5 月 3 日 00:13 UTC 发布 | §4.7 Human intervention |
+| bpb | 1.8995 | Table 4 选定里程碑，5 月 5 日达到 | §4.7 Human intervention |
+| 贡献数 | 1,703 | 主窗口，11 天 19 小时服务器时间，4 月 26 日至 5 月 8 日 | §4.3 Research loop; §5 Conclusion |
+| 贡献数 | 1,699 | 由 13 个 worker 账户撰写 | §4.2 Agents, harness, and tools |
+| 评分结果 | 1,124 | 1,703 条贡献之内 | §4.3 Research loop |
+| insights | 284 | 1,703 条贡献之内 | §4.3 Research loop |
+| hypotheses | 203 | 1,703 条贡献之内 | §4.3 Research loop |
+| verifications | 165 | 1,703 条贡献之内 | §4.3 Research loop |
+| report | one | 1,703 条贡献之内 | §4.3 Research loop |
+| 刷新最佳 | 233 | 评分结果中刷新最佳者 | §4.3 Research loop |
+| 节点 | 1,703 | 截止时图规模 | §4.6 Coordination dynamics |
+| 边 | 1,894 | 截止时图规模 | §4.6 Coordination dynamics |
+| 多父节点 | 149 | 截止时图规模 | §4.6 Coordination dynamics |
+| 单一连通分量占比 | 98.9% | 一个分量含全部节点 | §4.6 Coordination dynamics |
+| 同分对 | 696 | 不同账户发布相同分数 | §4.6 Coordination dynamics |
+| 一小时内 | 63% | 696 对同分对中 | §4.6 Coordination dynamics |
+| 六小时内 | 80% | 696 对同分对中 | §4.6 Coordination dynamics |
+| 前 8 次改进占比 | roughly 70% | 总降幅 | §4.6 Coordination dynamics |
+| 前 18 条评分贡献占比 | about 98% | 总降幅 | §4.6 Coordination dynamics |
+| 供体池 | 141 个开放权重模型（534 GB），32 个架构族 | 权重迁移任务 | §4.1 Task and evaluator |
+| 目标参数量 | 119,572,320 | 14 层混合目标 | §4.1 Task and evaluator |
+| 嵌入模型 | Arctic-Embed 2.0，568M 参数，1,024 维 | 贡献描述嵌入 | §3.4 Diversity-aware attention allocation |
+| 聚类阈值 | 余弦相似度 > 0.90 | 至少 50% 贡献有嵌入后单链聚类 | §3.4 Diversity-aware attention allocation |
+| 多样性权重 D | 默认 0.5 | 嵌入覆盖低于 50% 时置零 | §3.4 Diversity-aware attention allocation |
+| 探索常数 C | 默认 15 | 指标分布紧贴最优时最多增至三倍 | §3.4 Diversity-aware attention allocation |
+| HTTP 路由 | 26 | 服务端 | §3.5 Prototype implementation |
+| CLI 命令组 | 15 | 客户端 | §3.5 Prototype implementation |
+| SQLite 表 | eight | agents, projects, contributions, parents, tags, cross-project references, embeddings, rate limits | §3.5 Prototype implementation |
+| 账户数 | 17 | 图中全部账户 | §4.2 Agents, harness, and tools |
+| worker 账户 | 13 | 5 个（worker1–5）A100 自 4 月 27 日，8 个（slurm_worker_1–8）H100 自 4 月 28 日至截止 | §4.2 Agents, harness, and tools |
+| 日均发布量 | roughly 170 条/天 | 13 个 worker 全部运行后 | Figure 2 |
+| 获胜配方模块 | 83 个 Python 模块 | 截止时最佳贡献 | §4.4 The winning recipe |
+| bigram 表规模 | 50257×50257 | 上下文平均 bigram 表 M | §4.4 The winning recipe |
+| SVD 秩 | d−1=671 | 固定 sketch 与一次幂迭代的随机 SVD | §4.4 The winning recipe |
+| 供体权重 | 0.725 on GPT-2 small | Stage A 混合中的固定供体权重 | §4.4 The winning recipe |
+| 上下文数 | 28 | 无上下文、end-of-text、22 个单 token、4 个双 token 子句起始 | §4.4 The winning recipe |
+| band 大小 | 96 维 | Stage B 稀疏确定性编辑 | §4.4 The winning recipe |
+| MLP 缩放 | 0.009 | Layer 0 的 SwiGLU 接收 GPT-2 small 首个 MLP 的 SVD 投影切片 | §4.4 The winning recipe |
+| 截止后贡献 | 123 | 截止后发布，纳入 Figure 4 | Figure 4 |
+
+消融与对照方面，摘录给出的是一次「人类干预」式对照而非严格消融：5 月 2 日部署聚类、多样性摘要与多样性感知 UCB 后，工人立即开始使用新视图；5 月 3 日 00:13 UTC 出现首个 SSM 编辑，得分 1.9028 bpb；Table 4 选定里程碑随后于 5 月 5 日达到 1.8995 bpb（§4.7）。Figure 3 的时间线给出另一组对照性观察：第一天的统计先验贡献了几乎全部降幅，供体集成与更好的 SVD sketch 在 5 月 1 日达到 1.904，首个 sub-1.90 分数出现在 5 月 2 日部署 landscape 视图之后。显式的负结果与 explore-novel 标签也仅在 5 月 2 日部署后出现（Figure 2）。作者自陈这些解释「在贡献中被提出但未被独立检验」（§4.6），且未重跑获胜方法（§4.8）。因此上述时间先后关系属于作者主张，不构成因果消融；无对照组的随机种子重复、无多任务迁移实验，摘录未给出。
+
+## 证据强度评估
+
+证据分级：C（单案例、作者自陈、无独立复现的机制性演示）。
+
+理由：本档案的核心结论是「以 Git DAG 作为共享记忆可支撑多智能体持续协作研究」，其支撑证据是一次近 12 天的单任务运行（权重迁移），报告 1,703 条贡献、165 次复现、1.899 bpb（§1、§5）。作者明确声明「未重跑获胜方法；主要结果是归档的评估器输出，由智能体的跨硬件复现佐证」（§4.8），并声明「确立其对发现效率的影响需要跨任务的匹配对照」（§5）。因此该结论目前是作者主张，而非已复现或共识。可提升可信度的部分：贡献记录可从 Git 重建、索引可重建（§3.2、§3.5），评估器固定、两次同硬件运行逐位一致（§4.1），以及跨硬件复现记录在 brief 容差内一致（§4.8）。这些属于可审计性证据，不等于对「协作机制有效性」的因果证据。
+
+主要威胁：
+
+1. 构造效度：核心因变量是单一 bpb 分数，而「集体研究能力」被操作化为该分数。作者自陈前 8 次改进贡献约 70% 总降幅、前 18 条评分贡献约 98%（§4.6），说明降幅高度集中于早期少数贡献，后续 1,600 余条贡献对最终指标的边际贡献未被量化，摘录未给出。因此 1.899 bpb 难以直接读作「协作规模带来增益」。
+
+2. 外部效度：仅一个任务、一个评估器、一个目标架构（14 层混合、119,572,320 参数）、一个供体池（141 个模型、32 个架构族）（§4.1）。作者自陈需跨任务匹配对照（§5）。迁移到其他研究任务（如需要真实训练、开放搜索空间、无固定评估器）时结论是否成立，摘录未给出。
+
+3. 统计显著性与混杂：5 月 2 日部署多样性视图与 5 月 3 日首个 SSM 编辑、5 月 5 日 1.8995 bpb 之间只有时间先后（§4.7），无对照组、无重复运行、无随机种子层面的方差报告。同时存在并行重复发现（696 对同分中 63% 在一小时内，§4.6），说明多个 worker 可能同时逼近同一改进，使「干预导致探索」的归因进一步混杂。
+
+4. 基线选择与评测污染：基线为随机初始化 3.3923 bpb，参考为常规训练 GPT-2 124M 约 1.0 bpb（§4.1）。随机基线极弱，从 3.39 到 1.899 的降幅中相当部分可由「第一天统计先验」解释（Figure 3），因此该区间不适合作为协作机制有效性的敏感度量。评测污染方面，评估器在 transfer() 内调用 FineWeb-Edu 会报错、规则禁止预训练与微调（§4.1），且作者核查未发现访问评估数据或梯度更新（§4.8），这一点风险较低；但跨 GPU 类型分数可在第三位小数不同（§4.1），而关键改进（1.904 → 1.9028 → 1.8995）恰在该量级，故这些里程碑之间的差异可能落在硬件噪声范围内，摘录未给出误差估计。
+
+## 边界与反例
+
+**什么观察会推翻结论。** 论文的核心主张（C1）是「13 个 worker 在无训练数据、无梯度更新的条件下把目标模型从 3.39 bpb 降到 1.899 bpb」。作者自陈：「We did not rerun the winning method; the primary result is the archived evaluator output, corroborated by the agents’ cross-hardware reproductions.」因此该结论的验证链是**归档评估器输出 + agent 自报的跨硬件复现**，而非作者独立重跑。若第三方在干净环境重跑 83 个 Python 模块的 winning recipe 得不到 1.899 bpb（超出「across GPU types the score can differ in the third decimal place」的容差），或发现任一模块读取了评估数据、或存在对 target 的梯度更新，则 C1 被推翻。同理，若 165 次 verification 被证明多为同源重复而非独立复现，C2 的「独立」二字失效。
+
+**最可能失效的条件。** 其一，任务单一：全部证据来自一个 weight-transfer 任务、一个固定 evaluator、一个 119,572,320 参数目标，作者明确写「establishing its effect on discovery efficiency requires matched comparisons across tasks」，故**不能**把 1.899 bpb 的达成速度外推为 Agora 提升发现效率的证据。其二，人类干预不可忽略：May 2 部署聚类与多样性 UCB 后，次日出现首个 SSM 编辑（1.9028 bpb），May 5 达 1.8995 bpb；这是单次、非对照的干预，无法区分「视图起作用」与「时间自然推进」。其三，搜索集中现象（696 对相同分数中 63% 在一小时内；前 8 次改进占约 70% 降幅）说明该 run 的收益高度集中在早期，晚期增益微弱。
+
+**读者可能误推的方向。** 作者未验证但易被误读为结论的有三点：(a) §4.6 中 agent 提出的「globally linear evaluator 与未充分利用的 target 子层导致平台期」——原文注明「were proposed in the contributions but were not independently tested」；(b) 把 1.899 bpb 与「conventionally trained GPT-2 124M about 1.0 bpb」直接比较，但两者架构、参数量、评估协议不同，论文只把它作为 gap 参照；(c) 把 Git DAG 的可重建性等同于全系统可复现——作者指出「project metadata and authentication state still need ordinary database backups」。
+
+## 与知识库的关系
+
+**marl-book（多智能体协调）。** 新增：一种以 Git DAG 为共享记忆、**不共享对话也不共享工作区**的协调机制——13 个 worker 仅通过读写贡献记录协作，报告 1,703 条贡献、165 次复现，并给出可量化的协调病理：696 对跨账号相同分数中 63% 出现在一小时内、80% 在六小时内（并行重复发现），以及前 8 次改进占约 70% 总降幅、前 18 条评分贡献占约 98%（搜索集中）。张力：经典 MARL 协调叙事强调通信/角色分工提升群体性能，本文的反例是「Shared visibility supported reuse, but did not by itself sustain broad exploration」——共享可见性本身不足以维持广泛探索，需外挂多样性机制（聚类 + diversity-aware UCB）才在 May 2 后引出状态空间方向的探索。可链接：`marl-book`。
+
+**lilian-agent（agent memory）。** 印证：持久化外部记忆对长期任务的价值——append-only Git 提交、可重建的 SQLite 索引与 analyze 视图，使发现、负结果与验证状态跨会话保留；「Explicit negative-result and explore-novel tags appear only after the May 2 deployment」说明记忆结构会反过来塑造被记录的内容类型。新增：把记忆检索从「相似度召回」升级为**多样性感知的注意力分配**——Arctic-Embed 2.0（568M 参数、1,024 维）、余弦阈值 0.90 单链聚类、$k_{\mathrm{eff}}=\exp(-\sum_i p_i\log p_i)$，以及排序式 $U(v)=100Q(v)+C\sqrt{\log(N+1)/(n(v)+1)}+100D/\sqrt{1+\rho(v)}$，默认 $D=0.5$、$C=15$。可链接：`lilian-agent`。
+
+**auto-research harnesses。** 印证：可审计 harness 的要素——两页 brief、固定 evaluator、每会话「先 analyze、后发布」的循环、人类仅在 May 2 介入一次。张力/边界：作者自陈「establishing its effect on discovery efficiency requires matched comparisons across tasks」，故本笔记只能作为**存在性演示**而非效率证据；且「A verdict without these artifacts is a coordination hint rather than strong validation evidence」提示 verification 记录本身不等于强验证。可链接：`auto-research-harnesses`。
+
+## 复现与验证计划
+
+**目标**：验证「13 个 agent worker 在无训练数据、无梯度更新的条件下，把 14 层 hybrid 目标模型从随机初始化 3.3923 bpb 降到 1.899 bpb」这一作者主张（C1）是否可复现。注意作者自陈「We did not rerun the winning method; the primary result is the archived evaluator output」，因此本计划的首要任务是补上作者未做的独立重跑。
+
+**环境**：单张 80 GB GPU 即可跑评估（每个 worker 配置为 one 80 GB GPU）；需 PyTorch 与 Transformers、GPT-2 tokenizer、Agora CLI 与 Git。跨 GPU 类型分数可在第三位小数不同，故复现时应记录 GPU 型号，并预期 ±0.001 量级抖动。
+
+**数据/任务**：FineWeb-Edu 200 篇文本，非重叠 512-token 分块，GPT-2 tokenizer，指标为 summed next-token loss 除以 UTF-8 字节数（bpb）。目标为 14 层 hybrid（交替 MHA 与简化 Mamba-style SSM），hidden size 672、7 个 attention head、untied embeddings、119,572,320 参数。donor zoo 为 141 个 open-weight 模型（534 GB）、32 个架构族。
+
+**基线**：随机初始化 3.3923 bpb（论文另处写作 3.39）；参考上界为常规训练的 GPT-2 124M 约 1.0 bpb。
+
+**预算**：完整重跑需 13 个 worker、11 天 19 小时服务器时间，成本高。最小验证建议分两级：(a) 只重跑 winning recipe 的最终提交（83 个 Python 模块的 import 链），单卡评估即可，成本以小时计；(b) 若要验证协作动态，则需多 worker 长跑，不建议作为首轮。
+
+**判据**：重跑得分落在 1.899 ± 0.001（跨硬件容差）内视为通过；同时核对报告的 loss、token 数与 byte 数三者自洽。另需确认代码未访问评估数据、未对目标做梯度更新。
+
+**预期失败模式**：donor zoo 版本或权重缺失导致 Stage A 的 50257×50257 bigram 表无法重建；randomized SVD 的固定 sketch 与 power iteration 未固定随机种子；96 维 band 路由常数（如 Layer 0 SwiGLU scale 0.009、GPT-2 small donor 权重 0.725）抄录错误；评估器版本漂移。作者亦承认「These explanations were proposed in the contributions but were not independently tested」，故对 plateau 成因的解释不应作为验证对象。
+
+## 术语与记号
+
+Agora 以 Git DAG 作为共享研究记忆：每条 contribution 是一个 Git commit，父边表示「builds on」。下表覆盖正文关键符号与缩写。
+
+| 术语 | 含义 |
+|---|---|
+| Git DAG | 以 Git 提交为节点、父边为构建关系的有向无环图，作为共享研究记忆 |
+| contribution | 一次发布记录，可含代码、数据、描述、指标、标签与父集 |
+| analyze | Agora 的 CLI 命令与 HTTP 端点，汇总当前图的多视角前沿视图 |
+| bpb | bits per byte，按 UTF-8 字节数归一化的下一词损失 |
+| $G=(V,E)$ | 贡献有向无环图，节点为贡献，边表示构建关系 |
+| $v=(h,a,T,d,x,m,P,\tau)$ | 贡献节点：哈希、账户、标签、描述、元数据、指标、父集、时间戳 |
+| $Q(v)$ | 贡献 $v$ 的质量百分位 |
+| $n(v)$ | $v$ 的后代贡献数 |
+| $N$ | 项目中后续贡献总数 |
+| $\rho(v)$ | 描述嵌入与 $v$ 余弦相似度在 0.95 以内的其他贡献数 |
+| $C$ | 探索常数，默认 15，指标分布集中时最多增至三倍 |
+| $D$ | 多样性权重，默认 0.5，嵌入覆盖率低于 50% 时置零 |
+| $k_{\mathrm{eff}}$ | 有效簇数，份额香农熵的指数，$k_{\mathrm{eff}}=\exp(-\sum_i p_i\log p_i)$ |
+| Arctic-Embed 2.0 | 568M 参数嵌入模型，生成 1024 维描述向量用于聚类与候选排序 |
+| diversity-aware UCB | 在质量与后代数之外加入多样性项的候选排序上置信界，$U(v)=100Q(v)+C\sqrt{\log(N+1)/(n(v)+1)}+100D/\sqrt{1+\rho(v)}$ |
+| exploit / explore known / explore novel | 三类候选槽位：复现领先、扩展薄簇、检查未触及节点 |
+| verification | 对已有主张的独立复现记录，可替换裁决并排除自引 |
+| SSM | state-space model，目标模型中与 attention 交替的简化 Mamba-style 块 |
+| SVD | 奇异值分解，Stage A 用 randomized SVD 将中心化 bigram 表分解到秩 $d-1=671$ |
+
+## 自测
+
+以下问题用于检验读者是否能把本档案中的数字、机制与限制条件对应起来。答案中标注了证据来源小节。
+
+**Q1（数字核对）** 论文报告的最佳 bpb 与随机基线分别是多少？两者之间的差距被作者用来对照哪个参考模型？
+
+<details><summary>答案</summary>
+最佳结果为 1.899 bpb，随机基线为 3.39 bpb（§1 Introduction；§5 Conclusion）。§4.1 给出更精确的随机初始化值 3.3923 bpb，并指出常规训练的 GPT-2 124M 约为 1.0 bpb，作者用该模型作为“填补了多少差距”的参考。注意 1.899 与 3.39 出现在摘要式表述中，而 3.3923 出现在任务与评估器小节，二者是同一基线的不同精度写法。
+</details>
+
+**Q2（机制理解）** 多样性感知 UCB 公式中三项分别对应什么？$D$ 与 $C$ 的默认值及触发调整的条件是什么？
+
+<details><summary>答案</summary>
+$U(v)=100Q(v)+C\sqrt{\log(N+1)/(n(v)+1)}+100D/\sqrt{1+\rho(v)}$：第一项是质量百分位 $Q(v)$，第二项是后代数 $n(v)$ 驱动的探索项，第三项是多样性项，$\rho(v)$ 为描述嵌入与 $v$ 余弦相似度在 0.95 以内的其他贡献数。$D$ 默认 0.5，嵌入覆盖率低于 50% 时置零；$C$ 默认 15，当指标分布紧密聚集在最优附近时最多增至三倍（§3.4）。
+</details>
+
+**Q3（跨小节推理）** 作者声称“部署聚类与多样性视图后，工人次日开始探索状态空间编辑并达到 1.8995 bpb”。要把这一因果解释当作已确立结论，还缺什么？请结合 §4.7 与 §5 的限制说明。
+
+<details><summary>答案</summary>
+时间线本身是记录在案的：5 月 2 日部署视图，5 月 3 日 00:13 UTC 出现首个 SSM 编辑得 1.9028 bpb，5 月 5 日里程碑达到 1.8995 bpb（§4.7）。但作者自陈“establishing its effect on discovery efficiency requires matched comparisons across tasks”（§5），即缺少匹配对照实验；§4.6 也指出共享可见性“did not by itself sustain broad exploration”。因此该因果链目前是作者主张（证据表 C4），不是已复现结论。
+</details>
+
+**Q4（跨小节推理）** 论文报告 165 次复现与跨硬件一致，但主结果未重跑。这两点如何共同影响你对 1.899 bpb 的信任度？请结合 §4.8 与限制条目。
+
+<details><summary>答案</summary>
+§4.8 明确“We did not rerun the winning method; the primary result is the archived evaluator output, corroborated by the agents’ cross-hardware reproductions.” 即主结果依赖归档的评估器输出，而非作者独立重跑。复现记录由 agent 自身产生，属于同一社区内的交叉验证，且 §4.1 指出跨 GPU 类型分数可在第三位小数不同，§4.8 也提醒“A verdict without these artifacts is a coordination hint rather than strong validation evidence.” 因此 1.899 可视为有内部一致性支撑的归档值，但独立第三方复现仍缺失。
+</details>
+
+**Q5（协调动态）** 696 对相同分数、63% 在一小时内、80% 在六小时内，以及“前 8 次改进约占 70% 总降幅、前 18 条评分贡献约 98%”，这两组数字分别说明什么？它们与“共享可见性支持复用但不自动维持广泛探索”的结论如何呼应？
+
+<details><summary>答案</summary>
+第一组（§4.6）说明不同账户在极短时间内独立得到相同分数，即并行重复发现；第二组说明降幅高度集中在前少量贡献，后续大量贡献边际收益很小。两者共同刻画了“快速利用 + 窄主干”的搜索形态：图在 cutoff 时有 1,703 节点、1,894 边、149 个多父节点、单一连通分量占 98.9%（§4.6）。作者据此指出共享可见性支持复用，但本身不足以维持广泛探索，这也正是 5 月 2 日引入多样性视图的动机（§4.7）。
+</details>

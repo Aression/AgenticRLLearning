@@ -4,6 +4,9 @@ title: 奖励、验证器与信用分配
 summary: 区分结果奖励和过程信号，避免把可优化的代理指标误当真实目标。
 stage: SYSTEMS
 track: 训练算法
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 9
 minutes: 20
 updated: '2026-09-08'

@@ -4,6 +4,9 @@ title: PPO：限制每次策略更新
 summary: 看懂裁剪目标、旧策略、KL 与 critic，再理解 LLM RL 的工程变体。
 stage: FOUNDATION
 track: 训练算法
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 6
 minutes: 22
 updated: '2026-09-08'

@@ -4,6 +4,9 @@ title: 多轮 Agent RL：轨迹、步骤与层级
 summary: 从完整任务优势走向更细的步骤归因，并处理部分可观测和长轨迹。
 stage: SYSTEMS
 track: 训练算法
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 12
 minutes: 22
 updated: '2026-09-08'

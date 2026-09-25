@@ -4,6 +4,9 @@ title: 奖励投机、提示注入与权限边界
 summary: 高奖励不等于可信执行，训练验证器和运行时约束需要分别设计。
 stage: SYSTEMS
 track: 评估与安全
+kind: system
+depth: overview
+evidenceGrade: C
 order: 15
 minutes: 16
 updated: '2026-09-08'

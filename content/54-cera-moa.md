@@ -1,0 +1,242 @@
+---
+id: cera-moa
+title: CERA-MoA：路由与智能体持续学习共演化
+summary: 多智能体混合（MoA）系统中，路由策略与智能体的持续学习相互脱节：现有路由机制无法适应后训练阶段智能体能力的持续变化，且后训练依赖人工划分数据集，缺少按能力动态分配训练查询的机制，导致智能体趋于通才而非领域专家，无法实现协同的能力专精。
+stage: FRONTIER
+track: Agent 系统
+kind: paper
+depth: deep
+evidenceGrade: C
+order: 54
+minutes: 60
+updated: '2026-09-24'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.18779
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+claim_count: 5
+full_text_url: https://arxiv.org/html/2609.18779
+objectives: [理解 MoA 系统中路由策略与智能体持续学习脱节的问题, 掌握预测式熟悉度估计器与累积阈值自适应路由机制, 了解闭环共演化如何诱导智能体能力专精, 评估该方法在异构模型池与多轮场景下的适用边界]
+tags: [mixture-of-agents, routing, co-evolution, continual-learning, reinforcement-learning, multi-agent]
+sources: [cera-moa-co-evolving-routing-mechanisms]
+related: [multi-agent, moe, grpo]
+prerequisites: [multi-agent, policy-gradient]
+---
+## 问题与语境
+
+多智能体混合（Mixture-of-Agents, MoA）被视为突破单体 LLM 能力边界的可行路径，但论文指出当前研究分裂为两条互不通信的路线：一条在**固定能力**的智能体之间优化编排协议（辩论、多数投票、动态 agent 选择），另一条在**预定工作流**内微调智能体策略。两条路线的共同缺陷是：路由策略与智能体的持续学习动态被解耦。
+
+这一解耦带来两个具体失效点。其一，后训练阶段智能体能力持续漂移，而现有路由机制（ICL-Router、LinUCB、RouteMoA 等）并不设计为跟踪这种漂移，其评估依据在训练过程中逐渐失真。其二，后训练管线依赖人工划分数据集，缺少按能力动态分配训练查询的机制；没有把特定训练样本路由给最胜任的智能体，系统就无法自发诱导出分工，个体退化为通才而非领域专家。
+
+论文的定位因此不是"再做一个更强的路由器"，而是把路由与智能体策略放进同一个闭环 RL 过程：路由分配训练查询驱动专精，智能体能力变化又反过来更新路由的评估参数。为支撑这一闭环，作者提出两个组件——用中层隐状态双头投影距离做生成前的**预测式熟悉度估计**（避免外部评估器或完整 rollout 的开销），以及按累积熟悉度阈值激活最小智能体子集的**累积阈值自适应路由**（替代固定 top-$k$）。需要说明的是，上述问题陈述与定位均来自作者自述，其"关键空白"的论断在本文证据范围内未被独立验证。
+
+## 核心主张
+
+| # | 主张 | 证据 | 状态 |
+|---|---|---|---|
+| C1 | CERA-MoA 在三种同构基座与一个异构池上的平均性能均超过静态路由与固定工作流微调基线 | §4.2 表 2（Qwen3-4B 72.8 vs AT-GRPO 71.5；Llama-3.2-3B 53.9 vs RouteMoA 52.9；Phi-4-mini 62.5 vs AT-GRPO 60.0；异构池 71.8 vs AT-GRPO 69.1） | 作者主张 |
+| C2 | 预测式熟悉度估计器优于直接奖励回归与多分类路由指标 | §4.4 表 3、图 2（ID 63.2 / OOD 72.8 vs 直接奖励回归 60.8 / 70.1，多分类 61.3 / 70.4） | 作者主张 |
+| C3 | 累积阈值自适应路由相比固定 Top-2 减少约 45% 生成 token 且性能相当 | §4.5 表 3（367.77 vs 666.37 tokens；ID 63.2 vs 63.3，OOD 72.8 vs 72.5） | 作者主张 |
+| C4 | 闭环共演化在无人工角色分配下自发诱导智能体能力专精 | §4.6 图 3、附录 E.2 图 5–7 | 作者主张 |
+| C5 | 路由器开销可忽略，占原生生成时间不足 1% | 表 6（11.87 ms vs 原生生成 1350.32 ms）、附录 E.1 | 作者主张 |
+
+**最强的一条是 C3。** 它同时给出准确率与 token 成本两侧的数字，且对照条件（固定 Top-1 / Top-2 / Top-3）在同一基座、同一评测集上可比：Top-2 用 666.37 tokens 换到 ID 63.3 / OOD 72.5，累积阈值用 367.77 tokens 换到 ID 63.2 / OOD 72.8，即在 token 减少约 45% 的同时性能未降。这类"等性能降成本"的结论对迁移到自有场景的读者最有直接参考价值，且不依赖对"专精"这类机制性解释的信任。
+
+**最弱的是 C4。** 它依赖图 3 的 t-SNE 可视化与附录中的行为画像，属于定性证据：作者报告 Agent 2 因长链式推理承担多数查询、Agent 1 掌握简洁数学与逻辑、Agent 3 专注代码、Agent 4 专注通用推理，但证据表中没有给出可核验的量化分工指标（如各 agent 在各类任务上的分配比例或增益分解）。同时 C4 与 C1 存在解释上的耦合——若专精未真正发生，C1 的性能增益仍可能来自其他因素（如探索奖励带来的策略多样性）。此外，C2 的机制解释（"估计奖励振荡而熟悉度平滑收敛"）目前只有图 2 的曲线支撑，缺少多次随机种子下的方差报告。
+
+需要提醒：证据表明确标注"摘要中的所有主张在 triage 阶段均未验证"，中层隐状态熟悉度估计器与共演化动态仍需人工阅读与代码检查。因此上表五行状态一律记为**作者主张**，不构成已复现结论。
+
+## 机制与方法
+
+CERA-MoA 把「路由」与「智能体持续学习」放进同一个闭环：路由决定哪些训练查询分配给哪个 agent，agent 策略更新后能力漂移，又反过来改变路由的评估参数。系统形式化为 $\mathcal{M}=(\mathcal{D}_{\psi},\{\mathcal{A}_{\theta_{i}}\}_{i=1}^{N},\mathcal{S})$，即参数化路由器、$N$ 个持续学习的 agent 策略与投票聚合器。
+
+**熟悉度估计（Predictive Familiarity Estimator）。** 查询 $q$ 先过路由器冻结骨干，取中层隐状态拼接为语义表示
+$$h(q)=\operatorname{concat}\left(\operatorname{hidden}_{\lfloor L/2\rfloor}(q)\,\|\,\operatorname{hidden}_{\lfloor 3L/4\rfloor}(q)\right).$$
+每个 agent $i$ 有一个可训练预测头 $g_i$ 与一个随机初始化后永久冻结的目标头 $\bar{g}_i$（不同 agent 间正交初始化以保证初始多样性）。两投影 $c_i(q)=g_i(h(q))$、$\bar{c}_i(q)=\bar{g}_i(h(q))$ 归一化后的欧氏距离为
+$$d_i(q)=\left\|\frac{c_i(q)}{\|c_i(q)\|_2}-\frac{\bar{c}_i(q)}{\|\bar{c}_i(q)\|_2}\right\|_2,\qquad f_i(q)=\exp(-\lambda d_i(q)),$$
+$\lambda$ 为温度（配置 2.0）。关键设计取舍：不回归绝对奖励，而是把奖励监督转成围绕固定锚点的「推—拉」几何信号——正优势把预测头拉向锚点，负优势推开一个 margin。冻结目标头不编码语义原型或能力标签，只提供稳定参考系；骨干不被熟悉度目标更新，$h(q)$ 是固定语义特征，训练中演化的是「特征→熟悉度」的映射。作者称这使熟悉度分数平滑收敛，而估计奖励会震荡。
+
+**累积阈值自适应路由。** 训练时路由分数叠加探索项以防样本饥饿：
+$$s_i(q)=f_i(q)+c_{ucb}\sqrt{\frac{\log T}{n_i+1}}+w_{ent}\overline{H}_i,$$
+$T$ 为已路由查询数，$n_i$ 为分配给 agent $i$ 的样本数，$\overline{H}_i$ 为其历史平均生成熵。但激活截断只看熟悉度：按 $s_i(q)$ 降序排列后取最小子集使
+$$\min_k \sum_{j=1}^{k} f_{(j)}(q)\ge \tau,$$
+$\tau$ 为累积阈值（配置 0.7）；若总和不足 $\tau$ 则分配给全体。推理时 $c_{ucb}=w_{ent}=0$，仅按熟悉度阈值激活专家。聚合上，可验证任务用熟悉度加权多数投票（按贡献 agent 的 $f_i(q)$ 求和选出获胜答案组，再输出该组内最高熟悉度 agent 的轨迹）；开放式生成直接输出最熟悉 agent 的回复。
+
+**优化与前提。** 被路由查询用 DAPO 组归一化损失 + GSPO 序列级重要性采样更新 agent 策略，同时更新预测头 $g_i$；同构设置下 agent 是共享骨干上的独立 LoRA 模块，异构设置下各由不同基座驱动。适用前提（作者自述局限）：熟悉度估计仅基于初始用户 prompt，因此路由天然面向单轮交互或固定轨迹生成，长程多轮 agentic 工作流中所需专长会随上下文动态漂移；共识聚合在开放式生成上退化为单 agent 输出，未发挥多 agent 生成优势。
+
+## 实验设置
+
+评测覆盖 ID（训练源数据集的留出测试划分：GSM8K/MATH/DAPO-MATH-17k、MBPP/Eurus-2-Code/TACO、MAGPIE-IF/RLVR-IFEval、BIG-bench Hard）与 OOD（训练外六项：IFEval、HumanEval、AGIEval、ARC-Challenge、LogicBench、OlympiadBench）。OOD 协议保留训练好的路由器、agent adapter、提示构造与聚合规则，测的是路由与专精的迁移而非对留出基准的适配。训练语料 32,000 条、固定 seed=42，四类任务族：数学 11,200、代码 9,600、指令跟随 6,400、通用推理 4,800。训练规模约 1,000 步优化 = 16,000 条训练查询、每查询 $G=8$ 条 rollout，约一个 H200 GPU 日；硬件为四卡 NVIDIA H200 节点。
+
+| 基准 | 模型/规模 | 基线 | 预算 | 指标 |
+|---|---|---|---|---|
+| IFEval, HumanEval, AGIEval, ARC-c, LogicBench, Olympiad (OOD) | Qwen3-4B | Qwen3-4B, ICL-Router, LinUCB, RouteMoA, GSPO, MAPoRL, AT-GRPO | 未说明 | Avg. |
+| IFEval, HumanEval, AGIEval, ARC-c, LogicBench, Olympiad (OOD) | Llama-3.2-3B-Instruct | Llama-3.2-3B-Instruct, ICL-Router, LinUCB, RouteMoA, GSPO, MAPoRL, AT-GRPO | 未说明 | Avg. |
+| IFEval, HumanEval, AGIEval, ARC-c, LogicBench, Olympiad (OOD) | Phi-4-mini-Instruct | Phi-4-mini-Instruct, ICL-Router, LinUCB, RouteMoA, GSPO, MAPoRL, AT-GRPO | 未说明 | Avg. |
+| IFEval, HumanEval, AGIEval, ARC-c, LogicBench, Olympiad (OOD) | 异构池（Qwen3-4B, Llama-3.2-3B, Phi-4-mini） | ICL-Router, LinUCB, RouteMoA, MAPoRL, AT-GRPO | 未说明 | Avg. |
+| ID Avg. / OOD Avg. / Avg. Tokens | Qwen3-4B | Direct Reward Regression, Multi-Class Classification, Fixed Top-1, Fixed Top-2 | Avg. Tokens 367.77（自适应阈值） | ID Avg. / OOD Avg. |
+| ID Avg. / OOD Avg. | Qwen3-4B | 未说明（消融：No Exploration w/o UCB & Entropy；Final-layer States；Fixed Top-3） | Avg. Tokens 436.60 / 438.12 / 817.97 | ID Avg. / OOD Avg. |
+| Router latency profiling（单张 NVIDIA H200） | Predictive Router | Completion Generation (Native), Completion Generation (vLLM) | Batch Size 1（vLLM 为 32） | Avg. Latency (ms) |
+
+主要结果（OOD Avg.）：Qwen3-4B 上 CERA-MoA 72.8，对比 AT-GRPO 71.5、MAPoRL 70.5、GSPO 70.5、RouteMoA 57.9、ICL-Router 54.4、LinUCB 52.0、基座 53.0；Llama-3.2-3B-Instruct 上 53.9（RouteMoA 52.9、AT-GRPO 51.0、基座 43.0）；Phi-4-mini-Instruct 上 62.5（AT-GRPO 60.0、基座 48.6）；异构池 71.8（AT-GRPO 69.1、MAPoRL 64.3）。消融（Qwen3-4B）：自适应阈值 ID 63.2 / OOD 72.8 / 367.77 tokens；Fixed Top-2 为 63.3 / 72.5 / 666.37；Fixed Top-1 为 61.4 / 70.1 / 325.70；Fixed Top-3 为 63.1 / 72.3 / 817.97；去掉 UCB 与熵的探索项后降至 57.1 / 63.9（436.60 tokens）；用最终层隐状态替代中层为 61.1 / 71.3（438.12 tokens）。路由延迟：预测路由器 11.87 ms/query，原生生成 1350.32 ms，vLLM（batch 32）154.09 ms，作者称路由开销低于原生生成时间的 1%。以上均为作者主张，摘要级结论在 triage 阶段未经验证。
+
+## 证据与结果
+
+以下数字均直接取自全文摘录与证据表，未做任何换算或推断。
+
+主结果（OOD，Table 2，六基准平均：IFEval / HumanEval / AGIEval / ARC-c / LogicBench / Olympiad）：
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| Avg. | 72.8 | CERA-MoA on Qwen3-4B | Table 2 |
+| Avg. | 71.5 / 70.5 / 70.5 | AT-GRPO / MAPoRL / GSPO on Qwen3-4B | Table 2 |
+| Avg. | 57.9 / 54.4 / 52.0 / 53.0 | RouteMoA / ICL-Router / LinUCB / Qwen3-4B 原始 | Table 2 |
+| Avg. | 53.9 | CERA-MoA on Llama-3.2-3B-Instruct | Table 2 |
+| Avg. | 52.9 / 51.0 / 49.1 / 47.4 / 46.9 / 46.4 / 43.0 | RouteMoA / AT-GRPO / GSPO / MAPoRL / ICL-Router / LinUCB / 原始 | Table 2 |
+| Avg. | 62.5 | CERA-MoA on Phi-4-mini-Instruct | Table 2 |
+| Avg. | 60.0 / 58.4 / 58.3 / 58.3 / 54.2 / 52.9 / 48.6 | AT-GRPO / MAPoRL / GSPO / RouteMoA / LinUCB / ICL-Router / 原始 | Table 2 |
+| Avg. | 71.8 | CERA-MoA on 异构池（Qwen3-4B, Llama-3.2-3B, Phi-4-mini） | Table 2 |
+| Avg. | 69.1 / 64.3 / 57.2 / 55.8 / 54.0 | AT-GRPO / MAPoRL / RouteMoA / LinUCB / ICL-Router | Table 2 |
+
+消融（Qwen3-4B，Table 3 / Table 9 / Table 10）：
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| ID / OOD / Tokens | 63.2 / 72.8 / 367.77 | CERA-MoA（Adaptive Threshold） | Table 3 |
+| ID / OOD | 60.8 / 70.1 | Direct Reward Regression | Table 3 |
+| ID / OOD | 61.3 / 70.4 | Multi-Class Classification | Table 3 |
+| ID / OOD / Tokens | 61.4 / 70.1 / 325.70 | CERA-MoA（Fixed Top-1） | Table 3 |
+| ID / OOD / Tokens | 63.3 / 72.5 / 666.37 | CERA-MoA（Fixed Top-2） | Table 3 |
+| ID / OOD / Tokens | 63.1 / 72.3 / 817.97 | Fixed Top-3 Routing | Table 9 |
+| ID / OOD / Tokens | 57.1 / 63.9 / 436.60 | No Exploration（w/o UCB & Entropy） | Table 9 |
+| ID / OOD / Tokens | 61.1 / 71.3 / 438.12 | Final-layer States | Table 10 |
+
+效率与训练成本：
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| Avg. Latency (ms) | 11.87 | Predictive Router, Batch Size 1, 单张 H200 | Table 6 |
+| Avg. Latency (ms) | 1350.32 | Completion Generation (Native), Batch Size 1 | Table 6 |
+| Avg. Latency (ms) | 154.09 | Completion Generation (vLLM), Batch Size 32 | Table 6 |
+| 训练语料 | 32,000 | 四个任务族，seed = 42 | Appendix D.2 |
+| 数学 / 代码 / 指令 / 通用推理 | 11,200 / 9,600 / 6,400 / 4,800 | MATH 5,000 + DAPO-MATH-17k 5,000 + GSM8K 1,200 等 | Appendix D.2 |
+| 训练算力 | 约一个 H200 GPU day | 1,000 步 = 16,000 查询，G=8 rollouts | Appendix B.1 |
+| Token 缩减 | 约 45% | 累积阈值 vs Fixed Top-2 | §4.5 |
+| 路由开销占比 | < 1% | 相对原生生成时间 | Appendix E.1 |
+
+对照要点：主结果中 CERA-MoA 在三个同构基座与异构池上均为最高 Avg.；但 Llama-3.2-3B 上对 RouteMoA 的领先仅 1.0（53.9 vs 52.9），且其 LogicBench 单项（44.9）低于 RouteMoA（49.3）与 AT-GRPO（49.3）。消融显示：去掉探索项损失最大（OOD 63.9，较完整版低 8.9）；Fixed Top-2 精度与完整版接近（72.5 vs 72.8）但 token 为 666.37；Final-layer 特征同时劣化精度与 token 效率。摘录未给出各基准的方差、置信区间或多次运行结果，也未给出 ID 主表（Table 1）的完整数值。
+
+## 证据强度评估
+
+证据分级：B（内部一致、设置描述较完整，但缺统计显著性与独立复现）。
+
+理由：论文给出了明确的训练语料构成与规模（32,000 例、四任务族、seed = 42）、训练算力（约一个 H200 GPU day、1,000 步、G=8）、路由延迟的硬件与 batch 设置（单张 H200、Batch Size 1/32），以及覆盖三个同构基座加一个异构池的主结果和四组消融（路由指标、分配策略、探索机制、隐状态层深）。消融方向与作者主张一一对应，且「No Exploration」与「Final-layer」两组消融的退化幅度较大，说明关键组件确有贡献。但所有数字均为单点报告，摘录中没有任何方差、置信区间、随机种子重复或显著性检验；且全部结果出自作者自建流程，无第三方复现。按本档案分级标准，这属于「作者主张 + 内部证据自洽」，未达 A。
+
+主要威胁：
+
+1. 统计显著性与基线选择。Llama-3.2-3B 上 CERA-MoA（53.9）仅比 RouteMoA（52.9）高 1.0，比 AT-GRPO（51.0）高 2.9，且 LogicBench 单项反而更低（44.9 vs 49.3）。在无方差报告的情况下，这一差距可能落在噪声范围内。同时，最强的固定工作流基线 AT-GRPO 在 Qwen3-4B 上已达 71.5，与 72.8 的差距同样很小，而较弱的 ICL-Router / LinUCB 拉大了「平均提升」的观感。
+
+2. 构造效度：熟悉度分数的语义。熟悉度被定义为两个投影头之间的归一化欧氏距离经指数衰减（$f_i(q)=\exp(-\lambda d_i(q))$），而冻结目标头「不编码语义原型或能力标签，只提供稳定参考点」。这意味着 $f_i(q)$ 本身不是可解释的能力度量，其与真实胜任度的对齐完全依赖训练信号。作者用「奖励振荡 vs 熟悉度平滑收敛」解释其优势，但这是训练动态的观察，不是对估计器准确率的直接测量；摘录未给出熟悉度与真实正确率的校准曲线或相关性数字。
+
+3. 外部效度：单轮假设与聚合协议。作者自陈熟悉度估计器仅基于初始用户 prompt，路由「本质上针对单轮交互或固定轨迹生成优化」；在长程多轮 agentic 工作流中所需专长会随上下文动态变化。此外，对开放式生成任务（MBPP、HumanEval）聚合器退化为「输出最熟悉智能体的单一回复」，绕过了多智能体生成的优势。因此结论可迁移范围应限定为单轮、可验证答案的任务；多轮与开放式生成场景下本档案不支持外推。
+
+4. 评测污染与 OOD 定义。OOD 集为 IFEval、HumanEval、AGIEval、ARC-c、LogicBench、OlympiadBench，作者称其「被排除在训练之外」；但训练语料含 RLVR-IFEval 5,000 例与 MBPP 163 例，与 OOD 的 IFEval、HumanEval 属同族基准，存在同源污染风险。摘录未说明去重或 n-gram 重叠检查。此外，所有摘要级主张在 triage 时均未验证，中层隐状态估计器与共演化动态仍需人工阅读与代码检查。
+
+## 边界与反例
+
+**什么观察会推翻结论。** 核心主张 C1（CERA-MoA 在三种基座上平均性能均超基线）建立在 OOD 平均分之上，但逐项看并非全面领先：Qwen3-4B 上 HumanEval 82.5 低于 MAPoRL 85.1 与 AT-GRPO 84.4，LogicBench 65.6 仅比 MAPoRL 65.5 高 0.1；Llama-3.2-3B 上 LogicBench 44.9 低于 RouteMoA 与 AT-GRPO 的 49.3。若在更多基座或更多随机种子上，这类单项劣势扩大到平均分层面，C1 即被推翻。C3（约 45% token 缩减）只对比固定 Top-2，未与固定 Top-1（325.70 tokens）比较，若以 Top-1 为参照则 token 优势消失，只剩 ID 63.2 vs 61.4 的精度差。
+
+**最可能失效的条件。** 作者自陈两处：其一，熟悉度估计仅基于初始用户 prompt，路由"inherently optimized for single-turn interactions or fixed-trajectory generation"，在长程多轮 agentic 工作流中专家需求随上下文漂移，机制未验证。其二，共识聚合在开放式生成（MBPP、HumanEval 代码合成）上退化为"输出最熟悉智能体的单一回复"，多智能体生成优势被绕过——这恰好解释了 HumanEval 上未见领先。此外，训练成本约 one H200 GPU day / 1,000 steps / 16,000 queries，若算力预算远低于此，共演化闭环能否启动存疑。
+
+**读者可能误推的方向。** 不要把"中层隐状态优于末层"（ID 63.2 vs 61.1，OOD 72.8 vs 71.3）推广为通用结论：该对比仅在 τ=0.7、λ=2.0 的单一配置下成立，作者归因于末层分数增长慢导致激活更大子集，属机制解释而非普适规律。也不要把"无探索项即崩溃"（ID 57.1 / OOD 63.9）读成 UCB 与熵各自必要——消融是二者同时移除，无法区分贡献。最后，所有摘要级主张在 triage 时均未验证，中层隐状态估计器与共演化动力学仍需人工阅读与代码核查。
+
+## 与知识库的关系
+
+**marl-book（多智能体强化学习）——新增。** 本文把样本级 MoA 编排实例化为 MARL 问题：路由器与 N 个持续学习策略在闭环中共同演化，用 DAPO–GSPO 目标加 UCB 探索奖励与历史熵项防止策略饥饿（消融显示移除后 ID 从 63.2 掉到 57.1）。相较经典 MARL 笔记中的集中训练/分散执行设定，这里"信用分配"由熟悉度几何距离承担，而非价值分解，是可对照的新机制。
+
+**agentic-survey（agentic systems survey）——印证并扩展。** 笔记中"固定能力 agent 的编排优化"与"预定工作流内的 agent 微调"两条路线，被本文明确指认为解耦的两支，并提出共演化作为弥合方向。这印证了该分类，同时新增一条空白：路由策略未适配后训练阶段的能力漂移。
+
+**gigpo（group-normalized RL / importance sampling）——印证。** 本文采用 group-normalized DAPO loss 与 GSPO 序列级重要性采样（G=8 rollouts per query），并报告平均奖励稳定上升收敛，为该优化目标在持续学习多智能体场景提供新证据。与笔记结论方向一致，无张力。
+
+**MoE / token-level routing——存在张力。** 笔记聚焦 token 级路由内部隐表示；本文刻意区分二者，主张在中间层隐状态上做样本/语义级熟悉度估计。张力在于：本文同样使用"中层隐状态"作为路由特征，与 MoE 的表示级路由在技术手段上部分重叠，其"语义级 vs token 级"的界线是否足够清晰，值得在笔记中标注为待辨析点。
+
+**可链接笔记 id：** marl-book、agentic-survey、gigpo、MoE-token-level-routing。
+
+## 复现与验证计划
+
+**最小可执行验证（建议按此顺序）**
+
+环境：Ubuntu 22.04.5 LTS，Python 3.12，PyTorch 2.9.1，Transformers 4.57.6，PEFT 0.11.1，vLLM 0.16.0，Accelerate 1.13.0，Datasets 4.8.4，bfloat16 混合精度；单节点四张 NVIDIA H200（141 GB HBM3e）。同构设置下 4 个 LoRA（r=16, α=32, dropout=0.05，目标模块 q/k/v/o/gate/up/down_proj）共享一个骨干；异构设置 N=3，每个基座-适配器对独立 worker 进程。
+
+数据/任务：训练语料 32,000 条，固定 seed=42，四族：数学 11,200（MATH 5,000 / DAPO-MATH-17k 5,000 / GSM8K 1,200）、代码 9,600（MBPP 163 / Eurus-2-Code 7,000 / TACO 2,437）、指令跟随 6,400（MAGPIE-IF 1,400 / RLVR-IFEval 5,000）、通用推理 4,800（BBH 4,800）。OOD 六基准（训练中排除）：IFEval、HumanEval、AGIEval、ARC-c、LogicBench、OlympiadBench。
+
+基线：Qwen3-4B 直推、ICL-Router、LinUCB、RouteMoA、GSPO、MAPoRL、AT-GRPO；消融含 Direct Reward Regression、Multi-Class Classification、Fixed Top-1/Top-2/Top-3、No Exploration（w/o UCB & Entropy）、Final-layer States。
+
+预算：1,000 优化步 = 16,000 训练查询，每查询 G=8 rollout，约 1 个 H200 GPU 日。超参：λ=2.0，τ=0.7，margin m=1.0，c_ucb=2.0，w_ent=2.0（同构）/0.2（异构），路由头 lr 1e-4，适配器 lr 3e-5（cosine，600 warm-up，下限 2e-5）。
+
+判据：Qwen3-4B 上 OOD Avg. 应达 72.8（对照 AT-GRPO 71.5、GSPO/MAPoRL 70.5）；自适应阈值应同时给出 ID 63.2 / OOD 72.8 / 367.77 tokens，相对 Fixed Top-2（63.3 / 72.5 / 666.37）token 降约 45%；路由延迟约 11.87 ms（Batch Size 1），占原生生成时间 <1%。
+
+预期失败模式：去掉 UCB 与熵后 ID/OOD 掉到 57.1 / 63.9（策略饥饿）；改用末层隐状态掉到 61.1 / 71.3 且 token 升至 438.12；奖励回归类路由指标不稳定（60.8 / 70.1）。注意：以上均为作者主张，摘要级结论在 triage 时未验证，中层隐状态熟悉度与共演化动力学需人工精读并最好做代码核查。
+
+## 术语与记号
+
+| 术语 | 含义 |
+| --- | --- |
+| MoA（Mixture-of-Agents） | 混合智能体：组合多个智能体以利用互补能力解决多样任务的范式 |
+| CERA-MoA | 本文框架：路由器与持续学习智能体在闭环 RL 中共同演化 |
+| Predictive Familiarity Estimator | 预测式熟悉度估计器：用中层隐状态与双头投影距离在生成前估计查询与智能体专长的匹配度 |
+| Cumulative-Threshold Adaptive Routing | 累积阈值自适应路由：按熟悉度降序激活最小智能体子集，使其累积熟悉度达到阈值 τ |
+| Co-Evolution | 共演化：路由分配训练查询驱动智能体专精，智能体能力变化又反馈更新路由评估参数 |
+| UCB Exploration Bonus | UCB 探索奖励：训练路由分数中的上置信界项，防止智能体样本饥饿 |
+| DAPO-GSPO | 训练所用 RL 目标：组归一化奖励的 DAPO 损失配合 GSPO 序列级重要性采样 |
+| Familiarity-Weighted Majority Voting | 熟悉度加权多数投票：按贡献智能体的熟悉度分数求和选出获胜答案组 |
+| Heterogeneous Pool | 异构模型池：各智能体由不同基座模型驱动，路由器利用架构多样性 |
+| $N$ | 智能体数量（同构 $N=4$，异构 $N=3$） |
+| $h(q)$ | 查询 $q$ 的语义表示，由第 $\lfloor L/2\rfloor$ 与 $\lfloor 3L/4\rfloor$ 层隐状态拼接 |
+| $g_i$ / $\bar{g}_i$ | 智能体 $i$ 的可训练预测头 / 随机初始化且永久冻结的目标头 |
+| $c_i(q)$ / $\bar{c}_i(q)$ | $h(q)$ 经 $g_i$ / $\bar{g}_i$ 投影得到的嵌入 |
+| $d_i(q)$ | 两投影归一化后的欧氏距离 |
+| $f_i(q)$ | 熟悉度分数，$f_i(q)=\exp(-\lambda d_i(q))$ |
+| $\lambda$ | 温度超参，控制分数对距离的敏感度（配置 2.0） |
+| $s_i(q)$ | 训练路由分数，$s_i(q)=f_i(q)+c_{ucb}\sqrt{\log T/(n_i+1)}+w_{ent}\overline{H}_i$ |
+| $\tau$ | 累积熟悉度阈值（配置 0.7） |
+| $c_{ucb}$ / $w_{ent}$ | UCB 探索系数 / 熵权重，推理时置 0 |
+| $T$ / $n_i$ | 已路由查询总数 / 分配给智能体 $i$ 的训练样本数 |
+| $\overline{H}_i$ | 智能体 $i$ 的历史平均生成熵 |
+| $G$ | 每个分配训练提示的独立 rollout 数（$G=8$） |
+| $R$ | 最终奖励：任务奖励 $r_{base}$ 减去长度惩罚，惩罚在 $\gamma L_{\max}$ 后线性增长至 $\eta$ |
+
+## 自测
+
+以下问题用于检验读者是否真正掌握了本档案中「实验设置—结果—边界」的对应关系。答案折叠，建议先自行作答。
+
+**Q1.** 在 Table 2 中，CERA-MoA 在 Qwen3-4B 上的 OOD Avg. 为 72.8，而最强的固定工作流微调基线 AT-GRPO 为 71.5。请指出这一比较中「作者主张」与「已复现/共识」的边界在哪里。
+
+<details><summary>答案</summary>
+证据表中该结果标注来源为 Table 2，claims 中 C1 的状态明确为「作者主张」。全文摘录显示作者自述「CERA-MoA achieves the highest average performance across all three base models」，但 limits 中亦声明「All claims in the abstract are unverified at triage time」。因此 72.8 vs 71.5 目前只能视为作者报告值，不构成独立复现或社区共识；且该差距（+1.3）在未给出方差/多次种子结果的情况下，稳健性未知。
+</details>
+
+**Q2.** 若你的场景要求「多智能体协同生成」而非「选一个最熟悉的专家输出」，CERA-MoA 的设计是否直接适用？
+
+<details><summary>答案</summary>
+不直接适用。Appendix F 明确指出：当前共识聚合协议在开放式生成任务（如 MBPP、HumanEval 的代码合成）上「defaults to outputting the single response from the most familiar agent」，作者自承这「limits the collaborative potential of the agent population on open-ended generation tasks」。熟悉度加权多数投票仅用于可验证的确定性任务（如数学、选择题）。作者提出的兼容扩展是引入生成式聚合器（如 LLM-based meta-thinker），但未在本文验证。
+</details>
+
+**Q3.**（跨小节）Table 3 中 CERA-MoA（Adaptive Threshold）为 ID 63.2 / OOD 72.8 / 367.77 tokens，而 Fixed Top-2 为 ID 63.3 / OOD 72.5 / 666.37 tokens。结合 §4.5 的「约 45% token 缩减」说法，这两处数字是否自洽？
+
+<details><summary>答案</summary>
+大体自洽但需注意口径。以 666.37 为基准，367.77 的缩减比例为 1 − 367.77/666.37 ≈ 44.8%，与「approximately 45%」一致。但需注意：Fixed Top-2 的 ID 63.3 实际略高于 Adaptive Threshold 的 63.2，OOD 72.5 略低于 72.8，即「retaining comparable performance」是双向的近似持平，而非全面占优。此外 Table 9 中 Fixed Top-3 为 817.97 tokens、ID 63.1 / OOD 72.3，说明增加激活数并不单调提升性能。
+</details>
+
+**Q4.**（跨小节）Table 9 的「No Exploration (w/o UCB & Entropy)」为 ID 57.1 / OOD 63.9 / 436.60 tokens，而完整方法为 ID 63.2 / OOD 72.8 / 367.77 tokens。为什么去掉探索项后 token 反而更多、性能反而更差？这与 §3.3 的机制描述是否一致？
+
+<details><summary>答案</summary>
+与机制描述一致。§3.3 中路由分数 $s_i(q)=f_i(q)+c_{ucb}\sqrt{\log T/(n_i+1)}+w_{ent}\overline{H}_i$，但激活截断「strictly evaluated against familiarity scores」，即探索项只影响排序优先级、不影响累积阈值判定。去掉探索后，作者称会导致「policy starvation」（策略饥饿）：部分智能体长期得不到训练样本，熟悉度分数无法有效分化，因而在相同阈值 $\tau=0.7$ 下需要激活更多智能体才能凑够累积熟悉度，token 上升（436.60 > 367.77）且专精不足导致性能下降。注意这是作者给出的解释，档案中未提供直接的饥饿率统计。
+</details>
+
+**Q5.**（跨小节）Table 6 报告 Predictive Router 平均延迟 11.87 ms（Batch Size 1），Appendix E.1 称路由开销「less than 1% of the native generation time」。请核对这两个数字是否一致，并说明该结论的适用条件。
+
+<details><summary>答案</summary>
+可核对：Table 6 中 Completion Generation (Native) 为 1350.32 ms（Batch Size 1），11.87 / 1350.32 ≈ 0.88%，确实小于 1%，与 Appendix E.1 的表述一致。但适用条件需注意：(1) 该比较是 Batch Size 1 下的原生生成，而 vLLM 在 Batch Size 32 下为 154.09 ms，若以 vLLM 吞吐为分母，路由占比将显著高于 1%；(2) 延迟数据来自单张 NVIDIA H200 GPU，跨硬件不可直接迁移；(3) 该开销仅指路由器前向，不含被激活智能体的生成成本——真正的端到端节省来自「激活更少智能体」，而非路由本身。
+</details>

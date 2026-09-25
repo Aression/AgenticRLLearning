@@ -11,9 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
       - uses: actions/setup-node@v7
         with:
           node-version: 20
           cache: npm
+      - name: Content model and contract checks
+        run: |
+          python -m unittest discover -s tests
+          python scripts/harness.py check --json
+          python scripts/cards.py check
+          python scripts/atlas_db.py check
       - run: npm ci
       - run: npm run build

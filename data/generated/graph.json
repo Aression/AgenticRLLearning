@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T03:30:28.708155+00:00",
+  "generatedAt": "2026-09-25T10:08:56.203627+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -7,7 +7,9 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 15
+      "depth": "overview",
+      "noteKind": "orientation",
+      "degree": 13
     },
     {
       "id": "prerequisites",
@@ -15,7 +17,9 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 8
+      "depth": "overview",
+      "noteKind": "concept",
+      "degree": 7
     },
     {
       "id": "mdp",
@@ -23,7 +27,9 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
-      "degree": 13
+      "depth": "overview",
+      "noteKind": "concept",
+      "degree": 14
     },
     {
       "id": "value-learning",
@@ -31,6 +37,8 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
+      "depth": "overview",
+      "noteKind": "concept",
       "degree": 11
     },
     {
@@ -39,7 +47,9 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "训练算法",
-      "degree": 9
+      "depth": "overview",
+      "noteKind": "concept",
+      "degree": 16
     },
     {
       "id": "ppo",
@@ -47,7 +57,9 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "训练算法",
-      "degree": 8
+      "depth": "overview",
+      "noteKind": "concept",
+      "degree": 11
     },
     {
       "id": "agent-loop",
@@ -55,7 +67,9 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "Agent 系统",
-      "degree": 10
+      "depth": "overview",
+      "noteKind": "system",
+      "degree": 20
     },
     {
       "id": "environments",
@@ -63,7 +77,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 16
+      "depth": "overview",
+      "noteKind": "system",
+      "degree": 15
     },
     {
       "id": "rewards",
@@ -71,7 +87,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 20
+      "depth": "overview",
+      "noteKind": "concept",
+      "degree": 15
     },
     {
       "id": "preferences",
@@ -79,6 +97,8 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
+      "depth": "overview",
+      "noteKind": "concept",
       "degree": 4
     },
     {
@@ -87,7 +107,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 20
+      "depth": "overview",
+      "noteKind": "concept",
+      "degree": 37
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +117,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 23
+      "depth": "overview",
+      "noteKind": "concept",
+      "degree": 28
     },
     {
       "id": "training-systems",
@@ -103,7 +127,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 11
+      "depth": "overview",
+      "noteKind": "system",
+      "degree": 8
     },
     {
       "id": "evaluation",
@@ -111,7 +137,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 21
+      "depth": "overview",
+      "noteKind": "system",
+      "degree": 22
     },
     {
       "id": "safety",
@@ -119,7 +147,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 9
+      "depth": "overview",
+      "noteKind": "system",
+      "degree": 11
     },
     {
       "id": "multi-agent",
@@ -127,7 +157,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "前沿专题",
-      "degree": 10
+      "depth": "overview",
+      "noteKind": "synthesis",
+      "degree": 16
     },
     {
       "id": "frontier-radar",
@@ -135,7 +167,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "前沿专题",
-      "degree": 15
+      "depth": "overview",
+      "noteKind": "reference",
+      "degree": 10
     },
     {
       "id": "lab-rl",
@@ -143,6 +177,8 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "实验与维护",
+      "depth": "overview",
+      "noteKind": "lab",
       "degree": 7
     },
     {
@@ -151,7 +187,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 14
+      "depth": "overview",
+      "noteKind": "lab",
+      "degree": 13
     },
     {
       "id": "lab-agent-rl",
@@ -159,7 +197,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 13
+      "depth": "overview",
+      "noteKind": "lab",
+      "degree": 19
     },
     {
       "id": "learning-paths",
@@ -167,7 +207,9 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "实验与维护",
-      "degree": 12
+      "depth": "overview",
+      "noteKind": "reference",
+      "degree": 11
     },
     {
       "id": "maintenance",
@@ -175,6 +217,8 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "实验与维护",
+      "depth": "overview",
+      "noteKind": "reference",
       "degree": 2
     },
     {
@@ -183,6 +227,8 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "概念与基础",
+      "depth": "overview",
+      "noteKind": "reference",
       "degree": 9
     },
     {
@@ -191,7 +237,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 13
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 15
     },
     {
       "id": "modularrsi-harness",
@@ -199,7 +247,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 15
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 14
     },
     {
       "id": "emergence-world-stress-test",
@@ -207,7 +257,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 8
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 16
     },
     {
       "id": "value-flattening-ppo",
@@ -215,6 +267,8 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
+      "depth": "deep",
+      "noteKind": "paper",
       "degree": 8
     },
     {
@@ -223,7 +277,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 5
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 11
     },
     {
       "id": "scienceide-sci-envs",
@@ -231,7 +287,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 11
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 6
     },
     {
       "id": "compo-zeroth-order-alignment",
@@ -239,7 +297,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 3
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 4
     },
     {
       "id": "sol-pi-auto-research-harness",
@@ -247,7 +307,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 8
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 12
     },
     {
       "id": "retireopd-self-retiring-opd",
@@ -255,7 +317,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 11
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 19
     },
     {
       "id": "harness-design-coding-agents",
@@ -263,7 +327,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "Agent 系统",
-      "degree": 16
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 14
     },
     {
       "id": "evoskill-gui-training-free",
@@ -271,7 +337,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 6
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 11
     },
     {
       "id": "when2think-length-control",
@@ -279,7 +347,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 7
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 8
     },
     {
       "id": "actobs-observation-supervision",
@@ -287,7 +357,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 10
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 11
     },
     {
       "id": "pact-enterprise-compliance-pressure",
@@ -295,7 +367,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 8
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 11
     },
     {
       "id": "privileged-info-opsd-ample-math",
@@ -303,7 +377,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 5
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 13
     },
     {
       "id": "programdistill-ref-guided-swe",
@@ -311,7 +387,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 10
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 17
     },
     {
       "id": "codemidas-code-rl-envs",
@@ -319,7 +397,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 11
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 15
     },
     {
       "id": "recreationworld-hybrid-cua",
@@ -327,7 +407,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 8
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 14
     },
     {
       "id": "mintact-unified-visual-agent",
@@ -335,6 +417,8 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
+      "depth": "deep",
+      "noteKind": "paper",
       "degree": 5
     },
     {
@@ -343,7 +427,9 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 8
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 7
     },
     {
       "id": "parts-subtask-rl-manipulation",
@@ -351,7 +437,9 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 6
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 3
     },
     {
       "id": "rrsi-regularized-harness-rsi",
@@ -359,7 +447,189 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 6
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 11
+    },
+    {
+      "id": "expert-space-exploration-moe",
+      "label": "MoE强化学习中的专家空间探索",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 19
+    },
+    {
+      "id": "card",
+      "label": "探索引导的提示脚手架多模态强化后训练",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 13
+    },
+    {
+      "id": "sciencebuddy",
+      "label": "ScienceBuddy：递归中的递归自改进科研智能体",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 16
+    },
+    {
+      "id": "atria-dawn-ai",
+      "label": "Atria Dawn：智能体超智能与AI研发人机协作",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 10
+    },
+    {
+      "id": "never-give-up-rl",
+      "label": "Never Give Up：RL 难题动态采样",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 17
+    },
+    {
+      "id": "agent",
+      "label": "根因归因即搜索：长程 Agent 失败的持续搜索",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 14
+    },
+    {
+      "id": "impossiblerubrics",
+      "label": "ImpossibleRubrics：生成式评分标准作为奖励信号的压力测试",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 12
+    },
+    {
+      "id": "gai",
+      "label": "GAI：统一迭代策略改进与递归自我改进",
+      "kind": "note",
+      "stage": "FOUNDATION",
+      "track": "概念与基础",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 7
+    },
+    {
+      "id": "cera-moa",
+      "label": "CERA-MoA：路由与智能体持续学习共演化",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 11
+    },
+    {
+      "id": "agora-git",
+      "label": "Agora：以 Git 为共享记忆的集体自动研究",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "Agent 系统",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 8
+    },
+    {
+      "id": "hypoevolve",
+      "label": "HypoEvolve：遗传算法驱动多智能体假设发现",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 8
+    },
+    {
+      "id": "riskchainbench",
+      "label": "RiskChainBench：混淆消息还原与网页调查基准",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 18
+    },
+    {
+      "id": "card-2",
+      "label": "区域级策略优化：细粒度多模态感知",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 5
+    },
+    {
+      "id": "code2skill",
+      "label": "Code2Skill：从代码规模化合成接地技能库",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "Agent 系统",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 8
+    },
+    {
+      "id": "cadworld-cad",
+      "label": "CADWorld：长时程CAD计算机使用基准",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 13
+    },
+    {
+      "id": "cal-opd",
+      "label": "Cal-OPD：校准教师自偏差的在线策略蒸馏",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 8
+    },
+    {
+      "id": "bi-agent-bi-bench",
+      "label": "BI-Agent与BI-Bench：端到端商业智能自动化",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "Agent 系统",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 14
+    },
+    {
+      "id": "aport-vault",
+      "label": "APort Vault：智能体支付授权基准",
+      "kind": "note",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "depth": "deep",
+      "noteKind": "paper",
+      "degree": 14
     },
     {
       "id": "2026",
@@ -367,6 +637,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -375,6 +647,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "ablation-study",
+      "label": "ablation-study",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -383,22 +667,88 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "agent",
-      "label": "agent",
+      "id": "adaptive-overfitting",
+      "label": "adaptive-overfitting",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "agent-env",
-      "label": "agent-env",
+      "id": "adaptive-reasoning",
+      "label": "adaptive-reasoning",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "adaptive-scheduling",
+      "label": "adaptive-scheduling",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "adversarial-robustness",
+      "label": "adversarial-robustness",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-behavior",
+      "label": "agent-behavior",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-evaluation",
+      "label": "agent-evaluation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-exploration",
+      "label": "agent-exploration",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-failure-attribution",
+      "label": "agent-failure-attribution",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -407,6 +757,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-iteration",
+      "label": "agent-iteration",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -415,6 +777,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -423,14 +787,38 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "agent-system",
-      "label": "agent-system",
+      "id": "agent-skills",
+      "label": "agent-skills",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-tools",
+      "label": "agent-tools",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agent-training",
+      "label": "agent-training",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -439,6 +827,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "agentic-superintelligence",
+      "label": "agentic-superintelligence",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -447,6 +847,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "application-recreation",
+      "label": "application-recreation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "artifact-evaluation",
+      "label": "artifact-evaluation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -455,14 +877,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
       "id": "asynchronous-rl",
-      "label": "asynchronous-RL",
+      "label": "asynchronous-rl",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -471,6 +897,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "automated-search",
+      "label": "automated-search",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -479,6 +917,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -487,6 +927,68 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "benchmark-contamination",
+      "label": "benchmark-contamination",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "bottleneck-subtask",
+      "label": "bottleneck-subtask",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "business-intelligence",
+      "label": "business-intelligence",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "cad",
+      "label": "CAD",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "calibration",
+      "label": "calibration",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "category-balance",
+      "label": "category-balance",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -495,30 +997,78 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "coding-agent",
-      "label": "coding-agent",
+      "id": "co-evolution",
+      "label": "co-evolution",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "compliance",
-      "label": "compliance",
+      "id": "code-environments",
+      "label": "code-environments",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "computer-use",
-      "label": "computer-use",
+      "id": "code-grounded",
+      "label": "code-grounded",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "coding-agents",
+      "label": "coding-agents",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "coding-rl-environments",
+      "label": "coding-rl-environments",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "compliance-benchmark",
+      "label": "compliance-benchmark",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "computer-use-agent",
+      "label": "computer-use-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -527,6 +1077,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "continual-learning",
+      "label": "continual-learning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "continual-search",
+      "label": "continual-search",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -535,6 +1107,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -543,6 +1117,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -551,6 +1127,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -559,14 +1137,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "cross-domain",
-      "label": "cross-domain",
+      "id": "cross-model-transfer",
+      "label": "cross-model-transfer",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -575,6 +1157,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -583,6 +1167,38 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "curriculum-learning",
+      "label": "curriculum-learning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "data-management",
+      "label": "data-management",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "data-scaling",
+      "label": "data-scaling",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -591,6 +1207,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -599,14 +1217,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
-      "degree": 0
-    },
-    {
-      "id": "distillation",
-      "label": "distillation",
-      "kind": "concept",
-      "stage": "",
-      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -615,6 +1227,48 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "dynamic-sampling",
+      "label": "dynamic-sampling",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "efficiency-tax",
+      "label": "efficiency-tax",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "enforcement",
+      "label": "enforcement",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "enterprise-assistants",
+      "label": "enterprise-assistants",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -623,6 +1277,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -631,6 +1287,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -639,14 +1297,38 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "expert-routing",
-      "label": "expert-routing",
+      "id": "evaluation-anchoring",
+      "label": "evaluation-anchoring",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "evaluation-benchmark",
+      "label": "evaluation-benchmark",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "evidence-grounding",
+      "label": "evidence-grounding",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -655,14 +1337,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "frozen-llm",
-      "label": "frozen-llm",
+      "id": "freecad",
+      "label": "FreeCAD",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -671,6 +1357,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -679,6 +1367,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -687,6 +1377,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "genetic-algorithm",
+      "label": "genetic-algorithm",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -695,6 +1397,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -703,6 +1407,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "git-dag",
+      "label": "git-dag",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -711,6 +1427,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "gpi",
+      "label": "GPI",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -719,6 +1447,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -727,6 +1457,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -735,14 +1467,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "gui-agents",
+      "label": "gui-agents",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
       "id": "gui-grounding",
-      "label": "GUI-grounding",
+      "label": "gui-grounding",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -751,6 +1497,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "harness-design",
+      "label": "harness-design",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -759,6 +1517,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -767,6 +1527,38 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "honesty",
+      "label": "honesty",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "human-ai-collaboration",
+      "label": "human-ai-collaboration",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "hybrid-cua",
+      "label": "hybrid-cua",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -775,6 +1567,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "hypothesis-discovery",
+      "label": "hypothesis-discovery",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "intervention",
+      "label": "intervention",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -783,6 +1597,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -791,6 +1607,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -799,6 +1617,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -807,6 +1627,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -815,14 +1637,68 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "llm-rl",
-      "label": "LLM-RL",
+      "id": "llm-agent",
+      "label": "llm-agent",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "llm-agents",
+      "label": "LLM-agents",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "llm-as-judge",
+      "label": "llm-as-judge",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "llm-post-training",
+      "label": "LLM Post-training",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "llm-reasoning",
+      "label": "LLM-reasoning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "long-context",
+      "label": "long-context",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -831,6 +1707,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "long-horizon-agents",
+      "label": "long-horizon-agents",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "long-horizon-manipulation",
+      "label": "long-horizon-manipulation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -839,6 +1737,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -847,6 +1747,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "math-reasoning",
+      "label": "math-reasoning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -855,6 +1767,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -863,6 +1777,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -871,6 +1787,48 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "mixture-of-agents",
+      "label": "mixture-of-agents",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "mllm-perception",
+      "label": "MLLM perception",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "modular-rsi",
+      "label": "modular-rsi",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "moe",
+      "label": "MoE",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -879,14 +1837,88 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "multi-turn",
-      "label": "multi-turn",
+      "id": "multi-domain-rl",
+      "label": "multi-domain-rl",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "multi-turn-agents",
+      "label": "multi-turn-agents",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "multi-turn-attack",
+      "label": "multi-turn-attack",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "multi-turn-pressure",
+      "label": "multi-turn-pressure",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "multimodal-rl",
+      "label": "multimodal-rl",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "nl2sql",
+      "label": "nl2sql",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "obfuscation",
+      "label": "obfuscation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "observation-supervision",
+      "label": "observation-supervision",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -895,6 +1927,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "on-policy",
+      "label": "on-policy",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -903,22 +1947,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "opsd",
-      "label": "OPSD",
+      "id": "online-alignment",
+      "label": "online-alignment",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "overfitting",
-      "label": "overfitting",
+      "id": "ood-generalization",
+      "label": "ood-generalization",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -927,6 +1977,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "pass-at-k",
+      "label": "pass-at-k",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "payment-authorization",
+      "label": "payment-authorization",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -935,6 +2007,38 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "policy-evolution",
+      "label": "policy-evolution",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "policy-integration",
+      "label": "policy-integration",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "policy-optimization",
+      "label": "policy optimization",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -943,6 +2047,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "post-training",
+      "label": "post-training",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -951,22 +2067,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "preference-optimization",
-      "label": "preference-optimization",
+      "id": "preference-alignment",
+      "label": "preference-alignment",
       "kind": "concept",
       "stage": "",
       "track": "",
-      "degree": 0
-    },
-    {
-      "id": "privileged-context",
-      "label": "privileged-context",
-      "kind": "concept",
-      "stage": "",
-      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -975,6 +2087,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -983,6 +2097,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -991,14 +2107,38 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "prompt-policy",
-      "label": "prompt-policy",
+      "id": "prompt-optimization",
+      "label": "prompt-optimization",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "prompt-scaffolding",
+      "label": "prompt-scaffolding",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "prompt-selection",
+      "label": "prompt-selection",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1007,6 +2147,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1015,6 +2157,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "real-world-rl",
+      "label": "real-world-rl",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1023,14 +2177,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "reasoning-efficiency",
-      "label": "reasoning-efficiency",
+      "id": "recursive-rl",
+      "label": "recursive-RL",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "recursive-self-improvement",
+      "label": "recursive-self-improvement",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1039,6 +2207,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1047,6 +2217,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "region-level-rl",
+      "label": "region-level RL",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "regularization",
+      "label": "regularization",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1055,6 +2247,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "reinforcement-learning",
+      "label": "reinforcement-learning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1063,14 +2267,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "residual-policy",
-      "label": "residual-policy",
+      "id": "residual-rl",
+      "label": "residual-rl",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "retrieval",
+      "label": "retrieval",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1079,6 +2297,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1087,6 +2307,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1095,22 +2317,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "reward-verification",
-      "label": "reward-verification",
+      "id": "rl",
+      "label": "rl",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "rl-environment",
-      "label": "RL-environment",
+      "id": "rl-integration",
+      "label": "rl-integration",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1119,6 +2347,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1127,6 +2357,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1135,6 +2367,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1143,14 +2377,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "robot-manipulation",
-      "label": "robot-manipulation",
+      "id": "roi-prediction",
+      "label": "RoI prediction",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1159,6 +2397,58 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "root-cause-analysis",
+      "label": "root-cause-analysis",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "routing",
+      "label": "Routing",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "rsi",
+      "label": "RSI",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "rubric-reward",
+      "label": "rubric-reward",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "rule-following",
+      "label": "rule-following",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1167,6 +2457,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1175,22 +2467,48 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "scientific-code",
-      "label": "scientific-code",
+      "id": "science-agents",
+      "label": "science-agents",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "self-evolution",
-      "label": "self-evolution",
+      "id": "scientific-agents",
+      "label": "scientific-agents",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "scientific-reasoning",
+      "label": "scientific-reasoning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "self-distillation",
+      "label": "self-distillation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1199,14 +2517,48 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
       "id": "sft",
-      "label": "SFT",
+      "label": "sft",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "sft-initialization",
+      "label": "sft-initialization",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "shared-memory",
+      "label": "shared-memory",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "skill-bank",
+      "label": "skill-bank",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1215,6 +2567,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "skill-synthesis",
+      "label": "skill-synthesis",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1223,14 +2587,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "sparse-reward",
-      "label": "sparse-reward",
+      "id": "social-simulation",
+      "label": "social-simulation",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1239,22 +2607,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "subtask-rl",
-      "label": "subtask-rl",
+      "id": "swe-agents",
+      "label": "swe-agents",
       "kind": "concept",
       "stage": "",
       "track": "",
-      "degree": 0
-    },
-    {
-      "id": "swe",
-      "label": "SWE",
-      "kind": "concept",
-      "stage": "",
-      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1263,14 +2627,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "swe-tasks",
-      "label": "swe-tasks",
+      "id": "task-generation",
+      "label": "task-generation",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1279,6 +2647,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1287,6 +2657,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1295,14 +2667,68 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "terminal-agent",
-      "label": "terminal-agent",
+      "id": "td3-bc",
+      "label": "td3-bc",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "teacher-retirement",
+      "label": "teacher-retirement",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "teacher-student-discrepancy",
+      "label": "teacher-student-discrepancy",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "terminal-bench",
+      "label": "terminal-bench",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "test-synthesis",
+      "label": "test-synthesis",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "token-compression",
+      "label": "token compression",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1311,6 +2737,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "token-level-supervision",
+      "label": "token-level-supervision",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1319,6 +2757,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1327,14 +2767,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "trading-agent",
-      "label": "trading-agent",
+      "id": "trading",
+      "label": "trading",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1343,6 +2787,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1351,6 +2797,28 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "ucb",
+      "label": "ucb",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "unified-model",
+      "label": "unified-model",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1359,6 +2827,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "verifiable-rewards",
+      "label": "verifiable-rewards",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1367,6 +2847,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1375,6 +2857,8 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1383,14 +2867,38 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "web-apps",
-      "label": "web-apps",
+      "id": "vla-finetuning",
+      "label": "vla-finetuning",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "web-agent",
+      "label": "web-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
+      "degree": 0
+    },
+    {
+      "id": "web-applications",
+      "label": "web-applications",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1399,14 +2907,18 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
-      "id": "zeroth-order",
-      "label": "zeroth-order",
+      "id": "zeroth-order-optimization",
+      "label": "zeroth-order-optimization",
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     },
     {
@@ -1415,13 +2927,81 @@
       "kind": "concept",
       "stage": "",
       "track": "",
+      "depth": "",
+      "noteKind": "",
       "degree": 0
     }
   ],
   "edges": [
     {
+      "source": "agent",
+      "target": "aport-vault",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "bi-agent-bi-bench",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "riskchainbench",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "agent",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "agora-git",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "aport-vault",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "atria-dawn-ai",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "cadworld-cad",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "code2skill",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
       "source": "agent-loop",
       "target": "environments",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "hypoevolve",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "sciencebuddy",
       "kind": "prerequisite",
       "weight": 1.0
     },
@@ -1451,6 +3031,24 @@
     },
     {
       "source": "evaluation",
+      "target": "agent",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "cadworld-cad",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
+      "target": "impossiblerubrics",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
       "target": "lab-agent",
       "kind": "prerequisite",
       "weight": 1.0
@@ -1463,13 +3061,67 @@
     },
     {
       "source": "evaluation",
+      "target": "riskchainbench",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
       "target": "safety",
       "kind": "prerequisite",
       "weight": 1.0
     },
     {
       "source": "grpo",
+      "target": "bi-agent-bi-bench",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "cal-opd",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "card",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "expert-space-exploration-moe",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
       "target": "multi-turn-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "never-give-up-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "sciencebuddy",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "harness-design-coding-agents",
+      "target": "atria-dawn-ai",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "harness-design-coding-agents",
+      "target": "code2skill",
       "kind": "prerequisite",
       "weight": 1.0
     },
@@ -1493,6 +3145,12 @@
     },
     {
       "source": "mdp",
+      "target": "gai",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "mdp",
       "target": "rewards",
       "kind": "prerequisite",
       "weight": 1.0
@@ -1505,7 +3163,25 @@
     },
     {
       "source": "multi-agent",
+      "target": "agora-git",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-agent",
+      "target": "cera-moa",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-agent",
       "target": "frontier-radar",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-agent",
+      "target": "hypoevolve",
       "kind": "prerequisite",
       "weight": 1.0
     },
@@ -1547,7 +3223,49 @@
     },
     {
       "source": "policy-gradient",
+      "target": "cal-opd",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "card",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "card-2",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "cera-moa",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "expert-space-exploration-moe",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
+      "target": "never-give-up-rl",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "policy-gradient",
       "target": "ppo",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "ppo",
+      "target": "card-2",
       "kind": "prerequisite",
       "weight": 1.0
     },
@@ -1589,6 +3307,12 @@
     },
     {
       "source": "rewards",
+      "target": "impossiblerubrics",
+      "kind": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
       "target": "preferences",
       "kind": "prerequisite",
       "weight": 1.0
@@ -1607,14 +3331,14 @@
     },
     {
       "source": "value-learning",
-      "target": "policy-gradient",
+      "target": "gai",
       "kind": "prerequisite",
       "weight": 1.0
     },
     {
-      "source": "actobs-observation-supervision",
-      "target": "agent-loop",
-      "kind": "related",
+      "source": "value-learning",
+      "target": "policy-gradient",
+      "kind": "prerequisite",
       "weight": 1.0
     },
     {
@@ -1625,7 +3349,37 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "lab-agent-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "agent-loop",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "evaluation",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
+      "target": "bi-agent-bi-bench",
       "kind": "related",
       "weight": 1.0
     },
@@ -1643,31 +3397,211 @@
     },
     {
       "source": "agent-loop",
+      "target": "gai",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agent-loop",
       "target": "harness-design-coding-agents",
       "kind": "related",
       "weight": 1.0
     },
     {
       "source": "agent-loop",
+      "target": "riskchainbench",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agora-git",
+      "target": "lab-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agora-git",
+      "target": "multi-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "agora-git",
+      "target": "sol-pi-auto-research-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "evaluation",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "pact-enterprise-compliance-pressure",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "riskchainbench",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "atria-dawn-ai",
       "target": "modularrsi-harness",
       "kind": "related",
       "weight": 1.0
     },
     {
-      "source": "category-expert-swe-agents",
+      "source": "atria-dawn-ai",
+      "target": "rrsi-regularized-harness-rsi",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "sol-pi-auto-research-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "environments",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
       "target": "grpo",
       "kind": "related",
       "weight": 1.0
     },
     {
+      "source": "cadworld-cad",
+      "target": "evoskill-gui-training-free",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "mintact-unified-visual-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cal-opd",
+      "target": "mintrl-off-policy-intervention",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cal-opd",
+      "target": "privileged-info-opsd-ample-math",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cal-opd",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "rewards",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "card-2",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "card-2",
+      "target": "policy-gradient",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "card-2",
+      "target": "ppo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "category-expert-swe-agents",
-      "target": "harness-design-coding-agents",
+      "target": "multi-turn-rl",
       "kind": "related",
       "weight": 1.0
     },
     {
       "source": "category-expert-swe-agents",
       "target": "programdistill-ref-guided-swe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cera-moa",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cera-moa",
+      "target": "moe",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "cera-moa",
+      "target": "multi-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "code2skill",
+      "target": "codemidas-code-rl-envs",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "code2skill",
+      "target": "harness-design-coding-agents",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "code2skill",
+      "target": "modularrsi-harness",
       "kind": "related",
       "weight": 1.0
     },
@@ -1690,6 +3624,18 @@
       "weight": 1.0
     },
     {
+      "source": "codemidas-code-rl-envs",
+      "target": "scienceide-sci-envs",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "compo-zeroth-order-alignment",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "compo-zeroth-order-alignment",
       "target": "preferences",
       "kind": "related",
@@ -1697,7 +3643,7 @@
     },
     {
       "source": "compo-zeroth-order-alignment",
-      "target": "rewards",
+      "target": "value-flattening-ppo",
       "kind": "related",
       "weight": 1.0
     },
@@ -1721,7 +3667,7 @@
     },
     {
       "source": "environments",
-      "target": "mintact-unified-visual-agent",
+      "target": "programdistill-ref-guided-swe",
       "kind": "related",
       "weight": 1.0
     },
@@ -1738,12 +3684,6 @@
       "weight": 1.0
     },
     {
-      "source": "environments",
-      "target": "sol-pi-auto-research-harness",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
       "source": "evaluation",
       "target": "evolvetrade-policy-refinement",
       "kind": "related",
@@ -1751,13 +3691,7 @@
     },
     {
       "source": "evaluation",
-      "target": "harness-design-coding-agents",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "evaluation",
-      "target": "modularrsi-harness",
+      "target": "impossiblerubrics",
       "kind": "related",
       "weight": 1.0
     },
@@ -1775,37 +3709,19 @@
     },
     {
       "source": "evaluation",
-      "target": "recreationworld-hybrid-cua",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "evaluation",
-      "target": "scienceide-sci-envs",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "evaluation",
-      "target": "sol-pi-auto-research-harness",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "evaluation",
-      "target": "when2think-length-control",
+      "target": "riskchainbench",
       "kind": "related",
       "weight": 1.0
     },
     {
       "source": "evolvetrade-policy-refinement",
-      "target": "frontier-radar",
+      "target": "multi-turn-rl",
       "kind": "related",
       "weight": 1.0
     },
     {
-      "source": "evoskill-gui-training-free",
-      "target": "frontier-radar",
+      "source": "evolvetrade-policy-refinement",
+      "target": "parts-subtask-rl-manipulation",
       "kind": "related",
       "weight": 1.0
     },
@@ -1816,14 +3732,62 @@
       "weight": 1.0
     },
     {
-      "source": "frontier-radar",
+      "source": "evoskill-gui-training-free",
+      "target": "mintact-unified-visual-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evoskill-gui-training-free",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "grpo",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "policy-gradient",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "gai",
       "target": "modularrsi-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "gai",
+      "target": "rrsi-regularized-harness-rsi",
       "kind": "related",
       "weight": 1.0
     },
     {
       "source": "grpo",
       "target": "mintrl-off-policy-intervention",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "never-give-up-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "privileged-info-opsd-ample-math",
       "kind": "related",
       "weight": 1.0
     },
@@ -1864,6 +3828,60 @@
       "weight": 1.0
     },
     {
+      "source": "harness-design-coding-agents",
+      "target": "scienceide-sci-envs",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "harness-design-coding-agents",
+      "target": "sol-pi-auto-research-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "hypoevolve",
+      "target": "multi-agent",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "hypoevolve",
+      "target": "scienceide-sci-envs",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "hypoevolve",
+      "target": "sol-pi-auto-research-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "rewards",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "safety",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "never-give-up-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "parts-subtask-rl-manipulation",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
       "source": "mintact-unified-visual-agent",
       "target": "multi-turn-rl",
       "kind": "related",
@@ -1871,13 +3889,13 @@
     },
     {
       "source": "mintact-unified-visual-agent",
-      "target": "training-systems",
+      "target": "recreationworld-hybrid-cua",
       "kind": "related",
       "weight": 1.0
     },
     {
       "source": "mintrl-off-policy-intervention",
-      "target": "multi-turn-rl",
+      "target": "parts-subtask-rl-manipulation",
       "kind": "related",
       "weight": 1.0
     },
@@ -1889,7 +3907,7 @@
     },
     {
       "source": "mintrl-off-policy-intervention",
-      "target": "rewards",
+      "target": "retireopd-self-retiring-opd",
       "kind": "related",
       "weight": 1.0
     },
@@ -1901,7 +3919,19 @@
     },
     {
       "source": "modularrsi-harness",
+      "target": "sciencebuddy",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "modularrsi-harness",
       "target": "sol-pi-auto-research-harness",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "multi-turn-rl",
+      "target": "never-give-up-rl",
       "kind": "related",
       "weight": 1.0
     },
@@ -1924,32 +3954,14 @@
       "weight": 1.0
     },
     {
-      "source": "parts-subtask-rl-manipulation",
-      "target": "policy-gradient",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "parts-subtask-rl-manipulation",
-      "target": "rewards",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "parts-subtask-rl-manipulation",
-      "target": "training-systems",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
       "source": "ppo",
       "target": "value-flattening-ppo",
       "kind": "related",
       "weight": 1.0
     },
     {
-      "source": "prerequisites",
-      "target": "programdistill-ref-guided-swe",
+      "source": "ppo",
+      "target": "when2think-length-control",
       "kind": "related",
       "weight": 1.0
     },
@@ -1960,26 +3972,20 @@
       "weight": 1.0
     },
     {
-      "source": "privileged-info-opsd-ample-math",
-      "target": "when2think-length-control",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "recreationworld-hybrid-cua",
-      "target": "rewards",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
-      "source": "retireopd-self-retiring-opd",
-      "target": "rewards",
-      "kind": "related",
-      "weight": 1.0
-    },
-    {
       "source": "rewards",
       "target": "when2think-length-control",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "riskchainbench",
+      "target": "safety",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "sciencebuddy",
       "kind": "related",
       "weight": 1.0
     },
@@ -1990,8 +3996,8 @@
       "weight": 1.0
     },
     {
-      "source": "scienceide-sci-envs",
-      "target": "training-systems",
+      "source": "sciencebuddy",
+      "target": "sol-pi-auto-research-harness",
       "kind": "related",
       "weight": 1.0
     },
@@ -2003,13 +4009,19 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "card",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "codemidas-code-rl-envs",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "actobs-observation-supervision",
-      "target": "frontier-radar",
+      "target": "expert-space-exploration-moe",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2027,51 +4039,369 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "never-give-up-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "sciencebuddy",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "emergence-world-stress-test",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "evolvetrade-policy-refinement",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "pact-enterprise-compliance-pressure",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "privileged-info-opsd-ample-math",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agent",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agora-git",
+      "target": "cera-moa",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agora-git",
+      "target": "emergence-world-stress-test",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "agora-git",
+      "target": "hypoevolve",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "bi-agent-bi-bench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "cadworld-cad",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "emergence-world-stress-test",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "evolvetrade-policy-refinement",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "evoskill-gui-training-free",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "pact-enterprise-compliance-pressure",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aport-vault",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "expert-space-exploration-moe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "rrsi-regularized-harness-rsi",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "sol-pi-auto-research-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "cadworld-cad",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "cera-moa",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "evoskill-gui-training-free",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "expert-space-exploration-moe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
       "target": "mintrl-off-policy-intervention",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "actobs-observation-supervision",
+      "source": "bi-agent-bi-bench",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "emergence-world-stress-test",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "evoskill-gui-training-free",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "multi-turn-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cal-opd",
+      "target": "category-expert-swe-agents",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cal-opd",
+      "target": "privileged-info-opsd-ample-math",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cal-opd",
       "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "actobs-observation-supervision",
-      "target": "value-learning",
+      "source": "card",
+      "target": "codemidas-code-rl-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "expert-space-exploration-moe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "grpo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "never-give-up-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "card",
+      "target": "sciencebuddy",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "category-expert-swe-agents",
-      "target": "evaluation",
+      "target": "codemidas-code-rl-envs",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "category-expert-swe-agents",
-      "target": "harness-design-coding-agents",
+      "target": "programdistill-ref-guided-swe",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "category-expert-swe-agents",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cera-moa",
+      "target": "emergence-world-stress-test",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cera-moa",
+      "target": "expert-space-exploration-moe",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "cera-moa",
+      "target": "hypoevolve",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "cera-moa",
+      "target": "mintrl-off-policy-intervention",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "code2skill",
       "target": "modularrsi-harness",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "category-expert-swe-agents",
-      "target": "orientation",
+      "source": "code2skill",
+      "target": "rrsi-regularized-harness-rsi",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "category-expert-swe-agents",
-      "target": "retireopd-self-retiring-opd",
+      "source": "code2skill",
+      "target": "sol-pi-auto-research-harness",
       "kind": "shared-concept",
-      "weight": 2.0
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "expert-space-exploration-moe",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "codemidas-code-rl-envs",
@@ -2081,19 +4411,13 @@
     },
     {
       "source": "codemidas-code-rl-envs",
-      "target": "harness-design-coding-agents",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "codemidas-code-rl-envs",
-      "target": "lab-agent",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "codemidas-code-rl-envs",
       "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "never-give-up-rl",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2111,7 +4435,7 @@
     },
     {
       "source": "codemidas-code-rl-envs",
-      "target": "rewards",
+      "target": "sciencebuddy",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2119,11 +4443,17 @@
       "source": "compo-zeroth-order-alignment",
       "target": "preferences",
       "kind": "shared-concept",
-      "weight": 2.0
+      "weight": 1.0
     },
     {
       "source": "emergence-world-stress-test",
-      "target": "evoskill-gui-training-free",
+      "target": "evolvetrade-policy-refinement",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "hypoevolve",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2137,23 +4467,29 @@
       "source": "emergence-world-stress-test",
       "target": "pact-enterprise-compliance-pressure",
       "kind": "shared-concept",
-      "weight": 1.0
+      "weight": 2.0
     },
     {
       "source": "emergence-world-stress-test",
-      "target": "parts-subtask-rl-manipulation",
+      "target": "privileged-info-opsd-ample-math",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "emergence-world-stress-test",
-      "target": "safety",
+      "target": "programdistill-ref-guided-swe",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "environments",
+      "source": "emergence-world-stress-test",
       "target": "recreationworld-hybrid-cua",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "emergence-world-stress-test",
+      "target": "riskchainbench",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2171,37 +4507,91 @@
     },
     {
       "source": "evolvetrade-policy-refinement",
-      "target": "mintact-unified-visual-agent",
+      "target": "pact-enterprise-compliance-pressure",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "evolvetrade-policy-refinement",
-      "target": "sol-pi-auto-research-harness",
+      "target": "privileged-info-opsd-ample-math",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "evolvetrade-policy-refinement",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "evolvetrade-policy-refinement",
+      "target": "riskchainbench",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "evoskill-gui-training-free",
-      "target": "multi-turn-rl",
+      "target": "programdistill-ref-guided-swe",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "evoskill-gui-training-free",
-      "target": "parts-subtask-rl-manipulation",
+      "target": "recreationworld-hybrid-cua",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "frontier-radar",
+      "source": "evoskill-gui-training-free",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "frontier-radar",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "grpo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "lab-agent-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
       "target": "mintrl-off-policy-intervention",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "frontier-radar",
-      "target": "rrsi-regularized-harness-rsi",
+      "source": "expert-space-exploration-moe",
+      "target": "never-give-up-rl",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "sciencebuddy",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "value-learning",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2212,6 +4602,24 @@
       "weight": 1.0
     },
     {
+      "source": "gai",
+      "target": "modularrsi-harness",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "gai",
+      "target": "sciencebuddy",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "impossiblerubrics",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "grpo",
       "target": "mintrl-off-policy-intervention",
       "kind": "shared-concept",
@@ -2219,13 +4627,19 @@
     },
     {
       "source": "grpo",
-      "target": "retireopd-self-retiring-opd",
+      "target": "never-give-up-rl",
       "kind": "shared-concept",
-      "weight": 1.0
+      "weight": 2.0
     },
     {
       "source": "grpo",
-      "target": "scienceide-sci-envs",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "grpo",
+      "target": "sciencebuddy",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2237,43 +4651,55 @@
     },
     {
       "source": "harness-design-coding-agents",
-      "target": "lab-agent-rl",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "harness-design-coding-agents",
       "target": "modularrsi-harness",
       "kind": "shared-concept",
       "weight": 2.0
     },
     {
       "source": "harness-design-coding-agents",
-      "target": "privileged-info-opsd-ample-math",
+      "target": "sol-pi-auto-research-harness",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "harness-design-coding-agents",
-      "target": "programdistill-ref-guided-swe",
+      "source": "impossiblerubrics",
+      "target": "mintrl-off-policy-intervention",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "harness-design-coding-agents",
-      "target": "scienceide-sci-envs",
+      "source": "impossiblerubrics",
+      "target": "never-give-up-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "safety",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "when2think-length-control",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "lab-agent",
       "target": "lab-agent-rl",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "lab-agent",
-      "target": "recreationworld-hybrid-cua",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2291,6 +4717,12 @@
     },
     {
       "source": "lab-agent-rl",
+      "target": "never-give-up-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
       "target": "privileged-info-opsd-ample-math",
       "kind": "shared-concept",
       "weight": 1.0
@@ -2302,50 +4734,44 @@
       "weight": 1.0
     },
     {
+      "source": "lab-agent-rl",
+      "target": "sciencebuddy",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "lab-rl",
       "target": "value-flattening-ppo",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "learning-paths",
-      "target": "programdistill-ref-guided-swe",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
       "source": "mintact-unified-visual-agent",
-      "target": "sol-pi-auto-research-harness",
+      "target": "never-give-up-rl",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "mintrl-off-policy-intervention",
-      "target": "modularrsi-harness",
+      "target": "never-give-up-rl",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "mintrl-off-policy-intervention",
-      "target": "rewards",
+      "target": "privileged-info-opsd-ample-math",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "mintrl-off-policy-intervention",
-      "target": "scienceide-sci-envs",
+      "target": "retireopd-self-retiring-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "mintrl-off-policy-intervention",
       "target": "value-flattening-ppo",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "mintrl-off-policy-intervention",
-      "target": "value-learning",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2357,21 +4783,15 @@
     },
     {
       "source": "modularrsi-harness",
-      "target": "rewards",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "modularrsi-harness",
       "target": "rrsi-regularized-harness-rsi",
       "kind": "shared-concept",
-      "weight": 1.0
+      "weight": 2.0
     },
     {
       "source": "modularrsi-harness",
-      "target": "scienceide-sci-envs",
+      "target": "sciencebuddy",
       "kind": "shared-concept",
-      "weight": 1.0
+      "weight": 2.0
     },
     {
       "source": "modularrsi-harness",
@@ -2380,20 +4800,32 @@
       "weight": 1.0
     },
     {
-      "source": "modularrsi-harness",
-      "target": "value-flattening-ppo",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
       "source": "multi-turn-rl",
-      "target": "parts-subtask-rl-manipulation",
+      "target": "recreationworld-hybrid-cua",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "orientation",
+      "source": "never-give-up-rl",
       "target": "retireopd-self-retiring-opd",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "never-give-up-rl",
+      "target": "sciencebuddy",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "never-give-up-rl",
+      "target": "when2think-length-control",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "privileged-info-opsd-ample-math",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2405,19 +4837,7 @@
     },
     {
       "source": "pact-enterprise-compliance-pressure",
-      "target": "recreationworld-hybrid-cua",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "pact-enterprise-compliance-pressure",
-      "target": "retireopd-self-retiring-opd",
-      "kind": "shared-concept",
-      "weight": 1.0
-    },
-    {
-      "source": "pact-enterprise-compliance-pressure",
-      "target": "scienceide-sci-envs",
+      "target": "riskchainbench",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2428,6 +4848,18 @@
       "weight": 1.0
     },
     {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "programdistill-ref-guided-swe",
       "target": "recreationworld-hybrid-cua",
       "kind": "shared-concept",
@@ -2435,7 +4867,13 @@
     },
     {
       "source": "programdistill-ref-guided-swe",
-      "target": "scienceide-sci-envs",
+      "target": "riskchainbench",
+      "kind": "shared-concept",
+      "weight": 2.0
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "riskchainbench",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2443,7 +4881,19 @@
       "source": "recreationworld-hybrid-cua",
       "target": "scienceide-sci-envs",
       "kind": "shared-concept",
-      "weight": 2.0
+      "weight": 1.0
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "sciencebuddy",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "when2think-length-control",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "rewards",
@@ -2453,15 +4903,15 @@
     },
     {
       "source": "rrsi-regularized-harness-rsi",
-      "target": "sol-pi-auto-research-harness",
+      "target": "sciencebuddy",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
-      "source": "scienceide-sci-envs",
-      "target": "when2think-length-control",
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "sol-pi-auto-research-harness",
       "kind": "shared-concept",
-      "weight": 1.0
+      "weight": 2.0
     },
     {
       "source": "agent-loop",
@@ -3287,7 +5737,19 @@
     },
     {
       "source": "mintrl-off-policy-intervention",
+      "target": "reinforcement-learning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
       "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintrl-off-policy-intervention",
+      "target": "on-policy",
       "kind": "concept",
       "weight": 1
     },
@@ -3299,25 +5761,31 @@
     },
     {
       "source": "mintrl-off-policy-intervention",
-      "target": "exploration",
+      "target": "intervention",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "mintrl-off-policy-intervention",
-      "target": "credit-assignment",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "mintrl-off-policy-intervention",
-      "target": "llm-rl",
+      "target": "llm-reasoning",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "modularrsi-harness",
-      "target": "harness",
+      "target": "harness-evolution",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "modular-rsi",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "modularrsi-harness",
+      "target": "agent-harness",
       "kind": "concept",
       "weight": 1
     },
@@ -3329,13 +5797,7 @@
     },
     {
       "source": "modularrsi-harness",
-      "target": "credit-assignment",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "modularrsi-harness",
-      "target": "terminal-agent",
+      "target": "terminal-bench",
       "kind": "concept",
       "weight": 1
     },
@@ -3353,13 +5815,19 @@
     },
     {
       "source": "emergence-world-stress-test",
+      "target": "adversarial-robustness",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "emergence-world-stress-test",
       "target": "long-horizon",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "emergence-world-stress-test",
-      "target": "prompt-injection",
+      "target": "agent-safety",
       "kind": "concept",
       "weight": 1
     },
@@ -3371,7 +5839,7 @@
     },
     {
       "source": "emergence-world-stress-test",
-      "target": "safety",
+      "target": "social-simulation",
       "kind": "concept",
       "weight": 1
     },
@@ -3406,6 +5874,24 @@
       "weight": 1
     },
     {
+      "source": "value-flattening-ppo",
+      "target": "llm-reasoning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evolvetrade-policy-refinement",
+      "target": "llm-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "evolvetrade-policy-refinement",
+      "target": "policy-evolution",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
       "source": "evolvetrade-policy-refinement",
       "target": "tool-use",
       "kind": "concept",
@@ -3413,61 +5899,67 @@
     },
     {
       "source": "evolvetrade-policy-refinement",
-      "target": "self-evolution",
+      "target": "trading",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "evolvetrade-policy-refinement",
-      "target": "prompt-policy",
+      "target": "prompt-optimization",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "evolvetrade-policy-refinement",
-      "target": "trading-agent",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "evolvetrade-policy-refinement",
-      "target": "frozen-llm",
+      "target": "evaluation",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "scienceide-sci-envs",
-      "target": "agent-env",
+      "target": "science-agents",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "scienceide-sci-envs",
-      "target": "scientific-code",
+      "target": "code-environments",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "scienceide-sci-envs",
-      "target": "rlvr",
+      "target": "verifiable-rewards",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "scienceide-sci-envs",
-      "target": "benchmark",
+      "target": "sft",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "scienceide-sci-envs",
-      "target": "harness",
+      "target": "rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "scienceide-sci-envs",
+      "target": "benchmark-contamination",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "compo-zeroth-order-alignment",
-      "target": "preference-optimization",
+      "target": "preference-alignment",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "compo-zeroth-order-alignment",
+      "target": "zeroth-order-optimization",
       "kind": "concept",
       "weight": 1
     },
@@ -3479,19 +5971,13 @@
     },
     {
       "source": "compo-zeroth-order-alignment",
-      "target": "zeroth-order",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "compo-zeroth-order-alignment",
       "target": "likelihood-displacement",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "compo-zeroth-order-alignment",
-      "target": "rlhf",
+      "target": "online-alignment",
       "kind": "concept",
       "weight": 1
     },
@@ -3503,7 +5989,7 @@
     },
     {
       "source": "sol-pi-auto-research-harness",
-      "target": "self-improvement",
+      "target": "recursive-self-improvement",
       "kind": "concept",
       "weight": 1
     },
@@ -3515,19 +6001,19 @@
     },
     {
       "source": "sol-pi-auto-research-harness",
-      "target": "auto-research",
+      "target": "context-management",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "sol-pi-auto-research-harness",
-      "target": "tool-use",
+      "target": "automated-search",
       "kind": "concept",
       "weight": 1
     },
     {
-      "source": "retireopd-self-retiring-opd",
-      "target": "agentic-rl",
+      "source": "sol-pi-auto-research-harness",
+      "target": "cross-model-transfer",
       "kind": "concept",
       "weight": 1
     },
@@ -3539,31 +6025,43 @@
     },
     {
       "source": "retireopd-self-retiring-opd",
+      "target": "teacher-retirement",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "multi-turn-agents",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
       "target": "grpo",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "retireopd-self-retiring-opd",
-      "target": "multi-turn",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "retireopd-self-retiring-opd",
-      "target": "privileged-context",
+      "target": "adaptive-scheduling",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "harness-design-coding-agents",
-      "target": "coding-agent",
+      "target": "coding-agents",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "harness-design-coding-agents",
-      "target": "harness",
+      "target": "harness-design",
       "kind": "concept",
       "weight": 1
     },
@@ -3575,13 +6073,19 @@
     },
     {
       "source": "harness-design-coding-agents",
+      "target": "ablation-study",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "harness-design-coding-agents",
       "target": "swe-bench",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "harness-design-coding-agents",
-      "target": "ablation",
+      "target": "terminal-bench",
       "kind": "concept",
       "weight": 1
     },
@@ -3605,7 +6109,7 @@
     },
     {
       "source": "evoskill-gui-training-free",
-      "target": "long-horizon",
+      "target": "agent-skills",
       "kind": "concept",
       "weight": 1
     },
@@ -3616,8 +6120,20 @@
       "weight": 1
     },
     {
+      "source": "evoskill-gui-training-free",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
       "source": "when2think-length-control",
-      "target": "reasoning-efficiency",
+      "target": "adaptive-reasoning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "when2think-length-control",
+      "target": "length-control",
       "kind": "concept",
       "weight": 1
     },
@@ -3635,7 +6151,7 @@
     },
     {
       "source": "when2think-length-control",
-      "target": "length-control",
+      "target": "efficiency-tax",
       "kind": "concept",
       "weight": 1
     },
@@ -3647,19 +6163,31 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "observation-supervision",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "actobs-observation-supervision",
+      "target": "agent-exploration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "grpo",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "actobs-observation-supervision",
-      "target": "sft",
+      "target": "sft-initialization",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "actobs-observation-supervision",
-      "target": "exploration",
+      "target": "pass-at-k",
       "kind": "concept",
       "weight": 1
     },
@@ -3670,26 +6198,8 @@
       "weight": 1
     },
     {
-      "source": "actobs-observation-supervision",
-      "target": "agent",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
       "source": "pact-enterprise-compliance-pressure",
-      "target": "benchmark",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "pact-enterprise-compliance-pressure",
-      "target": "compliance",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "pact-enterprise-compliance-pressure",
-      "target": "multi-turn",
+      "target": "compliance-benchmark",
       "kind": "concept",
       "weight": 1
     },
@@ -3701,13 +6211,31 @@
     },
     {
       "source": "pact-enterprise-compliance-pressure",
+      "target": "multi-turn-pressure",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "enterprise-assistants",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
+      "target": "rule-following",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "pact-enterprise-compliance-pressure",
       "target": "evaluation",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "privileged-info-opsd-ample-math",
-      "target": "opsd",
+      "target": "self-distillation",
       "kind": "concept",
       "weight": 1
     },
@@ -3719,7 +6247,7 @@
     },
     {
       "source": "privileged-info-opsd-ample-math",
-      "target": "distillation",
+      "target": "on-policy",
       "kind": "concept",
       "weight": 1
     },
@@ -3736,8 +6264,14 @@
       "weight": 1
     },
     {
+      "source": "privileged-info-opsd-ample-math",
+      "target": "evaluation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
       "source": "programdistill-ref-guided-swe",
-      "target": "coding-agent",
+      "target": "swe-agents",
       "kind": "concept",
       "weight": 1
     },
@@ -3749,31 +6283,37 @@
     },
     {
       "source": "programdistill-ref-guided-swe",
-      "target": "swe-tasks",
+      "target": "task-generation",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "programdistill-ref-guided-swe",
-      "target": "curriculum",
+      "target": "web-applications",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "programdistill-ref-guided-swe",
-      "target": "web-apps",
+      "target": "long-context",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "programdistill-ref-guided-swe",
+      "target": "evaluation",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "codemidas-code-rl-envs",
-      "target": "coding-agent",
+      "target": "coding-rl-environments",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "codemidas-code-rl-envs",
-      "target": "rl-environment",
+      "target": "swe-agents",
       "kind": "concept",
       "weight": 1
     },
@@ -3785,31 +6325,37 @@
     },
     {
       "source": "codemidas-code-rl-envs",
-      "target": "verifier",
+      "target": "test-synthesis",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "codemidas-code-rl-envs",
-      "target": "swe",
+      "target": "data-scaling",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "agent-behavior",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "recreationworld-hybrid-cua",
-      "target": "computer-use",
+      "target": "hybrid-cua",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "recreationworld-hybrid-cua",
-      "target": "agent-env",
+      "target": "application-recreation",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "recreationworld-hybrid-cua",
-      "target": "reward-verification",
+      "target": "verifiable-rewards",
       "kind": "concept",
       "weight": 1
     },
@@ -3821,7 +6367,13 @@
     },
     {
       "source": "recreationworld-hybrid-cua",
-      "target": "trajectory",
+      "target": "gui-agents",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "recreationworld-hybrid-cua",
+      "target": "long-horizon",
       "kind": "concept",
       "weight": 1
     },
@@ -3833,37 +6385,31 @@
     },
     {
       "source": "mintact-unified-visual-agent",
-      "target": "asynchronous-rl",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "mintact-unified-visual-agent",
-      "target": "cross-domain",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "mintact-unified-visual-agent",
       "target": "gui-grounding",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "mintact-unified-visual-agent",
-      "target": "tool-use",
+      "target": "asynchronous-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "unified-model",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "mintact-unified-visual-agent",
+      "target": "agent-training",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "category-expert-swe-agents",
-      "target": "agentic-rl",
-      "kind": "concept",
-      "weight": 1
-    },
-    {
-      "source": "category-expert-swe-agents",
-      "target": "swe-bench",
+      "target": "multi-domain-rl",
       "kind": "concept",
       "weight": 1
     },
@@ -3875,37 +6421,55 @@
     },
     {
       "source": "category-expert-swe-agents",
-      "target": "expert-routing",
+      "target": "swe-agents",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "category-balance",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "category-expert-swe-agents",
+      "target": "policy-integration",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "parts-subtask-rl-manipulation",
-      "target": "subtask-rl",
+      "target": "residual-rl",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "parts-subtask-rl-manipulation",
-      "target": "residual-policy",
+      "target": "vla-finetuning",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "parts-subtask-rl-manipulation",
-      "target": "sparse-reward",
+      "target": "long-horizon-manipulation",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "parts-subtask-rl-manipulation",
-      "target": "long-horizon",
+      "target": "real-world-rl",
       "kind": "concept",
       "weight": 1
     },
     {
       "source": "parts-subtask-rl-manipulation",
-      "target": "robot-manipulation",
+      "target": "bottleneck-subtask",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "parts-subtask-rl-manipulation",
+      "target": "td3-bc",
       "kind": "concept",
       "weight": 1
     },
@@ -3917,25 +6481,649 @@
     },
     {
       "source": "rrsi-regularized-harness-rsi",
+      "target": "recursive-self-improvement",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "adaptive-overfitting",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "regularization",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "ood-generalization",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rrsi-regularized-harness-rsi",
+      "target": "agent-harness",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "moe",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "reinforcement-learning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "routing",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "exploration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "expert-space-exploration-moe",
+      "target": "llm-post-training",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "prompt-scaffolding",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "multimodal-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "curriculum-learning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "prompt-selection",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "post-training",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "sciencebuddy",
       "target": "self-improvement",
       "kind": "concept",
       "weight": 1
     },
     {
-      "source": "rrsi-regularized-harness-rsi",
-      "target": "generalization",
+      "source": "sciencebuddy",
+      "target": "harness-evolution",
       "kind": "concept",
       "weight": 1
     },
     {
-      "source": "rrsi-regularized-harness-rsi",
-      "target": "overfitting",
+      "source": "sciencebuddy",
+      "target": "scientific-agents",
       "kind": "concept",
       "weight": 1
     },
     {
-      "source": "rrsi-regularized-harness-rsi",
-      "target": "agent-system",
+      "source": "sciencebuddy",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "sciencebuddy",
+      "target": "recursive-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "agentic-superintelligence",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "recursive-self-improvement",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "human-ai-collaboration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "verifiable-rewards",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "moe",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "atria-dawn-ai",
+      "target": "agent-evaluation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "never-give-up-rl",
+      "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "never-give-up-rl",
+      "target": "dynamic-sampling",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "never-give-up-rl",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "never-give-up-rl",
+      "target": "asynchronous-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "never-give-up-rl",
+      "target": "llm-post-training",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent",
+      "target": "root-cause-analysis",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent",
+      "target": "agent-failure-attribution",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent",
+      "target": "long-horizon-agents",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent",
+      "target": "llm-as-judge",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent",
+      "target": "continual-search",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agent",
+      "target": "evaluation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "reward-hacking",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "rubric-reward",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "evaluation-benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "honesty",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "rlvr",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "impossiblerubrics",
+      "target": "safety",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "gai",
+      "target": "self-improvement",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "gai",
+      "target": "gpi",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "gai",
+      "target": "rsi",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "gai",
+      "target": "agent-iteration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "gai",
+      "target": "evaluation-anchoring",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cera-moa",
+      "target": "mixture-of-agents",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cera-moa",
+      "target": "routing",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cera-moa",
+      "target": "co-evolution",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cera-moa",
+      "target": "continual-learning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cera-moa",
+      "target": "reinforcement-learning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cera-moa",
+      "target": "multi-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agora-git",
+      "target": "multi-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agora-git",
+      "target": "auto-research",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agora-git",
+      "target": "git-dag",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agora-git",
+      "target": "shared-memory",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agora-git",
+      "target": "ucb",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "agora-git",
+      "target": "harness",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "hypoevolve",
+      "target": "multi-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "hypoevolve",
+      "target": "genetic-algorithm",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "hypoevolve",
+      "target": "hypothesis-discovery",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "hypoevolve",
+      "target": "llm-agents",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "hypoevolve",
+      "target": "scientific-reasoning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "riskchainbench",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "riskchainbench",
+      "target": "web-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "riskchainbench",
+      "target": "obfuscation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "riskchainbench",
+      "target": "evidence-grounding",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "riskchainbench",
+      "target": "safety",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "riskchainbench",
+      "target": "evaluation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card-2",
+      "target": "region-level-rl",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card-2",
+      "target": "mllm-perception",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card-2",
+      "target": "token-compression",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card-2",
+      "target": "roi-prediction",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "card-2",
+      "target": "policy-optimization",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "code2skill",
+      "target": "skill-synthesis",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "code2skill",
+      "target": "code-grounded",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "code2skill",
+      "target": "agent-harness",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "code2skill",
+      "target": "skill-bank",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "code2skill",
+      "target": "retrieval",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "code2skill",
+      "target": "rl-integration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "computer-use-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "cad",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "long-horizon",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "artifact-evaluation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cadworld-cad",
+      "target": "freecad",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cal-opd",
+      "target": "on-policy-distillation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cal-opd",
+      "target": "teacher-student-discrepancy",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cal-opd",
+      "target": "privileged-information",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cal-opd",
+      "target": "token-level-supervision",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cal-opd",
+      "target": "math-reasoning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "cal-opd",
+      "target": "calibration",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "business-intelligence",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "agent-tools",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "nl2sql",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "reinforcement-learning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "bi-agent-bi-bench",
+      "target": "data-management",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aport-vault",
+      "target": "agent-safety",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aport-vault",
+      "target": "payment-authorization",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aport-vault",
+      "target": "benchmark",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aport-vault",
+      "target": "tool-use",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aport-vault",
+      "target": "multi-turn-attack",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aport-vault",
+      "target": "enforcement",
       "kind": "concept",
       "weight": 1
     }

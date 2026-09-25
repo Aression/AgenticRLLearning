@@ -38,6 +38,23 @@
   "paperId": "",
   "readingDepth": "",
   "fullTextUrl": "",
+  "kind": "system",
+  "kindLabel": "系统",
+  "depth": "overview",
+  "depthLabel": "概览",
+  "depthRank": 0,
+  "evidenceGrade": "C",
+  "claims": [],
+  "claimCount": 0,
+  "sectionSizes": {
+    "最小运行循环": 206,
+    "工作流与自主性": 185,
+    "组件和常见失败": 206,
+    "为什么接口也重要": 74,
+    "练习": 92
+  },
+  "bodyChars": 826,
+  "deep": false,
   "sections": [
     "最小运行循环",
     "工作流与自主性",
@@ -47,13 +64,13 @@
   ],
   "related": [
     "orientation",
-    "actobs-observation-supervision",
+    "agent",
+    "bi-agent-bi-bench",
     "evolvetrade-policy-refinement",
     "evoskill-gui-training-free",
-    "harness-design-coding-agents",
-    "modularrsi-harness"
+    "gai"
   ],
-  "degree": 10,
+  "degree": 20,
   "sources": [
     "react",
     "anthropic-building",
@@ -63,6 +80,6 @@
     "orientation",
     "mdp"
   ],
-  "search": "agent 闭环：推理、工具、规划与记忆 建立运行时结构，并区分工作流、react 和参数学习。 agent 系统 react memory planning tools 能画出最小 agent 运行循环 能区分工作流与参数学习 最小运行循环 工作流与自主性 组件和常见失败 为什么接口也重要 练习",
+  "search": "agent 闭环：推理、工具、规划与记忆 建立运行时结构，并区分工作流、react 和参数学习。 agent 系统 system overview c agent-loop react memory planning tools 能画出最小 agent 运行循环 能区分工作流与参数学习 最小运行循环 工作流与自主性 组件和常见失败 为什么接口也重要 练习 ",
   "content": "## 最小运行循环\n\n```text\n任务 + 历史 -> 策略 -> 结构化动作 -> 环境执行\n                    ^                    |\n                    |----- 新观测 -------|\n终止后：验证任务结果；训练时再将轨迹交给学习器\n```\n\n运行时和训练循环是两个层次。仅把失败信息追加进提示，属于上下文适应；只有在明确的学习目标下更新策略，才是训练。\n\n## 工作流与自主性\n\n固定顺序的“检索 -> 摘要 -> 发送”是工作流。让模型根据状态决定是否检索、检索几次、何时停止，更接近 agent。自主程度是一条连续谱，固定与动态模块可以混合。[Anthropic 工程文章](https://www.anthropic.com/research/building-effective-agents) 可作为系统设计导读，不作为泛化性能的实验证明。\n\n## 组件和常见失败\n\n| 组件 | 作用 | 典型失败 |\n| --- | --- | --- |\n| 规划 | 分解目标、选子任务 | 计划无法执行，仍持续展开 |\n| 工具 | 获取信息或改变世界 | 参数无效、权限越界、重复副作用 |\n| 工作记忆 | 保留当前任务状态 | 上下文截断丢掉约束 |\n| 长期记忆 | 跨任务存经验 | 错误经验被反复检索 |\n| 终止判定 | 控制成本与完成度 | 自报完成却未满足环境条件 |\n\n## 为什么接口也重要\n\n同一模型用不同文件编辑工具、观察压缩和错误反馈，性能可能不同。评测必须固定 harness，也就是执行环境、工具协议与调度逻辑，而不只报告模型名称。\n\n## 练习\n\n画出一个只读文档问答 Agent：列出允许的动作、最大调用次数、无效动作返回、失败终止和答案验证规则。此时不需要 RL。下一步 [环境设计](/notes/environments)。"
 }

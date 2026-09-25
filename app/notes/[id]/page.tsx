@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink, Network } from "lucide-react";
-import { getNote, getNotes, getSources } from "@/lib/content";
+import { getModelInfo, getNote, getNotes, getSources } from "@/lib/content";
 import { REPO, stageMeta, type NoteMeta } from "@/lib/types";
 import { ProgressButton } from "@/components/progress-button";
 
@@ -24,6 +24,7 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const notes = getNotes();
   const allSources = getSources();
+  const modelInfo = getModelInfo();
   const note = getNote(id);
   if (!note) notFound();
   const index = notes.findIndex((item) => item.id === id);
@@ -42,6 +43,9 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
           <div className="article-meta">
             <span className={`stage-label ${stageMeta[note.stage].color}`}>{stageMeta[note.stage].index} / {stageMeta[note.stage].label}</span>
             <span>{note.track}</span>
+            <span>{note.kindLabel}</span>
+            <span className={note.deep ? "stage-label cyan" : ""}>{note.depthLabel}{note.deep ? "深读" : ""}</span>
+            <span title={modelInfo.evidenceRubric[note.evidenceGrade]}>证据 {note.evidenceGrade}</span>
             <span>{note.minutes} MIN</span>
             {note.evidenceLevel && <span>{note.evidenceLevel}</span>}
             {note.origin === "llm-fulltext" && <span className="stage-label rose">LLM 全文精读草稿 · 待人工复核</span>}
@@ -50,6 +54,15 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
           <p className="article-summary">{note.summary}</p>
           <div className="article-info"><span>更新 {note.updated}</span><span>{note.review}</span><span>图谱度 {note.degree}</span></div>
           <ProgressButton id={note.id} />
+          <section className="article-dossier">
+            <h2>档案信息</h2>
+            <div className="dossier-grid">
+              <div><span>类型</span><strong>{note.kindLabel}</strong></div>
+              <div><span>深度</span><strong>{note.depthLabel}{note.claimCount > 0 ? ` · ${note.claimCount} 条主张` : ""}</strong></div>
+              <div><span>证据分级</span><strong>{note.evidenceGrade}</strong><small>{modelInfo.evidenceRubric[note.evidenceGrade]}</small></div>
+              <div><span>正文规模</span><strong>{note.bodyChars} 字</strong><small>{note.keyPoints.length} 个小节</small></div>
+            </div>
+          </section>
           {note.objectives.length > 0 && (
             <section className="article-objectives">
               <h2>读完你能</h2>

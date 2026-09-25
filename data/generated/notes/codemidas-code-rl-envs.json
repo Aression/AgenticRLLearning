@@ -1,39 +1,47 @@
 {
   "id": "codemidas-code-rl-envs",
   "title": "CodeMidas：从源码自动构造编码 RL 环境",
-  "summary": "提出以源码为唯一任务输入，自动生成任务陈述、开发环境与可执行验证器，并用 GRPO 训练编码智能体。",
+  "summary": "现有编码 RL 环境构建依赖 issue、PR、commit、已有测试或文档等开发记录，任务供给受记录覆盖范围限制。论文提出以源码本身为唯一任务特定输入，把已实现功能自动转化为带可靠验证器的可执行编码 RL 环境，以规模化提供多样任务并提升编码智能体在多种软件工作上的泛化能力。",
   "stage": "FRONTIER",
   "track": "Agent 系统",
   "order": 40,
-  "minutes": 18,
-  "updated": "2026-09-21",
+  "minutes": 60,
+  "updated": "2026-09-24",
   "review": "LLM 全文精读草稿 · 待人工复核",
   "filename": "40-codemidas-code-rl-envs.md",
   "tags": [
     "GRPO",
-    "RL-environment",
-    "SWE",
-    "coding-agent",
-    "verifier"
+    "agent-behavior",
+    "coding-rl-environments",
+    "data-scaling",
+    "swe-agents",
+    "test-synthesis"
   ],
   "concepts": [
     "GRPO",
-    "RL-environment",
-    "SWE",
-    "coding-agent",
-    "verifier"
+    "agent-behavior",
+    "coding-rl-environments",
+    "data-scaling",
+    "swe-agents",
+    "test-synthesis"
   ],
   "objectives": [
-    "说清 CodeMidas 如何把已实现功能转成任务陈述、起始代码库与隐藏验证器",
-    "理解 rollout 后过滤（对抗探测、解法审查、成功率筛选）在环境构造中的作用",
-    "区分论文报告的基准提升与尚未复现的证据边界"
+    "理解以源码为唯一任务特定输入、不依赖 issue/PR/commit/已有测试的环境构造思路",
+    "掌握从功能识别、实现删除、测试合成到执行一致性检查与 rollout 后过滤的完整流水线",
+    "了解 5，545 任务数据集的语言与领域分布，以及 GRPO 训练在五个外部基准上的提升",
+    "认识自验证、探索与草拟行为随 RL 训练的变化及其与通过率的相关性"
   ],
   "keyPoints": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "evidenceLevel": "full-text-llm-draft",
@@ -42,27 +50,86 @@
   "paperId": "2609.22068",
   "readingDepth": "full-text",
   "fullTextUrl": "https://arxiv.org/html/2609.22068",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "deep",
+  "depthLabel": "深读",
+  "depthRank": 2,
+  "evidenceGrade": "C",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "CodeMidas 仅以源码为任务特定输入，构建 5,545 个任务，来自 3,185 个代码库，覆盖 23 种语言、15 个技术领域",
+      "evidence": "§3.5；Figure 2；Figure 3；Table 1",
+      "status": "作者主张"
+    },
+    {
+      "id": "C2",
+      "claim": "在 CodeMidas 上 RL 训练使五个外部基准全部提升：DeepSWE 通过率 10.0%→21.7%，Terminal-Bench v2.1 63.7%→72.2%，ProgramBench Almost Solved 4.5→21.5",
+      "evidence": "§4.2；Figure 5",
+      "status": "作者主张"
+    },
+    {
+      "id": "C3",
+      "claim": "高质量 5k 任务池优于未过滤的 vanilla 8k 样本，在 SWE-bench Pro、DeepSWE、CodeMidas Val 上分别高出 0.59、4.59、4.49 个百分点；3k 子集也在三项评测上超过 8k",
+      "evidence": "§5.1；Figure 8",
+      "status": "作者主张"
+    },
+    {
+      "id": "C4",
+      "claim": "任务规模扩大带来性能提升：DeepSWE 17.57→19.05→21.70，CodeMidas Val 41.30→43.22→44.73（1k/3k/5k）",
+      "evidence": "§5.1；Figure 7；Figure 8",
+      "status": "作者主张"
+    },
+    {
+      "id": "C5",
+      "claim": "RL 中智能体探索与自验证增加（探索 27.2→40.1 次调用，草拟比 0.358→0.629，自验证命令 2.03→2.53），且自写检查的 rollout 平均通过率高 4.2 个百分点（95% CI: 1.8–6.6）",
+      "evidence": "§5.2；Table 2；Table 3",
+      "status": "作者主张"
+    }
+  ],
+  "claimCount": 5,
+  "sectionSizes": {
+    "问题与语境": 1080,
+    "核心主张": 1341,
+    "机制与方法": 1213,
+    "实验设置": 1754,
+    "证据与结果": 2696,
+    "证据强度评估": 1188,
+    "边界与反例": 983,
+    "与知识库的关系": 1114,
+    "复现与验证计划": 1112,
+    "术语与记号": 1170,
+    "自测": 2644
+  },
+  "bodyChars": 16425,
+  "deep": true,
   "sections": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "related": [
     "actobs-observation-supervision",
+    "card",
+    "category-expert-swe-agents",
+    "code2skill",
     "environments",
-    "grpo",
-    "harness-design-coding-agents",
-    "lab-agent",
-    "lab-agent-rl"
+    "expert-space-exploration-moe"
   ],
-  "degree": 11,
+  "degree": 15,
   "sources": [
     "codemidas-scaling-agentic-coding-rl-envi"
   ],
   "prerequisites": [],
-  "search": "codemidas：从源码自动构造编码 rl 环境 提出以源码为唯一任务输入，自动生成任务陈述、开发环境与可执行验证器，并用 grpo 训练编码智能体。 agent 系统 grpo rl-environment swe coding-agent verifier 说清 codemidas 如何把已实现功能转成任务陈述、起始代码库与隐藏验证器 理解 rollout 后过滤（对抗探测、解法审查、成功率筛选）在环境构造中的作用 区分论文报告的基准提升与尚未复现的证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测",
-  "content": "## 论文要解决的问题\n\n编码智能体的强化学习需要两样东西：足够多样的任务，以及可信的奖励。已有流水线通常从开发痕迹中造题——issue、PR、commit、既有测试或文档。作者主张，这类做法把任务供给绑定在「被记录下来的变更、测试或文档覆盖范围」上，因而难以规模化。CodeMidas 的出发点是：已实现的代码本身就是任务与参考答案的来源，公开接口与可观察行为定义「要实现什么」，执行原代码则为测试期望提供证据。\n\n## 方法\n\n每个任务由三部分组成：任务陈述、容器化开发环境、隐藏的可执行验证器。验证器始终置于求解者环境之外，只在评分时注入，返回二值执行奖励。流程上，CodeMidas 先识别既有功能、写出行为级任务陈述，并把代码库改造成「目标功能尚待实现」的起始点；再基于原代码执行构造测试并做执行一致性检查；最后用 rollout 做后置过滤——对抗式 rollout 探测可被利用的泄漏，解法审查核对验证器判定是否符合陈述要求，成功率则用于任务筛选。作者强调设计张力：陈述要把所需行为讲清楚，同时不锁死内部实现；测试要拒绝错误解，也要接受其他正确实现。\n\n## 证据与实验\n\n作者用该流水线从 3,185 个开源代码库构造 5,545 个可验证任务，覆盖 23 种语言、15 个技术领域，并用 GRPO 训练 MiMo-V2.5（batch size 32，每任务 32 条 rollout，二值执行奖励）。报告称五个外部基准全部提升：DeepSWE 通过率 10.0%→21.7%，Terminal-Bench v2.1 63.7%→72.2%，ProgramBench 的 Almost Solved 4.5→21.5；CodeMidas Val 通过率 35.0%→44.7%，且轨迹变长。消融方面，高质量任务从 1k 增至 3k 再到 5,545 时 SWE-bench Pro、DeepSWE、CodeMidas Val 分数递增，3k 子集在三个基准上均优于未清洗过滤的 8k 基线。行为分析称训练中智能体更多探索代码库、自验证形式更多样，且自写检查与更高成功率相关，这些变化也出现在外部任务上。\n\n## 边界与未解问题\n\n以上均为论文作者的主张，本卡仅基于摘要与正文摘录，未做代码或产物核验，也未复现任何数字。需要留意的点：训练集与 CodeMidas Val 及五个外部基准任务集被声明为不相交，但这一声明本身依赖作者的划分流程；「自写检查与成功率相关」是相关性观察，不能读作因果；任务质量筛选的具体判据、对抗 rollout 的强度、以及验证器对替代正确实现的接受度，摘录中未给出可复核细节。此外，全部结果来自单一基座模型 MiMo-V2.5，跨模型可迁移性未知。\n\n## 与知识库的关系\n\n本文属于「环境构造」这条线：与 environments 笔记关注的可执行环境供给问题直接对应，与 grpo 笔记共享同一训练算法设定，与 harness-design-coding-agents 在「智能体如何探索代码库、如何自验证」的行为观察上互补。它可视为把 SWE 类环境从「依赖历史变更」推向「依赖现存功能」的一种规模化尝试。\n\n## 自测\n\n1. CodeMidas 相对既有流水线的关键差异是什么？为什么作者认为这能扩大任务供给？\n2. 验证器为何要放在求解者环境之外、只在评分时注入？这对奖励可信度意味着什么？\n3. 若把「3k 过滤子集优于 8k 未过滤基线」当作结论，你需要哪些额外信息才能接受它？"
+  "search": "codemidas：从源码自动构造编码 rl 环境 现有编码 rl 环境构建依赖 issue、pr、commit、已有测试或文档等开发记录，任务供给受记录覆盖范围限制。论文提出以源码本身为唯一任务特定输入，把已实现功能自动转化为带可靠验证器的可执行编码 rl 环境，以规模化提供多样任务并提升编码智能体在多种软件工作上的泛化能力。 agent 系统 paper deep c codemidas-code-rl-envs grpo agent-behavior coding-rl-environments data-scaling swe-agents test-synthesis 理解以源码为唯一任务特定输入、不依赖 issue/pr/commit/已有测试的环境构造思路 掌握从功能识别、实现删除、测试合成到执行一致性检查与 rollout 后过滤的完整流水线 了解 5，545 任务数据集的语言与领域分布，以及 grpo 训练在五个外部基准上的提升 认识自验证、探索与草拟行为随 rl 训练的变化及其与通过率的相关性 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 codemidas 仅以源码为任务特定输入，构建 5,545 个任务，来自 3,185 个代码库，覆盖 23 种语言、15 个技术领域 作者主张 在 codemidas 上 rl 训练使五个外部基准全部提升：deepswe 通过率 10.0%→21.7%，terminal-bench v2.1 63.7%→72.2%，programbench almost solved 4.5→21.5 作者主张 高质量 5k 任务池优于未过滤的 vanilla 8k 样本，在 swe-bench pro、deepswe、codemidas val 上分别高出 0.59、4.59、4.49 个百分点；3k 子集也在三项评测上超过 8k 作者主张 任务规模扩大带来性能提升：deepswe 17.57→19.05→21.70，codemidas val 41.30→43.22→44.73（1k/3k/5k） 作者主张 rl 中智能体探索与自验证增加（探索 27.2→40.1 次调用，草拟比 0.358→0.629，自验证命令 2.03→2.53），且自写检查的 rollout 平均通过率高 4.2 个百分点（95% ci: 1.8–6.6） 作者主张",
+  "content": "## 问题与语境\n\n编码智能体的强化学习面临一个供给侧瓶颈：有效 RL 需要多样任务支撑泛化，同时需要可靠奖励来强化正确行为。现有环境构建管线几乎都从开发记录中取材——SWE-bench 及其后续工作从 issue、PR、commit 派生任务陈述（Jimenez et al., 2024; Badertdinov et al., 2026; Chen et al., 2026a），R2E-Gym 从 commit 生成测试与陈述（Jain et al., 2025），SWE-smith 围绕已有测试合成故障（Yang et al., 2025），SWE-Flow 从单元测试及其运行时依赖派生增量开发任务（Zhang et al., 2025），R2E 与 MindForge 则依赖文档（Jain et al., 2024; Chen et al., 2026b）。论文 Table 1 将这些管线的任务特定输入逐项列出：SWE-rebench V2 需 PR/commit/已有测试（20 种语言），daVinci-Env 需 issue/PR/commit/已有测试（1 种），R2E-Gym 需 commit（1 种），SWE-smith 需已有测试（1 种），SWE-Flow 需已有测试（1 种），SWE-Hub 需已有测试（11 种），R2E 与 MindForge 需书面描述（各 1 种、15 种）。\n\n失效点有两层。其一是覆盖受限：任务供给被记录、测试或文档的覆盖范围绑定，未被记录的功能无法转化为任务。其二是奖励可靠性：测试预言机本身不可靠，EvalPlus 发现扩展测试能暴露原套件漏检的错误程序，PatchDiff 记录了被 SWE-bench 测试错误接受的补丁，SWE-bench Pro 与 SWE-rebench V2 也讨论了规格缺口与过严测试问题（Barr et al., 2015; Liu et al., 2023; Wang et al., 2026; Deng et al., 2026）。\n\nCodeMidas 的定位是：把源码本身作为唯一任务特定输入，将已实现功能自动转化为带隐藏可执行验证器的编码 RL 环境。它不依赖 issue、PR、commit、已有测试或书面描述（Table 1 中五项全部为「不依赖」），覆盖 23 种语言，并以执行一致性检查加三类 rollout 后过滤来应对预言机可靠性问题。其贡献主张因此不是「又一个环境合成管线」，而是把任务来源从开发记录切换到代码本体，并配套一套验证器可靠性筛选流程。\n\n## 核心主张\n\n| # | 主张 | 证据 | 状态 |\n|---|---|---|---|\n| C1 | CodeMidas 仅以源码为任务特定输入，构建 5,545 个任务，来自 3,185 个代码库，覆盖 23 种语言、15 个技术领域 | §3.5；Figure 2；Figure 3；Table 1 | 作者主张 |\n| C2 | 在 CodeMidas 上 RL 训练使五个外部基准全部提升：DeepSWE 通过率 10.0%→21.7%，Terminal-Bench v2.1 63.7%→72.2%，ProgramBench Almost Solved 4.5→21.5 | §4.2；Figure 5 | 作者主张 |\n| C3 | 高质量 5k 任务池优于未过滤的 vanilla 8k 样本，在 SWE-bench Pro、DeepSWE、CodeMidas Val 上分别高出 0.59、4.59、4.49 个百分点；3k 子集也在三项评测上超过 8k | §5.1；Figure 8 | 作者主张 |\n| C4 | 任务规模扩大带来性能提升：DeepSWE 17.57→19.05→21.70，CodeMidas Val 41.30→43.22→44.73（1k/3k/5k） | §5.1；Figure 7；Figure 8 | 作者主张 |\n| C5 | RL 中智能体探索与自验证增加（探索 27.2→40.1 次调用，草拟比 0.358→0.629，自验证命令 2.03→2.53），且自写检查的 rollout 平均通过率高 4.2 个百分点（95% CI: 1.8–6.6） | §5.2；Table 2；Table 3 | 作者主张 |\n\n最强的是 C2。它是论文的核心卖点，且证据形态最硬：五个外部基准、与初始策略完全相同的评测设置、训练集与 CodeMidas Val 及五个外部基准任务集均验证为不相交（§4.1）。提升幅度也足够大（DeepSWE 翻倍以上、ProgramBench Almost Solved 从 4.5 到 21.5），难以用评测噪声解释。但需注意这仍是单一模型（MiMo-V2.5）、单一算法（GRPO）的结果，跨模型可迁移性未经检验。\n\nC5 的因果性最弱。4.2 个百分点的自验证优势是同一任务、同一 checkpoint 内的相关性观察，论文未做干预实验，无法排除「更强的 rollout 本来就会写更多检查」这一反向解释；探索与草拟的 median split 差异置信区间均跨零（+0.7，95% CI: -1.9 to 3.7；+1.95，-0.04 to 3.96），论文自身也未宣称因果。此外 Table 3 中 Terminal-Bench v2.1 的 drafting ratio 为 N/A，该行为维度在终端任务上不可测。\n\nC3 与 C4 共享同一组训练配置，属于内部对照，可信度高于跨基准外推，但「高质量」的定义即论文自身的过滤流程，存在用自家标准评价自家数据的循环性；vanilla 8k 样本的构造细节（采样来源、任务陈述与验证器质量分布）在摘录中未充分展开，迁移到其他过滤管线时该结论未必成立。\n\n## 机制与方法\n\nCodeMidas 的核心主张是：把「已实现的功能」本身当作任务来源，从而摆脱对 issue、PR、commit、已有测试或书面描述的依赖。其流水线由四个模块组成，任务特定输入只有源码。\n\n**任务定义。** 每个任务是一个三元组：任务语句（statement）、容器化开发环境、隐藏可执行验证器。求解器只看到语句与被改造后的代码库及其依赖；验证器始终位于求解器环境之外，仅在评分时注入，返回二元执行奖励 $r \\in \\{0,1\\}$。这一「验证器隔离」设计是奖励可靠性的前提，也是与过程奖励模型、rubric 打分路线的关键取舍：CodeMidas 不使用奖励模型或学习式验证器。\n\n**构造流程。** 第一步，智能体检查代码库结构与构建元数据，识别具有公共入口与可观察结果的功能，支持命令行工具、纯库函数与有状态库 API 三类接口，分别通过进程输出、返回值与跨调用状态变化来观察。第二步，追踪公共入口与共享依赖以界定任务范围，删除选定的核心实现，把剩余代码调整为自洽的开发起点，原实现单独保留作为参考解。第三步，基于参考解执行构造测试：把语句中的行为需求映射为输入、边界与状态序列断言，对语句固定的输出用参考执行确定期望值，对语句未指定的方面只检查已声明的约束（例如强制异常类型但不固定消息措辞），并审查删除语句未支持的过度限制（如精确措辞、偶然顺序、内部结构）。若某断言依赖私有符号且无行为替代，则拒绝该任务。\n\n**执行一致性与后过滤。** 每个任务在训练运行时设置下于六个全新容器中检查：两个起始态容器必须失败，四个参考解容器必须通过，以此筛除不稳定的执行结果。随后用 rollout 做三重后过滤：(i) 对抗性 rollout 搜索编译产物、缓存、构造智能体遗留文件、已安装的目标项目副本等残留泄漏，若确认可绕过预期实现则拒绝；(ii) 每任务四次求解尝试，由评审智能体对照语句、验证器与参考解检查假阳性与假阴性，发现验证器缺陷则拒绝；(iii) 只保留在筛选模型与预算下既有成功又有失败尝试的任务，全通过或全失败的任务被丢弃——论文明确指出这类结果可能源于任务难度，也可能源于弱测试或语句缺失需求，且无法区分原因。\n\n**训练。** 在保留任务上用 GRPO 优化 MiMo-V2.5，奖励为二元执行奖励，不使用奖励模型。论文未给出 GRPO 的目标函数公式，故此处不引入具体形式。\n\n**适用前提与边界。** 方法假设：代码库可容器化构建与运行；目标功能具有公共入口与可观察行为；参考解可执行以生成期望值。其代价是任务可测范围受限于语句已声明的约束——未指定行为不被验证；依赖私有符号的断言被直接拒绝，限制了可测功能面。执行一致性检查只能筛除而非完全消除不稳定执行结果。此外，drafting ratio 在 Terminal-Bench v2.1 上不适用（N/A），说明该行为度量对终端类任务不可用。\n\n## 实验设置\n\n训练统一在 5,545 个 CodeMidas 任务上进行，初始策略为 MiMo-V2.5，算法为 GRPO，奖励为二元验证器结果（0 或 1），batch size 32，每任务 32 条 rollout。关键配置：最大 prompt 长度 8,192 tokens，最大响应长度 516,096 tokens，每 rollout 最多 500 轮，最大 staleness 8，Adam 优化器，学习率 $5\\times10^{-6}$，Adam $(\\beta_1,\\beta_2)=(0.95,0.95)$，Adam $\\epsilon=10^{-15}$，梯度裁剪阈值 1，warmup 步数 0，weight decay 0，优势归一化按标准差被禁用。CodeMidas Val 为从训练集外随机抽取的 200 个任务，每任务 3 次评测尝试；论文声明训练集与 CodeMidas Val 及五个外部基准任务集互不相交。初始策略与 RL checkpoint 使用完全相同的评测设置。ProgramBench 报告 Almost Solved（通过至少 95% 测试的任务百分比），其余评测报告 pass rate，改进以相对初始策略的百分点表示。\n\n| 基准 | 模型/规模 | 基线 | 预算 | 指标 |\n| --- | --- | --- | --- | --- |\n| DeepSWE v1.1 | MiMo-V2.5 | initial policy (MiMo-V2.5) | 5,545 CodeMidas tasks, GRPO, batch size 32, 32 rollouts per task | pass rate |\n| Terminal-Bench v2.1 | MiMo-V2.5 | initial policy (MiMo-V2.5) | 5,545 CodeMidas tasks, GRPO | pass rate |\n| ProgramBench | MiMo-V2.5 | initial policy (MiMo-V2.5) | 5,545 CodeMidas tasks, GRPO | Almost Solved |\n| CodeMidas Val | MiMo-V2.5 | initial policy (MiMo-V2.5) | 200 tasks, 3 attempts per task | pass rate |\n| SWE-bench Pro | MiMo-V2.5 | vanilla 8k sample | 5,545 high-quality tasks | score |\n| DeepSWE | MiMo-V2.5 | vanilla 8k sample | 5,545 high-quality tasks | score |\n| CodeMidas Val | MiMo-V2.5 | vanilla 8k sample | 5,545 high-quality tasks | score |\n| DeepSWE | MiMo-V2.5 | 1k / 3k subsets | 1k, 3k, 5k high-quality pools | score |\n| CodeMidas Val | MiMo-V2.5 | 1k / 3k subsets | 1k, 3k, 5k high-quality pools | score |\n\n规模与质量消融中，1k、3k、5k 三个高质量池与一个约 8,000 任务的 vanilla 8k 样本使用相同训练配置、在相同 checkpoint 区间评测；vanilla 8k 在过滤前采样，未做环境清理、执行一致性检查，也未做三步 rollout 后过滤。行为分析方面，探索度定义为首次编辑前的去重 read/search 请求数，drafting ratio 定义为 Write/Edit 载荷中已在先前推理里出现的 16 字符片段比例，自验证定义为最终编辑后执行的不同验证命令数。论文未说明外部基准的评测轮数、温度等采样参数，也未说明筛选模型的具体身份与预算规模。\n\n## 证据与结果\n\n以下数字均直接取自论文摘录，未做换算或推断。\n\n| 指标 | 数值 | 设置 | 出处 |\n|---|---|---|---|\n| DeepSWE v1.1 pass rate | 10.0% → 21.7% | CodeMidas RL on MiMo-V2.5 | §4.2 / Figure 5 |\n| Terminal-Bench v2.1 pass rate | 63.7% → 72.2% | 同上 | §4.2 / Figure 5 |\n| ProgramBench Almost Solved | 4.5 → 21.5 | 同上 | §4.2 / Figure 5 |\n| CodeMidas Val pass rate | 35.0% → 44.7% | RL on CodeMidas，200 任务，每任务 3 次尝试 | §4.2 / Figure 6 |\n| CodeMidas Val pass rate（1k 池） | 41.30 @ step 30 | 高质量 1k 子集 | §5.1 / Figure 7 |\n| CodeMidas Val pass rate（3k 池） | 43.22 @ step 65 | 高质量 3k 子集 | §5.1 / Figure 7 |\n| CodeMidas Val pass rate（全池） | 44.73 @ step 70 | 完整 5,545 任务集 | §5.1 / Figure 7 |\n| DeepSWE 分数（池规模） | 17.57 → 19.05 → 21.70 | 1k / 3k / 5k 高质量池 | §5.1 / Figure 8 |\n| CodeMidas Val 分数（池规模） | 41.30 → 43.22 → 44.73 | 同上 | §5.1 / Figure 8 |\n| 5k 相对 vanilla 8k 的差距 | 0.59、4.59、4.49 个百分点 | SWE-bench Pro / DeepSWE / CodeMidas Val | §5.1 |\n| 保留任务 | 5,545 任务，来自 3,185 代码库，23 语言、15 领域 | CodeMidas 数据集 | §3.5 |\n| 语言占比 | Python 21.4%、TypeScript 18.3%、Go 16.2%、C++ 12.5%、JavaScript 11.3% | 训练集 | §3.5 / Figure 2 |\n| 前 10 语言覆盖 | 5,445 / 5,545（98.2%） | 训练集 | Figure 2 |\n| 领域占比 | 系统软件 17.4%、Web 14.6%、开发者工具 13.6%，合计 45.6% | 训练集 | §3.5 / Figure 3 |\n| 未标注任务 | 18 个，0.32% | 领域标签 | Figure 3 |\n| 参考解规模 | 中位数 142 行，四分位距 66–305 行 | 全训练集 | §3.5 / Figure 4 |\n| 多文件参考补丁 | 65.9% 的任务触及至少两个源文件 | 全训练集 | §3.5 |\n| 代码库探索 | 27.2 → 40.1 次调用 | 早期 vs 晚期训练 rollout | Table 2 |\n| 草拟比 | 0.358 → 0.629（+0.271） | 同上 | Table 2 |\n| 自验证命令数 | 2.03 → 2.53（+0.50） | 同上 | Table 2 |\n| 自验证通过率优势 | 高 4.2 个百分点（95% CI: 1.8–6.6） | 同任务同 checkpoint，CodeMidas Val | §5.2 |\n| 探索中位数切分差异 | +0.7 点（95% CI: -1.9 到 3.7） | checkpoint 中位数切分 | §5.2 |\n| 草拟中位数切分差异 | +1.95 点（-0.04 到 3.96） | 同上 | §5.2 |\n| SWE-bench Pro 行为 | 探索 23.1 → 35.5；草拟比 0.304 → 0.653；自验证 0.80 → 0.96；交互长度 37.3 → 50.1 轮 | 首 → 末三个观测 checkpoint | Table 3 |\n| ProgramBench 行为 | 探索 55.7 → 83.6；草拟比 0.106 → 0.361；自验证 0.93 → 0.99；交互长度 155.1 → 122.8 轮 | 同上 | Table 3 |\n| Terminal-Bench v2.1 行为 | 探索 11.9 → 16.8；草拟比 N/A；自验证 2.01 → 2.61；交互长度 59.2 → 69.5 轮 | 同上 | Table 3 |\n\n消融与对照。任务规模消融：1k / 3k / 5k 高质量池在 DeepSWE 与 CodeMidas Val 上单调递增（17.57→19.05→21.70；41.30→43.22→44.73），且全池在 step 40 至 70 的每个评测 checkpoint 上领先。任务质量对照：完整 5k 池在 SWE-bench Pro、DeepSWE、CodeMidas Val 上分别超过 vanilla 8k 样本 0.59、4.59、4.49 个百分点；3k 子集亦在三个评测上超过 8k。vanilla 8k 为过滤前采样，未做环境清理、执行一致性检查与三步 rollout 后过滤。行为消融：自验证切分为 +4.2 点（CI 1.8–6.6），探索 +0.7 点（CI -1.9 到 3.7，跨零），草拟 +1.95 点（-0.04 到 3.96，接近跨零）。训练配置（Appendix A）：GRPO、二元执行奖励、batch size 32、每任务 32 rollouts、最大 prompt 8,192 tokens、最大 response 516,096 tokens、最多 500 轮、最大 staleness 8、Adam 学习率 $5\\times10^{-6}$、$(\\beta_1,\\beta_2)=(0.95,0.95)$、$\\epsilon=10^{-15}$、梯度裁剪 1、warmup 0、weight decay 0。摘录未给出 RepoZero C2Rust 的具体数值，也未给出各基准的绝对分数与方差。\n\n## 证据强度评估\n\n证据分级：B。\n\n理由。支持面：五个外部基准方向一致（DeepSWE 10.0%→21.7%、Terminal-Bench v2.1 63.7%→72.2%、ProgramBench 4.5→21.5），训练与评测配置在 Appendix A 中完整披露（GRPO、二元执行奖励、batch 32、每任务 32 rollouts、学习率 $5\\times10^{-6}$ 等），并声明训练集与 CodeMidas Val 及五个外部基准任务集不相交；任务规模与质量消融有对照（1k/3k/5k 与 vanilla 8k），行为分析给出置信区间。削弱面：所有结果均为作者自报，档案中无第三方复现；关键对照（vanilla 8k）由作者自行构造，非公开基线；行为关联为观测性而非干预性；部分指标（如 RepoZero C2Rust）摘录未给出数值。因此不足以定为 A，但配置透明度与多基准一致性高于纯定性主张，故为 B。\n\n主要威胁：\n\n1. 构造效度。验证器由同一流水线合成，其可靠性只经过执行一致性检查（六个新容器：起始态两次必须失败、参考解四次必须通过）与 rollout 后过滤。作者自陈：全通过或全失败的任务「不揭示原因」，可能源于弱测试或语句缺失的需求；语句未指定的行为不被断言覆盖；依赖私有符号且无行为替代的断言会导致任务被拒。这意味着奖励信号可能系统性偏向「可被合成测试表达」的功能子集。\n\n2. 外部效度。训练数据以 Python（21.4%）、TypeScript（18.3%）、Go（16.2%）为主，前 10 语言覆盖 98.2%；领域上系统软件、Web、开发者工具合计 45.6%。结论能否迁移到长尾语言或非上述领域，摘录未给出证据。此外 Terminal-Bench v2.1 上草拟比为 N/A，该行为维度在终端类任务上不可测。\n\n3. 统计显著性与基线选择。自验证的 +4.2 点（95% CI 1.8–6.6）显著；但探索 +0.7 点（CI -1.9 到 3.7）与草拟 +1.95 点（-0.04 到 3.96）的区间跨零或接近跨零，不能据此断言因果。5k 对 vanilla 8k 的 0.59 个百分点（SWE-bench Pro）幅度很小，摘录未给出该差异的置信区间或多次运行方差。行为测量仅纳入「有定义测量」的 rollout，且测量子集随 checkpoint 变化，可能引入选择偏差。\n\n4. 评测污染。作者声明训练集与 CodeMidas Val 及五个外部基准任务集不相交，但未说明外部基准是否做过 n-gram 或代码级去污染检查；由于任务源自 3,185 个开源代码库，与公开基准的仓库重叠风险无法从摘录中排除。CodeMidas Val 仅 200 任务、每任务 3 次尝试，评测噪声对 0.59 点量级的差距尤为敏感。\n\n## 边界与反例\n\n**什么观察会推翻结论。** 论文的核心因果主张是「源码派生的任务 + 可靠验证器 → 跨形态软件工作的泛化提升」。若出现以下任一观察，结论即被削弱或推翻：(1) 用同等 token/步数预算在 vanilla 8k 上训练，其 SWE-bench Pro / DeepSWE / CodeMidas Val 分数追平或超过高质量 5k——论文只报告了 5k 优于 8k 的差值（0.59、4.59、4.49 个百分点），未报告两者是否等预算、等步数；(2) 把 5k 池中的任务换成同规模但来自 issue/PR 派生的任务，外部基准增益相当，则「源码为唯一输入」这一新颖性并非增益来源；(3) 自验证与通过率的 4.2 个百分点关联（95% CI 1.8–6.6）在控制任务难度、checkpoint、轨迹长度后消失，则该行为证据退化为相关而非机制。\n\n**最可能失效的条件。** 作者自陈的边界集中在验证器侧：rollout 结果过滤只保留「既有成功又有失败」的任务，而全通过/全失败「不揭示原因」，可能来自弱测试或语句缺失的需求；断言若依赖私有符号且无行为替代则任务被拒；语句未指定的行为不被验证；执行一致性仅用六个新容器筛查，无法完全消除不稳定执行。因此当目标场景的规格本身模糊、或正确性依赖未在语句中写明的隐式契约（如性能、并发、错误消息格式）时，该管线最可能失效。此外 drafting ratio 在 Terminal-Bench v2.1 上为 N/A，说明该行为度量对终端类任务不可用。\n\n**读者可能误推的方向（作者未验证）。** 其一，把「23 语言、15 领域」的覆盖度误读为各语言/领域增益均匀——论文只给出分布，未给出分语言或分领域的消融。其二，把 1k→3k→5k 的单调上升（DeepSWE 17.57→19.05→21.70）外推为「数据越多越好」，但论文未测试 5k 以上，也未报告边际收益是否递减。其三，把自验证关联当作可直接施加的训练信号——论文未做「强制自验证」的干预实验，无法区分是自验证导致成功，还是强模型本就更多自验证。其四，把 CodeMidas Val 的 35.0%→44.7% 与外部基准增益视为同源，但 Val 与训练集同分布，其提升幅度（约 8–10 个百分点）明显大于外部基准，存在分布内过拟合的可能。\n\n## 与知识库的关系\n\n**新增。** 相对 SWE-bench / SWE-bench Pro 一类仓库级 issue 修复环境构建笔记，CodeMidas 新增的是「任务特定输入为零依赖」这一维度：Table 1 显示 SWE-rebench V2 需 PR/commit/已有测试（20 语言）、R2E-Gym 需 commit（1 语言）、MindForge 需书面描述（15 语言），而 CodeMidas 在五项输入上均为「不依赖」且覆盖 23 种语言。相对 R2E-Gym / SWE-smith / SWE-Flow / SWE-Hub / MindForge 等环境合成管线笔记，新增的是把「已实现功能」本身当作任务种子，而非围绕已有测试或文档合成。相对 SWE-RL / SWE-Universe / CodeRL / AceCoder 等奖励设计笔记，新增的是「GRPO + 合成测试的二元执行奖励，不用奖励模型或学习式验证器」这一组合。\n\n**印证。** 与 EvalPlus / PatchDiff 关于测试预言机不可靠的讨论一致：CodeMidas 以执行一致性检查（六容器：起始态两次必失败、参考解四次必通过）加三类 rollout 后过滤（泄漏、判定一致性、结果分布）应对，属于对该既有问题的工程化回应。与 Self-Debugging / Reflexion 一类执行反馈自我修正的既有结论方向一致：论文报告自写检查的 rollout 平均通过率高 4.2 个百分点（95% CI 1.8–6.6），但这是轨迹级关联证据，非干预实验，状态为「作者主张」。\n\n**张力。** 与 SWE-Shepherd / Agentic Rubrics 等过程或评分式验证器路线存在张力：后者用过程奖励模型或 rubric 打分，CodeMidas 坚持隐藏可执行验证器给出二元奖励，验证器仅在评分时注入求解器环境之外——这意味着它放弃了过程信号的稠密性，换取判定可靠性，代价是 rollout 结果过滤会丢弃全通过/全失败任务，可能损失难任务与易任务两端的信号。\n\n**可链接笔记 id。** `swe-bench-pro`、`swe-rebench-v2`、`r2e-gym`、`swe-smith`、`swe-flow`、`swe-hub`、`mindforge`、`swe-rl`、`swe-universe`、`cod erl`、`acecoder`、`evalplus`、`patchdiff`、`self-debugging`、`reflexion`、`swe-shepherd`、`agentic-rubrics`。\n\n## 复现与验证计划\n\n本计划给出对 CodeMidas 核心结论的最小可执行验证路径。需注意：论文未公开数据集与训练代码的获取方式（证据表中无相关条目），因此下列步骤中「数据获取」一项存在不确定性，需先确认可获取性再执行。\n\n**环境与配置**（依据 Appendix A，可直接照抄）：\n| 项 | 值 |\n|---|---|\n| 初始策略 | MiMo-V2.5 |\n| 算法 | GRPO，二元执行奖励（0/1） |\n| Batch size | 32 |\n| Rollouts per task | 32 |\n| 最大 prompt 长度 | 8,192 tokens |\n| 最大 response 长度 | 516,096 tokens |\n| 最大 turns per rollout | 500 |\n| 最大 staleness | 8 |\n| 优化器 | Adam，lr $5\\times10^{-6}$，$(\\beta_1,\\beta_2)=(0.95,0.95)$，$\\epsilon=10^{-15}$ |\n| Warmup / weight decay | 0 / 0 |\n| 梯度裁剪 | 1 |\n| 优势归一化（按标准差） | 关闭 |\n\n**数据与任务**：训练池 5,545 个 CodeMidas 任务；验证集 CodeMidas Val 为 200 个与训练集不相交的随机任务，每题 3 次尝试。若无法获得完整池，可先复现 1k / 3k 子集的学习曲线（§5.1）。\n\n**基线与判据**：以初始策略 MiMo-V2.5 为基线，在相同评测设置下比较。可检验的关键数字：CodeMidas Val 通过率 35.0% → 44.7%；DeepSWE 10.0% → 21.7%；Terminal-Bench v2.1 63.7% → 72.2%；ProgramBench Almost Solved 4.5 → 21.5。规模消融判据：DeepSWE 17.57 → 19.05 → 21.70，CodeMidas Val 41.30 → 43.22 → 44.73（1k/3k/5k）。\n\n**预期失败模式**：① 若任务池未经 §3.3 六容器执行一致性检查与 §3.4 三类 rollout 后过滤，5k 相对 8k 未过滤样本的优势（0.59 / 4.59 / 4.49 个百分点）可能消失——这是最应优先验证的对照；② 全通过/全失败任务会稀释梯度信号；③ 行为指标（drafting ratio 等）在部分 checkpoint 上无定义，子集随 checkpoint 变化，比较时需固定口径。\n\n## 术语与记号\n\n本小节汇总正文出现的关键术语、缩写与符号。行为指标定义取自 Appendix B；训练超参取自 Appendix A。\n\n| 术语 | 含义 |\n|---|---|\n| coding RL environment | 用于 RL 训练编码智能体的可执行任务环境，含任务语句、容器化开发环境与隐藏验证器 |\n| GRPO | 组相对策略优化，本文所用 RL 算法（Shao et al., 2024） |\n| binary execution reward | 验证器在评分时返回的 0/1 执行奖励；验证器仅在评分阶段注入求解器环境之外 |\n| execution consistency | 在六个新容器中重复运行：起始态两次必须失败、参考解四次必须通过 |\n| post-rollout filtering | 训练前用 rollout 结果过滤环境，含泄漏、验证器一致性、结果分布三类检查 |\n| leakage filtering | 对抗性 rollout 搜索编译产物、缓存等残留，防止绕过预期实现 |\n| rollout outcome filtering | 只保留既有成功又有失败尝试的任务，剔除全通过或全失败任务 |\n| CodeMidas Val | 从训练集外随机抽取的 200 个任务验证集，每题 3 次尝试 |\n| Almost Solved | ProgramBench 中通过至少 95% 测试的任务百分比 |\n| codebase exploration | 首次编辑前的去重 read/search 请求数（同目标同行范围、同查询同选项计一次） |\n| drafting ratio | Write/Edit 载荷中，已在先前推理里出现过的代码片段比例；按 16 字符片段、步长 4 采样 |\n| self-verification | 最终编辑后执行的不同验证命令数，重复执行同一命令只计一次 |\n| interaction length | 以 assistant turns 计的交互长度 |\n| vanilla 8k sample | 过滤与清理之前采样的约 8,000 个任务，未做环境清理、执行一致性检查与三类后过滤 |\n| 1k / 3k / 5k pool | 高质量任务池的 1,000 / 3,000 / 5,545 规模子集 |\n\n记号约定：通过率、Almost Solved 与各基准分数均以百分比报告；论文中的改进量以「相对初始策略的绝对百分点」给出。$5\\times10^{-6}$ 为学习率，$10^{-15}$ 为 Adam 的 $\\epsilon$。drafting ratio 在 Terminal-Bench v2.1 上记为 N/A，该行为指标在终端任务上不可用。\n\n## 自测\n\n以下 5 个问题用于检验你是否真正读懂了 CodeMidas 的证据链，而非只记住了几个提升数字。建议先自行作答，再展开答案对照。\n\n**Q1（证据强度）** 论文称「自写检查的 rollout 平均通过率高 4.2 个百分点（95% CI: 1.8–6.6）」。这个结论能否直接读作「让 agent 多写自测就能提升通过率」？\n\n<details><summary>答案</summary>\n不能直接读作因果。原文的表述是「rollouts with checks written and executed by the agent have a mean pass rate 4.2 percentage points higher than those without」，这是在同一任务、同一 checkpoint 内的相关性比较，作者并未声称做了干预实验。更关键的是，同一段中探索与草拟的 median split 结果分别是 +0.7（95% CI: -1.9 to 3.7）与 +1.95（-0.04 to 3.96），两者的置信区间都跨过 0，说明在这套观测性分析里，只有自验证这一项达到了统计上可区分的水平。因此合理表述是：自验证行为与更高通过率相关，且该关联在三个行为指标中最稳健；把它当作可干预的因果杠杆则超出证据。此外该指标定义为「最终编辑后执行的不同验证命令数量」，只统计有定义测量的 rollout，测量子集在不同 checkpoint 间可能变化。\n</details>\n\n**Q2（跨小节：规模 vs 质量）** 论文同时给出「1k→3k→5k 分数递增」和「高质量 5k 优于 vanilla 8k」。这两条结论是否互相矛盾？它们各自支持什么？\n\n<details><summary>答案</summary>\n不矛盾，二者回答的是不同问题。规模结论来自同一高质量池的 1k/3k/5k 子集：DeepSWE 17.57→19.05→21.70，CodeMidas Val 41.30→43.22→44.73，说明在质量受控的前提下增加任务量有收益。质量结论来自高质量 5k 与 vanilla 8k 的对比：后者在过滤前采样，未做环境清理、执行一致性检查，也未做三类 rollout 后过滤；结果 5k 在 SWE-bench Pro、DeepSWE、CodeMidas Val 上分别高出 0.59、4.59、4.49 个百分点，且高质量 3k 子集在三个评测上也超过 8k。合起来支持的命题是：任务数量与任务可靠性都在起作用，且可靠性带来的收益足以抵消 3k 对 8k 的数量劣势。注意 5k 对 8k 在 SWE-bench Pro 上仅 +0.59 个百分点，这一项的优势幅度远小于另两项，不宜笼统概括为「全面大幅领先」。\n</details>\n\n**Q3（跨小节：行为迁移）** 表 2 与表 3 都报告探索增加，但交互长度变化方向不同。这说明了什么？\n\n<details><summary>答案</summary>\n说明行为变化不是单一「轨迹变长」效应。表 2 的训练内数据显示探索从 27.2 增至 40.1 次调用、草拟比从 0.358 增至 0.629、自验证命令从 2.03 增至 2.53。表 3 的外部基准上，探索在三个基准均上升（SWE-bench Pro 23.1→35.5，ProgramBench 55.7→83.6，Terminal-Bench v2.1 11.9→16.8），但交互长度在 SWE-bench Pro 从 37.3 增至 50.1 轮，在 ProgramBench 从 155.1 降至 122.8 轮。作者的解释是 ProgramBench 上更强的代码库探索伴随更短的总体交互。另外草拟比在 Terminal-Bench v2.1 上为 N/A，该行为指标在终端任务上不可用；自验证变化也因基准而异。因此「探索增加」是可迁移的观察，而「轨迹变长」不是。\n</details>\n\n**Q4（方法边界）** 为什么论文的 rollout outcome filtering 只保留「既有成功又有失败」的任务？这一设计有什么已知代价？\n\n<details><summary>答案</summary>\n动机是奖励信号：全通过或全失败的任务在 GRPO 的组内相对比较下几乎不提供梯度信息，且这类结果无法区分是任务难度还是环境缺陷。代价在论文的 limits 中明确写出：全通过或全失败可能反映任务难度，也可能反映残留缺陷（如测试过弱、任务语句缺失需求），而这些结果本身不揭示原因，因此被一并丢弃的任务中可能包含本可用的困难任务。此外该过滤依赖 screening model 与特定预算，换模型或换预算后任务的成功/失败分布可能改变，过滤结论未必可移植。相关地，执行一致性检查只在六个新容器中做（起始态两次必须失败、参考解四次必须通过），作者自述这只能筛查、不能完全消除不稳定的执行结果。\n</details>\n\n**Q5（可迁移性）** 若你想把这套流程迁移到自己的代码库，哪些环节是硬约束、哪些是可调参数？\n\n<details><summary>答案</summary>\n硬约束来自方法本身：任务必须以源码为唯一任务特定输入；必须保留原实现作为参考解以生成期望值；测试断言只能覆盖语句已声明的约束，未指定行为不被验证；若某断言依赖私有符号且无行为替代，该任务必须被拒；验证器必须留在求解器环境之外，仅在评分时注入并返回二元执行奖励。可调参数见附录 A：batch size 32、每任务 32 rollouts、最大 prompt 8,192 tokens、最大 response 516,096 tokens、每 rollout 最多 500 轮、最大 staleness 8、Adam 学习率 $5\\times10^{-6}$、$(\\beta_1,\\beta_2)=(0.95,0.95)$、$\\epsilon=10^{-15}$、梯度裁剪阈值 1、warmup 0、weight decay 0，以及 CodeMidas Val 的 200 任务 × 3 次尝试。需注意这些配置与 5,545 任务规模绑定，论文未报告在其他规模下的超参敏感性，迁移时应视为待验证而非默认最优。\n</details>"
 }

@@ -14,7 +14,11 @@
     "content:build": "python scripts/atlas_db.py build",
     "content:check": "python scripts/atlas_db.py check",
     "cards:run": "python scripts/cards.py run",
-    "cards:check": "python scripts/cards.py check"
+    "cards:deepen": "python scripts/cards.py deepen",
+    "cards:status": "python scripts/cards.py status",
+    "cards:check": "python scripts/cards.py check",
+    "content:migrate": "python scripts/migrate_content_model.py",
+    "test": "python -m unittest discover -s tests"
   },
   "dependencies": {
     "@types/node": "^22.10.2",

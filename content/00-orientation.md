@@ -4,6 +4,9 @@ title: Agentic RL：定义与边界
 summary: 先回答谁在学习、何时更新、奖励来自哪里，再判断一个系统是否属于 Agentic RL。
 stage: FOUNDATION
 track: 概念与基础
+kind: orientation
+depth: overview
+evidenceGrade: C
 order: 1
 minutes: 12
 updated: '2026-09-08'

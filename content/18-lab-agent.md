@@ -4,6 +4,9 @@ title: 实验 02：工具轨迹与独立验证
 summary: 在本地确定性任务中重放工具调用，先验证协议再接入语言模型。
 stage: SYSTEMS
 track: 实验与维护
+kind: lab
+depth: overview
+evidenceGrade: D
 order: 19
 minutes: 30
 updated: '2026-09-08'

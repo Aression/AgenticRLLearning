@@ -4,6 +4,9 @@ title: 维护协议：PARA × Zettelkasten × Diataxis
 summary: 用稳定概念链接组织知识，用项目推动行动，用证据控制更新质量。
 stage: FOUNDATION
 track: 实验与维护
+kind: reference
+depth: overview
+evidenceGrade: C
 order: 22
 minutes: 15
 updated: '2026-09-08'

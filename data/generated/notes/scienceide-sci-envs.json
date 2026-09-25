@@ -1,39 +1,47 @@
 {
   "id": "scienceide-sci-envs",
   "title": "ScienceIDE：把科学代码库变成可学习环境",
-  "summary": "将科学代码库的可执行测试与专家容差固化为环境契约，自动生成修复/实现/加速任务，供 Agent 训练与评估。",
+  "summary": "科学智能体训练面临“科学经验瓶颈”：科学代码库工具链异构、验证依赖物理量与数值容差及未成文约定，论文、仓库与数据集无法自动转化为可训练环境；现有科学编码与可复现性基准只评估智能体，不提供跨仓库、跨任务族扩展经验的生产基础设施。",
   "stage": "FRONTIER",
   "track": "Agent 系统",
   "order": 29,
-  "minutes": 18,
-  "updated": "2026-09-17",
+  "minutes": 60,
+  "updated": "2026-09-24",
   "review": "LLM 全文精读草稿 · 待人工复核",
   "filename": "29-scienceide-sci-envs.md",
   "tags": [
-    "RLVR",
-    "agent-env",
-    "benchmark",
-    "harness",
-    "scientific-code"
+    "benchmark-contamination",
+    "code-environments",
+    "rl",
+    "science-agents",
+    "sft",
+    "verifiable-rewards"
   ],
   "concepts": [
-    "RLVR",
-    "agent-env",
-    "benchmark",
-    "harness",
-    "scientific-code"
+    "benchmark-contamination",
+    "code-environments",
+    "rl",
+    "science-agents",
+    "sft",
+    "verifiable-rewards"
   ],
   "objectives": [
-    "理解科学代码环境为何比通用代码环境更难构建",
-    "说明任务工厂如何把专家判断与任务生成解耦",
-    "识别该工作证据边界与未验证的迁移主张"
+    "理解 ScienceIDE 如何把科学代码库编译为可执行环境与检查",
+    "掌握逐点与不变量两种通过策略及名义/变体校准机制",
+    "了解 SFT 与 RL 在科学任务上的训练设置与增益边界",
+    "识别评测污染通道与科学验证的固有限制"
   ],
   "keyPoints": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "evidenceLevel": "full-text-llm-draft",
@@ -42,27 +50,92 @@
   "paperId": "2609.19134",
   "readingDepth": "full-text",
   "fullTextUrl": "https://arxiv.org/html/2609.19134",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "deep",
+  "depthLabel": "深读",
+  "depthRank": 2,
+  "evidenceGrade": "C",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "注册表已含 2,515 修复、295 实现与 2 个加速任务",
+      "evidence": "§1 Introduction；§8.2 表1 任务供给队列",
+      "status": "作者主张"
+    },
+    {
+      "id": "C2",
+      "claim": "在困难子集上预算耗尽达到任务均衡的 37.3%",
+      "evidence": "§1 Introduction；§3 Experiments",
+      "status": "作者主张"
+    },
+    {
+      "id": "C3",
+      "claim": "Fable/Astra 轨迹审查中，参考约定不匹配占任务均衡失败的大多数",
+      "evidence": "§1 Introduction；附录 10.3 图15",
+      "status": "作者主张"
+    },
+    {
+      "id": "C4",
+      "claim": "在已验证 ScienceIDE 演示上微调可提升科学代码修复并迁移到公开基准",
+      "evidence": "§3.3；附录 11.1",
+      "status": "作者主张"
+    },
+    {
+      "id": "C5",
+      "claim": "科学检查可覆盖可观测等价与不变量，形成 1,076 个可执行检查",
+      "evidence": "§8.2 表1 科学契约队列",
+      "status": "作者主张"
+    },
+    {
+      "id": "C6",
+      "claim": "RL 可在训练环境内的 hinted held-out 任务上从 base checkpoint 取得增益",
+      "evidence": "§3.4；§11.2",
+      "status": "作者主张"
+    }
+  ],
+  "claimCount": 6,
+  "sectionSizes": {
+    "问题与语境": 663,
+    "核心主张": 1479,
+    "机制与方法": 1512,
+    "实验设置": 1638,
+    "证据与结果": 2060,
+    "证据强度评估": 1708,
+    "边界与反例": 1796,
+    "与知识库的关系": 1071,
+    "复现与验证计划": 1024,
+    "术语与记号": 934,
+    "自测": 2604
+  },
+  "bodyChars": 16619,
+  "deep": true,
   "sections": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "related": [
-    "recreationworld-hybrid-cua",
+    "atria-dawn-ai",
+    "codemidas-code-rl-envs",
     "environments",
-    "evaluation",
-    "grpo",
     "harness-design-coding-agents",
-    "mintrl-off-policy-intervention"
+    "hypoevolve",
+    "recreationworld-hybrid-cua"
   ],
-  "degree": 11,
+  "degree": 6,
   "sources": [
     "scienceide-turning-world-s-scientific-co"
   ],
   "prerequisites": [],
-  "search": "scienceide：把科学代码库变成可学习环境 将科学代码库的可执行测试与专家容差固化为环境契约，自动生成修复/实现/加速任务，供 agent 训练与评估。 agent 系统 rlvr agent-env benchmark harness scientific-code 理解科学代码环境为何比通用代码环境更难构建 说明任务工厂如何把专家判断与任务生成解耦 识别该工作证据边界与未验证的迁移主张 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测",
-  "content": "## 论文要解决的问题\n\n作者主张：语言模型能力随可学习经验增长，代码领域因仓库、编译器、测试使动作可观察、结果可校验，从而支撑可验证奖励的强化学习；但科学智能缺少同类基础设施。科学仓库工具链异构、难以可复现执行，验证依赖物理量、数值容差与未写明的约定，因此论文、仓库与数据集不会自动变成可训练环境。作者把这一缺口称为「科学经验瓶颈」，并指出已有科学编码与可复现性基准只评估 Agent，不提供跨仓库扩展经验的生产设施。\n\n## 方法\n\nScienceIDE 的核心设计是把代码自身测试与专家容差固定为每个环境的可执行检查，并与任务编写解耦：任何任务（注入缺陷、移植昂贵路径等）都以「是否在容差内恢复科学行为」来评分。领域专家定义可执行仓库环境、科学案例与校准的检查策略，AI Agent 协助实例化；环境专属工厂复用这些决策生成合法任务。\n\n工厂把可复用编写流程与环境科学上下文结合：共享流程处理可逆编辑、执行与产物组装，本地规则识别活跃路径、案例、构建配方与有意义的变换。Agent 提出语义编辑点与目标，策展人与专家保留对可观测量、等价性与验收的决定权；确定性流程把已批准规则扩展为变异或切除候选，验证阶段决定哪些成为任务。作者给出七类编写分类（加速、修复、发现、复现、集成、校准、实现），其中修复与实现可通过可逆变异与切除自动扩展候选。验证组合参考等价、一致性测试、科学量边界与重执行；加速在正确性之后追加资源判据。\n\n已验证任务暴露统一 episode 接口：Agent 获得可编辑工作区，检查代码与科学输入、做修改、跑实验、向私有验证器提交产物；harness 记录动作、观测、检查奖励、执行状态与资源使用，并区分科学分歧、交付不完整与基础设施故障。\n\n## 证据与实验\n\n作者报告注册表目前含 2,515 个修复、295 个实现与两个加速任务；在困难子集上预算耗尽达到任务均衡的 37.3%；在 Fable/Astra 轨迹复核中，参考约定不匹配占任务均衡失败的大多数。实验分三块：ScienceIDE-Hard 上的 Agent 对比、SFT 的公开基准迁移、以及留出科学任务上的 RL 学习。\n\n需要强调证据边界：以上均为论文自述，本次仅有摘要级与正文摘录，无代码、无第三方复现。作者自己声明 SFT 增益只涉及选定公开基准，RL 增益只涉及训练环境内带提示的留出任务，二者都不证明迁移到未见代码库；SFT 分离按任务标识符验证而非相关变体，RL 比较未估计种子间方差。\n\n## 边界与未解问题\n\n作者列出的限制较诚实：证据限于可参考验证的软件任务，以计算物理与地球科学的修复、实现为主，不涉及开放式发现；工厂生成的变体可能共享代码路径与假设，任务数量不等于独立科学覆盖；困难集只探测一小时预算与两个耦合编辑点。验证本身是科学建模选择，与选定可观测量和校准容差一致，不等于这些检查之外的正确性，合法替代方案可能与参考不一致；独立外部审计与对抗性奖励攻击评估仍缺失。工厂摊薄而非消除专家策展，扩展仍依赖领域专长与上游再分发权利；仓库、依赖或硬件变更需重新验证。检索控制无法排除对公开源码的预训练知识，遗留镜像保留文件时间戳线索，难度选择早于完整检索隔离，因此选择未被证明无污染。\n\n## 与知识库的关系\n\n本工作属于「环境即基础设施」路线：与 environments 笔记关注的可执行环境契约、training-systems 关注的 harness 与轨迹记录、evaluation 关注的基准与污染问题直接相关。它把可验证奖励从通用代码扩展到科学代码，但方法层面未提出新 RL 算法，价值主要在环境构建与任务工厂的工程抽象。\n\n## 自测\n\n1. 为什么科学仓库不能像普通代码仓库那样直接变成训练环境？作者给出的三类障碍是什么？\n2. 任务工厂中，哪些环节由确定性流程完成，哪些必须保留给专家？\n3. 作者声称的 SFT 与 RL 增益各自覆盖什么范围，为什么不能据此推断跨代码库迁移？\n4. 若让你审计该注册表，你会优先检查哪一项污染或奖励攻击风险？"
+  "search": "scienceide：把科学代码库变成可学习环境 科学智能体训练面临“科学经验瓶颈”：科学代码库工具链异构、验证依赖物理量与数值容差及未成文约定，论文、仓库与数据集无法自动转化为可训练环境；现有科学编码与可复现性基准只评估智能体，不提供跨仓库、跨任务族扩展经验的生产基础设施。 agent 系统 paper deep c scienceide-sci-envs benchmark-contamination code-environments rl science-agents sft verifiable-rewards 理解 scienceide 如何把科学代码库编译为可执行环境与检查 掌握逐点与不变量两种通过策略及名义/变体校准机制 了解 sft 与 rl 在科学任务上的训练设置与增益边界 识别评测污染通道与科学验证的固有限制 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 注册表已含 2,515 修复、295 实现与 2 个加速任务 作者主张 在困难子集上预算耗尽达到任务均衡的 37.3% 作者主张 fable/astra 轨迹审查中，参考约定不匹配占任务均衡失败的大多数 作者主张 在已验证 scienceide 演示上微调可提升科学代码修复并迁移到公开基准 作者主张 科学检查可覆盖可观测等价与不变量，形成 1,076 个可执行检查 作者主张 rl 可在训练环境内的 hinted held-out 任务上从 base checkpoint 取得增益 作者主张",
+  "content": "## 问题与语境\n\n科学智能体的训练瓶颈不在模型规模，而在经验供给。文本与通用代码之所以能支撑能力增长，是因为仓库、编译器与测试让动作可观测、结果可校验；科学计算把这一要求推到更严的层面：工具链与构建配置高度异构，验证依赖物理量、数值容差与未成文约定，可运行的代码还必须先被转化为带行为验证、分级反馈与交互记录的任务，才谈得上训练价值。论文的出发点正是这一「科学经验瓶颈」：论文、仓库与数据集不会自动变成可训练环境。\n\n已有做法的失效点有两处。其一，科学编码与可复现性基准（论文以 ScienceAgentBench、CORE-Bench 一类工作为代表）只评测智能体，不提供跨仓库、跨任务族扩展经验的生产基础设施，评测分数高并不等于得到可复用环境。其二，科学计算代码的加速与移植仍以逐份手写端口推进，绑定厂商工具链，并把双精度当作默认而非按需推导的要求——即科学判断被反复重做，而非被沉淀为契约。\n\n论文的定位因此不是「又一个科学 agent 基准」，而是把专家判断编译为可执行环境与检查的开放基础设施：构建单元是版本化代码库中拥有连贯科学职责与可执行覆盖的 scientific module，环境把获批模块与其运行时、科学检查打包，检查套件在下游任务编写前固定，任务工厂复用同一套检查生成修复、实现、加速、复现等任务。其关键设计是分离「科学判断」与「重复任务生产」：专家决策成为可复用契约，候选任务仍须通过可执行证据证明其可观测、可解、可信。由此，一个环境可同时服务评估、SFT 与 RL，专家精力集中于科学边界与新目标，而非每个生成任务。\n\n## 核心主张\n\n论文的核心主张可归纳为：科学专家判断可以被编译为可执行、可复用的环境与检查，从而把科学代码库变成可训练经验的生产设施，并在评估、SFT 与 RL 三条路径上产生可测量的收益。需要强调的是，这些主张的证据强度并不一致：任务供给与检查覆盖属于「已建成什么」的清点，困难子集上的预算耗尽率与失败机制标注属于「模型表现如何」的观察，而 SFT/RL 增益则受限于所选基准与训练环境内部。\n\n| # | 主张 | 证据 | 状态 |\n|---|---|---|---|\n| C1 | 注册表已含 2,515 修复、295 实现与 2 个加速任务 | §1 Introduction；§8.2 表1 任务供给队列 | 作者主张 |\n| C2 | 在困难子集上预算耗尽达到任务均衡的 37.3% | §1 Introduction；§3 Experiments | 作者主张 |\n| C3 | Fable/Astra 轨迹审查中，参考约定不匹配占任务均衡失败的大多数 | §1 Introduction；附录 10.3 图15 | 作者主张 |\n| C4 | 在已验证 ScienceIDE 演示上微调可提升科学代码修复并迁移到公开基准 | §3.3；附录 11.1 | 作者主张 |\n| C5 | 科学检查可覆盖可观测等价与不变量，形成 1,076 个可执行检查 | §8.2 表1 科学契约队列 | 作者主张 |\n| C6 | RL 可在训练环境内的 hinted held-out 任务上从 base checkpoint 取得增益 | §3.4；§11.2 | 作者主张 |\n\n最强的是 C1 与 C5 一类「清点型」主张：它们对应冻结的注册表与检查套件，论文明确区分了三个队列（agent evaluation 85 tasks across 18 environments、scientific contracts 1,076 executable checks、task supply 2,515 repair / 295 implementation / 2 acceleration），并声明任务供给与检查覆盖不改变 ScienceIDE-Hard 的评测分母（§8.2 表1）。这类主张可核对、口径清晰，但注意它只说明「造出了多少」，不说明科学覆盖的独立性——论文自己承认工厂生成的变体可能共享代码路径与假设，任务数不等于独立科学覆盖。\n\n最弱的是 C4 与 C6 的迁移性外推。论文在 Limitations 中明确写道：SFT gains concern selected public benchmarks; RL gains concern hinted held-out tasks within training environments. Neither establishes transfer to unseen codebases；SFT 的分离按 task identifier 验证而非相关变体，RL 比较未估计 seed 间方差。因此这两条只能读作「在特定基准与特定环境内部有效」，不能读作跨代码库的泛化能力。C2 与 C3 居中：37.3% 的预算耗尽率与 358 次尝试中 125 次失败的机制标注，均来自固定预算与固定 85 任务面板，但 C3 的标注是 model-assisted reviewer 给出的证据支持标签，非盲法、未独立复现、未经领域专家认证，且有 17 次尝试未解决，故只能视为机制线索而非因果结论。\n\n## 机制与方法\n\nScienceIDE 的核心机制是把「科学专家判断」编译成可执行环境与检查，使科学经验可复用，而不是为每个任务重建验收标准。构建单元是版本化代码库中的 **scientific module**：它拥有连贯的科学职责与可执行覆盖，而非简单按文件分组。一个 **environment** 把获批模块与其运行时、科学检查打包在一起；**factory** 把可复用的编写流程与特定环境的科学上下文结合；**episode** 是智能体与一个任务的一次交互，产出工件、轨迹与测量结果。\n\n构建流程分四步。第一，智能体检查固定上游修订、依赖、许可证与构建假设，构建源码并运行官方测试与示例，从而暴露输出格式、数值可变性、昂贵路径与执行风险，据此划定环境边界。第二，智能体按科学职责与可执行覆盖提出模块（含输入输出、算法阶段、拥有的实现路径、排除的职责与支撑测试），领域专家审核分解与覆盖；同一仓库可贡献多个环境且保留可追溯的源码身份。第三，智能体实现环境特定的实验适配器并提出科学输出，策展人拥有模块边界与等价契约；获批模块打包为可编辑工作区、检查与私有验证器。第四，把上游单元测试、回归测试与示例问题转化为 **check**：固定输入与分级输出配以通过策略。\n\n奖励单元是 check，其通过策略有两种形式。逐点策略比较每个分级值：\n\n$$|c-r|\\leq a+\\rho\\,|r|$$\n\n其中 $c$ 是候选实现的分级输出值，$r$ 是参考输出值，$a$ 是绝对容差项，$\\rho$ 是相对容差系数；精确相等是 $a=\\rho=0$ 的特例。逐点策略只对物理可观测量评分，绝不对记账量评分：无序集合先按输出携带的身份对齐（粒子属性跟随粒子 ID 而非数组槽位），存储顺序、自适应步数、计时、rank/chunk 布局、随机抽样与特征向量相位都不是可观测量。当逐点界无法容纳运行间变化又仍要拒绝真实故障时，改用 **invariants policy**，比较矩、分布、守恒量或积分范数，适用于随机流、快速发散流、采样统计与离散输出。\n\n容差不是任意设定的：**nominal and variant** 初始条件提供校准证据——变体扰动最小充分的活动输入集合，使分级输出暴露数值敏感性；这是校准证据，不是物理隔离实验，也不是自动容差规则。构建允许时，可选的 **altbuild** 在同一固定源码的另一合法构建上运行名义输入，记录跨构建分离；没有该构建的 check 就没有 altbuild 下限。自验证独立运行名义与变体，要求各自复现参考并取得满分，并分别记录观测。每个 check 附带自然语言 **warrant**，说明比较对象、所区分偏差及有效实现可满足的理由。检查套件在下游任务编写前固定，因此任务陈述可改变所求工作，而检查始终是验收契约的一部分。\n\n任务工厂复用这些检查生成修复、实现、加速、复现等候选任务，但候选须经可执行证据证明可观测、可解、可信才成为任务；注入修复时已知有效见证与缺陷基线都运行，只有见证满足科学检查，harness 失败不计分。已验证任务通过统一 episode 接口产生轨迹、奖励、执行状态与资源记录，供评估、SFT 与 RL 使用。\n\n适用前提需明确：证据仅涉及可参考验证的软件任务，以计算物理与地球科学的修复与实现为主，而非开放式发现；验证本身是科学建模选择，与选定可观测量和校准容差一致并不证明这些检查之外的正确性，合法替代实现可能与参考不一致；工厂摊薄而非消除专家策展，扩展仍依赖领域专长与上游再分发权利；仓库、依赖或硬件变更需重新验证，版本化保留的是来源而非科学有效性。\n\n## 实验设置\n\n论文的实验分为三类：ScienceIDE-Hard 上的智能体比较、SFT 的公开基准迁移、以及 RL 在留出科学任务上的学习。三者使用不同队列，作者在 §8.2 表 1 明确要求不得合并：智能体评估队列固定为 85 个任务、18 个环境，是 ScienceIDE-Hard 模型比较的固定分母；科学契约队列为 1,076 个可执行检查；任务供给队列为 2,515 修复、295 实现与 2 个加速任务，是制造出的任务清单而非评估分母。另有参考探针队列 1,858 个任务、25 个环境、五个仓库族，用于有效性与执行完整性审计，但不定义 85 任务比较分母。\n\n| 基准 | 模型/规模 | 基线 | 预算 | 指标 |\n| --- | --- | --- | --- | --- |\n| ScienceIDE-Hard（85 任务 / 18 环境） | Fable 5.1、Astra 等多模型对比 | 各模型初始 checkpoint | one-hour budget | task-balanced budget exhaustion（达 37.3%） |\n| ScienceIDE-Hard 轨迹审查 | Fable 5.1 与 Astra（全部 85 任务） | 成功重复作为任务内对照 | 未说明 | 失败机制标注（358 次尝试，125 次失败，17 次未解决） |\n| public benchmarks（SFT 迁移） | Qwen3.5-4B、Qwen3.5-9B、Qwen2.5-72B-Instruct（ms-swift） | 各自初始模型，matched settings | 未说明 | SFT 后公开基准表现（仅报告所选基准增益） |\n| held-out scientific tasks（RL） | Qwen3.5-4B（base，无 SFT 初始化） | base checkpoint | 未说明 | RL reward（verifier 打分，$[0,1]$ 部分信用） |\n| LAPS 与 MITgcm-biogeo（RL 训练环境） | Qwen3.5-4B | 未说明 | 未说明 | 任务库规模与划分（LAPS 99 任务 85/14；MITgcm-biogeo 87 任务，源划分 64/23，日志验证读取 21 任务，重建划分 66/21） |\n| SFT 语料 | Qwen3.5-4B、Qwen3.5-9B、Qwen2.5-72B-Instruct | 未说明 | 未说明 | 训练/验证片段数（4,567 训练片段来自 564 任务；544 验证片段来自 81 任务） |\n\nRL 设置值得单独说明：奖励是 outcome-only 的，verifier 判定只在 episode 结束后到达，轨迹可能跨越数十轮与数万 token；rollout 与训练在不相交 GPU 上并发，用 token-level truncated importance sampling 校正由此产生的一步策略陈旧。两个 RL 任务库分别含 99 与 87 个修复任务，覆盖三个与九个分级科学案例，每个修复在 $[0,1]$ 内部分给分；指令给出缺陷的文件、行与编辑类别（L1 hints），但不给修复内容，留出比较在各自环境内进行。SFT 语料按 task identifier 不相交划分，损失只监督新的 assistant 动作与工具调用，instructions、observations、复用上下文以及被标记为重复或失败的动作被 mask。\n\n需要标注的不确定性：SFT 增益仅涉及所选公开基准，RL 增益仅涉及训练环境内带提示的留出任务，二者都不证明向未见代码库的迁移；SFT 分离按 task identifier 验证而非相关变体，RL 比较未估计种子间方差；困难集只探测到一小时预算与两个耦合编辑点为止的时程与规模。\n\n## 证据与结果\n\n下表汇总摘录中可确认的数字。凡摘录未给出者，一律标注「摘录未给出」，不做推断。\n\n| 指标 | 数值 | 设置 | 出处 |\n| --- | --- | --- | --- |\n| task-balanced budget exhaustion | 37.3% | ScienceIDE-Hard hard subset | §1 Introduction / §3 |\n| 注册表任务供给 | 2,515 repair、295 implementation、2 acceleration | task supply cohort（非评测分母） | §1 / Table 1 |\n| agent evaluation cohort | 85 tasks across 18 environments | ScienceIDE-Hard 模型比较固定分母 | Table 1 |\n| scientific contracts cohort | 1,076 executable checks | observable-equivalence 与 invariant 覆盖 | Table 1 |\n| reference-probe cohort | 1,858 tasks across 25 environments and five repository families | 有效性与执行完整性审计 | §9.1 |\n| Gemini provider-tool 内容暴露 | 71 of 85 tasks | provider 与凭证通道审计 | §9.2 |\n| 单次 web_fetch 取回上游文件 | 22,180-character | 一次试验，重跑时禁用 provider tools | §9.2 |\n| DeepSeek V4 Pro 聚合 key 跨模型调用 | 20 tasks，solving 13 | 重跑前需 provider-side model allowlist | §9.2 |\n| 历史修正后样本分数 | 从 $.365$ 到 $.294$ | 历史修正，非当前排行榜值 | §9.2 |\n| 轨迹审查尝试数 | 358 attempts，其中 125 unsuccessful | Fable 5.1 与 Astra，全部 85 个 ScienceIDE-Hard 任务 | §10.3 / §10.4 |\n| 未解决尝试 | 17 attempts | 轨迹审查协议 | §10.4 |\n| SFT 语料 | 4,567 training segments from 564 tasks；544 validation segments from 81 tasks | task-identifier-disjoint | §11.1 |\n| LAPS RL 划分 | 99 tasks split 85/14 | RL 训练 | §11.2 |\n| MITgcm-biogeo RL 划分 | 87 tasks，source split 64/23；logged validation reads 21；rebuilt split 66/21 | RL 训练 | §11.2 |\n| 冻结注册表 cohort | 27 upstream scientific codebases and 64 derived environments | 环境来源 | §12 |\n| RL 任务库评分科学案例 | 99 与 87 repair tasks，over three and nine graded scientific cases | LAPS 与 MITgcm-biogeo | §3.4 |\n\n消融与对照方面：SFT 采用「各自初始模型在 matched settings 下比较」的对照设计，训练集为 task-identifier-disjoint 语料；RL 从 base Qwen3.5-4B 开始且无 SFT 初始化，训练与 rollout 并发在不相交 GPU 上，用 token-level truncated importance sampling 校正 one-step policy staleness（§3.3、§3.4、§11.2）。检查校准层面，self-validation 独立运行 nominal 与 variant，各自须复现参考并取得 full reward，观测分别记录；可选 altbuild 记录跨构建分离，无该构建则无 altbuild floor（§2.2）。这些是校准证据，作者明确其「不是物理隔离实验，也不是自动容差规则」。RL 的 held-out 比较是环境内比较，且使用 L1 hints（文件、行、编辑类别）。SFT 与 RL 的绝对提升幅度、公开基准具体名称与数值、RL reward 曲线数值，摘录均未给出。\n\n## 证据强度评估\n\n**分级：C（作者主张为主，内部证据自洽但缺乏独立外部验证）。**\n\n理由：本档案的核心数字（37.3% 预算耗尽、2,515/295/2 任务供给、85 任务分母、358 次尝试中 125 次失败）均来自论文自述，标注为「作者主张」，无第三方复现记录。作者自身在 §5 与 §10.4 中主动披露了多项削弱性事实：轨迹审查「not blinded, independently replicated, or domain-expert certified」，17 次尝试未解决；「Independent external audits and adversarial reward-hacking evaluations remain outstanding」。这些自陈使证据可信度高于纯宣传性工作，但仍不足以升到 B。\n\n**主要威胁：**\n\n1. **构造效度**：验证被作者定义为「a scientific modeling choice」。与选定观测量及校准容差一致「does not establish correctness outside those checks」，且「legitimate alternatives may disagree with the reference」。因此 37.3% 与失败机制标注度量的是「与特定参考约定的一致性」，而非科学正确性本身。§10.3 更指出不同缺陷可导致同一非目标修复，说明通过/失败标签与真实缺陷之间并非一一对应。\n\n2. **外部效度**：证据限于「reference-verifiable software tasks, predominantly repair and implementation in computational physics and geoscience, not open-ended discovery」；hard set 只探测到「one-hour budget and two coupled edit sites」。SFT 增益仅限所选公开基准，RL 增益仅限训练环境内的 hinted held-out 任务，「Neither establishes transfer to unseen codebases」。加速任务在注册表中仅 2 个，无法支撑加速方向的泛化结论。\n\n3. **评测污染**：作者给出具体通道证据——Gemini 在 71/85 任务收到 provider-tool 内容，一次 web_fetch 取回 22,180 字符上游文件，DeepSeek V4 Pro 用聚合 key 跨模型调用 20 任务解 13，历史分数由 .365 修正到 .294。作者同时承认「Retrieval controls cannot exclude pretrained knowledge of public source code」，且「difficulty selection predates complete retrieval isolation, so selection is not shown to be contamination-free」。这意味着 37.3% 等分数可能被高估，且修正后的分数「is not a timeless current leaderboard value」。\n\n4. **统计与基线**：SFT 分离「verified by task identifier, not related variants」；RL 比较「do not estimate between-seed variance」。分数比较的是「model–harness systems under fixed budgets」，且「serving speed and unequal repeat coverage limit fine-grained ranking」。基线为各模型初始 checkpoint，属合理但非强基线；摘录未给出置信区间或重复次数，无法评估显著性。\n\n## 边界与反例\n\n**什么观察会推翻结论。** 本文的核心可证伪点在于「环境+检查+工厂」能否把科学经验变成可迁移的训练信号。若出现以下观察，结论应被削弱或推翻：(1) 在**未见代码库**上复现 SFT/RL 增益失败——作者自己已把这条列为未验证边界：「SFT gains concern selected public benchmarks; RL gains concern hinted held-out tasks within training environments. Neither establishes transfer to unseen codebases.」因此任何跨代码库迁移的正面推断都超出证据。(2) 检查套件被证明可被 reward hacking 绕过——作者明确承认「Independent external audits and adversarial reward-hacking evaluations remain outstanding.」(3) 任务数增长被证明只是共享代码路径的重复——「Factory-generated variants can share code paths and assumptions, so task count alone does not measure independent scientific coverage.」\n\n**最可能失效的条件。** 一是**任务族与领域**：证据「predominantly repair and implementation in computational physics and geoscience, not open-ended discovery」，向生物、化学或开放式发现外推无依据。二是**难度上限**：「The hard set probes horizon and scale only up to a one-hour budget and two coupled edit sites.」超过一小时或需三处以上耦合编辑的场景未被探测。三是**验证语义**：「Agreement with selected observables and calibrated tolerances does not establish correctness outside those checks, and legitimate alternatives may disagree with the reference.」即检查通过 ≠ 科学正确。四是**污染**：检索控制「cannot exclude pretrained knowledge of public source code」，且 legacy images 保留文件时间戳线索，难度选择早于完整检索隔离，故「selection is not shown to be contamination-free」。\n\n**读者可能误推的方向。** (a) 把 2,515/295/2 的任务供给量当作评测规模——作者强调这是「Manufactured task inventory, not an evaluation denominator」，ScienceIDE-Hard 分母固定为 85。(b) 把 37.3% 预算耗尽读成模型能力上限——它只是固定一小时预算下的任务均衡观测。(c) 把轨迹审查的机制标注当作因果——「evidence-supported mechanism labels, not experimentally isolated causes」，且审查未盲、未独立复现、17 次尝试未解决。(d) 把历史分数 $.365 \\to .294$ 当作当前榜单值——作者声明「this is not a timeless current leaderboard value」。(e) 把 SFT 的 task-identifier 划分当作变体隔离——「SFT separation is verified by task identifier, not related variants」，且 RL 比较「do not estimate between-seed variance」。\n\n## 与知识库的关系\n\n**新增（此前笔记未覆盖）。** 本条最实质的新增是把「科学验证」形式化为可执行契约：逐点策略 $|c-r|\\leq a+\\rho\\,|r|$ 与不变量策略二选一，并配 nominal/variant 校准与可选 altbuild 跨构建分离。这为 [[RLVR-可验证奖励]] 提供了「非单元测试型 verifier」的具体形态：verifier 编译修改后代码并运行科学模拟，奖励 outcome-only、跨数十轮与数万 token。另一新增是**污染通道的具体证据**：Gemini 在 71/85 任务收到 provider-tool 内容、一次 web_fetch 取回 22,180 字符上游文件、DeepSeek V4 Pro 用聚合 key 跨模型调用 20 任务解 13，历史分数 $.365 \\to .294$——这比 [[评测污染与检索隔离]] 中泛泛的「可能泄漏」更硬。\n\n**印证。** 与 [[科学Agent基准-ScienceAgentBench-CORE-Bench]] 的判断一致：此类基准只评测 agent，不提供跨仓库、跨任务族扩展经验的生产基础设施；本文以「环境+检查+任务工厂」注册表替代单次评测，正是对该缺口的回应。与 [[SFT数据构造与轨迹学习]] 一致：用数值等价验证筛选 GPT-5.6-sol 演示，构建 task-identifier-disjoint 语料（4,567 训练片段/564 任务，544 验证片段/81 任务），并明确增益仅限所选公开基准。\n\n**张力。** (1) 与 [[代码RL-单元测试奖励]] 存在张力：本文把奖励从单元测试扩展到科学数值等价，但代价是 verifier 只在 episode 结束后给分，且需 token-level truncated importance sampling 校正一步策略陈旧——这使「稠密奖励」的直觉失效。(2) 与 [[科学计算GPU移植加速]] 的张力在于：本文把加速纳入同一环境契约（resource criterion after correctness），但注册表中加速任务仅 2 个，尚不足以支撑「加速可被同一基础设施规模化训练」的结论。(3) 与 [[Agent失败模式分析]] 的张力：本文指出 reference-convention mismatches 占任务均衡失败的大多数，且不同缺陷可导致同一非目标修复——这提示「失败归因」本身可能不可从轨迹唯一读出，与把失败标签当作可训练信号的用法相冲突。\n\n## 复现与验证计划\n\n本节的目的是让读者判断：ScienceIDE 的核心结论（困难子集上预算耗尽 37.3%、参考约定不匹配主导失败、SFT/RL 有增益）是否值得在自己的场景中复现。以下给出最小可执行验证路径，所有数字均取自论文摘录，未给出的量不臆造。\n\n**环境与任务。** 最小验证只需两个 RL 环境：LAPS（3D 伪谱 Hall-MHD 求解器）与 MITgcm-biogeo（海洋生物地球化学与 CFC 输运）。任务库规模为 LAPS 99 个修复任务、MITgcm-biogeo 87 个修复任务，分别覆盖 3 与 9 个分级科学案例，每个修复按 $[0,1]$ 部分信用评分。若只做评估而非训练，则使用 ScienceIDE-Hard 固定分母：85 个任务、18 个环境。\n\n**基线。** 评估侧基线是各模型初始 checkpoint（Fable 5.1、Astra 等）；SFT 侧基线是 Qwen3.5-4B、Qwen3.5-9B、Qwen2.5-72B-Instruct 在 matched settings 下的初始模型；RL 侧基线是 base Qwen3.5-4B，且明确无 SFT 初始化。\n\n**预算与判据。** 评估预算为 one-hour budget，主指标是 task-balanced budget exhaustion（困难子集上为 37.3%）。RL 奖励为 outcome-only、verifier 打分，轨迹可跨数十轮与数万 token。SFT 语料为 task-identifier-disjoint：4,567 训练片段来自 564 任务，544 验证片段来自 81 任务。\n\n**预期失败模式（须预先登记）。** 其一，参考约定不匹配——论文称其占任务均衡失败的大多数，但该标注来自非盲、未独立复现的轨迹审查，358 次尝试中 125 次失败、17 次未解决，应视为待验证假设而非既定因果。其二，污染通道：Gemini 在 71/85 任务收到 provider-tool 内容，一次 web_fetch 取回 22,180 字符上游文件，DeepSeek V4 Pro 用聚合 key 跨模型调用 20 任务解 13；复现时必须禁用 provider 工具并设模型白名单，否则分数不可比。其三，迁移失败：论文自述 SFT 增益仅限所选公开基准、RL 增益仅限带提示的留出任务，均不证明跨未见代码库迁移。\n\n## 术语与记号\n\n本节的术语与符号均取自论文正文与附录，用于支撑「复现与验证计划」中的判据表述。\n\n| 术语 | 含义 |\n|---|---|\n| ScienceIDE | 把科学代码库转化为可学习环境的开放基础设施 |\n| scientific module | 版本化代码库中拥有连贯科学职责与可执行覆盖的构建单元 |\n| environment | 获批模块与其运行时及科学检查打包成的可执行环境 |\n| check | 固定输入与分级输出配以通过策略的奖励单元 |\n| pass policy | 判定检查是否通过的策略，分逐点与不变量两种形式 |\n| pointwise policy | 逐点比较每个分级值是否满足 $\\lvert c-r\\rvert \\leq a+\\rho\\,\\lvert r\\rvert$ 的策略 |\n| invariants policy | 比较矩、分布、守恒量或积分范数等不变量的策略 |\n| nominal and variant | 名义与变体初始条件，用于测量数值敏感性以校准容差 |\n| altbuild | 同一固定源码的另一合法构建，用于记录跨构建分离 |\n| factory | 把可复用编写流程与特定环境科学上下文结合的任务工厂 |\n| episode | 智能体与一个任务的一次交互，产生工件、轨迹与测量结果 |\n| warrant | 每个检查附带的自然语言说明，指出可观测对象、所区分偏差及有效实现可满足的理由 |\n| SFT | 监督微调，使用已验证轨迹作为训练数据 |\n| RL | 强化学习，使用验证器评分作为奖励信号 |\n| ScienceIDE-Hard | 用于智能体比较的困难任务子集，固定分母为 85 个任务 |\n\n符号约定：$c$ 为候选实现的分级输出值，$r$ 为参考输出值，$a$ 为绝对容差项，$\\rho$ 为相对容差系数；精确相等是 $a=\\rho=0$ 的特例。修复任务评分区间为 $[0,1]$，带部分信用。论文明确列出非可观测量：存储顺序、自适应步数、计时、rank 或 chunk 布局、随机抽样与特征向量相位，均不参与逐点比较。检查套件在下游任务编写前固定，因此任务陈述可变而验收契约不变。\n\n## 自测\n\n以下 5 题用于检验你是否能把「环境契约」「检查校准」「学习信号」与「证据边界」串起来。答案中的数字均照抄原文摘录，未在摘录中出现的量一律不补。\n\n**Q1（检查的形式与语义）** 逐点策略的判定式是什么？为什么论文强调「存储顺序、自适应步数、计时、rank/chunk 布局、随机抽样、本征向量相位」不是可观测量？这与「不变量策略」的适用条件有何关系？\n\n<details><summary>答案</summary>\n逐点策略比较每个分级值：$|c-r|\\leq a+\\rho\\,|r|$，精确相等是 $a=\\rho=0$ 的特例。论文要求检查只对物理可观测量评分，绝不评「记账量」：无序集合先按输出自带的身份对齐（如粒子属性跟随粒子 ID 而非数组槽位），而存储顺序、自适应步数、计时、rank 或 chunk 布局、随机抽样、本征向量相位都不是可观测量。当没有任何逐点界能在容纳 run-to-run 变化的同时仍拒绝真实故障时（随机流、快速发散流、采样统计、离散输出），改用不变量策略比较矩、分布、守恒量或积分范数。注意这是「科学建模选择」：与选定可观测量和校准容差一致，并不证明这些检查之外的正确性。\n</details>\n\n**Q2（跨小节：校准证据 vs 有效性主张）** 名义/变体初始条件与可选 altbuild 各自提供什么证据？为什么论文说「没有 altbuild 的检查就没有 altbuild 下限」，且「测得的分离度是有限证据而非普适保证」？这与 §5 关于验证的哪条限制相呼应？\n\n<details><summary>答案</summary>\n变体扰动最小充分的活动输入集合，使分级输出暴露数值敏感性；它是校准证据，不是物理隔离实验，也不是自动容差规则。altbuild 在允许时用同一固定源码的另一合法构建跑名义输入，记录观测到的跨构建分离。没有该构建的检查就没有 altbuild 下限；即便测得下限或名义–变体散布，也只是有限证据，不构成普适保证。自测要求名义与变体各自独立复现参考并取得满分，并分别记录观测。这与 §5「验证是科学建模选择：与选定可观测量和校准容差一致，并不在这些检查之外确立正确性，合法替代实现可能与参考不一致」相呼应。\n</details>\n\n**Q3（跨小节：任务供给 ≠ 评测分母）** 注册表任务数、科学契约数与 ScienceIDE-Hard 评测分母分别是多少？为什么论文强调这些队列「必须分开、不可合并」？\n\n<details><summary>答案</summary>\n任务供给队列为 2,515 修复、295 实现、2 个加速；科学契约队列为 1,076 个可执行检查；智能体评测队列为 85 个任务、跨 18 个环境，是 ScienceIDE-Hard 模型比较的固定分母。论文明确：任务供给与检查覆盖不改变 ScienceIDE-Hard 的评测分母，三类队列支撑不同主张，不可合并。另有参考探针队列 1,858 个任务、跨 25 个环境与五个仓库家族，它归档分层但不定义 85 任务比较分母。困难子集上预算耗尽达到任务均衡的 37.3%。\n</details>\n\n**Q4（学习信号与迁移边界）** SFT 与 RL 各自的训练设置与增益范围是什么？为什么论文说二者都「不证明迁移到未见代码库」？\n\n<details><summary>答案</summary>\nSFT：用 ms-swift 在经数值等价验证筛选的 GPT-5.6-sol 演示上微调 Qwen3.5-4B、Qwen3.5-9B、Qwen2.5-72B-Instruct，与各自初始模型在匹配设置下比较；语料为 task-identifier-disjoint，含 4,567 个训练片段（来自 564 个任务）与 544 个验证片段（来自 81 个任务）；损失只监督新的 assistant 动作与工具调用，指令、观测、复用上下文以及被标记为重复或失败的动作被 mask。RL：从 base Qwen3.5-4B 开始、无 SFT 初始化，在 LAPS（99 任务，85/14 划分）与 MITgcm-biogeo（87 任务，源划分 64/23，日志验证读取 21 任务，重建划分为 66/21 且不替代所报告运行）上训练，奖励为 verifier 在 $[0,1]$ 的部分信用，outcome-only，轨迹可跨数十轮与数万 token，rollout 与训练在不相交 GPU 上并发并用 token-level truncated importance sampling 校正一步策略陈旧。论文自陈：SFT 增益限于所选公开基准，RL 增益限于训练环境内带提示的留出任务，二者都不确立到未见代码库的迁移；SFT 分离按任务标识符而非相关变体验证，RL 比较未估计种子间方差。\n</details>\n\n**Q5（证据强度与污染通道）** 轨迹审查的规模与标注性质是什么？论文报告了哪些具体的污染/凭证通道证据，以及由此产生的历史分数修正？\n\n<details><summary>答案</summary>\n轨迹审查覆盖 Fable 5.1 与 Astra 在全部 85 个 ScienceIDE-Hard 任务上的 358 次尝试，其中 125 次失败，17 次未解决；标注是「有证据支持的机制标签，而非实验隔离的因果」，审查未盲、未独立复现、未经领域专家认证，任务源文件未被独立证明与每个历史修订逐字节一致，且没有重放命令被执行。污染通道：Gemini 在 85 个任务中的 71 个收到实质性 provider-tool 内容，一次试验通过 web_fetch 取回精确的 22,180 字符上游文件，受影响试验在禁用 provider 工具后重跑；DeepSeek V4 Pro 用聚合 key 在 20 个任务上调用其他模型并解出 13 个，重跑前需 provider 侧模型白名单。该历史修正中样本分数从 $.365$ 移到 $.294$，论文声明这不是永恒的当前排行榜值。容器隔离不覆盖 provider 侧搜索/抓取或可调用另一具备浏览能力模型的聚合凭证；这些修复关闭了适用通道，但不主张预训练模型从未见过公开上游代码。\n</details>"
 }

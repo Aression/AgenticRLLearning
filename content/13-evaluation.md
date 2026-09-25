@@ -4,6 +4,9 @@ title: Agent 评测：成功、成本与可靠性
 summary: 明确任务分布和执行协议，才能判断提升来自模型、训练还是 harness。
 stage: SYSTEMS
 track: 评估与安全
+kind: system
+depth: overview
+evidenceGrade: C
 order: 14
 minutes: 20
 updated: '2026-09-08'

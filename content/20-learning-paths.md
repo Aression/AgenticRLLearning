@@ -4,6 +4,9 @@ title: 三条学习路线与里程碑
 summary: 从概念入门、工程实践到论文复现，每一步都有可检查的产出。
 stage: FOUNDATION
 track: 实验与维护
+kind: reference
+depth: overview
+evidenceGrade: C
 order: 21
 minutes: 10
 updated: '2026-09-08'

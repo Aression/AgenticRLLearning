@@ -1,0 +1,253 @@
+---
+id: cal-opd
+title: Cal-OPD：校准教师自偏差的在线策略蒸馏
+summary: 标准在线策略蒸馏（OPD）把教师对每个学生 token 的似然当作同等可靠的参考，但教师似然存在 token 级自偏差（TSD），且特权上下文会放大这种偏差，导致学生学到教师侧噪声而非真实能力差距。
+stage: FRONTIER
+track: 训练算法
+kind: paper
+depth: deep
+evidenceGrade: C
+order: 61
+minutes: 60
+updated: '2026-09-24'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.21619
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+claim_count: 4
+full_text_url: https://arxiv.org/html/2609.21619
+objectives: [理解 OPD 中教师似然并非逐 token 等可靠参考，TSD 集中在表面形式 token 上, 掌握 Cal-OPD 用正负特权干预估计 TSD 区域并只保留残差差异的机制, 了解 Cal-OPD 相对 OPD、Privileged-OPD 及各类保留率匹配对照的增益与代价]
+tags: [on-policy-distillation, teacher-student-discrepancy, privileged-information, token-level-supervision, math-reasoning, calibration]
+sources: [calibrating-teacher-student-discrepancy]
+related: [retireopd-self-retiring-opd, privileged-info-opsd-ample-math, mintrl-off-policy-intervention]
+prerequisites: [grpo, policy-gradient]
+---
+## 问题与语境
+
+在线策略蒸馏（OPD）的核心假设是：教师对每个学生 token 赋予的似然是一个逐点可靠的参考，因此教师—学生似然差可以被直接当作密集监督信号。相比依赖稀疏结果级奖励的 RLVR，这一 token 级指导被认为是 OPD 的主要优势。论文质疑的正是这个假设本身。
+
+作者指出，教师似然存在 token 级自偏差（Teacher Self-Deviation, TSD）：在问题与学生 rollout 均固定的条件下，仅改变教师侧的上下文干预，教师对同一 token 的似然就会显著变化。若 TSD 反映任务相关知识，它应随任务特定信息的有无而系统变化，并对该信息的正确性保持一致响应；论文的实证结果与此不符——TSD 在任务无关指令、评价反馈、答案级与解法级特权信息等多种干预下均出现，且集中在表面形式 token 上。这意味着标准 OPD 学到的教师—学生差异中，混入了教师自身的上下文抖动，而非真实能力差距。
+
+已有做法的失效点有两处。其一，标准 OPD 不加区分地优化全部差异：论文报告它仅把 4B → 1.7B 学生从 49.2 提升到 50.8，并把 30B → 4B 学生从 66.6 降到 65.9，尽管两个教师都明显强于学生。其二，特权 OPD 通过给教师注入参考答案、最终答案或提示来增强监督，反而放大了教师侧偏差：Privileged-OPD 在两种配置下取得蒸馏方法中最低平均分 49.3 与 64.0，在 30B → 4B 设置中比学生基线低 2.6 分。
+
+论文的定位因此不是"更强的蒸馏目标"或"更多特权信息"，而是把特权信息从监督信号改作校准探针：用正负特权干预估计教师的 token 级自偏差区域，只蒸馏超出该区域的残差。它要回答的问题是——在教师—学生差异中，哪一部分才真正值得学习。
+
+## 核心主张
+
+论文的核心主张可归纳为四条，其证据定位与状态如下。状态列中"作者主张"表示该结论由论文自身实验支撑、尚无独立复现；本档案未获得任何第三方复现证据，故不出现"已复现"。
+
+| # | 主张 | 证据 | 状态 |
+|---|---|---|---|
+| C1 | 教师似然存在 token 级自偏差（TSD），且集中在表面形式 token 上 | §2.3 表 2；附录 A.4 表 6–9；A.3 跨阈值与教师规模一致性 | 作者主张 |
+| C2 | 特权上下文会放大教师侧偏差，直接蒸馏特权教师会损害性能 | §4.2 表 3；§1 图 1 | 作者主张 |
+| C3 | Cal-OPD 仅保留约 52–65% 的原始教师—学生差异用于优化 | §5 结论；§1 贡献列表 | 作者主张 |
+| C4 | Cal-OPD 在多个数学推理基准上优于标准 OPD 及其变体 | §4.2 表 3；§A.9 表 13 保留率匹配对照 | 作者主张 |
+
+C1 的支撑最具体：在 $c_{\mathrm{sol}}^{\mathrm{pos}}$、$\tau=0.01$ 下，significant-TSD rate 最高的 18 个 token 形式（maybe、however、therefore、consider、alternatively 等）$\rho_\tau$ 超过 89%，最低的 18 个（0、$\surd$、$\theta$、frac 等数字与数学符号）低于 9.3%，接近一个数量级的分离；附录 A.3 进一步在 Qwen3-8B 与 Qwen3-4B-Thinking-2507 两个教师、$\tau\in\{0.01,0.05,0.10\}$ 下复核语义一致性。但需注意其边界：分析仅覆盖 DAPO-17K 数学推理数据、Qwen3-1.7B 学生与 Qwen3-8B 教师、6,528 题约 60M response token，且只保留出现超过 20,000 次的 token 形式，跨领域与跨模型族的普适性未被建立。
+
+C4 的强度依赖对照设计。表 13 的保留率匹配对照显示：Advantage-Sync 对 OPD 优势做全局缩放得 50.8（与 OPD 相同），Token-Sync 随机掩码同比例 token 降至 50.1，TSD-Filter 在 $\tau_{\mathrm{TSD}}=0.1$ 时达 52.7（最强对照）但更激进的 0.05/0.01 退化到 51.1/49.4，均低于 Cal-OPD 的 53.1。§A.9 另指出所有方法使用 $C=1$ 的梯度裁剪，而 OPD 训练中裁剪前梯度范数从约 120 与 65 降至约 35 与 15，始终远大于 1，故增益不能归因于整体信号衰减。这排除了若干替代解释，但对照实验本身仍出自同一论文。
+
+最弱的是 C3。52–65% 这一保留比例在 §1 与 §5 中以概括形式给出，证据表中未见逐配置的分解数值，也未说明该区间如何随 $\lambda$、教师规模或数据集变化；它更像对机制运行结果的描述性总结，而非可独立核验的量化结论。此外，Cal-OPD 需要正负特权干预，即依赖参考答案、最终答案或提示等特权信息，在无此类上下文的场景下方法不适用；其 TSD 区域估计也仅由两个干预构成的有限探针加松弛因子 $\lambda\ge1$ 近似得到，作者自述该区域是近似而非精确刻画。
+
+## 机制与方法
+
+Cal-OPD 的出发点是把标准 OPD 使用的教师—学生差异优势 $A_t^{\mathrm{OPD}}$ 显式分解为两部分：
+
+$$A_{t}^{\mathrm{OPD}} = A_{t}^{\mathrm{Cal}} + A_{t}^{\mathrm{TSD}}$$
+
+其中 $A_t^{\mathrm{Cal}}$ 是校准后保留的教师—学生差异，$A_t^{\mathrm{TSD}}$ 是被教师自偏差（TSD）解释掉的部分。方法的核心不是衰减整体信号，而是逐 token 判断「这个差异是否落在教师自身的不稳定范围内」。
+
+**探测阶段。** 对每个 token $y_t$，用一对语义相反的特权干预 $c^{\mathrm{pos}}$ 与 $c^{\mathrm{neg}}$ 重新评估教师，得到教师对数似然的变化量 $\Delta_{t}^{\mathrm{pos}}=\Delta_{t}^{T}(c^{\mathrm{pos}})$ 与 $\Delta_{t}^{\mathrm{neg}}=\Delta_{t}^{T}(c^{\mathrm{neg}})$。由此定义向下与向上最大偏差：
+
+$$\hat{d}_{t}^{\downarrow}=\max(0,-\Delta_{t}^{\mathrm{pos}},-\Delta_{t}^{\mathrm{neg}}),\qquad \hat{d}_{t}^{\uparrow}=\max(0,\Delta_{t}^{\mathrm{pos}},\Delta_{t}^{\mathrm{neg}})$$
+
+**区域估计。** 由于两次干预只是对真实 TSD 的有限探测，引入松弛因子 $\lambda\ge 1$，把教师自偏差区域估计为以无干预教师似然 $\ell_t^T$ 为中心的区间：
+
+$$\hat{\mathcal{R}}_{t}^{T}=\left[\ell_{t}^{T}-\lambda\hat{d}_{t}^{\downarrow},\ \ell_{t}^{T}+\lambda\hat{d}_{t}^{\uparrow}\right]=[L_{t}^{T},U_{t}^{T}]$$
+
+**校准优势。** 只保留学生似然 $\ell_t^S$ 超出该区间边界的残差：
+
+$$A_{t}^{\mathrm{Cal}}=\left[L_{t}^{T}-\ell_{t}^{S}\right]_{+}-\left[\ell_{t}^{S}-U_{t}^{T}\right]_{+},\qquad [z]_{+}=\max(z,0)$$
+
+当 $\ell_{t}^{S}\in\hat{\mathcal{R}}_{t}^{T}$ 时，观测到的差异被 TSD 区域完全覆盖，$A_t^{\mathrm{Cal}}=0$；否则只保留超出最近边界的那部分。随后按标准 OPD 目标（原文 Eq. 3）优化，仅把 $A_t^{\mathrm{OPD}}$ 替换为 $A_t^{\mathrm{Cal}}$。
+
+**设计取舍与前提。** 与 Privileged-OPD 的关键区别在于：特权信息不直接监督学生，而只用于校准教师参考。作者强调两点取舍：其一，用两个干预而非穷举上下文，因此区域只是近似，必须靠 $\lambda\ge1$ 放宽；其二，采用软校准（保留区域外残差）而非硬过滤，作者在消融中主张硬 TSD 过滤（TSD-Filter）无法复现收益。适用前提是必须能构造正负特权干预，即需要参考答案、最终答案或提示等特权上下文；当这类信息不可得时方法不适用。此外 TSD 分析本身只在数学推理数据（DAPO-17K）与 Qwen3 系列模型上建立，跨域、跨模型族的迁移性未被验证。
+
+## 实验设置
+
+主实验在数学推理基准 AMC23、AIME24、AIME25、AIME26、HMMT26、MATH500 上进行，报告六项平均分（Avg.）。两个教师—学生配置为 Qwen3-4B-Thinking-2507 → Qwen3-1.7B 与 Qwen3-30B-A3B-Thinking-2507 → Qwen3-4B。基线包括学生本身、教师本身、标准 OPD，以及 ExOPD、EOPD、Uni-OPD、Privileged-OPD。训练在 verl 框架、8 张 NVIDIA H20 GPU 上进行（4 张跑学生、4 张跑教师），所有方法共享同一训练配方，除非另有说明；各方法的训练步数预算在证据表中未给出。
+
+| 基准 | 模型/规模 | 基线 | 预算 | 指标 |
+|---|---|---|---|---|
+| AMC23, AIME24, AIME25, AIME26, HMMT26, MATH500 | Qwen3-4B-Thinking-2507 → Qwen3-1.7B | Student, Teacher, OPD, ExOPD, EOPD, Uni-OPD, Privileged-OPD | 未说明 | Avg. |
+| AMC23, AIME24, AIME25, AIME26, HMMT26, MATH500 | Qwen3-30B-A3B-Thinking-2507 → Qwen3-4B | Student, Teacher, OPD, ExOPD, EOPD, Uni-OPD, Privileged-OPD | 未说明 | Avg. |
+| AMC23, AIME24, AIME25, AIME26, HMMT26, MATH500 | Qwen3-4B-Thinking-2507 → Qwen3-1.7B | OPD, Advantage-Sync, Token-Sync, TSD-Filter (τ=0.1/0.05/0.01) | 未说明 | Avg. |
+| TSD 分析（DAPO-17k，6,528 题，约 60M response tokens） | Qwen3-1.7B student, Qwen3-8B teacher | 未说明 | 未说明 | significant-TSD rate ρτ(v) at τ=0.01 |
+| 效率对比（30B-A3B-2507 → 8B；30B-A3B-2507 → 4B；4B-2507 → 1.7B） | Cal-OPD vs OPD | OPD | 100 steps | Avg. time per step (min) / Total time for 100 steps (h) |
+
+TSD 分析的具体设置：Qwen3-1.7B 为学生、Qwen3-8B 为教师，均处于 thinking 模式，在 DAPO-17k 上采样 6,528 个问题，每题一条回答，跨全部干预条件约 60M response tokens；token 形式分析合并同一归一化表面形式的 tokenizer 变体，并只保留出现次数超过 20,000 的形式。保留匹配对照实验（Table 13）在 Qwen3-4B-Thinking-2507 → Qwen3-1.7B 上进行。效率实验（Table 12）比较 Cal-OPD 与 OPD 在 100 步内的单步与总耗时。所有方法均使用梯度裁剪阈值 $C=1$。
+
+## 证据与结果
+
+下表汇总摘录中可确认的数字。所有数值均照抄原文，未在摘录中出现的项标注「摘录未给出」。
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| Avg. | 49.2 | Student, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 63.2 | Teacher, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 50.8 | OPD, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 51.8 | ExOPD, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 51.9 | EOPD, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 50.5 | Uni-OPD, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 49.3 | Privileged-OPD, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 53.1 | Cal-OPD, 4B-2507 → Qwen3-1.7B | Table 3 |
+| Avg. | 66.6 | Student, 30B-2507 → Qwen3-4B | Table 3 |
+| Avg. | 72.5 | Teacher, 30B-2507 → Qwen3-4B | Table 3 |
+| Avg. | 65.9 | OPD, 30B-2507 → Qwen3-4B | Table 3 |
+| Avg. | 67.3 | ExOPD, 30B-2507 → Qwen3-4B | Table 3 |
+| Avg. | 67.1 | EOPD, 30B-2507 → Qwen3-4B | Table 3 |
+| Avg. | 67.6 | Uni-OPD, 30B-2507 → Qwen3-4B | Table 3 |
+| Avg. | 64.0 | Privileged-OPD, 30B-2507 → Qwen3-4B | Table 3 |
+| Avg. | 69.0 | Cal-OPD, 30B-2507 → Qwen3-4B | Table 3 |
+| significant-TSD rate ρτ(v) at τ=0.01 | >89% | 18 highest-ranked surface-form token forms under c_sol^pos | Table 2 / §2.3 |
+| significant-TSD rate ρτ(v) at τ=0.01 | <9.3% | 18 lowest-ranked digit/math/symbol token forms under c_sol^pos | Table 2 / §2.3 |
+| Avg. | 50.8 | Advantage-Sync, 4B-2507 → Qwen3-1.7B | Table 13 |
+| Avg. | 50.1 | Token-Sync, 4B-2507 → Qwen3-1.7B | Table 13 |
+| Avg. | 52.7 | TSD-Filter (τ_TSD=0.1), 4B-2507 → Qwen3-1.7B | Table 13 |
+| Avg. | 51.1 | TSD-Filter (τ_TSD=0.05), 4B-2507 → Qwen3-1.7B | Table 13 |
+| Avg. | 49.4 | TSD-Filter (τ_TSD=0.01), 4B-2507 → Qwen3-1.7B | Table 13 |
+| Avg. time per step (min) | 50.05 | Cal-OPD, 30B-A3B-2507 → 8B | Table 12 |
+| Avg. time per step (min) | 35.19 | OPD, 30B-A3B-2507 → 8B | Table 12 |
+| Avg. time per step (min) | 48.76 | Cal-OPD, 30B-A3B-2507 → 4B | Table 12 |
+| Avg. time per step (min) | 31.26 | OPD, 30B-A3B-2507 → 4B | Table 12 |
+| Avg. time per step (min) | 14.90 | Cal-OPD, 4B-2507 → 1.7B | Table 12 |
+| Avg. time per step (min) | 18.80 | OPD, 4B-2507 → 1.7B | Table 12 |
+| Total time for 100 steps (h) | ~83.4 | Cal-OPD, 30B-A3B-2507 → 8B | Table 12 |
+| Total time for 100 steps (h) | ~58.7 | OPD, 30B-A3B-2507 → 8B | Table 12 |
+| Total time for 100 steps (h) | ~81.3 | Cal-OPD, 30B-A3B-2507 → 4B | Table 12 |
+| Total time for 100 steps (h) | ~52.1 | OPD, 30B-A3B-2507 → 4B | Table 12 |
+| Total time for 100 steps (h) | ~24.8 | Cal-OPD, 4B-2507 → 1.7B | Table 12 |
+| Total time for 100 steps (h) | ~31.3 | OPD, 4B-2507 → 1.7B | Table 12 |
+| pre-clipping gradient norm (initial) | around 120 and 65 | OPD training, two teacher–student configurations | Figure 11 / §A.9 |
+| pre-clipping gradient norm (final) | approximately 35 and 15 | OPD training, two teacher–student configurations | Figure 11 / §A.9 |
+| gradient clipping threshold C | 1 | All methods | §A.9 |
+| retained teacher–student discrepancy | 52–65% | Cal-OPD across model scales | §1 / §5 |
+
+主结果（Table 3）：Cal-OPD 在两种配置下取得最高平均分 53.1 与 69.0，相对学生基线 +3.9 / +2.4，相对标准 OPD +2.3 / +3.1。标准 OPD 仅把 4B → 1.7B 学生从 49.2 提到 50.8，并把 30B → 4B 学生从 66.6 降到 65.9。Privileged-OPD 在两种配置下均为蒸馏方法中最低（49.3、64.0），在 30B → 4B 设置中比学生低 2.6 分。
+
+消融与对照（Table 13，4B-2507 → Qwen3-1.7B）：Advantage-Sync 50.8（与 OPD 相同），Token-Sync 50.1，TSD-Filter 在 τ_TSD=0.1/0.05/0.01 下分别为 52.7/51.1/49.4，均低于 Cal-OPD 的 53.1。作者据此主张增益来自软校准机制而非整体信号衰减或 token 稀疏性。TSD 分析（§2.3）显示 τ=0.01 下最高 18 个表面形式 token 的 ρτ 超过 89%，最低 18 个数字/数学符号 token 低于 9.3%。
+
+效率（Table 12）：Cal-OPD 在 30B-A3B-2507 → 8B 与 → 4B 两配置下每步耗时高于 OPD（50.05 vs 35.19；48.76 vs 31.26），但在 4B-2507 → 1.7B 下更快（14.90 vs 18.80）。逐基准分项（AMC23/AIME24/AIME25/AIME26/HMMT26/MATH500）在摘录中仅部分给出，完整分项数字摘录未全部列出。
+
+## 证据强度评估
+
+证据分级：B（中等偏强，但存在明确外部效度与统计报告缺口）。
+
+理由：结论建立在两个教师—学生配置、六个数学推理基准的完整主表（Table 3）之上，且配有 retention-matched 对照（Table 13）与效率表（Table 12），消融设计针对性强——Advantage-Sync 排除「整体衰减」解释，Token-Sync 排除「随机稀疏」解释，TSD-Filter 排除「硬阈值过滤」解释，三者均未复现 Cal-OPD 的增益，这显著提升了内部效度。TSD 现象本身有跨阈值、跨教师规模的重复分析（§A.3，τ∈{0.01,0.05,0.10}，Qwen3-8B 与 Qwen3-4B-Thinking-2507）与跨八种干预的 token 级重复（§A.4），属于作者自报的稳健性检验。但所有结果均为作者主张，本档案未见第三方复现或共识性验证。
+
+主要威胁：
+
+1. 构造效度：TSD 区域由仅两个干预（c^pos、c^neg）估计，需松弛因子 λ≥1 近似，作者自述该区域是近似（limits）。若 λ 或干预选择改变，A_t^Cal 的置零边界会移动，核心机制的有效性依赖于这一未充分敏感性分析的超参。
+
+2. 外部效度：主结果仅限数学推理基准（AMC23、AIME24、AIME25、AIME26、HMMT26、MATH500）与两个配置；TSD 分析仅在 DAPO-17K 的数学轨迹上、以 Qwen3-1.7B 学生 + Qwen3-8B 教师完成，其他模型族与领域未覆盖（limits）。方法还预设可获取参考答案/提示等特权信息，无特权上下文时不可用。
+
+3. 统计显著性：摘录未给出任何方差、置信区间、随机种子数或显著性检验；+2.3 / +3.1 的 OPD 增益与 TSD-Filter τ=0.1 的 52.7 差距仅 0.4 分，在无方差报告的情况下难以判断是否超出噪声。
+
+4. 基线选择与评测污染：对照基线（ExOPD、EOPD、Uni-OPD、Privileged-OPD、Advantage-Sync、Token-Sync、TSD-Filter）均由作者实现，超参调优预算是否对齐未在摘录中说明；AIME24/25/26、HMMT26 等近期基准存在潜在训练集污染风险，摘录未提供去污染说明。
+
+## 边界与反例
+
+**什么观察会推翻结论。** 论文的核心因果链是「TSD 集中在 surface-form token → 标准 OPD 学到教师侧噪声 → 去掉 TSD 区域后性能提升」。若出现以下任一观察，该链条即被削弱：
+
+- 在非数学推理域（如代码、多语言、开放式写作）中，significant-TSD rate 的高低排序不再与 token 语义类别（surface-form vs 数学/符号）对应，即 $\rho_\tau(v)$ 的分离消失。作者仅在 DAPO-17K 数学数据上验证（限制条目明确列出「generalization to other domains is not established」），因此这是最直接的反例来源。
+- 更换模型族（非 Qwen3）后，TSD 区域估计 $\hat{\mathcal{R}}_t^T$ 无法稳定覆盖真实偏差，导致 $A_t^{\mathrm{Cal}}$ 与 $A_t^{\mathrm{OPD}}$ 的差异退化为噪声。主分析仅用 Qwen3-1.7B 学生 + Qwen3-8B 教师，附录 A.3 扩展到 Qwen3-4B-Thinking-2507 教师，仍未跨族。
+- 若某个 retention-matched 控制在同等保留比例下追平 Cal-OPD，则「软校准机制」这一归因不成立。作者已给出三个控制（Advantage-Sync 50.8、Token-Sync 50.1、TSD-Filter 52.7/51.1/49.4），均低于 53.1，但 TSD-Filter $\tau=0.1$ 的 52.7 与 53.1 差距不大，且未报告方差或多次种子，因此「软校准优于硬过滤」的结论在统计上尚不牢固。
+
+**最可能失效的条件。** 方法依赖正负特权干预，即必须有参考答案、最终答案或提示等特权信息；作者明确承认「not applicable when such privileged context is unavailable」。此外，TSD 区域只用两个干预做有限探测，需松弛因子 $\lambda\ge1$，估计区域本身是近似（限制条目）。当特权信息质量差或正负干预语义对比不清晰时，$\hat{d}_t^{\downarrow}$、$\hat{d}_t^{\uparrow}$ 可能低估真实偏差，使 $A_t^{\mathrm{Cal}}$ 保留过多噪声。
+
+**读者可能误推的方向。** 其一，把「保留 52–65% discrepancy」误读为「保留比例越低越好」——论文并未给出保留比例与性能的单调关系，TSD-Filter 在 $\tau=0.01$ 时更激进却降到 49.4，说明过度裁剪有害。其二，把效率结论泛化：Cal-OPD 在 30B-A3B → 8B 与 30B-A3B → 4B 上每步耗时高于 OPD（50.05 vs 35.19、48.76 vs 31.26 分钟），仅在 4B-2507 → 1.7B 上更快（14.90 vs 18.80），因此「Cal-OPD 更高效」不成立，需按配置区分。其三，把 TSD 分析中「forms occurring more than 20,000 times」的过滤条件忽略，从而高估 token 级结论的覆盖面——稀有 token 形式被排除在外。
+
+## 与知识库的关系
+
+**新增内容。** 相对「RetireOPD / on-policy distillation frontier」这条笔记，本文新增了一个可操作的分解视角：把 $A_t^{\mathrm{OPD}}$ 显式拆成 $A_t^{\mathrm{Cal}} + A_t^{\mathrm{TSD}}$（式 12），并用正负特权干预估计 TSD 区域 $\hat{\mathcal{R}}_t^T=[\ell_t^T-\lambda\hat{d}_t^{\downarrow},\ \ell_t^T+\lambda\hat{d}_t^{\uparrow}]$（式 13）。这是此前 OPD 变体（ExOPD、EOPD、Uni-OPD）未提供的机制性解释，而非仅换一种 advantage 缩放。可链接笔记 id：`opd-frontier`、`opd-advantage-decomposition`。
+
+**印证内容。** 与「Token-level supervision reliability / teacher supervision variability」笔记一致：本文用 $\rho_\tau(v)$ 给出量化证据——$\tau=0.01$ 下最高 18 个 token 形式（maybe、however、therefore、consider、alternatively 等）超过 89%，最低 18 个（0、√、θ、frac 等）低于 9.3%，近一个数量级的分离印证了「教师似然并非逐 token 等可靠」。可链接笔记 id：`teacher-supervision-variability`。
+
+**存在张力的结论。** 与「RLVR / sparse outcome-level reward vs dense token-level guidance」笔记中「OPD 提供 token-level guidance 因而更优」的隐含前提存在张力：本文显示标准 OPD 仅把 4B → 1.7B 学生从 49.2 提到 50.8，并把 30B → 4B 学生从 66.6 降到 65.9，即密集 token 监督并非一致有益。这提示该笔记应补充「dense guidance 需先校准」这一限定。可链接笔记 id：`rlvr-vs-opd`。
+
+**与特权蒸馏笔记的关系。** 「Privileged-information distillation entries」笔记通常把特权信息视为增益来源，本文给出反例：Privileged-OPD 在两种配置下平均分最低（49.3、64.0），30B → 4B 设置中比学生低 2.6 分。差异在于本文把特权信息用于校准教师参考而非直接监督学生。可链接笔记 id：`privileged-distillation`。
+
+**待补的空白。** 知识库中尚无「TSD 区域估计的统计可靠性」条目：本文未报告 $\lambda$ 的敏感性分析、未给出多次种子方差、TSD 分析仅覆盖 Qwen3 族与数学域。建议新建笔记 id：`tsd-region-estimation`，记录上述未验证项。
+
+## 复现与验证计划
+
+目标：在最小成本下验证「TSD 集中在表面形式 token」与「Cal-OPD 优于 OPD 及保留率匹配对照」两条主张。注意以下均为作者主张，尚无第三方复现记录。
+
+**阶段一：TSD 现象复现（低成本，优先做）**
+- 环境：Qwen3-1.7B 学生 + Qwen3-8B 教师，均 thinking 模式；数据取 DAPO-17k 子集（原文用 6,528 题、每题 1 条 rollout、约 60M response token）。
+- 任务：对固定学生轨迹重打分，施加 $c_{\mathrm{sol}}^{\mathrm{pos/neg}}$ 等干预，计算 $\rho_\tau(v)=\Pr(|\Delta_t^T(c)|>\tau \mid y_t=v)$，$\tau=0.01$。
+- 判据：最高 18 个 token 形式 $\rho_\tau>89\%$，最低 18 个（数字/数学符号）$\rho_\tau<9.3\%$。若分离度显著小于此，则核心前提存疑。
+- 预期失败模式：token 形式合并规则（tokenizer 变体归一）与 >20,000 次出现阈值未复刻，导致排名漂移；干预模板措辞差异改变 $\Delta$ 幅度。
+
+**阶段二：方法对比（高成本，按需做）**
+- 基线：Student、OPD、ExOPD、EOPD、Uni-OPD、Privileged-OPD，以及保留率匹配对照 Advantage-Sync、Token-Sync、TSD-Filter（$\tau=0.1/0.05/0.01$）。
+- 预算：原文效率表以 100 步计，Cal-OPD 在 30B-A3B→8B 为 50.05 min/step（约 83.4 h），OPD 为 35.19 min/step（约 58.7 h）；4B→1.7B 反而更快（14.90 vs 18.80 min/step）。据此估算算力。
+- 判据：4B-2507→1.7B 上 Cal-OPD 53.1 vs OPD 50.8；30B-2507→4B 上 69.0 vs 65.9。同时检查保留率是否落在 52–65%。
+- 预期失败模式：$\lambda$ 未给出取值，TSD 区域估计对 $\lambda$ 敏感；仅两个干预是有限探测，区域为近似；梯度裁剪阈值 $C=1$ 下原始梯度范数远大于 1，需确认实现一致，否则优势可能被裁剪行为掩盖。
+
+## 术语与记号
+
+| 术语 | 含义 |
+| --- | --- |
+| OPD | On-Policy Distillation，在学生生成轨迹上用教师—学生 token 级似然差作密集监督 |
+| TSD | Teacher Self-Deviation，教师对固定 token 的似然随上下文干预变化的 token 级不稳定性 |
+| Privileged OPD | 给教师额外训练时信息（参考答案、提示等）的 OPD 变体 |
+| Cal-OPD | 用正负特权干预估计并去除 TSD 解释部分、只蒸馏残差的校准 OPD |
+| Surface-form tokens | 话语标记、格式选择等组织推理文本的自然语言标记 |
+| $\rho_\tau(v)$ | significant-TSD rate，token 形式 $v$ 出现时 $|\Delta_t^T(c)|>\tau$ 的频率 |
+| $A_t^{\mathrm{OPD}}$ | 原始教师—学生差异优势 |
+| $A_t^{\mathrm{Cal}}$ | 校准后的差异优势 |
+| $A_t^{\mathrm{TSD}}$ | 被 TSD 解释的差异部分，$A_t^{\mathrm{TSD}}=A_t^{\mathrm{OPD}}-A_t^{\mathrm{Cal}}$ |
+| $\Delta_t^T(c)$ | 上下文干预 $c$ 下教师对数似然的变化 |
+| $\ell_t^T,\ \ell_t^S$ | 无干预时教师、学生对 token 的对数似然 |
+| $\hat d_t^{\downarrow},\hat d_t^{\uparrow}$ | 向下/向上最大偏差，由 $\Delta_t^{\mathrm{pos}},\Delta_t^{\mathrm{neg}}$ 取 max 得到 |
+| $\lambda$ | TSD 区域估计的松弛因子，$\lambda\ge 1$ |
+| $\hat{\mathcal R}_t^T=[L_t^T,U_t^T]$ | 估计的教师自偏差区域，$L_t^T=\ell_t^T-\lambda\hat d_t^{\downarrow}$，$U_t^T=\ell_t^T+\lambda\hat d_t^{\uparrow}$ |
+| $[z]_+$ | $\max(z,0)$ |
+
+核心公式：$A_t^{\mathrm{Cal}}=[L_t^T-\ell_t^S]_+-[\ell_t^S-U_t^T]_+$，当 $\ell_t^S\in\hat{\mathcal R}_t^T$ 时 $A_t^{\mathrm{Cal}}=0$。评测指标为 AMC23、AIME24、AIME25、AIME26、HMMT26、MATH500 的 Avg.。
+
+## 自测
+
+以下问题用于检验你是否真正掌握了本文的证据边界，而非仅记住结论。跨小节题目标注为「跨」。
+
+**Q1（跨：方法 ↔ 消融）** Cal-OPD 的增益是否可能仅来自「整体信号衰减」或「token 稀疏化」？请用保留率匹配对照（Table 13）的具体数字说明。
+
+<details><summary>答案</summary>
+不能。Advantage-Sync 对 OPD 优势做同一全局缩放，得 50.8，与 OPD 完全相同，说明单纯降低优势幅度无收益；Token-Sync 随机掩掉同比例 token，反而降到 50.1，说明只匹配稀疏度而不选对 token 不够。最强的对照 TSD-Filter（τ_TSD=0.1）达 52.7，仍低于 Cal-OPD 的 53.1，且更激进的 0.05/0.01 退化到 51.1/49.4。作者据此主张增益来自「软校准」机制——保留超出估计 TSD 区域的残差，而非衰减或稀疏本身。注意这属于作者主张，非独立复现。
+</details>
+
+**Q2** TSD 在 token 层面的分布特征是什么？请给出 τ=0.01 下最高/最低 18 个 token 形式的 significant-TSD rate。
+
+<details><summary>答案</summary>
+TSD 高度集中在表面形式 token。τ=0.01 时，排名最高的 18 个形式以 maybe、however、therefore、consider、alternatively 等自然语言表面表达为主，ρ_τ 全程超过 89%（约十次出现有九次显著 TSD）；最低的 18 个以数字、数学符号与记号（如 0、√、θ、frac）为主，ρ_τ 全部低于 9.3%。接近一个数量级的分离。
+</details>
+
+**Q3（跨：主结果 ↔ 效率）** Cal-OPD 在精度与效率上的权衡如何？请给出两种配置的每步耗时对比，并指出哪种配置反而更快。
+
+<details><summary>答案</summary>
+精度上 Cal-OPD 在两种配置均最优（53.1 与 69.0）。效率上并非一致占优：30B-A3B-2507 → 8B 为 50.05 vs OPD 35.19 min/step（100 步约 83.4 vs 58.7 h）；30B-A3B-2507 → 4B 为 48.76 vs 31.26 min/step（约 81.3 vs 52.1 h）；但在 4B-2507 → 1.7B 上 Cal-OPD 更快，14.90 vs 18.80 min/step（约 24.8 vs 31.3 h）。即三种配置中有两种更慢。
+</details>
+
+**Q4** 标准 OPD 相对学生基线的表现说明了什么？请给出两个配置的具体数字。
+
+<details><summary>答案</summary>
+说明原始 teacher–student discrepancy 并非一致有益。标准 OPD 仅把 4B → 1.7B 学生从 49.2 小幅提升到 50.8，却把 30B → 4B 学生从 66.6 降到 65.9，尽管两个教师都显著强于学生。Privileged-OPD 退化最强，两配置分别为 49.3 和 64.0，在 30B → 4B 上比学生低 2.6 分。
+</details>
+
+**Q5（跨：方法 ↔ 局限）** Cal-OPD 的 TSD 区域估计有哪些方法学与适用性限制？
+
+<details><summary>答案</summary>
+（1）仅用正负两个干预作为有限探测，需松弛因子 λ≥1，估计区域只是近似；（2）方法预设可获取特权信息（参考答案、最终答案或提示），无此类上下文时不适用；（3）TSD 分析仅在 DAPO-17K 的数学推理学生轨迹上进行，学生 Qwen3-1.7B、教师 Qwen3-8B，6,528 题、每题一个回答、约 6,000 万 response token，未覆盖其他模型族与领域；（4）token 级分析只保留出现超过 20,000 次的形式，排除稀有 token。以上均为作者自陈的边界。
+</details>

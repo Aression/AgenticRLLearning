@@ -1,5 +1,5 @@
 {
-  "description": "Agentic RL Atlas maintenance policy",
+  "description": "Agentic RL Atlas maintenance policy. The content structure itself (kinds, depth tiers, section contracts, evidence rubric) lives in scripts/content_model.py.",
   "refresh": {
     "sourceAudit": "research/source-audit.json",
     "discovery": "research/discovery.json",
@@ -7,11 +7,33 @@
     "maxDiscoveryResults": 25
   },
   "cardGeneration": {
-    "maxCards": 3,
-    "decisions": ["review"],
+    "maxCards": 2,
+    "decisions": [
+      "review"
+    ],
     "requireFullText": true,
+    "targetDepth": "deep",
     "reviewStatus": "LLM 全文精读草稿 · 待人工复核",
-    "maxFullTextChars": 60000
+    "maxFullTextChars": 160000,
+    "maxSectionChars": 24000,
+    "sectionSourceBudget": 30000,
+    "sectionsPerCall": 2,
+    "planningMaxTokens": 8000,
+    "sectionMaxTokens": 6000,
+    "repairAttempts": 1,
+    "maxUngroundedNumbers": 3,
+    "planningMaxChars": 70000,
+    "planningAttempts": 3
+  },
+  "llm": {
+    "enabled": false,
+    "disabledReason": "暂停：本地重构与深读批量生成阶段，避免自动消耗 token 或写入内容。恢复时把 enabled 改回 true。",
+    "provider": "deepseek",
+    "envKey": "DEEPSEEK_V4_FLASH_API_KEY",
+    "pausedScripts": [
+      "scripts/cards.py",
+      "scripts/agent_audit.py"
+    ]
   },
   "checks": {
     "requireSourceForPublishedNote": true,
@@ -21,8 +43,16 @@
     "failOnBrokenExternalLinks": false
   },
   "reviewPolicy": {
-    "preprintStatuses": ["摘要核验 · 待精读"],
+    "preprintStatuses": [
+      "摘要核验 · 待精读"
+    ],
     "neverAutoPublish": true,
-    "humanReviewRequiredFor": ["new-source", "new-claim", "source-replacement", "frontier-status-change", "llm-generated-card"]
+    "humanReviewRequiredFor": [
+      "new-source",
+      "new-claim",
+      "source-replacement",
+      "frontier-status-change",
+      "llm-generated-card"
+    ]
   }
 }

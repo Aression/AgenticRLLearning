@@ -1,37 +1,45 @@
 {
   "id": "category-expert-swe-agents",
   "title": "类别感知专家迭代训练与策略整合",
-  "summary": "针对仓库级软件工程任务异质性，用类别专家分训加标签路由的在线蒸馏，把多个专家整合成单一策略。",
+  "summary": "仓库级软件工程任务高度异质，联合强化学习（Pooled RL）在聚合分数提升的同时，不同任务类别之间出现此消彼长（category see-saw），聚合指标掩盖了类别级退化。",
   "stage": "FRONTIER",
   "track": "训练算法",
   "order": 43,
-  "minutes": 18,
-  "updated": "2026-09-22",
+  "minutes": 60,
+  "updated": "2026-09-24",
   "review": "LLM 全文精读草稿 · 待人工复核",
   "filename": "43-category-expert-swe-agents.md",
   "tags": [
-    "Agentic RL",
-    "SWE-bench",
-    "expert-routing",
-    "on-policy-distillation"
+    "category-balance",
+    "multi-domain-rl",
+    "on-policy-distillation",
+    "policy-integration",
+    "swe-agents"
   ],
   "concepts": [
-    "Agentic RL",
-    "SWE-bench",
-    "expert-routing",
-    "on-policy-distillation"
+    "category-balance",
+    "multi-domain-rl",
+    "on-policy-distillation",
+    "policy-integration",
+    "swe-agents"
   ],
   "objectives": [
-    "理解为何按任务类别拆分专家训练，以及 RRE 循环如何协同进化策略与训练前沿",
-    "掌握标签路由多教师在线蒸馏（MOPD）把同源专家整合为单一学生策略的思路",
-    "能指出该框架在证据层面的边界：结果来自作者自建基准与单次运行，组件贡献未被隔离"
+    "理解 Pooled RL 中类别间此消彼长（category see-saw）与 SSG 指标如何量化聚合分数掩盖的类别退化",
+    "掌握类别感知专家迭代训练（RRE 循环：RL→Repair SFT→mastery refresh→expand）与 Balanced RL 的分层采样设计",
+    "了解 label-routed 多教师 on-policy 蒸馏（MOPD）如何用 ReLU-gated 外推项整合多个专家策略为单一可部署策略",
+    "认识 Pro-618 审计过滤子集构建与 defense-in-depth 评测完整性协议"
   ],
   "keyPoints": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "evidenceLevel": "full-text-llm-draft",
@@ -40,27 +48,79 @@
   "paperId": "2609.23377",
   "readingDepth": "full-text",
   "fullTextUrl": "https://arxiv.org/html/2609.23377",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "deep",
+  "depthLabel": "深读",
+  "depthRank": 2,
+  "evidenceGrade": "C",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Pooled RL 下部分类别提升与另一些类别退化同时发生，总体增益可掩盖负的最小类别增益",
+      "evidence": "§3.2 图 2（panel a/b）与式 (5)(6)；Table 1 的解读框架",
+      "status": "作者主张"
+    },
+    {
+      "id": "C2",
+      "claim": "Balanced RL 用更少训练实例保持接近的总体分数，并提高平均最小类别增益，但未降低平均 SSG",
+      "evidence": "§6.1 表 8：Full gain 1.37 vs 1.13；G_sim 0.19 vs 0.08；SSG 1.18 vs 1.05；端点 Full resolution 55.34% vs 55.50%",
+      "status": "作者主张"
+    },
+    {
+      "id": "C3",
+      "claim": "初始类别专家 RL 提升平均训练成功率，但存在实例级回退，需 Repair SFT 与扩展 RL 修复",
+      "evidence": "§4.4、附录 D 表 19（A +7.26、B +6.76、C +4.60）与表 20",
+      "status": "作者主张"
+    },
+    {
+      "id": "C4",
+      "claim": "标签路由 MOPD 整合后的单一策略在 Pro-618 与 SWE-bench Multilingual 的总体和三个类别上均高于 Pooled RL 与 Balanced RL",
+      "evidence": "§9 结论（Pro-618 58.04%，Multilingual 59.00%）与 §6.3",
+      "status": "作者主张"
+    }
+  ],
+  "claimCount": 4,
+  "sectionSizes": {
+    "问题与语境": 775,
+    "核心主张": 1304,
+    "机制与方法": 1766,
+    "实验设置": 1564,
+    "证据与结果": 2805,
+    "证据强度评估": 1216,
+    "边界与反例": 1748,
+    "与知识库的关系": 1670,
+    "复现与验证计划": 1032,
+    "术语与记号": 1438,
+    "自测": 2104
+  },
+  "bodyChars": 17552,
+  "deep": true,
   "sections": [
-    "论文要解决的问题",
-    "方法",
-    "证据与实验",
-    "边界与未解问题",
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
     "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
     "自测"
   ],
   "related": [
-    "retireopd-self-retiring-opd",
-    "evaluation",
-    "grpo",
-    "harness-design-coding-agents",
-    "modularrsi-harness",
-    "orientation"
+    "cal-opd",
+    "codemidas-code-rl-envs",
+    "multi-turn-rl",
+    "programdistill-ref-guided-swe",
+    "retireopd-self-retiring-opd"
   ],
-  "degree": 8,
+  "degree": 7,
   "sources": [
     "one-to-more-more-to-one-category-aware-i"
   ],
   "prerequisites": [],
-  "search": "类别感知专家迭代训练与策略整合 针对仓库级软件工程任务异质性，用类别专家分训加标签路由的在线蒸馏，把多个专家整合成单一策略。 训练算法 agentic rl swe-bench expert-routing on-policy-distillation 理解为何按任务类别拆分专家训练，以及 rre 循环如何协同进化策略与训练前沿 掌握标签路由多教师在线蒸馏（mopd）把同源专家整合为单一学生策略的思路 能指出该框架在证据层面的边界：结果来自作者自建基准与单次运行，组件贡献未被隔离 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测",
-  "content": "## 论文要解决的问题\n\n仓库级软件工程任务本身高度异质：服务与数据层缺陷修复、面向用户的界面调整、基础设施与工具链改动、性能或安全补丁，各自依赖不同的证据来源、工具交互模式与验证方式。作者主张，把这类任务混在一起做单一策略的后训练，会掩盖类别间的差异；而已有的后训练路线（合成轨迹后 SFT 再 RL、单一池化 RL、按类别均衡采样）各留有缺口。论文提出以“任务类别”为后训练的组织单位，先分训专家，再整合为一个可部署策略。\n\n需要注意，这是作者的问题设定与动机陈述，不是已被普遍确证的结论。\n\n## 方法\n\n框架由三部分组成。其一，可执行任务构造与 SWE Labeler：用大模型对约 32K 合成候选池打类别标签，按 Domain L1 规则映射到 A（服务/数据/安全）、B（用户界面）、C（系统/工具/运行时）三类。其二，Refresh–Repair–Expand（RRE）循环训练类别专家：每个专家从同一基座出发，通过可执行奖励的 Agentic RL 学习本类别行为，每轮 RL 后用该专家自己验证通过的成功轨迹做 Repair SFT，再刷新实例掌握度，并在下一轮 RL 前探测扩充后的候选池。作者强调专家训练不依赖外部轨迹教师。其三，标签路由的多教师在线蒸馏（MOPD）：把三个专家的 RL 任务池按类别均衡后，用标签把学生轨迹路由到对应教师，学生从原始基座开始，用自己新生成的轨迹训练，从而把专家能力整合进单一策略。\n\n## 证据与实验\n\n作者报告最终策略在自建基准 Pro-618 上平均解决率为 58.04%，在 SWE-bench Multilingual 上为 59.00%，并称在总体与三个类别上均高于 Pooled RL 与 Balanced RL 两个对照。Pro-618 被描述为对 SWE-bench Pro 的审计过滤子集，过滤后按类别分为 221/201/196 个实例。训练语料为 3,048 条合成实例加 3,675 条 SWE-rebench V2 任务，共 6,723 条。\n\n这些数字均来自论文摘要与正文自述，属于作者主张；知识库未核验代码、复现或第三方评测，因此不应视为已确证结论。\n\n## 边界与未解问题\n\n作者在局限中承认：硬路由把每个任务只分配给一个专家，忽略了跨类别任务；多专家训练与教师前向带来显著算力开销；同源教师可能过于相似而缺乏额外信号，或过度特化后难以稳定整合；基准通过率不能完全衡量补丁质量，测试驱动奖励可能诱发评测器攻击或受脆弱任务规格影响；Pro-618 的结果不能外推到未执行的完整 Pro 集合。附录进一步说明，训练实例诊断是选定训练集内的前后对比，不是对持续遗忘的纵向检验，也未隔离 SFT 的因果效应。论文明确表示未逐一隔离各优化组件、回放选择与路由粒度的贡献，且类别轨迹为单次运行，含评测波动。\n\n## 与知识库的关系\n\n该工作与 SWE 智能体的参考引导蒸馏、GRPO 类策略优化、以及智能体脚手架设计三条线相关：它把“多教师在线蒸馏”用于同源专家整合，而非引入更强外部教师；其可执行奖励与长程轨迹设定与代码 RL 环境笔记互补。阅读时可与 programdistill-ref-guided-swe 对照，观察“外部教师蒸馏”与“同源专家整合”两种范式的差异。\n\n## 自测\n\n1. RRE 循环中，掌握度刷新如何决定哪些实例进入 Repair SFT、哪些任务进入下一轮 RL？\n2. MOPD 的学生为何从原始基座而非某个专家初始化？这对“整合”意味着什么？\n3. 论文报告的 58.04% 与 59.00% 在什么意义上可信、在什么意义上不可信？"
+  "search": "类别感知专家迭代训练与策略整合 仓库级软件工程任务高度异质，联合强化学习（pooled rl）在聚合分数提升的同时，不同任务类别之间出现此消彼长（category see-saw），聚合指标掩盖了类别级退化。 训练算法 paper deep c category-expert-swe-agents category-balance multi-domain-rl on-policy-distillation policy-integration swe-agents 理解 pooled rl 中类别间此消彼长（category see-saw）与 ssg 指标如何量化聚合分数掩盖的类别退化 掌握类别感知专家迭代训练（rre 循环：rl→repair sft→mastery refresh→expand）与 balanced rl 的分层采样设计 了解 label-routed 多教师 on-policy 蒸馏（mopd）如何用 relu-gated 外推项整合多个专家策略为单一可部署策略 认识 pro-618 审计过滤子集构建与 defense-in-depth 评测完整性协议 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 pooled rl 下部分类别提升与另一些类别退化同时发生，总体增益可掩盖负的最小类别增益 作者主张 balanced rl 用更少训练实例保持接近的总体分数，并提高平均最小类别增益，但未降低平均 ssg 作者主张 初始类别专家 rl 提升平均训练成功率，但存在实例级回退，需 repair sft 与扩展 rl 修复 作者主张 标签路由 mopd 整合后的单一策略在 pro-618 与 swe-bench multilingual 的总体和三个类别上均高于 pooled rl 与 balanced rl 作者主张",
+  "content": "## 问题与语境\n\n仓库级软件工程（SWE）智能体需要在长程、有状态的轨迹中导航仓库、编辑代码、调用工具并依据执行反馈反复修正补丁，而这一任务分布本身高度异质：服务与数据层修复、用户界面调整、基础设施与工具链改动、性能与安全补丁各自依赖不同的证据来源、工具交互模式与验证方式。论文用可执行基准把这种异质性具体化：SWE-bench Verified 是 500 条人工验证的 Python 实例，SWE-bench Pro 覆盖更广的仓库语境与维护意图，SWE-bench Multilingual 则扩展到 42 个仓库、九种编程语言的 300 个任务。三者共享可执行判定接口，但对智能体提出的任务需求实质不同。\n\n已有后训练做法可归为三类，各自留下不同缺口。其一是联合强化学习（Pooled RL）：在混合数据上更新单一共享策略。论文的实证动机指出，在有限采样与更新预算下，Pooled RL 的类别级进展并不均匀——某些任务组提升的同时另一些退化，而聚合分辨率掩盖了这种差异，作者称之为 category see-saw。其二是调整数据配比（Balanced RL）：按类别均衡采样，但论文显示它虽以更少实例维持接近的总体分数，却未同时改善总体增益、最小类别增益与 see-saw gap 三者。其三是先由更大教师合成轨迹做 SFT 再 RL，这会把外部轨迹教师引入专家训练回路。\n\n论文的定位因此不是提出又一个 SWE 智能体或又一个 RL 算法，而是把「任务类别」当作后训练的组织单元：用可审计的标签体系把任务确定性映射为 A/B/C 三类，为每类训练同源专家，再用标签路由的多教师在线策略蒸馏把专家整合回单一可部署策略，目标是在总体与每个类别上都优于 Pooled RL 与 Balanced RL。需要强调，类别是可观测的操作性分组，而非对潜在能力的分解。\n\n## 核心主张\n\n| # | 主张 | 证据 | 状态 |\n|---|---|---|---|\n| C1 | Pooled RL 下部分类别提升与另一些类别退化同时发生，总体增益可掩盖负的最小类别增益 | §3.2 图 2（panel a/b）与式 (5)(6)；Table 1 的解读框架 | 作者主张 |\n| C2 | Balanced RL 用更少训练实例保持接近的总体分数，并提高平均最小类别增益，但未降低平均 SSG | §6.1 表 8：Full gain 1.37 vs 1.13；G_sim 0.19 vs 0.08；SSG 1.18 vs 1.05；端点 Full resolution 55.34% vs 55.50% | 作者主张 |\n| C3 | 初始类别专家 RL 提升平均训练成功率，但存在实例级回退，需 Repair SFT 与扩展 RL 修复 | §4.4、附录 D 表 19（A +7.26、B +6.76、C +4.60）与表 20 | 作者主张 |\n| C4 | 标签路由 MOPD 整合后的单一策略在 Pro-618 与 SWE-bench Multilingual 的总体和三个类别上均高于 Pooled RL 与 Balanced RL | §9 结论（Pro-618 58.04%，Multilingual 59.00%）与 §6.3 | 作者主张 |\n\n最强的两条是 C2 与 C3。C2 的强度来自其内部一致性：Balanced RL 仅用 1,548 个训练实例（每类 516）对比 Pooled RL 的 6,723 个，端点 Full resolution 几乎持平（55.50% vs 55.34%），同时平均 Full gain 与 G_sim 更高——这组数字同时支持「数据效率」与「类别均衡改善最弱类别」两个方向，且作者明确承认 SSG 也更高（1.18 vs 1.05），即未同时改善三个目标，属于自我设限的诚实报告。C3 的强度来自附录 D 的实例级分解：表 19 给出三个专家训练记录成功率的 Base → Post-RL 变化，表 20 进一步把回退实例按「恢复到 Base 及以上 / 高于 RL 但低于 Base / 等于或低于 RL」分档，表 21 给出正/负/净贡献，使「RL 有回退、Repair SFT 修复」这一机制链条可被逐项核对。\n\n最弱的是 C4。它依赖 §9 结论与 §6.3 的汇总数字（58.04%、59.00%），但证据表中缺少与之配套的逐类别数值、置信区间或多次运行方差；论文自身在 limits 中承认「实验评估的是完整训练框架及其分阶段结果，未隔离各优化组件、replay 选择或路由粒度的贡献」，也承认「Pro-618 上的任何结果都不能推广到未执行的完整 Pro 集」以及「专家增益恢复在 Pro-618 上跨类别仍不均衡」。因此 C4 只能读作「在该固定子集、该单次配置下作者观测到的整合结果」，而非可迁移的普遍结论。C1 作为现象描述有图 2 支撑，但同样属于作者主张，且论文指出单次运行的类别轨迹包含评测波动。\n\n## 机制与方法\n\n论文把仓库级 SWE 任务形式化为 $x=(\\mathcal{R},b,q,\\mathcal{E},\\mathcal{V})$：仓库、基座修订、问题陈述、可复现执行环境与可执行验证器。智能体从 $\\mathcal{R}_0=\\operatorname{checkout}(\\mathcal{R},b)$ 出发，产生终态 $\\mathcal{R}_T$ 与补丁 $p=\\operatorname{diff}(\\mathcal{R}_0,\\mathcal{R}_T)$，二元可执行奖励为\n\n$$r^{\\mathrm{env}}(x,p)=\\mathbb{I}\\!\\left[\\operatorname{apply}(p)\\wedge\\mathcal{V}_{\\mathrm{F2P}}(\\mathcal{R}_T)\\wedge\\mathcal{V}_{\\mathrm{P2P}}(\\mathcal{R}_T)\\right],$$\n\n其中 F2P 验证修复、P2P 防回归。环境构建失败、超时与非法补丁被保留为独立审计结果，而非静默归入某类别。\n\n类别划分由冻结标注器与确定性规则给出：$\\mathbf{z}(x)=L_{\\phi}(e(x))$，$c(x)=g_{\\psi}(\\mathbf{z}(x))\\in\\mathcal{C}\\cup\\{\\varnothing\\}$，$\\varnothing$ 表示未路由。按 Repository Domain L1 白名单映射为 A（服务/数据/安全）、B（用户界面应用）、C（系统/工具/运行时）。诊断指标为类别增益 $\\Delta_c(t)=S_c(t)-S_c(0)$、总体增益 $\\Delta_{\\mathrm{all}}(t)=\\sum_c w_c\\Delta_c(t)$，以及\n\n$$G_{\\mathrm{sim}}(t)=\\min_c\\Delta_c(t),\\qquad \\mathrm{SSG}(t)=\\Delta_{\\mathrm{all}}(t)-G_{\\mathrm{sim}}(t),$$\n\n满足 $\\Delta_{\\mathrm{all}}=G_{\\mathrm{sim}}+\\mathrm{SSG}$。$G_{\\mathrm{sim}}>0$ 表示该检查点每个类别都优于基座；SSG 越大表示总体增益越集中于部分类别或掩盖了类别退化。\n\n方法主体是「类别专家 + 整合」。每个专家从同一基座 $\\pi_0$ 出发，独立运行 Refresh–Repair–Expand（RRE）循环：先用 Agentic-miniRL 在类别前沿上做可执行奖励 RL（RLOO 优势、K1 参考正则、行为概率校正与 token 级更新界、turn-aware 损失聚合），记录自身通过验证的成功轨迹；随后按掌握度自适应采样这些轨迹做 Repair SFT（当前 4 次 rollout 中成功 0/1、2、3、4 次分别分配 4/3/2/1 条目标轨迹）；每轮后刷新掌握度，并在扩展池（加入基座零/一通过率任务）上探测，选出下一轮 RL 训练集。设计取舍是 teacher-free：不引入外部大模型合成轨迹，教师仅指后续 MOPD 使用的专家本身。\n\n整合阶段用标签路由的多教师在线策略蒸馏 MOPD：学生从原始基座 $\\pi_0$ 初始化，自己生成轨迹，教师只在学生访问的前缀上给出对数概率，按任务类别路由对应专家。优势含模仿项与 ReLU 门控外推项，记 $d_{t,k}$ 为学生-教师对数比、$e_{t,k}$ 为教师-参考对数比，则 $\\lambda_k=1$ 时第二项消失、优势退化为纯模仿项；$\\lambda_k>1$ 时在教师概率高于参考的 token 上外推。纯蒸馏模式下环境回报不进入学生损失。整合数据由三个专家 Stage 1 RL 任务池上采样至类别均衡（A/B 重复至 C 的 1,652 条，共 4,956 条）。\n\n适用前提与边界：硬路由假设每个任务只属一个类别，但 SWE 任务可跨类别；训练多专家并运行教师前向带来显著算力开销，最优专家数 $K$ 可能随数据、基座与预算变化；同源教师可能过于相似而信号不足，或经重度专精后过于远离而难以稳定整合。\n\n## 实验设置\n\n所有主策略从同一 Qwen3.6-27B 基座出发，训练与 Pro-618 评测使用同一 R2E-Gym 智能体脚手架。训练 rollout 使用 131,072-token 上下文、至多 150 个智能体动作、每动作至多 12,288 个新生成 token，Agentic RL 每任务采样 $G=8$ 条轨迹。训练语料由约 32K 可执行候选池中按基座估计通过率介于 0 与 0.5 选出的 3,048 条合成实例，与 SWE-rebench V2 四语言切片的 3,675 条任务合并，构成 6,723 条语料；其中 2,769 条映射到 A/B/C（601/516/1,652）。Balanced RL 每类别采样 516 条，共 1,548 条。Pro-618 为从 731 条 SWE-bench Pro 实例中经审计排除 83+26+3+1 条后得到的 618 条子集，A/B/C 为 221/201/196；SWE-bench Multilingual 为 300 条，A/B/C/U 为 72/25/176/27。评测配置：Pro-618 上下文上限 200,000、单次输出上限 25,600、环境/任务超时 10,000 秒；SWE-bench Multilingual 单次输出上限 12,280、超时 12,000 秒；两者温度 1.0、top-$p$/top-$k$ 为 0.95/20、每任务每轮 1 条轨迹、BF16 推理。\n\n| 基准 | 模型/规模 | 基线 | 预算 | 指标 |\n| --- | --- | --- | --- | --- |\n| Pro-618 | Pooled RL（Qwen3.6-27B base） | base model | 6,723 training instances | Full gain（百分点） |\n| Pro-618 | Balanced RL（Qwen3.6-27B base） | base model | 1,548 training instances（每类别 516） | Full gain（百分点） |\n| Pro-618 | Pooled RL | base model | 50 displayed checkpoints | 训练过程平均 Full gain；$G_{\\mathrm{sim}}$；SSG |\n| Pro-618 | Balanced RL | base model | 50 displayed checkpoints | 训练过程平均 Full gain；$G_{\\mathrm{sim}}$；SSG |\n| Pro-618 | Pooled RL | base model | three-round mean | Full resolution |\n| Pro-618 | Balanced RL | base model | three-round mean | Full resolution；Pro-B resolution |\n| Pro-618 | MOPD integrated policy | Pooled RL 与 Balanced RL | final | mean resolution |\n| SWE-bench Multilingual | MOPD integrated policy | Pooled RL 与 Balanced RL | final | mean resolution |\n\n需注意：作者明确说明实验评估的是完整训练框架及其分阶段结果，并未隔离各优化组件、replay 选择或路由粒度的贡献；Pro-618 上的结果不能外推到未执行的完整 Pro 集。\n\n## 证据与结果\n\n下表汇总摘录中可确认的数字。所有数值均照抄原文，未在摘录中出现的量一律标注「摘录未给出」。\n\n| 指标 | 数值 | 设置 | 出处 |\n|---|---|---|---|\n| base-model Full score | 52.64% | Pro-618，三轮基座参考 | §6.1 / Table 8 |\n| Pooled RL 最终 Full gain | +2.86 个百分点 | 6,723 训练实例 | §6.1 / Table 8 |\n| Balanced RL 最终 Full gain | +2.70 个百分点 | 1,548 实例（每类 516） | §6.1 / Table 8 |\n| Pooled RL 训练过程平均 Full gain | 1.13 | 50 个显示检查点 | §6.1 / Table 8 |\n| Balanced RL 训练过程平均 Full gain | 1.37 | 50 个显示检查点 | §6.1 / Table 8 |\n| Pooled RL 的 $G_{\\mathrm{sim}}$ | 0.08 | 50 个显示检查点 | §6.1 / Table 8 |\n| Balanced RL 的 $G_{\\mathrm{sim}}$ | 0.19 | 50 个显示检查点 | §6.1 / Table 8 |\n| Pooled RL 的 SSG | 1.05 | 50 个显示检查点 | §6.1 / Table 8 |\n| Balanced RL 的 SSG | 1.18 | 50 个显示检查点 | §6.1 / Table 8 |\n| Pooled RL 三轮平均 Full resolution | 55.34% | 三轮均值 | Table 12 |\n| Balanced RL 三轮平均 Full resolution | 55.50% | 三轮均值 | Table 12 |\n| Balanced RL 三轮平均 Pro-B resolution | 57.05% vs 56.72% | 对 Pooled RL | §6.3 |\n| MOPD 整合策略 Pro-618 平均 resolution | 58.04% | final | §9 |\n| MOPD 整合策略 SWE-bench Multilingual 平均 resolution | 59.00% | final | §9 |\n| Pro-A/B/C 任务数 | 221/201/196 | Pro-618 划分 | §3.2 / Table 3 |\n| SWE-bench Multilingual A/B/C/U | 72/25/176/27 | 300 实例 | Table 3 |\n| Pro-618 实例数 | 618 | 由 731 过滤 | Appendix A / Table 15 |\n| 排除项 | −83 / −26 / −3 / −1 | 规格缺陷/欠定/参考补丁失败/提示–测试不匹配 | Appendix A / Table 15 |\n| 可执行候选池 | 约 32K | 任务构造 | §4.1 / §5.5 |\n| 合成实例 | 3,048 | 通过率 0–0.5 | §5.5 |\n| SWE-rebench V2 任务 | 3,675 | 四语言切片 | §5.5 |\n| Pooled RL 语料 | 6,723 | 联合语料 | §5.5 / Table 4 |\n| A/B/C 映射实例 | 601 / 516 / 1,652（共 2,769） | 6,723 中 | §5.5 |\n| Balanced RL 采样 | 每类 516，共 1,548 | 分层采样 | §5.5 / Table 4 |\n| MOPD 类别均衡记录 | 1,652×3 = 4,956 | 上采样后 | Table 4 |\n| 训练 rollout 配置 | 131,072 token 上下文；≤150 动作；≤12,288 新 token/动作；G=8 | 训练 | §5.2 |\n| 专家 A/B/C 训练记录成功率 Base→Post-RL | 38.79→46.05（+7.26）；38.78→45.54（+6.76）；38.68→43.28（+4.60） | N=601/516/1,652 | Table 19 |\n| Repair SFT 恢复到 ≥Base（A/B/C） | 125 (69.8%) / 103 (73.0%) / 264 (61.3%) | 回退记录 | Table 20 |\n| 正/负/净贡献，A Initial RL | +16.85 / −9.59 / +7.26 | 相对 Base | Table 21 |\n| 正/负/净贡献，A Repair SFT | +22.46 / −4.97 / +17.49 | 相对 Base | Table 21 |\n| 正/负/净贡献，B Initial RL | +15.12 / −8.36 / +6.76 | 相对 Base | Table 21 |\n| 正/负/净贡献，B Repair SFT | +25.61 / −4.80 / +20.81 | 相对 Base | Table 21 |\n| 正/负/净贡献，C Initial RL | +13.68 / −9.08 / +4.60 | 相对 Base | Table 21 |\n| 正/负/净贡献，C Repair SFT | +20.71 / −6.64 / +14.07 | 相对 Base | Table 21 |\n\n消融与对照方面：Balanced RL 仅用 1,548 个不同实例（Pooled RL 为 6,723），端点 Full resolution 接近（55.34% vs 55.50%），但平均 Full gain 更高（1.37 vs 1.13）、$G_{\\mathrm{sim}}$ 更高（0.19 vs 0.08），同时平均 SSG 也更高（1.18 vs 1.05），因此并未同时改善 Table 1 追求的三个量。作者指出 Balanced RL 可在个别点提升三类，但增益不能持续共同维持，类别间反向移动仍存在。MOPD 通过上采样使 A/B/C 记录均衡（源池 2,769，上采样至 4,956）。关键限制：实验评估的是完整框架及其分阶段结果，未隔离各优化组件、replay 选择或路由粒度的贡献（§8）。此外，MOPD 的最终数值（58.04%/59.00%）在摘录中仅以结论句给出，未提供逐类别分解表；逐类别「均高于两基线」为作者主张，摘录未给出对应数字。\n\n## 证据强度评估\n\n证据分级：B（中等偏弱）。理由：结论建立在单一基座（Qwen3.6-27B）、单一 agent scaffold（R2E-Gym）与单一主基准（Pro-618）之上，且作者自述「实验评估完整框架及其分阶段结果，未隔离各优化组件、replay 选择或路由粒度的贡献」（§8），因此无法把最终增益归因于类别感知专家训练或 MOPD 中的任一环节。数字内部自洽（如 $\\Delta_{\\mathrm{all}}=G_{\\mathrm{sim}}+\\mathrm{SSG}$，Table 21 的净贡献与 Table 19 的 Δ 一致），但缺少组件级消融与多随机种子统计，故不足以支撑「可迁移的因果结论」，只能作为「该配置下观察到的现象」。\n\n主要威胁：\n\n1. 构造效度。类别由 SWE Labeler 的 Domain L1 白名单确定性映射，但作者承认「SWE 任务可跨多个类别，而硬路由把每个任务分配给单一专家类别」（§8）。Pro-618 中 A/B/C 为 221/201/196，而 SWE-bench Multilingual 有 27 个未路由（U）实例，说明类别划分本身存在覆盖缺口；类别级增益因此可能部分反映划分规则而非能力差异。\n\n2. 外部效度。作者明确「任何 Pro-618 上的结果都不能推广到未执行的完整 Pro 集」（§8）。Pro-618 是从 731 个实例中排除 83+26+3+1 后得到的审计子集，排除依据来自公开审计工件；这一过滤虽提高评测可信度，但也使基准偏离原始分布，且 Multilingual 仅 300 实例、A/B/C 为 72/25/176，B 类样本量很小。\n\n3. 统计显著性与基线选择。摘录未给出置信区间、方差或显著性检验；作者自述「单次运行的类别轨迹也包含评测波动」（§8）。Balanced RL 与 Pooled RL 的端点差距仅 0.16 个百分点（55.34% vs 55.50%），而 MOPD 相对二者的提升（58.04%）在摘录中无逐类别数字与误差范围，难以判断是否超出评测噪声。基线仅含 Pooled/Balanced 两种联合 RL，未与外部强基线对比。\n\n4. 评测污染与奖励可靠性。作者列出 defense-in-depth 协议（泄漏过滤、仓库 sanitization、fresh-sandbox replay、轨迹审计），但承认「这些控制不能消除预训练记忆或每一种弱验证器失败」（§8），并指出「测试驱动奖励可能诱发评测器利用或反映脆弱任务规格」。确认的外部答案检索计零分并保留在分母中，属缓解而非消除。\n\n综上，该结论在「同一基座、同一 scaffold、Pro-618 审计子集」条件下有内部一致性支持，但组件归因、跨基准泛化与统计稳健性均未建立，迁移到其他数据、基座或预算时需重新验证（作者亦称最优 K 可能随数据、基座与预算变化）。\n\n## 边界与反例\n\n**会推翻结论的观察**\n\n- 若在 Pro-618 上按类别复算，MOPD 整合策略在 A/B/C 任一类别的分辨率不高于 Pooled RL 或 Balanced RL，则 C4（“总体与每个类别均更高”）被直接推翻。论文只给出总体数字（Pro-618 58.04%、SWE-bench Multilingual 59.00%）与“each of the three task categories”的定性表述，未在证据表中给出逐类别数值，因此该主张目前不可独立核验。\n- 若 Balanced RL 与 Pooled RL 的差异在多次独立运行下落入噪声范围，则 C2 失效。作者自述“Single-run category trajectories also include evaluation variability”，且 G_sim 0.19 vs 0.08、SSG 1.18 vs 1.05 这类量级本身很小。\n- 若把 Pooled RL 的 6,723 实例预算降到 1,548（与 Balanced RL 同预算）后总体分数显著下降，则“Balanced RL 用更少数据保持接近总体分数”这一对比的解释会改变——当前对比是数据量不等条件下的比较。\n\n**最可能失效的条件**\n\n- 硬路由假设：作者明确承认“SWE tasks can span multiple categories, whereas our hard-routing configuration assigns each task to one expert category”。跨类别任务占比越高，单专家信号越不匹配。\n- 同源教师：作者指出“Same-origin teachers may be too similar to add signal or, after heavy specialization, too distant for stable integration”。若基座较弱或专家专业化不足，MOPD 的整合收益可能消失。\n- 计算预算：训练多个专家并运行教师前向“adds substantial compute, while the best K may vary with data, base model, and budget”。K 与 λ_k 的取值未做敏感性分析。\n- 评测集外推：作者明确“Any result on Pro-618 cannot be generalized to an unexecuted full Pro set”。\n\n**读者可能误推但作者未验证的方向**\n\n- 把 MOPD 的收益归因于某一组件。作者声明“they do not isolate the contributions of each optimization component, replay choice, or routing granularity”，因此不能推断 ReLU 门控外推项（λ_k>1）或 RRE 循环各自贡献多少。\n- 把 Repair SFT 的恢复效果当作因果结论。作者注明“These before/after observations do not isolate SFT's causal effect from a no-SFT control”。\n- 把训练集上的回退/恢复模式当作持续遗忘的证据：“they are not a longitudinal test of persistent forgetting”。\n- 把类别划分当作潜在能力分解：“A label is an observable instance annotation, a category is an operational grouping of labels, and a model capability is latent”。\n- 把 Pro-618 的过滤视为无偏：过滤基于公开缺陷报告，且“The initial pool was selected using base-model mastery estimates”，存在选择条件性。\n\n## 与知识库的关系\n\n**SWE-bench Verified / SWE-bench Pro / SWE-bench Multilingual 基准笔记**\n新增：Pro-618 审计过滤子集（从 731 个 SWE-bench Pro 实例中排除 83+26+3+1 个缺陷实例，得 618），以及 Verified 与 Pro 的 Labeler 画像差异（bug fix 87.0% vs 47.3%；single-file 86.2% vs 59.2% cross-module）。这为“Pro 比 Verified 更异质”提供了可引用的量化依据。印证：Pro 覆盖更广的维护意图与修改规模。张力：过滤标准依赖社区报告与两模型族对抗判断，非官方统一口径，跨论文比较 Pro 分数时需注明子集差异。\n\n**多领域 RL / 多能力微调中的能力权衡笔记**\n新增：以 category see-saw、$G_{\\mathrm{sim}}=\\min_c \\Delta_c$ 与 $\\mathrm{SSG}=\\Delta_{\\mathrm{all}}-G_{\\mathrm{sim}}$ 三个量把“此消彼长”操作化，并给出 $\\Delta_{\\mathrm{all}}=G_{\\mathrm{sim}}+\\mathrm{SSG}$ 的分解。印证：一个域收益可能以另一域为代价。张力：作者强调类别是“observable operational groupings”，不主张存在冲突梯度或潜在能力分解，因此不宜直接引用为“能力冲突”的机制证据。\n\n**on-policy distillation / MOPD 笔记**\n新增：label-routed multi-teacher OPD，优势 $A_t^{\\mathrm{MOPD}}=\\sum_k m_k(x)[-d_{t,k}+(\\lambda_k-1)\\max(e_{t,k},0)]$，λ_k=1 退化为纯模仿，λ_k>1 在教师概率高于参考的 token 上外推；纯蒸馏模式下环境回报不进入学生损失，group baseline 与 K1 惩罚关闭。印证：on-policy 前缀访问是 OPD 的关键约束。张力：同源教师可能信号不足，作者未给出 λ_k 与 K 的消融。\n\n**SWE agent RL 训练（RLOO、K1、行为校正）笔记**\n新增：Agentic-miniRL 的四项长程多轮适配（RLOO 避免自包含基线、K1 参考正则、行为概率校正与 token 级更新界、turn-aware 损失聚合），以及训练 rollout 配置（131,072 token 上下文、≤150 actions、≤12,288 新 token/action、G=8）。印证：稀疏二元奖励下 group-relative 信号稀缺。\n\n**奖励黑客 / 评测完整性笔记**\n新增：defense-in-depth 协议（问题陈述泄漏过滤、仓库 sanitization、延迟测试注入与 fresh-sandbox replay、轨迹审计），并明确“Confirmed external answer retrieval is reported as an integrity failure, assigned a score of zero, and retained in the evaluation denominator”。张力：作者承认这些控制“do not eliminate pretraining memorization or every weak-verifier failure”。\n\n**SFT 与 RL 顺序笔记**\n新增：teacher-free 的 RRE 循环（RL→Repair SFT→mastery refresh→expand），与“先大模型合成轨迹 SFT 再 RL”的常见做法形成对照。张力：Repair SFT 的因果效应未被 no-SFT 对照隔离。\n\n## 复现与验证计划\n\n最小可执行验证的目标不是复现 58.04% 的绝对分数，而是检验「类别跷跷板」与「均衡采样改善最小类别增益」这两个可迁移结论。\n\n环境与数据。基座固定为 Qwen3.6-27B，训练与 Pro-618 评测共用 R2E-Gym scaffold；训练 rollout 用 131,072-token 上下文、最多 150 个 agent action、每 action 最多 12,288 新 token、每任务 $G{=}8$ 条轨迹。评测侧 Pro-618 用 200,000 上下文、每调用 25,600 输出、超时 10,000 s；SWE-bench Multilingual 用 12,280 输出、超时 12,000 s，温度 1.0、top-$p$ 0.95、top-$k$ 20。任务侧需自建可执行池（论文为约 32K 候选 + 3,048 合成 + 3,675 SWE-rebench V2 = 6,723），并按 Domain L1 规则映射 A/B/C。\n\n基线与预算。三条对照：(a) base model；(b) Pooled RL，6,723 实例；(c) Balanced RL，每类 516、共 1,548 实例。若算力受限，可只跑 Balanced RL 与 Pooled RL 的短程对照，用 50 个 checkpoint 的均值比较。\n\n判据。主判据是 $G_{\\mathrm{sim}}$（最小类别增益）与 $\\mathrm{SSG}=\\Delta_{\\mathrm{all}}-G_{\\mathrm{sim}}$，而非单一 Full resolution。论文报告 Balanced RL 的 Full gain 1.37 vs 1.13、$G_{\\mathrm{sim}}$ 0.19 vs 0.08、SSG 1.18 vs 1.05——注意 SSG 同时升高，故「Balanced RL 全面更优」不成立，只应检验「最小类别增益更高」这一较弱命题。端点 Full resolution 55.34% vs 55.50% 差异极小，不宜作为判据。\n\n预期失败模式。类别划分是硬路由，跨类别任务被强行归一类；Pro-618 结果不可外推到完整 731 实例；单次运行的类别轨迹含评测方差；训练集按基座掌握度筛选，回归均值会污染 recovery 比较；论文未做组件消融，因此无法归因到 RRE 或 MOPD 的哪一步。\n\n## 术语与记号\n\n| 术语 | 含义 |\n| --- | --- |\n| category see-saw | 类别跷跷板：联合 RL 中某些类别提升而另一些类别退化的现象 |\n| Pooled RL | 在全部类别混合数据上训练单一共享策略的联合 RL 基线 |\n| Balanced RL | 按类别均衡采样的联合 RL 基线 |\n| SWE Labeler | 基于证据的分层 SWE 任务标注系统，提供可审计的标签空间 |\n| Agentic-miniRL | 面向长程多轮 SWE 轨迹的策略梯度 RL 变体，含 RLOO、K1 与行为校正 |\n| Refresh–Repair–Expand (RRE) | 专家训练循环：刷新掌握度、用成功轨迹做 Repair SFT、扩展训练前沿 |\n| MOPD | 多教师在线策略蒸馏，学生生成轨迹、教师只在学生访问前缀上提供信号 |\n| F2P / P2P | fail-to-pass 测试（验证修复）与 pass-to-pass 测试（防回归） |\n| SSG | see-saw gap，总体增益与最小类别增益之差 |\n| $G_{\\mathrm{sim}}$ | 所有类别共享的最小增益，正值表示每个类别都优于基座 |\n| Pro-618 | 经审计过滤后的 SWE-bench Pro 子集，含 618 个实例 |\n| verifier exploitation | 验证器利用：通过篡改测试或执行状态让错误解获得奖励 |\n| solution leakage | 答案泄漏：从未来 Git 历史或外部仓库恢复上游修复 |\n\n关键符号：实例 $x=(\\mathcal{R},b,q,\\mathcal{E},\\mathcal{V})$ 由仓库、基座修订、问题陈述、执行环境与可执行验证器构成；二元奖励 $r^{\\mathrm{env}}(x,p)=\\mathbb{I}[\\operatorname{apply}(p)\\wedge\\mathcal{V}_{\\mathrm{F2P}}(\\mathcal{R}_T)\\wedge\\mathcal{V}_{\\mathrm{P2P}}(\\mathcal{R}_T)]$。检查点 $t$ 在类别 $c$ 的成功率为 $S_c(t)$，类别增益 $\\Delta_c(t)=S_c(t)-S_c(0)$，总体增益 $\\Delta_{\\mathrm{all}}(t)=\\sum_c w_c\\Delta_c(t)$，其中 $w_c$ 为官方 micro average 的类别权重。$G_{\\mathrm{sim}}(t)=\\min_c\\Delta_c(t)$，$\\mathrm{SSG}(t)=\\Delta_{\\mathrm{all}}(t)-G_{\\mathrm{sim}}(t)$，二者满足 $\\Delta_{\\mathrm{all}}=G_{\\mathrm{sim}}+\\mathrm{SSG}$。MOPD 中 $d_{t,k}$ 为学生-教师对数比，$e_{t,k}$ 为教师-参考对数比，$A_t^{\\mathrm{MOPD}}$ 为路由多教师优势，含 ReLU 门控外推项（$\\lambda_k=1$ 时退化为纯模仿，$\\lambda_k>1$ 时在教师概率高于参考的 token 上外推）；$\\mathrm{Recovery}_c$ 为学生相对类别专家 $T_c$ 的类别增益恢复比例。\n\n## 自测\n\n以下问题用于检验你是否真正读懂了本档案的证据强度与适用边界。答案中标注了「作者主张」与「已复现/共识」的区分。\n\n**Q1（基础）** 论文用什么量刻画「总体增益掩盖类别退化」？请写出其定义式，并说明 $G_{\\mathrm{sim}}$ 与 SSG 的关系。\n\n<details><summary>答案</summary>\n作者定义 $G_{\\mathrm{sim}}(t)=\\min_{c}\\Delta_{c}(t)$（所有类别相对基座增益的最小值）与 $\\mathrm{SSG}(t)=\\Delta_{\\mathrm{all}}(t)-G_{\\mathrm{sim}}(t)$，二者满足 $\\Delta_{\\mathrm{all}}=G_{\\mathrm{sim}}+\\mathrm{SSG}$。$G_{\\mathrm{sim}}>0$ 表示该检查点上每个类别都优于基座；SSG 越大表示增益越集中在部分类别。注意这是作者提出的诊断量，属于作者主张，不是社区共识指标。\n</details>\n\n**Q2（基础）** Balanced RL 相对 Pooled RL 在 Pro-618 上的三项训练过程指标各是多少？作者据此得出什么结论？\n\n<details><summary>答案</summary>\n50 个显示检查点的均值：Full gain 1.37 vs 1.13；$G_{\\mathrm{sim}}$ 0.19 vs 0.08；SSG 1.18 vs 1.05。Balanced RL 用 1,548 个训练实例（每类 516）对比 Pooled RL 的 6,723 个，端点 Full resolution 接近（55.50% vs 55.34%）。作者结论是 Balanced RL 提高了平均 Full gain 与最小类别增益，但 SSG 同时上升，因此并未同时改善表 1 追求的三个量——属作者主张，且作者自述单次运行的类别轨迹含评测波动。\n</details>\n\n**Q3（跨小节）** 若你想把「类别专家 + MOPD 整合」迁移到自己的多能力场景，论文的哪些限制会直接威胁迁移有效性？请至少列出三条并说明其来源小节。\n\n<details><summary>答案</summary>\n（1）硬路由假设：SWE 任务可跨类别，而配置强制一任务一专家（§8 限制）；（2）同源教师可能过相似而无额外信号，或过度专门化后过远而难以稳定整合（§8）；（3）计算开销大，且最优专家数 $K$ 可能随数据、基座与预算变化（§8）；（4）实验只评估完整框架与阶段结果，未隔离各优化组件、replay 选择或路由粒度的贡献（§8），因此无法判断收益来自 MOPD 还是 RRE；（5）Pro-618 结果不能外推到未执行的完整 Pro 集（§8）。以上均为作者自述限制。\n</details>\n\n**Q4（跨小节）** 论文报告 MOPD 最终策略在 Pro-618 达 58.04%、SWE-bench Multilingual 达 59.00%，并称在两个基准的总体与三个类别上均高于 Pooled RL 与 Balanced RL。要判断这一结论是否可信，你需要追问哪些证据？档案中已有哪些、缺哪些？\n\n<details><summary>答案</summary>\n已有：Pro-618 的 A/B/C 任务数 221/201/196；Pooled/Balanced 的端点 Full resolution 55.34%/55.50%；Balanced 的三轮均值 Pro-B 57.05% vs 56.72%；基座 Full 52.64%。缺：MOPD 在 A/B/C 各类别上的具体数值（档案只给出「均高于」的定性表述）、方差或多次运行统计、以及消融（§8 明确未隔离组件贡献）。此外作者自述「Pro-618 上的专家增益恢复仍不均衡」，说明整合并非无损。因此 58.04%/59.00% 应视为作者主张，迁移前需自行复现类别级数字。\n</details>\n\n**Q5（跨小节）** 论文的 Pro-618 由 731 个 SWE-bench Pro 实例过滤而来。请写出排除项与最终数量，并说明这一过滤对「与既有 SWE-bench Pro 结果对比」意味着什么。\n\n<details><summary>答案</summary>\n排除：83 个机械可证的规格/确定性缺陷、26 个由两个模型家族对抗判定为评分选择欠定、3 个参考补丁无法通过隔离 grader 重放、1 个官方 OpenAI 审计记录的 prompt–test 不匹配；731 − 113 = 618。含义：Pro-618 是审计过滤子集，与公开 SWE-bench Pro 全集的分数不可直接比较；作者也明确「Pro-618 上的任何结果都不能推广到未执行的完整 Pro 集」。过滤依据来自公开审计（Kim, 2026；OpenAI, 2026），这部分属可核查的构造事实，而非性能主张。\n</details>"
 }

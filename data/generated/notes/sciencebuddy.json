@@ -1,0 +1,130 @@
+{
+  "id": "sciencebuddy",
+  "title": "ScienceBuddy：递归中的递归自改进科研智能体",
+  "summary": "科学智能体在单次对话中被纠正后，无法把与研究者协作中获得的经验转化为跨任务的工作流程与底层能力的持续提升。论文要解决的是：如何让交互式科研智能体把研究者反馈同时用于改进可编辑的harness（指令、技能、上下文管理）与任务模型权重，并在多轮循环中保持双向耦合的持续改进。",
+  "stage": "FRONTIER",
+  "track": "Agent 系统",
+  "order": 48,
+  "minutes": 53,
+  "updated": "2026-09-24",
+  "review": "LLM 全文精读草稿 · 待人工复核",
+  "filename": "48-sciencebuddy.md",
+  "tags": [
+    "GRPO",
+    "harness-evolution",
+    "recursive-RL",
+    "scientific-agents",
+    "self-improvement"
+  ],
+  "concepts": [
+    "GRPO",
+    "harness-evolution",
+    "recursive-RL",
+    "scientific-agents",
+    "self-improvement"
+  ],
+  "objectives": [
+    "理解内层 harness 演化与外层模型 RL 双向耦合的递归自改进机制",
+    "掌握 harness 候选的编辑约束与成对开发评估接受准则",
+    "了解固定模型/固定 harness 两个案例分别验证的增益（31.1%→51.1%，48.3%→67.8%）",
+    "认识该工作的证据边界：反射器固定、技能与反馈来源未单独消融"
+  ],
+  "keyPoints": [
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
+    "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
+    "自测"
+  ],
+  "evidenceLevel": "full-text-llm-draft",
+  "codeUrl": "",
+  "origin": "llm-fulltext",
+  "paperId": "2609.17523",
+  "readingDepth": "full-text",
+  "fullTextUrl": "https://arxiv.org/html/2609.17523",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "deep",
+  "depthLabel": "深读",
+  "depthRank": 2,
+  "evidenceGrade": "C",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "固定任务模型下，harness 演化使验证集正确率从 31.1% 升至 51.1%",
+      "evidence": "§7.2 Harness Evolution（H0 vs 选中 harness；验证集对比）",
+      "status": "作者主张"
+    },
+    {
+      "id": "C2",
+      "claim": "固定 harness H0 下，模型学习使 pass@4 覆盖率从 48.3% 升至 67.8%",
+      "evidence": "§7.3 Evaluation measure（coverage 48.3%→67.8%）",
+      "status": "作者主张"
+    },
+    {
+      "id": "C3",
+      "claim": "harness 候选仅在满足编辑约束且成对开发评估提升时才被接受",
+      "evidence": "§1 内层递归描述；§7.2 Revision and checkpoint selection",
+      "status": "作者主张"
+    },
+    {
+      "id": "C4",
+      "claim": "研究者回复用于定义任务目标与评分标准，但不作为正确性标签",
+      "evidence": "§1（Researcher replies inform these criteria without serving as unquestioned correctness labels）；§7.2 Table 2",
+      "status": "作者主张"
+    }
+  ],
+  "claimCount": 4,
+  "sectionSizes": {
+    "问题与语境": 871,
+    "核心主张": 1232,
+    "机制与方法": 1265,
+    "实验设置": 983,
+    "证据与结果": 1218,
+    "证据强度评估": 1295,
+    "边界与反例": 949,
+    "与知识库的关系": 1060,
+    "复现与验证计划": 1134,
+    "术语与记号": 1219,
+    "自测": 2432
+  },
+  "bodyChars": 13788,
+  "deep": true,
+  "sections": [
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
+    "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
+    "自测"
+  ],
+  "related": [
+    "modularrsi-harness",
+    "actobs-observation-supervision",
+    "card",
+    "codemidas-code-rl-envs",
+    "expert-space-exploration-moe",
+    "gai"
+  ],
+  "degree": 16,
+  "sources": [
+    "sciencebuddy-recursive-in-recursive-self"
+  ],
+  "prerequisites": [
+    "grpo",
+    "agent-loop"
+  ],
+  "search": "sciencebuddy：递归中的递归自改进科研智能体 科学智能体在单次对话中被纠正后，无法把与研究者协作中获得的经验转化为跨任务的工作流程与底层能力的持续提升。论文要解决的是：如何让交互式科研智能体把研究者反馈同时用于改进可编辑的harness（指令、技能、上下文管理）与任务模型权重，并在多轮循环中保持双向耦合的持续改进。 agent 系统 paper deep c sciencebuddy grpo harness-evolution recursive-rl scientific-agents self-improvement 理解内层 harness 演化与外层模型 rl 双向耦合的递归自改进机制 掌握 harness 候选的编辑约束与成对开发评估接受准则 了解固定模型/固定 harness 两个案例分别验证的增益（31.1%→51.1%，48.3%→67.8%） 认识该工作的证据边界：反射器固定、技能与反馈来源未单独消融 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 固定任务模型下，harness 演化使验证集正确率从 31.1% 升至 51.1% 作者主张 固定 harness h0 下，模型学习使 pass@4 覆盖率从 48.3% 升至 67.8% 作者主张 harness 候选仅在满足编辑约束且成对开发评估提升时才被接受 作者主张 研究者回复用于定义任务目标与评分标准，但不作为正确性标签 作者主张",
+  "content": "## 问题与语境\n\n科学智能体的现实使用形态是「对话—纠正—再对话」：研究者提出假设、质疑结论、要求补做检查。这类交互暴露了大量关于「科学工作应当如何做、如何被评判」的信息，但论文指出其失效点在于——在单次对话内纠正一个答案，并不等于跨任务的能力提升（§1）。已有的持久化经验方法（Reflexion、GEPA、ACE、Meta-Harness、PILOT）提供了可复用的程序性适应机制；交互驱动适应与 rubric 强化学习提供了模型改进机制；SIA 已证明 harness 与模型权重联合更新的先例，HELIX 把 harness 演化接到训练数据构造上（§5）。论文的定位不是再提一个反思或提示搜索方法，而是追问：协作本身能否同时供给「任务定义」与「评估标准」，从而把程序层改进与策略层学习串成一个可循环的闭环。\n\nScienceBuddy 的切入点是结构性的：把可编辑的 harness（指令、可复用技能、上下文管理设置）与科学基础设施分离，使程序性改动显式且可评估；再把研究者请求、澄清、执行记录与产物固化为任务专属 rubric，并打包为可执行的 Harbor 任务（§1）。在此之上提出 recursive-in-recursive self-improvement：内层递归固定任务模型，由固定辅助模型诊断失败并提出有界编辑，候选仅在满足编辑约束且成对开发评估提升时被接受；外层递归按当前模型与选中 harness 校准增强任务环境，再用 rubric 奖励与 GRPO 在新鲜 on-policy rollout 上训练，训练期间 harness 与 rubric 保持固定（§1、§2.3）。耦合是双向的：harness 修订改变训练轨迹与任务难度，模型更新改变继承程序的有效性，更新后的模型–harness 对返回研究者触发下一轮循环，所有版本被保留（§1）。\n\n需要强调的边界：论文自述其 reflector 保持固定，因此任务表现提升并不意味着「改进机制本身变强」（§5）；证据形态为 case study，未报告复现（limits）。\n\n## 核心主张\n\n论文的四条主张围绕「固定一侧、观察另一侧」的实验设计展开：harness 案例固定任务模型（Qwen3.5-4B），模型案例固定 harness H0，从而把程序性改进与模型学习的贡献分开观察（§7.2、§7.3）。\n\n| # | 主张 | 证据 | 状态 |\n|---|---|---|---|\n| C1 | 固定任务模型下，harness 演化使验证集正确率从 31.1% 升至 51.1% | §7.2 Harness Evolution（H0 vs 选中 harness；验证集对比） | 作者主张 |\n| C2 | 固定 harness H0 下，模型学习使 pass@4 覆盖率从 48.3% 升至 67.8% | §7.3 Evaluation measure（coverage 48.3%→67.8%） | 作者主张 |\n| C3 | harness 候选仅在满足编辑约束且成对开发评估提升时才被接受 | §1 内层递归描述；§7.2 Revision and checkpoint selection | 作者主张 |\n| C4 | 研究者回复用于定义任务目标与评分标准，但不作为正确性标签 | §1（Researcher replies inform these criteria without serving as unquestioned correctness labels）；§7.2 Table 2 | 作者主张 |\n\n最强的是 C1。它有明确的对照对象（初始 harness H0 与 adaptation-selected harness）、明确的评估集（validation set，且 validation 分数不参与修订或 checkpoint 选择，见 §7.2），以及可核对的 harness 规模描述（H0 无附加指令或技能条目，H24 含四条指令条目与九项 scoped skills）。同时 §7.2 明确该独立实验的选择协议与耦合循环实验中的验证式选择不同，说明作者对协议边界有自觉。其弱点在于：学习曲线描述的是固定模型权重下连续程序修订的合并效应，单个技能与反馈来源的贡献未被分离（§7.2），因此 51.1% 无法归因到具体编辑。\n\n最弱的是 C4。它是一条设计意图与信息边界声明，而非可独立验证的性能结论：其支撑是角色规范（Table 2 的信息可见性划分）与用户模拟器的构造约束——模拟器从允许回复集中选择回复，该集合排除正确选项、标识符与数值答案（§7.2）。但用户反馈本身是「有界、参考辅助」的模拟回复，而非无限制的专家反馈或人类轨迹（limits），所以「研究者回复不充当正确性标签」在真实协作场景中是否成立，论文并未给出证据。C2 与 C3 居中：C2 的 pass@4 定义清晰、两次评估使用同一问题面板与每题四次尝试（§7.3），但同样只报告前后两点；C3 是机制描述，缺少被拒候选的统计。\n\n## 机制与方法\n\nScienceBuddy 的核心是「递归中的递归自改进」（recursive-in-recursive self-improvement）：内层递归改进可编辑的 harness，外层递归改进任务模型权重，二者交替耦合。harness 被定义为与科学基础设施分离的工作程序层，包含指令、可复用技能与上下文管理设置。\n\n**内层递归（固定任务模型）。** 在第 $k$ 个外层循环的第 $j$ 个内层步骤，活跃 harness $H_{k,j}$ 为父代，提出的候选修订记为 $\\widetilde{H}_{k,j+1}$；被接受则成为子代 $H_{k,j+1}$，否则父代继续生效。候选编辑由固定辅助模型提出，仅限指令与 scoped-skill 文本（单文件 harness），须通过组件校验与固定执行预检，并且只有在成对开发评估上取得提升才被接受。反馈解释器依据研究者的下一轮回复对前一轮响应打分，输出诊断分数 $q_t \\in \\{-1,0,+1\\}$（+1 明确接受，-1 纠正或要求重做，0 新要求/新信息/证据不足），并附证据引用与改进提示。该分数用于 harness 诊断，不用于策略优化。\n\n**外层递归（固定 harness 与 rubric）。** 增强任务环境先按当前模型与选中 harness 校准，再用任务专属 rubric 奖励在新鲜 on-policy rollout 上以 GRPO 训练。策略优化的优势由轨迹奖励 $R_x(\\tau)$ 定义，而非代入解释器的三元诊断分数 $q_t$——这是论文明确强调的信息边界（\"The GRPO advantage below is defined from $R_x(\\tau)$, not by substituting the interpreter's ternary score\"）。训练期间 harness 与 rubric 保持固定；历史交互只提供任务定义与诊断证据，不作为 on-policy 训练样本。\n\n**双向耦合与版本保留。** harness 修订改变训练轨迹与任务难度，模型更新改变继承程序的有效性；更新后的模型–harness 对重新评估并返回研究者，触发下一轮循环，所有 harness 与环境版本被保留。设计取舍在于：把可编辑程序层与科学基础设施分离，使程序变更显式且可评估；用「成对开发评估提升」作为接受门槛以抑制退化；用有界编辑约束（不得改动执行循环、工具接口、上下文处理、提交检查、预算、rubric、评估器）保证可比性。\n\n**适用前提与不确定处。** 该机制依赖：可打包为可执行 Harbor 任务的研究者协作、可提炼为 rubric 的成功标准、以及能提供有界反馈的用户模拟器。作者自述的局限包括：反射器（reflector）保持固定，因此任务表现提升不代表改进机制本身变强；各技能与反馈来源的单独效应未被隔离；用户反馈由有界、参考辅助的模拟器产生，而非无限制专家反馈或人类轨迹。这些均为作者主张，未见复现报告。\n\n## 实验设置\n\n两个案例研究分别固定一个组件以观察另一个的变化：harness 案例固定任务模型，模型学习案例固定 harness H0。任务集合共 895 题，来自 LAB-Bench 与 Biomni-Eval1 的四个任务族：96 LitQA2、511 DbQA、108 ProtocolQA、180 GWAS，覆盖 16 个子主题（LitQA2 与 ProtocolQA 各 1 个，DbQA 10 个，GWAS 4 个）。harness 案例中，288 段适应对话每批 12 段触发一次更新，共 24 次更新；H0 无新增指令或技能条目，H24 含四条指令条目与九个 scoped skills。模型学习案例在两个模型检查点上使用同一问题面板、每题四次尝试，以隔离共同程序接口下的模型学习。\n\n| 基准 | 模型/规模 | 基线 | 预算 | 指标 |\n| --- | --- | --- | --- | --- |\n| LAB-Bench 与 Biomni-Eval1（文献阅读、数据库判断、协议排障、基因与变异评估四族） | 固定 Qwen3.5-4B 任务模型；固定 Qwen3.8-27B 辅助模型做用户模拟与反馈解释；GPT-6 Astra 提出 harness 编辑 | 初始 harness H0 | 288 段适应对话，每批 12 段后更新一次，共 24 次更新 | 验证集首轮回答准确率（first-response accuracy） |\n| 固定 harness H0 下的共同科学问题面板 | Qwen3.5-4B 任务骨干，两个模型检查点 | 初始检查点 | 每题四次尝试 | 问题覆盖率（pass@4） |\n\n结果（作者主张，未见复现）：固定任务模型下，选中 harness 在验证集上达 51.1% 正确，初始 harness 为 31.1%；固定 H0 下，覆盖率由 48.3% 升至 67.8%。需注意两点不确定处：其一，harness 案例的选择基于适应集表现，验证分数不参与修订或检查点选择，且该独立实验的选择协议与耦合循环实验中的基于验证的 harness 选择不同；其二，训练准确率按正确解答的尝试计数，而覆盖率按 pass@4 计（四次中至少一次成功即计该问题被解决），二者与 harness 案例的首轮回答准确率不可直接比较。\n\n## 证据与结果\n\n本小节汇总摘录中可核对的全部数字。所有数值均照抄原文，未在摘录中出现的量一律标注「摘录未给出」。\n\n| 指标 | 数值 | 设置 | 出处 |\n|---|---|---|---|\n| 任务总数 | 895 | 96 LitQA2 + 511 DbQA + 108 ProtocolQA + 180 GWAS；16 个子主题 | §7.1, Table 1 |\n| LitQA2 任务数 | 96 | 科学文献阅读，1 个子主题 | Table 1 |\n| DbQA 小计 | 511 | 10 个子主题 | Table 1 |\n| ProtocolQA 任务数 | 108 | 实验方案排障，1 个子主题 | Table 1 |\n| GWAS 小计 | 180 | 4 个子主题 | Table 1 |\n| harness 适配对话数 | 288 | 每批 12 条任务对话后更新一次，共 24 次更新 | §7.2 |\n| 验证集准确率（选中 harness） | 51.1% correct | 固定 Qwen3.5-4B 任务模型，验证集 | §7.2 |\n| 验证集准确率（初始 harness） | 31.1% | 同上 | §7.2 |\n| H24 harness 组成 | 4 条 instruction + 9 个 scoped skill | H0 无新增 instruction/skill 条目 | §7.2 |\n| 评测覆盖率（pass@4） | 48.3% → 67.8% | 固定 H0，每题 4 次尝试 | §7.3 |\n\n**消融与对照设计。** 论文采用「固定一侧、观察另一侧」的双案例对照，而非组件级消融：\n\n- **harness 案例**：任务模型固定为 Qwen3.5-4B，编辑范围限于单文件 harness 中的 instruction 与 scoped-skill 文本；执行循环、Python 工具接口、上下文处理、输入检查设置、提交检查与预算均保持不变。对照为 H0 与适配选中的 harness。\n- **模型学习案例**：harness 固定为 H0，训练与评测全程不变；两个 checkpoint 在同一问题面板上各尝试 4 次，因此前后对比度量的是「共同程序接口下的模型学习」。\n- **选择协议区分**：独立 harness 实验的选择协议与耦合循环实验中的验证式选择不同；验证分数不指导修订或 checkpoint 选择。\n\n**未隔离的效应。** 摘录明确说明：学习曲线描述的是「固定模型权重下连续程序修订的合并效应」，单个 skill 与各反馈来源的效应未被单独隔离。因此上表 31.1%→51.1% 不能归因到任一具体编辑。此外，耦合循环（RQ2）的定量结果、真实研究者交互（RQ1）的量化指标、以及统计显著性检验（如置信区间、p 值、随机种子数）在摘录中均未给出。\n\n## 证据强度评估\n\n**证据分级：C（单案例研究，无复现，关键效应未隔离）。**\n\n理由：论文自述为 case-study evidence，摘录的 limits 明确写「Case-study evidence only; no reproduction reported」。两个核心数字（31.1%→51.1%、48.3%→67.8%）均为作者主张，无第三方复现、无多种子方差、无显著性检验。方法学上有可取之处——固定一侧变量、保留全部 harness 与环境版本、区分诊断分数 $q_t$ 与轨迹奖励 $R_x(\\tau)$、明确验证分数不参与选择——这些提升了内部一致性，但不足以支撑 A/B 级。故定为 C。\n\n**主要威胁：**\n\n1. **构造效度（最大威胁）**：harness 案例的「用户反馈」由有界、参考辅助的模拟器产生，回复集排除正确选项、标识符与数值答案；反馈解释器看不到私有判定与答案。这与真实研究者反馈的分布差异未知，摘录未给出模拟器与真人反馈的一致性度量。因此 51.1% 反映的是「在受控反馈下 harness 能否被改进」，而非「在真实协作中能否被改进」。\n\n2. **效应归因不可分离**：作者自承「Effects of individual skills and feedback sources are not separately isolated」。24 次更新、4 条 instruction、9 个 skill 的合并效应无法拆解，读者无法判断增益来自哪类编辑，也无法迁移到自己的 harness 设计。\n\n3. **基线选择与指标口径**：harness 案例用 first-response accuracy，模型案例用 pass@4 coverage，两者口径不同，不能相加或直接比较。模型案例的基线是「初始 checkpoint + H0」，未报告同预算下的其他 RL 基线（如 SFT、无 rubric 奖励的 GRPO），因此 48.3%→67.8% 无法排除「任何 RL 都能带来类似提升」。\n\n4. **外部效度与评测污染**：任务来自 LAB-Bench 与 Biomni-Eval1 的四个任务族，共 895 题、16 子主题，覆盖面有限；摘录未说明训练任务与评测任务的重叠控制细节，仅称「历史交互提供任务定义与诊断证据而非 on-policy 训练样本」。此外 reflector 固定，作者明确指出「improved task performance does not imply that the improvement mechanism itself has become stronger」——即该框架的「自改进」是任务层面的，不是改进机制层面的。\n\n**可迁移性判断**：若读者的场景具备可编辑的单文件 harness、可自动验证的任务、以及可批量生成的反馈信号，本文的「固定一侧 + 成对开发评估接受」协议值得借鉴；但不应把 31.1%→51.1% 当作预期增益，也不应假定该增益在无模拟器、无 rubric 的环境中可复现。\n\n## 边界与反例\n\n**会推翻结论的观察。** 两个核心数字都来自单次运行、单一模型、单一 harness 文件，且作者自述为 case-study evidence only; no reproduction reported。若在相同 288 段适应对话与相同 24 次更新预算下，换用不同随机种子或不同任务模型（非 Qwen3.5-4B）后，验证集首轮准确率不再显著高于 31.1%，则 C1 的「harness 演化带来提升」应被降级为「该配置下的偶发结果」。同理，若在 H0 固定、四次尝试的同一问题面板上，换 checkpoint 后 pass@4 不落在 48.3%→67.8% 区间，C2 不成立。\n\n**最可能失效的条件。** 其一，反馈来源被替换。用户反馈由「有界、参考辅助的用户模拟器」产生，回复集明确排除正确选项、标识符与数值答案；真实研究者的无约束反馈可能包含答案泄漏或含糊纠正，此时 $q_t\\in\\{-1,0,+1\\}$ 的诊断语义与 harness 编辑方向都会漂移。其二，编辑边界被放宽。案例仅允许单文件 harness 中的指令与 scoped-skill 文本改动，执行循环、Python 工具接口、上下文处理、输入检查设置、提交检查与预算全部固定；一旦允许改这些组件，51.1% 的增益无法归因于「程序性知识」而非「接口调参」。其三，验证集与适应集同分布。验证分数不参与修订或 checkpoint 选择，但两集来自同一 895 任务池（96 LitQA2 / 511 DbQA / 108 ProtocolQA / 180 GWAS，16 个子主题），跨分布迁移未验证。\n\n**作者未验证但易被误推的方向。** 第一，把「任务表现提升」读成「改进机制变强」——作者明确说明 reflector 固定，改进机制本身未增强。第二，把两个数字相乘或叠加，误以为 harness 与模型改进可加；两者是分别固定一个组件测得的，耦合循环的联合效果未单独报告。第三，把 $q_t$ 当作策略优化奖励；作者强调 GRPO 优势由 $R_x(\\tau)$ 定义，而非解释器的三元分数。第四，把学习曲线归因于某个具体 skill 或某类反馈；作者声明个体 skill 与反馈来源的效应未被分离。\n\n## 与知识库的关系\n\n**新增（此前笔记未覆盖）。** 本论文引入「递归中的递归」这一嵌套结构：内层固定任务模型、只做有界指令/技能编辑并以成对开发评估接受候选；外层固定 harness 与 rubric、用任务专属 rubric 奖励与 GRPO 在新鲜 on-policy rollout 上训练。与既有 harness/自改进笔记（modularrsi、multi-harness、coskill）相比，新增点是内外两层的双向耦合与全版本保留，而非单层 harness 搜索。可链接：`note/harness-self-improvement`、`note/agent-harness-evolution`。\n\n**印证。** 与 SIA 的「harness + 模型权重联合适应」先例一致，本论文确认联合适应可行；差异在于任务与 rubric 源自研究者协作，且 reflector 保持固定。与 HELIX 的「harness 演化→训练数据构造」方向一致，差异在于 ScienceBuddy 在 on-policy rollout 前先按当前模型与选中 harness 校准增强任务环境。可链接：`note/sia-joint-adaptation`、`note/helix-harness-to-data`。\n\n**张力。** 与 Reflexion / GEPA / ACE / Meta-Harness / PILOT 一类「持久程序性适应」笔记存在定位张力：这些工作把适应本身当作终点，本论文把适应当作第二层递归的经验来源，因此「适应质量」不再是唯一评价维度，还需评价其能否生成有效训练信号。与 OpenClaw-RL / RLAnything 的张力在于监督分工：本论文让用户反馈只指导程序性修订，策略轨迹由任务验证监督，二者不混用同一奖励通道。可链接：`note/persistent-procedural-adaptation`、`note/rl-from-interaction`。\n\n**需标注的不确定处。** 证据表将 C1–C4 全部标为「作者主张」，且 limits 明示无复现报告、个体 skill 与反馈来源未分离、用户反馈为模拟而非人类轨迹、历史交互只提供任务定义与诊断证据而非 on-policy 样本。因此上述「印证」应理解为方向一致而非独立验证；引用时建议在笔记中并列标注 `status: author-claim`。可链接：`note/claim-status-conventions`。\n\n## 复现与验证计划\n\n本节的复现计划只针对论文中两个可独立检验的案例，不覆盖完整双向耦合循环（论文自述为 case-study evidence only；no reproduction reported）。\n\n**最小验证 A：固定模型下的 harness 演化（对应 C1）**\n\n| 项目 | 设置 |\n| --- | --- |\n| 任务模型 | 固定 Qwen3.5-4B（权重不变） |\n| 辅助角色 | 固定 Qwen3.8-27B helper 做有界用户模拟与反馈解释；GPT-6 Astra 提出 harness 编辑 |\n| 数据 | 895 任务集合：96 LitQA2、511 DbQA、108 ProtocolQA、180 GWAS，共 16 subtopics；另需独立验证集 |\n| 基线 | 初始 harness H0（无附加 instruction 或 skill 条目） |\n| 预算 | 288 段 adaptation 对话，每批 12 段后更新一次，共 24 次更新（H24 含四条 instruction 与九个 scoped skills） |\n| 判据 | 验证集 first-response accuracy：H0 31.1% → 选中 harness 51.1% |\n| 编辑边界 | 仅限单文件 harness 的 instruction 与 scoped-skill 文本；执行循环、Python 工具接口、上下文处理、输入检查、提交校验与预算固定 |\n\n**最小验证 B：固定 harness 下的模型学习（对应 C2）**\n\n| 项目 | 设置 |\n| --- | --- |\n| harness | H0 全程固定，训练与评估均不调用新的 harness 适配阶段 |\n| 模型 | Qwen3.5-4B 两个 checkpoint |\n| 预算 | 每题四次尝试 |\n| 判据 | pass@4 覆盖率：48.3% → 67.8% |\n| 奖励 | 用轨迹奖励 $R_x(\\tau)$ 计算 GRPO 优势，而非反馈解释器的三元诊断分数 $q_t$ |\n\n**预期失败模式**：(1) 用户模拟器为有界、参考辅助回复，且回复集排除正确选项、标识符与数值答案，真实专家反馈下增益可能不成立；(2) 学习曲线是多次程序修订在固定权重下的合并效应，单个 skill 与反馈来源未被分离，无法归因；(3) 反思器固定，任务性能提升不等于改进机制本身变强；(4) 两个案例的 harness 选择协议不同（独立实验用 adaptation set 选优，验证分数不指导修订或 checkpoint 选择），不可直接拼接为端到端结论。\n\n## 术语与记号\n\n| 术语 | 含义 |\n| --- | --- |\n| harness | 可编辑的智能体工作程序层，含指令、可复用技能与上下文管理设置，与科学基础设施分离 |\n| recursive-in-recursive self-improvement | 递归中的递归自改进：内层改进 harness、外层改进模型权重，二者交替耦合 |\n| inner recursion | 内层递归：固定任务模型，仅对 harness 做有界编辑与评估接受 |\n| outer recursion | 外层递归：固定 harness 与 rubric，用 rubric 奖励和 GRPO 训练任务模型 |\n| rubric | 任务专属评分标准，由研究者请求与后续要求提炼而成 |\n| Harbor task | 打包了指令、输入与环境的可执行任务单元 |\n| GRPO | 基于分组相对优势的策略优化方法，此处用轨迹奖励 $R_x(\\tau)$ 计算优势 |\n| pass@4 | 覆盖率指标：同一问题四次尝试中至少一次成功即计该问题被解决 |\n| first-response accuracy | 首轮回答准确率，用于 harness 案例的评估 |\n| diagnostic score $q_t$ | 反馈解释器对研究者回复的诊断打分，$q_t\\in\\{-1,0,+1\\}$，用于 harness 诊断而非策略优化 |\n| user simulator | 有界、参考辅助的用户模拟器，从允许回复集中选择回复，不泄露正确答案 |\n| feedback interpreter | 反馈解释器：依据研究者下一回复判断前一轮响应，输出诊断分数与改进提示 |\n| harness reflector | harness 反思器：接收轨迹、活跃程序与 rubric 反馈，提出有界程序编辑 |\n| on-policy rollout | 由当前策略在活跃 harness 下生成的新鲜轨迹样本 |\n\n关键记号：$H_{k,j}$ 为第 $k$ 个外层循环第 $j$ 个内层步骤的活跃 harness（父代）；$\\widetilde{H}_{k,j+1}$ 为提出的候选 harness 修订，被接受后成为子代 $H_{k,j+1}$，否则父代继续生效；$H_0$ 与 $H_{24}$ 分别指初始 harness 与经 24 次更新后的 harness；$q_t$ 为反馈解释器给出的诊断分数，取值 $\\{-1,0,+1\\}$；$R_x(\\tau)$ 为轨迹奖励，用于策略优化，与 $q_t$ 严格区分——论文明确 GRPO 优势由 $R_x(\\tau)$ 定义，而非代入解释器的三元分数。任务规模记号：895 任务集合 = 96 LitQA2 + 511 DbQA + 108 ProtocolQA + 180 GWAS，共 16 subtopics。\n\n## 自测\n\n以下问题用于检验读者是否真正掌握了本档案的证据边界，而非复述摘要。\n\n**Q1（证据强度）** 论文报告 harness 演化使验证集正确率从 31.1% 升至 51.1%。这个数字能否直接作为「harness 自改进方法有效」的通用证据？请指出至少两条限制。\n\n<details><summary>答案</summary>\n不能直接外推。限制包括：(1) 该结果来自单一案例研究，档案 limits 明确标注「Case-study evidence only; no reproduction reported」；(2) 任务模型固定为 Qwen3.5-4B，harness 编辑被限制在单文件 harness 的 instruction 与 scoped-skill 文本，执行循环、Python 工具接口、上下文处理、输入检查设置、提交检查与预算均固定，因此结论不覆盖其他 harness 组件；(3) 学习曲线描述的是「successive procedural revisions at fixed model weights」的合并效应，单个 skill 与反馈来源的贡献未被分离；(4) 用户反馈由有界、参考辅助的模拟器产生，而非无限制专家反馈或人类轨迹。此外，验证分数不参与修订或 checkpoint 选择，选择协议与耦合循环实验不同。\n</details>\n\n**Q2（指标辨析）** 论文同时使用 first-response accuracy 与 pass@4 coverage。为什么这两个数字（31.1%→51.1% 与 48.3%→67.8%）不能相互比较或相加？\n\n<details><summary>答案</summary>\n二者定义与实验条件不同。first-response accuracy 是 harness 案例的指标，在固定 Qwen3.5-4B 任务模型下比较初始 harness 与选中 harness 的验证集首轮回答正确率。pass@4 coverage 是模型学习案例的指标，在固定 harness H0 下，同一问题四次尝试中至少一次成功即计该问题被解决，比较两个模型 checkpoint。前者衡量程序层变化，后者衡量模型层变化，且尝试预算不同（首轮 vs 四次）。论文明确指出后者「is distinct from the first-response accuracy used in the harness case」。\n</details>\n\n**Q3（跨小节推理：机制与证据的对应）** 论文的「recursive-in-recursive」包含内层与外层递归。请说明 C1 与 C2 分别对应哪一层，以及为什么这两个实验各自固定了另一层。\n\n<details><summary>答案</summary>\nC1（31.1%→51.1%）对应内层递归：固定任务模型，仅对 harness 做有界编辑与评估接受。C2（48.3%→67.8%）对应外层递归：固定 harness H0 与 rubric，用 rubric 奖励与 GRPO 训练任务模型。各自固定另一层是为了隔离变量——harness 案例测量程序层变化，模型案例测量模型层变化，从而「Holding one component fixed provides a focused view of changes in the other」。这也意味着两个数字都不能单独证明双向耦合本身的增益。\n</details>\n\n**Q4（跨小节推理：信号用途）** 反馈解释器输出的诊断分数 $q_t \\in \\{-1,0,+1\\}$ 与策略优化使用的轨迹奖励 $R_x(\\tau)$ 是什么关系？如果把 $q_t$ 直接当作 GRPO 的奖励会发生什么概念错误？\n\n<details><summary>答案</summary>\n二者用途不同。$q_t$ 是诊断分数，记录研究者后续回复与前一轮响应的关系（+1 明确接受/确认，-1 纠正或要求重做，0 新要求/新信息/无关跟进/证据不足），用于 harness 诊断。策略优化使用单独评估的轨迹奖励 $R_x(\\tau)$。论文明确写道「The GRPO advantage below is defined from $R_x(\\tau)$, not by substituting the interpreter's ternary score.」若用 $q_t$ 替代 $R_x(\\tau)$，会把「用户回复是否表示接受」误当作「任务是否被正确完成」的监督信号；而模拟器回复集不含正确选项、标识符与数值答案，$q_t$ 本身不携带正确性标签。\n</details>\n\n**Q5（可迁移性）** 若你想把该框架迁移到自己的科学 agent 场景，档案中哪些设计约束会最先限制你？请至少列出三条并说明理由。\n\n<details><summary>答案</summary>\n可考虑：(1) 编辑边界——案例研究仅允许 instruction 与 scoped-skill 文本编辑，若你的瓶颈在工具接口或上下文管理，该证据不覆盖；(2) 反馈来源——用户反馈由有界、参考辅助的模拟器产生，回复集排除正确答案，真实专家反馈的无界性可能改变诊断分数分布与 harness 修订质量；(3) 反思器固定——harness reflector 保持固定，因此任务性能提升不意味着改进机制本身变强，若你希望元层也自改进，需要额外设计；(4) 训练样本来源——历史交互只提供任务定义与诊断证据，不作为 on-policy 训练样本，训练使用新鲜 on-policy rollout，这要求你能持续生成可验证的新任务环境；(5) 无复现报告——所有数字均为作者主张，迁移前需自行复现。\n</details>"
+}

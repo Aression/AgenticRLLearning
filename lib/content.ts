@@ -1,23 +1,35 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Graph, Note, NoteMeta, Radar, Source } from "./types";
+import type { Graph, ModelInfo, Note, NoteMeta, Radar, Source } from "./types";
 
 type RawSource = Omit<Source, "accessible" | "checkedAt">;
 type AuditRecord = { url: string; status?: number; checkedAt?: string; metadata?: { citation_author?: string[] } };
+type NoteIndexFile = { notes: NoteMeta[] } & Partial<ModelInfo>;
 
 let noteIndex: NoteMeta[] | null = null;
+let modelInfo: ModelInfo | null = null;
 let sourceList: Source[] | null = null;
 let graphData: Graph | null = null;
 let radarData: Radar | null | undefined;
 
 /** Metadata for every note, read from the generated database export. */
 export function getNotes(): NoteMeta[] {
-  if (!noteIndex) {
-    const file = path.join(process.cwd(), "data/generated/notes.index.json");
-    const data = JSON.parse(fs.readFileSync(file, "utf8")) as { notes: NoteMeta[] };
-    noteIndex = [...data.notes].sort((a, b) => a.order - b.order);
-  }
-  return noteIndex;
+  loadIndex();
+  return noteIndex!;
+}
+
+/** The content model (evidence rubric, kind and depth labels) exported alongside the notes. */
+export function getModelInfo(): ModelInfo {
+  loadIndex();
+  return modelInfo!;
+}
+
+function loadIndex(): void {
+  if (noteIndex) return;
+  const file = path.join(process.cwd(), "data/generated/notes.index.json");
+  const data = JSON.parse(fs.readFileSync(file, "utf8")) as NoteIndexFile;
+  noteIndex = [...data.notes].sort((a, b) => a.order - b.order);
+  modelInfo = { evidenceRubric: data.evidenceRubric ?? {}, kinds: data.kinds ?? {}, depths: data.depths ?? {} };
 }
 
 /** One full note (with body), loaded from its own split JSON file. */

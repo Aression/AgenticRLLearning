@@ -4,6 +4,9 @@ title: 数学、机器学习与 LLM 先修
 summary: 概率、梯度和自回归模型是理解策略优化的最短准备路径。
 stage: FOUNDATION
 track: 概念与基础
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 2
 minutes: 15
 updated: '2026-09-08'

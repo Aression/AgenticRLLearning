@@ -1,50 +1,239 @@
 ---
 id: evolvetrade-policy-refinement
 title: EvolveTrade：交易智能体的经验驱动策略自演化
-summary: 把工具型 LLM 交易智能体的系统提示当作可演化的文本策略，用自身交易轨迹与组合反馈定期改写，而非更新模型参数。
+summary: LLM交易智能体在非平稳金融市场中需反复获取信息、验证噪声信号并管理风险，但现有方法（静态观测基准与自主工具调用框架）将信息获取与工具使用流程固定在部署时的提示中，从不依据已实现的交易结果修订，导致策略无法从自身经验中适应市场变化。
 stage: FRONTIER
 track: Agent 系统
+kind: paper
+depth: deep
+evidenceGrade: C
 order: 28
-minutes: 15
-updated: '2026-09-17'
+minutes: 60
+updated: '2026-09-24'
 review: LLM 全文精读草稿 · 待人工复核
 origin: llm-fulltext
 paper_id: 2609.17632
 reading_depth: full-text
 evidence_level: full-text-llm-draft
+claim_count: 4
 full_text_url: https://arxiv.org/html/2609.17632
-objectives: [理解把系统提示视为文本参数化策略、用经验迭代改写这一机制, 区分该工作与基于梯度的 RL 训练在优化对象上的差异, 评估其证据强度：仅摘要级结果、无代码复现、领域特定]
-tags: [tool-use, self-evolution, prompt-policy, trading-agent, frozen-llm]
+objectives: [理解如何把工具使用策略写成自然语言提示并在线精炼，而非重训练模型, 掌握决策轨迹与事后反馈配对成精炼记录、按批次更新策略的闭环机制, 了解在六个后知识截止市场区间、两个骨干模型上的评估结果与失效窗口, 认识固定更新间隔、10bps 成本假设等当前实现的边界]
+tags: [llm-agent, policy-evolution, tool-use, trading, prompt-optimization, evaluation]
 sources: [evolvetrade-experience-driven-policy-ref]
-related: [agent-loop, frontier-radar, evaluation]
+related: [agent-loop, evaluation, multi-turn-rl]
 prerequisites: []
 ---
-## 论文要解决的问题
+## 问题与语境
 
-已有共识是：LLM 具备推理与整合异构信息的能力，但这不等于在金融市场中能稳定决策——市场非平稳、信号噪声大、反馈延迟。作者的主张是：现有 LLM 交易智能体把「如何获取信息、验证信号、控制风险、分配仓位」这套流程在开发时就固定下来，无论是给定观察窗口的基准（如 LiveTradeBench 类设定），还是允许调用外部工具的自主框架，其工具使用行为都由固定提示、预定义工作流或静态角色约束。作者认为这个固定策略本身才是核心瓶颈，真正该被经验塑造的是可复用的决策流程，而不是某一次具体交易。
+LLM 在推理、指令跟随与异构信息整合上表现强劲，但这些能力并不能可靠地转化为金融市场中的稳健决策：智能体必须反复获取信息、验证噪声与冲突信号、管理组合风险，并在非平稳环境中面对延迟反馈行动。论文把矛头指向一个具体瓶颈——**信息获取与工具使用流程在开发时就被固定**。
 
-## 方法
+已有做法分两类（图 1）。其一是静态观测型基准（如 LiveTradeBench）：把价格、组合状态与新闻的预定义观测窗口直接注入提示，评估智能体在给定信息下如何决策（图 1(A)）。其二是自主工具调用框架（如 TradingAgents 一系）：允许调用外部工具，但工具使用行为仍由固定提示、预定义工作流或静态角色支配（图 1(B)）。论文的判断是：两类做法中，决策程序都是一段**从不被已实现交易结果修订**的提示；更丰富的上下文或工具访问本身并不足够，智能体还必须知道何时、为何、如何调用这些资源。
 
-EvolveTrade 让 LLM 从自身交易经验中改写自己的工具使用策略。每个交易区间结束后，一个独立的 Policy Agent 读取已实现的交易结果与逐资产推理，把策略文本从旧版本改写为新版本；后续交易日生效的策略因此被此前的真实交易经验塑造。一次改写可以改变工具优先级、信号交叉验证方式，或特定市场条件下的敞口调整方式。关键设计约束是：底层 LLM 参数与工具接口全程不动，唯一被「学习」的对象是策略文本本身，因此可套用到任意冻结的 LLM 交易智能体上，无需重训或改工具。
+因此论文的定位不是"再做一个更强的交易智能体"，而是把**可复用的信息获取、验证与行动流程**本身设为被经验塑造的对象。EvolveTrade 在每段交易区间结束后，由一个独立的 Policy Agent 读取已实现交易与逐资产推理，把策略文本从 $\pi_t$ 精炼为 $\pi_{t+1}$；底层 LLM 参数与工具接口全程不动，唯一被学习的就是策略文本。这一设定使其可套用于任意冻结的 LLM 交易智能体，无需重训练或改工具。需要区分的是：上述"固定流程是瓶颈"是作者的动机论证（作者主张），而非本文实验直接证明的结论；实验只支持"自演化在部分区间优于固定策略基线"这一较弱命题。
 
-需要明确：这不是基于梯度的强化学习，而是文本层面的策略迭代；把它归入 Agentic RL 的邻近地带，是因为它处理的是工具使用策略的适应与自演化，而非参数更新。
+## 核心主张
 
-## 证据与实验
+论文提出四条可检验主张，覆盖性能、行为机制、单案例归因与交易摩擦鲁棒性。证据定位与状态如下。
 
-作者报告两点发现（均为摘要级陈述，未见代码或复现验证）：其一，在线策略自演化在多数设定下优于固定策略基线——跨两个骨干模型与六个「截止后」市场区间，EvolveTrade 在三个模型-区间组合上取得 LLM 方法中最好的 Sharpe Ratio 与累计收益，但在另外两个组合上固定策略智能体仍更强。其二，性能变化伴随可测量的工具使用行为变化：代码介导的分析增多，激活了静态工具调用智能体从不调用的区间相关计算（如回撤期使用 VaR 与信号归一化，上升趋势中使用 EMA、RSI、SMA 等趋势指标），并给出一个 NVDA 回撤案例中仓位策略调整对应 +1.33 个百分点的相对日收益差异。
+| # | 主张 | 证据 | 状态 |
+|---|---|---|---|
+| C1 | 在线策略自演化在多数市场区间优于固定策略基线，取得最佳 SR 与 CR | §1 与 §6 表 1：两个骨干、六个区间中三个模型-区间对取得 LLM 方法最佳 SR 和 CR | 作者主张 |
+| C2 | 自演化伴随可测量的工具使用行为变化，激活静态智能体从未调用的区间相关计算 | §1 与图 2、图 3：4 月回撤期激活 VaR 与信号归一化，9 月上升趋势激活 EMA、RSI、SMA | 作者主张 |
+| C3 | 2025 年 1 月 NVDA 回撤案例中，精炼后的仓位政策带来 +1.33 个百分点的相对日收益差 | §1 案例归因与附录 E、图 7：9 月 10 日决策的次日收益对比 | 作者主张 |
+| C4 | 在 10 bps 交易成本下 EvolveTrade 仍保持领先且换手率低于 Static TC 与 EvolveStrategy | 附录 D 表 6：六个评估窗口中换手率均更低，三个领先设置中 SR 与 CR 仍最高 | 作者主张 |
 
-附录补充：每个实验重复三次报告均值与标准差，作者称增益在独立演化轨迹间持续存在；在 10 bps 比例交易成本下重算，排名保持，且六个窗口的换手率均低于两个对照方法。这些属于作者自报结果，未经第三方复现。
+**最强的是 C1，但强度被措辞限定。** 它有多区间、双骨干、三次重复取平均的表格支撑（表 1、表 4/表 5），且作者自己承认"固定策略智能体在另外两个模型-区间对中更强"——即 3/5 而非全面胜出。这一自我限定反而提高了可信度。需注意 C1 的比较对象是 LLM-based 方法，规则基线（如 Apr. 2026 的 B&H SR 11.30、ZMR SR 11.35）在若干窗口高于所有 LLM 方法，因此"最佳"不可外推为"优于全部基线"。
 
-## 边界与未解问题
+**最弱的是 C3。** 它是单日、单资产的匹配案例（9 月 10 日决策、9 月 11 日收益），作者在附录 E 明确声明"不主张智能体拥有 9 月 11 日的信息"，且该案例与 NVDA 回撤的对应关系在摘录中未给出完整归因链。单点归因无法排除同期其他持仓差异的贡献，只能作为机制示意，不能作为性能证据。
 
-领域特定（交易），骨干模型冻结，因此不能直接外推到通用工具使用智能体。策略更新间隔在每次运行中固定，动态调度留作未来工作。交易成本估计未涵盖滑点、市场冲击与流动性约束。最值得注意的是证据边界：全文摘录仅含引言、结论、局限与附录，缺少方法细节与主表数值，因此「在三个组合上最优、两个组合上落后」这类结论应按作者主张对待，不宜当作已确证事实。案例级的策略-收益归因是单例证据，不能支撑因果性结论。
+C2 与 C4 居中：C2 依赖图 2/图 3 的指标使用频次图，属描述性证据，能说明"行为确实变了"，但不能证明行为变化是收益提升的原因；C4 的换手率优势在六个窗口一致，是四条中可复现性最强的一条，但成本模型仅含 10 bps 比例成本，未捕捉滑点、市场冲击与流动性约束（作者已在 Limitations 中承认）。
+
+## 机制与方法
+
+EvolveTrade 的核心主张是：在非平稳市场中，应当被经验塑造的对象不是单次交易决策，而是智能体「获取、验证、行动」的可复用流程。该流程被实现为自然语言系统提示，即工具使用策略 $\pi_t$，而底层 LLM 参数 $p_\theta$ 与工具接口 $\mathcal{T}$ 全程冻结。因此论文称「EvolveTrade 唯一学习的对象就是策略文本本身」，可套用于任意冻结的 LLM 交易智能体，无需重训练或改工具。
+
+形式化上，第 $t$ 日开始时智能体被初始化为 $S_t=(\pi_t, t, P_{t-1}, \mathcal{T})$，其中 $P_{t-1}$ 为前一日组合状态。工具集为 $\mathcal{T}=\{t_{\mathrm{price}}, t_{\mathrm{news}}, t_{\mathrm{code}}\}$：价格检索、新闻搜索与 Python 代码解释器；所有检索工具统一时间截断以防前视泄漏。与静态观测基准（如 LiveTradeBench）不同，市场信息不被预注入提示，而由智能体在决策过程中主动检索。冻结 LLM 在 $\pi_t$ 下运行「工具调用—推理」内循环，输出可行组合权重 $w_t$ 与逐资产理由 $d_t^{\mathrm{dec}}$，构成决策轨迹 $h_t=(w_t, d_t^{\mathrm{dec}})$。
+
+环境执行 $w_t$ 后返回事后反馈 $g_t$（日收益、逐资产收益、组合状态）。论文强调 $g_t$ 单独是歧义信号：亏损可能源于证据收集缺陷，也可能是不可规避的市场冲击；盈利可能源于分析，也可能是噪声。因此将二者配对为精炼记录 $\mathcal{R}_t=(h_t, g_t)$，用以识别程序性弱点与可复用保障措施。
+
+演化按批次进行：以固定周期 $N\ge 1$ 个交易日切分交易期，批次 $k$ 覆盖第 $(k-1)N+1$ 至 $kN$ 日，批次内策略固定，即 $\pi_{(k-1)N+1}=\cdots=\pi_{kN}$。批次结束时收集 $\mathcal{B}_k=\{\mathcal{R}_{(k-1)N+1},\ldots,\mathcal{R}_{kN}\}$，由独立的 Policy Agent 执行语言式精炼：
+
+$$\pi_{kN+1}=f_{\mathrm{update}}(\pi_{kN},\mathcal{B}_k),\qquad f_{\mathrm{update}}(\pi,\mathcal{B})=\mathrm{LLM}(I_{\mathrm{update}},\pi,\mathcal{B}).$$
+
+固定更新指令 $I_{\mathrm{update}}$ 要求分析记录中哪些提示内容导致好或差的表现，并重写完整策略文本，强调「有依据的编辑」而非泛泛重写，要求把记录中的具体观察链接到当前提示的具体行。一次精炼可改变工具优先级、信号交叉验证方式、特定市况下的敞口调整等。迭代后，后期交易日的策略已被智能体自身已实现经验塑造。
+
+设计取舍与适用前提：(1) 策略更新间隔 $N$ 固定于每次运行中，敏感性分析显示中等间隔在适应性与性能间较稳定，但动态调度留作未来工作；(2) 精炼依赖 LLM 对文本的编辑能力，不涉及梯度；(3) 组合约束为 long-only 单纯形（资产加现金），所有主动策略施加每资产 $1/N$ 上限（$N=15$，约 6.7%）；(4) 方法假设存在可配对的决策轨迹与事后反馈，且反馈延迟以「日」为粒度。
+
+## 实验设置
+
+评估在六个「后知识截止」市场区间进行：Jan. 2025、Apr. 2025、Sep. 2025、Nov. 2025、Feb. 2026、Apr. 2026，每个窗口长度为一个月。骨干模型为 GPT-5-mini 与 Gemini-2.5-Flash。每个 LLM 智能体实验重复 3 次取平均；LLM-based 行报告三次运行的平均值，主表中粗体与下划线分别标记每个模型-区间设置内 LLM-based 方法的最佳与次佳。指标为 SR、CR%、MDD%、WR%、Vol%；SR 定义为 $\mathrm{SR}=\sqrt{252}\,\bar{R}/\sigma_R$，CR 为窗口内总增长百分比，MDD 为从前期峰值的最大跌幅，WR 为日收益为正的比例，Vol 为日收益样本标准差（百分点）。论文说明因评估窗口均为一个月且各方法在同一区间比较，故不做无风险利率调整。交易成本评估使用 10 bps 比例成本（按交易组合价值收取），并报告换手率 TO；论文明确该估计不捕捉滑点、市场冲击或流动性约束。所有主动策略施加每资产 $1/N$ 上限（$N=15$，约 6.7%），未分配资金留作现金、零收益。
+
+| 基准 | 模型/规模 | 基线 | 预算 | 指标 |
+| --- | --- | --- | --- | --- |
+| Jan. 2025 / Apr. 2025 / Sep. 2025 / Nov. 2025 / Feb. 2026 / Apr. 2026 六个后知识截止市场区间 | GPT-5-mini | SPY, B&H, MACD, KDJ&RSI, ZMR, SMA, Static Base Agent, Static TC Agent, EvolveBase, EvolveStrategy | 每个 LLM 智能体实验重复 3 次取平均 | SR, CR%, MDD%, WR%, Vol% |
+| 同上六个区间 | Gemini-2.5-Flash | SPY, B&H, MACD, KDJ&RSI, ZMR, SMA, Static Base Agent, Static TC Agent, EvolveBase, EvolveStrategy | 每个 LLM 智能体实验重复 3 次取平均 | SR, CR%, MDD%, WR%, Vol% |
+| 六个评估窗口（Jan. 2025, Apr. 2025, Sep. 2025, Nov. 2025, Feb. 2026, Apr. 2026） | GPT-5-mini 与 Gemini-2.5-Flash | Static Base, Static TC, EvolveBase, EvolveStrategy | 10 bps 比例交易成本 | Turnover (TO), SR, CR% |
+| Apr. 2025 (GPT-5-mini) 与 Apr. 2026 (Gemini-2.5-Flash) | EvolveTrade | Static TC Agent (GPT-5-mini), Static Base Agent (Gemini-2.5-Flash) | 未说明 | 平均现金权重 (CASH%) |
+
+消融设置包括：EvolveBase（与 EvolveTrade 共享提示结构但无工具，价格与新闻上下文预取并直接插入提示，Fixed Block 省略所有工具相关指令）、EvolveStrategy（仅更新高层交易策略，不更新工具调用协议）、Static Base Agent 与 Static TC Agent（固定策略基线）；另有策略更新间隔的敏感性分析与重复运行消融。需注意：上述均为作者报告结果，本档案未做独立复现。
+
+## 证据与结果
+
+论文在六个「后知识截止」市场区间（Jan. 2025 / Apr. 2025 / Sep. 2025 / Nov. 2025 / Feb. 2026 / Apr. 2026）上，用 GPT-5-mini 与 Gemini-2.5-Flash 两个骨干，对 EvolveTrade 与 SPY、B&H、MACD、KDJ&RSI、ZMR、SMA、Static Base Agent、Static TC Agent、EvolveBase、EvolveStrategy 比较，每个 LLM 智能体实验重复 3 次取平均，指标为 SR、CR%、MDD%、WR%、Vol%。摘录中可确认的数字如下。
+
+| 指标 | 数值 | 设置 | 出处 |
+|---|---|---|---|
+| SR | 5.12 | EvolveTrade, GPT-5-mini, Jan. 2025 | Table 1 |
+| CR% | 5.10 | EvolveTrade, GPT-5-mini, Jan. 2025 | Table 1 |
+| MDD% | 2.39 | EvolveTrade, GPT-5-mini, Jan. 2025 | Table 1 |
+| WR% | 57.0 | EvolveTrade, GPT-5-mini, Jan. 2025 | Table 1 |
+| Vol% | 0.84 | EvolveTrade, GPT-5-mini, Jan. 2025 | Table 1 |
+| SR | -2.53 | EvolveTrade, GPT-5-mini, Apr. 2025 | Table 1 |
+| CR% | -6.60 | EvolveTrade, GPT-5-mini, Apr. 2025 | Table 1 |
+| SR | 8.43 | EvolveTrade, GPT-5-mini, Sep. 2025 | Table 1 |
+| CR% | 6.84 | EvolveTrade, GPT-5-mini, Sep. 2025 | Table 1 |
+| WR% | 81.3 | EvolveTrade, GPT-5-mini, Sep. 2025 | Table 1 |
+| SR | -1.03 | EvolveTrade, Gemini-2.5-Flash, Nov. 2025 | Table 1 |
+| CR% | -1.07 | EvolveTrade, Gemini-2.5-Flash, Nov. 2025 | Table 1 |
+| SR | 2.75 | EvolveTrade, Gemini-2.5-Flash, Feb. 2026 | Table 1 |
+| CR% | 2.92 | EvolveTrade, Gemini-2.5-Flash, Feb. 2026 | Table 1 |
+| SR | 4.73 | EvolveTrade, Gemini-2.5-Flash, Apr. 2026 | Table 1 |
+| CR% | 3.69 | EvolveTrade, Gemini-2.5-Flash, Apr. 2026 | Table 1 |
+| SR | 2.87 | Static TC Agent, GPT-5-mini, Jan. 2025 | Table 1 |
+| CR% | 3.30 | Static TC Agent, GPT-5-mini, Jan. 2025 | Table 1 |
+| SR | 6.45 | Static TC Agent, GPT-5-mini, Sep. 2025 | Table 1 |
+| CR% | 4.86 | Static TC Agent, GPT-5-mini, Sep. 2025 | Table 1 |
+| SR | 2.70 | Static TC Agent, Gemini-2.5-Flash, Feb. 2026 | Table 1 |
+| CR% | 2.29 | Static TC Agent, Gemini-2.5-Flash, Feb. 2026 | Table 1 |
+| SR | 3.92 | EvolveStrategy, Gemini-2.5-Flash, Feb. 2026 | Table 1 |
+| CR% | 3.52 | EvolveStrategy, Gemini-2.5-Flash, Feb. 2026 | Table 1 |
+| SR | 9.07 | Static Base Agent, Gemini-2.5-Flash, Apr. 2026 | Table 1 |
+| CR% | 11.64 | Static Base Agent, Gemini-2.5-Flash, Apr. 2026 | Table 1 |
+| TO | 1.05 | EvolveTrade, GPT-5-mini, Jan. 2025, 10 bps | Table 6 |
+| SR | 5.01 | EvolveTrade, GPT-5-mini, Jan. 2025, 10 bps | Table 6 |
+| CR% | 4.99 | EvolveTrade, GPT-5-mini, Jan. 2025, 10 bps | Table 6 |
+| TO | 1.68 | EvolveTrade, GPT-5-mini, Sep. 2025, 10 bps | Table 6 |
+| SR | 8.21 | EvolveTrade, GPT-5-mini, Sep. 2025, 10 bps | Table 6 |
+| CR% | 6.67 | EvolveTrade, GPT-5-mini, Sep. 2025, 10 bps | Table 6 |
+| TO | 1.93 | EvolveTrade, Gemini-2.5-Flash, Nov. 2025, 10 bps | Table 6 |
+| SR | -1.23 | EvolveTrade, Gemini-2.5-Flash, Nov. 2025, 10 bps | Table 6 |
+| CR% | -1.26 | EvolveTrade, Gemini-2.5-Flash, Nov. 2025, 10 bps | Table 6 |
+| TO | 1.44 | EvolveTrade, Gemini-2.5-Flash, Feb. 2026, 10 bps | Table 6 |
+| SR | 2.62 | EvolveTrade, Gemini-2.5-Flash, Feb. 2026, 10 bps | Table 6 |
+| CR% | 2.77 | EvolveTrade, Gemini-2.5-Flash, Feb. 2026, 10 bps | Table 6 |
+| TO | 1.90 | EvolveTrade, Gemini-2.5-Flash, Apr. 2026, 10 bps | Table 6 |
+| SR | 4.48 | EvolveTrade, Gemini-2.5-Flash, Apr. 2026, 10 bps | Table 6 |
+| CR% | 3.49 | EvolveTrade, Gemini-2.5-Flash, Apr. 2026, 10 bps | Table 6 |
+| Δ cash（百分点） | +4.0 | EvolveTrade vs 基线, Jan. 2025 | Table 7 |
+| Δ cash（百分点） | +10.1 | EvolveTrade vs 基线, Apr. 2025 | Table 7 |
+| Δ cash（百分点） | -0.7 | EvolveTrade vs 基线, Sep. 2025 | Table 7 |
+| Δ cash（百分点） | +6.4 | EvolveTrade vs 基线, Nov. 2025 | Table 7 |
+| Δ cash（百分点） | +5.6 | EvolveTrade vs 基线, Feb. 2026 | Table 7 |
+| Δ cash（百分点） | +35.9 | EvolveTrade vs 基线, Apr. 2026 | Table 7 |
+| 相对日收益差（百分点） | +1.33 | Jan. 2025 NVDA 回撤案例，精炼后仓位政策 | §1 Introduction |
+| 每资产仓位上限 | 1/N（N=15，≈6.7%） | 所有主动策略 | Appendix A |
+| 交易成本 | 10 bps | 按交易组合价值比例收取 | Appendix D |
+
+消融与对照方面：EvolveBase（与 EvolveTrade 同提示结构但无工具，价格与新闻预取插入提示）在 GPT-5-mini Jan. 2025 得 SR 1.41 / CR% 1.82；EvolveStrategy（仅更新高层交易策略，不更新工具调用协议）得 SR 3.86 / CR% 4.70；Static Base Agent 与 Static TC Agent 分别为 SR 1.55 / CR% 1.89 与 SR 2.87 / CR% 3.30，均低于 EvolveTrade 的 5.12 / 5.10。10 bps 成本消融下，EvolveTrade 在 Jan. 2025、Sep. 2025、Nov. 2025 保持 LLM-based 最高 SR 与 CR，且在所有六个窗口换手率低于 Static TC 与 EvolveStrategy。重复运行消融显示 EvolveTrade 的标准差与其他策略演化智能体相当，无系统性运行间波动增加。敏感性分析评估多个策略更新间隔，发现中等间隔在适应性与性能间提供稳定平衡；当前实现每次运行中保持所选间隔固定。摘录未给出各基线的完整逐窗口数字（如 SPY、B&H、MACD 等规则基线在 Nov. 2025、Feb. 2026、Apr. 2026 的 SR/CR 未在证据表中列出），也未给出 EvolveTrade 在 Feb. 2026 与 Apr. 2026 的 MDD%、WR%、Vol%。
+
+## 证据强度评估
+
+本档案证据分级：B（中等偏弱）。理由：结论建立在六个后知识截止市场区间、两个骨干、每个 LLM 智能体实验重复 3 次取平均的对照实验之上，且提供了消融（EvolveBase、EvolveStrategy）、固定策略基线（Static Base、Static TC）与 10 bps 交易成本消融，实验设计具备可比较性；但作者主张的「多数区间优于固定策略基线」在摘录中仅明确支持三个模型-区间对（GPT-5-mini Jan. 2025 与 Sep. 2025、Gemini-2.5-Flash Nov. 2025），而两个 April 窗口（GPT-5-mini Apr. 2025、Gemini-2.5-Flash Apr. 2026）表现不及最强静态基线，作者自述为「fixed-policy agents remain stronger in the other two」。因此「多数区间占优」的表述与摘录中可核验的窗口计数不完全一致，属于作者主张而非已复现共识。
+
+主要威胁：
+
+1. 构造效度：核心机制是「策略文本自演化」，但摘录未给出策略文本变化与收益变化之间的因果隔离实验（例如固定策略文本但注入相同工具调用次数）。+1.33 个百分点的相对日收益差来自单一 NVDA 案例（§1、Appendix E），属于案例归因，不能排除同期市场 beta 或单日噪声。EvolveBase 与 EvolveStrategy 的消融虽显示工具与更新范围有贡献，但未报告多次运行的标准差数值，无法判断差异是否超出运行间波动。
+
+2. 外部效度：评估窗口均为一个月长，未做无风险利率调整（Appendix B），且交易成本仅用 10 bps 比例成本，未捕捉滑点、市场冲击或流动性约束（Limitations）。资产池为 15 只可交易股票，每资产仓位上限 1/N（≈6.7%），结论能否迁移到更大票池、更高换手或含做空/杠杆的场景，摘录未给出证据。
+
+3. 统计显著性：每个 LLM 智能体实验重复 3 次取平均，但摘录未给出置信区间或显著性检验；作者仅称 EvolveTrade 的标准差与其他策略演化智能体相当，无系统性运行间波动增加。在 n=3 且月度窗口下，SR 差异（如 Jan. 2025 的 5.12 vs Static TC 的 2.87）是否稳定，摘录未给出可判定的统计量。
+
+4. 基线选择与评测污染：两个 April 窗口的对比基线不同（GPT-5-mini Apr. 2025 用 Static TC，Gemini-2.5-Flash Apr. 2026 用 Static Base），作者在 Appendix F 中说明「retaining the same baseline across the other windows for each backbone」，但跨窗口基线不一致会削弱「EvolveTrade 在多数区间占优」的可比性。此外，所有检索工具统一时间截断以防前视泄漏，但摘录未说明知识截止与评估窗口之间是否存在模型训练数据污染，仅以「post-cutoff」标注，无法独立核验。
+
+## 边界与反例
+
+**什么观察会推翻结论。** 核心主张 C1 的措辞是「多数市场区间优于固定策略基线」，而非普遍占优。证据表与 §1 明确记录：在六个模型-区间对中，EvolveTrade 只在三个取得 LLM-based 最佳 SR 与 CR，另有两个区间由固定策略智能体更强（GPT-5-mini Apr. 2025、Gemini-2.5-Flash Apr. 2026）。因此任何「自演化稳定优于静态策略」的推广都与原文不符。若在更多骨干或更多窗口上，EvolveTrade 的领先区间数不高于固定基线，或领先幅度落在三次重复运行的标准差之内，C1 即被推翻。原文只声明「标准差与其他策略演化智能体相当，无系统性运行间波动增加」，未给出可比较的数值区间，故该点属**不确定**。
+
+**最可能失效的条件。** 其一，趋势反转或快速反弹行情。附录 F 指出两个 April 窗口同时出现高现金权重与弱 SR/CR：Apr. 2025 现金权重高出基线 10.1 个百分点，Apr. 2026 高出 35.9 个百分点，其余窗口最多 6.4 个百分点；作者归因为「降低股票敞口可能错过 April 2025 反弹与 April 2026 看涨期」。这说明自演化可能学到过度防御的仓位政策，在单边上涨中系统性跑输。其二，成本结构变化。成本评估仅用 10 bps 比例成本，作者自述「未捕捉滑点、市场冲击或流动性约束」；若真实摩擦显著高于 10 bps，换手率优势能否维持领先未被验证。其三，更新周期。当前实现「每次运行中保持所选间隔固定」，动态调度未实现，故在制度切换频繁的市场中，固定 N 可能滞后。
+
+**读者可能误推的方向。** 第一，把 +1.33 个百分点的相对日收益差当作平均效应——它来自 2025 年 1 月 NVDA 回撤的单一案例（§1、附录 E），作者本人也强调该例「意在展示中间机制，而非声称智能体可获取次日信息」。第二，把工具使用行为变化（VaR、信号归一化、EMA/RSI/SMA 被激活）直接等同于因果收益来源；原文只报告行为变化与收益的并列观察，未做隔离该机制的消融。第三，把「无需重训练、可套用到任意冻结 LLM 交易智能体」理解为跨市场、跨资产类别的可迁移性保证——实验仅覆盖 15 只可交易股票、每资产仓位上限 1/N（≈6.7%）、一个月长窗口且未做无风险利率调整。
 
 ## 与知识库的关系
 
-它补上了 agent-loop 中「策略文本作为可优化对象」这一支：与基于梯度的 policy-gradient / PPO / GRPO 路线形成对照，说明在冻结模型下仍存在一条经验驱动的适应路径。评估口径（Sharpe、累计收益、最大回撤、胜率、波动率、换手率）可对照 evaluation 笔记中的指标设计讨论。作为前沿未复现工作，适合放入 frontier-radar 跟踪。
+**新增（此前笔记未覆盖）。** 本工作把「自然语言提示可优化」从通用复合 LLM 系统（Yuksekgonul et al., 2025）迁移到金融交易智能体，并给出一个具体可复用的机制：以 $\mathcal{R}_t=(h_t,g_t)$ 把决策轨迹与事后反馈配对，每 $N$ 日由独立 Policy Agent 在固定指令 $I_{\mathrm{update}}$ 下重写完整策略文本，$\pi_{kN+1}=f_{\mathrm{update}}(\pi_{kN},\mathcal{B}_k)$。可链接笔记：`note/llm-agent-prompt-as-policy`、`note/refinement-record-pairing`。相较既有 LLM 交易智能体笔记（`note/tradingagents`、`note/livetradebench`），其差异在于信息获取流程不再固定于开发时：工具集 $\mathcal{T}=\{t_{\mathrm{price}},t_{\mathrm{news}},t_{\mathrm{code}}\}$ 与 LLM 参数全程冻结，唯一被学习的对象是策略文本。
+
+**印证。** 与「延迟与噪声反馈使直接策略优化困难」（Yuan et al., 2026）一致：原文明确指出 $g_t$ 单独是歧义信号——亏损可能源于证据收集缺陷或市场冲击，盈利可能源于分析或噪声，故需配对决策轨迹。可链接笔记：`note/delayed-noisy-feedback`。同时印证了「工具可及性本身不等于会用工具」这一判断：Static TC Agent 可调用工具但策略固定，在 GPT-5-mini Jan. 2025 仅得 SR 2.87 / CR% 3.30，低于 EvolveTrade 的 5.12 / 5.10。
+
+**张力。** 第一，与「更多工具/更强骨干带来单调提升」的直觉存在张力：Gemini-2.5-Flash Apr. 2026 上 Static Base Agent 得 SR 9.07 / CR% 11.64，反而高于 EvolveTrade 的 4.73 / 3.69，说明自演化并非单调改进。可链接笔记：`note/more-tools-monotonic-gain`（建议标注为反例）。第二，与「LLM 交易智能体普遍优于规则基线」的笔记存在张力：表 1 中 SMA 在 Jan. 2025 得 SR 5.14、Sep. 2025 得 SR 9.58，均不低于同窗口的 EvolveTrade（5.12、8.43），故「LLM-based 最佳」不等于「全表最佳」。可链接笔记：`note/llm-vs-rule-baselines`。第三，消融显示收益并非来自「演化」这一动作本身：EvolveBase（无工具）SR 1.41、EvolveStrategy（仅更新高层策略）SR 3.86，均低于 EvolveTrade 的 5.12，提示工具调用协议的可演化性是关键，与「仅优化高层策略即可」的笔记相冲突。可链接笔记：`note/strategy-vs-protocol-update`。
+
+## 复现与验证计划
+
+**最小可执行验证目标**：检验「在线策略自演化在多数市场区间优于固定策略基线」这一作者主张（C1）是否可复现，而非复现全部六窗口。
+
+**环境与数据**：需构造六个后知识截止市场区间（Jan. 2025 / Apr. 2025 / Sep. 2025 / Nov. 2025 / Feb. 2026 / Apr. 2026），股票池为 15 只可交易股票，所有主动策略强制单资产仓位上限 $1/N$（$N=15$，$\approx 6.7\%$），未配置资金留作现金且零收益（Appendix A）。工具集 $\mathcal{T}=\{t_{\mathrm{price}},t_{\mathrm{news}},t_{\mathrm{code}}\}$，所有检索工具须施加同一时间截断以防前视泄漏（§3）。注意：论文未给出股票池具体名单与新闻源，这是复现的首要不确定点。
+
+**基线**：至少需实现 Static Base Agent、Static TC Agent、EvolveBase、EvolveStrategy 四个 LLM 基线，外加 SPY、B&H、MACD、KDJ&RSI、ZMR、SMA 规则基线（Appendix A、Table 1）。
+
+**预算**：每个 LLM 智能体实验重复 3 次取平均（Table 1 说明）；骨干为 GPT-5-mini 与 Gemini-2.5-Flash；策略精炼周期 $N$ 固定，论文仅称「中等间隔提供稳定平衡」，未给出具体 $N$ 值——复现时需自行做敏感性扫描。
+
+**判据**：主指标为 SR、CR%、MDD%、WR%、Vol%（Appendix B 给出公式，SR 无无风险利率调整）。最低判据：在 GPT-5-mini 的 Jan. 2025 与 Sep. 2025、Gemini-2.5-Flash 的 Nov. 2025 三个模型-区间对上，EvolveTrade 取得 LLM-based 最佳 SR 与 CR；并在 10 bps 比例成本下保持该排序且换手率低于 Static TC 与 EvolveStrategy（Table 6）。
+
+**预期失败模式**：(1) 两个 April 窗口 EvolveTrade 不及最强静态基线，平均现金权重分别高出基线 10.1 与 35.9 个百分点（Table 7），若复现出现同样高现金配置，属已知失败模式而非实现错误；(2) 论文仅用 10 bps 比例成本，未含滑点、市场冲击与流动性约束，实盘复现收益应系统性低于报告值；(3) 策略文本演化依赖 LLM 生成，运行间方差可能较大，论文称标准差与其他演化智能体相当，但未给出可直接比对的数值。
+
+## 术语与记号
+
+本节的记号沿用 §3 与 §5 的设定：交易日 $t=1,\ldots,T$，第 $t$ 日智能体初始状态 $S_t=(\pi_t,t,P_{t-1},\mathcal{T})$，其中 $\pi_t$ 为当日生效的工具使用策略文本（系统提示），$P_{t-1}$ 为前一日组合状态，$\mathcal{T}$ 为工具集。冻结 LLM $p_\theta$ 在 $\pi_t$ 下运行工具调用与推理的内循环，输出可行组合权重 $w_t\in\mathcal{W}$（长多、含现金的配置单纯形）与逐资产理由 $d_t^{\mathrm{dec}}$，二者构成决策轨迹 $h_t=(w_t,d_t^{\mathrm{dec}})$。环境执行后返回事后反馈 $g_t$（日收益、逐资产收益、组合状态），配对得精炼记录 $\mathcal{R}_t=(h_t,g_t)$。每 $N$ 个交易日为一批 $B_k=\{\mathcal{R}_{(k-1)N+1},\ldots,\mathcal{R}_{kN}\}$，批次内策略固定，批次末由 Policy Agent 依固定更新指令 $I_{\mathrm{update}}$ 执行 $\pi_{kN+1}=f_{\mathrm{update}}(\pi_{kN},B_k)=\mathrm{LLM}(I_{\mathrm{update}},\pi_{kN},B_k)$。
+
+| 术语 | 含义 |
+|---|---|
+| Policy Self-Evolution | 策略自演化：智能体依据自身已实现交易经验在线修订工具使用策略文本 |
+| Refinement Step | 精炼步骤：一次 LLM 驱动的策略文本更新，将 $\pi_t$ 改写为 $\pi_{t+1}$ |
+| Policy Agent | 策略智能体：独立于交易智能体的 LLM 调用，读取精炼记录并重写策略文本 |
+| Decision Trace $h_t$ | 决策轨迹：当日组合配置 $w_t$ 与逐资产理由 $d_t^{\mathrm{dec}}$ |
+| Post-trade Feedback $g_t$ | 事后反馈：日收益、逐资产收益与组合状态 |
+| Refinement Record $\mathcal{R}_t$ | 精炼记录：$\mathcal{R}_t=(h_t,g_t)$ |
+| Tool-Use Policy $\pi_t$ | 工具使用策略：以自然语言系统提示实现，规定选工具、验证证据、控风险与输出组织 |
+| Toolset $\mathcal{T}$ | 工具集 $\{t_{\mathrm{price}},t_{\mathrm{news}},t_{\mathrm{code}}\}$，含价格检索、新闻搜索与 Python 代码解释器 |
+| Refinement Period $N$ | 策略精炼周期，每 $N\ge 1$ 个交易日更新一次，批次内固定 |
+| Static Tool-Calling Agent | 静态工具调用智能体：可调用工具但策略部署时固定、不随经验更新 |
+| SR | 夏普比率，$\mathrm{SR}=\sqrt{252}\,\bar{R}/\sigma_R$，无无风险利率调整 |
+| CR% | 累计收益，$\mathrm{CR}=(V_T/V_0-1)\times 100$ |
+| MDD% | 最大回撤，从前期峰值到谷值的最大百分比跌幅 |
+| WR% | 胜率，日收益为正的交易日在窗口内的占比 |
+| Vol% | 日波动率，日收益样本标准差（百分点） |
+| TO | 换手率，组合交易价值相对组合规模的度量 |
+| Look-ahead Leakage | 前视泄漏：使用决策时点之后的信息，所有检索工具统一时间截断以避免 |
 
 ## 自测
 
-1. EvolveTrade 优化的对象是什么？为什么作者强调它不需要重训模型？
-2. 作者报告的优势覆盖了全部实验组合吗？哪些组合上固定策略仍更强？
-3. 若要把这套「文本策略自演化」迁移到非交易的工具使用场景，需要额外验证什么？
+以下问题用于检验读者是否真正掌握了本档案的证据边界，而非仅记住结论。答案中标注了「作者主张」与「已复现/共识」的区分。
+
+**Q1（基础）** EvolveTrade 在六个评估窗口中，哪三个模型-区间对取得了 LLM-based 方法的最佳 SR 与 CR？请给出对应的 SR 与 CR% 数值。
+
+<details><summary>答案</summary>
+GPT-5-mini 的 Jan. 2025（SR 5.12, CR% 5.10）与 Sep. 2025（SR 8.43, CR% 6.84）；Gemini-2.5-Flash 的 Nov. 2025（SR -1.03, CR% -1.07）。注意 Nov. 2025 的「最佳」是在全体 LLM 方法均为负收益的前提下取得的，绝对值并不为正。来源：Table 1。
+</details>
+
+**Q2（基础）** 在 10 bps 比例交易成本下，EvolveTrade 的换手率表现如何？这一结论能否外推到真实执行成本？
+
+<details><summary>答案</summary>
+作者主张：EvolveTrade 在全部六个评估窗口中换手率低于 Static TC 与 EvolveStrategy，且在 Jan. 2025、Sep. 2025、Nov. 2025 保持 LLM-based 最高 SR 与 CR（Table 6）。但论文 Limitations 明确说明，10 bps 比例成本不捕捉滑点、市场冲击或流动性约束，因此不能直接外推到真实执行环境。这是「作者主张 + 作者自陈局限」，非共识。
+</details>
+
+**Q3（跨小节推理）** 结合消融结果与主表，EvolveBase 与 EvolveStrategy 的对比能说明「演化」的收益主要来自哪一部分？为什么这不足以证明工具调用协议本身是关键？
+
+<details><summary>答案</summary>
+GPT-5-mini Jan. 2025：EvolveBase（无工具，SR 1.41 / CR% 1.82）< EvolveStrategy（仅更新高层策略，SR 3.86 / CR% 4.70）< EvolveTrade（全策略含工具协议，SR 5.12 / CR% 5.10）。表面上呈单调递增，暗示工具调用协议的演化有增量贡献。但该对比仅在单一模型-区间上给出，且三者共享提示结构、差异不止一个变量（工具是否存在 vs 更新范围），因此不能单独归因于工具协议；论文亦未报告该消融在其他五个窗口的结果。属「作者主张，证据单点」。
+</details>
+
+**Q4（跨小节推理）** 论文在 Apr. 2025 与 Apr. 2026 两个窗口落后于最强静态基线。若把这一现象与 Table 7 的现金权重、以及「策略演化仅修改自然语言文本」这一机制约束放在一起，最合理的机制性解释是什么？该解释是否已被验证？
+
+<details><summary>答案</summary>
+Table 7 显示 EvolveTrade 在两个 April 窗口的平均现金权重分别高出基线 10.1 与 35.9 个百分点，其余窗口最多 6.4 个百分点。作者据此推测：降低股票敞口使其错过 Apr. 2025 反弹与 Apr. 2026 看涨期。由于演化只改自然语言策略文本、底层 LLM 参数与工具接口固定，一种可能是精炼过程在前期回撤经验上形成了过度保守的仓位规则，并被文本固化下来。但论文只给出相关性（现金权重高 ↔ SR/CR 低），未做因果干预实验，也未验证该保守规则是否确由某次精炼步骤引入。属「作者推测，未验证」。
+</details>
+
+**Q5（跨小节推理）** 论文声称「框架可应用于任何冻结 LLM 交易智能体，无需重训练或修改工具」。若要迁移到你自己的场景，哪些已报告的证据支持这一可迁移性，哪些关键条件未被覆盖？
+
+<details><summary>答案</summary>
+支持面：机制上唯一学习对象是策略文本 π_t，LLM 参数与工具接口全程固定；实验覆盖两个骨干（GPT-5-mini、Gemini-2.5-Flash）与六个后知识截止窗口，每个 LLM 智能体重复 3 次取平均，且报告 EvolveTrade 的标准差与其他策略演化智能体相当、无系统性运行间波动增加（Appendix C）。未覆盖面：(1) 工具集固定为 T={t_price, t_news, t_code}，未测试工具集变化或缺失；(2) 精炼周期 N 在每次运行中固定，未实现动态调度；(3) 评估窗口均为一个月且未做无风险利率调整；(4) 交易成本仅 10 bps 比例成本；(5) 组合约束为 long-only simplex，每资产上限 1/N（N=15，≈6.7%），未测试做空或更高集中度。因此可迁移性在「冻结 LLM + 固定工具 + 日频 long-only」这一窄条件下有初步支持，超出该条件属未验证。
+</details>

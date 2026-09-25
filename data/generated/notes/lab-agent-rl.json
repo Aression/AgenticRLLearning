@@ -38,6 +38,23 @@
   "paperId": "",
   "readingDepth": "",
   "fullTextUrl": "",
+  "kind": "lab",
+  "kindLabel": "实验",
+  "depth": "overview",
+  "depthLabel": "概览",
+  "depthRank": 0,
+  "evidenceGrade": "D",
+  "claims": [],
+  "claimCount": 0,
+  "sectionSizes": {
+    "研究问题": 77,
+    "最小设计": 271,
+    "实施顺序": 164,
+    "资源说明": 92,
+    "停止条件": 61
+  },
+  "bodyChars": 718,
+  "deep": false,
   "sections": [
     "研究问题",
     "最小设计",
@@ -49,11 +66,11 @@
     "rewards",
     "training-systems",
     "actobs-observation-supervision",
+    "card",
     "codemidas-code-rl-envs",
-    "grpo",
-    "harness-design-coding-agents"
+    "expert-space-exploration-moe"
   ],
-  "degree": 13,
+  "degree": 19,
   "sources": [
     "verl",
     "lightning-code",
@@ -64,6 +81,6 @@
     "training-systems",
     "lab-agent"
   ],
-  "search": "实验 03：设计可复现的 agent rl 小实验 在投入 gpu 之前冻结数据、预算、基线和成功判据。 实验与维护 grpo ablation lab verl 能冻结可复现实验协议 能在投入 gpu 前设定停止条件 研究问题 最小设计 实施顺序 资源说明 停止条件",
+  "search": "实验 03：设计可复现的 agent rl 小实验 在投入 gpu 之前冻结数据、预算、基线和成功判据。 实验与维护 lab overview d lab-agent-rl grpo ablation lab verl 能冻结可复现实验协议 能在投入 gpu 前设定停止条件 研究问题 最小设计 实施顺序 资源说明 停止条件 ",
   "content": "## 研究问题\n\n在相同模型、工具接口和调用预算下，环境奖励训练能否提高未见任务成功率？这是可检验的问题。不要一边换模型、一边换提示、一边加训练，再把所有收益归因给 RL。\n\n## 最小设计\n\n| 项目 | 需要预先固定 |\n| --- | --- |\n| 任务 | 可重置的查询 + 计算任务，按任务族划分训练/测试 |\n| 模型 | 适合已有硬件的小模型，固定 revision 与许可证 |\n| 基线 | 规则策略、原模型、相同数据 SFT |\n| RL 配方 | 一种框架的受支持多轮示例，记录源码 commit |\n| 奖励 | 独立程序验证最终结果，显式无效动作与预算处理 |\n| 指标 | success@1、成本、超时率、至少 3 个种子 |\n| 消融 | 相同 rollout 预算，对比是否使用 RL 或步骤信号 |\n\n## 实施顺序\n\n1. 用官方示例复现一次数据加载和单批训练，不先修改算法。\n2. 核对 generated-token mask、行为 logprobs、终止与截断。\n3. 小预算试跑，检查 KL、熵、奖励方差和梯度是否异常。\n4. 冻结配置，再运行独立测试；保留失败轨迹与总 GPU 小时。\n5. 把结果写进实验卡，避免只保存截图和最终分数。\n\n## 资源说明\n\n本库初始化不自动运行 GPU 训练。显存需求取决于模型、优化器、上下文、组大小、并行策略和推理引擎，不能给一个无条件通用的 GB 数字。先按框架文档验证硬件和兼容矩阵，再制定具体预算。\n\n## 停止条件\n\n奖励提高但独立成功率下降、非法工具调用增加、环境版本无法重建、评测集进入奖励调参，都应该暂停并修正。失败结果同样应版本化。"
 }

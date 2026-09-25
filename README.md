@@ -5,8 +5,9 @@
 ## 内容模型
 
 - `content/*.md` 是人工编辑的原子笔记（frontmatter + 正文），一篇一个文件。
+- 每篇笔记由 `kind`（是什么）与 `depth`（概览/工作级/深读）共同定义，并声明 `evidenceGrade`（A–D 证据分级）。深读论文档案必须包含主张表、机制、实验设置、证据强度评估、边界与反例、与知识库的关系、复现计划、术语表与自测；完整契约见 [`docs/CONTENT_MODEL.md`](docs/CONTENT_MODEL.md)。
 - `data/atlas.db`（SQLite）是内容数据库：导入笔记与来源，保存标签/概念、先修、共享来源等关系。
-- `data/generated/` 是数据库导出给站点的拆分数据：`notes.index.json`（元数据）、`notes/<id>.json`（单篇正文）、`graph.json`（知识图谱）、`sources.json`。
+- `data/generated/` 是数据库导出给站点的拆分数据：`notes.index.json`（元数据，含类型/深度/证据分级/主张）、`notes/<id>.json`（单篇正文）、`graph.json`（知识图谱）、`sources.json`。
 - 改动 Markdown 或来源后运行 `npm run content:build` 重新生成数据库与导出，用 `npm run content:check` 校验同步。
 - 来源优先级：原始论文 > 官方课程/文档 > 作者博客 > 可复现实验仓库。
 - 每条来源必须有稳定 URL、机构/作者、年份和一句“为什么读”。每季度复核链接与结论。
@@ -21,7 +22,7 @@
 
 ## 自动知识卡
 
-维护流水线每天从 HuggingFace Daily Papers 中选择最多 3 篇能找到全文的 `review` 论文，用 DeepSeek 精读 arXiv HTML 全文并生成知识卡，写入 `content/` 与 `data/sources.json`，随后重建数据库与图谱，随审计 PR 提交。卡片标记 `origin: llm-fulltext` 与 `review: LLM 全文精读草稿 · 待人工复核`，合并前必须人工复核；论文全文不写入仓库。未合并的草稿会在 `agent-audit/latest` 分支上累积。
+维护流水线从历史审计和当天 HuggingFace Daily Papers 雷达中选择仍为 `review` 且尚未入库的论文，每轮最多生成 2 张**深度档案**（`kind: paper`、`depth: deep`），历史待办先处理。生成分三轮：先抽取结构化证据表，再分节深读写作，最后用内容契约与“数字必须出现在原文摘录中”的落地校验把关，不通过则跳过而不写入。存量薄卡由 `python scripts/cards.py deepen` 原地升级为深读档案。写入 `content/` 与 `data/sources.json` 后重建数据库与图谱，随审计 PR 提交。卡片标记 `origin: llm-fulltext`、`depth: deep`、`evidenceGrade: C` 与 `review: LLM 全文精读草稿 · 待人工复核`，合并前必须人工复核；论文全文不写入仓库。未合并的草稿会在 `agent-audit/latest` 分支上累积。用 `python scripts/cards.py status` 查看待制卡与待深化队列。
 
 ## 本地运行
 
@@ -40,4 +41,4 @@ npm run dev
 
 ## 研究路线
 
-基础层覆盖 MDP、Bellman、Policy Gradient 和 ReAct；系统层覆盖工具环境、RLHF/RLAIF、GRPO、长时程信用分配、评估与安全；前沿层覆盖多智能体协作与在线自我改进。
+基础层覆盖 MDP、Bellman、Policy Gradient 和 ReAct；系统层覆盖工具环境、RLHF/RLAIF、GRPO、长时程信用分配、评估与安全；前沿层覆盖多智能体协作与在线自我改进。每篇笔记另带两个维度：`kind`（概念/系统/论文精读/综述/实验/索引）与 `depth`（概览/工作级/深读），深读档案要求可定位的主张表与证据分级，详见 [`docs/CONTENT_MODEL.md`](docs/CONTENT_MODEL.md)。

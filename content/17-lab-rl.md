@@ -4,6 +4,9 @@ title: 实验 01：用成熟 PPO 库跑通闭环
 summary: 用 FrozenLake 理解训练、评测、随机种子与日志，不需要 GPU 或 API Key。
 stage: FOUNDATION
 track: 实验与维护
+kind: lab
+depth: overview
+evidenceGrade: D
 order: 18
 minutes: 30
 updated: '2026-09-08'

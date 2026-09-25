@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-09-24T19:30:04.887889+00:00",
+  "mode": "deepen",
+  "requested": 1,
+  "deepened": [
+    {
+      "note_id": "modularrsi-harness",
+      "note_path": "content\\25-modularrsi-harness.md",
+      "title": "ModularRSI：模块化可泛化的 Harness 自进化",
+      "depth": "deep",
+      "claims": 4,
+      "chars": 17027,
+      "minutes": 60,
+      "arxiv_id": "2609.14857"
+    }
+  ],
+  "skipped": [],
+  "reviewStatus": "LLM 全文精读草稿 · 待人工复核",
+  "publishDirectly": false
+}

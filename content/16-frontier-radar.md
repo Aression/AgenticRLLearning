@@ -4,6 +4,9 @@ title: 研究雷达：2026 年 8–9 月
 summary: 技能共演化、经验蒸馏和跨 harness 泛化；所有近期条目均为摘要核验、待精读。
 stage: FRONTIER
 track: 前沿专题
+kind: reference
+depth: overview
+evidenceGrade: C
 order: 17
 minutes: 18
 updated: '2026-09-08'

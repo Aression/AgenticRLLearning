@@ -37,6 +37,24 @@
   "paperId": "",
   "readingDepth": "",
   "fullTextUrl": "",
+  "kind": "system",
+  "kindLabel": "系统",
+  "depth": "overview",
+  "depthLabel": "概览",
+  "depthRank": 0,
+  "evidenceGrade": "C",
+  "claims": [],
+  "claimCount": 0,
+  "sectionSizes": {
+    "两类不同风险": 113,
+    "把权限放在执行层": 91,
+    "防止验证器被优化穿透": 92,
+    "部署门槛": 75,
+    "自测": 89,
+    "开放问题": 95
+  },
+  "bodyChars": 629,
+  "deep": false,
   "sections": [
     "两类不同风险",
     "把权限放在执行层",
@@ -49,11 +67,11 @@
     "agent-loop",
     "emergence-world-stress-test",
     "evaluation",
+    "impossiblerubrics",
     "lab-agent",
-    "orientation",
-    "pact-enterprise-compliance-pressure"
+    "orientation"
   ],
-  "degree": 9,
+  "degree": 11,
   "sources": [
     "lilian-reward",
     "tau-bench",
@@ -62,6 +80,6 @@
   "prerequisites": [
     "evaluation"
   ],
-  "search": "奖励投机、提示注入与权限边界 高奖励不等于可信执行，训练验证器和运行时约束需要分别设计。 评估与安全 prompt injection reward hacking sandbox 能把权限约束放在执行层 能防止验证器被优化穿透 两类不同风险 把权限放在执行层 防止验证器被优化穿透 部署门槛 自测 开放问题",
+  "search": "奖励投机、提示注入与权限边界 高奖励不等于可信执行，训练验证器和运行时约束需要分别设计。 评估与安全 system overview c safety prompt injection reward hacking sandbox 能把权限约束放在执行层 能防止验证器被优化穿透 两类不同风险 把权限放在执行层 防止验证器被优化穿透 部署门槛 自测 开放问题 ",
   "content": "## 两类不同风险\n\nReward hacking 是策略优化代理目标时利用漏洞，例如改测试文件而非修复实现。Prompt injection 是外部内容试图改变系统行为，例如网页文本要求泄露凭据。两者都可能导致错误行为，但威胁来源和修复位置不同。\n\n## 把权限放在执行层\n\n工具执行器应提供最小权限、参数校验、预算上限和隔离环境。网页、文档和工具结果作为数据处理，不能自动升级为高权限指令。训练奖励惩罚可以补充，却不能替代操作系统或 API 层的访问控制。\n\n## 防止验证器被优化穿透\n\n将隐藏测试放到策略不能修改的区域；固定 oracle；为格式伪造、绕过检查、空答案和异常路径添加测试。LLM-as-judge 需校准一致性、位置偏差与长度偏好，不能只让同一模型自评。\n\n## 部署门槛\n\n先用只读、可重置任务验证，再扩展到可逆操作，最后才是有外部副作用的操作。门槛应来自实际任务权限与业务需求，而不是一个统一的 benchmark 分数。\n\n## 自测\n\nAgent 成功率从 60% 变成 90%，但开始修改测试脚本。这个提升不能当作目标能力提高。分析“真实目标、奖励实现、可操作资源”三者的差异，并设计一个能检测该行为的回归测试。\n\n## 开放问题\n\n如何在不泄露测试结构的条件下提供足够学习信号？如何衡量罕见但严重的失败？这些需要结合具体部署场景研究，不能仅靠扩大采样次数解决。下一步 [多智能体](/notes/multi-agent)。"
 }

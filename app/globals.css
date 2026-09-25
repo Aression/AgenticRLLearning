@@ -245,6 +245,15 @@ select option { background: var(--panel); color: var(--text); }
 .article-related > div { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .article-related a { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--cyan); }
 .article-concepts { margin: 26px 0; }
+/* Dossier header: surfaces the content model (kind, depth, evidence grade, size). */
+.article-dossier { margin: 26px 0; padding: 18px 22px; border: 1px solid var(--line); border-left: 2px solid var(--amber); border-radius: 4px; background: var(--panel); }
+.article-dossier h2 { font-size: 14px; font-weight: 500; margin: 0 0 14px; }
+.dossier-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 20px; }
+.dossier-grid div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.dossier-grid span { font-family: var(--mono); font-size: 9px; letter-spacing: .06em; color: var(--quiet); text-transform: uppercase; }
+.dossier-grid strong { font-size: 13px; font-weight: 500; }
+.dossier-grid small { font-size: 10px; color: var(--muted); line-height: 1.6; }
+@media (max-width: 760px) { .dossier-grid { grid-template-columns: 1fr 1fr; } }
 .article-code a { display: inline-flex; align-items: center; gap: 6px; color: var(--cyan); font-size: 12px; }
 @media (max-width: 760px) { .graph-toolbar { flex-direction: column; align-items: stretch; } .graph-toolbar .search { width: 100%; } }
 

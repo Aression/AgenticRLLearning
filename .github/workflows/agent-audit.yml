@@ -12,7 +12,7 @@ jobs:
   audit:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - name: Check DeepSeek credentials
         id: credentials
@@ -82,14 +82,20 @@ jobs:
         env:
           DEEPSEEK_V4_FLASH_API_KEY: ${{ secrets.DEEPSEEK_V4_FLASH_API_KEY }}
         run: python scripts/agent_audit.py
-      - name: Generate knowledge cards from full text
+      - name: Generate deep knowledge cards from full text
         if: steps.credentials.outputs.configured == 'true'
         env:
           DEEPSEEK_V4_FLASH_API_KEY: ${{ secrets.DEEPSEEK_V4_FLASH_API_KEY }}
-        run: python scripts/cards.py run
+        run: python scripts/cards.py run --limit 2
+      - name: Deepen existing thin cards
+        if: steps.credentials.outputs.configured == 'true'
+        env:
+          DEEPSEEK_V4_FLASH_API_KEY: ${{ secrets.DEEPSEEK_V4_FLASH_API_KEY }}
+        run: python scripts/cards.py deepen --limit 1
       - name: Validate cards, audit and content
         if: steps.credentials.outputs.configured == 'true'
         run: |
+          python -m unittest discover -s tests
           python scripts/cards.py check
           python scripts/harness.py check --json
       - name: Rebuild content database and graph
@@ -107,7 +113,7 @@ jobs:
           git add content data/sources.json data/atlas.db data/generated research/agent-audits research/cards
           git commit -m "Archive DeepSeek audit and generated knowledge cards" || exit 0
           git push --force origin "$branch"
-          { cat research/agent-audits/latest.md; if [ -f research/cards/latest.md ]; then echo; cat research/cards/latest.md; fi; } > pr-body.md
+          { cat research/agent-audits/latest.md; if [ -f research/cards/latest.md ]; then echo; cat research/cards/latest.md; fi; if [ -f research/cards/latest-deepen.md ]; then cat research/cards/latest-deepen.md; fi; } > pr-body.md
           state=$(gh pr view "$branch" --json state --jq '.state' 2>/dev/null || true)
           if [ "$state" = "OPEN" ]; then
             gh pr edit "$branch" --title "$title" --body-file pr-body.md

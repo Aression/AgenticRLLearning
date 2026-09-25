@@ -1,0 +1,150 @@
+{
+  "id": "atria-dawn-ai",
+  "title": "Atria Dawn：智能体超智能与AI研发人机协作",
+  "summary": "论文关注具备持续工具使用能力的语言模型智能体在真实研发项目中的角色问题：任务表现本身无法回答谁识别有价值的问题、选择方法、解释不确定结果并决定下一步。",
+  "stage": "FRONTIER",
+  "track": "前沿专题",
+  "order": 49,
+  "minutes": 60,
+  "updated": "2026-09-24",
+  "review": "LLM 全文精读草稿 · 待人工复核",
+  "filename": "49-atria-dawn-ai.md",
+  "tags": [
+    "MoE",
+    "agent-evaluation",
+    "agentic-superintelligence",
+    "human-ai-collaboration",
+    "recursive-self-improvement",
+    "verifiable-rewards"
+  ],
+  "concepts": [
+    "MoE",
+    "agent-evaluation",
+    "agentic-superintelligence",
+    "human-ai-collaboration",
+    "recursive-self-improvement",
+    "verifiable-rewards"
+  ],
+  "objectives": [
+    "理解 Atria Dawn Preview 的可验证经验流水线（Verifiable Experience Pipeline）如何用外部验证信号训练 744B MoE 智能体",
+    "掌握论文对 56 名研究者、769 条任务记录的人机协作实证：AI 提议与人类最终选择的分离",
+    "认识当前智能体在项目级自主性与递归自我改进（RSI）之间的差距及两个核心挑战",
+    "学会区分'每人类提示的智能体动作数上升'与'自主性提升'的误读"
+  ],
+  "keyPoints": [
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
+    "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
+    "自测"
+  ],
+  "evidenceLevel": "full-text-llm-draft",
+  "codeUrl": "",
+  "origin": "llm-fulltext",
+  "paperId": "2609.15818",
+  "readingDepth": "full-text",
+  "fullTextUrl": "https://arxiv.org/html/2609.15818",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "deep",
+  "depthLabel": "深读",
+  "depthRank": 2,
+  "evidenceGrade": "C",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Atria Dawn Preview 在 16 个基准中的 5 个取得最高报告分，3 个第二高；性能随领域变化",
+      "evidence": "§2.2 表 1；§1；limits",
+      "status": "作者主张"
+    },
+    {
+      "id": "C2",
+      "claim": "739 个对 AI 使用有明确回答的任务中，713 个（96.5%）涉及 AI",
+      "evidence": "§4 开头",
+      "status": "作者主张"
+    },
+    {
+      "id": "C3",
+      "claim": "方法与参数决策中「AI 提议、人类选择」占 55.4%；人类最终选择占 85.5%，AI 最终选择占 9.2%",
+      "evidence": "§4.2 图 8",
+      "status": "作者主张"
+    },
+    {
+      "id": "C4",
+      "claim": "588 个有记录困难的任务中，76.0% 靠人类干预推进，AI 自行恢复 23.0%，1.0% 未解决",
+      "evidence": "§4.3 图 9",
+      "status": "作者主张"
+    },
+    {
+      "id": "C5",
+      "claim": "627 个已知主输出处置的任务中，354 个（56.5%）有实质修订；95.9% 的输出以某种形式进入交付物",
+      "evidence": "§4.3 图 10",
+      "status": "作者主张"
+    },
+    {
+      "id": "C6",
+      "claim": "567 项报告的方法与决策中，AI 提议 64.6%，人类最终选择 85.5%",
+      "evidence": "§6",
+      "status": "作者主张"
+    },
+    {
+      "id": "C7",
+      "claim": "每人类提示对应的智能体动作数日度中位数从 11.0 升至 28.5，同期四分位距扩大",
+      "evidence": "§4 图 6",
+      "status": "作者主张"
+    }
+  ],
+  "claimCount": 7,
+  "sectionSizes": {
+    "问题与语境": 639,
+    "核心主张": 1095,
+    "机制与方法": 1138,
+    "实验设置": 3091,
+    "证据与结果": 3678,
+    "证据强度评估": 1271,
+    "边界与反例": 986,
+    "与知识库的关系": 1125,
+    "复现与验证计划": 1101,
+    "术语与记号": 1195,
+    "自测": 2143
+  },
+  "bodyChars": 17592,
+  "deep": true,
+  "sections": [
+    "问题与语境",
+    "核心主张",
+    "机制与方法",
+    "实验设置",
+    "证据与结果",
+    "证据强度评估",
+    "边界与反例",
+    "与知识库的关系",
+    "复现与验证计划",
+    "术语与记号",
+    "自测"
+  ],
+  "related": [
+    "expert-space-exploration-moe",
+    "modularrsi-harness",
+    "recreationworld-hybrid-cua",
+    "rrsi-regularized-harness-rsi",
+    "scienceide-sci-envs",
+    "sol-pi-auto-research-harness"
+  ],
+  "degree": 10,
+  "sources": [
+    "atria-dawn-the-dawn-of-agentic-superinte"
+  ],
+  "prerequisites": [
+    "agent-loop",
+    "harness-design-coding-agents"
+  ],
+  "search": "atria dawn：智能体超智能与ai研发人机协作 论文关注具备持续工具使用能力的语言模型智能体在真实研发项目中的角色问题：任务表现本身无法回答谁识别有价值的问题、选择方法、解释不确定结果并决定下一步。 前沿专题 paper deep c atria-dawn-ai moe agent-evaluation agentic-superintelligence human-ai-collaboration recursive-self-improvement verifiable-rewards 理解 atria dawn preview 的可验证经验流水线（verifiable experience pipeline）如何用外部验证信号训练 744b moe 智能体 掌握论文对 56 名研究者、769 条任务记录的人机协作实证：ai 提议与人类最终选择的分离 认识当前智能体在项目级自主性与递归自我改进（rsi）之间的差距及两个核心挑战 学会区分'每人类提示的智能体动作数上升'与'自主性提升'的误读 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 atria dawn preview 在 16 个基准中的 5 个取得最高报告分，3 个第二高；性能随领域变化 作者主张 739 个对 ai 使用有明确回答的任务中，713 个（96.5%）涉及 ai 作者主张 方法与参数决策中「ai 提议、人类选择」占 55.4%；人类最终选择占 85.5%，ai 最终选择占 9.2% 作者主张 588 个有记录困难的任务中，76.0% 靠人类干预推进，ai 自行恢复 23.0%，1.0% 未解决 作者主张 627 个已知主输出处置的任务中，354 个（56.5%）有实质修订；95.9% 的输出以某种形式进入交付物 作者主张 567 项报告的方法与决策中，ai 提议 64.6%，人类最终选择 85.5% 作者主张 每人类提示对应的智能体动作数日度中位数从 11.0 升至 28.5，同期四分位距扩大 作者主张",
+  "content": "## 问题与语境\n\n语言模型智能体已能承担需要持续工具使用的任务，包括软件工程与工作场所文档推理，并开始参与 AI 系统自身的开发。算法发现与自动化研究的工作表明，智能体可以提出候选方案、运行实验、依据反馈修正解。但作者指出，任务表现本身无法回答一个分工问题：在真实的模型研发项目中，谁识别有价值的问题、谁在候选方法间做选择、谁解释不确定的结果、谁决定下一步做什么。这一问题之所以重要，是因为它决定了智能体的贡献如何被评估，以及人类研究者的角色如何被重新定义；仅看基准分数会把「执行能力」与「研究判断」混为一谈。\n\n已有做法的失效点在于：通用基准上的进步并不揭示研究能力（作者原文：Progress on general benchmarks does not reveal the research capabilities），而任务级成功率也无法区分「提出选项」与「做出选择」这两种不同权责。论文因此把自身定位为一份双重证据的案例研究：一方面给出 Atria Dawn Preview 这一基于 744B 参数混合专家（MoE）基础模型、用可验证经验流水线（Verifiable Experience Pipeline）训练的智能体语言模型在 16 个基准上的报告结果；另一方面以该模型自身的研发过程为对象，用 769 条任务记录与 56 名参与者及智能体日志，刻画人机在真实研发中的责任分配。作者明确将后者作为理解「通向递归自我改进（RSI）还差什么」的实证起点，而非对平均任务成功率的估计。\n\n## 核心主张\n\n论文的核心主张可分为两类：一类是关于模型能力的报告性结果，另一类是关于人机协作分工的实证观察。前者来自官方发布网站，作者自述未提供独立复现；后者基于项目内部的任务记录与日志，属于自报的案例证据。下表汇总关键主张及其证据定位与状态判定。\n\n| # | 主张 | 证据 | 状态 |\n|---|---|---|---|\n| C1 | Atria Dawn Preview 在 16 个基准中的 5 个取得最高报告分，3 个第二高；性能随领域变化 | §2.2 表 1；§1；limits | 作者主张 |\n| C2 | 739 个对 AI 使用有明确回答的任务中，713 个（96.5%）涉及 AI | §4 开头 | 作者主张 |\n| C3 | 方法与参数决策中「AI 提议、人类选择」占 55.4%；人类最终选择占 85.5%，AI 最终选择占 9.2% | §4.2 图 8 | 作者主张 |\n| C4 | 588 个有记录困难的任务中，76.0% 靠人类干预推进，AI 自行恢复 23.0%，1.0% 未解决 | §4.3 图 9 | 作者主张 |\n| C5 | 627 个已知主输出处置的任务中，354 个（56.5%）有实质修订；95.9% 的输出以某种形式进入交付物 | §4.3 图 10 | 作者主张 |\n| C6 | 567 项报告的方法与决策中，AI 提议 64.6%，人类最终选择 85.5% | §6 | 作者主张 |\n| C7 | 每人类提示对应的智能体动作数日度中位数从 11.0 升至 28.5，同期四分位距扩大 | §4 图 6 | 作者主张 |\n\n最强的是 C3 与 C4 这一组：它们在同一份记录中同时给出「提议」与「选择」的分离，并且方向一致——AI 的提议份额随决策类型在 16.9% 到 55.4% 之间大幅摆动，而最终决定份额稳定在 6.1% 到 9.2% 的窄区间；C4 进一步显示人类干预以信息性方式为主（补充上下文 35.2%、诊断或改方法 34.7%），直接动手极少（部分编辑 3.2%、接管 0.7%）。这组数字内部自洽，且与作者「判断而非执行是稀缺输入」的解释一致。\n\n最弱的是 C1：它依赖官方发布网站的报告值，作者自述未提供独立复现，且表 1 中多个对比模型条目缺失（记为 –），排名仅基于可用条目、缺失结果不被当作零。因此「5 个最高分」这一说法在缺少第三方复现与完整对照的情况下应视为产品方自报，不宜直接迁移为能力结论。C7 亦需谨慎：作者自己提示该比值上升不应读作自主性增长，且四分位距同期扩大，说明变化在参与者之间并不均匀。\n\n## 机制与方法\n\nAtria Dawn Preview 的方法核心是「可验证经验流水线」（Verifiable Experience Pipeline），其目标不是单纯扩大任务数量，而是把每条训练任务与其真实执行轨迹、产物、以及外部验证证据绑定在一起。论文给出的机制描述如下。\n\n**基础模型与训练对象。** 模型建立在 744B 参数的混合专家（MoE）基础模型之上（引 Z.ai, 2026）。训练对象是「任务—轨迹—产物—验证证据」四元关联，而非孤立的答案文本。\n\n**单次 rollout 的形式化描述。** 设环境状态为 $s_t$，智能体在时刻 $t$ 依据当前观测选择工具动作 $a_t$，环境返回反馈 $o_{t+1}$ 并转移状态 $s_{t+1}$。可写为\n\n$$a_t \\sim \\pi_\\theta(\\cdot \\mid s_t),\\qquad (s_{t+1}, o_{t+1}) = E(s_t, a_t)$$\n\n其中 $\\pi_\\theta$ 为策略（即模型），$E$ 为真实执行环境。智能体观察状态、调用工具、产生中间产物，并依据反馈修正后续动作。\n\n**外部验证信号。** 最终结果由外部信号判定，论文列举的类型包括：可执行测试、实验指标、文件与应用状态、几何结构检查、来源证据、人工定义标准。记验证函数为 $V(\\tau, y)$，其中 $\\tau$ 为轨迹、$y$ 为产物，$V$ 返回该轨迹是否通过验证。这与「可验证奖励」的思路一致：奖励来自环境可检查的结果，而非模型自评。\n\n**轨迹筛选（curation）。** 流水线剔除不完整、矛盾、重复或行为无效的样本，只保留任务、轨迹、产物与验证证据之间的关联，纳入模型的可复用能力。这一步是设计取舍的关键：作者选择以「证据可核验」为纳入门槛，代价是可能丢弃难以外部验证但仍有价值的经验。\n\n**失败驱动的迭代。** 失败分析用于指导后续任务构建与环境改进。论文点名的反复出现的问题包括：工具选择无效、验证不完整、证据缺失、恢复失败。失败轨迹在结果被独立确立时也可作为诊断案例。对长流程，记录内容包括启动作业、检查日志与产物、修订执行计划。其意图是让模型学会检查状态、解释反馈、从错误中恢复。\n\n**适用前提与边界。** 该机制成立的前提是：任务能接入真实执行环境，且存在可自动或半自动判定的外部信号。对于无法构造验证器的开放研究问题（例如「哪个方向值得做」），流水线本身不提供监督信号——论文在 §5.1 也承认，通用基准上的进步并不揭示研究能力，且智能体从失败运行中获得的经验停留在该会话或其记录中，而研究者把教训带到了下一个任务。因此该方法适用于有明确可验证终态的任务族，不直接覆盖研究判断能力的获取。\n\n## 实验设置\n\n论文的评估分两部分：一是 16 个基准上的模型对比（§2.2 表 1），二是以 Atria Dawn 自身研发过程为对象的人机协作实证分析（§4）。表 1 结果来自官方发布网站，论文明确说明「Rankings refer to the available entries in each row; missing results are not treated as zero」，即缺失条目（–）不按 0 计，排名仅基于可用条目。表 1 未给出各基准的执行预算，附录 B 仅称「summarize the benchmark versions, execution budgets, tools, and scoring procedures」，正文摘录中未列出具体预算数值，故下表预算列填「未说明」。\n\n| 基准 | 模型/规模 | 基线 | 预算 | 指标 |\n|---|---|---|---|---|\n| AutomationBench | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（Atria Dawn 53.8） |\n| BFCL v4 | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, GLM 5.3 | 未说明 | score（77.0） |\n| CyberGym | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol | 未说明 | score（86.5） |\n| DeepSearchQA | Atria Dawn Preview（744B MoE） | KIMI K3, GLM 5.3, GPT 5.6 sol | 未说明 | score（96.0） |\n| Workspace-Bench-Lite | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（68.2） |\n| BrowseComp | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（92.5） |\n| SkillsBench | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（66.4） |\n| Workspace-Bench | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（65.0） |\n| MLE-bench Lite | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（86.2） |\n| WideSearch | Atria Dawn Preview（744B MoE） | KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol | 未说明 | score（81.9） |\n| DeepResearch Bench II | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（51.1） |\n| $\\tau^{3}$-Bench Banking | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（41.2） |\n| Terminal-Bench 2.1 | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（78.3） |\n| GDPval | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（1583） |\n| SWE-bench Pro | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（59.6） |\n| JobBench | Atria Dawn Preview（744B MoE） | DeepSeek V4 Pro 0813, KIMI K3, Qwen 3.8 Max, GLM 5.3, GPT 5.6 sol, Claude Opus 5 | 未说明 | score（50.3） |\n\n**人机协作分析的设置。** 数据为 769 条任务记录、56 名参与者，外加智能体日志。任务可行性评审固定任务范围、质量要求与其他资源，询问参与者「无 AI 能否完成自己那部分工作」，得到 455 条可用回答。困难与反馈分析基于 588 个记录了最显著困难的任务；产出处置分析基于 627 个已知主产出处置的任务。比率分析（每人类提示对应的智能体动作数）覆盖 2026 年 8 月 7 日至 9 月 4 日，每日有 21–22 名参与者的有效数据，比率为前七个日历天的总智能体动作数除以总人类提示数。\n\n**证据强度提示。** 表 1 为厂商自报结果，论文自述来自官方发布网站，未提供独立复现；多个基线条目缺失。§4 的统计为自报式任务记录，非受控实验，作者亦提示「Selected cases are demonstrations rather than estimates of average task success」。\n\n## 证据与结果\n\n本节的数字全部来自论文自报的 Table 1 与 §4 的人机协作记录。Table 1 的对比模型条目存在缺失（原文以 – 表示），作者明确说明「Rankings refer to the available entries in each row; missing results are not treated as zero」，因此下表只照抄摘录中出现的数值，不补全、不推断。\n\n基准结果（Atria Dawn Preview，来源：§2.2 Table 1）\n\n| 指标 | 数值 | 设置 | 出处 |\n|---|---|---|---|\n| AutomationBench | 53.8 | 对比 DeepSeek V4 Pro 0813 / KIMI K3 / Qwen 3.8 Max / GLM 5.3 / GPT 5.6 sol / Claude Opus 5 | §2.2 Table 1 |\n| BFCL v4 | 77.0 | 对比 DeepSeek V4 Pro 0813 / KIMI K3 / GLM 5.3 | §2.2 Table 1 |\n| CyberGym | 86.5 | 对比 DeepSeek V4 Pro 0813 / KIMI K3 / Qwen 3.8 Max / GLM 5.3 / GPT 5.6 sol | §2.2 Table 1 |\n| DeepSearchQA | 96.0 | 对比 KIMI K3 / GLM 5.3 / GPT 5.6 sol | §2.2 Table 1 |\n| Workspace-Bench-Lite | 68.2 | 对比六个基线模型 | §2.2 Table 1 |\n| BrowseComp | 92.5 | 对比 DeepSeek V4 Pro 0813 / KIMI K3 / GPT 5.6 sol / Claude Opus 5 | §2.2 Table 1 |\n| SkillsBench | 66.4 | 对比六个基线模型 | §2.2 Table 1 |\n| Workspace-Bench | 65.0 | 对比六个基线模型 | §2.2 Table 1 |\n| MLE-bench Lite | 86.2 | 对比六个基线模型 | §2.2 Table 1 |\n| WideSearch | 81.9 | 对比 KIMI K3 / Qwen 3.8 Max / GLM 5.3 / GPT 5.6 sol | §2.2 Table 1 |\n| DeepResearch Bench II | 51.1 | 对比六个基线模型 | §2.2 Table 1 |\n| $\\tau^{3}$-Bench Banking | 41.2 | 对比六个基线模型 | §2.2 Table 1 |\n| Terminal-Bench 2.1 | 78.3 | 对比 DeepSeek V4 Pro 0813 / Qwen 3.8 Max / GLM 5.3 / GPT 5.6 sol / Claude Opus 5 | §2.2 Table 1 |\n| GDPval | 1583 | 对比六个基线模型 | §2.2 Table 1 |\n| SWE-bench Pro | 59.6 | 对比六个基线模型 | §2.2 Table 1 |\n| JobBench | 50.3 | 对比六个基线模型 | §2.2 Table 1 |\n\n作者主张 Atria Dawn Preview 在 16 个基准中 5 个取得最高报告分、3 个第二高（C1，作者主张）。逐行核对摘录可见，Atria Dawn 在 AutomationBench、BFCL v4、CyberGym、DeepSearchQA、BrowseComp 上高于同行的可用条目；在 Workspace-Bench-Lite、MLE-bench Lite、DeepResearch Bench II、Terminal-Bench 2.1、GDPval、SWE-bench Pro、JobBench 等行上低于至少一个对比模型（例如 JobBench 50.3 vs Claude Opus 5 的 68.0，SWE-bench Pro 59.6 vs 74.7）。「5 个最高分」与摘录一致，「3 个第二高」在摘录中未逐行标注，无法独立确认。\n\n人机协作统计（来源：§4）\n\n| 指标 | 数值 | 设置 | 出处 |\n|---|---|---|---|\n| 有明确 AI 使用回答的任务 | 739 | 769 条任务记录、56 名参与者 | §4 |\n| 涉及 AI 的任务 | 713 | 739 条有明确回答的任务 | §4 |\n| 涉及 AI 的比例 | 96.5% | 同上 | §4 |\n| 每人类提示的智能体动作数（起点） | 11.0 | 8 月 7 日–9 月 4 日，每日 21–22 名参与者 | §4, Figure 6 |\n| 每人类提示的智能体动作数（终点） | 28.5 | 同上 | §4, Figure 6 |\n| 无 AI 不可行的任务 | 151 | 455 个有可用回答的已完成 AI 辅助任务 | §4.1 |\n| 无 AI 不可行比例 | 33.2% | 同上 | §4.1 |\n| 报告不可行任务的参与者 | 27 of 56 | 同上 | §4.1 |\n| 「AI 提议、人类选择」（方法与参数） | 55.4% | 执行角色参与者的决策归因 | §4.2, Figure 8 |\n| 人类最终选择（方法与参数） | 85.5% | 同上 | §4.2, Figure 8 |\n| AI 最终选择（方法与参数） | 9.2% | 同上 | §4.2, Figure 8 |\n| 人类最终选择（目标或范围） | 93.4% | 同上 | §4.2, Figure 8 |\n| 人类最终选择（验收标准） | 81.9% | 同上 | §4.2, Figure 8 |\n| AI 提议占比（目标或范围） | 16.9% | 同上 | §4.2, Figure 8 |\n| AI 最终决策占比区间 | 6.1%–9.2% | 同上 | §4.2, Figure 8 |\n| 人类选定最终目标（不可行子集） | 144 cases (95.4%) | 151 个无 AI 不可行任务 | §4.2, Figure 8 |\n| 有困难记录与响应的任务 | 588 | 每任务最关键困难 | §4.3, Figure 9 |\n| 靠人类干预推进 | 76.0% | 588 个任务 | §4.3, Figure 9 |\n| 智能体自行恢复 | 23.0% | 同上 | §4.3, Figure 9 |\n| 未解决 | 1.0% | 同上 | §4.3, Figure 9 |\n| 人类帮助：补充上下文/澄清需求 | 35.2% | 同上 | §4.3, Figure 9 |\n| 人类帮助：诊断问题/改变方法 | 34.7% | 同上 | §4.3, Figure 9 |\n| 人类帮助：部分编辑 | 3.2% | 同上 | §4.3, Figure 9 |\n| 人类帮助：接管 | 0.7% | 同上 | §4.3, Figure 9 |\n| 有主输出处置记录的任务 | 627 | 输出处置与修订 | §4.3, Figure 10 |\n| 实质修订任务 | 354 (56.5%) | 627 个任务 | §4.3, Figure 10 |\n| 未被采纳的输出 | 1.0% | 同上 | §4.3, Figure 10 |\n| 仅用于想法的输出 | 3.2% | 同上 | §4.3, Figure 10 |\n| 以某种形式进入交付物的输出 | 95.9% | 同上 | §4.3, Figure 10 |\n| AI 在人类反馈后完成修订 | 75.4% | 354 个实质修订任务 | §4.3, Figure 10 |\n| 人类直接编辑 | 19.2% | 同上 | §4.3, Figure 10 |\n| AI 提议方法与决策 | 64.6% | 567 条报告的方法与决策 | §6 |\n| 人类最终选择 | 85.5% | 同上 | §6 |\n\n消融与对照：证据表中 `ablations` 为空，摘录中未给出任何消融实验（例如去掉 Verifiable Experience Pipeline 某一验证信号后的对比）。对照方面，Table 1 提供的是与六个外部模型的横向对比，而非受控变量对照；§4 的统计是单项目、单队列的观察性记录，没有随机化或对照组。因此本档案无法就「可验证经验流水线各组件各自的贡献」给出任何量化结论——摘录未给出。\n\n## 证据强度评估\n\n证据分级：C（自报产品/模型报告 + 单项目观察性案例研究）。\n\n理由：Table 1 的结果明确来自官方发布网站（「as reported on the official release website」），论文未提供独立复现、未给出运行预算、未给出多次运行的方差或置信区间；多个对比模型条目缺失（–），作者也承认排名仅基于可用条目。§4 的人机协作数据来自单一项目（Atria Dawn 自身开发过程）的 769 条任务记录与 56 名参与者，属于自评式回顾（participants 自报「无 AI 是否可行」「最关键困难」），无对照组、无随机化。因此这些数字可作为「作者主张」记录，但不能当作已复现或领域共识。\n\n主要威胁：\n\n1. 构造效度（自评与归因）。§4.1 的「无 AI 不可行」、§4.3 的「最关键困难」与「谁做的修订」均由参与者事后自报，缺乏外部裁定；「AI 提议 / 人类选择」的归因同样依赖参与者对决策过程的回忆与分类。作者自己也提示「A rising ratio alone does not say what that delegation is worth or who remains responsible for it」，说明单一比值不足以支撑关于自主性的强结论。\n\n2. 外部效度（单项目、单队列）。全部协作统计来自一个团队、一个模型项目、一个四周窗口（8 月 7 日–9 月 4 日，每日 21–22 名参与者）。作者指出四分位距同期扩大，「the shift is uneven: the median moved while the spread across participants grew」，说明中位数上升并不代表所有参与者一致变化。该分工模式能否迁移到其他组织、其他模型族、其他任务类型，摘录未给出证据。\n\n3. 基线选择与评测污染。Table 1 的对比模型在部分行缺失，且不同基准的可用对比集合不同，跨行比较不可直接相加；GDPval 一行数值量级（1583）与其他基准（百分制）不同，说明各基准评分口径不一，摘录未给出统一归一化说明。此外论文未报告评测集与训练数据的隔离措施，无法排除污染。\n\n4. 统计显著性与因果表述。§4 的所有比例均为点估计，摘录未给出样本量以外的误差范围、显著性检验或置信区间；Figure 6 的阴影被作者明确说明是四分位距而非置信区间。因此「76.0% 靠人类干预推进」「AI 提议 64.6%」等数字应读作描述性统计，而非可推断总体的效应量。\n\n补充说明：作者关于 RSI 的结论（当前 agent 具备项目级自主性但不足以形成自维持 RSI）属于论证性主张，其支撑是上述观察性数据加定性分析，摘录中未给出可直接检验该主张的实验设计。作者亦自陈「Progress on general benchmarks does not reveal the research capabilities」，即基准分数与研发能力之间存在作者自己承认的测量缺口。\n\n## 边界与反例\n\n**什么观察会推翻结论。** 本文关于「人类掌握最终选择权」的核心结论建立在自我报告的决策归因上（§4.2 图8、§6）。若出现以下观察，结论即被削弱：(1) 参与者对「谁做了最终选择」的回忆与 agent 日志不一致，即归因存在系统性高估人类；作者虽同时使用任务记录与 agent logs，但决策归因本身来自参与者填写，未见交叉验证的说明。(2) 在更长周期或更大规模项目中，人类最终选择比例显著低于 85.5%（方法/参数）与 93.4%（目标/范围）。作者自己也指出，随着每人类提示对应的 agent 动作数从 11.0 升至 28.5，「每个决策现在依赖比一个人能仔细检查的更长的 agent 工作链」，这为选择权名义保留、实质让渡提供了机制性通道。\n\n**最可能失效的条件。** 该实证来自单一项目、单一组织、56 名参与者、769 条任务记录，且是作者开发自家模型的内部记录，无外部审计。样本中 151 个「无 AI 不可行」任务来自 56 人中的 27 人，作者据此论证「不是少数重度用户所致」，但 27/56 仍意味着近一半参与者未报告此类任务，分布是否均匀未给出。此外，任务类型集中在执行与汇报（报告运行状态、跑训练-评估循环、调试、准备数据、扩资源），而非「决定研究什么」，因此结论对研究决策类任务的迁移性有限。\n\n**作者未验证但读者可能误推的方向。** 第一，把「AI 提议 55.4%、人类选择 85.5%」误读为 AI 自主性低——作者明确警告「依赖 AI 并不追踪 AI 在最终决策中的自主性」，且提议与选择是两件事。第二，把图 6 的比值上升误读为自主性上升——作者原文即反对此读法。第三，把 76.0% 靠人类干预推进误读为「AI 无法自行恢复」——作者同时报告 23.0% 自行恢复，且干预以信息性为主（补充上下文 35.2%、诊断或改方法 34.7%），直接改稿仅 3.2%、接管仅 0.7%。第四，把 95.9% 输出进入交付物误读为输出质量高——56.5% 经过实质修订，作者强调「实质修订不是输出被拒的信号，而是草稿保留、由 agent 重写」。第五，把本文的 16 基准成绩当作可复现 SOTA——Table 1 来自官方发布网站，无独立复现，且多行存在缺失条目（–），作者声明「排名仅基于每行可用条目，缺失结果不视为零」。\n\n## 与知识库的关系\n\n**新增（此前笔记未覆盖）。** 本文新增了一条「人机协作的决策归因」实证线：769 条任务记录、56 名参与者，96.5% 任务涉及 AI；方法与参数决策中「AI 提议、人类选择」占 55.4%，人类最终选择 85.5%，AI 最终选择 9.2%；目标/范围人类最终选择 93.4%，验收标准 81.9%；AI 提议份额从目标/范围的 16.9% 到方法/参数的 55.4%，而最终决策份额稳定在 6.1%–9.2%。还新增了困难响应分布（588 任务：人类干预 76.0%、自行恢复 23.0%、未解决 1.0%）与输出处置分布（627 任务：实质修订 56.5%、未采纳 1.0%、仅取想法 3.2%、进入交付物 95.9%；354 个修订任务中 AI 依人类反馈修订 75.4%、人类直接编辑 19.2%）。这些粒度（提议 vs 选择、干预 vs 接管）在既有笔记中缺失。可链接：`note/agentic-rl-verifiable-rewards`、`note/human-ai-collaboration-ai-rd`。\n\n**印证。** 与 `note/agentic-model-report-self-reported-sota` 一致：本文属产品/模型报告，Table 1 结果取自官方发布网站，未提供独立复现，且多行对比模型条目缺失（–），作者自述「排名仅基于可用条目，缺失结果不视为零」，并自认 16 个基准中仅 5 个取得最高分、性能跨域波动。与 `note/agentic-rl-verifiable-rewards` 一致：Verifiable Experience Pipeline 将任务与真实执行环境、外部验证信号（测试、指标、文件状态、几何结构、来源证据、人工标准）连接，用于训练 744B MoE 基础模型，机制描述与既有「可验证奖励」笔记同构。\n\n**张力。** 与 `note/recursive-self-improvement` 存在明确张力：本文主张当前 agent 具备项目级自主性但不足以形成自维持 RSI，理由是「agent 从失败运行中获得的东西留在该会话或其记录中，而研究者把教训带入下一次」，且「通用基准的进步并不揭示研究能力」。这与知识库中偏乐观的 RSI 外推结论相冲突，应作为反例标注。另一处张力在于「便利性而非有意的权力分配划定了实践边界」——这提示既有笔记中把权限设计当作有意治理变量的假设可能过于理想化。可链接：`note/recursive-self-improvement`、`note/agentic-model-report-self-reported-sota`。\n\n## 复现与验证计划\n\n本节的复现对象分两块：Table 1 的基准分数，以及 §4 的人机协作统计。二者可复现性差异极大，需分别对待。\n\n**A. 基准分数（不可独立复现，只能核验）**\n- 环境/数据：16 个公开基准（AutomationBench、BFCL v4、CyberGym、DeepSearchQA、Workspace-Bench(-Lite)、BrowseComp、SkillsBench、MLE-bench Lite、WideSearch、DeepResearch Bench II、$\\tau^{3}$-Bench Banking、Terminal-Bench 2.1、GDPval、SWE-bench Pro、JobBench）。附录 B 声称给出各基准的版本、执行预算、工具与评分流程，但证据表中未提供具体数值。\n- 基线：DeepSeek V4 Pro 0813、KIMI K3、Qwen 3.8 Max、GLM 5.3、GPT 5.6 sol、Claude Opus 5。\n- 判据：Table 1 明确标注结果来自官方发布网站，未提供独立复现。因此最小验证只能是「逐格核对官方页面与论文表格是否一致」，并检查缺失项（–）是否被误当作 0。作者自述「Rankings refer to the available entries in each row; missing results are not treated as zero」，这是核验时必须坚持的口径。\n- 预期失败模式：把 – 当 0 会系统性高估 Atria Dawn 的相对排名；GDPval 量纲（1583 等）与其他百分比型指标不可比，跨行平均无意义。\n\n**B. 协作统计（可做小规模重跑）**\n- 数据/任务：769 条任务记录、56 名参与者；子集为 739（有明确 AI 使用回答）、455（有可用回答的已完成 AI 辅助任务）、588（有困难记录）、627（有输出处置）、354（实质修订）、567（方法与决策）。\n- 判据：96.5%（713/739）、33.2%（151/455）、55.4% 与 85.5%、76.0%/23.0%/1.0%、56.5%、75.4%。\n- 预算：证据表未给出任何预算字段，无法确认。\n- 预期失败模式：任务记录为自报告，参与者对「无 AI 是否可行」的估计存在主观偏差；§4.3 的困难与修订为事后回忆，可能受记忆重构影响。作者亦自述所选案例「are demonstrations rather than estimates of average task success」。\n\n## 术语与记号\n\n本节汇总正文出现的关键符号与缩写。需注意：论文未给出部分量的精确定义（如 GDPval 的计分口径），下表对不确定处显式标注。\n\n| 术语 | 含义 |\n|---|---|\n| Atria Dawn Preview | 本文发布的智能体语言模型，面向科研与工程工作流 |\n| 744B | 基础模型参数量，7440 亿 |\n| MoE | Mixture-of-Experts，混合专家架构 |\n| Verifiable Experience Pipeline | 可验证经验流水线：把任务、智能体轨迹、产物与外部验证结果连接起来的训练数据构建流程 |\n| 外部验证信号 | 可执行测试、实验指标、文件与应用状态、几何结构检查、来源证据、人工定义标准 |\n| Agent Harness | 智能体运行框架，支撑规划、工具调用与环境交互 |\n| Agent Actions per Human Prompt | 每人类提示对应的智能体动作数；§4 中按参与者取「前七个自然日」的比值 |\n| IQR | 四分位距，第 75 与第 25 百分位之差；Figure 6 的阴影为 IQR，非置信区间 |\n| Takeover | 接管：人类直接接手完成原本由智能体执行的工作 |\n| RSI | Recursive Self-Improvement，递归自我改进 |\n| $16$ | 评估基准数量 |\n| $769$ / $56$ | 人机协作分析的任务记录数 / 参与者人数 |\n| $739$ / $713$ / $96.5\\%$ | 有明确 AI 使用回答的任务数 / 其中涉及 AI 的任务数 / 占比 |\n| $455$ / $151$ / $33.2\\%$ | 有可用回答的已完成 AI 辅助任务数 / 无 AI 不可行任务数 / 占比 |\n| $588$ / $76.0\\%$ / $23.0\\%$ / $1.0\\%$ | 有困难记录的任务数 / 人类干预推进 / 智能体自行恢复 / 未解决 |\n| $627$ / $354$ / $56.5\\%$ | 有输出处置记录的任务数 / 实质修订任务数 / 占比 |\n| $567$ / $64.6\\%$ / $85.5\\%$ | 报告的方法与决策数 / AI 提议占比 / 人类最终选择占比 |\n| $11.0 \\to 28.5$ | 8 月 7 日至 9 月 4 日每日中位「智能体动作/人类提示」比值 |\n| $\\tau^{3}$-Bench Banking | 基准名，符号 $\\tau^{3}$ 为原文写法 |\n| GDPval | 基准名；其分数（如 1583）量纲未在摘录中说明，不确定 |\n\n不确定项：Appendix B 声称给出各基准的版本、执行预算与评分流程，但证据表未收录其具体内容，故上表不列任何预算数值。\n\n## 自测\n\n以下问题用于检验读者是否真正掌握了本档案的证据边界，而非记住数字。答案中标注了「作者主张」与「可核查事实」的区别。\n\n**Q1（数字核对）** 论文称 Atria Dawn Preview 在 16 个基准中的 5 个取得最高报告分。请指出 Table 1 中至少两个它并未取得最高分、且与最高分差距明显的基准，并说明「5 个最高分」这一说法在证据表里属于哪一类陈述。\n\n<details><summary>答案</summary>\n按 Table 1 摘录，Atria Dawn Preview 在 AutomationBench（53.8，最高为 Qwen 3.8 Max 49.7 之上，实为最高）、BFCL v4（77.0，最高）、CyberGym（86.5，最高）、DeepSearchQA（96.0，最高）、BrowseComp（92.5，最高）等行领先；但在 MLE-bench Lite（86.2，低于 GPT 5.6 sol 88.9 与 Claude Opus 5 88.0）、Terminal-Bench 2.1（78.3，低于 Claude Opus 5 90.2、Qwen 3.8 Max 89.3）、SWE-bench Pro（59.6，低于 Claude Opus 5 74.7）、GDPval（1583，低于 Claude Opus 5 1768）、$\\tau^{3}$-Bench Banking（41.2，低于 Qwen 3.8 Max 55.2）等行明显落后。该说法属于「作者主张」（claims 中 C1，evidence 为 §2.2 表1），且论文自述结果来自官方发布网站、未提供独立复现。\n</details>\n\n**Q2（跨小节推理）** §4 报告「每人类提示对应的智能体动作数」中位数从 11.0 升到 28.5，同时 §4.2 报告 AI 在最终决策中的占比仅 6.1%–9.2%。这两个数字放在一起，作者得出了什么结论？该结论依赖什么假设？\n\n<details><summary>答案</summary>\n作者结论是：比值上升不应被读作自主性增长，而是「每一次人类判断现在通过更多智能体动作传播，而不是更少」（§4.3 末、limits 中亦有同义表述）。这依赖的假设是：人类提示的数量与质量未发生同比例变化，即比值上升主要来自智能体执行量增加而非人类介入减少；论文本身也承认「单看上升的比值无法说明这种委托的价值或谁仍对其负责」，且 IQR 同期变宽说明变化不均匀。\n</details>\n\n**Q3（跨小节推理）** 把 §4.2 的「AI 提议 55.4% / 人类最终选择 85.5%」与 §5.1 的「多数提议只是研究者已固定方向内的变体」合起来看，对「AI 是否在主导研究方向」这一问题应给出怎样的判断？\n\n<details><summary>答案</summary>\n应判断为：AI 主导的是「选项生成」而非「方向设定」。§4.2 显示 AI 在目标/范围上的提议占比仅 16.9%，远低于方法/参数上的 55.4%，而最终决策权稳定在人类手中（6.1%–9.2% 归 AI）；§5.1 进一步说明这些提议多为研究者已固定方向内的变体，新流程与新工作流仍由研究者提示智能体产生。因此「提议多」不等于「方向主导」，二者需分开评估。\n</details>\n\n**Q4（证据强度）** 论文关于人机协作的核心数字（96.5%、33.2%、76.0%、75.4%）来自什么类型的研究设计？在迁移到自己的场景前，最需要注意哪些局限？\n\n<details><summary>答案</summary>\n这些数字来自对单一项目（Atria Dawn 自身研发）的 769 条任务记录、56 名参与者的自报告式回顾分析，属于案例研究而非对照实验，全部为「作者主张」。需注意的局限包括：任务可行性、困难归因、输出处置均由参与者自评；样本为单一组织、单一项目、时间窗有限（8 月 7 日至 9 月 4 日，每日 21–22 人有效数据）；论文自述所选案例是「演示而非平均任务成功率的估计」；且「节省的小时数」与「被使能的任务」是不同量，只测前者会低估变化。\n</details>\n\n**Q5（可迁移性）** 若要把本文的「可验证经验流水线」思路迁移到自己的 agentic RL 训练中，依据本档案能确认的机制要素有哪些？哪些是无法从本档案确认的？\n\n<details><summary>答案</summary>\n可确认的机制要素（来自 §2.1 摘录）：每个训练任务连接真实执行环境；智能体观察状态、调用工具、产生中间产物并据反馈修正动作；最终结果由外部信号验证（可执行测试、实验指标、文件与应用状态、几何检查、来源证据或人工定义标准）；轨迹筛选去除不完整、矛盾、重复或行为无效样本；保留任务—轨迹—产物—验证证据的关联；失败分析反哺任务构建与环境改进。无法确认的包括：具体数据规模、筛选阈值、奖励函数形式、训练超参、算力预算，以及任何消融实验——证据表中 ablations 为空，因此无法判断各组件各自的贡献。\n</details>"
+}

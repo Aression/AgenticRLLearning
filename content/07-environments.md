@@ -4,6 +4,9 @@ title: 环境、工具协议与轨迹数据
 summary: 让每一步动作可观测、可验证、可重放，是训练之前的基础设施。
 stage: SYSTEMS
 track: Agent 系统
+kind: system
+depth: overview
+evidenceGrade: C
 order: 8
 minutes: 18
 updated: '2026-09-08'

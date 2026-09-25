@@ -19,13 +19,17 @@ import sys
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from content_model import DEPTHS, EVIDENCE_GRADES, KINDS, check_structure  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 SOURCES = ROOT / "data" / "sources.json"
 AUDIT = ROOT / "research" / "source-audit.json"
 DISCOVERY = ROOT / "research" / "discovery.json"
 REPORT_DIR = ROOT / "research" / "reports"
-REQUIRED_NOTE = {"id", "title", "summary", "stage", "track", "order", "minutes", "updated", "review", "tags", "sources", "prerequisites"}
+REQUIRED_NOTE = {"id", "title", "summary", "stage", "track", "order", "minutes", "updated", "review", "tags", "sources", "prerequisites", "kind", "depth", "evidenceGrade"}
 STAGES = {"FOUNDATION", "SYSTEMS", "FRONTIER"}
 ALLOWED_REVIEW = {"综合笔记", "实验指南", "实验设计 · 未运行 GPU 训练", "摘要核验 · 待精读", "维护规范", "参考索引", "学习路线", "LLM 全文精读草稿 · 待人工复核"}
 SOURCE_URL_RE = re.compile(r"https?://[^)\s>]+")
@@ -135,6 +139,20 @@ def check() -> dict[str, Any]:
             for field in ("paper_id", "full_text_url", "evidence_level"):
                 if not str(note.get(field, "")).strip():
                     errors.append(f"{path}: LLM card missing {field}")
+            if note.get("depth") != "deep":
+                warnings.append(f"{path}: thin LLM draft (depth={note.get('depth')}); run cards.py deepen")
+        kind, depth = str(note.get("kind", "")), str(note.get("depth", ""))
+        if kind not in KINDS:
+            errors.append(f"{path}: invalid kind {kind!r} (allowed: {', '.join(KINDS)})")
+        if depth not in DEPTHS:
+            errors.append(f"{path}: invalid depth {depth!r} (allowed: {', '.join(DEPTHS)})")
+        grade = str(note.get("evidenceGrade", ""))
+        if grade not in EVIDENCE_GRADES:
+            errors.append(f"{path}: invalid evidenceGrade {grade!r} (allowed: {', '.join(EVIDENCE_GRADES)})")
+        if kind in KINDS and depth in DEPTHS:
+            related = note.get("related") if isinstance(note.get("related"), list) else []
+            for violation in check_structure(kind, depth, note.get("body", ""), related_count=len(related), has_evidence_grade=grade in EVIDENCE_GRADES):
+                errors.append(f"{path}: {violation}")
         refs = note.get("sources") if isinstance(note.get("sources"), list) else []
         for sid in refs:
             if sid not in source_ids:
@@ -167,7 +185,19 @@ def check() -> dict[str, Any]:
         discovery_stats = {"entries": len(entries), "duplicate_ids": len(ids) - len(set(ids)), "empty_titles": sum(not str(entry.get("title", "")).strip() for entry in entries)}
         if discovery_stats["duplicate_ids"] or discovery_stats["empty_titles"]:
             errors.append(f"discovery quality failure: {discovery_stats}")
-    return {"ok": not errors, "errors": errors, "warnings": warnings, "notes": len(notes), "sources": len(catalog), "discovery": discovery_stats, "checkedAt": dt.datetime.now(dt.timezone.utc).isoformat()}
+    return {"ok": not errors, "errors": errors, "warnings": warnings, "notes": len(notes), "sources": len(catalog), "discovery": discovery_stats, "depth": depth_stats(notes), "checkedAt": dt.datetime.now(dt.timezone.utc).isoformat()}
+
+
+def depth_stats(notes: list[dict[str, Any]]) -> dict[str, Any]:
+    """Depth/kind coverage, used to track progress toward the deep architecture."""
+    by_depth: dict[str, int] = {}
+    by_kind: dict[str, int] = {}
+    for note in notes:
+        by_depth[str(note.get("depth", "missing"))] = by_depth.get(str(note.get("depth", "missing")), 0) + 1
+        by_kind[str(note.get("kind", "missing"))] = by_kind.get(str(note.get("kind", "missing")), 0) + 1
+    deep = by_depth.get("deep", 0)
+    total = len(notes) or 1
+    return {"byDepth": by_depth, "byKind": by_kind, "deep": deep, "deepShare": round(deep / total, 3)}
 
 
 def run_script(name: str) -> None:

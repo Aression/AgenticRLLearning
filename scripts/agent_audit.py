@@ -13,9 +13,14 @@ import datetime as dt
 import json
 import os
 import re
+import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from llm_gate import require_llm_enabled  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = "deepseek-v4-flash"
@@ -140,6 +145,7 @@ def build_radar(meta: dict, entries: list, audit: dict) -> dict:
 
 
 def main() -> int:
+    require_llm_enabled("agent_audit")
     parser = argparse.ArgumentParser()
     parser.add_argument("--discovery", default="research/discovery.json")
     parser.add_argument("--catalog", default="data/sources.json")
@@ -186,6 +192,11 @@ def main() -> int:
         "requested_model": MODEL,
         "response_model": dedupe(response_models),
         "source_discovery": args.discovery,
+        # Preserve the paper metadata needed to draft cards after the daily radar rotates.
+        "discovery_entries": [
+            {key: entry.get(key) for key in ("id", "title", "published", "arxiv_url", "authors", "upvotes", "relevance_score")}
+            for entry in entries if isinstance(entry, dict)
+        ],
         "batches": len(batches),
         "human_review_required": True,
         "publish_directly": False,

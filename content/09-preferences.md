@@ -4,6 +4,9 @@ title: RLHF、RLAIF 与 DPO 的位置
 summary: 偏好数据、奖励模型、KL 正则和离线优化，解决的问题并不完全相同。
 stage: SYSTEMS
 track: 训练算法
+kind: concept
+depth: overview
+evidenceGrade: C
 order: 10
 minutes: 18
 updated: '2026-09-08'
