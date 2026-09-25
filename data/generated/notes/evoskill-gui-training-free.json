@@ -116,10 +116,10 @@
     "aport-vault",
     "bi-agent-bi-bench",
     "cadworld-cad",
-    "harness-design-coding-agents",
-    "mintact-unified-visual-agent"
+    "designer-rsi-procedural-memory",
+    "harness-design-coding-agents"
   ],
-  "degree": 11,
+  "degree": 14,
   "sources": [
     "reflect-revise-reuse-training-free-skill"
   ],

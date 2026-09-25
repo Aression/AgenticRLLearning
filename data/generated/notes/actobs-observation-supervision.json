@@ -124,14 +124,14 @@
     "自测"
   ],
   "related": [
-    "card",
+    "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
     "expert-space-exploration-moe",
+    "exploration-guided-prompt-scaffolding",
     "grpo",
-    "lab-agent-rl",
-    "multi-turn-rl"
+    "jitmem-read-time-curation"
   ],
-  "degree": 11,
+  "degree": 14,
   "sources": [
     "don-t-mask-the-environment-observation-s"
   ],

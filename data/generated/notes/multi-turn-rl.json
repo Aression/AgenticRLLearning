@@ -62,13 +62,13 @@
   ],
   "related": [
     "actobs-observation-supervision",
-    "agent",
     "cadworld-cad",
-    "card",
     "category-expert-swe-agents",
-    "emergence-world-stress-test"
+    "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
+    "environments"
   ],
-  "degree": 28,
+  "degree": 32,
   "sources": [
     "agentic-survey",
     "gigpo",

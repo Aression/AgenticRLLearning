@@ -68,7 +68,7 @@
     "lab-rl",
     "multi-turn-rl"
   ],
-  "degree": 15,
+  "degree": 16,
   "sources": [
     "gymnasium",
     "swe-agent",

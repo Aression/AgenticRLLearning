@@ -738,5 +738,95 @@
     "url": "https://arxiv.org/abs/2609.22076",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 深度精读草稿：论文要解决的问题是：在工具调用型支付智能体面临真实对抗攻击时，模型自身拒绝与工具边界强制执行两种防护机制的效果差异未被量化。现有基准多衡量模型拒绝率或判断者评分，无法回答部署者在选定最佳模型后仍持有的残余风险。"
+  },
+  {
+    "id": "videogen-agent-reinforcing-video-generat",
+    "title": "VideoGen-Agent: Reinforcing Video Generation Agents",
+    "kind": "论文",
+    "author": "Binxu Li et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.24997",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Multitask agentic RL for a tool-using multimodal agent (augmentation/generation/verification tools, multi-turn, category-aware hybrid reward). On-topic for Agen"
+  },
+  {
+    "id": "recursive-self-improvement-of-ai-researc",
+    "title": "Recursive self-improvement of AI research agents",
+    "kind": "论文",
+    "author": "Dhruv Srikanth et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.26457",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly on-topic for Agentic RL: recursive self-improvement loop where an agent edits its own code, with transfer to held-out benchmarks and a reported reward-"
+  },
+  {
+    "id": "designer-rsi-evolving-procedural-memory",
+    "title": "Designer-RSI: Evolving Procedural Memory from User Traffic for Agentic Graphic Design",
+    "kind": "论文",
+    "author": "Hongyang Du et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.22086",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Adjacent to Agentic RL scope: long-horizon agentic task with external procedural memory, continual adaptation under noisy/unverifiable feedback, and matched-rep"
+  },
+  {
+    "id": "pact-from-credit-assignment-to-critic-al",
+    "title": "PACT: From Credit Assignment to Critic Alignment",
+    "kind": "论文",
+    "author": "Jiayan Fu et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.26355",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly addresses token-level credit assignment and critic alignment, which are core to the KB's PPO/GAE/GRPO and agentic-RL credit-assignment threads (ppo, ga"
+  },
+  {
+    "id": "verifiable-hidden-dynamics-play-generati",
+    "title": "Verifiable Hidden Dynamics Play: Generating Agentic RL Environments from Solved Mechanisms",
+    "kind": "论文",
+    "author": "Xinjie Shen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.27321",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：On-topic for the KB's environment-generation and verifiable-reward interests (swe-bench, webarena, tau-bench, agentic-survey). Proposes generating agentic RL en"
+  },
+  {
+    "id": "bellman-policy-optimization",
+    "title": "Bellman Policy Optimization",
+    "kind": "论文",
+    "author": "Zhuoqing Song et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.15987",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Critic-free RLVR method derived from Policy Mirror Descent, using Bellman equations to reformulate PMD as a trajectory-level objective for autoregressive genera"
+  },
+  {
+    "id": "just-in-time-memory-learning-to-curate-t",
+    "title": "Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents",
+    "kind": "论文",
+    "author": "Yefan Zhou et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.27334",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Directly on-topic for Agentic RL: addresses long-horizon credit assignment in agentic memory curation, defers curation to read time, and reports gains on ALFWor"
+  },
+  {
+    "id": "schr-dinger-s-code-repository-have-llms",
+    "title": "Schrödinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+    "kind": "论文",
+    "author": "Silin Chen et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.27891",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Relevant to existing SWE-bench and coding-agent sources (swe-bench, swe-agent, multi-harness). Proposes dynamic repository instantiation to test memorization vs"
+  },
+  {
+    "id": "emergent-collusion-in-long-horizon-llm-a",
+    "title": "Emergent Collusion in Long-Horizon LLM Agent Interaction",
+    "kind": "论文",
+    "author": "Xinrui Shi et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.24967",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Relevant to the KB's multi-agent and safety interests (marl-book, lilian-reward, emergence-world). Studies collusion emergence in long-horizon multi-agent inter"
   }
 ]

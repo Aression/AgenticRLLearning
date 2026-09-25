@@ -119,13 +119,13 @@
   ],
   "related": [
     "riskchainbench",
-    "agent",
     "aport-vault",
     "bi-agent-bi-bench",
     "cadworld-cad",
-    "category-expert-swe-agents"
+    "category-expert-swe-agents",
+    "codemidas-code-rl-envs"
   ],
-  "degree": 17,
+  "degree": 19,
   "sources": [
     "programdistill-from-interactive-web-apps"
   ],

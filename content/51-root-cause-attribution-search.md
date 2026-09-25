@@ -1,5 +1,5 @@
 ---
-id: agent
+id: root-cause-attribution-search
 title: 根因归因即搜索：长程 Agent 失败的持续搜索
 summary: 长时程AI智能体执行日志可达数百万token，失败根因证据稀疏、分散且可能远早于最终结果出现。现有基于LLM裁判的单轮rubric式根因归因方法在证据空间未充分探索前就锁定一个看似合理的失败原因，导致归因不可靠；而自一致性、异构裁判组等重采样策略无法恢复遗漏证据。
 stage: FRONTIER

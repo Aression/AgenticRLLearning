@@ -1,0 +1,86 @@
+{
+  "id": "bpo-bellman-policy-optimization",
+  "title": "BPO：从镜像下降推导的无 Critic 策略优化",
+  "summary": "论文从策略镜像下降出发，用贝尔曼方程把带终端奖励的自回归生成改写为轨迹级目标，得到无需价值模型、以失配修正权重替代重要性比值的 BPO 损失。",
+  "stage": "FOUNDATION",
+  "track": "训练算法",
+  "order": 69,
+  "minutes": 18,
+  "updated": "2026-09-24",
+  "review": "LLM 全文精读草稿 · 待人工复核",
+  "filename": "69-bpo-bellman-policy-optimization.md",
+  "tags": [
+    "GRPO",
+    "PMD",
+    "RLVR",
+    "critic-free",
+    "policy optimization"
+  ],
+  "concepts": [
+    "GRPO",
+    "PMD",
+    "RLVR",
+    "critic-free",
+    "policy optimization"
+  ],
+  "objectives": [
+    "理解 BPO 如何用贝尔曼方程的望远镜求和消去中间状态价值估计",
+    "说清 BPO 损失与 GRPO 裁剪代理目标在权重项上的差别",
+    "判断该方法的证据强度与可复现边界"
+  ],
+  "keyPoints": [
+    "论文要解决的问题",
+    "方法",
+    "证据与实验",
+    "边界与未解问题",
+    "与知识库的关系",
+    "自测"
+  ],
+  "evidenceLevel": "full-text-llm-draft",
+  "codeUrl": "",
+  "origin": "llm-fulltext",
+  "paperId": "2609.15987",
+  "readingDepth": "full-text",
+  "fullTextUrl": "https://arxiv.org/html/2609.15987",
+  "kind": "paper",
+  "kindLabel": "论文精读",
+  "depth": "overview",
+  "depthLabel": "概览",
+  "depthRank": 0,
+  "evidenceGrade": "C",
+  "claims": [],
+  "claimCount": 0,
+  "sectionSizes": {
+    "论文要解决的问题": 246,
+    "方法": 403,
+    "证据与实验": 363,
+    "边界与未解问题": 211,
+    "与知识库的关系": 206,
+    "自测": 130
+  },
+  "bodyChars": 1630,
+  "deep": false,
+  "sections": [
+    "论文要解决的问题",
+    "方法",
+    "证据与实验",
+    "边界与未解问题",
+    "与知识库的关系",
+    "自测"
+  ],
+  "related": [
+    "grpo",
+    "never-give-up-rl",
+    "retireopd-self-retiring-opd",
+    "actobs-observation-supervision",
+    "codemidas-code-rl-envs",
+    "expert-space-exploration-moe"
+  ],
+  "degree": 18,
+  "sources": [
+    "bellman-policy-optimization"
+  ],
+  "prerequisites": [],
+  "search": "bpo：从镜像下降推导的无 critic 策略优化 论文从策略镜像下降出发，用贝尔曼方程把带终端奖励的自回归生成改写为轨迹级目标，得到无需价值模型、以失配修正权重替代重要性比值的 bpo 损失。 训练算法 paper overview c bpo-bellman-policy-optimization grpo pmd rlvr critic-free policy optimization 理解 bpo 如何用贝尔曼方程的望远镜求和消去中间状态价值估计 说清 bpo 损失与 grpo 裁剪代理目标在权重项上的差别 判断该方法的证据强度与可复现边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 ",
+  "content": "## 论文要解决的问题\n\nRLVR（可验证奖励强化学习）已成为提升 LLM 推理能力的常用手段，其中 GRPO 及其变体因省去价值模型而被广泛采用。但论文指出，策略优化目标的具体形式会显著影响推理表现与训练稳定性。作者从 Policy Mirror Descent（PMD）出发：PMD 用动作价值加散度惩罚更新策略，直接搬到语言生成上就需要中间状态的价值估计，通常要额外训练价值模型，带来显存与算力开销，且学到的价值在推理任务上可能不准。论文要回答的是：能否在不训练价值模型的前提下，恢复与 PMD 相同的策略更新。\n\n## 方法\n\nBPO 的核心推导建立在已有的一类重参数化工作上——用策略似然比重新表达奖励与价值。对带终端奖励的自回归生成，贝尔曼方程把每个 token 的优势写成相邻状态价值函数之差；这些差沿整条回复望远镜式相消，只剩终端奖励与初始价值。作者把这一恒等式与 PMD 的最优性条件结合，得到轨迹级目标，其中初始价值即某 prompt 的期望奖励，可由采样回复估计，从而完全避开中间状态的价值与优势估计。作者证明：在 rollout 策略可达的状态上，该目标与原始 PMD 目标具有相同的唯一最优解。\n\n实用损失经过一系列近似得到：用每个 prompt 采样回复的平均奖励估计初始价值；对轨迹级目标做梯度近似；用二元近似替代完整 KL 散度。最终梯度中含一个由 rollout 与当前 token 概率决定的失配修正权重，并对其做加性平滑以保证数值稳定。在实用 BPO 损失中，这个权重取代了 GRPO 的重要性采样比值。\n\n## 证据与实验\n\n实验在 Qwen3-30B-A3B-Base 上进行，训练数据为 DAPO-Math-17k 英文子集，评测 AIME24/25/26，用 Avg@32 估计 Pass@1。对照方法为 GRPO-ClipHigher、GSPO、CISPO、DPPO，且只改策略损失、其余设置保持一致。论文报告 BPO 峰值平均准确率 50.5%，高于 GRPO-ClipHigher 的 39.5% 与最强基线 CISPO 的 47.4%；400 步后平均准确率 49.4%，高于同期最强基线 DPPO 的 45.5%。附录在 Qwen3-4B-Base 上做了平滑与截断超参的消融，称性能对一定范围设置不敏感。\n\n需要注意：以上均为作者自报结果，摘录中部分数值（如增益百分点、超参具体取值）被截断，无法核对；论文未提供独立复现或第三方验证。\n\n## 边界与未解问题\n\n其一，理论保证限定在 rollout 策略可达的状态上，且实用损失是经过多重近似后的版本，理论最优性与实际损失之间存在缺口，论文未在摘录中量化这一缺口。其二，评测仅覆盖数学推理与单一基座模型，是否迁移到其他任务、其他规模模型未知。其三，BPO 与 GRPO 的差异集中在权重项，二者在训练稳定性上的机制性对比仍待更细的分析。其四，摘录未涉及 agent、工具调用或长程环境，因此不能推断其在 agentic 场景下的表现。\n\n## 与知识库的关系\n\nBPO 属于 RLVR 训练算法谱系，与 GRPO 笔记直接对照：两者都避免价值模型，但 BPO 用失配修正权重替代重要性比值，可作为理解「critic-free 路线还能怎么走」的样本。与 PPO 笔记对照，可看清裁剪代理目标与镜像下降推导的差别；与 value-learning 笔记对照，则说明「不学价值」这一取舍的动机与代价。它不涉及 agent 循环或环境设计，因此与 Agent 系统类笔记关联较弱。\n\n## 自测\n\n1. 贝尔曼方程的望远镜求和为什么能让中间状态价值消失？\n2. BPO 损失中的失配修正权重与 GRPO 的重要性采样比值在形式上差在哪里？\n3. 论文的「同一唯一最优解」结论成立的前提条件是什么？\n4. 若把 BPO 用到多轮工具调用环境，哪些假设会先失效？"
+}

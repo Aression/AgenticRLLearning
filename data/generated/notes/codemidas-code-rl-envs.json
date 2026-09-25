@@ -119,13 +119,13 @@
   ],
   "related": [
     "actobs-observation-supervision",
-    "card",
+    "bpo-bellman-policy-optimization",
     "category-expert-swe-agents",
     "code2skill",
     "environments",
     "expert-space-exploration-moe"
   ],
-  "degree": 15,
+  "degree": 18,
   "sources": [
     "codemidas-scaling-agentic-coding-rl-envi"
   ],

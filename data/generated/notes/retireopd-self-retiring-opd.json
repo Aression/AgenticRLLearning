@@ -112,14 +112,14 @@
     "自测"
   ],
   "related": [
+    "bpo-bellman-policy-optimization",
     "grpo",
     "never-give-up-rl",
     "actobs-observation-supervision",
     "cal-opd",
-    "card",
     "category-expert-swe-agents"
   ],
-  "degree": 19,
+  "degree": 22,
   "sources": [
     "retireopd-self-retiring-on-policy-distil"
   ],

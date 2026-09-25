@@ -122,10 +122,10 @@
     "sol-pi-auto-research-harness",
     "atria-dawn-ai",
     "code2skill",
-    "gai",
+    "generalized-agent-iteration",
     "harness-design-coding-agents"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "rrsi-regularized-recursive-self-improvem"
   ],

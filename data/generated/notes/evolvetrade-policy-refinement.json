@@ -112,14 +112,14 @@
     "自测"
   ],
   "related": [
-    "agent",
     "agent-loop",
     "aport-vault",
     "emergence-world-stress-test",
     "evaluation",
-    "multi-turn-rl"
+    "multi-turn-rl",
+    "pact-enterprise-compliance-pressure"
   ],
-  "degree": 11,
+  "degree": 14,
   "sources": [
     "evolvetrade-experience-driven-policy-ref"
   ],

@@ -113,11 +113,11 @@
     "agora-git",
     "cera-moa",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "multi-agent",
-    "scienceide-sci-envs",
-    "sol-pi-auto-research-harness"
+    "scienceide-sci-envs"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "hypoevolve-genetic-algorithms-enable-mul"
   ],

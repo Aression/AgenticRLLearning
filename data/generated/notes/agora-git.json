@@ -114,12 +114,12 @@
   "related": [
     "cera-moa",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "hypoevolve",
     "lab-agent",
-    "multi-agent",
-    "sol-pi-auto-research-harness"
+    "multi-agent"
   ],
-  "degree": 8,
+  "degree": 10,
   "sources": [
     "agora-git-as-shared-memory-for-collectiv"
   ],

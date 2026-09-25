@@ -122,10 +122,10 @@
     "agora-git",
     "bi-agent-bi-bench",
     "emergence-world-stress-test",
-    "grpo",
-    "hypoevolve"
+    "emergent-collusion-long-horizon",
+    "grpo"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "cera-moa-co-evolving-routing-mechanisms"
   ],

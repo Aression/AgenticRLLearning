@@ -1,5 +1,5 @@
 ---
-id: card
+id: exploration-guided-prompt-scaffolding
 title: 探索引导的提示脚手架多模态强化后训练
 summary: 在线强化学习后训练（如GRPO）中，训练提示被统一对待，隐含假设每个提示对当前策略同等有信息量。实际上提示效用差异很大：部分已饱和、部分过难，只有部分掌握者提供有效学习信号。
 stage: FRONTIER

@@ -62,12 +62,13 @@
   ],
   "related": [
     "lab-rl",
-    "card-2",
+    "bpo-bellman-policy-optimization",
+    "pact-credit-critic-alignment",
     "policy-gradient",
-    "value-flattening-ppo",
-    "when2think-length-control"
+    "region-level-policy-optimization",
+    "value-flattening-ppo"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "ppo",
     "gae",

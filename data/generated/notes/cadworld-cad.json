@@ -116,10 +116,10 @@
     "aport-vault",
     "bi-agent-bi-bench",
     "emergence-world-stress-test",
-    "evoskill-gui-training-free",
-    "mintact-unified-visual-agent"
+    "emergent-collusion-long-horizon",
+    "evoskill-gui-training-free"
   ],
-  "degree": 13,
+  "degree": 17,
   "sources": [
     "cadworld-computer-use-benchmark-for-long"
   ],

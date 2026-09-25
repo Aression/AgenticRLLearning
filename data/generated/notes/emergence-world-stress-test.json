@@ -112,14 +112,14 @@
     "自测"
   ],
   "related": [
+    "emergent-collusion-long-horizon",
     "pact-enterprise-compliance-pressure",
-    "agent",
     "agora-git",
     "aport-vault",
     "cadworld-cad",
     "cera-moa"
   ],
-  "degree": 16,
+  "degree": 21,
   "sources": [
     "emergence-world-adversarial-stress-testi"
   ],

@@ -122,14 +122,14 @@
     "自测"
   ],
   "related": [
+    "bpo-bellman-policy-optimization",
     "expert-space-exploration-moe",
     "grpo",
     "retireopd-self-retiring-opd",
     "actobs-observation-supervision",
-    "card",
     "codemidas-code-rl-envs"
   ],
-  "degree": 17,
+  "degree": 20,
   "sources": [
     "learning-to-solve-hard-problems-in-rl-fo"
   ],

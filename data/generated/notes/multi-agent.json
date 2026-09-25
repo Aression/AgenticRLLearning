@@ -65,10 +65,10 @@
     "agora-git",
     "cera-moa",
     "emergence-world-stress-test",
-    "glossary",
-    "hypoevolve"
+    "emergent-collusion-long-horizon",
+    "glossary"
   ],
-  "degree": 16,
+  "degree": 17,
   "sources": [
     "marl-book",
     "agentic-survey",

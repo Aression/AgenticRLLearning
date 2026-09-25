@@ -64,11 +64,11 @@
     "learning-paths",
     "mdp",
     "prerequisites",
+    "bpo-bellman-policy-optimization",
     "expert-space-exploration-moe",
-    "frontier-radar",
-    "glossary"
+    "frontier-radar"
   ],
-  "degree": 11,
+  "degree": 13,
   "sources": [
     "sutton-barto",
     "silver"

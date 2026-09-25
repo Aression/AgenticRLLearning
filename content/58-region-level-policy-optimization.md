@@ -1,5 +1,5 @@
 ---
-id: card-2
+id: region-level-policy-optimization
 title: 区域级策略优化：细粒度多模态感知
 summary: 多模态大模型在细粒度视觉感知上仍易失败：小字、远处目标与高分辨率杂乱场景会降低准确率，而直接提高输入分辨率会带来视觉与语言侧计算开销。答案相关证据通常只占图像一小部分，因此需要选择性分配高分辨率处理。
 stage: FRONTIER

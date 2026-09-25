@@ -66,12 +66,12 @@
   "related": [
     "agent-loop",
     "emergence-world-stress-test",
+    "emergent-collusion-long-horizon",
     "evaluation",
     "impossiblerubrics",
-    "lab-agent",
-    "orientation"
+    "lab-agent"
   ],
-  "degree": 11,
+  "degree": 14,
   "sources": [
     "lilian-reward",
     "tau-bench",

@@ -114,9 +114,10 @@
     "codemidas-code-rl-envs",
     "multi-turn-rl",
     "programdistill-ref-guided-swe",
-    "retireopd-self-retiring-opd"
+    "retireopd-self-retiring-opd",
+    "schrodinger-repo-representation"
   ],
-  "degree": 7,
+  "degree": 8,
   "sources": [
     "one-to-more-more-to-one-category-aware-i"
   ],

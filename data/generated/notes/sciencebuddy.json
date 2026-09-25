@@ -112,12 +112,12 @@
   "related": [
     "modularrsi-harness",
     "actobs-observation-supervision",
-    "card",
+    "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
     "expert-space-exploration-moe",
-    "gai"
+    "exploration-guided-prompt-scaffolding"
   ],
-  "degree": 16,
+  "degree": 19,
   "sources": [
     "sciencebuddy-recursive-in-recursive-self"
   ],

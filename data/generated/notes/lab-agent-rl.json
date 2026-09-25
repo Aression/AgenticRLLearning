@@ -66,11 +66,11 @@
     "rewards",
     "training-systems",
     "actobs-observation-supervision",
-    "card",
+    "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
     "expert-space-exploration-moe"
   ],
-  "degree": 19,
+  "degree": 22,
   "sources": [
     "verl",
     "lightning-code",

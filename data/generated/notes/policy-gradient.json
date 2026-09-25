@@ -61,14 +61,14 @@
     "自测"
   ],
   "related": [
-    "card-2",
+    "pact-credit-critic-alignment",
     "expert-space-exploration-moe",
     "glossary",
     "learning-paths",
     "mdp",
     "ppo"
   ],
-  "degree": 16,
+  "degree": 17,
   "sources": [
     "sutton-barto",
     "gae"

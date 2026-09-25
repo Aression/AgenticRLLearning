@@ -61,14 +61,14 @@
     "阅读顺序"
   ],
   "related": [
+    "bpo-bellman-policy-optimization",
     "never-give-up-rl",
     "retireopd-self-retiring-opd",
     "actobs-observation-supervision",
     "bi-agent-bi-bench",
-    "card",
-    "card-2"
+    "bpo-bellman-policy-optimization"
   ],
-  "degree": 37,
+  "degree": 44,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

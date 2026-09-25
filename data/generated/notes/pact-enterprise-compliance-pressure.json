@@ -113,13 +113,13 @@
   ],
   "related": [
     "emergence-world-stress-test",
-    "agent",
     "aport-vault",
     "evaluation",
     "evolvetrade-policy-refinement",
-    "multi-turn-rl"
+    "multi-turn-rl",
+    "privileged-info-opsd-ample-math"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "pact-can-enterprise-ai-assistants-be-tru"
   ],

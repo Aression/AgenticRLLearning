@@ -129,9 +129,9 @@
     "actobs-observation-supervision",
     "atria-dawn-ai",
     "bi-agent-bi-bench",
-    "card"
+    "bpo-bellman-policy-optimization"
   ],
-  "degree": 19,
+  "degree": 22,
   "sources": [
     "expert-space-exploration-in-moe-reinforc"
   ],

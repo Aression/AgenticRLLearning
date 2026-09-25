@@ -64,13 +64,13 @@
   ],
   "related": [
     "orientation",
-    "agent",
     "bi-agent-bi-bench",
     "evolvetrade-policy-refinement",
     "evoskill-gui-training-free",
-    "gai"
+    "generalized-agent-iteration",
+    "harness-design-coding-agents"
   ],
-  "degree": 20,
+  "degree": 23,
   "sources": [
     "react",
     "anthropic-building",

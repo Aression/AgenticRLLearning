@@ -113,13 +113,13 @@
   ],
   "related": [
     "programdistill-ref-guided-swe",
-    "agent",
     "agent-loop",
     "aport-vault",
     "bi-agent-bi-bench",
-    "cadworld-cad"
+    "cadworld-cad",
+    "emergence-world-stress-test"
   ],
-  "degree": 18,
+  "degree": 21,
   "sources": [
     "riskchainbench-a-benchmark-for-obfuscate"
   ],

@@ -113,13 +113,13 @@
   ],
   "related": [
     "bi-agent-bi-bench",
+    "bpo-bellman-policy-optimization",
     "cal-opd",
     "cera-moa",
     "expert-space-exploration-moe",
-    "grpo",
-    "impossiblerubrics"
+    "grpo"
   ],
-  "degree": 15,
+  "degree": 16,
   "sources": [
     "mintrl-off-policy-intervention-can-boost"
   ],

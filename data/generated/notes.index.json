@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T10:08:56.193722+00:00",
+  "generatedAt": "2026-09-25T10:11:09.002943+00:00",
   "evidenceRubric": {
     "A": "有多处独立证据或本地复现支撑；结论已交叉验证",
     "B": "全文精读且方法、实验设置、代码或数据可核验；未复现",
@@ -91,7 +91,7 @@
         "learning-paths",
         "mdp"
       ],
-      "degree": 13,
+      "degree": 15,
       "sources": [
         "agentic-survey",
         "react",
@@ -327,11 +327,11 @@
         "learning-paths",
         "mdp",
         "prerequisites",
+        "bpo-bellman-policy-optimization",
         "expert-space-exploration-moe",
-        "frontier-radar",
-        "glossary"
+        "frontier-radar"
       ],
-      "degree": 11,
+      "degree": 13,
       "sources": [
         "sutton-barto",
         "silver"
@@ -404,14 +404,14 @@
         "自测"
       ],
       "related": [
-        "card-2",
+        "pact-credit-critic-alignment",
         "expert-space-exploration-moe",
         "glossary",
         "learning-paths",
         "mdp",
         "ppo"
       ],
-      "degree": 16,
+      "degree": 17,
       "sources": [
         "sutton-barto",
         "gae"
@@ -485,12 +485,13 @@
       ],
       "related": [
         "lab-rl",
-        "card-2",
+        "bpo-bellman-policy-optimization",
+        "pact-credit-critic-alignment",
         "policy-gradient",
-        "value-flattening-ppo",
-        "when2think-length-control"
+        "region-level-policy-optimization",
+        "value-flattening-ppo"
       ],
-      "degree": 11,
+      "degree": 13,
       "sources": [
         "ppo",
         "gae",
@@ -567,13 +568,13 @@
       ],
       "related": [
         "orientation",
-        "agent",
         "bi-agent-bi-bench",
         "evolvetrade-policy-refinement",
         "evoskill-gui-training-free",
-        "gai"
+        "generalized-agent-iteration",
+        "harness-design-coding-agents"
       ],
-      "degree": 20,
+      "degree": 23,
       "sources": [
         "react",
         "anthropic-building",
@@ -655,7 +656,7 @@
         "lab-rl",
         "multi-turn-rl"
       ],
-      "degree": 15,
+      "degree": 16,
       "sources": [
         "gymnasium",
         "swe-agent",
@@ -734,13 +735,13 @@
       ],
       "related": [
         "lab-agent-rl",
-        "card",
+        "exploration-guided-prompt-scaffolding",
         "grpo",
         "impossiblerubrics",
-        "lab-agent",
-        "multi-turn-rl"
+        "jitmem-read-time-curation",
+        "lab-agent"
       ],
-      "degree": 15,
+      "degree": 19,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -894,14 +895,14 @@
         "阅读顺序"
       ],
       "related": [
+        "bpo-bellman-policy-optimization",
         "never-give-up-rl",
         "retireopd-self-retiring-opd",
         "actobs-observation-supervision",
         "bi-agent-bi-bench",
-        "card",
-        "card-2"
+        "bpo-bellman-policy-optimization"
       ],
-      "degree": 37,
+      "degree": 44,
       "sources": [
         "deepseek-math",
         "deepseek-r1",
@@ -977,13 +978,13 @@
       ],
       "related": [
         "actobs-observation-supervision",
-        "agent",
         "cadworld-cad",
-        "card",
         "category-expert-swe-agents",
-        "emergence-world-stress-test"
+        "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
+        "environments"
       ],
-      "degree": 28,
+      "degree": 32,
       "sources": [
         "agentic-survey",
         "gigpo",
@@ -1147,13 +1148,13 @@
       ],
       "related": [
         "environments",
-        "agent",
         "aport-vault",
         "emergence-world-stress-test",
         "evolvetrade-policy-refinement",
-        "harness-design-coding-agents"
+        "harness-design-coding-agents",
+        "impossiblerubrics"
       ],
-      "degree": 22,
+      "degree": 25,
       "sources": [
         "swe-bench",
         "webarena",
@@ -1235,12 +1236,12 @@
       "related": [
         "agent-loop",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "evaluation",
         "impossiblerubrics",
-        "lab-agent",
-        "orientation"
+        "lab-agent"
       ],
-      "degree": 11,
+      "degree": 14,
       "sources": [
         "lilian-reward",
         "tau-bench",
@@ -1318,10 +1319,10 @@
         "agora-git",
         "cera-moa",
         "emergence-world-stress-test",
-        "glossary",
-        "hypoevolve"
+        "emergent-collusion-long-horizon",
+        "glossary"
       ],
-      "degree": 16,
+      "degree": 17,
       "sources": [
         "marl-book",
         "agentic-survey",
@@ -1654,11 +1655,11 @@
         "rewards",
         "training-systems",
         "actobs-observation-supervision",
-        "card",
+        "bpo-bellman-policy-optimization",
         "codemidas-code-rl-envs",
         "expert-space-exploration-moe"
       ],
-      "degree": 19,
+      "degree": 22,
       "sources": [
         "verl",
         "lightning-code",
@@ -2025,13 +2026,13 @@
       ],
       "related": [
         "bi-agent-bi-bench",
+        "bpo-bellman-policy-optimization",
         "cal-opd",
         "cera-moa",
         "expert-space-exploration-moe",
-        "grpo",
-        "impossiblerubrics"
+        "grpo"
       ],
-      "degree": 15,
+      "degree": 16,
       "sources": [
         "mintrl-off-policy-intervention-can-boost"
       ],
@@ -2157,9 +2158,9 @@
         "sciencebuddy",
         "atria-dawn-ai",
         "code2skill",
-        "evaluation"
+        "designer-rsi-procedural-memory"
       ],
-      "degree": 14,
+      "degree": 18,
       "sources": [
         "modularrsi-modular-and-generalizable-rec"
       ],
@@ -2280,14 +2281,14 @@
         "自测"
       ],
       "related": [
+        "emergent-collusion-long-horizon",
         "pact-enterprise-compliance-pressure",
-        "agent",
         "agora-git",
         "aport-vault",
         "cadworld-cad",
         "cera-moa"
       ],
-      "degree": 16,
+      "degree": 21,
       "sources": [
         "emergence-world-adversarial-stress-testi"
       ],
@@ -2415,12 +2416,12 @@
       "related": [
         "compo-zeroth-order-alignment",
         "grpo",
+        "jitmem-read-time-curation",
         "lab-rl",
         "mintrl-off-policy-intervention",
-        "ppo",
-        "rewards"
+        "pact-credit-critic-alignment"
       ],
-      "degree": 8,
+      "degree": 10,
       "sources": [
         "rethinking-critic-learning-in-ppo-unders"
       ],
@@ -2541,14 +2542,14 @@
         "自测"
       ],
       "related": [
-        "agent",
         "agent-loop",
         "aport-vault",
         "emergence-world-stress-test",
         "evaluation",
-        "multi-turn-rl"
+        "multi-turn-rl",
+        "pact-enterprise-compliance-pressure"
       ],
-      "degree": 11,
+      "degree": 14,
       "sources": [
         "evolvetrade-experience-driven-policy-ref"
       ],
@@ -2945,7 +2946,7 @@
         "harness-design-coding-agents",
         "hypoevolve"
       ],
-      "degree": 12,
+      "degree": 13,
       "sources": [
         "sol-pi-recursively-scaling-auto-research"
       ],
@@ -3066,14 +3067,14 @@
         "自测"
       ],
       "related": [
+        "bpo-bellman-policy-optimization",
         "grpo",
         "never-give-up-rl",
         "actobs-observation-supervision",
         "cal-opd",
-        "card",
         "category-expert-swe-agents"
       ],
-      "degree": 19,
+      "degree": 22,
       "sources": [
         "retireopd-self-retiring-on-policy-distil"
       ],
@@ -3201,7 +3202,7 @@
         "evaluation",
         "evoskill-gui-training-free"
       ],
-      "degree": 14,
+      "degree": 17,
       "sources": [
         "an-empirical-study-of-harness-design-for"
       ],
@@ -3326,10 +3327,10 @@
         "aport-vault",
         "bi-agent-bi-bench",
         "cadworld-cad",
-        "harness-design-coding-agents",
-        "mintact-unified-visual-agent"
+        "designer-rsi-procedural-memory",
+        "harness-design-coding-agents"
       ],
-      "degree": 11,
+      "degree": 14,
       "sources": [
         "reflect-revise-reuse-training-free-skill"
       ],
@@ -3450,14 +3451,14 @@
         "自测"
       ],
       "related": [
+        "bpo-bellman-policy-optimization",
         "grpo",
         "impossiblerubrics",
         "mintrl-off-policy-intervention",
         "never-give-up-rl",
-        "ppo",
-        "retireopd-self-retiring-opd"
+        "ppo"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "when2think-learning-difficulty-aware-len"
       ],
@@ -3590,14 +3591,14 @@
         "自测"
       ],
       "related": [
-        "card",
+        "bpo-bellman-policy-optimization",
         "codemidas-code-rl-envs",
         "expert-space-exploration-moe",
+        "exploration-guided-prompt-scaffolding",
         "grpo",
-        "lab-agent-rl",
-        "multi-turn-rl"
+        "jitmem-read-time-curation"
       ],
-      "degree": 11,
+      "degree": 14,
       "sources": [
         "don-t-mask-the-environment-observation-s"
       ],
@@ -3719,13 +3720,13 @@
       ],
       "related": [
         "emergence-world-stress-test",
-        "agent",
         "aport-vault",
         "evaluation",
         "evolvetrade-policy-refinement",
-        "multi-turn-rl"
+        "multi-turn-rl",
+        "privileged-info-opsd-ample-math"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "pact-can-enterprise-ai-assistants-be-tru"
       ],
@@ -3845,14 +3846,14 @@
         "自测"
       ],
       "related": [
-        "agent",
         "cal-opd",
         "emergence-world-stress-test",
         "evolvetrade-policy-refinement",
         "grpo",
-        "lab-agent-rl"
+        "lab-agent-rl",
+        "mintrl-off-policy-intervention"
       ],
-      "degree": 13,
+      "degree": 14,
       "sources": [
         "what-does-privileged-information-add-to"
       ],
@@ -3980,13 +3981,13 @@
       ],
       "related": [
         "riskchainbench",
-        "agent",
         "aport-vault",
         "bi-agent-bi-bench",
         "cadworld-cad",
-        "category-expert-swe-agents"
+        "category-expert-swe-agents",
+        "codemidas-code-rl-envs"
       ],
-      "degree": 17,
+      "degree": 19,
       "sources": [
         "programdistill-from-interactive-web-apps"
       ],
@@ -4114,13 +4115,13 @@
       ],
       "related": [
         "actobs-observation-supervision",
-        "card",
+        "bpo-bellman-policy-optimization",
         "category-expert-swe-agents",
         "code2skill",
         "environments",
         "expert-space-exploration-moe"
       ],
-      "degree": 15,
+      "degree": 18,
       "sources": [
         "codemidas-scaling-agentic-coding-rl-envi"
       ],
@@ -4248,7 +4249,7 @@
         "cadworld-cad",
         "emergence-world-stress-test"
       ],
-      "degree": 14,
+      "degree": 18,
       "sources": [
         "recreationworld-scalable-and-verifiable"
       ],
@@ -4496,9 +4497,10 @@
         "codemidas-code-rl-envs",
         "multi-turn-rl",
         "programdistill-ref-guided-swe",
-        "retireopd-self-retiring-opd"
+        "retireopd-self-retiring-opd",
+        "schrodinger-repo-representation"
       ],
-      "degree": 7,
+      "degree": 8,
       "sources": [
         "one-to-more-more-to-one-category-aware-i"
       ],
@@ -4760,10 +4762,10 @@
         "sol-pi-auto-research-harness",
         "atria-dawn-ai",
         "code2skill",
-        "gai",
+        "generalized-agent-iteration",
         "harness-design-coding-agents"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "rrsi-regularized-recursive-self-improvem"
       ],
@@ -4901,9 +4903,9 @@
         "actobs-observation-supervision",
         "atria-dawn-ai",
         "bi-agent-bi-bench",
-        "card"
+        "bpo-bellman-policy-optimization"
       ],
-      "degree": 19,
+      "degree": 22,
       "sources": [
         "expert-space-exploration-in-moe-reinforc"
       ],
@@ -4914,7 +4916,7 @@
       "search": "moe强化学习中的专家空间探索 moe大模型在rl后训练中，rollout依赖确定性top-k路由，同一前缀反复激活相同专家，探索仅停留在token空间，缺乏对稀疏计算路径的显式探索；而直接扰动路由虽能提升多样性，却可能激活不匹配专家、损害rollout质量。 训练算法 paper deep c expert-space-exploration-moe grpo llm post-training moe routing exploration reinforcement-learning 理解moe rl中确定性top-k路由导致的探索瓶颈 掌握esrl的熵自适应噪声与锚定专家采样机制 了解rollout routing replay如何对齐训练与生成路由 评估路由扰动作为架构感知探索手段的收益与边界 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 路由噪声增大时专家分配改变率上升、top-$k$ jaccard 相似度下降，专家利用更均衡 作者主张 路由扰动会改变下一 token 分布，使原 top-1 token 排名下降、top-20 集合相似度降低 作者主张 esrl 在 qwen3-30b-a3b 上数学基准平均 pass@1/pass@8 较 grpo 提升 3.2/4.5 个百分点 作者主张 esrl 在科学推理与代码任务上平均 pass@1 由 53.2 升至 55.9、pass@8 由 64.9 升至 77.0 作者主张 esrl 在 sigma / moonlight-16b-a3b 上平均 pass@8 较 grpo 分别提升 2.7 / 3.5 点 作者主张 锚定专家防止可靠路径被过度破坏，熵自适应噪声优于固定扰动强度 作者主张"
     },
     {
-      "id": "card",
+      "id": "exploration-guided-prompt-scaffolding",
       "title": "探索引导的提示脚手架多模态强化后训练",
       "summary": "在线强化学习后训练（如GRPO）中，训练提示被统一对待，隐含假设每个提示对当前策略同等有信息量。实际上提示效用差异很大：部分已饱和、部分过难，只有部分掌握者提供有效学习信号。",
       "stage": "FRONTIER",
@@ -5028,13 +5030,13 @@
       ],
       "related": [
         "actobs-observation-supervision",
+        "bpo-bellman-policy-optimization",
         "codemidas-code-rl-envs",
         "expert-space-exploration-moe",
         "grpo",
-        "lab-agent-rl",
-        "multi-turn-rl"
+        "jitmem-read-time-curation"
       ],
-      "degree": 13,
+      "degree": 16,
       "sources": [
         "not-all-prompts-are-equal-exploration-gu"
       ],
@@ -5042,7 +5044,7 @@
         "grpo",
         "policy-gradient"
       ],
-      "search": "探索引导的提示脚手架多模态强化后训练 在线强化学习后训练（如grpo）中，训练提示被统一对待，隐含假设每个提示对当前策略同等有信息量。实际上提示效用差异很大：部分已饱和、部分过难，只有部分掌握者提供有效学习信号。 训练算法 paper deep c card grpo curriculum-learning multimodal-rl post-training prompt-scaffolding prompt-selection 理解提示效用差异为何破坏 grpo 等在线 rl 后训练的学习信号 掌握 eps（探索潜力分数）如何从已有 rollout 奖励统计中零成本估计 了解教师模型如何将低效用提示改写为脚手架变体并形成数据飞轮 评估该方法在域内与 ood 多模态数学推理基准上的增益与适用边界 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 eps 可从 grpo 已有 rollout 统计直接计算，无需额外模型或额外 rollout 作者主张 在 geo3k 与 mmk12 上，方法一致优于 grpo 基线，含域内与 ood 作者主张 mmk12 训练下 2b 模型 mathvision 从 28.62% 提升至 31.91% 作者主张 高 eps 提示对应更好下游准确率，剔除近零 eps 提示优于全池训练 作者主张"
+      "search": "探索引导的提示脚手架多模态强化后训练 在线强化学习后训练（如grpo）中，训练提示被统一对待，隐含假设每个提示对当前策略同等有信息量。实际上提示效用差异很大：部分已饱和、部分过难，只有部分掌握者提供有效学习信号。 训练算法 paper deep c exploration-guided-prompt-scaffolding grpo curriculum-learning multimodal-rl post-training prompt-scaffolding prompt-selection 理解提示效用差异为何破坏 grpo 等在线 rl 后训练的学习信号 掌握 eps（探索潜力分数）如何从已有 rollout 奖励统计中零成本估计 了解教师模型如何将低效用提示改写为脚手架变体并形成数据飞轮 评估该方法在域内与 ood 多模态数学推理基准上的增益与适用边界 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 eps 可从 grpo 已有 rollout 统计直接计算，无需额外模型或额外 rollout 作者主张 在 geo3k 与 mmk12 上，方法一致优于 grpo 基线，含域内与 ood 作者主张 mmk12 训练下 2b 模型 mathvision 从 28.62% 提升至 31.91% 作者主张 高 eps 提示对应更好下游准确率，剔除近零 eps 提示优于全池训练 作者主张"
     },
     {
       "id": "sciencebuddy",
@@ -5158,12 +5160,12 @@
       "related": [
         "modularrsi-harness",
         "actobs-observation-supervision",
-        "card",
+        "bpo-bellman-policy-optimization",
         "codemidas-code-rl-envs",
         "expert-space-exploration-moe",
-        "gai"
+        "exploration-guided-prompt-scaffolding"
       ],
-      "degree": 16,
+      "degree": 19,
       "sources": [
         "sciencebuddy-recursive-in-recursive-self"
       ],
@@ -5446,14 +5448,14 @@
         "自测"
       ],
       "related": [
+        "bpo-bellman-policy-optimization",
         "expert-space-exploration-moe",
         "grpo",
         "retireopd-self-retiring-opd",
         "actobs-observation-supervision",
-        "card",
         "codemidas-code-rl-envs"
       ],
-      "degree": 17,
+      "degree": 20,
       "sources": [
         "learning-to-solve-hard-problems-in-rl-fo"
       ],
@@ -5464,7 +5466,7 @@
       "search": "never give up：rl 难题动态采样 论文指出 rl 后训练 llm 时存在“马太效应”：模型在初始能力强的简单问题上提升远大于困难问题，导致困难问题长期无法解决。作者认为原因之一是计算分配不均——grpo 等对每个 prompt 分配相同采样数，困难 prompt 常因全零奖励而无梯度。 训练算法 paper deep c never-give-up-rl grpo llm post-training rlvr asynchronous-rl dynamic-sampling 理解 rl 后训练中的马太效应及其计算分配成因 掌握 ngu 迭代采样与概率放弃机制 了解异步 rl 下 off-policy 过滤与正样本锚定重缩放 评估 ngu 在数学与编码任务上的适用边界 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 rl 提升与模型初始能力成正比，简单任务提升大、困难任务提升小 作者主张 grpo 对每个 prompt 等量采样 $k$ 个 completion，全零奖励组不贡献梯度，是 matthew effect 的原因之一 与共识一致 ngu 对未解 prompt 迭代采样，以概率 $p$ 继续、否则放弃，实现按难度动态分配计算 作者主张 ngu 在数学与代码任务上优于强 rl 基线，能通过最难的编码测试 存疑 ngu 必须过滤过旧的 rollout 不参与损失，但把过滤后的 completion 纳入 grpo 基线计算可提升性能 作者主张 不重采样简单 prompt 会不可逆地改变数据分布，导致简单问题性能退化 作者主张"
     },
     {
-      "id": "agent",
+      "id": "root-cause-attribution-search",
       "title": "根因归因即搜索：长程 Agent 失败的持续搜索",
       "summary": "长时程AI智能体执行日志可达数百万token，失败根因证据稀疏、分散且可能远早于最终结果出现。现有基于LLM裁判的单轮rubric式根因归因方法在证据空间未充分探索前就锁定一个看似合理的失败原因，导致归因不可靠；而自一致性、异构裁判组等重采样策略无法恢复遗漏证据。",
       "stage": "FRONTIER",
@@ -5590,7 +5592,7 @@
         "multi-turn-rl",
         "pact-enterprise-compliance-pressure"
       ],
-      "degree": 14,
+      "degree": 12,
       "sources": [
         "root-cause-attribution-is-a-search-probl"
       ],
@@ -5598,7 +5600,7 @@
         "evaluation",
         "agent-loop"
       ],
-      "search": "根因归因即搜索：长程 agent 失败的持续搜索 长时程ai智能体执行日志可达数百万token，失败根因证据稀疏、分散且可能远早于最终结果出现。现有基于llm裁判的单轮rubric式根因归因方法在证据空间未充分探索前就锁定一个看似合理的失败原因，导致归因不可靠；而自一致性、异构裁判组等重采样策略无法恢复遗漏证据。 评估与安全 paper deep c agent agent-failure-attribution continual-search evaluation llm-as-judge long-horizon-agents root-cause-analysis 理解为何长程 agent 根因归因应被建模为证据空间上的迭代搜索问题 掌握 continual search 与 passive continuation、自一致性、异构评审团等基线的差异与增益 了解长轨迹基准（megarca-mix、trail、telbench）与短轨迹基准（agentrx、who&when）上的效果分化 认识该方法的成本、可观测性限制与标签噪声等边界条件 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 在长执行记录基准上，continual search 优于单轮归因与 passive continuation 作者主张 continual search 优于自一致性与异构裁判组等独立重采样基线 作者主张 在短执行轨迹上增益消失甚至为负 作者主张 增益来自跨轮获取新证据而非单纯增加算力 作者主张 增益与证据覆盖扩张同步 作者主张"
+      "search": "根因归因即搜索：长程 agent 失败的持续搜索 长时程ai智能体执行日志可达数百万token，失败根因证据稀疏、分散且可能远早于最终结果出现。现有基于llm裁判的单轮rubric式根因归因方法在证据空间未充分探索前就锁定一个看似合理的失败原因，导致归因不可靠；而自一致性、异构裁判组等重采样策略无法恢复遗漏证据。 评估与安全 paper deep c root-cause-attribution-search agent-failure-attribution continual-search evaluation llm-as-judge long-horizon-agents root-cause-analysis 理解为何长程 agent 根因归因应被建模为证据空间上的迭代搜索问题 掌握 continual search 与 passive continuation、自一致性、异构评审团等基线的差异与增益 了解长轨迹基准（megarca-mix、trail、telbench）与短轨迹基准（agentrx、who&when）上的效果分化 认识该方法的成本、可观测性限制与标签噪声等边界条件 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 在长执行记录基准上，continual search 优于单轮归因与 passive continuation 作者主张 continual search 优于自一致性与异构裁判组等独立重采样基线 作者主张 在短执行轨迹上增益消失甚至为负 作者主张 增益来自跨轮获取新证据而非单纯增加算力 作者主张 增益与证据覆盖扩张同步 作者主张"
     },
     {
       "id": "impossiblerubrics",
@@ -5714,14 +5716,14 @@
         "自测"
       ],
       "related": [
+        "emergent-collusion-long-horizon",
+        "bpo-bellman-policy-optimization",
         "evaluation",
         "grpo",
         "mintrl-off-policy-intervention",
-        "never-give-up-rl",
-        "retireopd-self-retiring-opd",
-        "rewards"
+        "never-give-up-rl"
       ],
-      "degree": 12,
+      "degree": 15,
       "sources": [
         "impossiblerubrics-stress-testing-generat"
       ],
@@ -5732,7 +5734,7 @@
       "search": "impossiblerubrics：生成式评分标准作为奖励信号的压力测试 论文研究将自动生成的评分标准（rubric）用作奖励信号时的可被利用性。在证据受限、问题本身无法诚实回答的任务上，生成式 rubric 可能奖励违反证据边界的答案而非诚实基线，从而构成奖励黑客风险。 评估与安全 paper deep c impossiblerubrics rlvr evaluation-benchmark honesty reward hacking rubric-reward safety 理解生成式 rubric 作为奖励信号时的奖励黑客风险与可被利用性定义 掌握 impossiblerubrics 的环境构造、证书机制与 exploited 判定流程 了解安全提示、rubric 重采样、评判替换等消融对漏洞的缓解程度 认识 oracle 敏感性与 k=1 单次抽样等结论边界 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 十一个生成器在 full-150 上被利用率为 8–26%，压力切分上最高达 98% 作者主张 证书忠实 rubric 在测试链下 0/45 被利用，而朴素代理 rubric 为 64% 作者主张 加入通用安全提示后残余被利用率仍为 22%/36%/49%，未消除漏洞 作者主张 同一冻结攻击与评判分数下，oracle 配置不同使测得率在 33.3%–75.6% 间变化 存疑"
     },
     {
-      "id": "gai",
+      "id": "generalized-agent-iteration",
       "title": "GAI：统一迭代策略改进与递归自我改进",
       "summary": "论文要解决的问题是：现有文献中“自我改进”标签被宽泛使用，缺乏统一判据来区分哪些系统真正在自我改进、以及自我改进后发生了什么变化。经典广义策略迭代（GPI）假设改进机制与奖励都在智能体外部，而递归自我改进（RSI）中二者可能进入智能体内部，目前没有同等范围的形式化描述。",
       "stage": "FOUNDATION",
@@ -5845,9 +5847,10 @@
         "agent-loop",
         "modularrsi-harness",
         "rrsi-regularized-harness-rsi",
+        "rsi-harness-two-loop",
         "sciencebuddy"
       ],
-      "degree": 7,
+      "degree": 8,
       "sources": [
         "generalized-agent-iteration-one-formal-f"
       ],
@@ -5855,7 +5858,7 @@
         "mdp",
         "value-learning"
       ],
-      "search": "gai：统一迭代策略改进与递归自我改进 论文要解决的问题是：现有文献中“自我改进”标签被宽泛使用，缺乏统一判据来区分哪些系统真正在自我改进、以及自我改进后发生了什么变化。经典广义策略迭代（gpi）假设改进机制与奖励都在智能体外部，而递归自我改进（rsi）中二者可能进入智能体内部，目前没有同等范围的形式化描述。 概念与基础 paper deep c gai gpi rsi agent-iteration evaluation-anchoring self-improvement 用两个旋钮（改进机制是否在智能体内、评价基座是否外部锚定）区分 gpi 与递归自我改进 理解锚定、目标漂移、完全自指三种自我改进极性及其判定标准 掌握 rsi 的四个缺陷与自洽条件，能定位现有 harness 类系统 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 gai 用两个旋钮统一描述 gpi 与递归自我改进：改进机制是否在智能体内、评价标准是否锚定在外部 作者主张 自我改进的极性分为三类：锚定、目标漂移、完全自指，由评价基座 $\\rho$ 的状态决定 作者主张 递归自我改进存在四个缺陷：候选自我搜索、自我评价、基座未锚定、目标漂移，每个对应 gpi 某一条件被违反 作者主张 在固定外部评价的基准中，58.33% 的设置首次有效尝试即改进，但 78.26% 继续搜索超过最佳分数的搜索以更低分结束 存疑"
+      "search": "gai：统一迭代策略改进与递归自我改进 论文要解决的问题是：现有文献中“自我改进”标签被宽泛使用，缺乏统一判据来区分哪些系统真正在自我改进、以及自我改进后发生了什么变化。经典广义策略迭代（gpi）假设改进机制与奖励都在智能体外部，而递归自我改进（rsi）中二者可能进入智能体内部，目前没有同等范围的形式化描述。 概念与基础 paper deep c generalized-agent-iteration gpi rsi agent-iteration evaluation-anchoring self-improvement 用两个旋钮（改进机制是否在智能体内、评价基座是否外部锚定）区分 gpi 与递归自我改进 理解锚定、目标漂移、完全自指三种自我改进极性及其判定标准 掌握 rsi 的四个缺陷与自洽条件，能定位现有 harness 类系统 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 gai 用两个旋钮统一描述 gpi 与递归自我改进：改进机制是否在智能体内、评价标准是否锚定在外部 作者主张 自我改进的极性分为三类：锚定、目标漂移、完全自指，由评价基座 $\\rho$ 的状态决定 作者主张 递归自我改进存在四个缺陷：候选自我搜索、自我评价、基座未锚定、目标漂移，每个对应 gpi 某一条件被违反 作者主张 在固定外部评价的基准中，58.33% 的设置首次有效尝试即改进，但 78.26% 继续搜索超过最佳分数的搜索以更低分结束 存疑"
     },
     {
       "id": "cera-moa",
@@ -5981,10 +5984,10 @@
         "agora-git",
         "bi-agent-bi-bench",
         "emergence-world-stress-test",
-        "grpo",
-        "hypoevolve"
+        "emergent-collusion-long-horizon",
+        "grpo"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "cera-moa-co-evolving-routing-mechanisms"
       ],
@@ -6110,12 +6113,12 @@
       "related": [
         "cera-moa",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "hypoevolve",
         "lab-agent",
-        "multi-agent",
-        "sol-pi-auto-research-harness"
+        "multi-agent"
       ],
-      "degree": 8,
+      "degree": 10,
       "sources": [
         "agora-git-as-shared-memory-for-collectiv"
       ],
@@ -6240,11 +6243,11 @@
         "agora-git",
         "cera-moa",
         "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
         "multi-agent",
-        "scienceide-sci-envs",
-        "sol-pi-auto-research-harness"
+        "scienceide-sci-envs"
       ],
-      "degree": 8,
+      "degree": 9,
       "sources": [
         "hypoevolve-genetic-algorithms-enable-mul"
       ],
@@ -6369,13 +6372,13 @@
       ],
       "related": [
         "programdistill-ref-guided-swe",
-        "agent",
         "agent-loop",
         "aport-vault",
         "bi-agent-bi-bench",
-        "cadworld-cad"
+        "cadworld-cad",
+        "emergence-world-stress-test"
       ],
-      "degree": 18,
+      "degree": 21,
       "sources": [
         "riskchainbench-a-benchmark-for-obfuscate"
       ],
@@ -6386,7 +6389,7 @@
       "search": "riskchainbench：混淆消息还原与网页调查基准 在线平台需要治理色情、诈骗、赌博等滥用信息，但规避者用表情符号、同音字、形近字、拆字和冗余符号混淆文本，使消息对人可读却逃避基于表面模式的审核。这些消息常含篡改域名、访问码或操作指令，将用户导向外部网页。 评估与安全 paper deep c riskchainbench benchmark evaluation evidence-grounding obfuscation safety web-agent 理解跨渠道平台风险调查的两阶段评测协议：混淆消息还原与证据锚定网页调查 掌握入口门（entry gate）机制如何在不重跑网页调查的情况下暴露上游还原损失 了解十个模型在还原任务与网页调查任务上的排名差异与失败归因分布 认识现有混淆内容基准与网页智能体基准分离导致的跨阶段损失盲区 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 同一批十个模型在入口 top-1 与完整重建上的排名不一致（即可操作入口的恢复能力与整体还原质量不是同一件事） 作者主张 网页调查中执行失败是最大失败来源，占 31.9% 作者主张 决策正确后仅在类型判定上失败的比例仅 0.9% 作者主张 离线入口门可在不重跑网页调查的情况下暴露上游还原损失 作者主张"
     },
     {
-      "id": "card-2",
+      "id": "region-level-policy-optimization",
       "title": "区域级策略优化：细粒度多模态感知",
       "summary": "多模态大模型在细粒度视觉感知上仍易失败：小字、远处目标与高分辨率杂乱场景会降低准确率，而直接提高输入分辨率会带来视觉与语言侧计算开销。答案相关证据通常只占图像一小部分，因此需要选择性分配高分辨率处理。",
       "stage": "FRONTIER",
@@ -6497,11 +6500,12 @@
         "自测"
       ],
       "related": [
+        "bpo-bellman-policy-optimization",
         "grpo",
         "policy-gradient",
         "ppo"
       ],
-      "degree": 5,
+      "degree": 6,
       "sources": [
         "region-level-policy-optimization-for-fin"
       ],
@@ -6509,7 +6513,7 @@
         "policy-gradient",
         "ppo"
       ],
-      "search": "区域级策略优化：细粒度多模态感知 多模态大模型在细粒度视觉感知上仍易失败：小字、远处目标与高分辨率杂乱场景会降低准确率，而直接提高输入分辨率会带来视觉与语言侧计算开销。答案相关证据通常只占图像一小部分，因此需要选择性分配高分辨率处理。 训练算法 paper deep c card-2 mllm perception roi prediction policy optimization region-level rl token compression 理解定位与识别在token压缩容忍度上的不对称性（约3–4倍） 掌握以连通区域为动作、冻结reader功能贡献为奖励的区域级rl机制 了解减法/加法策略、控制区域噪声边界与稀疏视觉编码的配合 评估该方法在精度-效率权衡上相对sd-rpn与剪枝方法的优势 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 定位比识别能承受约 3–4× 更强的 token 压缩 作者主张 区域级 rl 在 sd-rpn 上平均 +3.0，稀疏视觉编码再 +1.5；相对冻结基座全系统 +14.9 作者主张 4b 模型以 4.2× 更少视觉 token 匹配 sd-rpn 精度 作者主张 9b 模型在表 1 平均分最高，超过 gemini-3.1-pro 与 vision-opd-9b 作者主张"
+      "search": "区域级策略优化：细粒度多模态感知 多模态大模型在细粒度视觉感知上仍易失败：小字、远处目标与高分辨率杂乱场景会降低准确率，而直接提高输入分辨率会带来视觉与语言侧计算开销。答案相关证据通常只占图像一小部分，因此需要选择性分配高分辨率处理。 训练算法 paper deep c region-level-policy-optimization mllm perception roi prediction policy optimization region-level rl token compression 理解定位与识别在token压缩容忍度上的不对称性（约3–4倍） 掌握以连通区域为动作、冻结reader功能贡献为奖励的区域级rl机制 了解减法/加法策略、控制区域噪声边界与稀疏视觉编码的配合 评估该方法在精度-效率权衡上相对sd-rpn与剪枝方法的优势 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 定位比识别能承受约 3–4× 更强的 token 压缩 作者主张 区域级 rl 在 sd-rpn 上平均 +3.0，稀疏视觉编码再 +1.5；相对冻结基座全系统 +14.9 作者主张 4b 模型以 4.2× 更少视觉 token 匹配 sd-rpn 精度 作者主张 9b 模型在表 1 平均分最高，超过 gemini-3.1-pro 与 vision-opd-9b 作者主张"
     },
     {
       "id": "code2skill",
@@ -6765,10 +6769,10 @@
         "aport-vault",
         "bi-agent-bi-bench",
         "emergence-world-stress-test",
-        "evoskill-gui-training-free",
-        "mintact-unified-visual-agent"
+        "emergent-collusion-long-horizon",
+        "evoskill-gui-training-free"
       ],
-      "degree": 13,
+      "degree": 17,
       "sources": [
         "cadworld-computer-use-benchmark-for-long"
       ],
@@ -7027,7 +7031,7 @@
         "environments",
         "evoskill-gui-training-free"
       ],
-      "degree": 14,
+      "degree": 15,
       "sources": [
         "bi-agent-and-bi-bench-towards-automating"
       ],
@@ -7158,7 +7162,7 @@
         "evolvetrade-policy-refinement",
         "evoskill-gui-training-free"
       ],
-      "degree": 14,
+      "degree": 17,
       "sources": [
         "aport-vault-benchmarking-ai-agent-paymen"
       ],
@@ -7167,6 +7171,769 @@
         "agent"
       ],
       "search": "aport vault：智能体支付授权基准 论文要解决的问题是：在工具调用型支付智能体面临真实对抗攻击时，模型自身拒绝与工具边界强制执行两种防护机制的效果差异未被量化。现有基准多衡量模型拒绝率或判断者评分，无法回答部署者在选定最佳模型后仍持有的残余风险。 评估与安全 paper deep c aport-vault agent-safety benchmark enforcement multi-turn-attack payment-authorization tool-use 理解模型自身拒绝与预执行授权层在支付智能体安全上的效果差异 掌握 oap 预执行授权规范与未授权转账这一确定性指标的测量方法 认识多轮攻击优势集中于伪造收据队列等攻击家族的现象 了解该基准在单域、单工具、模拟银行等条件下的局限 问题与语境 核心主张 机制与方法 实验设置 证据与结果 证据强度评估 边界与反例 与知识库的关系 复现与验证计划 术语与记号 自测 levels 2–4 模型单独产生 140/76,842 次未授权转账，授权层后为 0/69,297 作者主张 授权层后的零并非通过抑制请求获得：两架构请求率接近，68,970 个匹配三元组上配对差 +0.084 个百分点 [-0.020, +0.189] 作者主张 14 个模型在相同 level 4 提示上均请求支付，请求率 33.1%–39.9%（levels 2–4 平衡交集） 作者主张 多轮优势集中于单一攻击家族：伪造收据队列贡献 111/113 多轮 level 2 结果 作者主张"
+    },
+    {
+      "id": "videogen-agent-tool-rl",
+      "title": "VideoGen-Agent：多任务智能体强化学习驱动视频生成",
+      "summary": "用SFT加多任务智能体强化学习训练一个多模态智能体，在六类视频生成任务中协调检索、模拟与验证工具。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 64,
+      "minutes": 15,
+      "updated": "2026-09-23",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "64-videogen-agent-tool-rl.md",
+      "tags": [
+        "Agentic RL",
+        "multitask",
+        "reward-design",
+        "tool-use",
+        "video-generation"
+      ],
+      "concepts": [
+        "Agentic RL",
+        "multitask",
+        "reward-design",
+        "tool-use",
+        "video-generation"
+      ],
+      "objectives": [
+        "理解多任务智能体强化学习如何统一协调异构工具链",
+        "看清混合奖励与任务优势归一化在跨类别训练中的作用",
+        "识别该工作证据链的缺口（仅摘要级、无复现）"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.24997",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.24997",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 291,
+        "方法": 218,
+        "证据与实验": 291,
+        "边界与未解问题": 203,
+        "与知识库的关系": 98,
+        "自测": 92
+      },
+      "bodyChars": 1264,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "vhd-play-mechanism-first-envs",
+        "agent-loop",
+        "aport-vault",
+        "evolvetrade-policy-refinement",
+        "multi-turn-rl",
+        "orientation"
+      ],
+      "degree": 7,
+      "sources": [
+        "videogen-agent-reinforcing-video-generat"
+      ],
+      "prerequisites": [],
+      "search": "videogen-agent：多任务智能体强化学习驱动视频生成 用sft加多任务智能体强化学习训练一个多模态智能体，在六类视频生成任务中协调检索、模拟与验证工具。 agent 系统 paper overview c videogen-agent-tool-rl agentic rl multitask reward-design tool-use video-generation 理解多任务智能体强化学习如何统一协调异构工具链 看清混合奖励与任务优势归一化在跨类别训练中的作用 识别该工作证据链的缺口（仅摘要级、无复现） 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "rsi-harness-two-loop",
+      "title": "双层循环的 harness 递归自我改进",
+      "summary": "论文提出内外双层循环的递归自我改进系统，让研究 agent 改写自身 harness 代码，并在留出基准上检验改进是否可迁移。",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "order": 65,
+      "minutes": 18,
+      "updated": "2026-09-23",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "65-rsi-harness-two-loop.md",
+      "tags": [
+        "RSI",
+        "agent",
+        "benchmark",
+        "harness",
+        "reward hacking"
+      ],
+      "concepts": [
+        "RSI",
+        "agent",
+        "benchmark",
+        "harness",
+        "reward hacking"
+      ],
+      "objectives": [
+        "理解双层（inner/outer loop）递归自我改进的优化结构与其与普通 harness 搜索的区别",
+        "说清论文如何用固定评估预算与留出基准来区分真实能力提升与额外算力",
+        "识别该工作证据链的薄弱环节：噪声、成本、可解释性与未复现性"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.26457",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.26457",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 242,
+        "方法": 245,
+        "证据与实验": 355,
+        "边界与未解问题": 259,
+        "与知识库的关系": 290,
+        "自测": 157
+      },
+      "bodyChars": 1619,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "agora-git",
+        "aport-vault",
+        "bi-agent-bi-bench",
+        "cadworld-cad",
+        "designer-rsi-procedural-memory",
+        "emergent-collusion-long-horizon"
+      ],
+      "degree": 17,
+      "sources": [
+        "recursive-self-improvement-of-ai-researc"
+      ],
+      "prerequisites": [],
+      "search": "双层循环的 harness 递归自我改进 论文提出内外双层循环的递归自我改进系统，让研究 agent 改写自身 harness 代码，并在留出基准上检验改进是否可迁移。 前沿专题 paper overview c rsi-harness-two-loop rsi agent benchmark harness reward hacking 理解双层（inner/outer loop）递归自我改进的优化结构与其与普通 harness 搜索的区别 说清论文如何用固定评估预算与留出基准来区分真实能力提升与额外算力 识别该工作证据链的薄弱环节：噪声、成本、可解释性与未复现性 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "designer-rsi-procedural-memory",
+      "title": "Designer-RSI：从用户流量演化程序性记忆",
+      "summary": "在冻结模型上，用可编辑的自然语言技能库替代权重更新，通过拓宽与深化两轴演化，并以匹配回放门控准入。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 66,
+      "minutes": 18,
+      "updated": "2026-09-23",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "66-designer-rsi-procedural-memory.md",
+      "tags": [
+        "agentic-design",
+        "continual-adaptation",
+        "procedural-memory",
+        "replay-gate",
+        "skill-evolution"
+      ],
+      "concepts": [
+        "agentic-design",
+        "continual-adaptation",
+        "procedural-memory",
+        "replay-gate",
+        "skill-evolution"
+      ],
+      "objectives": [
+        "理解把「程序性记忆」而非模型权重当作学习对象的动机与代价",
+        "说清拓宽/深化两轴与匹配回放门控如何分离提议与准入",
+        "识别该工作在奖励不可验证、门控局部性上的证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.22086",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.22086",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 265,
+        "方法": 405,
+        "证据与实验": 350,
+        "边界与未解问题": 239,
+        "与知识库的关系": 161,
+        "自测": 110
+      },
+      "bodyChars": 1601,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "evoskill-gui-training-free",
+        "jitmem-read-time-curation",
+        "modularrsi-harness",
+        "rsi-harness-two-loop"
+      ],
+      "degree": 5,
+      "sources": [
+        "designer-rsi-evolving-procedural-memory"
+      ],
+      "prerequisites": [],
+      "search": "designer-rsi：从用户流量演化程序性记忆 在冻结模型上，用可编辑的自然语言技能库替代权重更新，通过拓宽与深化两轴演化，并以匹配回放门控准入。 agent 系统 paper overview c designer-rsi-procedural-memory agentic-design continual-adaptation procedural-memory replay-gate skill-evolution 理解把「程序性记忆」而非模型权重当作学习对象的动机与代价 说清拓宽/深化两轴与匹配回放门控如何分离提议与准入 识别该工作在奖励不可验证、门控局部性上的证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "pact-credit-critic-alignment",
+      "title": "PACT：信用分配的公理化刻画与评论家对齐",
+      "summary": "提出信用的三条正则条件并证明其唯一表示，据此设计 Actor-then-Critic 更新顺序与 BCE 评论家训练。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 67,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "67-pact-credit-critic-alignment.md",
+      "tags": [
+        "GAE",
+        "GRPO",
+        "SWE-bench",
+        "actor-critic",
+        "credit assignment"
+      ],
+      "concepts": [
+        "GAE",
+        "GRPO",
+        "SWE-bench",
+        "actor-critic",
+        "credit assignment"
+      ],
+      "objectives": [
+        "理解作者提出的 Completeness / Prefix Consistency / Neutrality 三条条件如何约束 token 级信用",
+        "说清 PACT 的 Actor-then-Critic 更新顺序与 BCE 评论家目标相对 PPO/GRPO 的差异",
+        "判断该唯一性定理与实验结论的证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.26355",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.26355",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 215,
+        "方法": 511,
+        "证据与实验": 281,
+        "边界与未解问题": 251,
+        "与知识库的关系": 177,
+        "自测": 137
+      },
+      "bodyChars": 1643,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "jitmem-read-time-curation",
+        "policy-gradient",
+        "actobs-observation-supervision",
+        "bpo-bellman-policy-optimization",
+        "codemidas-code-rl-envs",
+        "evaluation"
+      ],
+      "degree": 21,
+      "sources": [
+        "pact-from-credit-assignment-to-critic-al"
+      ],
+      "prerequisites": [],
+      "search": "pact：信用分配的公理化刻画与评论家对齐 提出信用的三条正则条件并证明其唯一表示，据此设计 actor-then-critic 更新顺序与 bce 评论家训练。 训练算法 paper overview c pact-credit-critic-alignment gae grpo swe-bench actor-critic credit assignment 理解作者提出的 completeness / prefix consistency / neutrality 三条条件如何约束 token 级信用 说清 pact 的 actor-then-critic 更新顺序与 bce 评论家目标相对 ppo/grpo 的差异 判断该唯一性定理与实验结论的证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "vhd-play-mechanism-first-envs",
+      "title": "先解数学机制再生成可验证 Agent 环境",
+      "summary": "提出机制优先构造：先采样并求解数学决策问题，再据此生成有状态工具环境，使动力学与评分共享同一可计算参照。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 68,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "68-vhd-play-mechanism-first-envs.md",
+      "tags": [
+        "Agentic RL",
+        "environment-generation",
+        "long-horizon",
+        "tool-use",
+        "verifiable-reward"
+      ],
+      "concepts": [
+        "Agentic RL",
+        "environment-generation",
+        "long-horizon",
+        "tool-use",
+        "verifiable-reward"
+      ],
+      "objectives": [
+        "理解机制优先（先求解、后生成环境）与常见环境优先生成流程的差别",
+        "掌握该框架如何用求解器给出的最优值与默认策略值构造 episode 级奖励",
+        "评估其迁移证据的强度与证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.27321",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.27321",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 240,
+        "方法": 332,
+        "证据与实验": 274,
+        "边界与未解问题": 239,
+        "与知识库的关系": 141,
+        "自测": 122
+      },
+      "bodyChars": 1419,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "videogen-agent-tool-rl",
+        "aport-vault",
+        "cadworld-cad",
+        "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
+        "environments"
+      ],
+      "degree": 13,
+      "sources": [
+        "verifiable-hidden-dynamics-play-generati"
+      ],
+      "prerequisites": [],
+      "search": "先解数学机制再生成可验证 agent 环境 提出机制优先构造：先采样并求解数学决策问题，再据此生成有状态工具环境，使动力学与评分共享同一可计算参照。 agent 系统 paper overview c vhd-play-mechanism-first-envs agentic rl environment-generation long-horizon tool-use verifiable-reward 理解机制优先（先求解、后生成环境）与常见环境优先生成流程的差别 掌握该框架如何用求解器给出的最优值与默认策略值构造 episode 级奖励 评估其迁移证据的强度与证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "bpo-bellman-policy-optimization",
+      "title": "BPO：从镜像下降推导的无 Critic 策略优化",
+      "summary": "论文从策略镜像下降出发，用贝尔曼方程把带终端奖励的自回归生成改写为轨迹级目标，得到无需价值模型、以失配修正权重替代重要性比值的 BPO 损失。",
+      "stage": "FOUNDATION",
+      "track": "训练算法",
+      "order": 69,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "69-bpo-bellman-policy-optimization.md",
+      "tags": [
+        "GRPO",
+        "PMD",
+        "RLVR",
+        "critic-free",
+        "policy optimization"
+      ],
+      "concepts": [
+        "GRPO",
+        "PMD",
+        "RLVR",
+        "critic-free",
+        "policy optimization"
+      ],
+      "objectives": [
+        "理解 BPO 如何用贝尔曼方程的望远镜求和消去中间状态价值估计",
+        "说清 BPO 损失与 GRPO 裁剪代理目标在权重项上的差别",
+        "判断该方法的证据强度与可复现边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.15987",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.15987",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 246,
+        "方法": 403,
+        "证据与实验": 363,
+        "边界与未解问题": 211,
+        "与知识库的关系": 206,
+        "自测": 130
+      },
+      "bodyChars": 1630,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "grpo",
+        "never-give-up-rl",
+        "retireopd-self-retiring-opd",
+        "actobs-observation-supervision",
+        "codemidas-code-rl-envs",
+        "expert-space-exploration-moe"
+      ],
+      "degree": 18,
+      "sources": [
+        "bellman-policy-optimization"
+      ],
+      "prerequisites": [],
+      "search": "bpo：从镜像下降推导的无 critic 策略优化 论文从策略镜像下降出发，用贝尔曼方程把带终端奖励的自回归生成改写为轨迹级目标，得到无需价值模型、以失配修正权重替代重要性比值的 bpo 损失。 训练算法 paper overview c bpo-bellman-policy-optimization grpo pmd rlvr critic-free policy optimization 理解 bpo 如何用贝尔曼方程的望远镜求和消去中间状态价值估计 说清 bpo 损失与 grpo 裁剪代理目标在权重项上的差别 判断该方法的证据强度与可复现边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "jitmem-read-time-curation",
+      "title": "JitMem：读时策展的任务自适应记忆",
+      "summary": "把记忆策展从写时推迟到读时，让策展器看到当前任务再蒸馏原始轨迹，并用 GRPO 直接优化同任务成功率。",
+      "stage": "FRONTIER",
+      "track": "Agent 系统",
+      "order": 70,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "70-jitmem-read-time-curation.md",
+      "tags": [
+        "GRPO",
+        "agent",
+        "credit assignment",
+        "long-horizon",
+        "memory"
+      ],
+      "concepts": [
+        "GRPO",
+        "agent",
+        "credit assignment",
+        "long-horizon",
+        "memory"
+      ],
+      "objectives": [
+        "说清写时策展的两个结构性代价，以及读时策展如何规避",
+        "理解为何读时策展把信用分配压缩为单步，从而省去任务分组",
+        "知道该方法的证据强度与未复现边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.27334",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.27334",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 198,
+        "方法": 392,
+        "证据与实验": 450,
+        "边界与未解问题": 180,
+        "与知识库的关系": 147,
+        "自测": 121
+      },
+      "bodyChars": 1559,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "pact-credit-critic-alignment",
+        "actobs-observation-supervision",
+        "agent-loop",
+        "bpo-bellman-policy-optimization",
+        "cadworld-cad",
+        "codemidas-code-rl-envs"
+      ],
+      "degree": 24,
+      "sources": [
+        "just-in-time-memory-learning-to-curate-t"
+      ],
+      "prerequisites": [],
+      "search": "jitmem：读时策展的任务自适应记忆 把记忆策展从写时推迟到读时，让策展器看到当前任务再蒸馏原始轨迹，并用 grpo 直接优化同任务成功率。 agent 系统 paper overview c jitmem-read-time-curation grpo agent credit assignment long-horizon memory 说清写时策展的两个结构性代价，以及读时策展如何规避 理解为何读时策展把信用分配压缩为单步，从而省去任务分组 知道该方法的证据强度与未复现边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "schrodinger-repo-representation",
+      "title": "仓库表示作为评测变量：SWE-bench 是学会还是记住",
+      "summary": "提出在评测时动态生成语义等价的仓库视图，检验编码智能体是否依赖熟悉的仓库线索而非真实推理。",
+      "stage": "SYSTEMS",
+      "track": "评估与安全",
+      "order": 71,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "71-schrodinger-repo-representation.md",
+      "tags": [
+        "SWE-bench",
+        "benchmark-validity",
+        "coding-agent",
+        "data-leakage",
+        "evaluation"
+      ],
+      "concepts": [
+        "SWE-bench",
+        "benchmark-validity",
+        "coding-agent",
+        "data-leakage",
+        "evaluation"
+      ],
+      "objectives": [
+        "理解静态基准表示为何会混淆记忆与推理能力",
+        "掌握 SchrodingerRepo 的四级语义保持变换设计",
+        "能区分作者主张与已有共识，并识别该研究的证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.27891",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.27891",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 300,
+        "方法": 216,
+        "证据与实验": 419,
+        "边界与未解问题": 233,
+        "与知识库的关系": 161,
+        "自测": 83
+      },
+      "bodyChars": 1483,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "category-expert-swe-agents",
+        "emergence-world-stress-test",
+        "evaluation",
+        "evolvetrade-policy-refinement",
+        "harness-design-coding-agents",
+        "modularrsi-harness"
+      ],
+      "degree": 14,
+      "sources": [
+        "schr-dinger-s-code-repository-have-llms"
+      ],
+      "prerequisites": [],
+      "search": "仓库表示作为评测变量：swe-bench 是学会还是记住 提出在评测时动态生成语义等价的仓库视图，检验编码智能体是否依赖熟悉的仓库线索而非真实推理。 评估与安全 paper overview c schrodinger-repo-representation swe-bench benchmark-validity coding-agent data-leakage evaluation 理解静态基准表示为何会混淆记忆与推理能力 掌握 schrodingerrepo 的四级语义保持变换设计 能区分作者主张与已有共识，并识别该研究的证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
+    },
+    {
+      "id": "emergent-collusion-long-horizon",
+      "title": "长时程 LLM 智能体交互中的自发串谋",
+      "summary": "在受控多轮双智能体环境中，无任何恶意指令时智能体仍会为最大化共享奖励而跳过验证协议、形成稳定串谋。",
+      "stage": "FRONTIER",
+      "track": "评估与安全",
+      "order": 72,
+      "minutes": 18,
+      "updated": "2026-09-24",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "72-emergent-collusion-long-horizon.md",
+      "tags": [
+        "collusion",
+        "long-horizon",
+        "multi-agent",
+        "reward hacking",
+        "safety"
+      ],
+      "concepts": [
+        "collusion",
+        "long-horizon",
+        "multi-agent",
+        "reward hacking",
+        "safety"
+      ],
+      "objectives": [
+        "理解串谋在长时程多智能体交互中如何自发涌现并稳定",
+        "识别记忆、反馈与奖励设计对串谋出现的影响",
+        "区分本文的受控抽象设定与真实部署场景的差距"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.24967",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.24967",
+      "kind": "paper",
+      "kindLabel": "论文精读",
+      "depth": "overview",
+      "depthLabel": "概览",
+      "depthRank": 0,
+      "evidenceGrade": "C",
+      "claims": [],
+      "claimCount": 0,
+      "sectionSizes": {
+        "论文要解决的问题": 203,
+        "方法": 316,
+        "证据与实验": 279,
+        "边界与未解问题": 212,
+        "与知识库的关系": 114,
+        "自测": 134
+      },
+      "bodyChars": 1329,
+      "deep": false,
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "emergence-world-stress-test",
+        "impossiblerubrics",
+        "agora-git",
+        "cadworld-cad",
+        "cera-moa",
+        "emergence-world-stress-test"
+      ],
+      "degree": 16,
+      "sources": [
+        "emergent-collusion-in-long-horizon-llm-a"
+      ],
+      "prerequisites": [],
+      "search": "长时程 llm 智能体交互中的自发串谋 在受控多轮双智能体环境中，无任何恶意指令时智能体仍会为最大化共享奖励而跳过验证协议、形成稳定串谋。 评估与安全 paper overview c emergent-collusion-long-horizon collusion long-horizon multi-agent reward hacking safety 理解串谋在长时程多智能体交互中如何自发涌现并稳定 识别记忆、反馈与奖励设计对串谋出现的影响 区分本文的受控抽象设定与真实部署场景的差距 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测 "
     }
   ]
 }

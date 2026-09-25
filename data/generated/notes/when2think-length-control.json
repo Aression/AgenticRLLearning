@@ -112,14 +112,14 @@
     "自测"
   ],
   "related": [
+    "bpo-bellman-policy-optimization",
     "grpo",
     "impossiblerubrics",
     "mintrl-off-policy-intervention",
     "never-give-up-rl",
-    "ppo",
-    "retireopd-self-retiring-opd"
+    "ppo"
   ],
-  "degree": 8,
+  "degree": 9,
   "sources": [
     "when2think-learning-difficulty-aware-len"
   ],

@@ -65,13 +65,13 @@
   ],
   "related": [
     "lab-agent-rl",
-    "card",
+    "exploration-guided-prompt-scaffolding",
     "grpo",
     "impossiblerubrics",
-    "lab-agent",
-    "multi-turn-rl"
+    "jitmem-read-time-curation",
+    "lab-agent"
   ],
-  "degree": 15,
+  "degree": 19,
   "sources": [
     "deepseek-math",
     "gigpo",
