@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T17:29:13.790280+00:00",
+  "generatedAt": "2026-09-25T03:38:50.693149+00:00",
   "notes": [
     {
       "id": "orientation",
@@ -430,12 +430,12 @@
       "related": [
         "orientation",
         "actobs-observation-supervision",
+        "aewm-agent-editing-world-model",
         "evolvetrade-policy-refinement",
         "evoskill-gui-training-free",
-        "harness-design-coding-agents",
-        "jitmem-read-time-curation"
+        "harness-design-coding-agents"
       ],
-      "degree": 13,
+      "degree": 14,
       "sources": [
         "react",
         "anthropic-building",
@@ -567,7 +567,7 @@
         "jitmem-read-time-curation",
         "lab-agent"
       ],
-      "degree": 24,
+      "degree": 25,
       "sources": [
         "deepseek-math",
         "gigpo",
@@ -695,7 +695,7 @@
         "codemidas-code-rl-envs",
         "jitmem-read-time-curation"
       ],
-      "degree": 27,
+      "degree": 31,
       "sources": [
         "deepseek-math",
         "deepseek-r1",
@@ -754,13 +754,13 @@
       ],
       "related": [
         "actobs-observation-supervision",
+        "aewm-agent-editing-world-model",
         "emergence-world-stress-test",
         "emergent-collusion-long-horizon",
         "environments",
-        "evoskill-gui-training-free",
-        "frontier-radar"
+        "evoskill-gui-training-free"
       ],
-      "degree": 27,
+      "degree": 29,
       "sources": [
         "agentic-survey",
         "gigpo",
@@ -896,7 +896,7 @@
         "harness-design-coding-agents",
         "lab-agent"
       ],
-      "degree": 24,
+      "degree": 25,
       "sources": [
         "swe-bench",
         "webarena",
@@ -1298,7 +1298,7 @@
         "codemidas-code-rl-envs",
         "grpo"
       ],
-      "degree": 16,
+      "degree": 18,
       "sources": [
         "verl",
         "lightning-code",
@@ -1362,7 +1362,7 @@
         "frontier-radar",
         "maintenance"
       ],
-      "degree": 12,
+      "degree": 13,
       "sources": [
         "sutton-barto",
         "silver",
@@ -1676,13 +1676,13 @@
       ],
       "related": [
         "emergent-collusion-long-horizon",
+        "aewm-agent-editing-world-model",
         "emergent-collusion-long-horizon",
         "evaluation",
         "evoskill-gui-training-free",
-        "jitmem-read-time-curation",
-        "multi-agent"
+        "jitmem-read-time-curation"
       ],
-      "degree": 13,
+      "degree": 14,
       "sources": [
         "emergence-world-adversarial-stress-testi"
       ],
@@ -2081,7 +2081,7 @@
         "grpo",
         "jitmem-read-time-curation"
       ],
-      "degree": 16,
+      "degree": 19,
       "sources": [
         "retireopd-self-retiring-on-policy-distil"
       ],
@@ -2208,14 +2208,14 @@
         "自测"
       ],
       "related": [
+        "aewm-agent-editing-world-model",
         "agent-loop",
         "designer-rsi-procedural-memory",
         "emergence-world-stress-test",
         "emergent-collusion-long-horizon",
-        "frontier-radar",
-        "harness-design-coding-agents"
+        "frontier-radar"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "reflect-revise-reuse-training-free-skill"
       ],
@@ -2343,13 +2343,13 @@
       ],
       "related": [
         "jitmem-read-time-curation",
+        "aewm-agent-editing-world-model",
         "agent-loop",
         "bpo-bellman-policy-optimization",
         "codemidas-code-rl-envs",
-        "frontier-radar",
-        "grpo"
+        "frontier-radar"
       ],
-      "degree": 14,
+      "degree": 17,
       "sources": [
         "don-t-mask-the-environment-observation-s"
       ],
@@ -2480,9 +2480,10 @@
         "lab-agent-rl",
         "mintrl-off-policy-intervention",
         "retireopd-self-retiring-opd",
+        "spatial-interactor-opd",
         "when2think-length-control"
       ],
-      "degree": 5,
+      "degree": 6,
       "sources": [
         "what-does-privileged-information-add-to"
       ],
@@ -2549,7 +2550,7 @@
         "learning-paths",
         "pact-enterprise-compliance-pressure"
       ],
-      "degree": 12,
+      "degree": 13,
       "sources": [
         "programdistill-from-interactive-web-apps"
       ],
@@ -2616,7 +2617,7 @@
         "harness-design-coding-agents",
         "jitmem-read-time-curation"
       ],
-      "degree": 15,
+      "degree": 17,
       "sources": [
         "codemidas-scaling-agentic-coding-rl-envi"
       ],
@@ -2875,14 +2876,14 @@
         "自测"
       ],
       "related": [
+        "aewm-agent-editing-world-model",
         "emergence-world-stress-test",
         "emergent-collusion-long-horizon",
         "evoskill-gui-training-free",
         "jitmem-read-time-curation",
-        "multi-turn-rl",
-        "policy-gradient"
+        "multi-turn-rl"
       ],
-      "degree": 9,
+      "degree": 10,
       "sources": [
         "from-pretraining-to-proficiency-real-wor"
       ],
@@ -3015,7 +3016,7 @@
         "mintact-unified-visual-agent",
         "multi-turn-rl"
       ],
-      "degree": 10,
+      "degree": 11,
       "sources": [
         "videogen-agent-reinforcing-video-generat"
       ],
@@ -3214,7 +3215,7 @@
         "bpo-bellman-policy-optimization",
         "category-expert-swe-agents"
       ],
-      "degree": 19,
+      "degree": 21,
       "sources": [
         "pact-from-credit-assignment-to-critic-al"
       ],
@@ -3275,13 +3276,13 @@
       ],
       "related": [
         "videogen-agent-tool-rl",
+        "aewm-agent-editing-world-model",
         "category-expert-swe-agents",
         "emergence-world-stress-test",
         "emergent-collusion-long-horizon",
-        "environments",
-        "evolvetrade-policy-refinement"
+        "environments"
       ],
-      "degree": 16,
+      "degree": 17,
       "sources": [
         "verifiable-hidden-dynamics-play-generati"
       ],
@@ -3348,7 +3349,7 @@
         "jitmem-read-time-curation",
         "lab-agent-rl"
       ],
-      "degree": 13,
+      "degree": 15,
       "sources": [
         "bellman-policy-optimization"
       ],
@@ -3410,12 +3411,12 @@
       "related": [
         "actobs-observation-supervision",
         "pact-credit-critic-alignment",
+        "aewm-agent-editing-world-model",
         "agent-loop",
         "bpo-bellman-policy-optimization",
-        "codemidas-code-rl-envs",
-        "designer-rsi-procedural-memory"
+        "codemidas-code-rl-envs"
       ],
-      "degree": 22,
+      "degree": 25,
       "sources": [
         "just-in-time-memory-learning-to-curate-t"
       ],
@@ -3543,18 +3544,219 @@
       ],
       "related": [
         "emergence-world-stress-test",
+        "aewm-agent-editing-world-model",
         "emergence-world-stress-test",
         "evoskill-gui-training-free",
         "jitmem-read-time-curation",
-        "multi-agent",
-        "multi-turn-rl"
+        "multi-agent"
       ],
-      "degree": 11,
+      "degree": 12,
       "sources": [
         "emergent-collusion-in-long-horizon-llm-a"
       ],
       "prerequisites": [],
       "search": "长时程 llm 智能体交互中的自发串谋 在受控多轮双智能体环境中，无任何恶意指令时智能体仍会为最大化共享奖励而跳过验证协议、形成稳定串谋。 评估与安全 collusion long-horizon multi-agent reward hacking safety 理解串谋在长时程多智能体交互中如何自发涌现并稳定 识别记忆、反馈与奖励设计对串谋出现的影响 区分本文的受控抽象设定与真实部署场景的差距 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "rewardverse-rubric-video-rm",
+      "title": "RewardVerse：评分量表引导的视频奖励建模",
+      "summary": "针对视频奖励模型直接打分导致的标量漂移问题，提出以动态评分量表为中间表示，并用两阶段策略优化联合训练量表生成器与打分器。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 55,
+      "minutes": 15,
+      "updated": "2026-09-25",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "55-rewardverse-rubric-video-rm.md",
+      "tags": [
+        "GRPO",
+        "reward-model",
+        "rubric",
+        "scalar-drift",
+        "video-generation"
+      ],
+      "concepts": [
+        "GRPO",
+        "reward-model",
+        "rubric",
+        "scalar-drift",
+        "video-generation"
+      ],
+      "objectives": [
+        "理解标量漂移（scalar drift）这一奖励模型失稳现象及其提出的成因解释",
+        "掌握 rubric-as-reward 的解耦思路与 RGPO 两阶段训练流程",
+        "判断该工作对奖励模型稳定性讨论的可迁移性与证据边界"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.22947",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.22947",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "actobs-observation-supervision",
+        "bpo-bellman-policy-optimization",
+        "codemidas-code-rl-envs",
+        "evaluation",
+        "grpo",
+        "jitmem-read-time-curation"
+      ],
+      "degree": 13,
+      "sources": [
+        "rewardverse-rubric-guided-policy-optimiz"
+      ],
+      "prerequisites": [],
+      "search": "rewardverse：评分量表引导的视频奖励建模 针对视频奖励模型直接打分导致的标量漂移问题，提出以动态评分量表为中间表示，并用两阶段策略优化联合训练量表生成器与打分器。 训练算法 grpo reward-model rubric scalar-drift video-generation 理解标量漂移（scalar drift）这一奖励模型失稳现象及其提出的成因解释 掌握 rubric-as-reward 的解耦思路与 rgpo 两阶段训练流程 判断该工作对奖励模型稳定性讨论的可迁移性与证据边界 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "aewm-agent-editing-world-model",
+      "title": "AEWM：把语言世界模型改为编辑智能体状态",
+      "summary": "论文主张语言世界模型不应预测工具观测，而应判断决策效果并改写有噪声的推理-动作，以缓解长程任务中的状态污染。",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "order": 56,
+      "minutes": 18,
+      "updated": "2026-09-25",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "56-aewm-agent-editing-world-model.md",
+      "tags": [
+        "RFT",
+        "llm-agent",
+        "long-horizon",
+        "state-revision",
+        "world-model"
+      ],
+      "concepts": [
+        "RFT",
+        "llm-agent",
+        "long-horizon",
+        "state-revision",
+        "world-model"
+      ],
+      "objectives": [
+        "理解 AEWM 为何把预测目标从环境观测转向决策效果",
+        "说清 Action Judge 与 State Revision 的分工及 EditAct 的执行流程",
+        "评估其跨域增益与 RFT 迁移结论的证据强度"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.28416",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.28416",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "actobs-observation-supervision",
+        "agent-loop",
+        "emergence-world-stress-test",
+        "emergent-collusion-long-horizon",
+        "evoskill-gui-training-free",
+        "jitmem-read-time-curation"
+      ],
+      "degree": 10,
+      "sources": [
+        "agent-editing-world-model-rethinking-wor"
+      ],
+      "prerequisites": [],
+      "search": "aewm：把语言世界模型改为编辑智能体状态 论文主张语言世界模型不应预测工具观测，而应判断决策效果并改写有噪声的推理-动作，以缓解长程任务中的状态污染。 前沿专题 rft llm-agent long-horizon state-revision world-model 理解 aewm 为何把预测目标从环境观测转向决策效果 说清 action judge 与 state revision 的分工及 editact 的执行流程 评估其跨域增益与 rft 迁移结论的证据强度 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
+    },
+    {
+      "id": "spatial-interactor-opd",
+      "title": "Spatial-Interactor：交互式空间状态转移学习",
+      "summary": "用交互轨迹构造三级课程，SFT 学局部状态转移、OPD 学长程整合，提升 VLM 空间推理。",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "order": 57,
+      "minutes": 15,
+      "updated": "2026-09-25",
+      "review": "LLM 全文精读草稿 · 待人工复核",
+      "filename": "57-spatial-interactor-opd.md",
+      "tags": [
+        "GRPO",
+        "OPD",
+        "VLM",
+        "curriculum",
+        "spatial-reasoning"
+      ],
+      "concepts": [
+        "GRPO",
+        "OPD",
+        "VLM",
+        "curriculum",
+        "spatial-reasoning"
+      ],
+      "objectives": [
+        "理解作者如何用「观测-动作-观测」三元组定义局部状态转移监督",
+        "说明 OPD 中特权 trace 教师与 SFT 参考策略的分工",
+        "判断该工作与知识库中 OPD/特权信息主题的异同"
+      ],
+      "keyPoints": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "evidenceLevel": "full-text-llm-draft",
+      "codeUrl": "",
+      "origin": "llm-fulltext",
+      "paperId": "2609.23038",
+      "readingDepth": "full-text",
+      "fullTextUrl": "https://arxiv.org/html/2609.23038",
+      "sections": [
+        "论文要解决的问题",
+        "方法",
+        "证据与实验",
+        "边界与未解问题",
+        "与知识库的关系",
+        "自测"
+      ],
+      "related": [
+        "actobs-observation-supervision",
+        "bpo-bellman-policy-optimization",
+        "codemidas-code-rl-envs",
+        "grpo",
+        "jitmem-read-time-curation",
+        "lab-agent-rl"
+      ],
+      "degree": 14,
+      "sources": [
+        "spatial-interactor-learning-spatial-reas"
+      ],
+      "prerequisites": [],
+      "search": "spatial-interactor：交互式空间状态转移学习 用交互轨迹构造三级课程，sft 学局部状态转移、opd 学长程整合，提升 vlm 空间推理。 训练算法 grpo opd vlm curriculum spatial-reasoning 理解作者如何用「观测-动作-观测」三元组定义局部状态转移监督 说明 opd 中特权 trace 教师与 sft 参考策略的分工 判断该工作与知识库中 opd/特权信息主题的异同 论文要解决的问题 方法 证据与实验 边界与未解问题 与知识库的关系 自测"
     }
   ]
 }

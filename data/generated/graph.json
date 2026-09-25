@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T17:29:13.794724+00:00",
+  "generatedAt": "2026-09-25T03:38:50.698832+00:00",
   "nodes": [
     {
       "id": "orientation",
@@ -55,7 +55,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "Agent 系统",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "environments",
@@ -71,7 +71,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 24
+      "degree": 25
     },
     {
       "id": "preferences",
@@ -87,7 +87,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 27
+      "degree": 31
     },
     {
       "id": "multi-turn-rl",
@@ -95,7 +95,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 27
+      "degree": 29
     },
     {
       "id": "training-systems",
@@ -111,7 +111,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "评估与安全",
-      "degree": 24
+      "degree": 25
     },
     {
       "id": "safety",
@@ -159,7 +159,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "实验与维护",
-      "degree": 16
+      "degree": 18
     },
     {
       "id": "learning-paths",
@@ -167,7 +167,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "实验与维护",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "maintenance",
@@ -207,7 +207,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "value-flattening-ppo",
@@ -255,7 +255,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 16
+      "degree": 19
     },
     {
       "id": "harness-design-coding-agents",
@@ -271,7 +271,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "when2think-length-control",
@@ -287,7 +287,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 14
+      "degree": 17
     },
     {
       "id": "pact-enterprise-compliance-pressure",
@@ -303,7 +303,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "programdistill-ref-guided-swe",
@@ -311,7 +311,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "codemidas-code-rl-envs",
@@ -319,7 +319,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 15
+      "degree": 17
     },
     {
       "id": "recreationworld-hybrid-cua",
@@ -351,7 +351,7 @@
       "kind": "note",
       "stage": "SYSTEMS",
       "track": "训练算法",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "rrsi-regularized-harness-rsi",
@@ -367,7 +367,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "rsi-harness-two-loop",
@@ -391,7 +391,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "训练算法",
-      "degree": 19
+      "degree": 21
     },
     {
       "id": "vhd-play-mechanism-first-envs",
@@ -399,7 +399,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 16
+      "degree": 17
     },
     {
       "id": "bpo-bellman-policy-optimization",
@@ -407,7 +407,7 @@
       "kind": "note",
       "stage": "FOUNDATION",
       "track": "训练算法",
-      "degree": 13
+      "degree": 15
     },
     {
       "id": "jitmem-read-time-curation",
@@ -415,7 +415,7 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "Agent 系统",
-      "degree": 22
+      "degree": 25
     },
     {
       "id": "schrodinger-repo-representation",
@@ -431,7 +431,31 @@
       "kind": "note",
       "stage": "FRONTIER",
       "track": "评估与安全",
-      "degree": 11
+      "degree": 12
+    },
+    {
+      "id": "rewardverse-rubric-video-rm",
+      "label": "RewardVerse：评分量表引导的视频奖励建模",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 13
+    },
+    {
+      "id": "aewm-agent-editing-world-model",
+      "label": "AEWM：把语言世界模型改为编辑智能体状态",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "前沿专题",
+      "degree": 10
+    },
+    {
+      "id": "spatial-interactor-opd",
+      "label": "Spatial-Interactor：交互式空间状态转移学习",
+      "kind": "note",
+      "stage": "FRONTIER",
+      "track": "训练算法",
+      "degree": 14
     },
     {
       "id": "2026",
@@ -946,6 +970,14 @@
       "degree": 0
     },
     {
+      "id": "llm-agent",
+      "label": "llm-agent",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "llm-rl",
       "label": "LLM-RL",
       "kind": "concept",
@@ -1036,6 +1068,14 @@
     {
       "id": "on-policy-distillation",
       "label": "on-policy-distillation",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "opd",
+      "label": "OPD",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1266,6 +1306,14 @@
       "degree": 0
     },
     {
+      "id": "reward-model",
+      "label": "reward-model",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "reward-shaping",
       "label": "reward-shaping",
       "kind": "concept",
@@ -1276,6 +1324,14 @@
     {
       "id": "reward-verification",
       "label": "reward-verification",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "rft",
+      "label": "RFT",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1346,6 +1402,14 @@
       "degree": 0
     },
     {
+      "id": "rubric",
+      "label": "rubric",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "safety",
       "label": "safety",
       "kind": "concept",
@@ -1356,6 +1420,14 @@
     {
       "id": "sandbox",
       "label": "sandbox",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "scalar-drift",
+      "label": "scalar-drift",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1420,6 +1492,22 @@
     {
       "id": "sparse-supervision",
       "label": "sparse-supervision",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "spatial-reasoning",
+      "label": "spatial-reasoning",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "state-revision",
+      "label": "state-revision",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1586,6 +1674,14 @@
       "degree": 0
     },
     {
+      "id": "vlm",
+      "label": "VLM",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
       "id": "web-apps",
       "label": "web-apps",
       "kind": "concept",
@@ -1596,6 +1692,14 @@
     {
       "id": "webarena",
       "label": "WebArena",
+      "kind": "concept",
+      "stage": "",
+      "track": "",
+      "degree": 0
+    },
+    {
+      "id": "world-model",
+      "label": "world-model",
       "kind": "concept",
       "stage": "",
       "track": "",
@@ -1813,6 +1917,12 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "aewm-agent-editing-world-model",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "agent-loop",
       "kind": "related",
       "weight": 1.0
@@ -1825,6 +1935,18 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "multi-turn-rl",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "agent-loop",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
       "target": "multi-turn-rl",
       "kind": "related",
       "weight": 1.0
@@ -2065,6 +2187,12 @@
     },
     {
       "source": "evaluation",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "evaluation",
       "target": "schrodinger-repo-representation",
       "kind": "related",
       "weight": 1.0
@@ -2132,6 +2260,18 @@
     {
       "source": "grpo",
       "target": "retireopd-self-retiring-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "spatial-interactor-opd",
       "kind": "related",
       "weight": 1.0
     },
@@ -2299,6 +2439,12 @@
     },
     {
       "source": "privileged-info-opsd-ample-math",
+      "target": "spatial-interactor-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "privileged-info-opsd-ample-math",
       "target": "when2think-length-control",
       "kind": "related",
       "weight": 1.0
@@ -2312,6 +2458,18 @@
     {
       "source": "retireopd-self-retiring-opd",
       "target": "rewards",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "spatial-interactor-opd",
+      "kind": "related",
+      "weight": 1.0
+    },
+    {
+      "source": "rewards",
+      "target": "rewardverse-rubric-video-rm",
       "kind": "related",
       "weight": 1.0
     },
@@ -2419,13 +2577,67 @@
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "rsi-harness-two-loop",
       "kind": "shared-concept",
       "weight": 1.0
     },
     {
       "source": "actobs-observation-supervision",
+      "target": "spatial-interactor-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "actobs-observation-supervision",
       "target": "value-learning",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "emergence-world-stress-test",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "emergent-collusion-long-horizon",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "evoskill-gui-training-free",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "jitmem-read-time-curation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "multi-turn-rl",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "parts-subtask-rl-manipulation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "vhd-play-mechanism-first-envs",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2479,7 +2691,19 @@
     },
     {
       "source": "bpo-bellman-policy-optimization",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
       "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "bpo-bellman-policy-optimization",
+      "target": "spatial-interactor-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2599,7 +2823,19 @@
     },
     {
       "source": "codemidas-code-rl-envs",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
       "target": "schrodinger-repo-representation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "codemidas-code-rl-envs",
+      "target": "spatial-interactor-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2833,7 +3069,19 @@
     },
     {
       "source": "grpo",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
       "target": "scienceide-sci-envs",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "grpo",
+      "target": "spatial-interactor-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -2941,7 +3189,19 @@
     },
     {
       "source": "jitmem-read-time-curation",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "jitmem-read-time-curation",
       "target": "rsi-harness-two-loop",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "jitmem-read-time-curation",
+      "target": "spatial-interactor-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -3000,6 +3260,18 @@
       "weight": 1.0
     },
     {
+      "source": "lab-agent-rl",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "lab-agent-rl",
+      "target": "spatial-interactor-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "lab-rl",
       "target": "value-flattening-ppo",
       "kind": "shared-concept",
@@ -3008,6 +3280,12 @@
     {
       "source": "learning-paths",
       "target": "programdistill-ref-guided-swe",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "learning-paths",
+      "target": "spatial-interactor-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -3169,7 +3447,19 @@
     },
     {
       "source": "pact-credit-critic-alignment",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
       "target": "schrodinger-repo-representation",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "pact-credit-critic-alignment",
+      "target": "spatial-interactor-opd",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -3252,6 +3542,12 @@
       "weight": 1.0
     },
     {
+      "source": "programdistill-ref-guided-swe",
+      "target": "spatial-interactor-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
       "source": "recreationworld-hybrid-cua",
       "target": "rsi-harness-two-loop",
       "kind": "shared-concept",
@@ -3262,6 +3558,18 @@
       "target": "scienceide-sci-envs",
       "kind": "shared-concept",
       "weight": 2.0
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "rewardverse-rubric-video-rm",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "retireopd-self-retiring-opd",
+      "target": "spatial-interactor-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
     },
     {
       "source": "retireopd-self-retiring-opd",
@@ -3278,6 +3586,18 @@
     {
       "source": "rewards",
       "target": "value-flattening-ppo",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "rewardverse-rubric-video-rm",
+      "target": "spatial-interactor-opd",
+      "kind": "shared-concept",
+      "weight": 1.0
+    },
+    {
+      "source": "rewardverse-rubric-video-rm",
+      "target": "videogen-agent-tool-rl",
       "kind": "shared-concept",
       "weight": 1.0
     },
@@ -5066,6 +5386,96 @@
     {
       "source": "emergent-collusion-long-horizon",
       "target": "collusion",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewardverse-rubric-video-rm",
+      "target": "reward-model",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewardverse-rubric-video-rm",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewardverse-rubric-video-rm",
+      "target": "rubric",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewardverse-rubric-video-rm",
+      "target": "video-generation",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "rewardverse-rubric-video-rm",
+      "target": "scalar-drift",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "world-model",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "llm-agent",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "long-horizon",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "state-revision",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "aewm-agent-editing-world-model",
+      "target": "rft",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "spatial-interactor-opd",
+      "target": "spatial-reasoning",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "spatial-interactor-opd",
+      "target": "opd",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "spatial-interactor-opd",
+      "target": "grpo",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "spatial-interactor-opd",
+      "target": "vlm",
+      "kind": "concept",
+      "weight": 1
+    },
+    {
+      "source": "spatial-interactor-opd",
+      "target": "curriculum",
       "kind": "concept",
       "weight": 1
     }

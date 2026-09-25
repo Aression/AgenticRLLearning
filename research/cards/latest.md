@@ -3,17 +3,17 @@
 
 > LLM 全文精读草稿，需人工复核后才算已审核知识。本次生成 3 张。
 
-### JitMem：读时策展的任务自适应记忆
-- 笔记：`content/52-jitmem-read-time-curation.md`
-- 来源：`just-in-time-memory-learning-to-curate-t` · arXiv `2609.27334`
-- 全文：https://arxiv.org/html/2609.27334
+### RewardVerse：评分量表引导的视频奖励建模
+- 笔记：`content/55-rewardverse-rubric-video-rm.md`
+- 来源：`rewardverse-rubric-guided-policy-optimiz` · arXiv `2609.22947`
+- 全文：https://arxiv.org/html/2609.22947
 
-### 仓库表示作为评测变量：SWE-bench 是学会还是记住
-- 笔记：`content/53-schrodinger-repo-representation.md`
-- 来源：`schr-dinger-s-code-repository-have-llms` · arXiv `2609.27891`
-- 全文：https://arxiv.org/html/2609.27891
+### AEWM：把语言世界模型改为编辑智能体状态
+- 笔记：`content/56-aewm-agent-editing-world-model.md`
+- 来源：`agent-editing-world-model-rethinking-wor` · arXiv `2609.28416`
+- 全文：https://arxiv.org/html/2609.28416
 
-### 长时程 LLM 智能体交互中的自发串谋
-- 笔记：`content/54-emergent-collusion-long-horizon.md`
-- 来源：`emergent-collusion-in-long-horizon-llm-a` · arXiv `2609.24967`
-- 全文：https://arxiv.org/html/2609.24967
+### Spatial-Interactor：交互式空间状态转移学习
+- 笔记：`content/57-spatial-interactor-opd.md`
+- 来源：`spatial-interactor-learning-spatial-reas` · arXiv `2609.23038`
+- 全文：https://arxiv.org/html/2609.23038

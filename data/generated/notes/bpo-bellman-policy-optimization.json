@@ -58,7 +58,7 @@
     "jitmem-read-time-curation",
     "lab-agent-rl"
   ],
-  "degree": 13,
+  "degree": 15,
   "sources": [
     "bellman-policy-optimization"
   ],

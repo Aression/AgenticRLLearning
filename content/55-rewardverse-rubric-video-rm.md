@@ -1,0 +1,58 @@
+---
+id: rewardverse-rubric-video-rm
+title: RewardVerse：评分量表引导的视频奖励建模
+summary: 针对视频奖励模型直接打分导致的标量漂移问题，提出以动态评分量表为中间表示，并用两阶段策略优化联合训练量表生成器与打分器。
+stage: FRONTIER
+track: 训练算法
+order: 55
+minutes: 15
+updated: '2026-09-25'
+review: LLM 全文精读草稿 · 待人工复核
+origin: llm-fulltext
+paper_id: 2609.22947
+reading_depth: full-text
+evidence_level: full-text-llm-draft
+full_text_url: https://arxiv.org/html/2609.22947
+objectives: [理解标量漂移（scalar drift）这一奖励模型失稳现象及其提出的成因解释, 掌握 rubric-as-reward 的解耦思路与 RGPO 两阶段训练流程, 判断该工作对奖励模型稳定性讨论的可迁移性与证据边界]
+tags: [reward-model, GRPO, rubric, video-generation, scalar-drift]
+sources: [rewardverse-rubric-guided-policy-optimiz]
+related: [rewards, grpo, evaluation]
+prerequisites: []
+---
+## 论文要解决的问题
+
+作者主张：现有视频奖励模型（RM）大多把生成视频直接映射为单一标量分数（判别式回归或生成式推理），而视频质量本身主观且多维，这种「无显式标准的直接打分」会让评分尺度不稳定——分数塌缩到窄区间，或随 prompt 与上下文漂移。作者把这一现象命名为 **scalar drift（标量漂移）**。
+
+需要区分：视频质量多维、主观，是领域内较普遍的共识；而「标量漂移是直接打分范式的必然结果」以及「插入 rubric 能缓解它」属于本文的论证主张，其分析性研究（第 3 节）在摘录中只有结论性描述，未见具体实验细节。
+
+## 方法
+
+作者的类比是专业标注员：先拆解出显式评价标准，再给最终判断，从而形成跨样本稳定的语义锚点。据此提出 RewardVerse：
+
+- **Rubric-as-Reward**：在 query 与 scorer 之间插入动态 rubric 作为中间表示，把评估解耦为「标准生成」与「按标准执行」两步。rubric 生成器把整体文本 query 分解为评价主题、权重与打分提示；scorer 再逐条对照打分，而非依赖隐式内部标准。
+- **RGPO（Rubric-Guided Policy Optimization）**：在 GRPO 框架下的两阶段训练。阶段一用离线合成的自演化种子 rubric 预热 scorer；阶段二联合优化 rubric 生成器（产出 query 自适应标准）并持续校准 scorer。作者强调无需先做 SFT，且每个维度仅需 30 对偏好数据。
+
+## 证据与实验
+
+作者报告在 EvalVerse 改编的 16 个细粒度维度上做 pointwise 相关性评估，并在外部成对偏好基准 VGRB 上测迁移（Visual Quality 为已见维度、Text Alignment 为未见维度）；基座为 Qwen2.5-VL-7B，对比 VideoScore-v1.1、VideoScore2、UnifiedReward（含 thinking 变体）、VideoReward、VisionReward、Q-Scorer 等。
+
+消融给出三点结论：同等 480 对数据预算下，无 rubric 的直接 pointwise 训练提升有限；去掉阶段一预热，PLCC 下降 0.099、SRCC 下降 0.061；去掉阶段二联合优化，PLCC 差 0.074。作者还称下游用作视频生成 RL 奖励时更不易 reward hacking。
+
+注意：以上均为论文自述结果，摘录中多处具体数值缺失（如 Logic、Action 的 PLCC 对比值），且无第三方复现，应视为作者主张而非已确证结论。
+
+## 边界与未解问题
+
+- 领域是视频生成奖励建模，不是 agentic RL；其「标量漂移」诊断能否迁移到语言/智能体奖励模型，本文未提供证据。
+- 数据高效（30 对/维度）的说法依赖 EvalVerse 维度划分与种子 rubric 的合成质量，摘录未说明种子 rubric 的来源与筛选标准。
+- 结论部分提到「less prone to reward hacking」，但摘录未给出对应实验设置与量化指标。
+- 论文自列 Limitations 一节，但摘录在此截断，具体caveat未知。
+
+## 与知识库的关系
+
+可作为 `rewards` 笔记中「奖励模型稳定性」主题的一个跨域案例：把「显式标准作为中间表示」视为缓解奖励失稳的一种设计模式，与 GRPO 的组相对优势估计结合。与 `evaluation` 相关之处在于它同时给出 pointwise 相关性与 pairwise 迁移两类评测视角。
+
+## 自测
+
+1. 用自己的话解释 scalar drift，并说明作者给出的因果解释属于共识还是主张。
+2. RGPO 两个阶段各自解决什么问题？去掉任一阶段的消融结论是什么？
+3. 若把 rubric-as-reward 迁移到文本或智能体奖励模型，需要额外验证哪些前提？

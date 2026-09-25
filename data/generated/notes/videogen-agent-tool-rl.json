@@ -58,7 +58,7 @@
     "mintact-unified-visual-agent",
     "multi-turn-rl"
   ],
-  "degree": 10,
+  "degree": 11,
   "sources": [
     "videogen-agent-reinforcing-video-generat"
   ],

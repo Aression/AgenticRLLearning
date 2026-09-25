@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "aewm-agent-editing-world-model",
     "agent-loop",
     "designer-rsi-procedural-memory",
     "emergence-world-stress-test",
     "emergent-collusion-long-horizon",
-    "frontier-radar",
-    "harness-design-coding-agents"
+    "frontier-radar"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "reflect-revise-reuse-training-free-skill"
   ],

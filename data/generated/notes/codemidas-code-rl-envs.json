@@ -58,7 +58,7 @@
     "harness-design-coding-agents",
     "jitmem-read-time-curation"
   ],
-  "degree": 15,
+  "degree": 17,
   "sources": [
     "codemidas-scaling-agentic-coding-rl-envi"
   ],

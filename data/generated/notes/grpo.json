@@ -51,7 +51,7 @@
     "codemidas-code-rl-envs",
     "jitmem-read-time-curation"
   ],
-  "degree": 27,
+  "degree": 31,
   "sources": [
     "deepseek-math",
     "deepseek-r1",

@@ -52,13 +52,13 @@
   ],
   "related": [
     "videogen-agent-tool-rl",
+    "aewm-agent-editing-world-model",
     "category-expert-swe-agents",
     "emergence-world-stress-test",
     "emergent-collusion-long-horizon",
-    "environments",
-    "evolvetrade-policy-refinement"
+    "environments"
   ],
-  "degree": 16,
+  "degree": 17,
   "sources": [
     "verifiable-hidden-dynamics-play-generati"
   ],

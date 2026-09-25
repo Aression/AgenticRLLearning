@@ -58,7 +58,7 @@
     "bpo-bellman-policy-optimization",
     "category-expert-swe-agents"
   ],
-  "degree": 19,
+  "degree": 21,
   "sources": [
     "pact-from-credit-assignment-to-critic-al"
   ],

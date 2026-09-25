@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-24T17:29:13.559421+00:00",
+  "generatedAt": "2026-09-25T03:38:50.403473+00:00",
   "requested": 3,
   "generated": [
     {
-      "note_id": "jitmem-read-time-curation",
-      "note_path": "content/52-jitmem-read-time-curation.md",
-      "source_id": "just-in-time-memory-learning-to-curate-t",
-      "title": "JitMem：读时策展的任务自适应记忆",
+      "note_id": "rewardverse-rubric-video-rm",
+      "note_path": "content/55-rewardverse-rubric-video-rm.md",
+      "source_id": "rewardverse-rubric-guided-policy-optimiz",
+      "title": "RewardVerse：评分量表引导的视频奖励建模",
       "stage": "FRONTIER",
-      "minutes": 18,
-      "arxiv_id": "2609.27334",
-      "full_text_url": "https://arxiv.org/html/2609.27334"
+      "minutes": 15,
+      "arxiv_id": "2609.22947",
+      "full_text_url": "https://arxiv.org/html/2609.22947"
     },
     {
-      "note_id": "schrodinger-repo-representation",
-      "note_path": "content/53-schrodinger-repo-representation.md",
-      "source_id": "schr-dinger-s-code-repository-have-llms",
-      "title": "仓库表示作为评测变量：SWE-bench 是学会还是记住",
-      "stage": "SYSTEMS",
-      "minutes": 18,
-      "arxiv_id": "2609.27891",
-      "full_text_url": "https://arxiv.org/html/2609.27891"
-    },
-    {
-      "note_id": "emergent-collusion-long-horizon",
-      "note_path": "content/54-emergent-collusion-long-horizon.md",
-      "source_id": "emergent-collusion-in-long-horizon-llm-a",
-      "title": "长时程 LLM 智能体交互中的自发串谋",
+      "note_id": "aewm-agent-editing-world-model",
+      "note_path": "content/56-aewm-agent-editing-world-model.md",
+      "source_id": "agent-editing-world-model-rethinking-wor",
+      "title": "AEWM：把语言世界模型改为编辑智能体状态",
       "stage": "FRONTIER",
       "minutes": 18,
-      "arxiv_id": "2609.24967",
-      "full_text_url": "https://arxiv.org/html/2609.24967"
+      "arxiv_id": "2609.28416",
+      "full_text_url": "https://arxiv.org/html/2609.28416"
+    },
+    {
+      "note_id": "spatial-interactor-opd",
+      "note_path": "content/57-spatial-interactor-opd.md",
+      "source_id": "spatial-interactor-learning-spatial-reas",
+      "title": "Spatial-Interactor：交互式空间状态转移学习",
+      "stage": "FRONTIER",
+      "minutes": 15,
+      "arxiv_id": "2609.23038",
+      "full_text_url": "https://arxiv.org/html/2609.23038"
     }
   ],
   "skipped": [],

@@ -51,14 +51,14 @@
     "自测"
   ],
   "related": [
+    "aewm-agent-editing-world-model",
     "emergence-world-stress-test",
     "emergent-collusion-long-horizon",
     "evoskill-gui-training-free",
     "jitmem-read-time-curation",
-    "multi-turn-rl",
-    "policy-gradient"
+    "multi-turn-rl"
   ],
-  "degree": 9,
+  "degree": 10,
   "sources": [
     "from-pretraining-to-proficiency-real-wor"
   ],

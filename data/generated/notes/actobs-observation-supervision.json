@@ -52,13 +52,13 @@
   ],
   "related": [
     "jitmem-read-time-curation",
+    "aewm-agent-editing-world-model",
     "agent-loop",
     "bpo-bellman-policy-optimization",
     "codemidas-code-rl-envs",
-    "frontier-radar",
-    "grpo"
+    "frontier-radar"
   ],
-  "degree": 14,
+  "degree": 17,
   "sources": [
     "don-t-mask-the-environment-observation-s"
   ],

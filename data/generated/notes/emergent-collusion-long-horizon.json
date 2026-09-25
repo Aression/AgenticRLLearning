@@ -52,13 +52,13 @@
   ],
   "related": [
     "emergence-world-stress-test",
+    "aewm-agent-editing-world-model",
     "emergence-world-stress-test",
     "evoskill-gui-training-free",
     "jitmem-read-time-curation",
-    "multi-agent",
-    "multi-turn-rl"
+    "multi-agent"
   ],
-  "degree": 11,
+  "degree": 12,
   "sources": [
     "emergent-collusion-in-long-horizon-llm-a"
   ],

@@ -648,5 +648,35 @@
     "url": "https://arxiv.org/abs/2609.24967",
     "evidence": "LLM 全文精读草稿 · 待人工复核",
     "note": "LLM 全文精读草稿：Relevant to the KB's multi-agent and safety interests (marl-book, lilian-reward, emergence-world). Studies collusion emergence in long-horizon multi-agent inter"
+  },
+  {
+    "id": "rewardverse-rubric-guided-policy-optimiz",
+    "title": "RewardVerse: Rubric-Guided Policy Optimization for Video Reward Modeling",
+    "kind": "论文",
+    "author": "Zhenchen Tang et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.22947",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Adjacent rather than core: video-generation reward modeling, not agentic RL. Relevant to reward-model stability (scalar drift) which touches lilian-reward theme"
+  },
+  {
+    "id": "agent-editing-world-model-rethinking-wor",
+    "title": "Agent-Editing World Model: Rethinking World Modeling for LLM Agents",
+    "kind": "论文",
+    "author": "Shuang Sun et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.28416",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Plausible and on-topic for Agentic RL (long-horizon agents, state revision, rejection-sampling fine-tuning). Not a duplicate. Only abstract inspected; no code o"
+  },
+  {
+    "id": "spatial-interactor-learning-spatial-reas",
+    "title": "Spatial-Interactor: Learning Spatial Reasoning through Interaction with the Observable Physical World",
+    "kind": "论文",
+    "author": "Kaixiang Yao et al.",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2609.23038",
+    "evidence": "LLM 全文精读草稿 · 待人工复核",
+    "note": "LLM 全文精读草稿：Adjacent: VLM spatial reasoning with on-policy distillation and privileged self-distillation. Touches OPD themes present in KB (e.g., retireopd, privileged-info"
   }
 ]

@@ -53,12 +53,12 @@
   "related": [
     "actobs-observation-supervision",
     "pact-credit-critic-alignment",
+    "aewm-agent-editing-world-model",
     "agent-loop",
     "bpo-bellman-policy-optimization",
-    "codemidas-code-rl-envs",
-    "designer-rsi-procedural-memory"
+    "codemidas-code-rl-envs"
   ],
-  "degree": 22,
+  "degree": 25,
   "sources": [
     "just-in-time-memory-learning-to-curate-t"
   ],

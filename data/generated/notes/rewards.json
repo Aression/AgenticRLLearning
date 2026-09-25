@@ -53,7 +53,7 @@
     "jitmem-read-time-curation",
     "lab-agent"
   ],
-  "degree": 24,
+  "degree": 25,
   "sources": [
     "deepseek-math",
     "gigpo",

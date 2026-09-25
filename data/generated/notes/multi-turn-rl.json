@@ -45,13 +45,13 @@
   ],
   "related": [
     "actobs-observation-supervision",
+    "aewm-agent-editing-world-model",
     "emergence-world-stress-test",
     "emergent-collusion-long-horizon",
     "environments",
-    "evoskill-gui-training-free",
-    "frontier-radar"
+    "evoskill-gui-training-free"
   ],
-  "degree": 27,
+  "degree": 29,
   "sources": [
     "agentic-survey",
     "gigpo",

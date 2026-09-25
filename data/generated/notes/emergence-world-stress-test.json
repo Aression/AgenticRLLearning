@@ -52,13 +52,13 @@
   ],
   "related": [
     "emergent-collusion-long-horizon",
+    "aewm-agent-editing-world-model",
     "emergent-collusion-long-horizon",
     "evaluation",
     "evoskill-gui-training-free",
-    "jitmem-read-time-curation",
-    "multi-agent"
+    "jitmem-read-time-curation"
   ],
-  "degree": 13,
+  "degree": 14,
   "sources": [
     "emergence-world-adversarial-stress-testi"
   ],

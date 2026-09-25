@@ -55,9 +55,10 @@
     "lab-agent-rl",
     "mintrl-off-policy-intervention",
     "retireopd-self-retiring-opd",
+    "spatial-interactor-opd",
     "when2think-length-control"
   ],
-  "degree": 5,
+  "degree": 6,
   "sources": [
     "what-does-privileged-information-add-to"
   ],

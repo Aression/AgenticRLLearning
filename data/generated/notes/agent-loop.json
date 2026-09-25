@@ -48,12 +48,12 @@
   "related": [
     "orientation",
     "actobs-observation-supervision",
+    "aewm-agent-editing-world-model",
     "evolvetrade-policy-refinement",
     "evoskill-gui-training-free",
-    "harness-design-coding-agents",
-    "jitmem-read-time-curation"
+    "harness-design-coding-agents"
   ],
-  "degree": 13,
+  "degree": 14,
   "sources": [
     "react",
     "anthropic-building",
