@@ -81,6 +81,66 @@ ATLAS_LLM_ENABLED=1 python scripts/cards.py deepen --limit 1
 
 退出码约定：`0` 成功，`1` 内容契约失败，`2` 脚本或输入错误，`3` 模型调用被暂停。
 
+## 当前维护状态（模型调用已暂停）
+
+**状态：暂停中**——自 2026-09-25 起人工暂停，恢复前不会有任何自动制卡或审计提交。
+
+| 对象 | 位置 | 状态 |
+| --- | --- | --- |
+| 模型调用总开关 | `harness.config.json` → `llm.enabled` | `false` |
+| Knowledge maintenance | Actions workflow `353304335` | `disabled_manually` |
+| Agent audit and archive | Actions workflow `353313263` | `disabled_manually` |
+| Content check（离线校验） | Actions workflow `353295278` | active |
+| Deploy to Vercel | Actions workflow `353295279` | active |
+
+暂停期间：`cards.py run/deepen` 与 `agent_audit.py` 在**发出第一个请求之前**就以退出码 `3` 终止，不消耗 token，也不写入内容。离线命令照常可用：`harness.py check`、`cards.py check/status/fetch`、`atlas_db.py build/check`、`npm test`、`npm run build`。向 master 推送或开 PR 只会触发 Content check 与 Vercel 部署，两者都不调用模型。
+
+### 恢复清单
+
+1. 打开代码开关：`harness.config.json` → `"llm": { "enabled": true }`；或单次覆盖 `ATLAS_LLM_ENABLED=1 python scripts/cards.py deepen --limit 1`。
+2. 恢复定时任务：
+
+   ```bash
+   gh workflow enable 353304335   # Knowledge maintenance
+   gh workflow enable 353313263   # Agent audit and archive
+   ```
+
+3. **先处理暂停前遗留的审计分支**（重要，见下）。
+4. 补齐深读积压：`python scripts/cards.py deepen --limit N`（用 `status` 查看队列）。
+
+### 遗留分支：恢复前必须处理
+
+暂停时 `agent-audit/latest` 上仍有 1 个未合并提交（2026-09-25 那次审计），包含 3 篇旧流水线薄卡，其 `order` 与 master 上现有笔记**直接冲突**：
+
+| 分支上的卡片 | order | master 上同号笔记 |
+| --- | --- | --- |
+| `rewardverse-rubric-video-rm` | 55 | `agora-git` |
+| `aewm-agent-editing-world-model` | 56 | `hypoevolve` |
+| `spatial-interactor-opd` | 57 | `riskchainbench` |
+
+审核 workflow 恢复后会执行 `git merge -X theirs FETCH_HEAD` 合并该分支，因此会带出重复 `order`，使 `harness.py check` 失败、从而**不会创建 PR**。恢复到步骤 3 时请二选一：
+
+```bash
+# 方案 A：丢弃分支上的旧草稿，让下次运行从干净的 master 开新分支
+git push origin --delete agent-audit/latest
+
+# 方案 B：保留草稿——先把 3 篇卡片迁入内容模型并移到 73 起的新序号，再重建数据库
+```
+
+对应的 PR #20 已于 2026-09-25 关闭（其内容与 master 的深度架构不一致，其中 9 篇卡片已随 PR #17 进入 master 并重新编号为 64–72）。
+
+### 暂停时的内容快照
+
+| 指标 | 数值 |
+| --- | --- |
+| 笔记 | 72（其中 `depth: deep` 40） |
+| 深读占比 | 55.6% |
+| 结构化主张 | 180 |
+| 来源 | 83 |
+| 图谱边 | 867（笔记间关系 513 + 概念边 354） |
+| 待深化薄卡 | 9（`cards.py status` 可查） |
+| 待制卡新论文 | 9（均为无条件全文而跳过） |
+
 ## 更新原则
 
 定时任务只负责发现和报告。来源、主张、前沿状态和正文变化必须通过人工审阅的 Git commit 进入生产站点。预印本默认为 `摘要核验 · 待精读`，代码仓库的页面可访问不代表实验已复现。
